@@ -1,0 +1,129 @@
+.flex.flex-col.lg:flex-row
+  .lg:w-1/3.overflow-y-auto class="lg:h-[calc(100vh-96px)]"
+    .flex.items-center.justify-between.bg-base-200.px-2.pt-4.pb-3.print:hidden
+      = back_link_to t('.back_to_map'), session[:map_referer_url].presence || maps_path
+
+      .flex.items-center.gap-2
+        - if allowed_to?(:new?, Comment)
+          = link_to new_merchant_comment_path(@merchant),
+                    class: 'font-bold',
+                    title: t('.comments.title'),
+                    data: { turbo_stream: true } do
+            span#header_comments_count= @merchant.comments_count
+            = lucide_icon 'message-square', class: 'inline-flex ml-0.5'
+
+        = render 'share_by_email',
+                subject: t('.share_by_email.subject', name: @merchant.name),
+                body: t('.share_by_email.body', link: merchant_url(@merchant))
+
+        = render 'print_me', klass: 'hover:text-black'
+
+        = link_to new_merchant_report_path(@merchant),
+                  title: t('.report_a_fault.title'),
+                  data: { turbo_stream: true } do
+          = lucide_icon 'bug'
+
+    article.p-3.space-y-6 data-controller="merchants"
+      header.flex.flex-col.items-center.space-y-3
+        = merchant_icon_svg(@merchant.icon)
+        h1.text-3xl.text-center= @merchant.name
+
+        - if @merchant.category.present?
+          p.badge.badge-info
+            = t("categories.#{@merchant.category}", default: @merchant.category.capitalize)
+
+        - if @merchant.address?
+          .panel.panel-base-200.text-center
+            == @merchant.full_address_with_country
+
+      .flex.items-center.justify-center.gap-3
+        - if @merchant.monero?
+          = image_tag 'coins/logo-monero.svg', class: 'w-10 hover:scale-110 transition-transform', title: t('.monero_accepted')
+        - if @merchant.bitcoin?
+          = image_tag 'coins/logo-bitcoin.svg', class: 'w-10 hover:scale-110 transition-transform', title: t('.bitcoin_accepted')
+        - if @merchant.june?
+          = image_tag 'coins/logo-june.svg', class: 'w-10 hover:scale-110 transition-transform', title: t('.june_accepted')
+        - if @merchant.lightning?
+          = image_tag 'coins/logo-lightning.svg', class: 'w-10 hover:scale-110 transition-transform', title: t('.lightning_accepted')
+        - if @merchant.contact_less?
+          = image_tag 'coins/nfc-highlight.svg', class: 'w-10 hover:scale-110 transition-transform dark:bg-white dark:rounded-full dark:p-0.5 dark:border', title: t('.contact_less_accepted')
+
+        - if @merchant.ask_kyc?
+          = image_tag 'kyc.png', alt: 'KYC', title: 'KYC', class: 'w-10 h-10 rounded-full'
+        - else
+          = image_tag 'kyc_not.png', alt: 'No KYC', title: 'No KYC', class: 'w-10 h-10'
+
+      - if @merchant.description?
+        div
+          h3.mb-2.uppercase.font-bold.text-primary= t('description')
+
+          .panel.panel-base-300
+            = @merchant.description
+
+      - if @merchant.contact?
+        div
+          h3.mb-2.uppercase.font-bold.text-primary= t('contact')
+          .panel.panel-base-300
+            = render 'merchants/contacts', merchant: @merchant
+
+      div
+        h3.mb-2.uppercase.font-bold.text-primary= t('other')
+        .panel.panel-base-300.space-y-1
+          - if @merchant.opening_hours.present?
+            - multi_hours = @merchant.opening_hours_sentences.count > 1
+            .flex.items-center class=(multi_hours ? 'gap-6' : 'gap-1')
+              .flex-shrink-0= lucide_icon 'clock', class: 'w-4', title: Merchant.human_attribute_name(:opening_hours)
+              - if @merchant.opening_hours_sentences.count > 1
+                ul.list-disc
+                  - @merchant.opening_hours_sentences.each do |sentence|
+                    li= sentence
+              - else
+                = @merchant.opening_hours_sentences.first
+
+          p title=t('.home_delivery')
+            => lucide_icon 'truck', class: 'inline-flex w-4 me-1'
+            span class=('line-through opacity-50' unless @merchant.delivery?)
+              = t('.home_delivery')
+              - if @merchant.delivery && @merchant.delivery_zone
+                =< "(#{@merchant.delivery_zone})"
+
+
+      - if @merchant.latitude
+        .overflow-visible
+          h3.mb-2.uppercase.font-bold.text-primary= t('.itinerary_title')
+
+          .panel.panel-base-300.flex.items-center.justify-between
+            = link_to new_merchant_itinerary_path(@merchant),
+                      data: { merchants_target: :itinerary } do
+              = t('.itinerary.calculate_my_itinerary')
+              = lucide_icon 'car', class: 'inline-flex ml-2'
+
+            = render 'tooltip', text: t('.tooltip_itinerary_html'), position: :left
+
+      - if allowed_to?(:index?, Comment)
+        = render 'comments', merchant: @merchant, comments: @comments, pagy: @pagy
+
+      - unless Rails.env.production?
+        div
+          h3.mb-2.uppercase.font-bold.text-primary Debug
+
+          details.panel.panel-base-300
+            summary.cursor-pointer JSON Feature
+            pre.mt-2.overflow-x-auto
+              == JSON.pretty_generate(@merchant.raw_feature.to_h)
+
+      .space-y-1
+        p.text-sm.text-right
+          = link_to @merchant.osm_link, target: :_blank do
+            = t('.view_on_osm')
+
+        - if @merchant.last_survey_on
+          p.text-right.text-xs.text-gray-600.italic.dark:text-gray-400
+            = t('.last_survey_on', date: l(@merchant.last_survey_on))
+
+  = render 'map', merchant: @merchant
+
+  #modal
+
+  script type="application/ld+json"
+    == schema_dot_org_merchant(@merchant)

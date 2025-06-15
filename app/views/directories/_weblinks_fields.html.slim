@@ -1,0 +1,16 @@
+.nested-fields.relative.panel.panel-base-200 class=('opacity-50' unless f.object.enabled?)
+  = f.input :id, as: :hidden, wrapper: false
+  = f.input :_destroy, as: :hidden, wrapper: false
+
+  .flex.flex-col.items-center.gap-3
+    = f.input :url
+    = f.input :title
+    = f.input :enabled, as: :boolean unless f.object.weblinkable.from_proposition?
+
+  .remove-link-wrapper.absolute.top-2.right-2
+    = link_to "#",
+              class: 'btn btn-square btn-xs btn-error',
+              data: { \
+                action: "click->nested-form#removeAssociation" \
+              } do
+      == lucide_icon('x')

@@ -1,0 +1,44 @@
+article
+  header.hero.bg-fixed.bg-banner-open-source
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= @project.title
+        p= @project.description
+
+        .panel.bg-base-300/50.lg:inline-block.overflow-x-auto.max-w-sm.lg:max-w-max
+          - if @project.iframe_url?
+            p
+              = link_to @project.iframe_url, target: :_blank, class: 'text-lg' do
+                = lucide_icon 'link', class: 'inline-flex w-5', title: 'Website'
+                =< @project.iframe_url
+
+          - if @project.github_url?
+            p.mt-1
+              = link_to @project.github_url, target: :_blank, class: 'text-lg', title: 'Github repository' do
+                = lucide_icon 'github', class: "w-5 inline-flex"
+                =< @project.github_url
+
+  section.article-body.max-w-3xl
+    / TODO: Find a way to load the website by iframe when domain
+    / name conflict with Rails router will be fixed
+    / - if @project.iframe_url?
+      iframe.w-full.h-screen src=@project.iframe_url
+
+    - if @project.website_screenshot?
+      figure.mb-6
+        - image = image_tag "projects/#{@project.website_screenshot}", class: "mx-auto object-cover rounded-t-lg rounded-lg border-2 border-base-300/80 hover:border-primary transition-color"
+        - if @project.iframe_url?
+          = link_to @project.iframe_url, target: :_blank do
+            = image
+        - else
+          = image
+
+        figcaption.text-xs.text-center.italic.mt-2
+          = t('.website_homepage')
+
+    - if @project.video?
+      div
+        h2.text-primary.uppercase.mb-3= t('video_tutorial')
+
+        = render 'articles/video', video: @project.video

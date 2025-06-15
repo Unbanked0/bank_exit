@@ -1,0 +1,11 @@
+- details_html = {} unless defined?(details_html)
+
+details.dropdown.dropdown-end *{**details_html}
+  summary.btn.btn-square.btn-soft
+    = lucide_icon 'ellipsis-vertical'
+
+  .dropdown-content.bg-base-200.rounded-box.z-1.w-72.shadow-sm.border.border-base-content/20
+    = yield(:dropdown_header)
+
+    ul.menu.space-y-2.w-full
+      = yield(:dropdown_menu)

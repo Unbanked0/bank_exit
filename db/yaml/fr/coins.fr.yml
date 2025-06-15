@@ -1,0 +1,55 @@
+---
+- identifier: monero
+  name: Monero
+  ticker: XMR
+  description:
+    - Moyen d'échange axé sur la confidentialité totale, il garantit des transactions intraçables comme des espèces numériques. Sécurisé en proof of Work (PoW) par ordinateur classique, le fisc US a offert 620 000$ à quiconque réussirait à casser son chiffrement, sans succès.
+    - Sa force réside dans son anonymat complet, contrairement à l’euro numérique, qui sera ultra surveillé. Bien que les systèmes bancaires et étatiques le dénigrent car ils le craignent, les attaques contre Monero l'ont beaucoup renforcé.
+    - Son cours a été relativement stable de 2022 à 2025 comparé à la hausse de Bitcoin.
+  usage: Moyen de paiement
+  links:
+    - https://getmonero.org
+    - https://monero.eco
+    - https://www.abcbourse.com/graphes/eod/XMRUSDu/lc9
+
+- identifier: june
+  name: June
+  ticker: Ğ1
+  description:
+    - Cryptomonnaie inventée en France et basée sur la Théorie Relative de la Monnaie (TRM), elle assure une création monétaire équitable entre ses membres. Son avantage est son modèle décentralisé et humain grâce à la Toile de Confiance (WoT) unique au monde.
+    - Même si elle est hautement traçable, la June n'a pas de cours exprimé en euro et est donc très indépendante et résiliente du système financier, et très ancrée dans le lien local avec G-marchés réguliers.
+  usage: Identité citoyenne
+  links:
+    - https://monnaie-libre.fr
+    - https://forum.monnaie-libre.fr/c/rencontres/21
+    - https://carte.monnaie-libre.fr/?lat=46.240651955001695&lng=2.1972656250000004&zoom=5
+
+- identifier: bitcoin
+  name: Bitcoin
+  ticker: BTC
+  description:
+    - Première crypto décentralisée, sécurisée par la preuve de travail (PoW), Bitcoin est vu comme l’or numérique et ses 15 années d'existence ont prouvé sa capacité de réserve de valeur mondiale. Bien que hautement traçable, sa rareté et son indépendance des banques le rendent résistant à l’inflation et à la spoliation.
+    - A mesure que la finance traditionnelle se déverse dans ce cryptoactif révolutionnaire, sa volatilité a tendance à réduire avec le temps. Le cours de Bitcoin a historiquement prouvé une croissance impressionnante de près de +90%/an par an en moyenne, chaque année depuis 10 ans.
+  usage: Réserve de valeur
+  links:
+    - https://bitcoin.fr
+    - https://bitcoin.org/files/bitcoin-paper/bitcoin_fr.pdf
+    - https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/
+
+- identifier: gold
+  name: Or
+  description:
+    - Valeur refuge ancestrale, l'or a historiquement protégé contre l’inflation et les crises. Contrairement aux autres réserves de valeur, il est physique et reconnu mondialement sans dépendre d’un système informatique, mais il est peu envisageable en pratique pour des échanges réguliers entre citoyens à part en cas de rupture de normalité conséquente.
+  usage: Réserve de valeur
+  links:
+    - https://www.bitgild.com/fr
+    - https://celticgold.eu
+
+- identifier: silver
+  name: Argent
+  description:
+    - Moyen d'échange de crise, plus facile à envisager pour les échanges et achats réguliers en cas de crise par sa plus faible densité de valeur que l'or. Il allie usage industriel et intraçabilité, ce que l’euro numérique ne peut offrir.
+  usage: Moyen de paiement critique
+  links:
+    - https://www.bitgild.com/fr
+    - https://celticgold.eu

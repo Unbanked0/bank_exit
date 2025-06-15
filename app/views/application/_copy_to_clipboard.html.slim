@@ -1,0 +1,15 @@
+- cstv = !defined?(clipboard_success_text_value) ? t('copied') : clipboard_success_text_value
+- icon = defined?(copy_icon) ? copy_icon : lucide_icon('copy', class: 'w-4')
+
+= content_tag(:div,
+    class: "btn btn-square btn-sm btn-ghost #{extra_class if defined?(extra_class)}",
+    title: defined?(title) && title.present? ? title : t('copy_to_clipboard'),
+    data: { \
+      controller: "clipboard",
+      action: "click->clipboard#copy:prevent #{extra_action if defined?(extra_action)}",
+      clipboard_content_value: clipboard_value,
+      clipboard_success_icon_value: html_escape_once(lucide_icon('check-check', class: 'inline-flex w-4')),
+      clipboard_success_text_value: cstv,
+      clipboard_success_class: "btn-success" \
+    }) do
+  = icon

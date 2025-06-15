@@ -1,0 +1,84 @@
+---
+- name: Europe
+  link: https://t.me/Bank_Exit
+
+  countries:
+    - name: France
+      alpha2: FR
+      link: "#"
+
+      regions:
+        - name: Paris et Ile-de-France
+          link: https://t.me/Bitcoin_Paris_stop_CBDC
+        - name: Val d'Oise 95
+          link: https://t.me/Bitcoin_95_anti_CBDC
+        - name: Evreux (Eure 27)
+          link: https://t.me/BitcoinEvreuxSTOPCBDC
+        - name: Rouen
+          link: https://t.me/+eNG5nXOGydYwZTQ0
+        - name: Maurepas (78)
+          link: https://t.me/SortieDeBanque_Maurepas_78
+        - name: Lille
+          link: https://t.me/Bitcoin_Lille_stop_CBDC
+        - name: Metz
+          link: https://t.me/BitcoinMetz_antiCBDC
+        - name: Strasbourg
+          link: https://t.me/Strasbourg_Vivre_sans_banque
+        - name: Orléans
+          link: https://t.me/Bitcoin_Orleans_stopCBDC
+        - name: Poitiers
+          link: https://t.me/+FhZFTD6PVnxjOGM0
+        - name: Rennes
+          link: https://t.me/SortieDeBanqueRennes
+        - name: Dinard
+          link: https://t.me/+1XLUPVtJ4p02ODlk
+        - name: Brest
+          link: https://t.me/Bitcoin_BREST_anti_CBDC
+        - name: Vannes
+          link: https://t.me/Vannes_antiCBDC
+        - name: Lorient
+          link: https://t.me/+aHWkuZSOz3UxNjc0
+        - name: Nantes
+          link: https://t.me/s2bbcn
+        - name: Bordeaux
+          link: https://t.me/Bitcoin_Bordeaux_anti_CBDC
+        - name: Lyon
+          link: https://t.me/BitcoinLyon_anti_CBDC
+        - name: Ain 01 / Alpes
+          link: https://t.me/+Dwo3A5JY5_MwNGNk
+        - name: Aix-en-Provence
+          link: https://t.me/kryptaix_noCBDC
+        - name: Marseille
+          link: https://t.me/MarseilleMoneros
+        - name: Frejus/Cannes
+          link: https://t.me/bitcoin_frejus_anti_cbdc
+        - name: Nice
+          link: https://t.me/nice_sortiedebanque
+        - name: Corse
+          link: https://t.me/Corse_anti_CBDC
+        - name: Agen
+          link: https://t.me/Agen_SortieDeBanque
+        - name: Toulouse
+          link: https://t.me/+ZshPZYmJQq5lMzk0
+        - name: Montpellier
+          link: https://t.me/i0mfe0gfoTI5MzE0
+        - name: Beziers/Agde
+          link: https://t.me/beziersmonero
+        - name: Perpignan/Narbonne (11,66)
+          link: https://t.me/+8E07wtyG424yYjRk
+        - name: Pyrénées
+          link: https://t.me/Bitcoin_Pyrenees_antiCBDC
+        - name: Guadeloupe
+          link: https://t.me/BTC_Guadeloupe_stop_CBDC
+        - name: Martinique
+          link: https://t.me/+ipEjl0qbfXlhNjA0
+        - name: La Réunion
+          link: https://t.me/SortieDeBanque974
+        - name: Tahiti
+          link: https://t.me/bitcoin_tahiti
+        - name: Commerçant
+          link: https://t.me/Bitcoin_commerces
+
+    - name: Italy
+      alpha2: IT
+      link: https://t.me/+1HIz3ht2sWMzOTI0

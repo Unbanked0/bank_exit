@@ -1,0 +1,162 @@
+merchant_attributes: &merchant_attributes
+  name: Nom de l'entreprise
+  category: Catégorie
+  street: Nom de rue
+  postcode: Code postal
+  city: Ville
+  country: Pays
+  description: Description
+  email: Email
+  phone: Téléphone
+  website: Site internet
+  opening_hours: Horaires d'ouverture
+
+  bitcoin: Bitcoin
+  monero: Monero
+  lightning: Lightning Network
+  june: June
+  contact_less: LN sans contact
+  gold: Or
+  silver: Argent
+  coins: Monnaies
+  ask_kyc: Demande une validation d'identité
+
+  contact_session: Contact Session
+  contact_signal: Contact Signal
+  contact_matrix: Contact Matrix
+  contact_jabber: Contact Jabber
+  contact_telegram: Contact Telegram
+  contact_facebook: Contact Facebook
+  contact_instagram: Contact Instagram
+  contact_twitter: Contact Twitter/X
+  contact_youtube: Contact Youtube
+  contact_tiktok: Contact Tiktok
+  contact_linkedin: Contact Linkedin
+  contact_tripadvisor: Contact Tripadvisor
+  contact_odysee: Contact Odysée
+  contact_crowdbunker: Contact Crowdbunker
+  contact_francelibretv: Contact FranceLibre.tv
+
+  delivery: Livraison à domicile ?
+  delivery_zone: Lieux de livraison
+
+  last_survey_on: Date de dernière vérification des données
+
+  created_at: Date d'ajout
+
+fr:
+  activemodel:
+    attributes:
+      merchant_proposal:
+        <<: *merchant_attributes
+        other_category: Autre catégorie
+        proposition_from: Email de suivi (facultatif)
+
+  activerecord:
+    models:
+      comment:
+        zero: commentaire
+        one: commentaire
+        other: commentaires
+      address: Adresse
+      directory: annuaire
+      delivery_zone: zone de livraison
+      contact_way: moyen de contact
+      coin_wallet: portefeuille crypto
+      weblink: liens web
+
+    attributes:
+      merchant:
+        <<: *merchant_attributes
+        full_address: Adresse postale
+
+      comment:
+        content: Commentaire
+        rating: Note
+        created_at: Date de création
+        updated_at: Date de signalement
+        pseudonym: Pseudonyme
+
+        flag_reasons:
+          spam: Spam ou contenu trompeur
+          violent: Contenu violent ou abject
+          sexual: Contenu à caractère sexuel
+          hate: Contenu abusif ou incitant à la haine
+          harassment: Harcèlement ou intimidation
+          terrorism: Incitation au terrorisme
+          child_abuse: Maltraitance d'enfants
+          illegal: Contenu illégal
+          other: Autre raison
+
+      coin_wallet:
+        enabled: Activé ?
+        coin: Monnaie
+        public_address: Adresse publique
+        coins:
+          bitcoin: Bitcoin
+          monero: Monero
+          june: June
+          lightning: Bitcoin Lightning
+
+      contact_way:
+        enabled: Activé ?
+        role: Type
+        value: Valeur
+        roles:
+          email: Email
+          phone: Téléphone
+          website: Site internet
+          twitter: Twitter
+          facebook: Facebook
+          instagram: Instagram
+          tiktok: Tiktok
+          youtube: Youtube
+          odysee: Odysée
+          crowdbunker: Crowdbunker
+          francelibretv: FranceLibre.tv
+          session: Session
+          signal: Signal
+          telegram: Telegram
+          matrix: Matrix
+          jabber: Jabber
+          tripadvisor: Tripadvisor
+          linkedin: Linkedin
+          substack: Substack
+          simplex: SimpleX
+
+      directory:
+        name: Nom
+        description: Description
+        delivery_zone: Zone de livraison
+        enabled: Activé ?
+        spotlight: En vedette ?
+        category: Catégorie
+        logo: Logo
+        remove_logo: Supprimer le logo
+        banner: Bannière
+        remove_banner: Supprimer la bannière
+        coins: Monnaies
+        contact_ways: Moyen de contact
+        weblinks: Liens web
+
+      delivery_zone:
+        enabled: Activé ?
+        mode: Zone
+        value: Valeur
+
+        modes:
+          city: Ville
+          postcode: Code Postal
+          department: Département
+          region: Région
+          country: Pays
+          continent: Continent
+          world: Monde
+
+      weblink:
+        url: Lien
+        title: Titre
+        enabled: Activé ?
+
+      address:
+        label: Adresse approximative du "commerçant"

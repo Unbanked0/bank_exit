@@ -1,0 +1,45 @@
+- merchant = comment.commentable
+
+tr
+  td class="max-w-[500px]"
+    .text-sm.mb-2
+      == simple_format(comment.content)
+
+    .text-xs.truncate
+      span.font-bold= comment.pseudonym
+      |< [
+      = pretty_country_html(comment.language, show_flag: true)
+      | ]
+
+  td
+    span.badge.badge-success.truncate.max-w-72
+      = "#{comment.rating}/5"
+
+  - unless params[:controller] == 'admin/merchants'
+    td
+      .font-semibold.mb-3
+        = link_to merchant.name, polymorphic_path([:admin, merchant])
+
+      .flex.flex-col.lg:flex-row.items-center.gap-2
+        = merchant_icon_svg(merchant.icon, width: 50, height: 50)
+        .text-xs= t(merchant.category, scope: 'categories')
+
+  td
+    - if comment.flag_reason
+      .status.status-lg.status-error aria-label="status"
+      =< Comment.human_enum_name(:flag_reason, comment.flag_reason)
+    - else
+      .status.status-lg.status-success aria-label="status"
+
+  td.text-center
+    p title=Comment.human_attribute_name(:created_at)
+      = l(comment.created_at)
+
+    - if comment.updated?
+      = lucide_icon 'move-left', class: 'mx-auto w-5 h-5 -rotate-90 bg-primary text-primary-content rounded-full my-2 p-1'
+
+      p title=Comment.human_attribute_name(:updated_at)
+        = l(comment.updated_at)
+
+  td
+    = render 'admin/comments/actions', comment: comment

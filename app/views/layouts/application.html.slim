@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    = seo_meta_tags(@pagy)
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = yield :head
+
+    / Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!)
+    = tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
+
+    = stylesheet_link_tag 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+    = stylesheet_link_tag 'https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.css'
+    = stylesheet_link_tag 'https://unpkg.com/leaflet.fullscreen@4.0.0/Control.FullScreen.css'
+    = stylesheet_link_tag 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css'
+    = stylesheet_link_tag 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css'
+
+    = stylesheet_link_tag :app
+
+    = render 'initial_javascript'
+    = javascript_importmap_tags
+
+    script type="application/ld+json"
+      == schema_dot_org_organization
+
+  body.max-w-screen-3xl.mx-auto data-controller=("layout" if welcome_page?) data-layout-header-background-class=("bg-base-100 border-b-2 border-primary transition-colors" if welcome_page?)
+    header.fixed.max-w-screen-3xl.w-full.print:hidden class=('z-[9999]') class=('bg-base-100 border-b-2 border-primary' unless welcome_page?) data-layout-target=("header" if welcome_page?)
+      #flashes= render 'flashes'
+      = render 'nav', projects: @projects
+
+    main.pt-24
+      = yield
+
+    = render 'upper_footer', projects: @projects, contacts: @contacts
+    = render 'footer'
+    = render 'scam_alert'
+    = render 'turbo_confirm'
+
+    = render 'ribbon' unless Rails.env.production?
+
+    = turbo_stream_from :flashes
+    = turbo_stream_from [:flashes, I18n.locale]

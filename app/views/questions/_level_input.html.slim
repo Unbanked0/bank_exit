@@ -1,0 +1,14 @@
+#questions_level_wrapper
+  = f.input :level, \
+            collection: levels,
+            input_html: {  \
+              data: { \
+                controller: :questions,
+                questions_url_value: fetch_services_questions_path,
+                action: 'change->questions#loadAssociatedSelect' \
+              },
+            },
+            label_html: { class: 'mb-2' },
+            wrapper: false,
+            prompt: :translate,
+            required: false

@@ -1,0 +1,13 @@
+article
+  header.hero.bg-fixed.bg-banner-liberty
+    .hero-overlay
+    .hero-content.py-16
+      .max-w-3xl
+        .text-center.space-y-5.text-neutral-content
+          h1.text-3xl.font-bold= t('.title')
+
+        .space-y-8.mx-auto.py-10
+          .panel.panel-info.space-y-3
+            = lucide_icon 'info', width: 'auto', height: 'auto', class: 'w-16 mx-auto'
+
+            = t('.body_html')

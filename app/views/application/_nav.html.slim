@@ -1,0 +1,198 @@
+- grocery = projects.find(&:grocery?)
+- local_groups = projects.find(&:local_groups?)
+- project = Project.find('accounting', decorate: true)
+- business_guide_tutorial = Tutorial.find('cryptopayment-for-business')
+
+- active_project = (params[:controller] == 'projects' && !params[:id].in?(%w[map grocery local_groups])) || params[:id] == 'flyer'
+- active_article = params[:controller].in?(%w[blogs tutorials]) && params[:id] != 'flyer'  && params[:id] != 'accounting' && params[:id] != 'cryptopayment-for-business'
+- active_other = params[:controller].in?(%w[local_groups colectives media])
+
+nav.navbar
+  .navbar-start
+    / Mobile
+    .dropdown
+      .lg:hidden tabindex="0" role="button"
+        = lucide_icon 'menu', class: 'w-7 h-7 cursor-pointer'
+
+      ul.menu.menu-md.dropdown-content.bg-base-100.rounded-box.z-1.mt-3.w-64.p-2.shadow.border.border-base-content/20 tabindex="0"
+        li
+          = link_to maps_path, class: ('text-primary' if params[:controller] == 'maps') do
+            = t('.menu.map')
+
+        li
+          = link_to directories_path, class: ('text-primary' if params[:controller] == 'directories') do
+            = t('.menu.directories')
+
+        li
+          = link_to project_path(:grocery), class: ('text-primary' if params[:controller] == 'projects' && params[:id] == 'grocery') do
+            = grocery.title
+
+        li
+          span class=('text-primary' if active_project)
+            = t('.menu.projects')
+
+          ul.p-2
+            - projects.each do |project|
+              - next if project.identifier.in?(%w[map grocery local_groups accounting])
+              li
+                = link_to project.link,
+                          class: ('text-primary' if params[:id] == project.identifier),
+                          target: (:_blank if project.external?) do
+                  = project.title
+                  - if project.external?
+                    = lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1'
+
+        li
+          span class=('text-primary' if active_article)
+            = t('.menu.articles')
+
+          ul.p-2
+            li
+              = link_to blogs_path, class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do
+                = t('.menu.blogs')
+
+            li
+              = link_to tutorials_path, class: ('text-primary' if params[:controller] == 'tutorials') do
+                = t('.menu.tutorials')
+
+        li
+          span class=('text-primary' if active_other)
+            = t('other')
+
+          ul.p-2
+            li
+              = link_to collective_path, class: ('text-primary' if params[:controller] == 'collectives') do
+                = t('collectives.show.title')
+
+            li
+              = link_to local_groups_path, class: ('text-primary' if params[:controller] == 'local_groups') do
+                = local_groups.title
+                = image_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white w-5 rounded-full', title: 'Telegram'
+
+            li
+              = link_to media_path, class: ('text-primary' if params[:controller] == 'media') do
+                = t('media.index.title')
+
+        li
+          = link_to '#contact' do
+            = t('.menu.contact')
+
+        li
+          span
+            = t('.menu.pros')
+            .status.status-primary
+
+          ul.p-2
+            li
+              = link_to tutorial_path(business_guide_tutorial.identifier),
+                        class: ('text-primary' if params[:id] == 'cryptopayment-for-business') do
+                = business_guide_tutorial.short_title
+
+            li
+              = link_to project.link,
+                        class: ('text-primary' if params[:id] == 'accounting') do
+                = project.title
+
+    / Desktop
+    = link_to root_path, class: 'flex items-center justify-center gap-2 ml-3 lg:ml-0' do
+      = image_tag logo_by_locale, class: 'w-20 h-20 object-cover rounded-full'
+      span class="self-center font-semibold whitespace-nowrap"
+        span.block= t('.collectif')
+        span.block= t('.bank_exit')
+
+  .navbar-center.hidden class="lg:!flex"
+    ul.menu.menu-horizontal.px-1
+      li
+        = link_to maps_path, class: ('text-primary' if params[:controller] == 'maps') do
+          = t('.menu.map')
+
+      li
+        = link_to directories_path, class: ('text-primary' if params[:controller] == 'directories') do
+          = t('.menu.directories')
+
+      li
+        = link_to project_path(:grocery), class: ('text-primary' if params[:controller] == 'projects' && params[:id] == 'grocery') do
+          = grocery.title
+
+      li
+        details.dropdown
+          summary class=("text-primary" if active_project)
+            = t('.menu.projects')
+
+          ul.p-2.bg-base-200.w-max
+            - projects.each do |project|
+              - next if project.identifier.in?(%w[map grocery local_groups accounting])
+              li
+                = link_to project.link,
+                          class: ('text-primary' if params[:id] == project.identifier),
+                          target: (:_blank if project.external?) do
+                  = project.title
+                  - if project.external?
+                    = lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1'
+
+      li
+        details.dropdown
+          summary class=('text-primary' if active_article)
+            = t('.menu.articles')
+
+          ul.p-2.bg-base-200.w-max
+            li
+              = link_to blogs_path, class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do
+                = t('.menu.blogs')
+
+            li
+              = link_to tutorials_path, class: ('text-primary' if params[:controller] == 'tutorials') do
+                = t('.menu.tutorials')
+
+      li
+        details.dropdown
+          summary class=('text-primary' if active_other)
+            = t('other')
+
+          ul.p-2.bg-base-200.w-max
+            li
+              = link_to collective_path, class: ('text-primary' if params[:controller] == 'collectives') do
+                = t('collectives.show.title')
+
+            li
+              - local_groups = projects.find(&:local_groups?)
+              = link_to local_groups_path, class: ('text-primary' if params[:controller] == 'local_groups') do
+                = local_groups.title
+                = image_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white w-5 rounded-full', title: 'Telegram'
+
+            li
+              = link_to media_path, class: ('text-primary' if params[:controller] == 'media') do
+                = t('media.index.title')
+
+      li
+        = link_to '#contact' do
+          = t('.menu.contact')
+
+      li
+        details.dropdown
+          summary class=("text-primary" if params[:id].in?(%w[accounting cryptopayment-for-business]))
+            .status.status-secondary
+            = t('.menu.pros')
+
+          ul.p-2.bg-base-200.w-max
+            li
+              = link_to tutorial_path(business_guide_tutorial.identifier),
+                        class: ('text-primary' if params[:id] == 'cryptopayment-for-business') do
+                = business_guide_tutorial.short_title
+
+            li
+              = link_to project.link,
+                        class: ('text-primary' if params[:id] == 'accounting') do
+                = project.title
+
+  .navbar-end
+    ul.menu.menu-horizontal.items-center.px-1
+      li
+        = render 'language_switcher'
+
+      li
+        = render 'theme_switcher'
+
+      li
+        = link_to 'https://github.com/Unbanked0', target: :_blank, title: t('.menu.github_title') do
+          = lucide_icon 'github', class: "w-6"

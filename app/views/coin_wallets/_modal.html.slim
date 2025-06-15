@@ -1,0 +1,15 @@
+- content_for(:title) do
+  h3.text-xl.font-semibold
+    = @coin_wallet.walletable.name
+
+= render_modal do
+  figure.text-center
+    == qr_code_for_coin_wallet(@coin_wallet, show_logo: true)
+
+    figcaption.mt-2
+      .panel.panel-sm.panel-base-300.text-gray-400.mb-1.tracking-wider.break-all.inline-block
+        == highlight_address(@coin_wallet.public_address)
+
+      p= render 'copy_to_clipboard',
+                clipboard_value: @coin_wallet.public_address,
+                clipboard_success_text_value: nil

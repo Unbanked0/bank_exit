@@ -1,0 +1,156 @@
+merchant_attributes: &merchant_attributes
+  name: Nombre de empresa
+  category: Categoría
+  street: Nombre de la calle
+  postcode: Código postal
+  city: Ciudad
+  country: País
+  description: Descripción
+  email: Correo electrónico
+  phone: Teléfono
+  website: Sitio web
+  opening_hours: Horario de apertura
+
+  bitcoin: Bitcoin
+  monero: Monero
+  lightning: Lightning Network
+  june: June
+  contact_less: LN sin contacto
+  gold: Oro
+  silver: Plata
+  coins: Monedas
+  ask_kyc: Solicita una validación de identidad
+
+  contact_session: Contacto Session
+  contact_signal: Contacto Signal
+  contact_matrix: Contacto Matrix
+  contact_jabber: Contacto Jabber
+  contact_telegram: Contacto Telegram
+  contact_facebook: Contacto Facebook
+  contact_instagram: Contacto Instagram
+  contact_twitter: Contacto Twitter/X
+  contact_youtube: Contacto Youtube
+  contact_tiktok: Contacto Tiktok
+  contact_linkedin: Contacto Linkedin
+  contact_tripadvisor: Contacto Tripadvisor
+  contact_odysee: Contacto Odysee
+  contact_crowdbunker: Contacto Crowdbunker
+  contact_francelibretv: Contacto FranceLibre.tv
+
+  delivery: ¿Entrega a domicilio?
+  delivery_zone: Ubicaciones de entrega
+
+  last_survey_on: Fecha de la última verificación de datos
+
+es:
+  activemodel:
+    attributes:
+      merchant_proposal:
+        <<: *merchant_attributes
+        other_category: Otra categoría
+        proposition_from: Correo electrónico de seguimiento (opcional)
+
+  activerecord:
+    models:
+      comment:
+        zero: commentario
+        one: commentario
+        other: commentarios
+      address: dirección
+      directory: directorio
+      delivery_zone: zona de entrega
+      contact_way: vía de contacto
+      coin_wallet: billetera de criptomonedas
+      weblink: enlace web
+
+    attributes:
+      merchant:
+        <<: *merchant_attributes
+        full_address: Dirección
+
+      comment:
+        content: Commentario
+        rating: Nota
+        pseudonym: Seudónimo
+
+        flag_reasons:
+          spam: Spam o contenido engañoso
+          violent: Contenido violento o abyecto
+          sexual: Contenido de carácter sexual
+          hate: Contenido abusivo o de odio
+          harassment: Acoso o intimidación
+          terrorism: Incitación al terrorismo
+          child_abuse: Abuso infantil
+          illegal: Contenido ilegal
+          other: Otro motivo
+
+      coin_wallet:
+        enabled: Activado ?
+        coin: Moneda
+        public_address: Dirección pública
+        coins:
+          bitcoin: Bitcoin
+          monero: Monero
+          june: June
+          lightning: Bitcoin Lightning
+
+      contact_way:
+        role: Tipo
+        value: Valor
+        roles:
+          email: Correo electrónico
+          phone: Telephono
+          website: Pagina web
+          twitter: Twitter
+          facebook: Facebook
+          instagram: Instagram
+          tiktok: Tiktok
+          youtube: Youtube
+          odysee: Odysée
+          crowdbunker: Crowdbunker
+          francelibretv: FranceLibre.tv
+          session: Session
+          signal: Signal
+          telegram: Telegram
+          matrix: Matrix
+          jabber: Jabber
+          tripadvisor: Tripadvisor
+          linkedin: Linkedin
+          substack: Substack
+          simplex: SimpleX
+
+      directory:
+        name: Nombre
+        description: Descripción
+        delivery_zone: Zona de entrega
+        enabled: ¿Activado?
+        spotlight: ¿Destacado?
+        category: Categoría
+        logo: Logo
+        remove_logo: Eliminar logo
+        banner: Banner
+        remove_banner: Eliminar banner
+        coins: Monedas
+        contact_ways: Medio de contacto
+        weblinks: Enlaces web
+
+      delivery_zone:
+        mode: Área
+        value: Valor
+
+        modes:
+          city: Ciudad
+          postcode: Código Postal
+          department: Departamento
+          region: Región
+          country: País
+          continent: Continente
+          world: Mundo
+
+      weblink:
+        url: Enlace
+        title: Título
+        enabled: Activado ?
+
+      address:
+        label: Dirección aproximada del "comerciante"

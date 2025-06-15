@@ -1,0 +1,54 @@
+tr
+  td
+    label
+      = check_box_tag 'merchant[id]', merchant.id, false,
+                      class: 'checkbox checked:border-primary checked:bg-primary checked:text-primary-content',
+                      disabled: merchant.available?,
+                      data: { \
+                        admin__table_target: 'checkbox', \
+                        action: 'input->admin--table#toggle' \
+                      }
+
+  th scope="row"
+    .whitespace-nowrap
+      .text-base.font-semibold.truncate.max-w-72 title=merchant.name
+        = link_to admin_merchant_path(merchant) do
+          = highlight(merchant.name, params[:query])
+
+      .font-semibold.text-gray-500.mb-2
+        = highlight("##{merchant.identifier}", params[:query])
+
+      .truncate.max-w-72
+        == highlight(merchant.full_address_with_country, params[:query])
+
+  td
+    .flex.flex-col.gap-2
+      = merchant_icon_svg(merchant.icon, width: 50, height: 50)
+      .text-xs= t(merchant.category, scope: 'categories')
+
+  td
+    == coins_list(merchant.coins, with_logo: true, size: 'w-6')
+
+  td
+    strong= merchant.comments_count
+    = lucide_icon 'message-square', class: 'w-4 inline-flex ml-1'
+
+  td
+    .status.status-lg> class=(merchant.deleted? ? 'status-error' : 'status-success') aria-label="status"
+    - if merchant.deleted?
+      | Désactivé
+    - else
+      | En ligne
+
+  td class=('text-center' if merchant.updated?)
+    p title=Merchant.human_attribute_name(:created_at)
+      = l(merchant.created_at)
+
+    - if merchant.updated?
+      = lucide_icon 'move-left', class: 'mx-auto w-5 h-5 -rotate-90 bg-primary text-primary-content rounded-full my-2 p-1'
+
+      p title=Merchant.human_attribute_name(:updated_at)
+        = l(merchant.updated_at)
+
+  td
+    = render 'actions', merchant: merchant

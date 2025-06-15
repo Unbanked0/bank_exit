@@ -1,0 +1,212 @@
+table.table.table-zebra
+  thead
+    tr
+      th= t('.thead.parameter')
+      th= t('.thead.type')
+      th = t('.thead.allowed_values')
+      th= t('.thead.default_value')
+      th= t('.thead.description')
+  tbody
+    tr
+      th scope="row"
+        | theme
+
+      td
+        span.badge.badge-info.badge-sm String
+
+      td
+        span.badge.badge-info.badge-sm light
+        =<> t('or')
+        span.badge.badge-info.badge-sm dark
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_THEME
+
+      td
+        p= t('.description.theme')
+
+    tr
+      th scope="row"
+        | latitude
+
+      td
+        span.badge.badge-info.badge-sm Float
+
+      td
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_LATITUDE
+
+      td
+        p= t('.description.latitude')
+
+    tr
+      th scope="row"
+        | longitude
+
+      td
+        span.badge.badge-info.badge-sm Float
+
+      td
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_LONGITUDE
+
+      td
+        p= t('.description.longitude')
+
+    tr
+      th scope="row"
+        | zoom
+
+      td
+        span.badge.badge-info.badge-sm Integer
+
+      td
+        span.badge.badge-info.badge-sm 1
+        =<> t('to')
+        span.badge.badge-info.badge-sm 18
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_ZOOM
+
+      td
+        p= t('.description.zoom')
+
+    tr
+      th scope="row"
+        | country
+
+      td
+        span.badge.badge-info.badge-sm String
+
+      td.block.w-max
+        .grid.grid-cols-3.lg:grid-cols-2.gap-1
+          - Merchant.available.pluck(:country).uniq.compact_blank.sort.each do |country|
+            div
+              span.badge.badge-info.badge-sm= country
+              =< pretty_country_html(country.to_sym, show_flag: true)
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_COUNTRY
+
+      td
+        p= t('.description.country_html')
+        p.panel.panel-info.panel-sm.mt-2
+          = t('.description.country_info_html')
+
+    tr
+      th scope="row"
+        | continent
+
+      td
+        span.badge.badge-info.badge-sm String
+
+      td
+        ul.space-y-1
+          - t('continents').each do |key, value|
+            li
+              span.badge.badge-info.badge-sm= key
+              span=< value
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_CONTINENT
+
+      td
+        p= t('.description.continent_html')
+        p.panel.panel-warning.panel-sm.mt-2
+          = t('.description.continent_info_html')
+
+    tr
+      th scope="row"
+        | coins
+
+      td
+        span.badge.badge-info.badge-sm Array[String]
+
+      td
+        - coins = %w[bitcoin monero june].map do |coin|
+          - content_tag(:span, class: 'badge badge-info badge-sm') { coin }
+        == coins.join(', ')
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_COINS
+
+      td
+        p= t('.description.coins')
+
+    tr
+      th scope="row"
+        | gestureHandling
+
+      td
+        span.badge.badge-info.badge-sm Boolean
+
+      td
+        span.badge.badge-info.badge-sm true
+        =<> t('or')
+        span.badge.badge-info.badge-sm false
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_GESTURE_HANDLING
+
+      td
+        p= t('.description.gesture_handling')
+
+    tr
+      th scope="row"
+        | fitBounds
+
+      td
+        span.badge.badge-info.badge-sm Boolean
+
+      td
+        span.badge.badge-info.badge-sm true
+        =<> t('or')
+        span.badge.badge-info.badge-sm false
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_FIT_BOUNDS
+
+      td
+        p= t('.description.fit_bounds')
+        p.panel.panel-warning.panel-sm.mt-2
+          = t('.description.fit_bounds_warning')
+
+    tr
+      th scope="row"
+        | clusters
+
+      td
+        span.badge.badge-info.badge-sm Boolean
+
+      td
+        span.badge.badge-info.badge-sm true
+        =<> t('or')
+        span.badge.badge-info.badge-sm false
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_CLUSTERS
+
+      td
+        p= t('.description.clusters')
+        p.panel.panel-warning.panel-sm.mt-2
+          = t('.description.clusters_warning')
+
+    tr
+      th scope="row"
+        | attribution
+
+      td
+        span.badge.badge-info.badge-sm Boolean
+
+      td
+        span.badge.badge-info.badge-sm true
+        =<> t('or')
+        span.badge.badge-info.badge-sm false
+
+      td
+        span.badge.badge-info.badge-sm= Setting::MAP_DEFAULT_SHOW_ATTRIBUTION
+
+      td
+        p= t('.description.attribution')

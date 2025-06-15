@@ -1,0 +1,51 @@
+.ribbon {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    overflow: hidden;
+    width: 165px;
+    height: 165px;
+}
+.ribbon .ribbon-container {
+    position: absolute;
+    bottom: 33px;
+    right: -170px;
+    padding: 7px 40px;
+    width: 455px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.5s;
+    transform: rotate(-45deg);
+}
+.ribbon .ribbon-container.staging {
+    background: #49a;
+}
+.ribbon .ribbon-container.development {
+    background: #090;
+}
+.ribbon .ribbon-container::before,
+.ribbon .ribbon-container::after {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    content: "";
+}
+.ribbon .ribbon-container::after {
+    top: auto;
+    bottom: 1px;
+}
+.ribbon .ribbon-container .env {
+    margin-bottom: 0;
+}
+.ribbon .ribbon-container .version,
+.ribbon .ribbon-container .server {
+    display: block;
+    font-size: 11px;
+}

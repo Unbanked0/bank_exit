@@ -1,0 +1,124 @@
+= simple_form_for directory,
+                  html: { class: 'space-y-5' } do |f|
+  - if directory.errors.any?
+    .panel.panel-error
+      ul.list-disc.list-inside
+        - directory.errors.each do |error|
+          li= error.full_message
+
+  .flex.flex-col.lg:flex-row.gap-3
+    = f.input :name
+    = f.input :category,
+              required: true,
+              prompt: :translate,
+              collection: directories_categories_select_helper
+
+  = f.input :description, required: true
+
+  .flex.flex-col.lg:flex-row.gap-3
+    = f.input :logo, as: :file,
+              input_html: { \
+                accept: Directory::ACCEPTED_CONTENT_TYPES.join(',') \
+              }
+    = f.input :banner, as: :file,
+              input_html: { \
+                accept: Directory::ACCEPTED_CONTENT_TYPES.join(',') \
+              }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= Address.model_name.human.capitalize
+
+    .panel.panel-base-200
+      = f.simple_fields_for :address do |ff|
+        = ff.input :label,
+                   label_html: { class: 'mb-2' },
+                   hint_html: { class: 'mt-2' },
+                   wrapper_html: { class: 'auto-search-wrapper' },
+                   input_html: { \
+                     data: { \
+                       controller: 'admin--address',
+                       admin__address_search_url_value: addresses_search_path \
+                     } \
+                   }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= CoinWallet.model_name.human.capitalize
+
+    p= t('.coin_wallet_description')
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :coin_wallets, directory.coin_wallets, wrapper: false, include_id: false do |ff|
+        = render 'coin_wallets_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :coin_wallets, directory.coin_wallets.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'coin_wallets_fields', f: f
+
+      = link_to t('.new_coin_wallet'), '#',
+                class: 'btn btn-success col-span-2 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= DeliveryZone.model_name.human.capitalize
+
+    p= t('.delivery_zone_description')
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :delivery_zones, directory.delivery_zones, wrapper: false, include_id: false do |ff|
+        = render 'delivery_zones_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :delivery_zones, directory.delivery_zones.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'delivery_zones_fields', f: f
+
+      = link_to t('.new_delivery_zone'), '#',
+                class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= ContactWay.model_name.human.capitalize
+
+    p= t('.contact_way_description')
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :contact_ways, directory.contact_ways, wrapper: false, include_id: false do |ff|
+        = render 'contact_ways_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :contact_ways, directory.contact_ways.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'contact_ways_fields', f: f
+
+      = link_to t('.new_contact_way'), '#',
+                class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= Weblink.model_name.human.capitalize
+
+    p= t('.weblink_description')
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :weblinks, directory.weblinks, wrapper: false, include_id: false do |ff|
+        = render 'weblinks_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :weblinks, directory.weblinks.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'weblinks_fields', f: f
+
+      = link_to t('.new_weblink'), '#',
+                class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  = f.button :submit, t('helpers.submit.directory.suggest')

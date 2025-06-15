@@ -1,0 +1,31 @@
+- coin_wallets = directory.coin_wallets.enabled
+- delivery_zones = directory.delivery_zones.enabled
+
+= link_to directory_path(directory), class: "card bg-base-200 shadow-sm hover:-translate-y-1 transition-transform #{'image-full' if directory.banner.attached?} #{'border-l-2 border-success' if delivery_zones.exists?}" do
+  - if directory.banner.attached?
+    figure
+      = image_tag url_for(directory.banner.variant(:thumb))
+
+  .card-body.space-y-2.justify-between
+    .space-y-2
+      - if directory.logo.attached?
+        .flex.items-center.gap-2
+          .avatar
+            .w-8.rounded-full
+              = image_tag url_for(directory.logo.variant(:thumb)), class: 'bg-base-content'
+          h2.card-title= directory.name
+      - else
+        h2.card-title= directory.name
+
+      div= directory.description&.truncate(150)
+
+    - if directory.category.present?
+      .badge.mx-auto.badge-secondary
+        = t(directory.category, scope: :directories_categories)
+
+    .flex.items-center.justify-center.gap-3
+      - coin_wallets.each do |coin_wallet|
+        = image_tag icon_by_coin(coin_wallet.coin), title: coin_wallet.coin.capitalize, class: 'w-10 h-10'
+
+    .card-actions.justify-end
+      .btn.btn-sm.btn-primary= t('see')

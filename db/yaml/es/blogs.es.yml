@@ -1,0 +1,59 @@
+---
+- title: El folleto Salida del Banco
+  identifier: flyer
+  created_at: "2025-04-10"
+  content:
+    - render:
+        pdf: /pdfs/Flyers_SDB_2025_V4_7_ESP1.pdf
+        caption: Versión completa Bitcoin y Monero por <strong>Salida del Banco</strong> on <strong>Github</strong>
+      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_SDB_2025_V4_7_ESP1.pdf
+
+    - figure:
+        - image: projects/flyers/flyer_schmidt1024_poster_es.jpg
+          caption: Versión simple de Monero por <strong>Schmidt1024</strong> on <strong>Gitea</strong>
+      url: https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/es/Monero%20para%20Comerciantes.pdf
+
+  useful_links:
+    - url: /pdfs/Flyers_SDB_2025_V4_9_accroche_pros.pdf
+      description: Gancho de texto para comerciantes y artesanos en PDF (en francés)
+
+- title: El €uro digital "Cash+"
+  identifier: cbdc-digital-euro
+  banner: banner-cbdc
+  created_at: "2025-04-15"
+  short_description: Página de presentación del €uro digital por el BCE y los riesgos asociados a esta tecnología
+  content:
+    - title: Presentación
+      body:
+        - El €uro digital "Cash+" es un proyecto del Banco Central Europeo (BCE) que tiene como objetivo mejorar los servicios bancarios digitales y simplificar los pagos en toda Europa.
+        - Este proyecto busca crear un sistema universal, seguro y fácil de usar que permita a los ciudadanos acceder a sus cuentas y realizar transacciones financieras en línea, incluso sin conexión a internet o en zonas rurales.
+        - La idea es hacer los pagos más fluidos y menos costosos para las personas, garantizando al mismo tiempo la seguridad y la confidencialidad de la información financiera.
+        - La fase de preparación debe finalizar en octubre de 2025 para un lanzamiento previsto antes de 2030.
+
+    - render:
+        partial: countdown
+
+    - title: Los riesgos ⚠️
+      body:
+        - "- <strong>Pérdida de privacidad</strong>: El uso generalizado de cuentas digitales y pagos electrónicos podría conducir a un aumento de la vigilancia y la recopilación de datos personales por parte de autoridades y empresas."
+        - "- <strong>Desequilibrio de poder</strong>: Una moneda única y universalmente aceptada podría otorgar demasiado poder a las instituciones financieras y al gobierno, lo que podría derivar en decisiones políticas restrictivas y contrarias al interés público."
+        - "- <strong>Problemas de acceso</strong>: Las poblaciones sin acceso a internet o a tecnologías digitales podrían quedar excluidas del euro digital, lo que provocaría una segregación financiera y social."
+        - "- <strong>Ciber-riesgo y vulnerabilidad</strong>: El uso masivo de un sistema digital podría exponer a los usuarios a importantes riesgos de seguridad informática, como ataques de phishing, volatilidad del mercado o incluso extorsión."
+        - "- <strong>Dependencia excesiva de la tecnología</strong>: Una economía que dependa de un sistema digital podría ser vulnerable a interrupciones técnicas y fallos en las redes."
+      mode: warning
+
+    - title: Hoja de ruta Cash+ del BCE
+      render:
+        partial: cbdc_timeline
+
+  useful_links:
+    - url: https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline
+      description: El €uro digital del BCE
+    - url: https://www.ecb.europa.eu/euro/digital_euro/progress/shared/pdf/241202-timeline-digital-euro-project.fr.pdf
+      description: Hoja de ruta del €uro digital por el BCE (PDF)
+
+  figure:
+    video:
+      url: https://youtube.com/embed/dXJBB60qZo0?start=116
+      title: Presentación de Cash+ por Grand Angle
+      created_at: "2023-07-02"

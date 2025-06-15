@@ -1,0 +1,29 @@
+.overflow-x-auto.dark:bg-base-300.rounded-box.border.border-base-content/15
+  table.table.table-zebra.table-pin-rows
+    thead
+      tr
+        td
+        td scope="col"= Merchant.human_attribute_name(:name)
+        td= Merchant.human_attribute_name(:country)
+        td= Merchant.human_attribute_name(:category)
+        td= Merchant.human_attribute_name(:coins)
+        td= Merchant.human_attribute_name(:created_at)
+        td= t('link')
+
+    tbody
+      - merchants.each.with_index(1) do |row, index|
+        tr
+          th= "##{index}"
+          td scope="row"= row.name
+          td= row.pretty_country(show_flag: true)
+          td= t("categories.#{row.category}")
+          td== coins_list(row.coins, with_logo: true, with_name: true, size: 'w-6')
+          td
+            = I18n.l(row.created_at, format: '%Hh%M')
+          td
+            p= link_to 'OpenStreetMap', row.osm_link, target: :_blank, class: 'btn btn-link w-full text-xs'
+
+            p= link_to t('details'), merchant_path(row), class: 'btn btn-base-300 w-full text-xs'
+
+.mt-2.text-xs.text-center.font-semibold.italic
+  = t('.merchants_added_on_title', date: date)

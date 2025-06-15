@@ -1,0 +1,21 @@
+doctype html
+html data-theme=@theme
+  head
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+    = stylesheet_link_tag 'https://unpkg.com/leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.css'
+    = stylesheet_link_tag 'https://unpkg.com/leaflet.fullscreen@4.0.0/Control.FullScreen.css'
+
+    = stylesheet_link_tag "https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    = stylesheet_link_tag "https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+
+    = stylesheet_link_tag 'tailwind', "data-turbo-track": "reload"
+    = stylesheet_link_tag 'panels'
+    = stylesheet_link_tag 'plugins/leaflet.css'
+
+    = javascript_importmap_tags :map_embed
+
+  body.m-0
+    = yield

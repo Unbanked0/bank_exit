@@ -1,0 +1,23 @@
+p Bonjour,
+
+p Un commentaire a été signalé sur le commerçant <strong>#{@merchant.name}</strong> (ID: ##{@merchant.identifier}).
+
+p Commentaire d'origine (ID: ##{@comment.id}):
+div style="background-color: #CCC; padding: 5px; border-radius: 10px; margin-bottom: 20px"
+  p #{@comment.content}
+
+p Explications du signalement:
+
+div style="background-color: #EEE; padding: 5px; border-radius: 10px"
+  p Raison: #{Comment.human_enum_name(:flag_reason, @comment.flag_reason)}
+
+  = simple_format(@description)
+
+ul
+  li= link_to 'Fiche du commerçant sur le site', merchant_url(@merchant), target: :_blank
+  li= link_to 'Fiche du commerçant sur OpenStreetMap', @merchant.osm_link, target: :_blank
+
+p Veuillez vérifier la pertinence de la demande et la traiter en conséquence.
+
+p style="font-size: 12px; font-style: italic"
+  | Ce message a été auto-généré par Rails, merci de ne pas y répondre

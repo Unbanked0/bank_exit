@@ -1,0 +1,393 @@
+en:
+  categories:
+    # Food
+    restaurant: Restaurant
+    bar: Bar
+    pub: Pub
+    cafe: Café
+    pastry: Pastry
+    bakery: Bakery
+    confectionery: Confectionery
+    beverages: Beverages
+
+    # Health
+    dentist: Dentist
+    doctor: General practitioner
+    midwife: Midwife
+    nurse: Nurse
+    ophthalmology: Ophthalmologist
+    osteopathy: Osteopathy
+    optician: Optician
+    pharmacy: Pharmacy
+    psychiatry: Psychologist
+    orthopaedics: Orthopedics
+    physiotherapist: Physiotherapist
+    sophrologist: Sophrologist
+    traditional_chinese_medicine: Traditional Chinese Medicine
+    naturopathy: Naturopathy
+    magnetizer: Magnetizer
+
+    # Jobs
+    jewelry: Jewelry
+    hairdresser: Hairdresser
+    florist: Florist
+    clothes: Clothes
+    beauty: Beauty
+    veterinary: Veterinary
+    window_tinting: Window tinting
+    car_repair: Car repair
+    tattoo: Tattoo
+    massage: Massage
+    electrician: Electrician
+    electronics: Electronics
+    greengrocer: Greengrocer
+    bicycle_repair_station: Bicycle repair
+    copyshop: Copyshop
+    printing: Printer
+    garden_centre: Garden centre
+    pet_grooming: Pet grooming
+    car_rental: Car rental
+    dojo: Dojo
+
+    # Drugs
+    alcohol: Alcohol
+    wine: Wine
+    e-cigarette: Electronic cigarette
+    cannabis: Cannabis
+
+    # Food stores
+    supermarket: Supermarket
+    grocery: Grocery
+    deli: Deli
+    farm: Farm
+    fast_food: Fastfood
+
+    # Informatique
+    it: Informatique
+    hardware: Hardware
+    telecommunication: Telecommunication
+    mobile_phone: Mobile phone
+    photo: Photo
+    video_games: Videogames
+    camera: Camera
+    computer: Computer
+    hifi: Hifi
+
+    # Financial
+    atm: ATM distributor
+    bank: Bank
+    exchange: Exchange office
+    payment_terminal: Payment terminal
+    money_transfer: Money transfer
+
+    # Accommodation
+    hotel: Hotel
+    guest_house: Guest house
+    bed and breakfast: Bed and breakfast
+    apartment: Apartement
+    motel: Motel
+    chalet: Chalet
+    camp_site: Camping
+
+    # By hand
+    handicraft: Handicraft
+    doityourself: Do it yourself
+    artwork: Artwork
+
+    # Kids
+    toys: Toy
+    games: Game
+    kindergarten: Kindergarten
+    model: Model making
+    theme_park: Theme Park
+
+    # Culture
+    books: Book
+    dancing_school: Dancing school
+    gallery: Gallery
+    tourism: Tourism office
+    concept store: Concept store
+
+    # Misc
+    motorcycle: Motorcycle
+    car_parts: Car parts
+    repair: Repair
+    appliance: Appliance
+    bag: Bag
+    anime: Anime
+    candles: Candles
+    tool_hire: Tool hire
+    pest_control: Pest control
+    medical_supply: Medical supply
+
+    ### To categorised later
+    advertising_agency: Advertising agency
+    architect: Architect
+    beekeeper: Beeker
+    cleaning: Cleaning
+    company: Company
+    construction_company: Construction company
+    consulting: Consulting
+    electronics_repair: Electronic repair
+    estate_agent: Estate agent
+    financial_advisor: Financial advisor
+    gardener: Gardener
+    glassblower: Glassblower
+    glaziery: Glaziery
+    hvac: Heating, ventilation and air-conditioning
+    lawyer: Lawer
+    notary: Notary
+    plumber: Plumber
+    photographer: Photographer
+    sculptor: Sculptor
+    studio: Studio
+    therapist: Therapist
+    tutoring: Tutoring
+    watchmaker: Watchmaker
+    winery: Winery
+    archery: Archery
+    10pin: Bowling
+    fitness: Fitness
+    free_flying: Free flying
+
+    # New batch 20/04/25
+    Hospitality Supplies: Hospitality Supplies
+    accountant: Accountant
+    agency: Agency
+    agrarian: Agrarian
+    agricultural_engines: Agricultural Engines
+    alpine_hut: Alpine Hut
+    alternative: Alternative
+    animal_boarding: Pet Boarding
+    animal_breeding: Animal Breeding
+    animal_protraits: Animal Portraits
+    antiques: Antiques
+    art: Art
+    arts_centre: Arts Centre
+    association: Association
+    atelier: Workshop
+    balloon: Balloon
+    barber: Barber
+    bathroom_furnishing: Bathroom Furnishings
+    bed: Bed
+    behavior: Behavior
+    bicycle: Bicycle
+    bicycle_rental: Bicycle Rental
+    biergarten: Beer Garden
+    billiards: Billiards
+    bioresonanz: Bioresonance
+    bitcoin: Bitcoin
+    blacksmith: Blacksmith
+    boat_rental: Boat Rental
+    bowling: Bowling
+    boxing: Boxing
+    brewery: Brewery
+    builder: Builder
+    business_headquarters: Headquarters
+    butcher: Butcher
+    canoe: Canoe
+    capoeira: Capoeira
+    car: Car
+    car_wash: Car Wash
+    caravan: Caravan
+    carpenter: Carpenter
+    carpet: Carpet
+    cartridges: Cartridge
+    caterer: Caterer
+    charging_station: Charging Station
+    cheese: Cheese Shop
+    chemist: Chemist
+    childcare: Childcare
+    chiropractic: Chiropractic
+    chocolate: Chocolate Shop
+    clinic: Clinic
+    collector: Collector
+    college: High School
+    colonics: Colonics
+    community_centre: Community Centre
+    conceptstore: Concept Store
+    cosmetics: Beauty Products
+    coworking_space: Coworking Space
+    crystal: Crystal
+    curtain: Curtains
+    dance: Dance
+    dental_oral_maxillo_facial_surgery: Dental Surgery
+    distillery: Distillery
+    dive_centre: Dive Centre
+    doors: Doors
+    driving_school: Driving School
+    dry_cleaning: Dry Cleaning
+    earrings: Earrings
+    electric_scooters: Electric Scooters
+    electrical: Electrical
+    embroiderer: Embroidery
+    energy: Energy
+    energy_supplier: Energy Supplier
+    engineer: Engineer
+    equestrian: Equestrian
+    equipment_rental: Equipment Rental
+    erotic: Erotic
+    event_planner: Event Planner
+    events_venue: Event Venue
+    fireplace: Fireplace
+    flight_school: Flight School
+    food: Food
+    football: Football
+    frame: Frame
+    frozen_food: Frozen Food
+    fuel: Fuel
+    funeral_directors: Funeral Directors
+    furniture: Furniture
+    gas: Gas
+    general_trade: General Trade
+    gift: Gifts
+    gold_buyer: Gold Buyer
+    golf: Golf
+    growshop: Grow Shop
+    guide: Guide
+    gynaecology: Gynaecology
+    health_food: Health Food
+    herbalist: Herbalist
+    hobby: Hobby
+    hochbeete: Raised Beds
+    honey: Beekeeping
+    houseware: Housewares
+    humanistic: Humanistic
+    hypnosis: Hypnosis
+    ice_cream: Ice Cream
+    incense: Incense
+    industrial_supplies: Industrial Supplies
+    insurance: Insurance
+    interior_decoration: Interior Decoration
+    internet_marketing_company_office: Internet Marketing
+    key_cutter: Key Cutter
+    kiosk: Kiosk
+    kitchen: Kitchen
+    language_school: Language School
+    laundry: Laundry
+    leather: Leather
+    lighting: Lighting
+    locksmith: Locksmith
+    luthier: Luthier
+    marcha_nórdica: Nordic Walking
+    marketing: Marketing
+    metal_construction: Metal Construction
+    motorcycle_rental: Motorcycle Rental
+    moving_company: Moving Company
+    multi: Multi
+    music: Music
+    music_school: Music School
+    natural_health_advice: Natural Health Advice
+    newsagent: Newsagent
+    newspaper: Newspaper
+    ngo: Non-Governmental Organization
+    nightclub: Nightclub
+    nutrition_counselling: Nutritionist
+    nutrition_supplements: Nutritional Supplements
+    occupational_safety: Occupational Safety
+    occupational_therapist: Occupational Therapist
+    office: Office
+    online_store: Online Store
+    orthodontics: Orthodontics
+    outpost: Outpost
+    painter: Painter
+    parachuting: Parachuting
+    parking: Parking
+    parquet_layer: Parquet Layer
+    party: Party
+    pasta: Pasta
+    pawnbroker: Pawnbroker
+    payment_centre: Payment Centre
+    perfumery: Perfumery
+    pet: Pets
+    photographic_laboratory: Photography Laboratory
+    physiotherapy: Physiotherapy
+    pilates: Pilates
+    plasterer: Plasterer
+    plastic_surgery: Plastic Surgery
+    post_office: Post Office
+    pottery: Pottery
+    precious_metals: Precious Metals
+    private_investigator: Private Investigator
+    protesi: Prosthesis
+    psychotherapist: Psychotherapist
+    radiotechnics: Radiotechnics
+    reflexology: Reflexology
+    rehabilitation: Rehabilitation
+    reiki: Reiki
+    relationship_therapist: Relationship Therapist
+    rental: Rental
+    reseller: Reseller
+    roofer: Roofer
+    running: Running
+    saddler: Saddler
+    safety_equipment: Safety Equipment
+    school: School
+    seafood: Seafood
+    second_hand: Second-Hand
+    security: Security
+    shoes: Shoes
+    shooting: Filming
+    signmaker: Sign Maker
+    skate_shop: Skateboard Shop
+    skateboard: Skateboard
+    skiing: Skiing
+    solar_panels: Solar Panels
+    speech_therapist: Speech Therapist
+    spices: Spices
+    sports: Sports
+    stationery: Stationery
+    stomatology: Stomatology
+    stonemason: Stonemason
+    street_workout: Street Workout
+    studio_tecnico: Technical Studio
+    substance_analysis_kits: Substance Analysis Kits
+    surf: Surfing
+    surf_school: Surf School
+    surgery: Surgeon
+    surveyor: Surveyor
+    swimming_pool: Swimming Pool
+    systemic: Systemic
+    tailor: Tailor
+    tax_advisor: Tax Advisor
+    taxi: Taxi
+    tea: Tea
+    tennis: Tennis
+    textile_manufacturer: Textile Manufacturer
+    theatre: Theatre
+    ticket: Ticketing
+    tiler: Tiler
+    tobacco: Tobacco
+    trade: Trade
+    translator: Translator
+    travel_agency: Travel Agency
+    tyres: Tires
+    university: University
+    variety_store: Variety Store
+    vending_machine: Vending Machine
+    vine: Vine
+    watches: Watches
+    water_filter: Water Filter
+    water_sports: Water Sports
+    web_design: Web Design
+    wedding_planner: Wedding Planner
+    weightlifting: Weightlifting
+    window_construction: Window Construction
+    workshop: Workshop
+    writer: Writer
+    "yes": Unknown Category
+    yoga: Yoga
+    dressmaker: Dressmaker
+
+  directories_categories:
+    food: 🍎 Food and beverages
+    health: ⚕️ Hygiene and health
+    clothing: 👕 Clothing
+    electronic: 🔌 Electronics and energy
+    building: 🛠 Construction/Repair
+    services: 💼 Professional services
+    travel: ✈️ Travel services
+    handicraft: 🎨 Handicrafts
+    media: 📰 Media and alternative press
+    classified_ads: 📢 Classified ads / Marketplace
+    association: 🤝 Association

@@ -1,0 +1,10 @@
+.px-5.py-10.lg:p-20
+  .max-w-5xl.space-y-8.mx-auto
+    header.text-center
+      h3.text-3xl.font-bold= t('.title')
+
+    .grid.grid-cols-2.lg:grid-cols-4.gap-3.content-center.mb-3
+      = render @highlighted_tutorials
+
+    p.text-center.lg:text-right
+      = link_to t('.see_all_tutorials'), tutorials_path, class: 'btn btn-primary'

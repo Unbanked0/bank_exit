@@ -1,0 +1,23 @@
+section.space-y-3
+  == pagy_nav(pagy) if pagy.count > pagy.limit
+
+  .overflow-x-auto.rounded-box.border.border-base-content/20
+    table.table.table-zebra
+      thead
+        tr
+          th scope="col" Contenu
+          th scope="col" Note
+          - unless params[:controller] == 'admin/merchants'
+            th scope="col" Commerçant
+          th scope="col" Signalement
+          th scope="col" Date
+          th scope="col" Actions
+      tbody
+        = render comments
+
+        - if comments.blank?
+          tr
+            td colspan="6"
+              | Il n'y a aucun commentaire à afficher
+
+  == pagy_nav(pagy) if pagy.count > pagy.limit

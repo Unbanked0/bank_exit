@@ -1,0 +1,66 @@
+- content_for(:dropdown_header) do
+  .px-4.py-2.text-sm.bg-base-300.text-center.rounded-t-box
+    p.font-bold= t('.map_title')
+
+    - if last_update
+      p.text-xs.mt-1
+        = t(".last_updated_at", last_updated_at: l(Time.zone.at(last_update)))
+
+- content_for(:dropdown_menu) do
+  li
+    = simple_form_for '' do |f|
+      = f.input :fit_bounds, as: :boolean,
+                boolean_style: :inline,
+                wrapper: false,
+                input_html: { \
+                  data: { \
+                    action: 'change->map--options#toggleFitBounds',
+                    map__options_target: 'fitBounds' \
+                  } \
+                },
+                label: t('.map_fit_bounds')
+
+  li
+    = simple_form_for '' do |f|
+      = f.input :gesture_handling, as: :boolean,
+                boolean_style: :inline,
+                wrapper: false,
+                input_html: { \
+                  data: { \
+                    action: 'change->map--options#toggleGestureHandling',
+                    map__options_target: 'gestureHandling' \
+                  } \
+                },
+                label: t('.map_gesture_handling')
+
+  li
+    = link_to tutorial_path('documentation-embed-map') do
+      = lucide_icon 'info', class: 'inline-flex w-5'
+      = t('.help_embed')
+
+  - if can_refresh_merchants?(last_updated_at: last_update)
+    li
+      = button_to refresh_merchants_path,
+                  class: 'cursor-pointer',
+                  data: { \
+                    turbo_confirm: t('.refresh_confirm_html') \
+                  } do
+        = lucide_icon 'refresh-cw', class: 'w-5 inline-flex mr-2'
+        = t('.refresh')
+
+  li
+    = link_to 'https://t.me/Monero_map_label', target: :_blank do
+      div
+        = inline_svg_tag "contacts/telegram.svg", class: 'inline-flex w-5 h-5', title: 'Telegram'
+        span.mx-2 Monero map labelers
+        = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex w-4'
+
+  li
+    = link_to 'https://matrix.to/#/#bankexit:matrix.org', target: :_blank do
+      div
+        = inline_svg_tag 'contacts/matrix.svg', class: 'inline-flex w-5 h-5', title: 'Matrix Bank-Exit'
+        span.mx-2 Matrix (#bankexit:matrix.org)
+        = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex w-4'
+
+= render 'dropdown_actions',
+         details_html: { data: { controller: "map--options" } }

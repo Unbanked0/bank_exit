@@ -1,0 +1,11 @@
+/ .tooltip-primary, .tooltip-secondary
+/ .tooltip-success, .tooltip-info, .tooltip-warning
+/ .tooltip-error, tooltip-neutral, .tooltip-accent
+/ .tooltip-top, .tooltip-bottom, .tooltip-left, .tooltip-right
+
+- icon = defined?(lucide_ikon) ? lucide_ikon : 'info'
+
+.tooltip.tooltip-primary class=("tooltip-#{position}" if defined?(position)) class=("tooltip-#{mode}" if defined?(mode))
+  .tooltip-content.p-2
+    == text
+  = lucide_icon icon, class: 'w-5 h-5 cursor-pointer'

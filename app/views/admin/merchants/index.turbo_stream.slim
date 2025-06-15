@@ -1,0 +1,7 @@
+= render_turbo_stream_flash_messages
+
+= turbo_stream.update :merchants do
+  = render 'merchants', merchants: @merchants, pagy: @pagy
+
+= turbo_stream.update :merchants_count do
+  = @pagy.count

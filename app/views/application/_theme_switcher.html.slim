@@ -1,0 +1,8 @@
+label.swap.swap-rotate
+  input#theme-switcher.theme-controller type="checkbox" value=Setting::DARK_THEME_NAME data-controller="themes" data-action="click->themes#switch"
+
+  span.swap-on title=t('.switch_to_dark')
+    = lucide_icon 'sun', class: 'h-6 w-6 fill-current'
+
+  span.swap-off title=t('.switch_to_light')
+    = lucide_icon 'moon', class: 'h-6 w-6 fill-current'

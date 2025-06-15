@@ -1,0 +1,14 @@
+.panel.panel-base-100.panel-wide-y.px-5
+  .max-w-5xl.mx-auto.space-y-8
+    h3.text-3xl.text-center= t('.title')
+
+    = render 'countdown'
+
+    .panel.panel-warning.space-y-2
+      - t('.body').each do |paragraph|
+        p== paragraph
+
+    p.text-center
+      = link_to t('.more_about'),
+                blog_path('cbdc-digital-euro'),
+                class: 'btn btn-link'

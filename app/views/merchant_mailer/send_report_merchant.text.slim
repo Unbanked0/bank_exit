@@ -1,0 +1,23 @@
+= "Bonjour,\n\n"
+
+| Une anomalie a été remontée sur le commerçant #{@merchant.name} (ID: ##{@merchant.identifier}).
+
+= "\n\n===============================\n"
+= @description
+= "\n===============================\n\n"
+
+| Fiche du commerçant sur le site: #{merchant_url(@merchant)}
+= "\n"
+|Fiche du commerçant sur OpenStreetMap: #{@merchant.osm_link}
+
+= "\n\n"
+| Voici les informations présentes dans le GeoJSON pour ce commerçant:
+= "\n"
+
+== JSON.pretty_generate(@merchant.raw_feature.to_h)
+
+= "\n\n"
+| Veuillez vérifier la pertinence de la demande et la traiter en conséquence.
+
+= "\n\n"
+| Ce message a été auto-généré par Rails, merci de ne pas y répondre

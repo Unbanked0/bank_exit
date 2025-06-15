@@ -1,0 +1,118 @@
+---
+paris_attributes: &paris_attributes
+  - city: Paris
+    state: Île-de-France
+    country: France
+    country_code: FR
+    latitude: 48.8566
+    longitude: 2.3522
+    postal_code: ""
+    street: ""
+    address:
+      ISO3166-2-lvl4: FR-IDF
+      ISO3166-2-lvl6: FR-75
+
+"127.0.0.1":
+  - city: Paris
+    region: IDF
+    country_code: FR
+
+"127.0.0.2":
+  - city: Tokyo
+    region: "13"
+    country_code: JP
+
+"[1.1, 2.2]":
+  - country: France
+    country_code: FR
+
+"[1.11, 2.22]":
+  - country: France
+    country_code: FR
+    state: French Polynesia
+
+"[1.12, 2.23]":
+  - country: France
+    country_code: FR
+    state: Guadeloupe
+
+"[1.13, 2.24]":
+  - country: France
+    country_code: FR
+    state: Martinique
+
+"[1.14, 2.25]":
+  - country: France
+    country_code: FR
+    state: Reunion
+
+"[1.15, 2.26]":
+  - country: France
+    country_code: FR
+    state: Mayotte
+
+Paris: *paris_attributes
+"Paris, FR": *paris_attributes
+Jossigny: *paris_attributes
+FR-75: *paris_attributes
+FR-IDF: *paris_attributes
+
+Madrid:
+  - city: Madrid
+    state: Community of Madrid
+    country: Spain
+    country_code: ES
+    latitude: 40.4168
+    longitude: -3.7038
+    postal_code: ""
+    street: ""
+    address:
+      ISO3166-2-lvl4: ES-MD
+      ISO3166-2-lvl6: ES-M
+
+ES-MD:
+  - city: Madrid
+    state: Community of Madrid
+    country: Spain
+    country_code: ES
+    latitude: 40.4168
+    longitude: -3.7038
+    postal_code: ""
+    street: ""
+    address:
+      ISO3166-2-lvl4: ES-MD
+      ISO3166-2-lvl6: ES-M
+
+ES-M:
+  - city: Madrid
+    state: Community of Madrid
+    country: Spain
+    country_code: ES
+    latitude: 40.4168
+    longitude: -3.7038
+    postal_code: ""
+    street: ""
+    address:
+      ISO3166-2-lvl4: ES-MD
+      ISO3166-2-lvl6: ES-M
+
+Tokyo:
+  - name: Tokyo
+    display_name: Tokyo, Japan
+    country: Japan
+    country_code: JP
+    address:
+      province: Tokyo
+      ISO3166-2-lvl4: JP-13
+
+FR:
+  - addresstype: country
+    name: France
+    display_name: France
+    country: France
+    country_code: FR
+
+AS:
+  - name: Asia
+    address:
+      continent: Asia

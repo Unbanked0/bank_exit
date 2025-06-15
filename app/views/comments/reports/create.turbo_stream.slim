@@ -1,0 +1,5 @@
+= turbo_stream.update :modal, ''
+= render_turbo_stream_flash_messages
+
+= turbo_stream.replace "report_comment_#{@comment.id}" do
+  = render 'comments/flag_tag'

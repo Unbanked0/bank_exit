@@ -1,0 +1,53 @@
+module Tutorials
+  class ReportsController < ApplicationController
+    before_action :set_tutorial
+
+    # @route GET /fr/tutoriels/:tutorial_id/report/new {locale: "fr"} (new_tutorial_report_fr)
+    # @route GET /es/tutoriales/:tutorial_id/report/new {locale: "es"} (new_tutorial_report_es)
+    # @route GET /en/tutorials/:tutorial_id/report/new {locale: "en"} (new_tutorial_report_en)
+    # @route GET /tutorials/:tutorial_id/report/new
+    def new
+      @tutorial_report = TutorialReport.new
+    end
+
+    # @route POST /fr/tutoriels/:tutorial_id/report {locale: "fr"} (tutorial_report_fr)
+    # @route POST /es/tutoriales/:tutorial_id/report {locale: "es"} (tutorial_report_es)
+    # @route POST /en/tutorials/:tutorial_id/report {locale: "en"} (tutorial_report_en)
+    # @route POST /tutorials/:tutorial_id/report
+    def create
+      @tutorial_report = TutorialReport.new(tutorial_report_params)
+
+      if bot?
+        # Prank bot with a 200
+        flash.now[:notice] = t('.notice')
+        head :ok
+      elsif @tutorial_report.valid?
+        if Rails.env.test? || Rails.env.production?
+          # Only call the Github API issue in production
+          TutorialReportIssue.call(@tutorial, @tutorial_report)
+        end
+
+        flash.now[:notice] = t('.notice')
+      else
+        render :new, status: :unprocessable_entity
+      end
+    rescue StandardError => e
+      flash.now[:alert] = e.message
+      render status: :unprocessable_entity
+    end
+
+    private
+
+    def tutorial_report_params
+      params.expect(tutorial_report: %i[title description nickname])
+    end
+
+    def set_tutorial
+      @tutorial = Tutorial.find(params[:tutorial_id])
+    end
+
+    def bot?
+      tutorial_report_params[:nickname].present?
+    end
+  end
+end

@@ -1,0 +1,23 @@
+.hero.bg-fixed.bg-banner-projects
+  .hero-overlay
+  .hero-content.py-20
+    .max-w-5xl.space-y-8
+      header.text-center.space-y-5.text-neutral-content
+        h3.text-3xl= t('.title')
+        p.text-lg= t('.headline')
+
+      .grid.md:grid-cols-2.lg:grid-cols-3.gap-5
+        - projects.each do |project|
+          = link_to project.link, class: 'card bg-base-100 hover:bg-base-200', target: (:_blank if project.external?) do
+            = image_tag "projects/#{project.image}", class: 'object-cover w-full h-60 rounded-t-lg'
+            .p-3
+              - if project.external?
+                .flex.items-center.gap-1.mb-2
+                  h4.font-bold.text-lg= project.title
+                  = lucide_icon 'square-arrow-out-up-right', class: 'w-4'
+
+              - else
+                h4.font-bold.text-lg.mb-2= project.title
+
+              hr.pb-2
+              p.mb-3= project.description

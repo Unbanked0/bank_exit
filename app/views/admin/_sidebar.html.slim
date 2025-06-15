@@ -1,0 +1,50 @@
+.drawer-side
+  label.drawer-overlay for="sidebarDrawer" aria-label="close sidebar"
+
+  .bg-base-200.min-h-full.w-80.border-r-2.border-primary.px-4
+    = link_to admin_dashboard_path, class: 'text-primary block p-2 mb-3' do
+      = image_tag logo_by_locale, class: 'w-32 mx-auto'
+
+      .text-center
+        h1.text-xl.font-bold Sortie de Banque
+        p Admin
+
+    ul.menu.w-full.space-y-2.mb-5.border.border-base-content/20.rounded-lg
+      - nav_link_klass = 'btn'
+
+      li
+        = link_to 'Tableau de bord', admin_dashboard_path, class: "#{nav_link_klass} #{params[:controller] == 'admin/dashboards' ? 'btn-primary' : 'btn-ghost' }"
+
+      li
+        = link_to admin_merchants_path, class: "#{nav_link_klass} #{params[:controller] == 'admin/merchants' ? 'btn-primary' : 'btn-ghost' }" do
+          | Les commerçants
+          - if Merchant.deleted.any?
+            span< title="Commerçants désactivés" ⚠️
+
+      li
+        = link_to admin_comments_path, class: "#{nav_link_klass} #{params[:controller] == 'admin/comments' ? 'btn-primary' : 'btn-ghost' }" do
+          | Les commentaires
+          - if Comment.flagged.any?
+            span< title="Commentaire signalé" ⚠️
+
+      li
+        = link_to admin_directories_path, class: "#{nav_link_klass} #{params[:controller] == 'admin/directories' ? 'btn-primary' : 'btn-ghost' }" do
+          | L'annuaire
+
+      li
+        = link_to mission_control_jobs_path, class: 'btn btn-ghost', target: :_blank do
+          | Mission Control Jobs
+
+
+    .space-y-2.mb-8
+      label.flex.cursor-pointer.gap-2.justify-center
+        = lucide_icon 'sun', class: 'swap-on h-6 w-6 fill-current'
+
+        input#theme-switcher.toggle.theme-controller type="checkbox" value=Setting::DARK_THEME_NAME data-controller="themes" data-action="click->themes#switch"
+
+        = lucide_icon 'moon', class: 'swap-off h-6 w-6 fill-current'
+
+    nav.flex.flex-col.gap-2.text-sm
+      = back_link_to "Retour à l'accueil", root_path
+      = back_link_to "Retour à la carte", maps_path
+      = back_link_to "Retour à l'annuaire", directories_path

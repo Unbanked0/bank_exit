@@ -1,0 +1,2 @@
+class Blog < Article
+end

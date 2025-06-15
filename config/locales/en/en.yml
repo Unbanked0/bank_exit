@@ -1,0 +1,128 @@
+en:
+  cancel: Cancel
+  confirm: Confirm
+  close: Close
+  search: Search
+  print: Print
+  share_by_email: Share by email
+  copied: Copied !
+  address: Address
+  description: Description
+  contact: Contact
+  weblinks: Sources
+  other: Other
+  add: Add
+  see: See
+  report: Report
+  breadcrumb: Breadcrumb
+  details: Details
+  link: Link
+  spotlight: Spotlight
+  reset_search: Reset search
+
+  grid: Grid
+  table: Table
+
+  download: Download
+  video_tutorial: Video tutorial
+  useful_links: Useful links
+  coin: Coin
+
+  enabled: Enabled
+  disabled: Disabled
+
+  added_on: Added %{date} ago
+  updated_on: Updated %{date} ago
+
+  copy_to_clipboard: Copy to clipboard
+
+  x_results:
+    zero: "%{count} result"
+    one: "%{count} result"
+    other: "%{count} results"
+
+  from: from
+  to: to
+  and: and
+  by: by
+  or: or
+
+  mo: monday
+  tu: tuesday
+  we: wednesday
+  th: thursday
+  fr: friday
+  sa: saturday
+  su: sunday
+
+  today: Today
+  yesterday: Yesterday
+  month: month(s)
+  day: day(s)
+  hour: hour(s)
+  minute: minute(s)
+  second: second(s)
+
+  distance:
+    centi:
+      one: "centimeter"
+      other: "centimeters"
+    unit:
+      one: "meter"
+      other: "meters"
+    thousand:
+      one: "kilometer"
+      other: "kilometers"
+
+  time:
+    am: am
+    formats:
+      default: "%d/%m/%Y at %Hh%M"
+
+  helpers:
+    submit:
+      questions:
+        submit: Search
+      merchant_proposal:
+        create: Suggest merchant
+      comment_report:
+        create: Report this comment
+      directory:
+        suggest: Suggest this entry
+
+  questions:
+    individual: An individual
+    company: A company
+    association: An association
+    politic: An elected official or politician
+
+    zero_knowledge: I don't know anything about debanking or cryptos
+    beginner: I know by name
+    intermediate: I already have some (beginner)
+    expert: I already have (advanced)
+
+    fetch_services:
+      debank: Get me unbanked
+      privacy: Avoid tracing
+      anonymous: Being anonymous
+      inflation: Limiting inflation
+      messaging: Anonymous messaging
+      social_network: An uncensored social network
+      accounting: Simplify my accounting
+      help: Helping the collective
+
+      buy_btc: Buy Bitcoin
+      buy_xmr: Buy Monero
+      convert: Swap Bitcoin <> Monero
+      spend: Spend with Monero! (Online and/or in local shops)
+      kitty: Create an uncensorable kitty
+
+      buy_no_kyc: Buy in P2P no-KYC
+      node: Launch a node in 3 clicks
+      tor_ipfs: Switch to Tor/IPFS
+
+  # Used by GithubAPI to assign label
+  languages:
+    fr: french
+    en: english
+    es: spanish

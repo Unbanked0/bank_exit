@@ -1,0 +1,24 @@
+- merchant = comment.commentable
+
+- content_for(:title) do
+  h3.text-xl.font-semibold
+    = merchant.name
+
+= render_modal do
+  blockquote.panel.panel-base-300.panel-sm.space-y-5
+    = simple_format(comment.content)
+
+  = simple_form_for comment_report,
+                    url: comment_report_path(comment),
+                    method: :post,
+                    html: { class: 'space-y-2 px-1' } do |f|
+    = f.input :flag_reason,
+              collection: select_options_for(Comment, :flag_reasons),
+              label: false,
+              prompt: :translate
+
+    = f.input :description, as: :text, label: false
+    = f.input :nickname, wrapper_html: { class: 'hidden' }
+
+    .flex.justify-end
+      = f.button :submit, class: 'btn btn-success'

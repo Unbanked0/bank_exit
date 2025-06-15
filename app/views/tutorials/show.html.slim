@@ -1,0 +1,46 @@
+- content_for :header_actions do
+  .flex.items-center.justify-center.gap-5.print:hidden
+    = render 'share_by_email',
+            subject: t('.subject', title: @tutorial.title),
+            body: t('.body', link: tutorial_url(@tutorial.identifier)),
+            icon_klass: 'w-8 h-8'
+
+    = render 'print_me',
+              icon_klass: 'w-8 h-8'
+
+    = link_to new_tutorial_report_path(@tutorial.identifier),
+              title: t('.report_a_fault.title'),
+              data: { turbo_stream: true } do
+      = lucide_icon 'bug', class: 'w-8 h-8'
+
+- content_for :outdated_content do
+  - if @tutorial.might_be_outdated?
+    .panel-warning.lg:w-2/3.mx-auto
+      p= t('.tutorial_might_be_outdated')
+
+- content_for :coins do
+  - if @coins
+    div
+      h2.text-primary.uppercase.mb-5= t('coin')
+
+      .flex.flex-col.items-center
+        .flex.items-center.gap-6.mb-3
+          = render @coins
+        .w-full= turbo_frame_tag :coin
+
+- content_for :download do
+  - if @tutorial.identifier == 'session-messaging'
+    = render 'session_download'
+
+- content_for :footer_actions do
+  #modal
+
+  script type="application/ld+json"
+    == schema_dot_org_tutorial(@tutorial)
+  script type="application/ld+json"
+    == schema_dot_org_breadcrumb_tutorial(@tutorial)
+
+= render 'articles/wrapper', article: @tutorial do
+  - if @tutorial.contents.is_a?(Array) && @tutorial.contents.blank?
+    .panel.panel-info
+      p= t('tutorials.show.pending_redaction')

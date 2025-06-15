@@ -1,0 +1,12 @@
+figure
+  iframe.w-full.rounded-lg class="lg:h-[800px]" src=content.render.pdf
+
+  - if content.render.caption?
+    figcaption.text-xs.text-center.italic.mt-2
+      - if content.url?
+        = link_to content.url, target: :_blank do
+          == content.render.caption
+          = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex ml-1 w-4'
+
+      - else
+        == content.render.caption

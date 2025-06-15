@@ -1,0 +1,175 @@
+require 'rails_helper'
+
+RSpec.describe 'Maps' do
+  before { create_list :merchant, 3 }
+
+  describe 'GET /map' do
+    context 'without search options' do
+      subject! { get '/map' }
+
+      it { is_expected.to redirect_to pretty_map_en_path(zoom: 5, lat: 45.7831, lon: 3.0824) }
+    end
+
+    context 'with search options' do
+      subject! { get '/map?country=IT' }
+
+      it { is_expected.to redirect_to pretty_map_en_path(zoom: 5, lat: 45.7831, lon: 3.0824, country: 'IT') }
+    end
+  end
+
+  describe 'GET /map/:zoom' do
+    subject! { get '/map/8' }
+
+    it { is_expected.to redirect_to pretty_map_path(zoom: 8, lat: 45.7831, lon: 3.0824) }
+  end
+
+  describe 'GET /map/:zoom/:lat' do
+    subject! { get '/map/8/1234' }
+
+    it { is_expected.to redirect_to pretty_map_path(zoom: 8, lat: 1234, lon: 3.0824) }
+  end
+
+  describe 'GET /map/:zoom/:lat/:lon' do
+    context 'without search options' do
+      subject! { get '/map/6/123.45/-678.90' }
+
+      it { expect(response).to have_http_status :ok }
+    end
+
+    context 'with search options' do
+      subject! do
+        get '/map/6/123.45/-678.90',
+            params: { map: {
+              search: 'bar', category: 'fast_food',
+              coins: %w[bitcoin monero]
+            } }
+      end
+
+      it { expect(response).to have_http_status :ok }
+    end
+  end
+
+  describe 'GET /en/map' do
+    context 'without search options' do
+      subject! { get '/en/map' }
+
+      it { is_expected.to redirect_to pretty_map_en_path(zoom: 5, lat: 45.7831, lon: 3.0824) }
+    end
+
+    context 'with search options' do
+      subject! { get '/en/map?country=IT' }
+
+      it { is_expected.to redirect_to pretty_map_en_path(zoom: 5, lat: 45.7831, lon: 3.0824, country: 'IT') }
+    end
+  end
+
+  describe 'GET /en/map/:zoom' do
+    subject! { get '/en/map/8' }
+
+    it { is_expected.to redirect_to pretty_map_en_path(zoom: 8, lat: 45.7831, lon: 3.0824) }
+  end
+
+  describe 'GET /en/map/:zoom/:lat' do
+    subject! { get '/en/map/8/1234' }
+
+    it { is_expected.to redirect_to pretty_map_en_path(zoom: 8, lat: 1234, lon: 3.0824) }
+  end
+
+  describe 'GET /en/map/:zoom/:lat/:lon' do
+    context 'without search options' do
+      subject! { get '/en/map/6/123.45/-678.90' }
+
+      it { expect(response).to have_http_status :ok }
+    end
+
+    context 'with search options' do
+      subject! do
+        get '/en/map/6/123.45/-678.90',
+            params: { map: {
+              search: 'bar', category: 'fast_food',
+              coins: %w[bitcoin monero]
+            } }
+      end
+
+      it { expect(response).to have_http_status :ok }
+    end
+  end
+
+  describe 'GET /fr/map/:zoom' do
+    subject! { get '/fr/map/8' }
+
+    it { is_expected.to redirect_to pretty_map_fr_path(zoom: 8, lat: 45.7831, lon: 3.0824) }
+  end
+
+  describe 'GET /fr/map/:zoom/:lat' do
+    subject! { get '/fr/map/8/1234' }
+
+    it { is_expected.to redirect_to pretty_map_fr_path(zoom: 8, lat: 1234, lon: 3.0824) }
+  end
+
+  describe 'GET /fr/map/:zoom/:lat/:lon' do
+    context 'without search options' do
+      subject! { get '/fr/map/6/123.45/-678.90' }
+
+      it { expect(response).to have_http_status :ok }
+    end
+
+    context 'with search options' do
+      subject! do
+        get '/fr/map/6/123.45/-678.90',
+            params: { map: {
+              search: 'bar', category: 'fast_food',
+              coins: %w[bitcoin monero]
+            } }
+      end
+
+      it { expect(response).to have_http_status :ok }
+    end
+  end
+
+  describe 'GET /es/map' do
+    context 'without search options' do
+      subject! { get '/es/map' }
+
+      it { is_expected.to redirect_to pretty_map_es_path(zoom: 5, lat: 45.7831, lon: 3.0824) }
+    end
+
+    context 'with search options' do
+      subject! { get '/es/map?country=IT' }
+
+      it { is_expected.to redirect_to pretty_map_es_path(zoom: 5, lat: 45.7831, lon: 3.0824, country: 'IT') }
+    end
+  end
+
+  describe 'GET /es/map/:zoom' do
+    subject! { get '/es/map/8' }
+
+    it { is_expected.to redirect_to pretty_map_es_path(zoom: 8, lat: 45.7831, lon: 3.0824) }
+  end
+
+  describe 'GET /es/map/:zoom/:lat' do
+    subject! { get '/es/map/8/1234' }
+
+    it { is_expected.to redirect_to pretty_map_es_path(zoom: 8, lat: 1234, lon: 3.0824) }
+  end
+
+  describe 'GET /es/map/:zoom/:lat/:lon' do
+    context 'without search options' do
+      subject! { get '/es/map/6/123.45/-678.90' }
+
+      it { expect(response).to have_http_status :ok }
+    end
+
+    context 'with search options' do
+      subject! do
+        get '/es/map/6/123.45/-678.90',
+            params: { map: {
+              search: 'bar', category: 'fast_food',
+              coins: %w[bitcoin monero]
+            } }
+      end
+
+      it { expect(response).to have_http_status :ok }
+    end
+  end
+end

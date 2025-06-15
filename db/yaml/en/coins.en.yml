@@ -1,0 +1,55 @@
+---
+- identifier: monero
+  name: Monero
+  ticker: XMR
+  description:
+    - A means of exchange focused on total confidentiality, it guarantees untraceable transactions like digital cash. Secured by Proof of Work (PoW) on a conventional computer, the US tax authorities offered $620,000 to anyone who succeeded in breaking its encryption, without success.
+    - Its strength lies in its complete anonymity, unlike the digital euro, which will be highly monitored. Although banking and government systems disparage it because they fear it, attacks against Monero have greatly strengthened it.
+    - Its price was relatively stable from 2022 to 2025 compared to Bitcoin's rise.
+  usage: Payment method
+  links:
+    - https://getmonero.org
+    - https://monero.eco
+    - https://www.abcbourse.com/graphes/eod/XMRUSDu/lc9
+
+- identifier: june
+  name: June
+  ticker: Ğ1
+  description:
+    - A cryptocurrency invented in France and based on the Relative Theory of Money (RTM), it ensures fair monetary creation among its members. Its advantage is its decentralized and human-centered model thanks to the Web of Trust (WoT), a unique network in the world.
+    - Although highly traceable, the June has no exchange rate in euros and is therefore highly independent and resilient from the financial system, and deeply rooted in the local connection to regular G-markets.
+  usage: Citizen identity
+  links:
+    - https://monnaie-libre.fr
+    - https://forum.monnaie-libre.fr/c/rencontres/21
+    - https://carte.monnaie-libre.fr/?lat=46.240651955001695&lng=2.1972656250000004&zoom=5
+
+- identifier: bitcoin
+  name: Bitcoin
+  ticker: BTC
+  description:
+    - The first decentralized cryptocurrency, secured by Proof of Work (PoW), Bitcoin is considered digital gold, and its 15 years of existence have proven its potential as a global store of value. Although highly traceable, its scarcity and independence from banks make it resistant to inflation and theft.
+    - As traditional finance pours into this revolutionary cryptoasset, its volatility tends to reduce over time. Bitcoin's price has historically demonstrated impressive growth of nearly +90%/year on average, every year for the past 10 years.
+  usage: Reserve of value
+  links:
+    - https://bitcoin.org
+    - https://bitcoin.org/bitcoin.pdf
+    - https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/
+
+- identifier: gold
+  name: Gold
+  description:
+    - An ancestral safe haven, gold has historically protected against inflation and crises. Unlike other stores of value, it is physical and recognized worldwide without relying on a computer system, but it is hardly feasible in practice for regular exchanges between citizens except in the event of a significant disruption to normality.
+  usage: Reserve of value
+  links:
+    - https://www.bitgild.com/en
+    - https://celticgold.eu
+
+- identifier: silver
+  name: Silver
+  description:
+    - Crisis medium of exchange, easier to consider for regular exchanges and purchases in the event of a crisis due to its lower value density than gold. It combines industrial use and untraceability, something the digital euro cannot offer.
+  usage: Critical payment method
+  links:
+    - https://www.bitgild.com/en
+    - https://celticgold.eu

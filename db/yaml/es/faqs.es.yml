@@ -1,0 +1,70 @@
+---
+- question: Me gustaría sugerir un nuevo comercio. ¿Cómo lo hago?
+  content:
+    - answer: Para sugerir un nuevo comercio, haga clic en el botón verde <mark>Sugerir un comerciante</mark> sobre el mapa o haga clic directamente en la URL {{merchant_proposals#new}} y complete el formulario.
+    - answer: El Colectivo recibirá una notificación de su solicitud y añadirá el comercio a OpenStreetMap.
+  categories:
+    - map
+
+- question: ¿Cómo convencer a un comerciante?
+  content:
+    - answer:
+        - Imprime (o encarga que se impriman) algunos folletos (artículo en {{blogs#show->flyer}}).
+        - Ayúdalos a crear una billetera Monero con CakeWallet (tutorial en {{tutorials#show->cakewallet-monero}}).
+        - Una vez al año, registra sus ventas de Monero en el archivo Excel predefinido (tutorial en {{tutorials#show->accounting}}).
+        - Una vez hecho esto, agrégalos al mapa usando el botón verde <mark>Sugerir un comerciante</mark> en {{maps#index}} o directamente en el formulario {{merchant_proposals#new}}.
+  categories:
+    - map
+    - merchant
+
+- question: Me gustaría que me eliminaran del mapa. ¿Cómo lo hago?
+  content:
+    - answer: Si actualmente figura en el mapa del Colectivo y ya no desea aparecer, debe enviar una solicitud de eliminación directamente a <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>. El sitio web de Bank-Exit no posee los datos y solo obtiene información pública y de código abierto de su sitio.
+    - mode: info
+      answer: Tenga en cuenta que, tras eliminarlo de OpenStreetMap, el comerciante podría seguir apareciendo en el mapa del Colectivo durante unas horas, a la espera de la siguiente sincronización de datos.
+  categories:
+    - map
+
+- question: Agregué un comercio a OpenStreetMap, pero sigue sin aparecer en el mapa del Colectivo. ¿Por qué?
+  content:
+    - answer: El mapa del Colectivo se actualiza automáticamente cuatro veces al día. Si agregó recientemente un comercio a OpenStreetMap, deberá esperar a la siguiente actualización, que puede tardar hasta seis horas.
+    - answer: Puede actualizar los datos usted mismo desde el mapa haciendo clic en <mark>⋮</mark> > <mark>Refrescar a los commerciantes</mark> (junto al botón verde "Sugerir un commerciante").
+  categories:
+    - map
+
+- question: Quiero incrustar el mapa en mi sitio web. ¿Cómo lo hago?
+  content:
+    - answer: Puede incrustar el mapa en su sitio web desde la <mark>URL</mark> o mediante un <mark>iframe</mark>.
+    - answer: Vaya a la página {{tutorials#show->documentation-embed-map}} para acceder a la documentación y generar su versión personalizada del mapa.
+  categories:
+    - map
+
+- question: ¿Qué es el KYC?
+  content:
+    - answer: El <b>KYC</b> (<i>Know Your Customer</i>) es un proceso utilizado por instituciones financieras, bancos, empresas de pagos y otros servicios financieros para verificar la identidad de sus clientes. Este proceso generalmente incluye la recopilación de documentos como identificaciones, pruebas de domicilio e información personal para asegurar que las transacciones sean legítimas y que los clientes no estén involucrados en actividades fraudulentas o criminales.
+  categories:
+    - general
+    - kyc
+
+- question: ¿Cuáles son los riesgos de un KYC?
+  content:
+    - answer:
+        - "<b>Protección de la privacidad</b>: El KYC implica compartir información personal sensible. Compartir estos datos puede exponerte al robo de identidad o al mal uso por parte de organizaciones maliciosas."
+        - "<b>Riesgos de seguridad</b>: Algunas empresas que solicitan el KYC no siempre garantizan la seguridad de los datos. Existe el riesgo de que esta información sea hackeada o utilizada para fines no autorizados"
+        - "<b>Discriminación y vigilancia</b>: El KYC puede provocar discriminación o sesgo en el acceso a los servicios financieros, y algunas personas pueden ser injustamente monitoreadas o excluidas debido a su perfil."
+        - "<b>Dificultad para acceder a los servicios</b>: Algunos usuarios pueden tener dificultades para proporcionar los documentos requeridos, lo que podría impedirles acceder a servicios financieros o participar en actividades legales."
+    - mode: info
+      answer: Puede encontrar una lista de sitios y servicios que no requieren KYC en <a href="https://kycnot.me" target="_blank">kycnot.me</a>.
+
+  categories:
+    - general
+    - kyc
+
+- question: ¿Cuál es la diferencia entre el mapa y el directorio?
+  content:
+    - answer:
+        - El mapa enumera a los comerciantes con una geolocalización precisa (latitud y longitud).
+        - El directorio incluye empresas que no tienen una dirección específica, ya sea porque desean mantener el anonimato o porque el servicio ofrece entregas a toda una zona o país. Por ejemplo, un medio de comunicación alternativo o un negocio en línea.
+  categories:
+    - map
+    - directory

@@ -1,0 +1,153 @@
+merchant_attributes: &merchant_attributes
+  name: Company name
+  category: Category
+  street: Street name
+  postcode: Postcode
+  city: City
+  country: Country
+  description: Description
+  email: Email
+  phone: Phone
+  website: Website
+  opening_hours: Opening hours
+
+  bitcoin: Bitcoin
+  monero: Monero
+  lightning: Lightning Network
+  june: June
+  contact_less: LN contactless
+  gold: Gold
+  silver: Silver
+  coins: Coins
+  ask_kyc: Request identity validation
+
+  contact_session: Session Contact
+  contact_signal: Signal Contact
+  contact_matrix: Matrix Contact
+  contact_jabber: Jabber Contact
+  contact_telegram: Telegram Contact
+  contact_facebook: Facebook Contact
+  contact_instagram: Instagram Contact
+  contact_twitter: Twitter/X Contact
+  contact_youtube: Youtube Contact
+  contact_tiktok: Tiktok Contact
+  contact_linkedin: Linkedin Contact
+  contact_tripadvisor: Tripadvisor Contact
+
+  delivery: Home delivery ?
+  delivery_zone: Delivery zone
+
+  last_survey_on: Date of last data verification
+
+en:
+  activemodel:
+    attributes:
+      merchant_proposal:
+        <<: *merchant_attributes
+        other_category: Other category
+        proposition_from: Follow-up email (optional)
+
+  activerecord:
+    models:
+      comment:
+        zero: comment
+        one: comment
+        other: comments
+      address: address
+      directory: directory
+      delivery_zone: delivery zone
+      contact_way: contact way
+      coin_wallet: crypto wallet
+      weblink: web link
+
+    attributes:
+      merchant:
+        <<: *merchant_attributes
+        full_address: Postal address
+
+      comment:
+        content: Comment
+        rating: Rating
+        pseudonym: Pseudonym
+
+        flag_reasons:
+          spam: Spam or misleading content
+          violent: Violent or abhorrent content
+          sexual: Sexually explicit content
+          hate: Abusive or hateful content
+          harassment: Harassment or intimidation
+          terrorism: Incitement to terrorism
+          child_abuse: Child abuse
+          illegal: Illegal content
+          other: Other reason
+
+      coin_wallet:
+        enabled: Enabled ?
+        coin: Coin
+        public_address: Public address
+        coins:
+          bitcoin: Bitcoin
+          monero: Monero
+          june: June
+          lightning: Bitcoin Lightning
+
+      contact_way:
+        role: Type
+        value: Value
+        roles:
+          email: Mail
+          phone: Phone
+          website: Website
+          twitter: Twitter
+          facebook: Facebook
+          instagram: Instagram
+          tiktok: Tiktok
+          youtube: Youtube
+          odysee: Odysée
+          crowdbunker: Crowdbunker
+          francelibretv: FranceLibre.tv
+          session: Session
+          signal: Signal
+          telegram: Telegram
+          matrix: Matrix
+          jabber: Jabber
+          tripadvisor: Tripadvisor
+          linkedin: Linkedin
+          substack: Substack
+          simplex: SimpleX
+
+      directory:
+        name: Name
+        description: Description
+        delivery_zone: Delivery zone
+        enabled: Enabled?
+        spotlight: Featured?
+        category: Category
+        logo: Logo
+        remove_logo: Remove logo
+        banner: Banner
+        remove_banner: Remove banner
+        coins: Coins
+        contact_ways: Contact method
+        weblinks: Web links
+
+      delivery_zone:
+        mode: Zone
+        value: Value
+
+        modes:
+          city: City
+          postcode: Postal Code
+          department: Department
+          region: Region
+          country: Country
+          continent: Continent
+          world: World
+
+      weblink:
+        url: Link
+        title: Title
+        enabled: Enabled ?
+
+      address:
+        label: Approximate address of the "merchant"

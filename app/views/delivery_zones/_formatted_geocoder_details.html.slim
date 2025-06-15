@@ -1,0 +1,22 @@
+ruby:
+  # TODO: Extract me in a dedicated helper method
+  city = geocoder.city
+  region = geocoder.region
+  country_code = geocoder.country_code
+  continent_code = geocoder.data['continentCode']
+
+  if country_code == 'FR'
+    region = t("FR-#{region}", scope: 'regions')
+  end
+
+  country = pretty_country_html(country_code, show_flag: true)
+  continent = t(continent_code, scope: 'continents')
+
+  sentence = [city, region, country, continent].compact_blank
+
+- if sentence.present?
+  .panel.panel-info.w-full.panel-sm
+    p= sentence.join(', ')
+- else
+  .panel.panel-warning.w-full.panel-sm
+    p Unknown geolocation

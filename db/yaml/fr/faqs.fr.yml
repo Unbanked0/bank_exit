@@ -1,0 +1,70 @@
+---
+- question: Je souhaite proposer un nouveau commerçant, comment faire ?
+  content:
+    - answer: Pour proposer un nouveau commerçant, cliquez sur le bouton vert <mark>Proposer un commerçant</mark> au dessus de la carte ou bien cliquez directement sur l'URL {{merchant_proposals#new}} et remplissez les données du formulaire.
+    - answer: Le Collectif sera alors informé de votre demande et ajoutera le commerçant sur OpenStreetMap.
+  categories:
+    - map
+
+- question: Comment convaincre un commerçant ?
+  content:
+    - answer:
+        - Imprimer (ou faire imprimer) quelques flyers (article sur {{blogs#show->flyer}}).
+        - L'aider à faire un portefeuille Monero avec CakeWallet (tutoriel sur {{tutorials#show->cakewallet-monero}}).
+        - Une fois par an, reporter ses quelques ventes Monero sur le fichier Excel tout prêt (tutoriel sur {{tutorials#show->accounting}}).
+        - Une fois effectué, le rajouter sur la carte avec le bouton vert <mark>Proposer un commerçant</mark> sur {{maps#index}} ou directement sur le formulaire {{merchant_proposals#new}} !
+  categories:
+    - map
+    - merchant
+
+- question: Je souhaite être retiré de la carte, comment faire ?
+  content:
+    - answer: Si vous êtes actuellement référencé sur la carte du Collectif et ne souhaitez plus y apparaître, il vous faut effectuer une demande de suppression directement auprès de <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>. En effet, le site Bank-Exit ne possède pas les données et ne fait que récupérer les informations publiques et open-source depuis leur site.
+    - mode: info
+      answer: A noter qu'après suppression sur OpenStreetMap, le commerçant peut encore apparaître quelques heures sur la carte du Collectif, en attendant la prochaine synchronisation des données.
+  categories:
+    - map
+
+- question: J'ai ajouté un commerçant sur OpenStreetMap mais il n'apparait toujours pas sur la carte du Collectif, pourquoi ?
+  content:
+    - answer: La carte du Collectif est actualisée automatiquement 4 fois par jour. Si vous avez ajouté un commerçant récemment sur OpenStreetMap, il faudra donc attendre le prochain rafraîchissement qui pourra prendre jusqu'à 6h.
+    - answer: A noter que vous pouvez effectuer vous même un rafraîchissement manuel des données depuis la carte en cliquant sur <mark>⋮</mark> > <mark>Rafraîchir les commerçants</mark> (à côté du bouton vert "Proposer un commerçant").
+  categories:
+    - map
+
+- question: Je souhaite intégrer la carte sur mon site, comment faire ?
+  content:
+    - answer: Vous pouvez intégrer la carte sur votre site soit à partir de l'<mark>URL</mark> soit à travers un <mark>iframe</mark>.
+    - answer: Rendez-vous sur la page {{tutorials#show->documentation-embed-map}} pour accéder à la documentation et générer votre version personnalisée de la carte.
+  categories:
+    - map
+
+- question: Qu'est-ce qu'un KYC ?
+  content:
+    - answer: Le <b>KYC</b> (<i>Know Your Customer</i>) est un processus utilisé par les institutions financières, les banques, les entreprises de paiement et d'autres services financiers pour vérifier l'identité de leurs clients. Ce processus inclut généralement la collecte de documents tels que des pièces d'identité, des justificatifs de domicile et des informations personnelles afin d'assurer que les transactions sont légales et que les clients ne sont pas impliqués dans des activités frauduleuses ou criminelles.
+  categories:
+    - general
+    - kyc
+
+- question: Quels sont les risques d'un KYC ?
+  content:
+    - answer:
+        - "<b>Protection de la vie privée</b> : Le KYC implique la collecte d'informations personnelles sensibles. Partager ces informations peut vous exposer à des risques de vol d'identité ou à des abus de la part d'organisations malveillantes."
+        - "<b>Risque de sécurité</b> : Certaines entreprises qui demandent un KYC ne garantissent pas toujours la sécurité des données. Il existe un risque que ces données soient piratées ou utilisées à des fins non autorisées."
+        - "<b>Discrimination et surveillance</b> : Le KYC peut entraîner des discriminations ou des biais dans l'accès aux services financiers, et certains utilisateurs peuvent être indésirables ou injustement surveillés en raison de leur profil."
+        - "<b>Difficulté d’accès aux services</b> : Certains utilisateurs peuvent avoir des difficultés à fournir les documents requis, ce qui les empêche d’accéder à des services financiers ou de participer à des activités légales."
+    - mode: info
+      answer: Vous pouvez retrouver une liste de sites et services qui ne demandent pas de KYC sur <a href="https://kycnot.me" target="_blank">kycnot.me</a>.
+
+  categories:
+    - general
+    - kyc
+
+- question: Quelle est la différence entre la carte et l'annuaire ?
+  content:
+    - answer:
+        - La carte référence les commerçants qui ont une géolocalisation précise (latitude et longitude).
+        - L'annuaire référence les commerçants qui n'ont pas d'adresse précise, soit par volonté de rester anonyme, soit parce que le service est disponible en livraison pour toute une zone ou un pays. Par exemple, un media alternatif ou un commerce en ligne.
+  categories:
+    - map
+    - directory

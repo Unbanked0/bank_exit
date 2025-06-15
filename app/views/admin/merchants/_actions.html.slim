@@ -1,0 +1,45 @@
+= content_for :dropdown_menu, flush: true do
+  li
+    = link_to admin_merchant_path(merchant) do
+      | Fiche admin
+
+  li
+    = link_to merchant_path(merchant), target: :_blank do
+      | Commerçant sur Bank-Exit
+
+
+  li
+    = link_to merchant.osm_link, target: :_blank do
+      | Commerçant sur OSM
+
+  - if allowed_to?(:create?, merchant, with: Admin::Merchants::DirectoryConverterPolicy)
+    li
+      = button_to "Convertir en entrée d'annuaire",
+                admin_directory_converters_path(merchant),
+                method: :post,
+                form_class: 'block text-center bg-success text-success-content',
+                data: { \
+                  turbo_confirm: "Voulez-vous convertir ce commerçant et l'intégrer dans l'annuaire ?<br />(le commerçant de la carte ne sera pas modifié)" \
+                }
+
+  - if allowed_to?(:update?, merchant)
+    li
+      = link_to 'Réactiver',
+                admin_merchant_path(merchant),
+                class: 'block text-center bg-success text-success-content',
+                data: { \
+                  turbo_method: :patch,
+                  turbo_confirm: 'Voulez-vous réactiver ce commerçant pour le référencer à nouveau sur la carte ?' \
+                }
+
+  - if allowed_to?(:destroy?, merchant)
+    li
+      = link_to 'Supprimer',
+                admin_merchant_path(merchant),
+                class: 'block text-center bg-error text-error-content',
+                data: { \
+                  turbo_method: :delete,
+                  turbo_confirm: 'Voulez-vous supprimer ce commerçant ? <br /> ⚠️ Il ne sera plus référencé sur la carte' \
+                }
+
+= render 'dropdown_actions'

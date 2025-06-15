@@ -1,0 +1,124 @@
+fr:
+  cancel: Annuler
+  confirm: Confirmer
+  close: Fermer
+  search: Rechercher
+  print: Imprimer
+  share_by_email: Partager par email
+  copied: Copié !
+  address: Adresse
+  description: Description
+  contact: Contact
+  weblinks: Sources
+  other: Autre
+  add: Ajouter
+  see: Voir
+  report: Signaler
+  breadcrumb: Fil d'ariane
+  details: Détails
+  link: Lien
+  spotlight: En vedette
+  reset_search: Réinitialiser la recherche
+
+  grid: Grille
+  table: Tableau
+
+  download: Télécharger
+  video_tutorial: Tutoriel vidéo
+  useful_links: Liens utiles
+  coin: Pièce
+
+  enabled: Activé
+  disabled: Désactivé
+
+  added_on: Ajouté il y a %{date}
+  updated_on: Mis à jour il y a %{date}
+
+  copy_to_clipboard: Copier dans le presse-papiers
+
+  x_results:
+    zero: "%{count} résultat"
+    one: "%{count} résultat"
+    other: "%{count} résultats"
+
+  from: de
+  to: à
+  and: et
+  by: par
+  or: ou
+
+  mo: lundi
+  tu: mardi
+  we: mercredi
+  th: jeudi
+  fr: vendredi
+  sa: samedi
+  su: dimanche
+
+  today: Aujourd'hui
+  yesterday: Hier
+  month: mois
+  day: jour(s)
+  hour: heure(s)
+  minute: minute(s)
+  second: seconde(s)
+
+  distance:
+    centi:
+      one: "centimètre"
+      other: "centimètres"
+    unit:
+      one: "mètre"
+      other: "mètres"
+    thousand:
+      one: "kilomètre"
+      other: "kilomètres"
+
+  time:
+    am: am
+    formats:
+      default: "%d/%m/%Y à %Hh%M"
+
+  helpers:
+    submit:
+      questions:
+        submit: Rechercher
+      merchant_proposal:
+        create: Proposer ce commerçant
+      comment_report:
+        create: Signaler ce commentaire
+      directory:
+        suggest: Proposer cette entrée
+        create: Créer l'entrée dans l'annuaire
+        update: Modifier l'entrée dans l'annuaire
+
+  questions:
+    individual: Un particulier
+    company: Une entreprise
+    association: Une association
+    politic: Un élu ou politicien
+
+    zero_knowledge: Je ne connais rien à la débancarisation ni aux cryptos
+    beginner: Je connais de nom
+    intermediate: J'en ai déjà (débutant)
+    expert: J'en ai déjà (avancé)
+
+    fetch_services:
+      debank: Me débancariser
+      privacy: Eviter le traçage
+      anonymous: Etre anonyme
+      inflation: Limiter l'inflation
+      messaging: Une messagerie anonyme
+      social_network: Un réseau social non censurable
+      accounting: Simplifier ma comptabilité
+      help: "Aider le collectif"
+
+      buy_btc: Acheter du Bitcoin
+      buy_xmr: Acheter du Monero
+      convert: Convertir Bitcoin <> Monero
+      spend: Dépenser en Monero ! (En ligne et/ou Commerces locaux)
+      kitty: Créer une cagnotte incensurable
+
+      buy_no_kyc: Acheter en P2P no-KYC
+      node: Lancer un noeud en 3 clics
+      tor_ipfs: Passer sur Tor/IPFS

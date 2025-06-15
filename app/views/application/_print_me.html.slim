@@ -1,0 +1,9 @@
+= link_to '#',
+          class: (klass if defined?(klass)),
+          title: t('print'),
+          data: { \
+            controller: 'printer',
+            action: 'click->printer#print' \
+          } do
+  = lucide_icon 'printer',
+                class: (icon_klass if defined?(icon_klass))

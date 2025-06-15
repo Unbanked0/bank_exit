@@ -1,0 +1,66 @@
+#map_popup.panel.panel-base-100 data-controller="map--popup"
+  header.mb-3
+    h3
+      = link_to merchant_path(@merchant),
+                class: 'merchant-name',
+                data: { map__popup_target: 'merchantLink' } do
+        = @merchant.name
+
+    - if @merchant.category.present?
+      p.color-base-300 class="!mb-2"
+        svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" class="print:text-black inline-flex"
+          use href="/map/spritesheet.svg##{@merchant.icon}"
+        =< t("categories.#{@merchant.category}", default: @merchant.category)
+
+  - if @merchant.address? || @merchant.opening_hours.present? || @merchant.delivery.present?
+    .panel.panel-base-200.panel-sm.mb-3.space-y-2
+      - if @merchant.address?
+        .flex.items-center.gap-2
+          .flex-shrink-0= lucide_icon 'home', class: 'w-4'
+          ==< @merchant.full_address_with_country
+
+      - if @merchant.opening_hours.present?
+        - multi_hours = @merchant.opening_hours_sentences.count > 1
+        .flex.items-center class=(multi_hours ? 'gap-5' : 'gap-1')
+          .flex-shrink-0= lucide_icon 'clock', class: 'w-4'
+          - if multi_hours
+            ul.list-disc
+              - @merchant.opening_hours_sentences.each do |sentence|
+                li= sentence
+          - else
+            = @merchant.opening_hours_sentences.first
+
+      - if @merchant.delivery.present?
+        .flex.items-center.gap-1
+          .flex-shrink-0= lucide_icon 'truck', class: 'w-4'
+          = t('.home_delivery')
+          - if @merchant.delivery_zone
+            =< "(#{@merchant.delivery_zone})"
+
+  .merchant-footer
+    .payment-methods
+      .label= t('.payment_methods')
+      .method-icons
+        = image_tag('coins/logo-monero.svg', alt: 'monero', title: t(@merchant.monero? ? '.monero_accepted' : '.monero_not_accepted'), class: ('opacity-20' unless @merchant.monero?))
+
+        = image_tag('coins/logo-bitcoin.svg', alt: 'bitcoin', title: t(@merchant.bitcoin? ? '.bitcoin_accepted' : '.bitcoin_not_accepted'), class: ('opacity-20' unless @merchant.bitcoin?))
+
+        = image_tag('coins/logo-june.svg', alt: 'june', title: t(@merchant.june? ? '.june_accepted' : '.june_not_accepted'), class: ('opacity-20' unless @merchant.june?))
+
+        = image_tag 'coins/logo-lightning.svg', alt: 'lightning', title: t(@merchant.lightning? ? '.lightning_accepted' : '.lightning_not_accepted'), class: ('opacity-20' unless @merchant.lightning?)
+
+        = image_tag 'coins/nfc-highlight.svg', alt: 'nfc', title: t(@merchant.contact_less? ? '.contact_less_accepted' : '.contact_less_not_accepted'), class: "dark:bg-white rounded-full dark:p-0.5 dark:border #{'opacity-20' unless @merchant.contact_less?}"
+
+        - if @merchant.ask_kyc?
+          = image_tag 'kyc.png', alt: 'KYC', title: 'KYC', class: 'rounded-full'
+        - else
+          = image_tag 'kyc_not.png', alt: 'No KYC', title: 'No KYC'
+
+    .text-right.text-xs class="!mt-4"
+      p
+        = link_to @merchant.osm_link, target: :_blank do
+          = t('.view_on_osm')
+
+      - if @merchant.last_survey_on
+        p.label.italic
+          = t('.last_survey_on', date: l(@merchant.last_survey_on))

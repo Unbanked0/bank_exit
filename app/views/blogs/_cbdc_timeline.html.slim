@@ -1,0 +1,28 @@
+/ TODO: Find a way to extract queries part to the controller
+ruby:
+  @cbdc_timeline = CBDCTimeline.all
+  @now = Date.current
+
+.max-w-max.mx-auto.overflow-auto
+  ul.timeline.timeline-vertical.max-md:timeline-compact
+    - @cbdc_timeline.reverse.each_with_index do |item, index|
+      - first_item = index == 0
+      - last_item = index == @cbdc_timeline.count - 1
+
+      li
+        - unless first_item
+          hr class=("bg-primary" if item.started_on <= @now)
+
+        .timeline-middle
+          = lucide_icon 'circle-check', class: "w-6 h-6 rounded-full border-0 #{item.started_on <= @now ? 'bg-primary stroke-base-200' : 'bg-base-200/50 dark:bg-warning dark:stroke-base-200'}"
+
+        .mb-5.md:text-end.timeline-box.max-w-lg class=cycle('timeline-start', 'timeline-end !text-left') class=('bg-warning' if first_item) class=(item.started_on < @now ? 'bg-primary text-primary-content' : 'bg-base-200')
+          .text-lg.font-black.mb-3
+            = item.title
+
+          ul.list-disc.list-inside
+            - item.description.each do |list_item|
+              li= list_item
+
+        - unless last_item
+          hr class=("bg-primary" if item.started_on <= @now)

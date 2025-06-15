@@ -1,0 +1,182 @@
+fr:
+  simple_form:
+    "yes": "Oui"
+    "no": "Non"
+    required:
+      text: "requis"
+      mark: "*"
+    error_notification:
+      default_message: "Veuillez vérifier les problèmes suivants:"
+
+    labels:
+      defaults:
+        theme: Thème
+        latitude: Latitude
+        longitude: Longitude
+        zoom: Zoom
+        gestureHandling: Bloque la carte (gestureHandling)
+        fitBounds: Centre la carte (fitBounds)
+        attribution: Mentions (attribution)
+        with_comments: Avec commentaires
+
+        query: Recherche
+        category: Catégorie
+        around_me: Livraison autour de ma position
+        city: Ville
+        postcode: Code Postal
+        department: Département 🇫🇷
+        region: Région 🇫🇷
+        country: Pays
+        world: Monde
+
+      questions:
+        profile: Je suis
+        level: Mon niveau
+        service: Je veux
+      map:
+        delivery: Avec livraison à domicile
+        no_kyc: Ne demande pas de <abbr title="Know Your Customer">KYC</abbr>
+        with_atms: Inclure les <abbr title="Automated Teller Machine (distributeurs automatiques)">ATMs</abbr>
+        category:
+          all: Toutes catégories de commerces
+          craft: Artisanat
+          catering: Restauration
+          store: Magasins
+          aesthetic: Hygiène et esthétique
+          health: Santé
+          financial: Services financiers
+          other: Autres
+
+      itinerary:
+        my_address: Mon adresse
+        use_my_ip: Me géolocaliser par IP
+        detailed_steps: Afficher le détail des étapes du trajet ?
+
+      category:
+        other: Autre catégorie (préciser)
+
+      tutorial_report:
+        title: Titre
+        description: Description
+
+      merchant_report:
+        description: Description
+
+      comment:
+        affidavit: J'atteste sur l'honneur avoir eu l'expérience indiquée avec ce commerçant
+
+    placeholders:
+      defaults:
+        latitude: Latitude par défaut
+        longitude: Longitude par défaut
+        query: Rechercher par nom ou description
+        city: Paris ou 75000
+        phone: 01 02 03 04 05
+        opening_hours: Lundi à Vendredi de 09h00 à 18h00
+        email: johndoe@example.com
+        website: "https://monsite.com"
+
+      map:
+        search: Rechercher par nom, adresse ou description
+
+      itinerary:
+        my_address: 1 rue de l'Eglise, Paris
+
+      merchant_proposal:
+        contact_session: Votre identifiant ou URL publique Session
+        contact_signal: Votre identifiant ou URL publique Signal
+        contact_matrix: Votre identifiant ou URL publique Matrix
+        contact_jabber: Votre identifiant ou URL publique Jabber
+        contact_telegram: Votre identifiant ou URL publique Telegram
+        contact_facebook: Votre identifiant ou URL publique Facebook
+        contact_instagram: Votre identifiant ou URL publique Instagram
+        contact_twitter: Votre identifiant ou URL publique Twitter/X
+        contact_youtube: Votre identifiant ou URL publique Youtube
+        contact_tiktok: Votre identifiant ou URL publique Tiktok
+        contact_linkedin: Votre identifiant ou URL publique Linkedin
+        contact_tripadvisor: Votre identifiant ou URL publique Tripadvisor
+        contact_odysee: Votre identifiant ou URL publique Odysee
+        contact_crowdbunker: Votre identifiant ou URL publique Crowdbunker
+        contact_francelibretv: Votre identifiant ou URL publique FranceLibre.tv
+        delivery_zone: FR, Lyon, 75000, EU, Monde
+        proposition_from: johndoe@example.com
+
+        street: 1 rue de la Liberté
+        postcode: 75000
+        city: Paris
+
+      tutorial_report:
+        title: Titre clair et concis de l'anomalie
+        description: Décrivez clairement la ou les anomalies que vous avez rencontrées en lisant le tutoriel.
+
+      merchant_report:
+        description: Description de l'anomalie
+
+      comment:
+        content: Votre commentaire
+        pseudonym: Votre pseudonyme (facultatif)
+
+      comment_report:
+        description: Veuillez expliquer pourquoi vous signalez ce commentaire
+
+      address:
+        label: Adresse, département, région, ...
+
+      weblinks:
+        url: "https://website.com/ma/super/page"
+        title: Le titre de ma page
+
+    prompts:
+      questions:
+        profile: Choisissez votre profil
+        level: Choisissez votre niveau
+        service: Sélectionnez un service
+
+      merchant_proposal:
+        category: Sélectionnez une catégorie de commerce
+        country: Sélectionnez un pays
+
+      comment:
+        rating: Sélectionnez votre note
+
+      comment_report:
+        flag_reason: Sélectionnez la raison du signalement
+
+      directory:
+        category: Sélectionner une catégorie
+
+    hints:
+      defaults:
+        around_me: Résultats déterminés à partir de votre adresse IP
+
+      merchant_proposal:
+        ask_kyc: Cocher si le commerçant demande une validation d'identité (KYC) pour accepter le paiement
+        proposition_from: Indiquez votre email si vous souhaitez être tenu informé du traitement de ce commerçant
+
+      itinerary:
+        my_address: Votre localisation n'est pas logguée sur le serveur
+        use_my_ip: La géolocalisation par IP peut être imprécise et ne pas correspondre si vous passez par un VPN
+        detailed_steps: Si coché, les étapes permettant de vous rendre à votre point de destination seront affichées
+
+      directory:
+        banner: Bannière d'arrière-plan
+        spotlight: Si coché, cette entrée sera mise en valeur en haut de la page de l'annuaire
+        address:
+          label: Laisser vide ou renseigner une adresse approximative pour protéger l'anonymat du commerçant.<br /> Cette information est utilisée par la fonctionnalité "Autour de moi" et influe sur la pertinence des résultats géolocalisés qui se basent sur la latitude et longitude.
+
+      weblinks:
+        title: Laisser vide pour afficher l'URL ou spécifier un titre adapté aux humains
+
+    include_blanks:
+      defaults:
+        continent: Tous les continents
+        country: Tous les pays
+        region: Toutes les régions
+        department: Tous les départements
+        category: 🔹 Toutes les catégories
+        zoom: Zoom par défaut
+        theme: Thème par défaut
+        gestureHandling: Valeur par défaut
+        fitBounds: Valeur par défaut
+        clusters: Valeur par défaut
+        attribution: Valeur par défaut

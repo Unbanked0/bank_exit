@@ -1,0 +1,15 @@
+fr:
+  backup_mailer:
+    send_geojson:
+      subject: "[Sortie de Banque] Sauvegarde hebdomadaire des commerçants (geojson)"
+
+  merchant_mailer:
+    send_new_merchant:
+      subject: "[Sortie de Banque] Proposition d'ajout d'une nouveau commerçant sur la carte"
+
+    send_report_merchant:
+      subject: "[Sortie de Banque] Signalement d'une anomalie sur une fiche commerçant"
+
+  comment_mailer:
+    send_report_comment:
+      subject: "[Sortie de Banque] Signalement d'un commentaire sur une fiche commerçant"

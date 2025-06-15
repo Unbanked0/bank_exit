@@ -1,0 +1,73 @@
+---
+- title: Flyer Bank Exit
+  identifier: flyer
+  created_at: "2025-04-10"
+  content:
+    - render:
+        pdf: /pdfs/Flyers_SDB_2025_V4_8_ENG.pdf
+        caption: Full version Bitcoin and Monero by <strong>Bank Exit</strong> on <strong>Github</strong>
+      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_EN_English/Flyers_SDB_2025_V4_8_ENG.pdf
+
+    - figure:
+        - image: projects/flyers/flyer_schmidt1024_poster_en.jpg
+          caption: Single Monero version by <strong>Schmidt1024</strong> on <strong>Gitea</strong>
+      url: https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/en/Monero%20for%20Merchants%20Booklet%20-%20english.pdf
+
+  useful_links:
+    - url: /pdfs/Flyers_SDB_2025_V4_9_accroche_pros.pdf
+      description: Hook for merchants and craftsmen in PDF (in french)
+
+- title: Bank Exit Presentation
+  identifier: presentation-bank-exit
+  created_at: "2025-01-31"
+  content:
+    - body:
+        - This article presents an overview of the economic situation in France and the European Union, as well as concrete solutions to protect against the coming dystopia.
+
+    - render:
+        pdf: /pdfs/Prez_SortieDeBanque_2.8_janv25.pdf
+        caption: Presentation PDF v2.8
+
+  useful_links:
+    - url: https://github.com/Unbanked0/Sortie_De_Banque/blob/615d6ae934f9bd966d0501eeb3dea9ca821e5614/Prez_SortieDeBanque_2.8_janv25.pdf
+      description: PDF of the presentation on Github
+
+- title: Digital €uro "Cash+"
+  identifier: cbdc-digital-euro
+  banner: banner-cbdc
+  created_at: "2025-04-15"
+  content:
+    - title: Introduction
+      body:
+        - The digital euro "Cash+" is a European Central Bank (ECB) project aimed at improving digital banking services and simplifying payments across Europe.
+        - This project aims to create a universal, secure, and easy-to-use system that will allow citizens to access their accounts and make financial transactions online, even without an internet connection or in rural areas.
+        - The idea is to make payments more seamless and less expensive for people, while ensuring the security and confidentiality of financial information.
+        - The preparation phase is scheduled to be completed by October 2025, with a planned launch before 2030.
+
+    - render:
+        partial: countdown
+
+    - title: Warnings ⚠️
+      body:
+        - "- <strong>Loss of Privacy</strong>: The widespread use of digital accounts and electronic payments could lead to increased surveillance and the collection of personal data by authorities and businesses."
+        - "- <strong>Power Imbalance</strong>: A single, universally accepted currency could give too much power to financial institutions and the government, potentially leading to restrictive political decisions that are contrary to the public interest."
+        - "- <strong>Access Issues</strong>: Populations without access to the internet or digital technologies could be excluded from digital currencies, leading to financial and social segregation."
+        - "- <strong>Cyber Risk and Vulnerability</strong>: The widespread use of a digital system could expose users to significant cybersecurity risks, such as phishing attacks, market volatility, or even extortion."
+        - "- <strong>Overreliance on technology</strong>: An economy that relies on a digital system could be vulnerable to technical disruptions and network outages."
+      mode: warning
+
+    - title: Roadmap Cash+ ECB
+      render:
+        partial: cbdc_timeline
+
+  useful_links:
+    - url: https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline
+      description: Digital €uro from ECB
+    - url: https://www.ecb.europa.eu/euro/digital_euro/progress/shared/pdf/241202-timeline-digital-euro-project.fr.pdf
+      description: Digital €uro ECB Roadmap (in PDF)
+
+  figure:
+    video:
+      url: https://youtube.com/embed/dXJBB60qZo0?start=116
+      title: Presentation of Cash+ by Grand Angle (in french)
+      created_at: "2023-07-02"

@@ -1,0 +1,36 @@
+- coin_wallets = directory.coin_wallets.enabled
+- delivery_zones = directory.delivery_zones.enabled
+
+tr.odd:hover:bg-base-200.transition-colors
+  td
+    - if directory.logo.attached?
+      = image_tag directory.logo, class: 'rounded-full w-12 h-12 object-cover bg-white'
+  th
+    = link_to directory_path(directory) do
+      = directory.name
+
+  td= directory.description&.truncate(100)
+  td
+    .flex.items-center.gap-3
+      - coin_wallets.each do |coin_wallet|
+        = image_tag icon_by_coin(coin_wallet.coin), title: coin_wallet.coin.capitalize, class: 'w-8 h-8'
+
+  td
+    - if delivery_zones.any?
+      - delivery_zones.group_by(&:mode).each do |group|
+        - mode = group.first
+        - rows = group.last
+
+        - if rows.count == 1
+          - row = rows.first
+          p= render 'delivery_zones/formatted_zone_by_mode', delivery_zone: row
+        - else
+          ul
+            - rows.each do |row|
+              li
+                = render 'delivery_zones/formatted_zone_by_mode', delivery_zone: row
+
+    - else
+      = lucide_icon 'x', class: 'bg-error text-error-content rounded-box'
+
+  td= link_to t('see'), directory_path(directory), class: 'btn btn-primary btn-sm'

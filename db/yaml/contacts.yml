@@ -1,0 +1,56 @@
+---
+- title: Email
+  links:
+    - sortiedebanque@tutamail.com
+  icon: mail # Lucide icon
+  pgp_key: |
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
+
+    mDMEZsj1thYJKwYBBAHaRw8BAQdAGXM8xxLPQnZ8PDRC3Ej+aOdOofEohck8315r
+    UeGRXDK0LFNvcnRpZURlQmFucXVlIDxzb3J0aWVkZWJhbnF1ZUB0dXRhbWFpbC5j
+    b20+iJkEExYKAEEWIQQn932NVKmmucu5oZkpDHeR6TjZywUCZsj1tgIbAwUJBnYA
+    egULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAKCRApDHeR6TjZy6+JAP40SftR
+    v9+gEoHc/TC04IP+AUEZoe61QMR1L5Tt00h//QD/foc40zozFr3gyQY1JOOqUBuo
+    J650vypfOiFo4Oiv4wG4OARmyPW2EgorBgEEAZdVAQUBAQdAZuQDv0eLE3CSGgqK
+    bFZmONt+/ySNlZl4/IaQNmesNBQDAQgHiH4EGBYKACYWIQQn932NVKmmucu5oZkp
+    DHeR6TjZywUCZsj1tgIbDAUJBnYAegAKCRApDHeR6TjZy6DyAQCec1VrXRV9VYGP
+    xwhes4fy7k2GlAkUgdS91bi2IZpJDQEAgSwUSPic77ZKzQykAvflWQt44VPnJCx9
+    T4TgBxPu0w4=
+    =HoGK
+    -----END PGP PUBLIC KEY BLOCK-----
+  pgp_key_fingerprint: 27F77D8D54A9A6B9CBB9A199290C7791E938D9CB
+
+- title: Session
+  links:
+    - https://getsession.org
+  icon: session.svg
+  public_key: 05d704f204260106008e80408c427d9819f71008dd7eedb874db6db1d2b5fcce78
+  sticker: contacts/box_session.png
+
+- title: Youtube
+  links:
+    - https://www.youtube.com/@sortiedebanque
+  icon: youtube.svg
+
+- title: Twitter / X
+  links:
+    - https://x.com/SortieDeBanque
+  icon: twitter.svg
+
+- title: Telegram
+  links:
+    - http://t.me/SortieDeBanque
+  icon: telegram.svg
+
+- title: Nostr
+  links:
+    - https://nostr.com
+    - https://njump.me/npub1ve5njaylrety85mv3tlqszs6jw8ld7vnezlr5pp753rkt4lelz9sqqffzl
+  icon: nostr.svg
+  public_key: npub1ve5njaylrety85mv3tlqszs6jw8ld7vnezlr5pp753rkt4lelz9sqqffzl
+  sticker: contacts/box_nostr.png
+
+- title: Linktree
+  links:
+    - https://linktr.ee/sortiedebanque
+  icon: linktree.svg

@@ -1,0 +1,150 @@
+= simple_form_for '',
+                  url: directories_path,
+                  method: :get,
+                  html: { class: 'flex flex-col gap-2' },
+                  data: { \
+                    turbo_stream: true,
+                    directories_target: 'form', \
+                    action: 'change->directories#submit keyup->directories#submit' \
+                  } do |f|
+
+  #directories_count
+    = render 'maps/merchants_count', pagy: pagy
+
+  = f.input :category,
+            collection: directories_categories_select_helper,
+            selected: params[:category],
+            include_blank: :translate,
+            required: false
+
+  = f.input :query,
+            required: false,
+            input_html: { \
+              value: params[:query] \
+            }
+
+  .space-y-1
+    .flex.items-center.justify-between
+      = f.input :around_me,
+                as: :boolean,
+                include_hidden: false,
+                input_html: { \
+                  data: { \
+                    directories_target: 'aroundMe',
+                    action: 'change->directories#deliveryZoneChanged' \
+                  }, \
+                  checked: around_me? \
+                }
+
+      p
+        = render 'tooltip', text: t('.tooltip_geocoder_ip_html').join('<br />'), position: :left
+
+    #geocoder_details data-directories-target="geocoderDetails"
+      - if around_me?
+        = render 'delivery_zones/formatted_geocoder_details', geocoder: @my_geocoder
+
+  fieldset.fieldset.w-full
+    label.fieldset-legend= Directory.human_attribute_name(:coins).capitalize
+    ul.grid.w-full.gap-2.grid-cols-3
+      - [:monero, :bitcoin, :june].each do |coin|
+        li.flex.flex-col.items-center.justify-start.gap-2
+          .w-full
+            input type="checkbox" id="#{coin}-option" value=coin class="hidden peer" name="coins[]" checked=params[:coins]&.include?(coin.to_s)
+            label.pretty-checkbox.inline-flex.items-center.justify-center.bg-base-100 for="#{coin}-option" tabindex="0"
+              .flex.flex-col.items-center.justify-center.gap-2
+                - if coin == :bitcoin
+                  .avatar-group.-space-x-4
+                    .avatar
+                      .w-8
+                        = image_tag "coins/logo-lightning.svg"
+                    .avatar
+                      .w-8
+                        = image_tag "coins/logo-#{coin}.svg"
+                - else
+                    = image_tag "coins/logo-#{coin}.svg", class: 'w-10'
+
+                .text-xs
+                  = coin.capitalize
+
+  section.space-y-2.mt-2.w-full
+    .badge.badge-secondary.justify-center
+      = DeliveryZone.model_name.human.capitalize
+
+    = f.input :city,
+              required: false,
+              label_html: { class: 'mb-2' },
+              wrapper_html: { class: 'auto-search-wrapper' },
+              input_html: { \
+                value: params[:city],
+                data: { \
+                  directories_target: 'city',
+                  action: 'keyup->directories#deliveryZoneChanged' \
+                } \
+              }
+
+    = f.input :department,
+              required: false,
+              collection: french_departments_select_helper,
+              include_blank: :translate,
+              selected: params[:department],
+              input_html: { \
+                data: { \
+                  directories_target: 'department',
+                  action: 'change->directories#deliveryZoneChanged' \
+                } \
+              }
+
+    = f.input :region,
+              required: false,
+              collection: french_regions_select_helper,
+              include_blank: :translate,
+              selected: params[:region],
+              input_html: { \
+                data: { \
+                  directories_target: 'region',
+                  action: 'change->directories#deliveryZoneChanged' \
+                } \
+              }
+
+    .fieldset
+      = f.input :country,
+                required: false,
+                include_blank: :translate,
+                format: :with_flag,
+                wrapper: false,
+                selected: params[:country],
+                input_html: { \
+                  class: 'select w-full',
+                  data: { \
+                    directories_target: 'country',
+                    action: 'change->directories#deliveryZoneChanged' \
+                  } \
+                },
+                label_html: { class: 'fieldset-legend' }
+
+    = f.input :continent,
+              required: false,
+              collection: continents_select_helper,
+              include_blank: :translate,
+              selected: params[:continent],
+              input_html: { \
+                data: { \
+                  directories_target: 'continent',
+                  action: 'change->directories#deliveryZoneChanged' \
+                } \
+              }
+
+    = f.input :world,
+              as: :boolean,
+              boolean_style: :inline,
+              include_hidden: false,
+              input_html: { \
+                checked: params[:world] == '1',
+                data: { \
+                  directories_target: 'world',
+                  action: 'change->directories#deliveryZoneChanged' \
+                } \
+              }
+
+  p.self-center
+    = link_to t('reset_search'), directories_path, class: 'btn btn-link btn-sm'

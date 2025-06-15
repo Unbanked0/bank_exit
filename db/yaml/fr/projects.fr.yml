@@ -1,0 +1,62 @@
+---
+- route: maps#index
+  image: map_monero.jpg
+  title: La carte
+  description: Visualiser et filtrer les commerces Bitcoin et Monero dans le monde
+  external: false
+  identifier: map
+
+- route: blogs#show
+  identifier: flyer
+  image: flyer.jpg
+  title: Le prospectus
+  description: Monero et Bitcoin pour les particuliers et professionnels
+
+- route: projects#show
+  image: epicerie_monero.png
+  website_screenshot: not_iframe/grocery.jpg
+  title: L'épicerie Libre
+  description: Acheter des produits de qualité en Monero
+  external: false
+  iframe_url: https://monero-map.org/epicerie
+  github_url: https://github.com/Unbanked0/Freedom_Grocers
+  identifier: grocery
+
+- route: projects#show
+  image: cheque_monero.png
+  website_screenshot: not_iframe/cheque.jpg
+  title: Les chèques
+  description: Générer des chèques à imprimer pour payer en Bitcoin et Monero
+  external: false
+  iframe_url: https://monero-map.org/cheque
+  github_url: https://github.com/Unbanked0/Monero_Cheque
+  identifier: cheque
+  figure:
+    video:
+      url: https://youtube.com/embed/mK3AaPkwxSk
+      title: "CRYPTO CHEQUE MONERO - Accélérer l'adoption, du palpable, sans téléphone #MoneroCheque"
+      created_at: "2024-10-26"
+
+- route: projects#show
+  image: sticker_monero.png
+  website_screenshot: not_iframe/sticker.jpg
+  title: Les stickers
+  description: Générer des bannières de don ou de paiement Bitcoin et Monero
+  external: false
+  iframe_url: https://monero-map.org/crypto_box
+  github_url: https://github.com/Unbanked0/Crypto_Box_sticker
+  identifier: sticker
+
+- route: local_groups#index
+  image: local_groups.jpg
+  title: Les groupes locaux
+  description: Retrouver les différents groupes Sortie de Banque en France (Paris, Rennes, Lille, Lyon, ...)
+  external: false
+  identifier: local_groups
+
+- route: tutorials#show
+  image: accounting.jpg
+  title: Comptabilité d'entreprise
+  description: Gérer votre comptabilité d'entreprise facilement grâce à un ficher Excel qui automatise votre calcul de revenus Monero et Bitcoin
+  external: false
+  identifier: accounting

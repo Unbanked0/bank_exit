@@ -1,0 +1,12 @@
+.hero.bg-fixed.bg-banner-liberty
+  .hero-overlay
+  .hero-content.py-20
+    .max-w-5xl.space-y-8
+      header.text-center.space-y-5.text-neutral-content
+        h1.text-3xl.font-bold= t('.title')
+        p.text-lg= t('.headline')
+
+      .grid.grid-cols-2.lg:grid-cols-5.gap-6
+        = render coins
+
+      = turbo_frame_tag :coin

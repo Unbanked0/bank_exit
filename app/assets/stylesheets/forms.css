@@ -1,0 +1,37 @@
+label.pretty-checkbox {
+    border-radius: var(--radius-field);
+    border: var(--border) solid #0000;
+    cursor: pointer;
+    width: 100%;
+    --tw-border-opacity: 0.3;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
+    --tw-bg-opacity: 1;
+    padding: 0.5rem;
+    transition-duration: 0.15s;
+    transition-property:
+        color, background-color, border-color, text-decoration-color, fill,
+        stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        border-color: var(--color-primary);
+    }
+}
+
+.peer:checked ~ label.pretty-checkbox {
+    background-color: rgb(from var(--color-primary) r g b/.25);
+}
+
+.fieldset-legend {
+    justify-content: flex-start;
+}
+
+.label {
+    white-space: normal;
+}
+
+.with-error,
+span.error {
+    color: var(--color-error-content);
+    font-size: 0.75rem;
+}

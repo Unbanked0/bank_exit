@@ -1,0 +1,25 @@
+inherit_from:
+  - .rubocop-custom.yml
+  - .rubocop-disabled.yml
+
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  SuggestExtensions: false
+  Exclude:
+    - "bin/*"
+    - "db/*schema.rb"
+    - "lib/generators/**/*"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+    - "tmp/**/*"
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/RedundantActiveRecordAllMethod:
+  AllowedReceivers:
+    - FAQ

@@ -1,0 +1,141 @@
+header.mb-3
+  h1.text-3xl
+    - if params[:show_deleted] == 'true'
+      | Les commerçants désactivés
+    - else
+      | Les commerçants
+
+- merchant_deleted_count = Merchant.deleted.count
+
+.stats.shadow.bg-base-200.mb-3.w-full.lg:w-auto
+  .stat
+    .stat-figure
+      = lucide_icon 'store', class: 'w-12 h-12'
+    .stat-title
+      span.status.status-success.status-lg
+      |< Commerçants visibles
+    .stat-value= Merchant.available.count
+    .stat-desc au #{l(@dashboard_presenter.today.to_date)}
+
+  .stat
+    .stat-figure
+      = lucide_icon 'store', class: 'w-12 h-12'
+    .stat-title
+      span.status.status-error.status-lg
+      |< Commerçants désactivés
+    .stat-value= merchant_deleted_count
+    - if merchant_deleted_count > 0
+      .stat-actions.mt-1
+        =< link_to 'Afficher', admin_merchants_path(show_deleted: true), class: 'btn btn-error btn-xs'
+
+  .stat.space-y-3
+    .stat-figure
+      = lucide_icon 'refresh-cw', class: 'w-12 h-12'
+
+    - if @last_update > 0
+      .stat-title
+        span.status.status-info.status-lg
+        |< Dernière actualisation
+      .stat-value.text-lg title=l(Time.zone.at(@last_update))
+        | Il y a
+        =< time_ago_in_words(@last_update)
+
+    .stat-actions
+      = button_to refresh_merchants_path,
+                  class: 'cursor-pointer btn btn-info btn-xs',
+                  disabled: !can_refresh_merchants?(last_updated_at: @last_update),
+                  data: { \
+                    turbo_confirm: t('maps.dropdown_map_actions.refresh_confirm_html') \
+                  } do
+        | Rafraîchir
+
+- if params[:show_deleted] == 'true'
+  section.mb-3.space-y-3
+    details.panel.panel-info.panel-sm
+      summary.cursor-pointer Explications à lire
+      .mt-3.space-y-3
+        p Les commerçants labélisés comme <span class="badge badge-sm badge-error">Désactivé</span> n'ont pas été remontés dans les résultats lors du dernier rafraîchissement API avec Overpass. Cela peut signifier que le commerçant a arrêté son activité, n'accepte plus les cryptomonnaies (Bitcoin, Monero ou June) ou bien qu'un troll a fait du vandalisme sur OpenStreetMap.
+        p Il convient donc au Collectif d'étudier ces changements et confirmer si le commerçant doit bien être supprimé de la carte ou être réactivé (par défaut le commerçant passe en "soft deleted" ce qui signifie qu'il reste présent dans la base de données mais devient invisible sur la carte et dans la recherche).
+        p A noter que si le commerçant est confirmé comme légitime et réactivé sur Bank-Exit, il redeviendra <span class="badge badge-sm badge-error">Désactivé</span> à chaque rafraîchissement des données tant que la source n'aura pas été corrigée sur OSM car l'algorithme considère que la "vérité" vient d'OSM.
+
+section
+  .mb-3.max-w-5xl.mx-auto
+    .badge.badge-secondary.badge-sm.text-center.my-2
+      p
+        strong#merchants_count= @pagy.count
+        |< résultat(s)
+
+    = simple_form_for '',
+                      url: admin_merchants_path,
+                      method: :get,
+                      html: { \
+                        class: 'w-full space-y-1',
+                        data: { \
+                          controller: 'admin--search',
+                          turbo_stream: true ,
+                          action: 'keyup->admin--search#submit change->admin--search#submit' \
+                        }, \
+                      } do |f|
+
+      .flex.flex-col.lg:flex-row.items-center.gap-2
+        = f.input :query,
+                  label: false,
+                  input_html: { \
+                    value: params.dig(:query),
+                    placeholder: t('simple_form.placeholders.map.search'),
+                    data: { \
+                      admin__search_target: :query \
+                    } \
+                  },
+                  wrapper: false
+
+        = f.input :category,
+                  collection: merchant_categories_select_helper,
+                  label: false,
+                  include_blank: :translate,
+                  selected: params[:category],
+                  input_html: { \
+                    data: { \
+                      admin__search_target: :category \
+                    } \
+                  }
+
+        = f.input :country,
+                  format: :with_flag,
+                  wrapper: false,
+                  label: false,
+                  include_blank: :translate,
+                  only: Merchant.pluck(:country).uniq,
+                  selected: params[:country],
+                  input_html: { \
+                    class: 'select w-full', \
+                    data: { \
+                      admin__search_target: :country \
+                    } \
+                  }
+
+      .flex.flex-col.lg:flex-row.justify-between.gap-2
+        = f.input :with_comments,
+                  as: :boolean,
+                  include_hidden: false,
+                  input_html: { \
+                    checked: params[:with_comments] == '1' \
+                  }
+
+        ul.flex.gap-1
+          - [:monero, :bitcoin, :june].each do |coin|
+            li
+              .w-full
+                input type="checkbox" id="#{coin}-option" value=coin class="hidden peer" name="coins[]" data-action="input->search#submit" checked=params.dig(:coins)&.include?(coin.to_s)
+                label.pretty-checkbox.inline-flex.items-center.justify-between for="#{coin}-option" tabindex="0"
+                  .avatar-group.-space-x-3
+                    - if coin == :bitcoin
+                      .avatar
+                        .w-6
+                          = image_tag "coins/logo-lightning.svg"
+                    .avatar
+                      .w-6
+                        = image_tag "coins/logo-#{coin}.svg"
+
+  #merchants
+    = render 'merchants', merchants: @merchants, pagy: @pagy

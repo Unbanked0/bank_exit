@@ -1,0 +1,49 @@
+es:
+  application:
+    scam_alert:
+      title: Cuidado con las estafas
+      headline_html: "Compruebe siempre que el sitio que aparece en su navegador corresponde a %{url}"
+
+    nav:
+      collectif: Salida
+      bank_exit: De Banco
+
+      menu:
+        home: Inicio
+        map: El mapa
+        directories: El directorio
+        projects: Los proyectos
+        monero_wallet: Monedero Monero
+        articles: Los artículos
+        tutorials: Los tutoriales
+        blogs: El blog
+        faq: Preguntas más frecuentes (FAQ)
+        contact: Contacto
+        pros: Pros
+        github_title: Enlace al repositorio Github
+
+    language_switcher:
+      fr: Français
+      en: English
+      es: Español
+
+    theme_switcher:
+      switch_to_light: Cambiar al tema claro
+      switch_to_dark: Cambiar al tema oscuro
+
+    countdown:
+      label: antes del final de la fase de preparación
+      source_html: fuente <abbr title="Banco Central Europeo">BCE</abbr>
+
+    upper_footer:
+      navigation: Navegación
+      projects: Los proyectos
+      warning_title: ⚠️ Descargo de responsabilidad (por leer) ⚠️
+      license: Licencia de utilización
+
+    contacts:
+      title: Redes y contactos
+
+    footer:
+      copyright_html: Copyright &copy; Salida del Banco 2022 - %{year} &bullet; Todos derechos reservados
+      developed_by_html: Desarrollado con %{heart} por Collectif Sortie de Banque

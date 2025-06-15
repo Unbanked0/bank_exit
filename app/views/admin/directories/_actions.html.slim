@@ -1,0 +1,22 @@
+= content_for :dropdown_menu, flush: true do
+  li
+    = link_to 'Voir page publique',
+              directory_path(directory),
+              target: :_blank
+
+  - if allowed_to?(:update?, directory)
+    li
+      = link_to 'Modifier',
+                edit_admin_directory_path(directory)
+
+  - if allowed_to?(:destroy?, directory)
+    li
+      = link_to 'Supprimer',
+                admin_directory_path(directory),
+                class: 'block text-center bg-error text-error-content',
+                data: { \
+                  turbo_method: :delete,
+                  turbo_confirm: "Voulez-vous supprimer cette entrée de l'annuaire ?" \
+                }
+
+= render 'dropdown_actions'

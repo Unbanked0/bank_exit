@@ -1,0 +1,45 @@
+.flex.items-center.gap-3
+  - if allowed_to?(:update?, with: Admin::Merchants::BatchActionPolicy)
+    = simple_form_for :batch_actions,
+                      url: admin_merchants_batch_actions_path,
+                      method: :patch,
+                      html: { \
+                        data: { \
+                          turbo_confirm: 'Voulez-vous réactiver ces commerçants ?' \
+                        } \
+                      } do |f|
+      = f.input :directory_ids,
+                as: :hidden,
+                wrapper: false,
+                input_html: { \
+                  value: '', \
+                  data: { admin__table_target: 'batchIdsInput' } \
+                }
+      = button_tag class: 'btn btn-success',
+                  title: 'Réactiver les sélectionnés',
+                  data: { admin__table_target: 'batchEnableSubmit' },
+                  disabled: true do
+        = lucide_icon('check-check')
+
+  - if allowed_to?(:destroy?, with: Admin::Merchants::BatchActionPolicy)
+    = simple_form_for :batch_actions,
+                      url: admin_merchants_batch_actions_path,
+                      method: :delete,
+                      html: { \
+                        data: { \
+                          turbo_confirm: 'Voulez-vous supprimer définitivement ces commerçants ?' \
+                        } \
+                      } do |f|
+      = f.input :directory_ids,
+                as: :hidden,
+                wrapper: false,
+                input_html: { \
+                  value: '', \
+                  data: { admin__table_target: 'batchIdsInput' } \
+                }
+
+      = button_tag class: 'btn btn-error',
+                  title: 'Supprimer les sélectionnés',
+                  data: { admin__table_target: 'batchDestroySubmit' },
+                  disabled: true do
+        = lucide_icon('trash-2')

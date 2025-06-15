@@ -1,0 +1,69 @@
+tr.hover:bg-primary/5.transition-colors data-update-url=update_position_admin_directory_path(directory) class=('opacity-25' unless directory.enabled?)
+  td.handle.cursor-grab.bg-primary/5
+    = lucide_icon 'grip-vertical', class: 'mx-auto'
+
+  td
+    span.font-bold= "##{directory.position}"
+
+  td.relative
+    - if directory.spotlight?
+      .absolute.top-0.left-0 title="En vedette"
+        = lucide_icon 'star', class: 'fill-yellow-500 stroke-black'
+
+    - if directory.logo.attached?
+      .avatar
+        .w-20.rounded-full
+          = image_tag url_for(directory.logo.variant(:thumb))
+
+  td scope="row"
+    p.mb-1
+      = link_to edit_admin_directory_path(directory), class: 'font-bold' do
+        = highlight(directory.name, params[:query])
+
+    - if directory.category.present?
+      p.text-xs
+        = t(directory.category, scope: :directories_categories)
+
+  td
+    - address = directory.address
+    - if address&.geocoded?
+      - if address.country_code
+        span title=address.label
+          = pretty_country_html(address.country_code, show_flag: true)
+      - else
+        span= address.label
+
+  td
+    .flex.items-center.gap-3
+      - directory.coin_wallets.each do |coin_wallet|
+        = image_tag icon_by_coin(coin_wallet.coin), class: "w-5 #{'opacity-10' unless coin_wallet.enabled?}", title: "#{coin_wallet.coin.capitalize} - #{coin_wallet.public_address}"
+
+  td
+    .flex.items-center.gap-3
+      - main_group = []
+      - extra_group = []
+
+      - directory.contact_ways.each.with_index(1) do |contact_way, index|
+        - if index > 3
+          - extra_group << contact_way
+        - else
+          - main_group << contact_way
+
+      - main_group.each do |contact_way|
+        = social_contact_icon contact_way.role,
+                              klass: ('opacity-10' unless contact_way.enabled?),
+                              title: contact_way.value
+
+      - if extra_group.present?
+        - text = extra_group.map { social_contact_icon(it.role, klass: ('opacity-10' unless it.enabled?)) }.join(' ')
+        = render 'tooltip',
+                 position: :left,
+                 text: text,
+                 mode: 'info',
+                 lucide_ikon: 'ellipsis'
+
+  td
+    = l(directory.created_at)
+
+  td
+    = render 'actions', directory: directory

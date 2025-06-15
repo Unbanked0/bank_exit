@@ -1,0 +1,40 @@
+# Check the length of lines in the source code
+Layout/LineLength:
+  Enabled: false
+
+Lint/DuplicateBranch:
+  Enabled: false
+
+# Call super to initialize state of the parent class.
+Lint/MissingSuper:
+  Enabled: false
+
+# Disable all Metrics related cops
+Metrics:
+  Enabled: false
+
+# Method parameter must be at least 3 characters long.
+Naming/MethodParameterName:
+  Enabled: false
+
+# This cop checks for the use of methods which skip validations.
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+# Document classes and non-namespace modules.
+Style/Documentation:
+  Enabled: false
+
+# Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Use smallcase prefixes for numeric literals.
+Style/NumericLiteralPrefix:
+  Enabled: false

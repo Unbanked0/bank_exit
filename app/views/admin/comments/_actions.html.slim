@@ -1,0 +1,29 @@
+- merchant = comment.commentable
+
+= content_for :dropdown_menu, flush: true do
+  li
+    = link_to merchant_path(merchant), target: :_blank do
+      | Commerçant sur Bank-Exit
+
+
+  - if allowed_to?(:update?, comment)
+    li
+      = link_to 'Réactiver',
+                admin_comment_path(comment),
+                class: 'block text-center bg-success text-success-content',
+                data: { \
+                  turbo_method: :patch,
+                  turbo_confirm: 'Voulez-vous retirer le signalement de ce commentaire ?' \
+                }
+
+  - if allowed_to?(:destroy?, comment)
+    li
+      = link_to 'Supprimer',
+                admin_comment_path(comment),
+                class: 'block text-center bg-error text-error-content',
+                data: { \
+                  turbo_method: :delete,
+                  turbo_confirm: 'Voulez-vous supprimer ce commentaire ?' \
+                }
+
+= render 'dropdown_actions'

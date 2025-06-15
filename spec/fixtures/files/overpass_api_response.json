@@ -1,0 +1,148 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.5 1bd436f1",
+  "osm3s": {
+    "timestamp_osm_base": "2025-02-19T19:08:27Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 296731584,
+      "lat": 50.1033539,
+      "lon": 14.4504882,
+      "tags": {
+        "addr:city": "Praha",
+        "addr:conscriptionnumber": "475",
+        "addr:housenumber": "475/43",
+        "addr:postcode": "17000",
+        "addr:street": "Dělnická",
+        "addr:streetnumber": "43",
+        "amenity": "cafe",
+        "cuisine": "no",
+        "currency:XBT": "yes",
+        "currency:XMR": "yes",
+        "email": "kavarna@paralelnipolis.cz",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "internet_access:ssid": "ParalelniPolis",
+        "name": "Bitcoin Coffee",
+        "opening_hours": "Mo-Fr 08:00-20:00",
+        "payment:lightning": "yes",
+        "payment:lightning_contactless": "yes",
+        "payment:onchain": "yes",
+        "phone": "+420 773 885 432",
+        "smoking": "outside",
+        "source:addr": "cuzk:ruian",
+        "survey:date": "2024-06-08",
+        "toilets": "yes",
+        "website": "https://www.paralelnipolis.cz"
+      }
+    },
+    {
+      "type": "node",
+      "id": 445766280,
+      "lat": 43.7136389,
+      "lon": 7.261765,
+      "tags": {
+        "addr:city": "Nice",
+        "addr:housenumber": "30",
+        "addr:postcode": "06100",
+        "addr:street": "Av. Alfred Borriglione",
+        "amenity": "cafe",
+        "cuisine": "bakery",
+        "currency:XMR": "yes",
+        "name": "MM salon de thé, pâtisserie, chocolaterie",
+        "opening_hours": "Tu-Sa 8:00-19:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:cryptocurrencies": "yes",
+        "payment:lightning": "yes",
+        "payment:onchain": "yes",
+        "phone": "0966845502",
+        "survey:date": "2025-02-13",
+        "website": "https://patisseriemm-nice.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 74058032,
+      "bounds": {
+        "minlat": 46.3699853,
+        "minlon": -0.6979706,
+        "maxlat": 46.3702577,
+        "maxlon": -0.6974317
+      },
+      "nodes": [
+        876239829, 876229427, 876234531, 876240252, 876238041, 876233819,
+        876231691, 876239068, 876229839, 876226185, 876239829
+      ],
+      "geometry": [
+        {
+          "lat": 46.3701481,
+          "lon": -0.6979004
+        },
+        {
+          "lat": 46.3701206,
+          "lon": -0.6979706
+        },
+        {
+          "lat": 46.3700864,
+          "lon": -0.6979587
+        },
+        {
+          "lat": 46.3700899,
+          "lon": -0.6978771
+        },
+        {
+          "lat": 46.370044,
+          "lon": -0.6978593
+        },
+        {
+          "lat": 46.3699853,
+          "lon": -0.6978092
+        },
+        {
+          "lat": 46.3700161,
+          "lon": -0.6976761
+        },
+        {
+          "lat": 46.3700795,
+          "lon": -0.697708
+        },
+        {
+          "lat": 46.3701489,
+          "lon": -0.6974317
+        },
+        {
+          "lat": 46.3702577,
+          "lon": -0.6974898
+        },
+        {
+          "lat": 46.3701481,
+          "lon": -0.6979004
+        }
+      ],
+      "tags": {
+        "addr:city": "Liez",
+        "addr:housenumber": "1",
+        "addr:postcode": "85420",
+        "addr:street": "Chemin de la Gauvinière",
+        "amenity": "bed and breakfast",
+        "building": "house",
+        "building:levels": "1",
+        "currency:EUR": "yes",
+        "currency:XBT": "yes",
+        "currency:XMR": "yes",
+        "email": "lagauviniere@gmail.com",
+        "internet_access": "wlan",
+        "name": "Chambre d'hôtes La Gauvinière",
+        "payment:cryptocurrencies": "yes",
+        "phone": "+33 6 20 45 68 27",
+        "rooms": "2",
+        "tourism": "guest_house",
+        "website": "https://www.lagauviniere.com/"
+      }
+    }
+  ]
+}

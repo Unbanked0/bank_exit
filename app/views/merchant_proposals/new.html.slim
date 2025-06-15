@@ -1,0 +1,155 @@
+article
+  header.hero.bg-fixed.bg-banner-default
+    .hero-overlay
+    .hero-content.text-neutral-content.text-center.py-20
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= t('.title')
+
+        p.highlight-link= t('.introduction_html')
+
+  .article-body.max-w-5xl
+    = render 'breadcrumb'
+
+    - if @merchant_proposal.errors.any?
+      .panel.panel-error.mt-3
+        ul.list-disc.list-inside
+          - @merchant_proposal.errors.each do |error|
+            li= error.full_message
+
+    = simple_form_for @merchant_proposal,
+                      html: { \
+                        class: 'space-y-10',
+                        data: { \
+                          turbo: false,
+                          controller: 'new-merchant' \
+                        } \
+                      } do |f|
+      section
+        p.uppercase.text-primary.mb-3= t('.form.general_info')
+
+        .grid.grid-col-1.lg:grid-cols-2.gap-3.lg:gap-6.mb-3.lg:mb-6
+          = f.input :name
+
+          = f.input :category,
+                    collection: merchant_categories_select_helper,
+                    prompt: :translate,
+                    input_html: { \
+                      data: { action: 'change->new-merchant#displayOrHideOtherCategory' } \
+                    }
+
+          = f.input :other_category,
+                    as: :string,
+                    wrapper_html: { \
+                      class: ('hidden' unless @merchant_proposal.category.in?(['other'])),
+                      data: { \
+                        new_merchant_target: :otherCategoryWrapper \
+                      },
+                    },
+                    input_html: { \
+                      data: { \
+                        new_merchant_target: :otherCategoryInput \
+                      } \
+                    }
+
+          = f.input :street
+          = f.input :postcode
+
+          = f.input :city
+
+          .fieldset.w-full
+            = f.input :country,
+                      prompt: :translate,
+                      format: :with_flag,
+                      wrapper: false,
+                      input_html: { class: 'select w-full' },
+                      label_html: { class: 'fieldset-legend' }
+
+          = f.input :phone
+          = f.input :email
+
+          = f.input :website
+          = f.input :opening_hours
+
+        div
+          = f.input :description, as: :text
+
+          / Captcha to trick bots, should remain empty
+          = f.input :nickname, wrapper_html: { class: 'hidden' }
+
+      section
+        p.uppercase.text-primary.mb-3= t('.form.coins')
+
+        .mb-6
+          .grid.grid-cols-2.md:grid-cols-3.lg:grid-cols-5.gap-3
+            - MerchantProposal::ALLOWED_COINS.each do |coin|
+              div
+                input type="checkbox" id="#{coin}-option" value=coin class="hidden peer" name="merchant_proposal[coins][]" checked=params.dig(:merchant_proposal, :coins)&.include?(coin.to_s)
+                label.pretty-checkbox.block.text-center for="#{coin}-option" tabindex="0"
+                  p.mb-2= image_tag icon_by_coin(coin), class: 'w-16 rounded-full mx-auto'
+                  p= MerchantProposal.human_attribute_name(coin)
+
+        .lg:w-2/5.mx-auto
+          input type="checkbox" id="ask_kyc-option" class="hidden peer" name="merchant_proposal[ask_kyc]" checked=(params.dig(:merchant_proposal, :ask_kyc)&.include?('on'))
+          label.pretty-checkbox.block.text-center for="ask_kyc-option" tabindex="0"
+            p.mb-2
+              = image_tag 'kyc.png', alt: 'KYC', title: 'KYC', class: 'w-16 h-16 rounded-full mx-auto'
+            p= MerchantProposal.human_attribute_name(:ask_kyc)
+
+          p.label.text-sm.mt-1.text-center
+            = t('simple_form.hints.merchant_proposal.ask_kyc')
+
+      section
+        p.uppercase.text-primary.mb-3= t('.form.contact')
+
+        .grid.lg:grid-cols-2.gap-3.lg:gap-6
+          = f.input :contact_facebook
+          = f.input :contact_twitter
+          = f.input :contact_telegram
+          = f.input :contact_signal
+          = f.input :contact_session
+          = f.input :contact_odysee
+          = f.input :contact_crowdbunker
+          = f.input :contact_francelibretv
+
+        details.mt-6
+          summary.cursor-pointer
+            = t('.form.other_contact')
+
+          .grid.lg:grid-cols-2.gap-3.lg:gap-6.mt-3
+            = f.input :contact_tripadvisor
+            = f.input :contact_matrix
+            = f.input :contact_jabber
+            = f.input :contact_youtube
+            = f.input :contact_linkedin
+            = f.input :contact_instagram
+            = f.input :contact_tiktok
+
+      section.space-y-3
+        p.uppercase.text-primary.mb-3= t('.form.additional_info')
+
+        .space-y-6
+          = f.input :delivery,
+                    as: :boolean,
+                    boolean_style: :inline,
+                    input_html: { \
+                      data: { \
+                        new_merchant_target: :delivery,
+                        action: 'click->new-merchant#toggleDeliveryZone' \
+                      } \
+                    }
+
+          = f.input :delivery_zone,
+                    wrapper_html: { \
+                      class: 'hidden',
+                      data: { new_merchant_target: :deliveryZone } \
+                    }
+
+          .flex.flex-col.lg:flex-row.justify-center.gap-6
+            = f.input :last_survey_on, as: :date, html5: true
+            = f.input :proposition_from, as: :email
+
+      .text-center.lg:text-right
+        = f.button :submit
+
+- if @faqs.any?
+  = render template: 'faqs/show'

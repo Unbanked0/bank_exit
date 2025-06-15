@@ -1,0 +1,70 @@
+---
+- question: I would like to suggest a new merchant. How do I do this?
+  content:
+    - answer: To suggest a new merchant, click the green <mark>Suggest a Merchant</mark> button above the map or click directly on the URL {{merchant_proposals#new}} and fill out the form.
+    - answer: The Collective will then be notified of your request and will add the merchant to OpenStreetMap.
+  categories:
+    - map
+
+- question: How to convince a merchant?
+  content:
+    - answer:
+        - Print (or have printed) a few flyers (article on {{blogs#show->flyer}}).
+        - Help them create a Monero wallet with CakeWallet (tutorial on {{tutorials#show->cakewallet-monero}}).
+        - Once a year, enter their Monero sales into the ready-made Excel file (tutorial on {{tutorials#show->accounting}}).
+        - Once done, add them to the map using the green <mark>Suggest a merchant</mark> button on {{maps#index}} or directly on the {{merchant_proposals#new}} form!
+  categories:
+    - map
+    - merchant
+
+- question: I would like to be removed from the map. How do I do this?
+  content:
+    - answer: If you are currently listed on the Collective's map and no longer wish to appear, you must submit a removal request directly to <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>. The Bank-Exit website does not own the data and only retrieves public and open-source information from their site.
+    - mode: info
+      answer: Please note that after deletion from OpenStreetMap, the merchant may still appear on the Collective's map for a few hours, pending the next data synchronization.
+  categories:
+    - map
+
+- question: I added a merchant on OpenStreetMap, but he still doesn't appear on the Collective's map. Why?
+  content:
+    - answer: The Collective's map is automatically updated four times a day. If you recently added a merchant to OpenStreetMap, you'll have to wait for the next refresh, which can take up to six hours.
+    - answer: Note that you can refresh the data yourself from the map by clicking <mark>⋮</mark> > <mark>Refresh merchants data</mark> (next to the green "Suggest a merchant" button).
+  categories:
+    - map
+
+- question: I want to embed the map on my website. How do I do this?
+  content:
+    - answer: You can embed the map on your website either from the <mark>URL</mark> or through an <mark>iframe</mark>.
+    - answer: Go to the {{tutorials#show->documentation-embed-map}} page to access the documentation and generate your personalized version of the map.
+  categories:
+    - map
+
+- question: What is a KYC ?
+  content:
+    - answer: <b>KYC</b> (<i>Know Your Customer</i>) is a process used by financial institutions, banks, payment companies, and other financial services to verify the identity of their customers. This process typically involves collecting documents such as identification cards, proof of address, and personal information to ensure transactions are legitimate and that customers are not involved in fraudulent or criminal activities.
+  categories:
+    - general
+    - kyc
+
+- question: What are the risks of a KYC?
+  content:
+    - answer:
+        - "<b>Privacy protection</b>: KYC requires sharing sensitive personal information. Sharing such data may expose you to identity theft or misuse by malicious organizations."
+        - "<b>Security risks</b>: Some companies that require KYC may not always guarantee the security of your data. There's a risk that your information could be hacked or used for unauthorized purposes."
+        - "<b>Discrimination et surveillance</b>: Discrimination and surveillance: KYC can lead to discrimination or bias in access to financial services, and some individuals may be unfairly monitored or excluded due to their profiles."
+        - "<b>Difficulty accessing services</b>: Some users might have trouble providing the required documents, which could prevent them from accessing financial services or participating in legal activities."
+    - mode: info
+      answer: You can find a list of sites and services that do not require KYC at <a href="https://kycnot.me" target="_blank">kycnot.me</a>.
+
+  categories:
+    - general
+    - kyc
+
+- question: What is the difference between the map and the directory?
+  content:
+    - answer:
+        - The map lists merchants with precise geolocation (latitude and longitude).
+        - The directory lists businesses that don't have a specific address, either because they want to remain anonymous or because the service is available for delivery to an entire area or country. For example, an alternative media outlet or an online business.
+  categories:
+    - map
+    - directory

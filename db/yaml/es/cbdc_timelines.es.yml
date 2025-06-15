@@ -1,0 +1,56 @@
+---
+- started_on: 2023-10-01
+  title: 4.º trimestre de 2023
+  description:
+    - Puesta en marcha de la fase preparatoria
+    - Publicación del dictamen jurídico del BCE
+
+- started_on: 2024-01-01
+  title: 1.º trimestre de 2024
+  description:
+    - Revisión del reglamento por parte de los Directores Generales Regionales (DGR)
+    - Publicación de la convocatoria de candidaturas (CfA)
+    - Finalización de los requisitos relativos al suministro
+
+- started_on: 2024-04-01
+  title: 2.º trimestre de 2024
+  description:
+    - Inicio de las conversaciones con el mercado sobre la tenencia máxima permitida de "Cash+"
+
+- started_on: 2024-07-01
+  title: 3.º trimestre de 2024
+  description:
+    - Envío de la documentación de ofertas de compra a los licitadores
+    - Inicio de la investigación con usuarios
+
+- started_on: 2024-10-01
+  title: 4.º trimestre de 2024
+  description:
+    - Evaluación y negociación de ofertas de suministro [en 'Cash+']
+
+- started_on: 2025-01-01
+  title: 1.º trimestre de 2025
+  description:
+    - Negociación de ofertas de compra
+    - Inicio de actividades para el segundo ciclo de procedimientos de compra
+    - Inicio de la planificación de la siguiente fase
+
+- started_on: 2025-04-01
+  title: 2.º trimestre de 2025
+  description:
+    - Selección de proveedores
+    - Finalización de la arquitectura
+    - Evaluación del impacto sobre la protección de datos
+    - Plan de posicionamiento y concienciación
+    - Detalle del enfoque de dirección y despliegue
+
+- started_on: 2025-07-01
+  title: 3.º trimestre de 2025
+  description:
+    - El proyecto de reglamento está listo
+    - Preparación de la decisión del Consejo de Gobierno
+
+- started_on: 2025-10-01
+  title: Octubre de 2025 ⚠️
+  description:
+    - Decisión del Consejo de Gobierno sobre el posible lanzamiento de la siguiente fase

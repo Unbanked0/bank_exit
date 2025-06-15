@@ -1,0 +1,20 @@
+es:
+  regions:
+    FR-ARA: "Auvernia-Ródano-Alpes"
+    FR-BFC: "Borgoña-Franco Condado"
+    FR-BRE: "Bretaña"
+    FR-CVL: "Centro-Valle del Loira"
+    FR-COR: "Córcega" # FR-20R => legacy
+    FR-GES: "Gran Este"
+    FR-HDF: "Altos de Francia"
+    FR-IDF: "Isla de Francia"
+    FR-NOR: "Normandía"
+    FR-NAQ: "Nueva Aquitania"
+    FR-OCC: "Occitania"
+    FR-PDL: "Países del Loira"
+    FR-PAC: "Provenza-Alpes-Costa Azul"
+    FR-971: "Guadalupe"
+    FR-973: "Guayana"
+    FR-972: "Martinica"
+    FR-974: "Reunión"
+    FR-976: "Mayotte"

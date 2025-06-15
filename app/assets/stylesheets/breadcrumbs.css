@@ -1,0 +1,11 @@
+nav#breadcrumb a {
+    color: var(--color-primary);
+}
+
+.breadcrumbs {
+    display: inline-block;
+    border-radius: var(--radius-box);
+    border: var(--border) solid var(--color-base-300);
+    padding: 0.75rem 1rem;
+    background-color: var(--color-base-200);
+}

@@ -1,0 +1,315 @@
+---
+- title: CakeWallet et Monero
+  identifier: cakewallet-monero
+  level: 0
+  time: 15
+  created_at: "2024-05-12"
+  highlight: true
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/e7dywiZIpWg
+      title: Tutoriel "Vivre sans banque !" en 15 Min - CakeWallet et Monero
+      created_at: "2024-05-12"
+
+- title: Formation Sortie de Banque complète
+  identifier: crash-course
+  level: 0
+  time: 90
+  created_at: "2024-01-30"
+  highlight: true
+  banner: banner-library
+  figure:
+    video:
+      url: https://www.youtube.com/embed/hESmJ9Amq7w
+      title: Atelier formation Bitcoin Monero - Collectif Sortie De Banque
+      created_at: "2024-01-30"
+
+- title: Messagerie privée Session
+  identifier: session-messaging
+  level: 0
+  time: 10
+  created_at: "2024-08-28"
+  highlight: true
+  banner: banner-messaging
+  short_description:
+    Tutoriel d'installation et de configuration de la messagerie
+    chiffrée Session en remplacement de Whats App ou Telegram
+  content:
+    - mode: success
+      body:
+        - Le Collectif recommande Session comme logiciel de messagerie au quotidien. Vous pouvez trouver un comparatif des différentes messageries sur <a href="https://privacyspreadsheet.com/messaging-apps" target="_blank">PrivacySpreadsheet</a>.
+
+    - body:
+        - Télécharger l'application correspondant à votre plateforme et installer là. Dans notre cas, nous sommes sur Windows mais le processus reste le même avec les autres plateformes.
+        - Une fois installée, cliquer sur "Créer un compte".
+      figure:
+        - image: tutorials/messaging/1_create_account.jpg
+          caption: Créer un compte
+
+    - body:
+        - Choisissez ensuite votre pseudonyme.
+      figure:
+        - image: tutorials/messaging/2_choose_username.jpg
+          caption: Choisir un pseudonyme
+
+    - body:
+        - "Félicitations \U0001F389 ! Vous êtes maintenant sur votre page d'accueil de Session."
+      figure:
+        - image: tutorials/messaging/3_session_dashboard.jpg
+          caption: Accès à l'accueil des messages
+
+    - body:
+        - Avant de pouvoir créer un message, il vous faut ajouter un nouveau contact. Cliquer sur "Nouveau message"...
+      figure:
+        - image: tutorials/messaging/4_new_message.jpg
+          caption: Créer un nouveau message
+
+    - body:
+        - "... pour pouvoir ensuite renseigner la clé publique (identifiant) du destinataire."
+      figure:
+        - image: tutorials/messaging/5_add_contact.jpg
+          caption: Ajouter un contact
+
+    - body:
+        - Vous pouvez maintenant envoyer un premier message texte à votre destinataire ou bien initer un appel vocal.
+      figure:
+        - image: tutorials/messaging/6_send_message.jpg
+          caption: Envoi du premier message
+
+    - body:
+        - N'oubliez pas de noter sur un papier votre propre clé privée en vous rendant dans les paramètres de l'application.
+
+    - mode: warning
+      body:
+        - Il est très important de noter ces mots, si vous les perdez vous ne pourrez pas retrouver votre compte ansi que vos précédentes discussions !
+        - Ne partagez cette clé avec personne.
+
+    - figure:
+        - image: tutorials/messaging/7_backup_seed.jpg
+          caption: Sauvegarde de la clé privée
+
+  useful_links:
+    - url: https://getsession.org/
+
+  figure:
+    video:
+      url: https://youtube.com/embed/OHnuD3m45SY
+      title:
+        "Tutoriel messagerie SESSION incensurable ! - 12 min - stop censure Telegram
+        #paveldurov"
+      created_at: "2024-08-28"
+
+- title: Réseau social Nostr
+  identifier: nostr-social-network
+  level: 0
+  time: 10
+  created_at: "2024-08-17"
+  banner: banner-social-network
+  short_description: Tutoriel d'inscription et de configuration du réseau social Nostr en remplacement de Twitter
+  content:
+    - mode: info
+      body:
+        - <abbr title="Notes and Other Stuff Transmitted by Relays">Nostr</abbr> est un protocole réseau décentralisé qui sert de réseau social distribué. N'importe qui peut faire tourner son propre relais (serveur) et ainsi éviter la censure du fait de la redondance des messages publiés.
+        - Dans ce tutoriel, nous allons utiliser le client <strong>Snort</strong> mais la démarche reste similaire sur la plupart des sites ou applications Nostr. A noter qu'une fois votre compte créé avec Snort, vous pourrez changer d'application ou de site à votre convenance en réimportant votre compte à partir de la clé privée qui vous sera générée.
+
+    - body:
+        - Rendez-vous sur le site https://snort.social et cliquez sur "S'inscrire".
+        - A partir de là débute le processus d'inscription à travers plusieurs étapes détaillées ci-dessous.
+      figure:
+        - image: tutorials/social_network/1_home.jpg
+
+    - body:
+        - Choisissez un pseudonyme.
+      figure:
+        - image: tutorials/social_network/2_create_account.jpg
+
+    - body:
+        - Choisissez un avatar.
+      figure:
+        - image: tutorials/social_network/3_choose_picture.jpg
+
+    - body:
+        - Choisissez vos centres d'intérêt.
+      figure:
+        - image: tutorials/social_network/4_select_interests.jpg
+
+    - body:
+        - Choisissez des contacts Nostr à suivre.
+      figure:
+        - image: tutorials/social_network/5_follow_friends.jpg
+
+    - body:
+        - Choisissez les options permettant de masquer certains contenus de votre fil (porno, politique, ...).
+        - Une fois validé, l'inscription sera finalisée mais vous pourrez toujours modifier vos informations par la suite.
+
+    - mode: success
+      body:
+        - Vous remarquerez qu'à aucun moment, le site ne vous demande votre email ou numéro de téléphone. C'est parce que Nostr est basé sur la cryptographie et n'a pas besoin d'informations personnelles vous concernant. Votre compte vous appartient en totalité !
+
+    - figure:
+        - image: tutorials/social_network/6_clean_feed.jpg
+
+    - body:
+        - "Félicitations \U0001F389 ! Vous êtes maintenant sur l'accueil de votre fil Nostr !"
+        - Vous pouvez commencer à rechercher du contenu en cliquant sur "Chercher" dans le menu.
+      figure:
+        - image: tutorials/social_network/7_search_content.jpg
+
+    - body:
+        - Vous pouvez maintenant suivre n'importe quel profil en cliquant sur le bouton "Suivre".
+      figure:
+        - image: tutorials/social_network/8_follow_profiles.jpg
+
+    - body:
+        - Il est maintenant temps d'effectuer une sauvegarde de votre clé privée. Pour cela, cliquez sur "Export keys" depuis les paramètres.
+
+    - mode: warning
+      body:
+        - Il est très important de noter votre clé privés et/ou votre phrase mnémonique. C'est la seule façon de restaurer votre compte. Si vous les perdez, vous ne pourrez plus accéder à vos messages et contacts sur Nostr.
+        - Ne partagez cette clé avec personne.
+
+    - figure:
+        - image: tutorials/social_network/9_export_keys.jpg
+        - image: tutorials/social_network/10_export_keys.jpg
+
+    - body:
+        - Vous pouvez modifier votre profil à tout moment pour changer votre photo ou description
+      figure:
+        - image: tutorials/social_network/11_edit_your_profile.jpg
+
+    - body:
+        - Il est maintenant temps de publier votre premier message. Pour cela, cliquer sur le bouton "Nouvelle note" en bas à gauche et saisissez votre contenu dans la popup qui s'ouvre avant de confirmer.
+
+    - mode: info
+      body:
+        - A partir de maintenant vous devez considérer que tout contenu publié sur un relais Nostr restera présent. Même si la fonctionnalité de suppression existe, rien ne certifie que les relais vont honorer cette demande. De plus comme un message peut être republié sur n'importe quel relais, il devient plus compliqué de savoir où se trouve le message. C'est également ce qui fait la force de Nostr.
+
+    - figure:
+        - image: tutorials/social_network/12_publish_message.jpg
+        - image: tutorials/social_network/13_publish_message.jpg
+
+    - body:
+        - "Félicitations \U0001F389 ! Votre premier message vient d'être publié sur le réseau Nostr !"
+      figure:
+        - image: tutorials/social_network/14_message_broadcasted.jpg
+
+  useful_links:
+    - url: https://nostr.com
+    - url: https://nostr.directory
+      description: Trouver des contacts Twitter qui ont rejoint Nostr
+    - url: https://www.amethyst.social
+      description: Application Android pour Nostr
+    - url: https://damus.io
+      description: Application iOS pour Nostr
+
+  figure:
+    video:
+      url: https://youtube.com/embed/yHMxIHuUu1w
+      title: Tuto NOSTR - le twitter décentralisé incensurable !
+      created_at: "2024-08-17"
+
+- title: Acheter du Bitcoin non KYC
+  identifier: bitcoin-nokyc
+  level: 2
+  time: 10
+  created_at: "2024-08-07"
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/rI96QNtNbaY
+      title: Comment ACHETER du Bitcoin no-KYC en 9 min (l'Euro€ c'est fini !)
+      created_at: "2024-12-03"
+
+- title: Créer une cagnotte en Monero
+  identifier: funding-monero
+  level: 0
+  time: 10
+  created_at: "2024-08-07"
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/76vxvYrFar4
+      title: Créez une cagnotte INSTOPPABLE en 10 min avec Monero et KUNO !
+      created_at: "2024-08-07"
+
+  useful_links:
+    - url: https://kuno.anne.media
+      description: Site web Kuno
+
+- title: Faire tourner un noeud EasyMonerod
+  identifier: monero-node-easymonerod
+  highlight: true
+  level: 0
+  time: 10
+  author: Kerlann
+  created_at: "2025-02-24"
+  banner: banner-blockchain
+  short_description: EasyNode simplifie l'installation d'un nœud MONERO et vous permet de configurer votre blockchain en quelques clics. Une configuration complète en moins de 10 minutes !
+  content:
+    - figure:
+        - image: tutorials/monero-node-easymonerod/interface.png
+          caption: Interface du noeud
+
+  figure:
+    video:
+      url: https://youtube.com/embed/Gnd9PR2fF8g
+      title: Tutoriel vidéo EasyMonerod
+      created_at: "2025-02-24"
+
+  useful_links:
+    - url: https://github.com/kerlannXmr/EasyMonerod
+
+- title: Intégration de la carte sur son site
+  identifier: documentation-embed-map
+  level: 0
+  banner: banner-map
+  content:
+    - render:
+        template: maps/helps/show
+
+- title: Comptabilité d'entreprise
+  identifier: accounting
+  level: 0
+  banner: banner-accountings
+  short_description: Gérer votre comptabilité d'entreprise facilement grâce à un ficher Excel qui automatise votre calcul de revenus Monero et Bitcoin
+  content:
+    - mode: info
+      body:
+        - Vous êtes un commerçant et gérer votre comptabilité avec Monero et Bitcoin vous a toujours découragé ?
+        - N'hésitez plus et franchissez le pas maintenant avec ce nouveau calculateur automatique mis en place par le Collectif et validé par un expert comptable !
+
+    - render:
+        partial: tutorials/accounting_download
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg
+          caption: Paramètres et explications
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_03.jpg
+          caption: Import manuel des transactions
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_04.jpg
+          caption: Les résultats comptables
+
+    - render:
+        partial: tutorials/accounting_download
+
+- title: Mise en place complète des paiements Monero et Bitcoin pour votre commerce
+  short_title: Guide complet pour votre commerce
+  identifier: cryptopayment-for-business
+  level: 0
+  banner: banner-accountings
+  short_description: Mise en place complète des paiements Monero et Bitcoin pour votre commerce
+  content:
+    - render:
+        pdf: /pdfs/Installation_TPE_paiement_Monero_professionnel_v1_compressed.pdf
+        caption: Mise en place complète des paiements Monero et Bitcoin pour votre commerce
+  useful_links:
+    - url: /pdfs/Installation_TPE_paiement_Monero_professionnel_v1_compressed.pdf
+      title: Guide PDF

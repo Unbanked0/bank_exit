@@ -1,0 +1,15 @@
+en:
+  routes:
+    maps: map
+    merchants: merchants
+    faq: frequently-asked-questions
+    risks: risks
+    media: media
+    local_groups: local-groups
+    projects: projects
+    collective: collective
+    tutorials: tutorials
+    contacts: contacts
+    statistics: stats
+    glossaries: glossary
+    directories: directories

@@ -1,0 +1,25 @@
+= turbo_frame_tag :coin do
+  .card.card-border.bg-base-200 data-controller="coin"
+    .card-body.space-y-3
+      header.card-actions.flex.justify-between.border-b.pb-5
+        .flex.items-center.gap-2
+          = image_tag @coin.image, class: 'w-10 rounded-full'
+          p.font-bold
+            - if @coin.ticker?
+              = "#{@coin.name.capitalize} (#{@coin.ticker})"
+            - else
+              = @coin.name.capitalize
+
+        button.btn.btn-square.btn-sm data-action="click->coin#close"
+          = lucide_icon 'x'
+
+      - @coin.description.each do |description|
+        p= description
+
+      - if @coin.links?
+        ul.list-disc.list-inside
+          - @coin.links.each do |link|
+            li.truncate
+              = link_to link, target: :_blank do
+                = link
+                = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex w-4 ml-1'

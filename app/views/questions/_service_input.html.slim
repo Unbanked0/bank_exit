@@ -1,0 +1,9 @@
+#questions_service_wrapper
+  = f.input :service, \
+            as: :select,
+            collection: services,
+            label_html: { class: 'mb-2' },
+            wrapper: false,
+            prompt: :translate,
+            required: false,
+            disabled: services.empty?

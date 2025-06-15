@@ -1,0 +1,135 @@
+[data-theme="dark-bankexit"] {
+    .leaflet-layer,
+    .leaflet-control-zoom-in,
+    .leaflet-control-zoom-out,
+    .leaflet-fullscreen-icon,
+    .leaflet-bar-part,
+    .marker-cluster {
+        filter: invert(100%) hue-rotate(180deg) brightness(0.95) contrast(90%);
+    }
+
+    img.map_loader {
+        --tw-brightness: brightness(0.95);
+        --tw-contrast: contrast(90%);
+        --tw-hue-rotate: hue-rotate(180deg);
+        --tw-invert: invert(100%);
+        --tw-blur: blur(var(--blur-md));
+    }
+}
+
+.leaflet-container {
+    background: var(--bg-base-100);
+}
+
+.leaflet-control-attribution {
+    background: var(--color-base-200) !important;
+    color: var(--color-base-content);
+    border-top-left-radius: var(--radius-selector);
+
+    a {
+        color: var(--color-primary) !important;
+    }
+}
+
+.marker-cluster {
+    color: #000;
+}
+
+.marker-cluster {
+    color: #000;
+}
+
+/* Marker */
+
+.custom-pin-icon {
+    background: none;
+    border: none;
+    color: var(--color-primary-content) !important;
+
+    svg path {
+        fill: var(--color-primary);
+        stroke: var(--color-primary-content);
+        transition: fill 0.3s ease-out;
+    }
+
+    &.home-icon {
+        color: var(--color-secondary-content) !important;
+
+        svg path {
+            fill: var(--color-secondary) !important;
+        }
+    }
+
+    &:hover {
+        color: var(--color-secondary-content) !important;
+
+        svg path {
+            fill: var(--color-secondary) !important;
+            stroke: var(--color-secondary-content);
+        }
+    }
+}
+
+/* Popup */
+
+#map_popup {
+    min-width: 250px;
+    padding: 0;
+
+    a {
+        color: var(--color-primary) !important;
+    }
+}
+
+.leaflet-popup-content-wrapper {
+    border: 1px solid var(--color-base-300);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background-color: var(--color-base-100);
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    padding: 6px 10px;
+    border-radius: 12px;
+
+    p {
+        margin: initial;
+    }
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+    padding: 0;
+    border-radius: 10px;
+}
+
+.custom-popup .leaflet-popup-content {
+    margin: 0;
+    width: 100% !important;
+}
+
+.merchant-name {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.merchant-footer .label {
+    font-size: 0.8em;
+    color: var(--color-base-content);
+}
+
+.method-icons {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+
+    img,
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}

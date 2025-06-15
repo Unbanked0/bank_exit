@@ -1,0 +1,74 @@
+---
+- title: Prospectus Sortie de Banque
+  identifier: flyer
+  created_at: "2025-04-10"
+  content:
+    - render:
+        pdf: /pdfs/Flyers_SDB_2025_V4_9.pdf
+        caption: Version complète Bitcoin et Monero par <strong>Sortie de Banque</strong> sur <strong>Github</strong>
+      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_SDB_2025_V4_8.pdf
+
+    - figure:
+        - image: projects/flyers/flyer_schmidt1024_poster_fr.jpg
+          caption: Version simple Monero par <strong>Schmidt1024</strong> sur <strong>Gitea</strong>
+      url: https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/fr/Monero%20pour%20les%20Commer%C3%A7ants.pdf
+
+  useful_links:
+    - url: /pdfs/Flyers_SDB_2025_V4_9_accroche_pros.pdf
+      description: Accroche pour commerçants et artisans en PDF
+
+- title: Présentation Sortie de Banque
+  identifier: presentation-bank-exit
+  created_at: "2025-01-31"
+  content:
+    - body:
+        - Cet article présente un état des lieux de la situation économique en France et en Union Européenne ainsi que des solutions concrètes pour se prémunir de la dystopie qui arrive.
+
+    - render:
+        pdf: /pdfs/Prez_SortieDeBanque_2.8_janv25.pdf
+        caption: Présentation PDF v2.8
+
+  useful_links:
+    - url: https://github.com/Unbanked0/Sortie_De_Banque/blob/615d6ae934f9bd966d0501eeb3dea9ca821e5614/Prez_SortieDeBanque_2.8_janv25.pdf
+      description: PDF de la présentation sur Github
+
+- title: L'€uro numérique "Cash+"
+  identifier: cbdc-digital-euro
+  banner: banner-cbdc
+  created_at: "2025-04-15"
+  short_description: Page de présentation de l'€uro numérique par la BCE et les dangers encourus avec cette technologie
+  content:
+    - title: Présentation
+      body:
+        - L'€uro numérique "Cash+" est un projet de la Banque Centrale Européenne (BCE) visant à améliorer les services bancaires numériques et simplifier les paiements dans toute l'Europe.
+        - Ce projet vise à créer un système universel, sécurisé et facile à utiliser qui permettra aux citoyens d'accéder à leurs comptes et de faire des transactions financières en ligne, même sans connexion internet ou en zone rurale.
+        - L'idée est de rendre les paiements plus fluides et moins coûteux pour les gens, tout en garantissant la sécurité et la confidentialité des informations financières.
+        - La phase de préparation doit se terminer en Octobre 2025 pour un lancement prévu avant 2030.
+
+    - render:
+        partial: countdown
+
+    - title: Les dangers ⚠️
+      body:
+        - "- <strong>Perte de confidentialité</strong>: L'utilisation généralisée des comptes numériques et des paiements électroniques pourrait conduire à une augmentation de la surveillance et de la collecte de données personnelles par les autorités et les entreprises."
+        - "- <strong>Déséquilibre du pouvoir</strong>: Une monnaie unique et universellement acceptée pourrait donner trop de pouvoir aux institutions financières et au gouvernement, potentiellement menant à des décisions politiques contraignantes et contraires à l'intérêt public."
+        - "- <strong>Problèmes d'accès</strong>: Les populations qui n'ont pas accès à internet ou aux technologies numériques pourrait être exclues de la monnaie numérique, conduisant à une ségrégation financière et sociale."
+        - "- <strong>Cyber-risque et vulnérabilité</strong>: L'utilisation massive d'un système numérique pourrait exposer les utilisateurs à des risques importants en matière de sécurité informatique, tels que les attaques de phishing, la volatilité du marché ou même l'extorsion."
+        - "- <strong>Dépendance excessive à la technologie</strong>: Une économie qui repose sur un système numérique pourrait être vulnérable aux perturbations techniques et aux pannes des réseaux."
+      mode: warning
+
+    - title: Feuille de route Cash+ BCE
+      render:
+        partial: cbdc_timeline
+
+  useful_links:
+    - url: https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline
+      description: L'€uro numérique de la BCE
+    - url: https://www.ecb.europa.eu/euro/digital_euro/progress/shared/pdf/241202-timeline-digital-euro-project.fr.pdf
+      description: Feuille de route de l'€uro numérique par la BCE (en PDF)
+
+  figure:
+    video:
+      url: https://youtube.com/embed/dXJBB60qZo0?start=116
+      title: Présentation de Cash+ par Grand Angle
+      created_at: "2023-07-02"

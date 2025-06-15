@@ -1,0 +1,9 @@
+= turbo_stream.update :map_results do
+  = render 'maps/merchants', merchants: @merchants, pagy: @pagy
+
+- unless from_pagination?
+  = turbo_stream.update :merchants_count do
+    = render 'maps/merchants_count', pagy: @pagy
+
+  = turbo_stream.replace :map do
+    = render 'maps/map'

@@ -1,0 +1,33 @@
+article data-controller="directories" data-directories-autocomplete-url-value= addresses_search_path
+  header.hero.bg-fixed.bg-banner-directories
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= Directory.model_name.human.capitalize
+
+        - if @spotlights.any?
+          section
+          p
+            = t('spotlight')
+            = lucide_icon('star', class: 'inline-flex ml-2 stroke-yellow-500 fill-yellow-500')
+
+          .flex.flex-col.lg:flex-row.items-center.gap-3
+            - @spotlights.each do |spotlight|
+              = link_to directory_path(spotlight), class: 'btn btn-primary' do
+                - if spotlight.logo.attached?
+                  = image_tag url_for(spotlight.logo), class: 'bg-white w-8 rounded-full'
+                = spotlight.name
+
+  .flex.flex-col.lg:flex-row.gap-2.lg:gap-3.lg:p-5.justify-center
+    .panel.panel-base-300.space-y-3.lg:basis-1/4
+      = link_to new_directory_path, class: 'btn btn-success w-full' do
+        = t('.new_entry_title')
+        =< lucide_icon 'notebook', class: 'w-5'
+
+      = render 'filters', pagy: @pagy
+
+    #directories.lg:basis-3/4.space-y-3
+      = render 'directories', directories: @directories, pagy: @pagy
+
+- if @faqs.any?
+  = render template: 'faqs/show'

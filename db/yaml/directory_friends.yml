@@ -1,0 +1,40 @@
+---
+- name: I18n/Directory
+  link: directories#index
+  icon: notebook
+
+- name: XmrBazaar
+  link: https://xmrbazaar.com
+  image: xmrbazaar.png
+
+- name: Monero Directory
+  link: https://monerodirectory.com
+  svg_image: xmr_directory.svg
+
+- name: Monerica
+  link: https://monerica.com
+  image: monerica.png
+
+- name: KycNot.me
+  link: https://kycnot.me
+  svg_image: kycnotme.svg
+
+- name: ğchange
+  link: https://gchange.fr
+  image: gchange.png
+
+- name: Cryptwerk
+  link: https://cryptwerk.com/pay-with/xmr
+  image: cryptwerk.png
+
+- name: Yo-crypto
+  link: https://yo-crypto.com
+  svg_image: yo-crypto.svg
+
+- name: Bitrefill
+  link: https://www.bitrefill.com
+  image: bitrefill.png
+
+- name: Coincards
+  link: https://coincards.com
+  image: coincards.jpg

@@ -1,0 +1,6 @@
+figure
+  iframe.rounded-t-lg.mx-auto.w-full.h-72 class="lg:w-3/4 lg:h-[550px]" src=video.url
+  figcaption.text-xs.mt-2.text-center.italic.text-center
+    p.italic= video.title
+    - if video.created_at?
+      p.my-2= "(#{l(video.created_at)})"

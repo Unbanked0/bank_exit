@@ -1,0 +1,122 @@
+es:
+  cancel: Cancelar
+  confirm: Confirmar
+  close: Cerrar
+  search: Buscar
+  print: Imprimir
+  share_by_email: Compartir por correo electrónico
+  copied: ¡Copiado!
+  address: Dirección
+  description: Descripción
+  contact: Contacto
+  weblinks: Fuentes
+  other: Otro
+  add: Añadir
+  see: Ver
+  report: Señalar
+  breadcrumb: Breadcrumb
+  details: Detalles
+  link: Enlace
+  spotlight: Destacado
+  reset_search: Restablecer búsqueda
+
+  grid: Cuadrícula
+  table: Tabla
+
+  download: Descargar
+  video_tutorial: Tutorial en vídeo
+  useful_links: Enlaces útiles
+  coin: Moneda
+
+  enabled: Activado
+  disabled: Desactivado
+
+  added_on: Añadido hace %{date}
+  updated_on: Actualizado hace %{date}
+
+  copy_to_clipboard: Copiar al portapapeles
+
+  x_results:
+    zero: "%{count} resultado"
+    one: "%{count} resultado"
+    other: "%{count} resultados"
+
+  from: de
+  to: para
+  and: y
+  by: por
+  or: o
+
+  mo: lunes
+  tu: martes
+  we: miércoles
+  th: jueves
+  fr: viernes
+  sa: sábado
+  su: domingo
+
+  today: Hoy
+  yesterday: Ayer
+  month: mes(es)
+  day: día(s)
+  hour: hora(s)
+  minute: minuto(s)
+  second: segundo(s)
+
+  distance:
+    centi:
+      one: "centímetro"
+      other: "centímetros"
+    unit:
+      one: "metro"
+      other: "metros"
+    thousand:
+      one: "kilometro"
+      other: "kilometros"
+
+  time:
+    am: am
+    formats:
+      default: "%d/%m/%Y à las %Hh%M"
+
+  helpers:
+    submit:
+      questions:
+        submit: Buscar
+      merchant_proposal:
+        create: Sugerir este comerciante
+      comment_report:
+        create: Señalar este comentario
+      directory:
+        suggest: Sugerir esta entrada
+
+  questions:
+    individual: Un particular
+    company: Una empresa
+    association: Una asociación
+    politic: Un funcionario electo o político
+
+    zero_knowledge: No sé nada sobre debanking o criptomonedas
+    beginner: Conozco de nombre
+    intermediate: Ya tengo algunos (principiante)
+    expert: Ya tengo (avanzado)
+
+    fetch_services:
+      debank: Debancarme
+      privacy: Evitar el rastreo
+      anonymous: Ser anónimo
+      inflation: Limitar la inflación
+      messaging: Una mensajería anónima
+      social_network: Una red social sin censura
+      accounting: Simplificar mi contabilidad
+      help: Ayudar al colectivo
+
+      buy_btc: Comprar Bitcoin
+      buy_xmr: Comprar Monero
+      convert: Convertir Bitcoin <> Monero
+      spend: ¡Gasta en Monero! (En línea y/o en tiendas locales)
+      kitty: Crear un gatito inconmensurable
+
+      buy_no_kyc: Comprar P2P sin KYC
+      node: Lanzar un nodo en 3 clics
+      tor_ipfs: Cambiar a Tor/IPFS

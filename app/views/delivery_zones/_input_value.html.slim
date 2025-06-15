@@ -1,0 +1,78 @@
+- if mode == 'region' || mode == 'department' || mode == 'continent'
+  ruby:
+    options = {
+      collection: data,
+      include_blank: false,
+      wrapper_html: { \
+        data: { \
+          delivery_zones_target: "select" \
+        } \
+      }
+    }
+
+    if defined?(name)
+      options[:input_html] = {
+        name: name
+      }
+    end
+
+  = f.input :value, options
+
+- elsif mode == 'world'
+  ruby:
+    options = {
+      as: :hidden,
+      wrapper: false
+    }
+
+    if defined?(name)
+      options[:input_html] = {
+        name: name
+      }
+    end
+
+  div data-delivery-zones-target="select"
+    = f.input :value, options
+
+- elsif mode == 'country'
+  ruby:
+    options = {
+      as: :country,
+      format: :with_flag,
+      include_blank: false,
+      wrapper: false,
+      input_html: { class: 'select w-full' },
+      label_html: { class: 'fieldset-legend' }
+    }
+
+    if defined?(name)
+      options[:input_html][:name] = name
+    end
+
+  .fieldset.w-full data-delivery-zones-target="select"
+    = f.input :value, options
+
+- else
+  ruby:
+    options = {
+      wrapper_html: { \
+        class: 'auto-search-wrapper',
+        data: { \
+          delivery_zones_target: "select" \
+        } \
+      },
+      label_html: { class: 'mb-2' },
+      input_html: { \
+        data: { \
+          controller: 'admin--address',
+          admin__address_search_url_value: addresses_search_path \
+        } \
+      },
+      required: true
+    }
+
+    if defined?(name)
+      options[:input_html][:name] = name
+    end
+
+  = f.input :value, options

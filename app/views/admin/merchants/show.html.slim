@@ -1,0 +1,15 @@
+header.flex.flex-col.lg:flex-row.items-center.justify-between.mb-3
+  h1.text-2xl.font-bold= @merchant.name
+
+  = back_link_to "Retour aux commerçants", session[:admin_merchant_referer_url] || admin_merchants_path, klass: 'btn'
+
+section
+  pre.panel.panel-base-200.overflow-x-auto
+    .max-w-sm
+      == JSON.pretty_generate(@merchant.as_json)
+
+- if @merchant.comments_count > 0
+  section.mt-8
+    h2.text-xl.font-bold.mb-3 Commentaires
+
+    = render 'admin/comments/comments', comments: @comments, pagy: @pagy

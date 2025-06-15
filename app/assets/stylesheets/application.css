@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-content);
+}
+
+.turbo-progress-bar {
+    height: 5px;
+    background-color: var(--color-primary);
+}
+
+textarea {
+    min-height: 120px;
+    field-sizing: content;
+}
+
+abbr {
+    cursor: help;
+}
+
+:not(.dropdown)::details-content {
+    transition:
+        height 0.5s ease,
+        content-visibility 0.5s ease allow-discrete;
+    height: 0;
+    overflow: clip;
+}
+
+/* Browser supports interpolate-size */
+@supports (interpolate-size: allow-keywords) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+
+    :not(.dropdown)[open]::details-content {
+        height: auto;
+    }
+}

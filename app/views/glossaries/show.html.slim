@@ -1,0 +1,35 @@
+article
+  header.hero.bg-fixed.bg-banner-library
+    .hero-overlay
+    .hero-content.py-16
+      .max-w-5xl
+        .text-center.space-y-6.text-neutral-content
+          h1.text-3xl.font-bold= t('.title')
+
+  .article-body.max-w-5xl class="!space-y-10"
+    nav.text-center.space-x-2
+      - @glossaries.keys.each do |letter|
+        = link_to letter, "##{letter}", class: 'badge badge-neutral hover:badge-secondary badge-xl'
+
+    - @glossaries.each do |letter, glossaries|
+      section.space-y-3 id=letter
+        = link_to letter, "##{letter}", class: 'badge badge-primary hover:badge-secondary badge-xl'
+
+        .space-y-3
+          - glossaries.each do |glossary|
+            article.panel.panel-base-300.space-y-3 id=glossary.acronym
+              header.border-b.border-dotted.pb-2
+                = link_to "##{glossary.acronym}" do
+                  h3.text-lg.font-bold
+                    = glossary.acronym
+                    - if glossary.original_full_title
+                      |<> -
+                      = glossary.original_full_title
+                - if glossary.translated_full_title
+                  h4.font-semibold.italic<
+                    | [
+                    = glossary.translated_full_title
+                    | ]
+
+              div
+                = simple_format glossary.description.join("\n")

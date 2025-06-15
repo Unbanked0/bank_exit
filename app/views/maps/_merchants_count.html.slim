@@ -1,0 +1,4 @@
+- if pagy.count == 0
+  span.badge.badge-error= t('x_results', count: 0)
+- else
+  span.badge.badge-success= t('x_results', count: pagy.count)

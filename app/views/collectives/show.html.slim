@@ -1,0 +1,23 @@
+article#article
+  header.hero.bg-fixed.bg-banner-farmer
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-xl.space-y-5
+          figure
+            = image_tag logo_by_locale, class: 'w-40 mx-auto hover:scale-110 transition-transform'
+          h1.text-3xl.font-bold= t('.title')
+          h2.text-xl= t('.subtitle')
+
+  .article-body.max-w-3xl
+    - local_groups_link = link_to t('.local_groups_label'), local_groups_path
+
+    = t('.description_html', local_groups_link: local_groups_link)
+
+    figure
+      = image_tag 'collective/workshop_with_pierre_1.jpeg', class: 'rounded-lg'
+
+    figure
+      = image_tag 'collective/workshop_with_pierre_2.jpeg', class: 'rounded-lg'
+
+      figcaption.text-center.mt-2.text-sm.italic
+        = t('.workshop_caption')

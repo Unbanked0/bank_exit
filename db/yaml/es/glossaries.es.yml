@@ -1,0 +1,115 @@
+- A:
+    - acronym: ATM
+      original_full_title: Automated Teller Machine
+      translated_full_title: Cajero Automático
+      description:
+        - Máquina que permite retirar dinero o consultar el saldo sin entrar a un banco.
+        - Algunos cajeros también permiten comprar o vender criptomonedas como Bitcoin.
+
+- B:
+    - acronym: BTC
+      original_full_title: Bitcoin
+      description:
+        - Moneda digital creada en 2009 que permite enviar dinero por Internet sin usar bancos.
+        - Funciona a través de una red de computadoras conectadas globalmente.
+
+    - acronym: BCE
+      original_full_title: Banco Central Europeo
+      description:
+        - Institución responsable de gestionar el euro y la política monetaria en Europa.
+        - Ayuda a mantener los precios estables y controla los tipos de interés.
+
+- G:
+    - acronym: G1
+      original_full_title: Ğ1
+      translated_full_title: June
+      description:
+        - Moneda alternativa diseñada para ser distribuida de forma equitativa entre sus miembros.
+        - Cada usuario recibe periódicamente un "dividendo universal", sin importar su ingreso o trabajo.
+
+- I:
+    - acronym: IP
+      original_full_title: Internet Protocol
+      translated_full_title: Protocolo de Internet
+      description:
+        - Sistema para identificar dispositivos conectados a Internet.
+        - Cada dispositivo tiene una dirección IP, como una dirección postal para recibir datos.
+
+- K:
+    - acronym: KYC
+      original_full_title: Know Your Customer
+      translated_full_title: Conoce a tu Cliente
+      description:
+        - Proceso legal que exige a bancos y servicios verificar la identidad de sus clientes.
+        - Ayuda a prevenir el fraude, el lavado de dinero y la financiación del terrorismo.
+
+- L:
+    - acronym: LN
+      original_full_title: Lightning Network
+      description:
+        - Tecnología que permite hacer pagos en Bitcoin de forma rápida y barata.
+        - Funciona como una autopista de pagos fuera de la red principal.
+
+- N:
+    - acronym: Node
+      translated_full_title: Nodo
+      description:
+        - Computadora que forma parte de una red de criptomonedas.
+        - Verifica transacciones, guarda datos y permite el acceso a otros usuarios.
+
+    - acronym: Nostr
+      original_full_title: Notes and Other Stuff Transmitted by Relays
+      translated_full_title: Notas y Otros Datos Transmitidos por Relé
+      description:
+        - Protocolo descentralizado para redes sociales y mensajería sin servidores centrales.
+        - Permite publicar mensajes sin censura ni control de una empresa.
+
+- O:
+    - acronym: OSM
+      original_full_title: OpenStreetMap
+      description:
+        - Proyecto colaborativo para crear un mapa mundial libre y editable.
+        - Usado en aplicaciones de navegación, geolocalización y juegos.
+
+- P:
+    - acronym: PGP
+      original_full_title: Pretty Good Privacy
+      description:
+        - PGP es una herramienta que cifra mensajes o archivos para mantenerlos privados.
+        - Se usa a menudo para enviar correos electrónicos de forma segura.
+
+    - acronym: PoW
+      original_full_title: Proof of Work
+      translated_full_title: Prueba de Trabajo
+      description:
+        - Método usado por criptomonedas como Bitcoin para validar transacciones mediante cálculos complejos.
+        - Es seguro, pero consume mucha energía.
+
+    - acronym: PoS
+      original_full_title: Proof of Work
+      translated_full_title: Prueba de Participación
+      description:
+        - Alternativa más ecológica para validar transacciones en criptomonedas.
+        - Cuantas más monedas tiene una persona, más oportunidades tiene de validar bloques.
+
+- V:
+    - acronym: VPN
+      original_full_title: Virtual Private Network
+      translated_full_title: Red Privada Virtual
+      description:
+        - Un VPN es un servicio que protege la conexión a Internet y mantiene los datos personales más seguros.
+        - También puede hacer que parezca que la conexión viene de otro país.
+
+    - acronym: VPS
+      original_full_title: Virtual Private Server
+      translated_full_title: Servidor Privado Virtual
+      description:
+        - Computadora virtual que se alquila por Internet para ejecutar sitios web o aplicaciones.
+        - Es como tener tu propio servidor sin comprar una máquina física.
+
+- X:
+    - acronym: XMR
+      original_full_title: Monero
+      description:
+        - Criptomoneda diseñada para proteger la privacidad de los usuarios.
+        - Oculta automáticamente los montos, direcciones y detalles de las transacciones.

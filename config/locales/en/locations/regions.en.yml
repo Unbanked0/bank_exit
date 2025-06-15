@@ -1,0 +1,20 @@
+en:
+  regions:
+    FR-ARA: "Auvergne-Rhône-Alpes"
+    FR-BFC: "Burgundy-Franche Comté"
+    FR-BRE: "Brittany"
+    FR-CVL: "Centre-Loire Valley"
+    FR-COR: "Corsica" # FR-20R => legacy
+    FR-GES: "Grand Est"
+    FR-HDF: "Hauts-de-France"
+    FR-IDF: "Île-de-France"
+    FR-NOR: "Normandy"
+    FR-NAQ: "New Aquitaine"
+    FR-OCC: "Occitania"
+    FR-PDL: "Pays de la Loire"
+    FR-PAC: "Provence-Alpes-Côte d'Azur"
+    FR-971: "Guadeloupe"
+    FR-973: "Guiana"
+    FR-972: "Martinique"
+    FR-974: "Réunion"
+    FR-976: "Mayotte"

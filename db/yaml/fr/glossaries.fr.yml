@@ -1,0 +1,112 @@
+- A:
+    - acronym: ATM
+      original_full_title: Automated Teller Machine
+      description:
+        - Appareil permettant de retirer de l’argent ou de consulter son solde bancaire sans entrer dans une banque.
+        - Certains distributeurs spéciaux permettent aussi d’acheter ou de vendre des cryptomonnaies comme le Bitcoin.
+
+- B:
+    - acronym: BTC
+      original_full_title: Bitcoin
+      description:
+        - Monnaie numérique créée en 2009 qui permet d’envoyer de l’argent à quelqu’un via Internet, sans passer par une banque.
+        - Elle fonctionne grâce à un système informatique partagé entre des milliers d’ordinateurs dans le monde.
+
+    - acronym: BCE
+      original_full_title: Banque Centrale Européenne
+      description:
+        - Institution qui gère l’euro et supervise la politique monétaire des pays de la zone euro.
+        - Elle veille à ce que les prix restent stables et contrôle les taux d’intérêt pour l’économie.
+
+- G:
+    - acronym: G1
+      original_full_title: Ğ1
+      translated_full_title: June
+      description:
+        - Monnaie alternative conçue pour être équitablement répartie entre ses utilisateurs.
+        - Chaque membre reçoit une part régulière appelée "dividende universel", sans condition de revenu ou de travail.
+
+- I:
+    - acronym: IP
+      original_full_title: Internet Protocol
+      description:
+        - Système utilisé pour identifier et localiser les appareils connectés à Internet.
+        - Chaque appareil possède une adresse IP, un peu comme une adresse postale, qui permet de recevoir des informations.
+
+- K:
+    - acronym: KYC
+      original_full_title: Know Your Customer
+      description:
+        - Règle qui oblige les banques et plateformes financières à vérifier l’identité de leurs clients.
+        - Elle sert à éviter les fraudes, le blanchiment d’argent et les activités illégales.
+
+- L:
+    - acronym: LN
+      original_full_title: Lightning Network
+      description:
+        - Système qui permet d’envoyer des bitcoins rapidement et avec très peu de frais.
+        - Il agit comme une autoroute express pour les paiements, sans encombrer le réseau principal.
+
+- N:
+    - acronym: Node
+      translated_full_title: Noeud
+      description:
+        - Ordinateur connecté à un réseau de cryptomonnaie pour aider à faire fonctionner le système.
+        - Il peut stocker des données, vérifier des transactions ou aider d’autres utilisateurs à accéder au réseau.
+
+    - acronym: Nostr
+      original_full_title: Notes and Other Stuff Transmitted by Relays
+      translated_full_title: Notes et autres éléments transmis par relais
+      description:
+        - Système pour créer un réseau social décentralisé, sans entreprise qui contrôle tout.
+        - Chacun peut publier et lire des messages via des relais, sans que personne ne puisse censurer ou interdire l’accès.
+
+- O:
+    - acronym: OSM
+      original_full_title: OpenStreetMap
+      description:
+        - Carte du monde en ligne, libre et faite par des bénévoles, un peu comme Wikipédia pour les routes et les lieux.
+        - Elle est utilisée dans de nombreuses applications comme la navigation GPS ou les jeux.
+
+- P:
+    - acronym: PGP
+      original_full_title: Pretty Good Privacy
+      description:
+        - PGP est un algorithme cryptographique de chiffrement et de signature de données.
+        - Très utile pour envoyer des courriels confidentiels ou protéger des fichiers importants.
+
+    - acronym: PoW
+      original_full_title: Proof of Work
+      translated_full_title: Preuve de Travail
+      description:
+        - Méthode utilisée par certaines cryptomonnaies pour garantir que les transactions sont valides.
+        - Des ordinateurs doivent résoudre des calculs complexes, ce qui consomme beaucoup d’énergie.
+
+    - acronym: PoS
+      original_full_title: Proof of Stake
+      translated_full_title: Preuve d’Enjeu
+      description:
+        - Autre méthode pour valider les transactions sur une cryptomonnaie, plus économe en énergie.
+        - Plus une personne possède de monnaie, plus elle a de chances d’être choisie pour valider des échanges.
+
+- V:
+    - acronym: VPN
+      original_full_title: Virtual Private Network
+      translated_full_title: Réseau Privé Virtuel
+      description:
+        - Un VPN est un service qui protège la connexion Internet et rend les données personnelles plus sûres.
+        - Il peut aussi faire croire que la connexion vient d’un autre pays.
+
+    - acronym: VPS
+      original_full_title: Virtual Private Server
+      translated_full_title: Serveur Privé Virtuel
+      description:
+        - Ordinateur virtuel que l’on peut louer sur Internet pour faire fonctionner un site web ou une application.
+        - C’est un peu comme avoir son propre petit serveur sans avoir besoin d’acheter une machine.
+
+- X:
+    - acronym: XMR
+      original_full_title: Monero
+      description:
+        - Monnaie numérique conçue pour que les transactions restent totalement privées.
+        - Contrairement à d'autres cryptomonnaies, elle cache automatiquement les montants, les adresses et l’origine des paiements.

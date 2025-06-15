@@ -1,0 +1,8 @@
+= simple_form_for Directory.new do |f|
+  = f.simple_fields_for :delivery_zones, f.object.delivery_zones.new do |ff|
+    = turbo_stream.replace @target do
+      = render 'delivery_zones/input_value',
+                f: ff,
+                mode: @mode,
+                data: @data,
+                name: @name

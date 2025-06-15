@@ -1,0 +1,46 @@
+#map_details
+  - if no_results
+    .panel.panel-warning.panel-sm.rounded-b-none
+      p= t('.no_results')
+
+  - else
+    .panel.panel-success.panel-sm class="!rounded-b-none"
+      - unless start_address.blank?
+        p
+          strong= t('.start')
+          |:
+          =< start_address
+
+      p
+        strong= t('.distance')
+        |:
+        =< number_to_human(route['distance'], units: :distance)
+      p
+        strong= t('.duration')
+        |:
+        =< distance_of_time_in_words(route['duration'])
+
+  - if detailed_steps && route.present? && route['legs']
+    details.rounded-b-lg.overflow-x-auto open=true
+      summary.bg-info.text-info-content.cursor-pointer.p-2= t('.routing_details')
+
+      table.table.table-zebra
+        tbody
+          - route['legs'].each do |leg|
+            - leg['steps'].each_with_index do |step, index|
+              tr.cursor-pointer class="hover:bg-base-300" data-controller="routings" data-routings-step-index-value="step_#{index}" data-action="click->routings#zoomRoad"
+                td
+                  = OSRMTextInstructions.compile(step)
+                td
+                  - if step['distance'] > 0
+                    p.italic.text-xs
+                      = number_to_human(step['distance'], units: :distance)
+
+  - unless Rails.env.production?
+    .mt-6
+      h3.mb-2.uppercase.font-bold.text-primary Routing
+
+      details.panel.panel-base-300.overflow-x-auto
+        summary.cursor-pointer Debug Routing
+        pre.mt-2
+          == JSON.pretty_generate(routing.to_h)

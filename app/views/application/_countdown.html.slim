@@ -1,0 +1,43 @@
+ruby:
+  box_class = 'bg-neutral rounded-box text-neutral-content flex flex-col p-2 items-center'
+  end_time = Time.zone.parse('2025-10-01')
+  initial_counter = countdown_to(end_time)
+
+figure.text-center
+  .flex.flex-wrap.justify-center.gap-8.lg:gap-5 data-controller="countdown" data-countdown-end-time-value=end_time.to_s
+    div class=box_class
+      span.countdown.font-mono.text-5xl
+        span data-countdown-target="months" style="--value:#{initial_counter[:months]};" aria-live="polite" aria-label=initial_counter[:months]
+          = initial_counter[:months]
+      = t('month')
+
+    div class=box_class
+      span.countdown.font-mono.text-5xl
+        span data-countdown-target="days" style="--value:#{initial_counter[:days]};" aria-live="polite" aria-label=initial_counter[:days]
+          = initial_counter[:days]
+      = t('day')
+
+    div class=box_class
+      span.countdown.font-mono.text-5xl
+        span data-countdown-target="hours" style="--value:#{initial_counter[:hours]};" aria-live="polite" aria-label=initial_counter[:hours]
+          = initial_counter[:hours]
+      = t('hour')
+
+    div class=box_class
+      span.countdown.font-mono.text-5xl
+        span data-countdown-target="minutes" style="--value:#{initial_counter[:minutes]};" aria-live="polite" aria-label=initial_counter[:minutes]
+          = initial_counter[:minutes]
+      = t('minute')
+
+    div class=box_class
+      span.countdown.font-mono.text-5xl
+        span data-countdown-target="seconds" style="--value:#{initial_counter[:seconds]};" aria-live="polite" aria-label=initial_counter[:seconds]
+          = initial_counter[:seconds]
+      = t('second')
+
+  figcaption.mt-2.italic.text-sm
+    = t('.label')
+    |< (
+    = link_to 'https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline', target: :_blank do
+      = t('.source_html')
+    | )

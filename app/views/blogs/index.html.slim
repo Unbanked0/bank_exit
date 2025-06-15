@@ -1,0 +1,21 @@
+article
+  header.hero.bg-fixed.bg-banner-tutorials
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= t('.title')
+
+  .article-body.max-w-5xl
+    = render 'breadcrumb'
+
+    section
+      ul.list-disc.list-inside.space-y-2
+        - @blogs.each do |blog|
+          li
+            = link_to blog_path(blog.identifier) do
+              h3.inline= blog.title
+
+            time.text-sm
+              |< (
+              = l(blog.created_at)
+              | )

@@ -1,0 +1,35 @@
+article
+  header.hero.bg-fixed.bg-banner-tutorials
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= t('.title')
+
+  .article-body.max-w-5xl
+    = render 'breadcrumb'
+
+    - if @highlighted_tutorials.present?
+      section
+        h2.text-primary.uppercase.mb-5
+          = t('.features_tutorials_title')
+
+        .grid.grid-cols-2.lg:grid-cols-4.gap-3.content-center.align-center
+          = render @highlighted_tutorials
+
+      section
+        h2.text-primary.uppercase.mb-5
+          = t('.other_tutorials_title')
+
+        ul.list-disc.list-inside.space-y-2
+          - @other_tutorials.each do |tutorial|
+            li
+              = link_to tutorial_path(tutorial.identifier) do
+                h3.inline= tutorial.title
+
+              - if tutorial.level?
+                span.badge.badge-sm.ml-3 class="badge-#{tutorial_class_by_level(tutorial.level)}"
+                  = t(tutorial.level, scope: 'articles.wrapper')
+
+              - if tutorial.time?
+                span.badge.badge-sm.badge-neutral.ml-3 title="#{tutorial.time}'"
+                  =< distance_of_time_in_words(tutorial.time.minutes)

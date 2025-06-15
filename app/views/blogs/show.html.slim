@@ -1,0 +1,17 @@
+- content_for :header_actions do
+  .flex.items-center.justify-center.gap-5.print:hidden
+    = render 'share_by_email',
+            subject: t('blogs.show.subject', title: @blog.title),
+            body: t('blogs.show.body', link: tutorial_url(@blog.identifier)),
+            icon_klass: 'w-8 h-8'
+
+    = render 'print_me',
+              icon_klass: 'w-8 h-8'
+
+- content_for :footer_actions do
+  script type="application/ld+json"
+    == schema_dot_org_blog(@blog)
+  script type="application/ld+json"
+    == schema_dot_org_breadcrumb_blog(@blog)
+
+= render 'articles/wrapper', article: @blog

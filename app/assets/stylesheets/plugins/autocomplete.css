@@ -1,0 +1,96 @@
+.auto-search-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.auto-search-wrapper ul {
+    list-style: none;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    max-height: 250px;
+}
+.auto-search-wrapper ul li {
+    cursor: pointer;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+.auto-search-wrapper ul li:not(:last-child) {
+    border-top: none;
+}
+.auto-search-wrapper ul li[disabled] {
+    background: #ececec;
+    opacity: 0.5;
+    pointer-events: none;
+}
+.auto-search-wrapper .auto-expanded {
+    border: 1px solid #858585;
+    outline: none;
+}
+.auto-search-wrapper.loupe:before {
+    filter: invert(60%);
+}
+.auto-is-loading:after {
+    animation: auto-spinner 0.6s linear infinite;
+    border-color: #d9d9d9 grey grey #d9d9d9;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    box-sizing: border-box;
+    content: "";
+    height: 20px;
+    margin: auto;
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 20px;
+    z-index: 100;
+}
+@keyframes auto-spinner {
+    to {
+        transform: rotate(1turn);
+    }
+}
+.auto-selected:before {
+    opacity: 1;
+}
+.auto-results-wrapper {
+    background-color: var(--color-base-200);
+    border: 1px solid #858585;
+    border-top: none;
+    box-sizing: border-box;
+    display: none;
+    overflow: hidden;
+    border-radius: var(--radius-field);
+}
+.auto-results-wrapper.auto-is-active {
+    display: block;
+    /* margin-top: -1px; */
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+.auto-selected + li:before {
+    border-top: none;
+}
+.auto-error {
+    border: 1px solid #ff3838;
+}
+.auto-error::placeholder {
+    color: #f66;
+    opacity: 1;
+}
+
+.auto-results-wrapper li b,
+.auto-results-wrapper li:hover b,
+.auto-results-wrapper li.auto-selected b {
+    color: var(--color-primary);
+}
+
+.auto-results-wrapper li:hover,
+.auto-results-wrapper li.auto-selected {
+    background-color: var(--color-base-300);
+    color: var(--color-base-content);
+}

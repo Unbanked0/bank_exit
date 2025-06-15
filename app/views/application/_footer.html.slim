@@ -1,0 +1,5 @@
+footer.p-3.text-center.border-t-2.text-sm.print:hidden.border-primary
+  p= t('.copyright_html', year: Date.current.year)
+  p
+    - heart = lucide_icon('heart', class: 'h-5 w-5 stroke-red-600 fill-red-600 inline-flex mx-1 hover:scale-150 transition transition-scale')
+    = t('.developed_by_html', heart: heart)

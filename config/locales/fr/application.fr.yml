@@ -1,0 +1,49 @@
+fr:
+  application:
+    scam_alert:
+      title: Attention aux faux sites
+      headline_html: "Vérifiez toujours que le site affiché dans votre navigateur corresponde à %{url}"
+
+    nav:
+      collectif: Sortie
+      bank_exit: De Banque
+
+      menu:
+        home: Accueil
+        map: La carte
+        directories: L'annuaire
+        projects: Les projets
+        monero_wallet: Portefeuille Monero
+        articles: Les articles
+        tutorials: Les tutoriels
+        blogs: Le blog
+        faq: Foire Aux Questions (FAQ)
+        contact: Contact
+        pros: Pros
+        github_title: Lien vers le dépôt Github
+
+    language_switcher:
+      fr: Français
+      en: English
+      es: Español
+
+    theme_switcher:
+      switch_to_light: Basculer sur le thème clair
+      switch_to_dark: Basculer sur le thème sombre
+
+    countdown:
+      label: avant la fin de la phase de préparation de l'€uro numérique
+      source_html: source <abbr title="Banque Centrale Européenne">BCE</abbr>
+
+    upper_footer:
+      navigation: Navigation
+      projects: Les projets
+      warning_title: ⚠️ Clause de non-responsabilité (à lire) ⚠️
+      license: License d'utilisation
+
+    contacts:
+      title: Réseaux et contacts
+
+    footer:
+      copyright_html: Copyright &copy; Sortie de Banque 2022 - %{year} &bullet; Tous droits réservés
+      developed_by_html: Développé avec %{heart} par le Collectif Sortie de Banque

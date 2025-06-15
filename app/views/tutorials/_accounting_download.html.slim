@@ -1,0 +1,4 @@
+p.text-center
+  = link_to asset_path('/spreadsheets/accountings.xlsx'), class: 'btn btn-success btn-lg' do
+    = image_tag 'icons/excel.svg', class: 'inline-flex mr-2 w-10'
+    span= t('.download_document')

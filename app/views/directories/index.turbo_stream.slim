@@ -1,0 +1,9 @@
+= turbo_stream.update :directories do
+  = render 'directories/directories', directories: @directories, pagy: @pagy
+
+= turbo_stream.update :directories_count do
+  = render 'maps/merchants_count', pagy: @pagy
+
+- if around_me?
+  = turbo_stream.update :geocoder_details do
+    = render 'delivery_zones/formatted_geocoder_details', geocoder: @my_geocoder

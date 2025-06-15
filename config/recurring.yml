@@ -1,0 +1,24 @@
+fetch_merchants: &fetch_merchants
+  periodic_fetch_merchants:
+    command: "FetchMerchants.call"
+    schedule: "10 2,8,14,20 * * *" # Every 6 hours starting at 2:10am
+
+refresh_sitemap: &refresh_sitemap
+  periodic_refresh_sitemap:
+    class: RakeTaskJob
+    args: "sitemap:refresh:no_ping"
+    schedule: every day at 7pm
+
+staging:
+  <<:
+    - *fetch_merchants
+    - *refresh_sitemap
+
+production:
+  <<:
+    - *fetch_merchants
+    - *refresh_sitemap
+
+  periodic_backup_geojson:
+    command: "BackupMailer.send_geojson.deliver_later"
+    schedule: every 1 week

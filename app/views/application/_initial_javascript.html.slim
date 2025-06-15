@@ -1,0 +1,9 @@
+/ Execute this code at the very beginning of page loading
+/ to avoid FOUC
+/ @see https://wiki.adminforge.de/wiki/Flash_of_unstyled_content?lang=en
+javascript:
+  // Website theme (light/dark)
+  (function () {
+    const theme = localStorage.getItem('color-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();

@@ -1,0 +1,2 @@
+class DirectoryDecorator < ApplicationDecorator
+end

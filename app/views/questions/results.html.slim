@@ -1,0 +1,15 @@
+article
+  header.hero.bg-fixed.bg-banner-projects
+    .hero-overlay
+    .hero-content.py-16
+      .max-w-xl
+        .text-center.space-y-5.text-neutral-content
+          h1.text-3xl.font-bold= t('.title')
+          .space-y-5= t('.headline')
+
+  .max-w-3xl.space-y-8.mx-auto.py-10
+    p.font-bold.text-center.text-lg
+      = t('.try_another_request')
+
+    .text-center
+      = render 'welcome/questions_form', profiles: @profiles, levels: @levels

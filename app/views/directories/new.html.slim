@@ -1,0 +1,15 @@
+article
+  header.hero.bg-fixed.bg-banner-directories
+    .hero-overlay
+    .hero-content.text-neutral-content.text-center.py-20
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= t('.title')
+
+        p.highlight-link= t('.introduction_html')
+
+  .article-body.max-w-5xl
+    = render 'breadcrumb'
+    = render 'form', directory: @directory
+
+- if @faqs.any?
+  = render template: 'faqs/show'

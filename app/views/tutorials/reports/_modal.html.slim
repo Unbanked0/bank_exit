@@ -1,0 +1,23 @@
+- i18n_scope = 'tutorials.reports.modal'
+
+- content_for(:title) do
+  h3.text-xl.font-semibold
+    = tutorial.title
+
+= render_modal do
+  = simple_form_for tutorial_report,
+                    url: tutorial_report_path(tutorial.identifier),
+                    method: :post,
+                    html: { class: 'space-y-2 px-1' } do |f|
+
+    .panel.panel-info.panel-sm
+      p= t('introduction', scope: i18n_scope)
+
+    = f.input :title
+    = f.input :description, as: :text
+    = f.input :nickname, wrapper_html: { class: 'hidden' }
+
+    .flex.justify-end
+      = f.button :submit,
+                 t('submit', scope: i18n_scope),
+                 class: 'btn btn-success'

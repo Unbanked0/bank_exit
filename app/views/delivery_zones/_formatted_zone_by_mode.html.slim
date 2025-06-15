@@ -1,0 +1,16 @@
+- if delivery_zone.world?
+  = lucide_icon 'earth'
+- elsif delivery_zone.country?
+  = pretty_country_html(delivery_zone.country_code, show_flag: true)
+- elsif delivery_zone.continent?
+  span
+    = I18n.t(delivery_zone.continent_code, scope: 'continents')
+- else
+  span
+    span
+      = delivery_zone.city_name if delivery_zone.city?
+      = t(delivery_zone.department_code, scope: 'departments') if delivery_zone.department?
+      = t(delivery_zone.region_code, scope: 'regions') if delivery_zone.region?
+
+    span.text-base-content/70.text-sm.ml-1<
+      = "(#{pretty_country_html(delivery_zone.country_code, show_flag: true)})"

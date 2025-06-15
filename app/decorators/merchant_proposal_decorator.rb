@@ -1,0 +1,2 @@
+class MerchantProposalDecorator < MerchantDecorator
+end

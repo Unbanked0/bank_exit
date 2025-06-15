@@ -1,0 +1,139 @@
+- coin_wallets = @directory.coin_wallets.enabled
+- contact_ways = ContactWayDecorator.wrap(@directory.contact_ways.enabled)
+- delivery_zones = @directory.delivery_zones.enabled
+- weblinks = WeblinkDecorator.wrap(@directory.weblinks.enabled)
+
+article
+  .hero.bg-fixed style=("background-image: url(#{rails_blob_path(@directory.banner.variant(:thumb))})" if @directory.banner.attached?) class=(@directory.banner.attached? ? 'bg-contain' : 'bg-banner-default')
+    .hero-overlay
+    .hero-content.py-16
+      header.max-w-xl
+        .text-center.space-y-6.text-neutral-content
+          - if @directory.logo.attached?
+            .avatar
+              .w-28.rounded-full
+                = image_tag url_for(@directory.logo.variant(:thumb)), class: 'bg-base-100'
+
+          h1.text-3xl.font-bold= @directory.name
+
+          - if @directory.category.present?
+            .badge.mx-auto.badge-secondary
+              = t(@directory.category, scope: :directories_categories)
+
+          - if coin_wallets
+            .flex.items-center.justify-center.gap-3
+              - coin_wallets.each do |coin_wallet|
+                = image_tag icon_by_coin(coin_wallet.coin), title: coin_wallet.coin.capitalize, class: 'w-10 h-10 hover:scale-110 transition-transform'
+
+  .article-body.max-w-5xl class="!space-y-8"
+    = render 'breadcrumb'
+
+    - if @directory.description?
+      div
+        h2.text-primary.uppercase.mb-2= t('description')
+
+        .space-y-3
+          = simple_format(@directory.description)
+
+    - if @directory.address
+      div
+        h2.text-primary.uppercase.mb-2= t('address')
+
+        = @directory.address.label
+
+    - if coin_wallets.any?
+      div
+        h2.text-primary.uppercase.mb-2= Directory.human_attribute_name(:coins)
+
+        .panel.panel-base-200.space-y-2.overflow-y-auto
+          - coin_wallets.each do |coin_wallet|
+            .flex.items-center.gap-1
+              = image_tag icon_by_coin(coin_wallet.coin),
+                          class: 'h-8 inline-flex mr-2 hover:scale-110 transition-transform',
+                          title: "#{coin_wallet.coin.capitalize}"
+              - if coin_wallet.qrcodable?
+                = link_to coin_link_address_with_protocol(coin_wallet.coin, coin_wallet.public_address) do
+                  span title=coin_wallet.public_address
+                    = coin_wallet.public_address_reduced
+
+                = render 'copy_to_clipboard',
+                        clipboard_value: coin_wallet.public_address,
+                        clipboard_success_text_value: nil,
+                        title: nil
+
+                = link_to coin_wallet, data: { turbo_stream: true } do
+                  = lucide_icon('qr-code')
+
+
+    - if delivery_zones.any?
+      div
+        h2.text-primary.uppercase.mb-2
+          = DeliveryZone.model_name.human.capitalize
+          =< lucide_icon 'truck', class: 'inline-flex w-5'
+
+        .panel.panel-base-200.overflow-y-auto.space-y-3
+          - delivery_zones.group_by(&:mode).each do |group|
+            - mode = group.first
+            - rows = group.last
+
+            div
+              h3.text-primary.font-semibold.mb-1
+                = DeliveryZone.human_enum_name(:mode, mode)
+
+              - if rows.count > 1
+                ul.list-disc.list-inside
+                  - rows.each do |row|
+                    li
+                      = render 'delivery_zones/formatted_zone_by_mode', delivery_zone: row
+              - elsif rows.count > 0
+                - row = rows.first
+                = render 'delivery_zones/formatted_zone_by_mode', delivery_zone: row
+
+    - if contact_ways.any?
+      div
+        h2.text-primary.uppercase.mb-2= t('contact')
+
+        .panel.panel-base-200.space-y-3.overflow-y-auto
+          - contact_ways.each do |contact_way|
+            .flex.items-center.gap-2
+              = social_contact_icon(contact_way.role, klass: "!w-6")
+
+              - if contact_way.email?
+                = mail_to contact_way.value, contact_way.value
+              - elsif contact_way.phone?
+                = phone_to contact_way.value, contact_way.value
+              - elsif contact_way.session? || contact_way.signal?
+                = contact_way.value
+              - else
+                = link_to contact_way.clean_url.truncate(50), contact_way.value, target: :_blank
+
+    - if weblinks.any?
+      div
+        h2.text-primary.uppercase.mb-2= t('weblinks')
+
+        .panel.panel-base-200.space-y-3.overflow-y-auto
+          - if weblinks.count > 1
+            ul.list-disc.list-inside
+              - weblinks.each do |weblink|
+                li
+                  = link_to weblink.url, target: :_blank do
+                    = weblink.title.presence || weblink.clean_url
+          - else
+            - weblink = weblinks.first
+            = link_to weblink.url, target: :_blank do
+              = weblink.title.presence || weblink.clean_url
+
+    .italic
+      p title=l(@directory.created_at)
+        = t('added_on', date: time_ago_in_words(@directory.created_at))
+      - if @directory.updated_at.to_date != @directory.created_at.to_date
+        p title=l(@directory.updated_at)
+          = t('updated_on', date: time_ago_in_words(@directory.updated_at))
+
+  script type="application/ld+json"
+    == schema_dot_org_directory(@directory)
+
+- if @faqs.any?
+  = render template: 'faqs/show'
+
+#modal

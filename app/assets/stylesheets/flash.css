@@ -1,0 +1,36 @@
+/* Flash */
+
+#flashes {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+}
+
+.appear-then-fade {
+    animation: appear-then-fade 10s both;
+}
+
+@keyframes appear-then-fade {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    5%,
+    60% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s both;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

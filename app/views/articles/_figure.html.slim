@@ -1,0 +1,19 @@
+- if figure.image?
+  figure.text-center
+    = link_to image_path(figure.image),
+            target: :_blank,
+            title: strip_tags(figure.caption) do
+      = image_tag figure.image, class: 'rounded-lg mx-auto'
+
+    - if figure.caption?
+      figcaption.text-xs.text-center.italic.mt-2
+        - if content.url?
+          = link_to content.url, target: :_blank do
+            == figure.caption
+            = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex ml-1 w-4'
+
+        - else
+          == figure.caption
+
+- elsif figure.video?
+  = render 'articles/video', video: figure.video

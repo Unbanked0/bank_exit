@@ -1,0 +1,18 @@
+.space-y-3 data-controller="pagination"
+  == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true" data-action="click->pagination#addPageToURL" data-pagination-target="pagyTop"') if pagy.count > pagy.limit
+
+  = render merchants
+
+  - if pagy.count > pagy.limit
+    == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true" data-action="click->pagination#addPageToURL"')
+
+    .hidden.lg:block.panel.panel-xs.panel-info.text-center
+      span.font-bold Tips:
+      span=< t('.tips_pagination.use')
+
+      kbd.kbd.kbd-xs< Ctrl
+      span< +
+      kbd.kbd.kbd-xs< ◀︎
+      span=< t('.tips_pagination.or')
+      kbd.kbd.kbd-xs< ▶︎
+      span=< t('.tips_pagination.move_through')

@@ -1,0 +1,56 @@
+---
+- started_on: 2023-10-01
+  title: Q4 2023
+  description:
+    - Implementation of the preparatory phase
+    - Publication of the ECB legal opinion
+
+- started_on: 2024-01-01
+  title: Q1 2024
+  description:
+    - Review of the regulation by Regional Directors General (RDGs)
+    - Publication of the Call for Applications (CfA)
+    - Finalization of supply-related requirements
+
+- started_on: 2024-04-01
+  title: Q2 2024
+  description:
+    - Launch of market discussions on the maximum allowable holding of "Cash+"
+
+- started_on: 2024-07-01
+  title: Q3 2024
+  description:
+    - Sending purchase offer documentation to bidders
+    - Launch of user research
+
+- started_on: 2024-10-01
+  title: Q4 2024
+  description:
+    - Evaluation and negotiation of supply offers [in 'Cash+']
+
+- started_on: 2025-01-01
+  title: Q1 2025
+  description:
+    - Negotiation of purchase offers
+    - Launch of activities for the second round of procurement procedures
+    - Launch of planning for the next phase
+
+- started_on: 2025-04-01
+  title: Q2 2025
+  description:
+    - Selection of suppliers
+    - Finalization of the architecture
+    - Assessment of data protection impact
+    - Positioning and awareness plan
+    - Details of the steering and deployment approach
+
+- started_on: 2025-07-01
+  title: Q3 2025
+  description:
+    - Draft regulation is ready
+    - Preparation of the Governing Council decision
+
+- started_on: 2025-10-01
+  title: October 2025 ⚠️
+  description:
+    - Governing Council decision on the potential launch of the next phase

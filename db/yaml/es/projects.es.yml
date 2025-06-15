@@ -1,0 +1,62 @@
+---
+- route: maps#index
+  image: map_monero.jpg
+  title: El mapa
+  description: Ver y filtrar negocios de Bitcoin y Monero en todo el mundo
+  external: false
+  identifier: map
+
+- route: blogs#show
+  identifier: flyer
+  image: flyer.jpg
+  title: El folleto
+  description: Integración de Monero y Bitcoin para particulares y empresas
+
+- route: projects#show
+  image: epicerie_monero.png
+  website_screenshot: not_iframe/grocery.jpg
+  title: La Tienda Libre
+  description: Comprar productos de calidad en Monero
+  external: false
+  iframe_url: https://monero-map.org/epicerie
+  github_url: https://github.com/Unbanked0/Freedom_Grocers
+  identifier: grocery
+
+- route: projects#show
+  image: cheque_monero.png
+  website_screenshot: not_iframe/cheque.jpg
+  title: Los cheques
+  description: Imprimir cheques para pagar en Bitcoin y Monero
+  external: false
+  iframe_url: https://monero-map.org/cheque
+  github_url: https://github.com/Unbanked0/Monero_Cheque
+  identifier: cheque
+  figure:
+    video:
+      url: https://youtube.com/embed/mK3AaPkwxSk
+      title: "MONERO CRYPTO CHEQUE - Acelerando la adopción, tangible, sin necesidad de teléfono #MoneroCheque"
+      created_at: "2024-10-26"
+
+- route: projects#show
+  image: sticker_monero.png
+  website_screenshot: not_iframe/sticker.jpg
+  title: Los stickers
+  description: Generar banners de donación o pago en Bitcoin y Monero
+  external: false
+  iframe_url: https://monero-map.org/crypto_box
+  github_url: https://github.com/Unbanked0/Crypto_Box_sticker
+  identifier: sticker
+
+- route: local_groups#index
+  image: local_groups.jpg
+  title: Los grupos locales
+  description: Encuentre los diferentes grupos de Banque Sortie en Francia (París, Rennes, Lille, Lyon, etc.)
+  external: false
+  identifier: local_groups
+
+- route: tutorials#show
+  image: accounting.jpg
+  title: Contabilidad empresarial
+  description: Gestione fácilmente la contabilidad de su empresa con un archivo Excel que automatiza sus cálculos de ingresos de Monero y Bitcoin.
+  external: false
+  identifier: accounting

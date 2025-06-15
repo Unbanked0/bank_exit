@@ -1,0 +1,44 @@
+.flex.items-center.justify-center.lg:justify-end.gap-2
+  - req_params = request.query_parameters.compact_blank
+
+  = link_to url_for(params: req_params.merge(presentation: :grid)),
+           data: { turbo_stream: true },
+           class: "btn #{'btn-secondary' if directories_as_grid?}",
+           title: t('grid') do
+    = lucide_icon 'grid-3x3'
+
+  = link_to url_for(params: req_params.merge(presentation: :table)),
+            data: { turbo_stream: true },
+            class: "btn #{'btn-secondary' unless directories_as_grid?}",
+            title: t('table') do
+    = lucide_icon 'rows-3'
+
+- if directories.any?
+  - if pagy.count > pagy.limit
+    == pagy_nav pagy
+
+  - if directories_as_grid?
+    .grid.grid-cols-1.lg:grid-cols-3.gap-2.lg:gap-3
+      = render directories
+  - else
+    .overflow-x-auto.rounded-box.border.border-base-content/5.bg-base-100
+      table.table.table-zebra.lg:table-fixed
+        thead
+          tr
+            td= Directory.human_attribute_name(:logo)
+            td= Directory.human_attribute_name(:name)
+            td= Directory.human_attribute_name(:description)
+            td= CoinWallet.model_name.human.capitalize
+            td= DeliveryZone.model_name.human.capitalize
+            td= t('link')
+        tbody
+          - directories.each do |directory|
+            = render 'directory_table_row', directory: directory
+
+  - if pagy.count > pagy.limit
+    == pagy_nav pagy
+
+- else
+  .flex.flex-col.items-center.justify-center.gap-3.text-base-content/60.py-10
+    = lucide_icon 'notebook', class: 'w-40 h-auto'
+    p.text-lg= t('.empty_results')

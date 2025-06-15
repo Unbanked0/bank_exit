@@ -1,0 +1,3 @@
+= simple_form_for :questions do |f|
+  = turbo_stream.replace :questions_service_wrapper do
+    = render 'questions/service_input', f: f, services: @services

@@ -1,0 +1,74 @@
+article
+  header.hero.bg-fixed.bg-banner-local-groups
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-xl.space-y-5
+        h1.text-3xl.font-bold= t('.title')
+        p= t('.headline')
+
+        figure
+          = image_tag 'contacts/telegram.svg', class: 'w-20 mx-auto hover:scale-110 transition-transform', title: 'Telegram'
+
+  .article-body.max-w-5xl
+    div
+      iframe.rounded-lg.mb-1 class="h-96 lg:h-[600px]" width="100%" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation" src="//umap.openstreetmap.fr/fr/map/groupes-locaux-sortie-de-banque_1158100?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"
+      p.text-center.text-sm
+        a href="//umap.openstreetmap.fr/fr/map/groupes-locaux-sortie-de-banque_1158100?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true" target="_blank"
+          | Voir en plein écran
+
+
+    .space-y-8
+      - @local_groups.each do |zone|
+        .space-y-3
+          header.panel.panel-success.flex.flex-col.lg:flex-row.items-center.justify-between
+            h2.text-xl.font-bold= zone.name
+            - if zone.link && zone.link != '#'
+              = link_to zone.link, target: :_blank do
+                = zone.link
+
+
+          - zone.countries.each do |country|
+            - has_link = country['link'] && country['link'] != '#'
+            - groups_count = country['regions']&.count || 0
+
+            - if groups_count == 0
+              header.panel.panel-base-300.flex.flex-col.lg:flex-row.items-center.cursor-not-allowed class=('justify-between' if has_link)
+                h3.text-lg.font-bold
+                  - c = ISO3166::Country[:"#{country['alpha2']}"]
+                  = c.emoji_flag
+                  span.mx-2= c.translations[I18n.locale.to_s]
+                  = "(#{groups_count})"
+
+                - if has_link
+                  = link_to country['link'], target: :_blank do
+                    = country['link']
+
+
+            - else
+              details.space-y-3 open=('true' if country['alpha2'].downcase == I18n.locale.to_s)
+                summary.panel.panel-base-300.flex.flex-col.lg:flex-row.items-center.cursor-pointer class=('justify-between' if has_link)
+                  h3.text-lg.font-bold
+                    - c = ISO3166::Country[:"#{country['alpha2']}"]
+                    = c.emoji_flag
+                    span.mx-2= c.translations[I18n.locale.to_s]
+                    = "(#{groups_count})"
+
+                  - if has_link
+                    = link_to country['link'], target: :_blank do
+                      = country['link']
+
+
+                .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-3.align-center
+                  - country['regions']&.each do |region|
+                    - if region['link'] && region['link'] != '#'
+                      = link_to region['link'], target: :_blank, class: 'card bg-base-200' do
+                        .card-body
+                          h4.card-title= region['name']
+                          p
+                            = region['link']
+                            = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex ml-1 w-4'
+                    - else
+                      .card.bg-base-200.opacity-50.cursor-not-allowed
+                        .card-body
+                          h4.card-title= region['name']
+                          p= t('.no_link_yet')

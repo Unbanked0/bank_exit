@@ -1,0 +1,51 @@
+---
+- title: CakeWallet y Monero
+  identifier: cakewallet-monero
+  level: 0
+  time: 15
+  created_at: "2024-05-12"
+  highlight: true
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/e7dywiZIpWg
+      title: Tutorial "¡Vivir sin banco!" en 15 minutos - CakeWallet y Monero
+      created_at: "2024-05-12"
+
+- title: Integración del mapa en su sitio
+  identifier: documentation-embed-map
+  level: 0
+  banner: banner-map
+  content:
+    - render:
+        template: maps/helps/show
+
+- title: Contabilidad empresarial
+  identifier: accounting
+  level: 0
+  banner: banner-accountings
+  short_description: Gestione fácilmente la contabilidad de su empresa con un archivo Excel que automatiza sus cálculos de ingresos de Monero y Bitcoin.
+  content:
+    - mode: info
+      body:
+        - ¿Eres trader y siempre te ha desanimado gestionar tu contabilidad con Monero y Bitcoin?
+        - ¡No lo dudes más y atrévete ya con esta nueva calculadora automática creada por el Colectivo y validada por un contable!
+
+    - render:
+        partial: tutorials/accounting_download
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg
+          caption: Parámetros y explicaciones
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_03.jpg
+          caption: Importación manual de transacciones
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_04.jpg
+          caption: Resultados de la contabilidad
+
+    - render:
+        partial: tutorials/accounting_download

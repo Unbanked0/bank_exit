@@ -1,0 +1,34 @@
+header.mb-3
+  h1.text-3xl Les commentaires
+
+- unless comments_enabled?
+  .panel.panel-info.mb-3.space-y-2
+    p ⚠️ La fonctionnalité des commentaires est désactivée par la variable d'environnement <mark>FF_COMMENTS_ENABLED</mark> (Feature Flag).
+    p Les utilisateurs ne peuvent donc plus publier de commentaires ou voir ceux déjà présents tant que la fonctionnalité restera désactivée.
+
+section.mb-3.space-y-2
+  - comment_deleted_count = Comment.flagged.count
+
+  .stats.shadow.bg-base-200.mb-3.w-full.lg:w-auto
+    .stat
+      .stat-figure
+        = lucide_icon 'message-square', class: 'w-12 h-12'
+      .stat-title
+        span.status.status-success.status-lg
+        |< Commentaires visibles
+      .stat-value= Comment.available.count
+      .stat-desc au #{l(@dashboard_presenter.today.to_date)}
+
+    .stat
+      .stat-figure
+        = lucide_icon 'message-square', class: 'w-12 h-12'
+      .stat-title
+        span.status.status-error.status-lg
+        |< Commentaires signalés
+      .stat-value= comment_deleted_count
+      - if comment_deleted_count > 0
+        .stat-actions.mt-1
+          =< link_to 'Afficher', admin_comments_path(show_flagged: true), class: 'btn btn-error btn-xs'
+
+#comments
+  = render 'comments', comments: @comments, pagy: @pagy

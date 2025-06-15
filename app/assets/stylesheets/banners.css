@@ -1,0 +1,86 @@
+.bg-banner-default {
+    background-image: url("/banners/banner-default.jpg");
+}
+.bg-banner-1 {
+    background-image: url("/banners/home/1.jpg");
+}
+.bg-banner-2 {
+    background-image: url("/banners/home/2.jpg");
+}
+.bg-banner-3 {
+    background-image: url("/banners/home/3.jpg");
+}
+.bg-banner-4 {
+    background-image: url("/banners/home/4.jpg");
+}
+.bg-banner-5 {
+    background-image: url("/banners/home/5.jpg");
+}
+
+.bg-banner-open-source {
+    background-image: url("/banners/banner-open-source.jpg");
+}
+
+.bg-banner-interviews {
+    background-image: url("/banners/banner-interviews.jpg");
+}
+
+.bg-banner-liberty {
+    background-image: url("/banners/banner-liberty.jpg");
+}
+
+.bg-banner-local-groups {
+    background-image: url("/banners/banner-local-groups.jpg");
+}
+
+.bg-banner-accountings {
+    background-image: url("/banners/banner-accountings.jpg");
+}
+
+.bg-banner-farmer {
+    background-image: url("/banners/banner-btc-monero-farmer.jpeg");
+}
+
+.bg-banner-projects {
+    background-image: url("/banners/banner-blue-sky-birds.jpg");
+}
+
+.bg-banner-media {
+    background-image: url("/banners/banner-media.jpg");
+}
+
+.bg-banner-tutorials {
+    background-image: url("/banners/banner-tutorials.jpg");
+}
+
+.bg-banner-cbdc {
+    background-image: url("/banners/banner-cbdc.jpg");
+}
+
+.bg-banner-statistics {
+    background-image: url("/banners/banner-statistics.jpg");
+}
+
+.bg-banner-messaging {
+    background-image: url("/banners/articles/banner-messaging.jpg");
+}
+
+.bg-banner-social-network {
+    background-image: url("/banners/articles/banner-social-network.jpg");
+}
+
+.bg-banner-library {
+    background-image: url("/banners/articles/banner-library.jpg");
+}
+
+.bg-banner-blockchain {
+    background-image: url("/banners/articles/banner-blockchain.jpg");
+}
+
+.bg-banner-map {
+    background-image: url("/banners/articles/banner-map.jpg");
+}
+
+.bg-banner-directories {
+    background-image: url("/banners/banner-directories.jpg");
+}

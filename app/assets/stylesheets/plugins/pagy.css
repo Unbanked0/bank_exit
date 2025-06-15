@@ -1,0 +1,34 @@
+.pagy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.pagy a {
+    display: block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-box);
+    text-decoration: none;
+    color: inherit;
+}
+
+.pagy a:not(.gap):not([href]),
+.pagy a:not(.gap):not([href]):hover {
+    background-color: var(--color-base-200);
+    color: var(--color-base-content);
+    cursor: not-allowed;
+}
+
+.pagy a.gap,
+.pagy a.gap:hover {
+    background-color: var(--color-base-200);
+    color: var(--color-base-content);
+}
+
+.pagy a:not(.gap).current,
+.pagy a:not(.gap):hover {
+    background-color: var(--color-primary);
+    color: white;
+}

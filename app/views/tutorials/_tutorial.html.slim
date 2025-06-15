@@ -1,0 +1,15 @@
+= link_to tutorial_path(tutorial.identifier), class: 'card bg-base-300' do
+  - if File.exist?(Rails.root.join("app/assets/images/tutorials/_highlight/#{tutorial.identifier}.png"))
+    figure.px-3.pt-3
+      = image_tag "tutorials/_highlight/#{tutorial.identifier}.png", class: 'w-24 mx-auto'
+
+  .card-body.text-center.items-center.gap-3
+    h3.card-title= tutorial.title
+
+    - if tutorial.level?
+      p.badge.badge-sm class="badge-#{tutorial_class_by_level(tutorial.level)}"
+        = t(tutorial.level, scope: 'articles.wrapper')
+
+    - if tutorial.time?
+      p.badge.badge-sm title="#{tutorial.time}'"
+        =< distance_of_time_in_words(tutorial.time.minutes)

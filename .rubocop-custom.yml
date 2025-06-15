@@ -1,0 +1,150 @@
+AllCops:
+  NewCops: enable
+
+# Check if the code style follows the structure configuration
+Layout/ClassStructure:
+  Enabled: true
+  # Order of declaration in Categories is not verified by Rubocop (belongs_to can be before of after has_many)
+  Categories:
+    association:
+      - belongs_to
+      - has_one
+      - has_many
+      - has_and_belongs_to_many
+    attribute_macros:
+      - attr_reader
+      - attr_writer
+      - attr_accessor
+    callbacks:
+      - before_save
+      - before_create
+      - after_save
+      - after_create
+    macros:
+      - has_one_attached
+      - has_many_attached
+      - has_rich_text
+      - validates
+      - validate
+    module_inclusion:
+      - include
+      - prepend
+      - extend
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - enum
+    - public_attribute_macros
+    - association
+    - macros
+    - callbacks
+    - public_class_methods
+    - initializer
+    - public_delegate
+    - public_methods
+    - protected_attribute_macros
+    - protected_methods
+    - private_attribute_macros
+    - private_delegate
+    - private_methods
+
+# This cops checks the indentation of the first key in a hash literal where the opening brace and the first key are on separate lines.
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+# This cop checks for ambiguous block association with method when param passed without parentheses.
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*.rb"
+
+# This cop looks for error classes inheriting from `Exception` and its standard library subclasses, excluding subclasses of `StandardError`.
+Lint/InheritException:
+  EnforcedStyle: standard_error
+
+Naming/BlockForwarding: # new in 1.24
+  Enabled: true
+  EnforcedStyle: explicit
+
+Naming/MethodParameterName:
+  AllowedNames:
+    - i
+    - j
+    - x
+    - y
+
+# This cop makes sure that all numbered variables use the configured style, snake_case, normalcase, or non_integer, for their numbering.
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+  CheckSymbols: false
+  CheckMethodNames: false
+
+Rails/ActionOrder:
+  ExpectedOrder:
+    - index
+    - new
+    - create
+    - show
+    - edit
+    - update
+    - destroy
+
+# This cop checks for consistent uses of request.referer or request.referrer, depending on the cop's configuration.
+Rails/RequestReferer:
+  EnforcedStyle: referer
+
+# This cop checks that environments called with Rails.env predicates exist.
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production
+
+# # Check that before/after(:all) isn't being used.
+# RSpec/BeforeAfterAll:
+#   Exclude:
+#     - spec/spec_helper.rb
+#     - spec/rails_helper.rb
+#     - spec/support/**/*.rb
+
+# `context` block descriptions should start with 'when', or 'with'
+RSpec/ContextWording:
+  Prefixes:
+    - by
+    - for
+    - that
+    - when
+    - with
+    - without
+
+# Check for consistent style of change matcher.
+RSpec/ExpectChange:
+  EnforcedStyle: block
+
+# Check for nested example groups.
+RSpec/NestedGroups:
+  Max: 5
+
+# Check for consistent method usage for negating expectations.
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+# Check for consistent style of stub's return setting.
+RSpec/ReturnFromStub:
+  EnforcedStyle: block
+
+# Check for the formatting of empty method definitions.
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+# Use `%`-literal delimiters consistently.
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: "()"
+    "%i": "[]"
+    "%w": "[]"
+    "%W": "[]"
+    "%r": "{}"

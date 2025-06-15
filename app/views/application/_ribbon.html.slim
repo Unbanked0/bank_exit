@@ -1,0 +1,5 @@
+#ribbon.ribbon.hidden.lg:block
+  .ribbon-container class="#{Rails.env}"
+    span.env = Rails.env.capitalize
+    span.version
+      == "Rails: <strong>#{Rails.version}</strong>, Ruby: <strong>#{RUBY_VERSION}</strong>"

@@ -1,0 +1,147 @@
+= simple_form_for [:admin, directory],
+                  html: { class: 'space-y-5' } do |f|
+
+  - if directory.errors.any?
+    .panel.panel-error.mt-3
+      ul.list-disc.list-inside
+        - directory.errors.each do |error|
+          li= error.full_message
+
+  .flex.flex-col.lg:flex-row.gap-3
+    = f.input :name
+    = f.input :category,
+              prompt: 'Sélectionner une catégorie',
+              collection: directories_categories_select_helper
+
+  = f.input :description
+
+  - if params[:debug] == 'true'
+    = f.input :position
+
+  .flex.flex-col.lg:flex-row.gap-3
+    .space-y-2.lg:w-1/2
+      = f.input :logo, as: :file,
+                input_html: { \
+                  accept: Directory::ACCEPTED_CONTENT_TYPES.join(',') \
+                }
+
+      - if f.object.logo.attached?
+        = f.input :remove_logo, as: :boolean
+        .avatar
+          .w-40.rounded-full
+            = image_tag url_for(f.object.logo)
+
+    .space-y-2.lg:w-1/2
+      = f.input :banner, as: :file,
+                input_html: { \
+                  accept: Directory::ACCEPTED_CONTENT_TYPES.join(',') \
+                }
+
+      - if f.object.banner.attached?
+        = f.input :remove_banner, as: :boolean
+        p= image_tag url_for(f.object.banner)
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= Address.model_name.human.capitalize
+
+    .panel.panel-info.panel-sm
+      p Adresse du commerçant: laisser vide ou rester approximatif pour protéger son anonymat.
+      p Note: ce champs n'a pas de lien avec la zone de livraison et est uniquement affiché sur la fiche annuaire.
+
+    div
+      = f.simple_fields_for :address do |ff|
+        = ff.input :label,
+                   label_html: { class: 'mb-2' },
+                   wrapper_html: { class: 'auto-search-wrapper mb-2' },
+                   input_html: { \
+                     data: { \
+                       controller: 'admin--address',
+                       admin__address_search_url_value: addresses_search_path \
+                     } \
+                   },
+                   hint: false
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= CoinWallet.model_name.human.capitalize
+
+    .panel.panel-info.panel-sm
+      p Sélectionnez la ou les cryptomonnaies acceptées par ce commerçant.
+      p Si l'adresse publique est renseignée, un QRCode sera proposée aux utilisateurs afin qu'ils puissent scanner et envoyer directement de l'argent dessus. Autrement, seule l'icône de la cryptomonnaie sera affichée.
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :coin_wallets, directory.coin_wallets, wrapper: false, include_id: false do |ff|
+        = render 'directories/coin_wallets_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :coin_wallets, directory.coin_wallets.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'directories/coin_wallets_fields', f: f
+
+      = link_to 'Nouveau portefeuille crypto', '#',
+                class: 'btn btn-success col-span-2 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= DeliveryZone.model_name.human.capitalize
+
+    .panel.panel-info.panel-sm
+      p L'API Nominatim sera appelée pour les entrées de type "ville" ou "département" pour récupérer les informations de géolocalisation applicables, le but étant de pouvoir filtrer en "poupées russes". Par exemple, une zone de livraison avec le pays "France" doit être compatible avec une recherche utilisateur sur la région "Corse", le département "Cher" ou la ville de "Strasbourg". Les codes ISO sont utilisés pour cela.
+      p Note: les entrées de type "région" étant forcées sur la France actuellement, un appel Geocoder inutile est évité en forçant la valeur.
+      p Note: le traitement peut mettre quelques secondes à se finaliser selon le nombre de zones à analyser.
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :delivery_zones, directory.delivery_zones, wrapper: false, include_id: false do |ff|
+        = render 'directories/delivery_zones_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :delivery_zones, directory.delivery_zones.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'directories/delivery_zones_fields', f: f
+
+      = link_to 'Nouvelle zone', '#',
+                class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= ContactWay.model_name.human.capitalize
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :contact_ways, directory.contact_ways, wrapper: false, include_id: false do |ff|
+        = render 'directories/contact_ways_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :contact_ways, directory.contact_ways.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'directories/contact_ways_fields', f: f
+
+      = link_to 'Nouveau contact', '#',
+                class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  section.space-y-3
+    h2.text-lg.font-bold.text-primary.mb-2.border-b-2= Weblink.model_name.human.capitalize
+
+    .grid.grid-cols-1.lg:grid-cols-3.gap-3 data-controller="nested-form"
+      = f.simple_fields_for :weblinks, directory.weblinks, wrapper: false, include_id: false do |ff|
+        = render 'directories/weblinks_fields', f: ff
+
+      template data-nested-form-target="template"
+        = f.simple_fields_for :weblinks, directory.weblinks.new, child_index: 'TEMPLATE_RECORD' do |f|
+          = render 'directories/weblinks_fields', f: f
+
+      = link_to 'Nouvelle source', '#',
+                class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                data: { \
+                  nested_form_target: 'addItem',
+                  action: "click->nested-form#addAssociation" \
+                }
+
+  = f.input :spotlight
+  = f.input :enabled
+  = f.button :submit

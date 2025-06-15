@@ -1,0 +1,24 @@
+- if flash_type == 'notice'
+  - flash_classes = 'alert-success'
+  - close_button_classes = 'btn-success'
+- elsif flash_type == 'info'
+  - flash_classes = 'alert-info'
+  - close_button_classes = 'btn-info'
+- elsif flash_type == 'warning'
+  - flash_classes = 'alert-warning'
+  - close_button_classes = 'btn-warning'
+- else
+  - flash_classes = 'alert-error'
+  - close_button_classes = 'btn-error'
+
+.alert.max-w-96.place-items-start role="alert" data-controller="removals" data-action="animationend->removals#remove" class=flash_classes class=('appear-then-fade' if disappear)
+  = lucide_icon 'info', class: 'w-4 h-4'
+
+  div
+    - unless disappear
+      p.text-xs.italic.mb-1.underline= l(Time.current)
+    .max-h-64.overflow-y-auto= message
+
+  - unless disappear
+    button.btn.btn-xs.btn-square aria-label="Close" class=close_button_classes data-action="click->removals#forceRemove"
+      = lucide_icon 'x'

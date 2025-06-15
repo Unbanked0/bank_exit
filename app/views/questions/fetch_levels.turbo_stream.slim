@@ -1,0 +1,8 @@
+= simple_form_for :questions do |f|
+  / Reset levels
+  = turbo_stream.replace :questions_level_wrapper do
+    = render 'questions/level_input', f: f, levels: @levels
+
+  / Reset services
+  = turbo_stream.replace :questions_service_wrapper do
+    = render 'questions/service_input', f: f, services: []

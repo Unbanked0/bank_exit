@@ -1,0 +1,87 @@
+article
+  header.hero.bg-fixed class=(article.banner ? "bg-#{article.banner}" : 'bg-banner-default')
+    .hero-overlay
+    .hero-content.text-center.text-neutral-content
+      .max-w-5xl.space-y-8
+        h1.text-3xl.font-bold= article.title
+
+        - if article.author?
+          p.badge.badge-secondary
+            = t('by')
+            span.font-bold=< article.author
+
+        - if article.created_at.present?
+          time.block datetime=article.created_at
+            = l(article.created_at)
+
+        = yield :header_actions
+
+        p
+          - if article.level?
+            span.badge.inline-block class="badge-#{tutorial_class_by_level(article.level)}"
+              = t(".#{article.level}")
+
+          - if article.time?
+            span.inline-block.badge.badge-neutral.ml-2 title="#{article.time}'"
+              =< distance_of_time_in_words(article.time.minutes)
+
+        = yield :outdated_content
+
+        - if article.missing_content_for_locale?
+          p.panel.panel-warning= t('missing_content_for_locale')
+
+  section.max-w-5xl.mx-auto.p-5.space-y-5
+    .space-y-3
+      = render 'breadcrumb'
+
+      = yield :coins
+      = yield
+
+    #article.space-y-8
+      - article.contents.each do |content|
+        .space-y-3 class=("panel panel-#{content.mode}" if content.mode?)
+          - if content.title?
+            h2.text-lg.font-bold= content.title
+
+          - if content.body?
+            .space-y-2.text-left
+              - content.body.each do |body|
+                - if body.starts_with?('- ')
+                  li== auto_link(body.delete_prefix('- '), html: { target: :_blank }, sanitize: false)
+                - else
+                  p== auto_link(body, html: { target: :_blank }, sanitize: false)
+
+          - if content.render?
+            - if content.render.partial?
+              = render content.render.partial
+            - if content.render.template?
+              = render template: content.render.template
+            - elsif content.render.pdf?
+              = render 'articles/pdf', content: content
+
+          - if content.figure?
+            - if content.figure.is_a?(Array)
+              - content.figure.each do |figure|
+                = render 'articles/figure', figure: figure, content: content
+            - else
+              = render 'articles/figure', figure: content.figure, content: content
+
+    - if article.video?
+      div
+        h2.text-primary.uppercase.mb-5= t('video_tutorial')
+
+        = render 'articles/video', video: article.video
+
+    = yield :download
+
+    - if article.useful_links?
+      div
+        h2.text-primary.uppercase.mb-5= t('useful_links')
+
+        ul.panel.panel-base-200.list-disc.list-inside
+          - article.useful_links.each do |link|
+            li
+              = link_to link.url, target: :_blank do
+                = link.description.presence || link.url
+
+  = yield :footer_actions

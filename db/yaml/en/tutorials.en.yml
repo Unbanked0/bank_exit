@@ -1,0 +1,317 @@
+---
+- title: CakeWallet and Monero
+  identifier: cakewallet-monero
+  level: 0
+  time: 15
+  created_at: "2024-05-12"
+  highlight: true
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/e7dywiZIpWg
+      title: 15-minute "Living without a bank" tutorial - CakeWallet and Monero
+      created_at: "2024-05-12"
+
+- title: Complete Bank Exit formation
+  identifier: crash-course
+  level: 0
+  time: 90
+  created_at: "2024-01-30"
+  highlight: true
+  banner: banner-library
+  figure:
+    video:
+      url: https://www.youtube.com/embed/hESmJ9Amq7w
+      title: Bitcoin Monero training workshop - Bank Exit Collectif
+      created_at: "2024-01-30"
+
+- title: Private Session messaging
+  identifier: session-messaging
+  level: 0
+  time: 10
+  created_at: "2024-08-28"
+  highlight: true
+  banner: banner-messaging
+  short_description:
+    Tutorial for installing and configuring Session encrypted messaging
+    to replace WhatsApp or Telegram
+  content:
+    - mode: success
+      body:
+        - The Collectif recommends Session as your everyday messaging software. You can find a comparison of the different messaging systems at <a href="https://privacyspreadsheet.com/messaging-apps" target="_blank">PrivacySpreadsheet</a>.
+
+    - body:
+        - Download the application corresponding to your platform and install it. In our case, we're using Windows, but the process is the same for other platforms
+        - Once installed, click on "Create an account".
+      figure:
+        - image: tutorials/messaging/1_create_account.jpg
+          caption: Create an account
+
+    - body:
+        - Choose your pseudonym.
+      figure:
+        - image: tutorials/messaging/2_choose_username.jpg
+          caption: Choose a pseudonym
+
+    - body:
+        - "Congratulations \U0001F389 ! You are now on your Session home page."
+      figure:
+        - image: tutorials/messaging/3_session_dashboard.jpg
+          caption: Messages home
+
+    - body:
+        - Before you can create a message, you need to add a new contact. Click on "New message"...
+      figure:
+        - image: tutorials/messaging/4_new_message.jpg
+          caption: Create a new message
+
+    - body:
+        - "... so that you can then enter the recipient's public key (identifier)."
+      figure:
+        - image: tutorials/messaging/5_add_contact.jpg
+          caption: Add a contact
+
+    - body:
+        - You can now send your first text message to the recipient or initiate a voice call.
+      figure:
+        - image: tutorials/messaging/6_send_message.jpg
+          caption: Sending the first message
+
+    - body:
+        - Don't forget to write down your own private key in the application settings.
+
+    - mode: warning
+      body:
+        - It's very important to write these words down, if you lose them you won't
+          be able to find your account or your previous discussions!
+        - Don't share this key with anyone.
+
+    - figure:
+        - image: tutorials/messaging/7_backup_seed.jpg
+          caption: Backup your private key !
+
+  useful_links:
+    - url: https://getsession.org/
+
+  figure:
+    video:
+      url: https://youtube.com/embed/OHnuD3m45SY
+      title:
+        "Messaging tutorial SESSION incensurable! - 12 min - stop Telegram censorship
+        #paveldurov"
+      created_at: "2024-08-28"
+
+- title: Nostr social network
+  identifier: nostr-social-network
+  level: 0
+  time: 10
+  created_at: "2024-08-17"
+  banner: banner-social-network
+  short_description:
+    Tutorial for registering and configuring the Nostr social network
+    to replace Twitter
+  content:
+    - mode: info
+      body:
+        - <abbr title="Notes and Other Stuff Transmitted by Relays">Nostr</abbr> is a decentralised network protocol that serves as a distributed social network. Anyone can run their own relay (server) and thus avoid censorship due to the redundancy of messages published.
+        - In this tutorial, we'll be using the <strong>Snort</strong> client, but the process is similar for most Nostr sites and applications. Note that once your account has been created with Snort, you can change applications or sites at your convenience by reimporting your account using the private key that will be generated for you.
+
+    - body:
+        - Go to https://snort.social and click on "Register".
+        - From there, the registration process begins, with several steps detailed below.
+      figure:
+        - image: tutorials/social_network/1_home.jpg
+
+    - body:
+        - Choose a pseudonym.
+      figure:
+        - image: tutorials/social_network/2_create_account.jpg
+
+    - body:
+        - Choose an avatar.
+      figure:
+        - image: tutorials/social_network/3_choose_picture.jpg
+
+    - body:
+        - Choose your areas of interest.
+      figure:
+        - image: tutorials/social_network/4_select_interests.jpg
+
+    - body:
+        - Choose Nostr contacts to follow.
+      figure:
+        - image: tutorials/social_network/5_follow_friends.jpg
+
+    - body:
+        - Choose the options that allow you to hide certain content from your feed (porn, politics, etc.).
+        - Once validated, registration will be finalised but you will still be able to modify your information afterwards.
+
+    - mode: success
+      body:
+        - You'll notice that at no point does the site ask for your email or telephone number. That's because Nostr is cryptographically based and doesn't need any personal information from you. Your account belongs entirely to you!
+
+    - figure:
+        - image: tutorials/social_network/6_clean_feed.jpg
+
+    - body:
+        - "Congratulations \U0001F389 ! You're now on the home page of your Nostr feed!"
+        - You can start searching for content by clicking on "Search" in the menu.
+      figure:
+        - image: tutorials/social_network/7_search_content.jpg
+
+    - body:
+        - You can now follow any profile by clicking on the "Follow" button.
+      figure:
+        - image: tutorials/social_network/8_follow_profiles.jpg
+
+    - body:
+        - Now it's time to make a backup of your private key. To do this, click on "Export keys" in the settings.
+
+    - mode: warning
+      body:
+        - It is very important to note down your private key and/or your mnemonic phrase. This is the only way to restore your account. If you lose them, you will no longer be able to access your messages and contacts on Nostr.
+        - Do not share the private key with anybody.
+
+    - figure:
+        - image: tutorials/social_network/9_export_keys.jpg
+        - image: tutorials/social_network/10_export_keys.jpg
+
+    - body:
+        - You can edit your profile at any time to change your photo or description
+      figure:
+        - image: tutorials/social_network/11_edit_your_profile.jpg
+
+    - body:
+        - Now it's time to publish your first message. To do this, click on the "New post" button at the bottom left and enter your content in the popup that opens.
+
+    - mode: info
+      body:
+        - From now on, you should assume that any content published on a Nostr relay will remain there. Even if the delete function exists, there is no guarantee that the relays will honour this request. What's more, as a message can be republished on any relay, it becomes more complicated to know where the message is. This is another of Nostr's strengths.
+
+    - figure:
+        - image: tutorials/social_network/12_publish_message.jpg
+        - image: tutorials/social_network/13_publish_message.jpg
+
+    - body:
+        - "Congratulations \U0001F389 ! Your first message has just been published on the Nostr network!"
+      figure:
+        - image: tutorials/social_network/14_message_broadcasted.jpg
+
+  useful_links:
+    - url: https://nostr.com
+    - url: https://nostr.directory
+      description: Find Twitter contacts that have joined Nostr
+    - url: https://www.amethyst.social
+      description: Android application for Nostr
+    - url: https://damus.io
+      description: iOS application for Nostr
+
+  figure:
+    video:
+      url: https://youtube.com/embed/yHMxIHuUu1w
+      title: Tuto NOSTR - decentralised, incensurable twitter!
+      created_at: "2024-08-17"
+
+- title: Buy Bitcoin no KYC
+  identifier: bitcoin-nokyc
+  level: 2
+  time: 10
+  created_at: "2024-08-07"
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/rI96QNtNbaY
+      title: How to BUY Bitcoin no-KYC in 9 min (the Euro€ is over!)
+      created_at: "2024-12-03"
+
+- title: Create an incensurable Monero kitty
+  identifier: funding-monero
+  level: 0
+  time: 10
+  created_at: "2024-08-07"
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/76vxvYrFar4
+      title: Create an INSTOPPABLE kitty in 10 minutes with Monero and KUNO!
+      created_at: "2024-08-07"
+  useful_links:
+    - url: https://kuno.anne.media
+      description: Kuno website
+
+- title: Running an EasyMonerod Node
+  identifier: monero-node-easymonerod
+  highlight: true
+  level: 0
+  time: 10
+  author: Kerlann
+  created_at: "2025-02-24"
+  banner: banner-blockchain
+  short_description: EasyNode simplifies the installation of a MONERO node, allowing you to configure your blockchain in just a few clicks. A complete setup in less than 10 minutes!
+  content:
+    - figure:
+        - image: tutorials/monero-node-easymonerod/interface.png
+          caption: Node interface
+
+  figure:
+    video:
+      url: https://youtube.com/embed/Gnd9PR2fF8g
+      title: Video tutorial EasyMonerod
+      created_at: "2025-02-24"
+
+  useful_links:
+    - url: https://github.com/kerlannXmr/EasyMonerod
+
+- title: Embed map on your website
+  identifier: documentation-embed-map
+  level: 0
+  banner: banner-map
+  content:
+    - render:
+        template: maps/helps/show
+
+- title: Company accountings
+  identifier: accounting
+  level: 0
+  banner: banner-accountings
+  short_description: Manage your business accounting easily with an Excel file that automates your Monero and Bitcoin income calculations
+  content:
+    - mode: info
+      body:
+        - You're a merchant and managing your accounting with Monero and Bitcoin has always put you off?
+        - Don't hesitate any longer and take the plunge now with this new automatic calculator set up by the Collective and validated by a chartered accountant!
+
+    - render:
+        partial: tutorials/accounting_download
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg
+          caption: Parameters and explanations
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_03.jpg
+          caption: Manual import of transactions
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_04.jpg
+          caption: Accounting results
+
+    - render:
+        partial: tutorials/accounting_download
+
+- title: Full Setup of Monero and Bitcoin Payments for Your Business
+  short_title: Complete Guide for Your Business
+  identifier: cryptopayment-for-business
+  level: 0
+  banner: banner-accountings
+  short_description: Full setup of Monero and Bitcoin payments for your business
+  content:
+    - render:
+        pdf: /pdfs/Installation_TPE_paiement_Monero_professionnel_v1_compressed.pdf
+        caption: Full setup of Monero and Bitcoin payments for your business
+  useful_links:
+    - url: /pdfs/Installation_TPE_paiement_Monero_professionnel_v1_compressed.pdf
+      title: PDF Guide

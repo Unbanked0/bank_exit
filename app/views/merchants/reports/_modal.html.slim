@@ -1,0 +1,21 @@
+- i18n_scope = 'merchants.reports.modal'
+
+- content_for(:title) do
+  h3.text-xl.font-semibold
+    = merchant.name
+
+= render_modal do
+  .panel.panel-info
+    p.text-sm= t('introduction_html', scope: i18n_scope)
+
+  = simple_form_for merchant_report,
+                    url: merchant_report_path(merchant),
+                    html: { class: 'space-y-2 px-1' },
+                    method: :post do |f|
+    = f.input :description, as: :text, label: false
+    = f.input :nickname, wrapper_html: { class: 'hidden' }
+
+    .flex.justify-end
+      = f.button :submit,
+                 t('submit', scope: i18n_scope),
+                 class: 'btn btn-success'

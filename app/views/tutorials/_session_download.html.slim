@@ -1,0 +1,39 @@
+section.mb-6
+  h2.text-primary.uppercase.mb-5= t('download')
+
+  .panel.panel-base-200.text-lg
+    .grid.grid-cols-2.lg:grid-cols-4.gap-8
+      p
+        = link_to 'https://getsession.org/android', target: :_blank do
+          = inline_svg_tag 'os/android.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'Android'
+
+      p
+        = link_to 'https://getsession.org/apk', target: :_blank do
+          = inline_svg_tag 'os/android.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'APK'
+
+      p
+        = link_to 'https://getsession.org/f-droid', target: :_blank do
+          = inline_svg_tag 'os/fdroid.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'F-Droid'
+
+      p
+        = link_to 'https://getsession.org/iphone', target: :_blank do
+          = inline_svg_tag 'os/apple.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'iPhone'
+
+      p
+        = link_to 'https://getsession.org/mac', target: :_blank do
+          = inline_svg_tag 'os/apple.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'MacOS'
+
+      p
+        = link_to 'https://getsession.org/windows', target: :_blank do
+          = inline_svg_tag 'os/windows.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'Windows'
+
+      p
+        = link_to 'https://getsession.org/linux', target: :_blank do
+          = inline_svg_tag 'os/linux.svg', class: 'w-8 h-8 inline-flex mr-2'
+          = 'Linux'
