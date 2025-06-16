@@ -92,9 +92,17 @@ RSpec.describe 'Legacy', type: :request do
   end
 
   describe '/map/embed' do
-    subject! { get('/map/embed') }
+    context 'without query parameters' do
+      subject! { get('/map/embed') }
 
-    it { is_expected.to redirect_to('/en/map/embed') }
+      it { is_expected.to redirect_to('/en/map/embed') }
+    end
+
+    context 'with query parameters' do
+      subject! { get('/map/embed?coins[]=june') }
+
+      it { is_expected.to redirect_to('/en/map/embed?coins[]=june') }
+    end
   end
 
   describe '/es/los-comerciantes/:id' do

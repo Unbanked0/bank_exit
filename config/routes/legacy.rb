@@ -14,7 +14,7 @@ get '/en/merchants/new', to: redirect('/en/merchant_proposals/new')
 get '/frequently-asked-questions', to: redirect('/en/frequently-asked-questions')
 get '/glossary', to: redirect('/en/glossary')
 get '/stats', to: redirect('/en/stats')
-get '/map/embed', to: redirect('/en/map/embed')
+get '/map/embed', to: redirect(QueryRedirector.new('/en/map/embed'))
 
 # French
 get '/les-marchands/:id', to: redirect('/commercants/%{id}')
