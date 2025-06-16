@@ -112,30 +112,28 @@
     - %i[bar cafe restaurant grocery].each do |category|
       li
         input type="checkbox" id="#{category}-option" value=category class="hidden peer" name="category" data-action="input->search#syncSelectCategories input->search#submit" checked=(params.dig(:category) == category.to_s)
-        label.pretty-checkbox.flex.items-center.justify-center for="#{category}-option" tabindex="0"
-          .flex.flex-col.items-center.justify-center.gap-2
-            = merchant_icon_svg icon_for_category(category), width: 50, height: 50
-            .text-sm.md:text-base
-              = t("categories.#{category}")
+        label.pretty-checkbox.flex.flex-col.items-center.justify-center.gap-2 for="#{category}-option" tabindex="0"
+          = merchant_icon_svg icon_for_category(category), width: 50, height: 50
+          .text-xs.xl:text-base
+            = t("categories.#{category}")
 
   ul.grid.w-full.gap-2.grid-cols-3.mb-3
     - [:monero, :bitcoin, :june].each do |coin|
       li.flex.flex-col.items-center.justify-start.gap-2
         .w-full
           input type="checkbox" id="#{coin}-option" value=coin class="hidden peer" name="coins[]" data-action="input->search#submit" checked=params.dig(:coins)&.include?(coin.to_s)
-          label.pretty-checkbox.inline-flex.items-center.justify-between for="#{coin}-option" tabindex="0"
-            .flex.items-center.justify-center.gap-1
-              .avatar-group.-space-x-4
-                - if coin == :bitcoin
-                  .avatar
-                    .w-8
-                      = image_tag "coins/logo-lightning.svg"
+          label.pretty-checkbox.flex.flex-col.xl:flex-row.items-center.justify-center.gap-1 for="#{coin}-option" tabindex="0"
+            .avatar-group.-space-x-4
+              - if coin == :bitcoin
                 .avatar
-                  .w-8
-                    = image_tag "coins/logo-#{coin}.svg"
+                  .w-10
+                    = image_tag "coins/logo-lightning.svg"
+              .avatar
+                .w-10
+                  = image_tag "coins/logo-#{coin}.svg"
 
-              .text-xs.md:text-base
-                = coin.capitalize
+            .text-xs.xl:text-base
+              = coin.capitalize
 
         - if coin == :bitcoin
           = render 'tooltip', id: 'tooltip-map-bitcoin', text: t('.tooltip_bitcoin_html')
