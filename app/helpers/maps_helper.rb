@@ -7,7 +7,7 @@ module MapsHelper
   end
 
   def map_attribution_html
-    "#{image_tag('monero-map-logo.png', class: 'inline w-8')} <span class='hidden lg:inline'>#{URI(root_url).host}</span>"
+    "#{image_tag('monero-map-logo.png', class: 'inline w-7 py-1')} #{URI(root_url).host}"
   end
 
   def embed_map_attribution_html
