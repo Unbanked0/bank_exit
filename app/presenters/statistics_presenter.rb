@@ -4,6 +4,7 @@ class StatisticsPresenter < ApplicationPresenter
   WEST_EUROPEAN_COUNTRIES = %w[FR GB ES PT DE IT CH BE].freeze
   NORTH_AMERICA_COUNTRIES = %w[CA US MX CU AU NZ].freeze
   SOUTH_AMERICA_COUNTRIES = %w[BR AR BO PY UY CL].freeze
+  AFRICA_COUNTRIES = %w[ZA KE ZM RE].freeze
 
   attr_reader :today, :yesterday
 
@@ -20,7 +21,8 @@ class StatisticsPresenter < ApplicationPresenter
       two_weeks_range: merchants_two_weeks_range,
       merchants_west_europe_and_days: merchants_west_europe_and_days,
       merchants_north_america_and_days: merchants_north_america_and_days,
-      merchants_south_america_and_days: merchants_south_america_and_days
+      merchants_south_america_and_days: merchants_south_america_and_days,
+      merchants_africa_and_days: merchants_africa_and_days
     }
   end
 
@@ -123,6 +125,10 @@ class StatisticsPresenter < ApplicationPresenter
 
   def merchants_south_america_and_days
     merchants_by_area_and_days(SOUTH_AMERICA_COUNTRIES)
+  end
+
+  def merchants_africa_and_days
+    merchants_by_area_and_days(AFRICA_COUNTRIES)
   end
 
   def merchants_by_area_and_days(

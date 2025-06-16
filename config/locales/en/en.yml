@@ -74,6 +74,10 @@ en:
       one: "kilometer"
       other: "kilometers"
 
+  date:
+    formats:
+      short: "%m %d, %Y"
+
   time:
     am: am
     formats:
