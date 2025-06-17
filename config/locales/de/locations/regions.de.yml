@@ -1,0 +1,20 @@
+de:
+  regions:
+    FR-ARA: "Auvergne-Rhône-Alpes"
+    FR-BFC: "Burgund-Franche-Comté"
+    FR-BRE: "Bretagne"
+    FR-CVL: "Zentrum-Loiretal"
+    FR-COR: "Korsika" # FR-20R => legacy
+    FR-GES: "Großer Osten"
+    FR-HDF: "Hauts-de-France"
+    FR-IDF: "Île-de-France"
+    FR-NOR: "Normandie"
+    FR-NAQ: "Neu-Aquitanien"
+    FR-OCC: "Okzitanien"
+    FR-PDL: "Pays de la Loire"
+    FR-PAC: "Provence-Alpes-Côte d’Azur"
+    FR-971: "Guadeloupe"
+    FR-973: "Guayana"
+    FR-972: "Martinique"
+    FR-974: "Réunion"
+    FR-976: "Mayotte"

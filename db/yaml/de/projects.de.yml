@@ -1,0 +1,62 @@
+---
+- route: maps#index
+  image: map_monero.jpg
+  title: Karte
+  description: Weltweite Bitcoin- und Monero-Geschäfte anzeigen und filtern
+  external: false
+  identifier: map
+
+- route: blogs#show
+  identifier: flyer
+  image: flyer.jpg
+  title: Flyer
+  description: Monero und Bitcoin für Privatpersonen und Unternehmen
+
+- route: projects#show
+  image: epicerie_monero.png
+  website_screenshot: not_iframe/grocery.jpg
+  title: Freiheits-Lebensmittel
+  description: Qualitativ hochwertige Monero-Produkte kaufen
+  external: false
+  iframe_url: https://monero-map.org/epicerie
+  github_url: https://github.com/Unbanked0/Freedom_Grocers
+  identifier: grocery
+
+- route: projects#show
+  image: cheque_monero.png
+  website_screenshot: not_iframe/cheque.jpg
+  title: Schecks
+  description: Druckbare Schecks für Zahlungen mit Bitcoin und Monero erstellen
+  external: false
+  iframe_url: https://monero-map.org/cheque
+  github_url: https://github.com/Unbanked0/Monero_Cheque
+  identifier: cheque
+  figure:
+    video:
+      url: https://youtube.com/embed/mK3AaPkwxSk
+      title: "MONERO CRYPTO CHEQUE – Adoption beschleunigen, greifbar, ohne Smartphone #MoneroCheque"
+      created_at: "2024-10-26"
+
+- route: projects#show
+  image: sticker_monero.png
+  website_screenshot: not_iframe/sticker.jpg
+  title: Sticker
+  description: Bitcoin- und Monero-Spenden- oder Zahlungsbanner generieren
+  external: false
+  iframe_url: https://monero-map.org/crypto_box
+  github_url: https://github.com/Unbanked0/Crypto_Box_sticker
+  identifier: sticker
+
+- route: local_groups#index
+  image: local_groups.jpg
+  title: Lokale Gruppen
+  description: Finde die verschiedenen Bank-Exit-Gruppen in Frankreich (Paris, Rennes, Lille, Lyon usw.)
+  external: false
+  identifier: local_groups
+
+- route: tutorials#show
+  image: accounting.jpg
+  title: Buchhaltung für Unternehmen
+  description: Verwalte die Buchhaltung deines Unternehmens ganz einfach mit einer Excel-Datei, die deine Bitcoin- und Monero-Einnahmen automatisch berechnet
+  external: false
+  identifier: accounting

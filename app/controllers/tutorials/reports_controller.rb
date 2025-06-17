@@ -4,6 +4,7 @@ module Tutorials
 
     # @route GET /fr/tutorials/:tutorial_id/report/new {locale: "fr"} (new_tutorial_report_fr)
     # @route GET /es/tutorials/:tutorial_id/report/new {locale: "es"} (new_tutorial_report_es)
+    # @route GET /de/tutorials/:tutorial_id/report/new {locale: "de"} (new_tutorial_report_de)
     # @route GET /en/tutorials/:tutorial_id/report/new {locale: "en"} (new_tutorial_report_en)
     # @route GET /tutorials/:tutorial_id/report/new
     def new
@@ -12,6 +13,7 @@ module Tutorials
 
     # @route POST /fr/tutorials/:tutorial_id/report {locale: "fr"} (tutorial_report_fr)
     # @route POST /es/tutorials/:tutorial_id/report {locale: "es"} (tutorial_report_es)
+    # @route POST /de/tutorials/:tutorial_id/report {locale: "de"} (tutorial_report_de)
     # @route POST /en/tutorials/:tutorial_id/report {locale: "en"} (tutorial_report_en)
     # @route POST /tutorials/:tutorial_id/report
     def create

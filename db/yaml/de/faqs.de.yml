@@ -1,0 +1,70 @@
+---
+- question: Ich möchte einen neuen Händler vorschlagen. Wie mache ich das?
+  content:
+    - answer: Um einen neuen Händler vorzuschlagen, klicke auf den grünen Button <mark>Händler vorschlagen</mark> über der Karte oder direkt auf {{merchant_proposals#new}} und fülle das Formular aus.
+    - answer: Das Kollektiv wird anschließend über deinen Vorschlag informiert und fügt den Händler zu OpenStreetMap hinzu.
+  categories:
+    - map
+
+- question: Wie überzeugt man einen Händler?
+  content:
+    - answer:
+        - Drucke (oder lasse drucken) ein paar Flyer aus (Artikel unter {{blogs#show->flyer}}).
+        - Hilf dem Händler, ein Monero-Wallet mit CakeWallet zu erstellen (Anleitung unter {{tutorials#show->cakewallet-monero}}).
+        - "Einmal jährlich: Trage die Monero-Verkäufe in die vorbereitete Excel-Datei ein (Anleitung unter {{tutorials#show->accounting}})."
+        - Danach kannst du den Händler auf der Karte hinzufügen, über den grünen Button <mark>Händler vorschlagen</mark> auf {{maps#index}} oder direkt über das Formular {{merchant_proposals#new}}!
+  categories:
+    - map
+    - merchant
+
+- question: Ich möchte von der Karte entfernt werden. Wie geht das?
+  content:
+    - answer: Wenn du derzeit auf der Karte des Kollektivs gelistet bist und nicht mehr erscheinen möchtest, musst du direkt bei <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a> eine Löschanfrage stellen. Die Bank-Exit-Seite besitzt die Daten nicht, sondern greift lediglich auf öffentliche Open-Source-Daten von OSM zu.
+    - mode: info
+      answer: "Hinweis: Nach der Löschung in OpenStreetMap kann der Händler noch einige Stunden auf der Karte des Kollektivs sichtbar sein – bis zur nächsten Synchronisierung."
+  categories:
+    - map
+
+- question: Ich habe einen Händler zu OpenStreetMap hinzugefügt, aber er erscheint nicht auf der Karte. Warum?
+  content:
+    - answer: Die Karte des Kollektivs wird viermal täglich automatisch aktualisiert. Wenn du einen Händler gerade erst hinzugefügt hast, musst du eventuell bis zur nächsten Aktualisierung warten (bis zu 6 Stunden).
+    - answer: "Du kannst die Daten auch manuell aktualisieren: Auf der Karte klickst du auf <mark>⋮</mark> > <mark>Händlerdaten aktualisieren</mark> (neben dem grünen Button „Händler vorschlagen“)."
+  categories:
+    - map
+
+- question: Wie kann ich die Karte auf meiner Website einbetten?
+  content:
+    - answer: Du kannst die Karte entweder über eine <mark>URL</mark> oder über ein <mark>iframe</mark> in deine Website einbetten.
+    - answer: Rufe dazu die Seite {{tutorials#show->documentation-embed-map}} auf, um die Dokumentation einzusehen und deine persönliche Version zu generieren.
+  categories:
+    - map
+
+- question: Was ist ein KYC?
+  content:
+    - answer: <b>KYC</b> (<i>Know Your Customer</i>) ist ein Verfahren, bei dem Banken, Zahlungsdienste und Finanzdienstleister die Identität ihrer Kunden überprüfen. Dazu werden persönliche Dokumente wie Ausweis, Adressnachweis und weitere Daten gesammelt, um Betrug oder illegale Aktivitäten zu verhindern.
+  categories:
+    - general
+    - kyc
+
+- question: Welche Risiken birgt KYC?
+  content:
+    - answer:
+        - "<b>Privatsphäre</b>: KYC verlangt die Weitergabe sensibler persönlicher Informationen, was dich potenziell Identitätsdiebstahl oder Datenmissbrauch aussetzen kann."
+        - "<b>Sicherheitsrisiken</b>: Unternehmen, die KYC verlangen, garantieren nicht immer einen sicheren Umgang mit deinen Daten – Datenlecks oder Hacks sind möglich."
+        - "<b>Diskriminierung und Überwachung</b>: KYC kann zu Benachteiligung oder ungerechtfertigter Überwachung führen – z. B. aufgrund deines Profils oder Wohnorts."
+        - "<b>Zugangshürden</b>: Manche Nutzer können die nötigen Unterlagen nicht bereitstellen und werden dadurch von legalen Finanzdiensten ausgeschlossen."
+    - mode: info
+      answer: Eine Liste von Diensten ohne KYC findest du unter <a href="https://kycnot.me" target="_blank">kycnot.me</a>.
+
+  categories:
+    - general
+    - kyc
+
+- question: Was ist der Unterschied zwischen der Karte und dem Verzeichnis?
+  content:
+    - answer:
+        - Die Karte zeigt Händler mit präziser Geolokalisierung (Breiten-/Längengrad).
+        - Das Verzeichnis enthält Anbieter ohne feste Adresse – z.B. weil sie anonym bleiben möchten oder weil ihr Angebot ganze Regionen/Länder abdeckt (z.B. alternative Medien oder Online-Shops).
+  categories:
+    - map
+    - directory

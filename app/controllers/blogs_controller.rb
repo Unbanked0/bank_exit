@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
 
   # @route GET /fr/blogs {locale: "fr"} (blogs_fr)
   # @route GET /es/blogs {locale: "es"} (blogs_es)
+  # @route GET /de/blogs {locale: "de"} (blogs_de)
   # @route GET /en/blogs {locale: "en"} (blogs_en)
   # @route GET /blogs
   def index
@@ -15,6 +16,7 @@ class BlogsController < ApplicationController
 
   # @route GET /fr/blogs/:id {locale: "fr"} (blog_fr)
   # @route GET /es/blogs/:id {locale: "es"} (blog_es)
+  # @route GET /de/blogs/:id {locale: "de"} (blog_de)
   # @route GET /en/blogs/:id {locale: "en"} (blog_en)
   # @route GET /blogs/:id
   def show

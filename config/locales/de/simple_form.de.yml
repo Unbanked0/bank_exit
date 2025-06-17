@@ -1,0 +1,180 @@
+de:
+  simple_form:
+    "yes": "Ja"
+    "no": "Nein"
+    required:
+      text: "erforderlich"
+      mark: "*"
+    error_notification:
+      default_message: "Bitte überprüfen Sie die unten aufgeführten Probleme:"
+
+    labels:
+      defaults:
+        theme: Thema
+        latitude: Breitengrad
+        longitude: Längengrad
+        zoom: Zoom
+        gestureHandling: Gestensteuerung
+        fitBounds: Bereich anpassen
+        attribution: Quellenangabe
+
+        query: Suche
+        category: Kategorie
+        around_me: Lieferung in meiner Nähe
+        city: Stadt
+        postcode: Postleitzahl
+        department: Landkreis 🇫🇷
+        region: Region 🇫🇷
+        country: Land
+        world: Welt
+
+      questions:
+        profile: Ich bin
+        level: Mein Niveau
+        service: Ich möchte
+      map:
+        delivery: Mit Hauszustellung
+        no_kyc: Keine <abbr title="Know Your Customer">KYC</abbr> erforderlich
+        with_atms: Inkludiere <abbr title="Automated Teller Machine">Geldautomaten</abbr>
+        category:
+          all: Alle Einzelhandelskategorien
+          craft: Handwerk
+          catering: Gastronomie
+          store: Geschäfte
+          aesthetic: Hygiene und Ästhetik
+          health: Gesundheit
+          financial: Finanzdienstleistungen
+          other: Sonstiges
+
+      itinerary:
+        my_address: Meine Adresse
+        use_my_ip: Standort per IP bestimmen
+        detailed_steps: Fahranweisungen detailliert anzeigen?
+
+      category:
+        other: Andere Kategorie (bitte angeben)
+
+      tutorial_report:
+        title: Titel
+        description: Beschreibung
+
+      merchant_report:
+        description: Beschreibung
+
+      comment:
+        affidavit: Hiermit bestätige ich, die angegebene Erfahrung mit diesem Händler gemacht zu haben.
+
+    placeholders:
+      defaults:
+        latitude: Standard-Breitengrad
+        longitude: Standard-Längengrad
+        query: Suche nach Name oder Beschreibung
+        city: Berlin oder 10115
+        phone: 030 12345678
+        opening_hours: Mo bis Fr von 9 bis 18 Uhr
+        email: max.mustermann@example.com
+        website: "https://meinewebseite.de"
+
+      map:
+        search: Finde ein Geschäft nach Name, Adresse oder Beschreibung
+
+      itinerary:
+        my_address: Musterstraße 1, Berlin
+
+      merchant_proposal:
+        contact_session: Deine öffentliche Session-ID oder URL
+        contact_signal: Deine öffentliche Signal-ID oder URL
+        contact_matrix: Deine öffentliche Matrix-ID oder URL
+        contact_jabber: Deine öffentliche Jabber-ID oder URL
+        contact_telegram: Deine öffentliche Telegram-ID oder URL
+        contact_facebook: Deine öffentliche Facebook-ID oder URL
+        contact_instagram: Deine öffentliche Instagram-ID oder URL
+        contact_twitter: Deine öffentliche Twitter/X-ID oder URL
+        contact_youtube: Deine öffentliche Youtube-ID oder URL
+        contact_tiktok: Deine öffentliche Tiktok-ID oder URL
+        contact_linkedin: Deine öffentliche Linkedin-ID oder URL
+        contact_tripadvisor: Deine öffentliche Tripadvisor-ID oder URL
+        contact_odysee: Deine öffentliche Odysee-ID oder URL
+        contact_crowdbunker: Deine öffentliche Crowdbunker-ID oder URL
+        contact_francelibretv: Deine öffentliche FranceLibre.tv-ID oder URL
+        delivery_zone: DE, Berlin, EU, Welt
+        proposition_from: max.mustermann@example.com
+
+        street: Musterstraße 1
+        postcode: 10115
+        city: Berlin
+
+      tutorial_report:
+        title: Klarer und prägnanter Titel der Anomalie
+        description: Beschreibe deutlich die Anomalie(n), die du im Tutorial bemerkt hast.
+
+      merchant_report:
+        description: Beschreibung der Anomalie
+
+      comment:
+        content: Dein Kommentar
+        pseudonym: Dein Pseudonym (optional)
+
+      comment_report:
+        description: Bitte erläutere, warum du diesen Kommentar meldest.
+
+      address:
+        label: Adresse, Landkreis, Region, ...
+
+      weblinks:
+        url: "https://webseite.de/meine/super/seite"
+        title: Titel der Webseite
+
+    prompts:
+      questions:
+        profile: Wähle dein Profil
+        level: Wähle dein Niveau
+        service: Wähle deinen Service
+
+      merchant_proposal:
+        category: Wähle eine Geschäftskategorie
+        country: Wähle ein Land
+
+      comment:
+        rating: Wähle eine Bewertung
+
+      comment_report:
+        flag_reason: Wähle den Grund für die Meldung
+
+      directory:
+        category: Wähle eine Kategorie
+
+    hints:
+      defaults:
+        around_me: Ergebnisse basieren auf deiner IP-Adresse
+
+      merchant_proposal:
+        ask_kyc: Prüfen, ob der Händler eine Identitätsprüfung verlangt
+        proposition_from: Bitte gib deine E-Mail-Adresse an, wenn du über die Bearbeitung informiert werden möchtest.
+
+      itinerary:
+        my_address: Dein Standort wird nicht auf dem Server gespeichert
+        use_my_ip: IP-Geolokalisierung kann ungenau sein, besonders bei VPN-Nutzung.
+        detailed_steps: Wenn aktiviert, werden detaillierte Anfahrtsanweisungen angezeigt.
+
+      directory:
+        banner: Hintergrundbanner
+        address:
+          label: Lass das Feld leer oder gib eine ungefähre Adresse an, um die Anonymität des Händlers zu schützen.<br />Diese Info wird für die Funktion „In meiner Nähe“ verwendet und beeinflusst die Relevanz der Ergebnisse nach Breiten- und Längengrad.
+
+      weblinks:
+        title: Leer lassen, um die URL anzuzeigen oder einen benutzerfreundlichen Titel angeben
+
+    include_blanks:
+      defaults:
+        continent: Alle Kontinente
+        country: Alle Länder
+        region: Alle Regionen
+        department: Alle Landkreise
+        category: 🔹 Alle Kategorien
+        zoom: Standard Zoom
+        theme: Standard Thema
+        gestureHandling: Standardwert
+        fitBounds: Standardwert
+        clusters: Standardwert
+        attribution: Standardwert

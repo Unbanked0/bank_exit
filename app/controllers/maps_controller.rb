@@ -14,18 +14,22 @@ class MapsController < ApplicationController
 
   # @route GET /fr/map {locale: "fr"} (maps_fr)
   # @route GET /es/map {locale: "es"} (maps_es)
+  # @route GET /de/map {locale: "de"} (maps_de)
   # @route GET /en/map {locale: "en"} (maps_en)
   # @route GET /map
   # @route GET /fr/map/:zoom {locale: "fr"}
   # @route GET /es/map/:zoom {locale: "es"}
+  # @route GET /de/map/:zoom {locale: "de"}
   # @route GET /en/map/:zoom {locale: "en"}
   # @route GET /map/:zoom
   # @route GET /fr/map/:zoom/:lat {locale: "fr"}
   # @route GET /es/map/:zoom/:lat {locale: "es"}
+  # @route GET /de/map/:zoom/:lat {locale: "de"}
   # @route GET /en/map/:zoom/:lat {locale: "en"}
   # @route GET /map/:zoom/:lat
   # @route GET /fr/map/:zoom/:lat/:lon {locale: "fr"} (pretty_map_fr)
   # @route GET /es/map/:zoom/:lat/:lon {locale: "es"} (pretty_map_es)
+  # @route GET /de/map/:zoom/:lat/:lon {locale: "de"} (pretty_map_de)
   # @route GET /en/map/:zoom/:lat/:lon {locale: "en"} (pretty_map_en)
   # @route GET /map/:zoom/:lat/:lon
   def index

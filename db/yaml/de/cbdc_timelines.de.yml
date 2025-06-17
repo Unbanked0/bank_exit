@@ -1,0 +1,56 @@
+---
+- started_on: 2023-10-01
+  title: Q4 2023
+  description:
+    - Umsetzung der Vorbereitungsphase
+    - Veröffentlichung der rechtlichen Stellungnahme der EZB
+
+- started_on: 2024-01-01
+  title: Q1 2024
+  description:
+    - Überprüfung der Regulierung durch die regionalen Generaldirektionen (RDGs)
+    - Veröffentlichung des Aufrufs zur Einreichung von Bewerbungen (Call for Applications, CfA)
+    - Finalisierung der Anforderungen im Zusammenhang mit der Versorgung
+
+- started_on: 2024-04-01
+  title: Q2 2024
+  description:
+    - Beginn der Marktkonsultationen zur maximal zulässigen Haltesumme von „Cash+“
+
+- started_on: 2024-07-01
+  title: Q3 2024
+  description:
+    - Versand der Angebotsunterlagen an Bieter
+    - Beginn der Nutzerforschung
+
+- started_on: 2024-10-01
+  title: Q4 2024
+  description:
+    - Auswertung und Verhandlung der Angebote zur Lieferung von „Cash+“
+
+- started_on: 2025-01-01
+  title: Q1 2025
+  description:
+    - Verhandlung der Kaufangebote
+    - Beginn der Aktivitäten für die zweite Beschaffungsrunde
+    - Start der Planungen für die nächste Projektphase
+
+- started_on: 2025-04-01
+  title: Q2 2025
+  description:
+    - Auswahl der Lieferanten
+    - Finalisierung der Systemarchitektur
+    - Bewertung der Auswirkungen auf den Datenschutz
+    - Positionierungs- und Sensibilisierungsplan
+    - Ausarbeitung des Steuerungs- und Rollout-Ansatzes
+
+- started_on: 2025-07-01
+  title: Q3 2025
+  description:
+    - Entwurf der Regulierung liegt vor
+    - Vorbereitung der Entscheidung des Governing Council
+
+- started_on: 2025-10-01
+  title: Oktober 2025 ⚠️
+  description:
+    - Entscheidung des Governing Council über den möglichen Start der nächsten Phase

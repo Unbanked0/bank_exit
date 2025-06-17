@@ -125,8 +125,9 @@ en:
       node: Launch a node in 3 clicks
       tor_ipfs: Switch to Tor/IPFS
 
-  # Used by GithubAPI to assign label
+  # Used by GithubAPI to assign label - Only for english locale
   languages:
     fr: french
     en: english
     es: spanish
+    de: german

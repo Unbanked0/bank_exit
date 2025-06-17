@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   # @route GET /fr/questions/results {locale: "fr"} (results_questions_fr)
   # @route GET /es/questions/results {locale: "es"} (results_questions_es)
+  # @route GET /de/questions/results {locale: "de"} (results_questions_de)
   # @route GET /en/questions/results {locale: "en"} (results_questions_en)
   # @route GET /questions/results
   def results
@@ -26,6 +27,7 @@ class QuestionsController < ApplicationController
 
   # @route POST /fr/questions/fetch_levels {locale: "fr"} (fetch_levels_questions_fr)
   # @route POST /es/questions/fetch_levels {locale: "es"} (fetch_levels_questions_es)
+  # @route POST /de/questions/fetch_levels {locale: "de"} (fetch_levels_questions_de)
   # @route POST /en/questions/fetch_levels {locale: "en"} (fetch_levels_questions_en)
   # @route POST /questions/fetch_levels
   def fetch_levels
@@ -38,6 +40,7 @@ class QuestionsController < ApplicationController
 
   # @route POST /fr/questions/fetch_services {locale: "fr"} (fetch_services_questions_fr)
   # @route POST /es/questions/fetch_services {locale: "es"} (fetch_services_questions_es)
+  # @route POST /de/questions/fetch_services {locale: "de"} (fetch_services_questions_de)
   # @route POST /en/questions/fetch_services {locale: "en"} (fetch_services_questions_en)
   # @route POST /questions/fetch_services
   def fetch_services

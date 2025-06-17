@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   # @route GET /fr/projects/:id {locale: "fr"} (project_fr)
   # @route GET /es/projects/:id {locale: "es"} (project_es)
+  # @route GET /de/projects/:id {locale: "de"} (project_de)
   # @route GET /en/projects/:id {locale: "en"} (project_en)
   # @route GET /projects/:id
   def show

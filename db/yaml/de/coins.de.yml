@@ -1,0 +1,56 @@
+---
+- identifier: monero
+  name: Monero
+  ticker: XMR
+  description:
+    - Ein auf vollständige Vertraulichkeit ausgerichtetes Tauschmittel – Transaktionen sind standardmäßig nicht rückverfolgbar, wie digitales Bargeld. Gesichert durch Proof of Work (PoW) und auf normalen Computern minbar. Die US-Steuerbehörde bot 620.000 $ für einen erfolgreichen Angriff auf seine Verschlüsselung – bisher erfolglos.
+    - Die Stärke von Monero liegt in seiner vollständigen Anonymität – im Gegensatz zum digitalen Euro, der stark überwacht wird. Banken und Staaten diffamieren ihn, weil sie ihn fürchten. Doch jeder Angriff hat Monero nur robuster gemacht.
+    - Von 2022 bis 2025 zeigte Monero im Vergleich zum starken Anstieg von Bitcoin eine relativ stabile Preisentwicklung.
+  usage: Zahlungsmittel
+  links:
+    - https://www.getmonero.org/de/
+    - https://monero.tuxpool.com (deutschsprachiges Mining-Portal)
+    - https://monero.observer
+    - https://www.abcbourse.com/graphes/eod/XMRUSDu/lc9
+
+- identifier: june
+  name: Ğ1 (June)
+  ticker: Ğ1
+  description:
+    - Eine in Frankreich entwickelte Kryptowährung auf Basis der Relativen Geldtheorie (RTM), die eine gerechte Geldschöpfung unter allen Teilnehmern garantiert. Dank der Web of Trust (WoT) basiert sie auf einem dezentralen, menschenzentrierten Netzwerk – einzigartig weltweit.
+    - Trotz hoher Rückverfolgbarkeit ist die Ğ1 vollständig unabhängig vom Euro, da sie keinen Wechselkurs hat. Sie ist besonders krisenresilient und lokal verankert durch ihre Verbindung zu den G-Märkten (Marchés Ğ).
+  usage: Bürgeridentität / Gemeinwohlwährung
+  links:
+    - https://monnaie-libre.fr
+    - https://forum.monnaie-libre.fr/c/rencontres/21
+    - https://carte.monnaie-libre.fr/?lat=46.240651955001695&lng=2.1972656250000004&zoom=5
+
+- identifier: bitcoin
+  name: Bitcoin
+  ticker: BTC
+  description:
+    - Die erste dezentrale Kryptowährung, gesichert durch Proof of Work (PoW). Bitcoin gilt als „digitales Gold“. In über 15 Jahren hat er sich als globaler Wertspeicher bewährt. Trotz seiner Rückverfolgbarkeit ist er knapp, bankenunabhängig und inflationsresistent.
+    - Während immer mehr institutionelles Kapital in dieses revolutionäre Asset fließt, nimmt die Volatilität langsam ab. Historisch zeigte Bitcoin ein beeindruckendes Wachstum von fast +90 % pro Jahr im Schnitt über die letzten zehn Jahre.
+  usage: Wertspeicher
+  links:
+    - https://bitcoin.org/de/
+    - https://bitcoin.org/files/bitcoin-paper/bitcoin_de.pdf
+    - https://www.blockchaincenter.net/de/bitcoin-rainbow-chart/
+
+- identifier: gold
+  name: Gold
+  description:
+    - Ein seit Jahrtausenden genutzter sicherer Hafen – schützt vor Inflation und Krisen. Anders als digitale Assets ist es physisch und weltweit anerkannt, funktioniert jedoch im Alltag nur schwer als Zahlungsmittel – außer bei massiven Systemstörungen.
+  usage: Wertspeicher
+  links:
+    - https://www.bitgild.com/de
+    - https://www.celticgold.de
+
+- identifier: silver
+  name: Silber
+  description:
+    - Krisentauschmittel mit niedrigerer Wertdichte als Gold – einfacher im Alltag nutzbar. Kombiniert industrielle Nutzung mit physischer Unverfolgbarkeit – etwas, das der digitale Euro niemals leisten kann.
+  usage: Kritisches Zahlungsmittel
+  links:
+    - https://www.bitgild.com/de
+    - https://www.celticgold.de
