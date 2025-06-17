@@ -1,0 +1,55 @@
+---
+- identifier: monero
+  name: Monero
+  ticker: XMR
+  description:
+    - Ein Tauschmittel, das sich auf absolute Vertraulichkeit konzentriert und untraceable Transaktionen wie digitales Bargeld garantiert. Gesichert durch Proof of Work (PoW) auf einem konventionellen Computer, boten die US-Steuerbehörden 620.000 $ jedem an, dem es gelang, seine Verschlüsselung zu brechen, ohne Erfolg.
+    - Seine Stärke liegt in seiner vollständigen Anonymität, im Gegensatz zum digitalen Euro, der stark überwacht werden wird. Obwohl Bank- und Regierungssysteme es verunglimpfen, weil sie es fürchten, haben Angriffe auf Monero es stark gestärkt.
+    - Sein Preis war von 2022 bis 2025 im Vergleich zum Anstieg von Bitcoin relativ stabil.
+  usage: Zahlungsmethode
+  links:
+    - https://getmonero.org
+    - https://monero.eco
+    - https://www.abcbourse.com/graphes/eod/XMRUSDu/lc9
+
+- identifier: june
+  name: June
+  ticker: Ğ1
+  description:
+    - Eine in Frankreich erfundene Kryptowährung, die auf der Relativen Geldtheorie (RMT) basiert und eine faire Geldschöpfung unter ihren Mitgliedern gewährleistet. Ihr Vorteil ist ihr dezentrales und menschenzentriertes Modell dank des Web of Trust (WoT), einem weltweit einzigartigen Netzwerk.
+    - Obwohl hochgradig nachvollziehbar, hat die June keinen Wechselkurs in Euro und ist daher sehr unabhängig und widerstandsfähig gegenüber dem Finanzsystem und tief in der lokalen Verbindung zu regulären G-Märkten verwurzelt.
+  usage: Bürgeridentität
+  links:
+    - https://monnaie-libre.fr
+    - https://forum.monnaie-libre.fr/c/rencontres/21
+    - https://carte.monnaie-libre.fr/?lat=46.240651955001695&lng=2.1972656250000004&zoom=5
+
+- identifier: bitcoin
+  name: Bitcoin
+  ticker: BTC
+  description:
+    - Die erste dezentrale Kryptowährung, gesichert durch Proof of Work (PoW), Bitcoin gilt als digitales Gold, und seine 15-jährige Existenz hat sein Potenzial als globale Wertaufbewahrung bewiesen. Obwohl hochgradig nachvollziehbar, machen seine Knappheit und Unabhängigkeit von Banken es widerstandsfähig gegen Inflation und Diebstahl.
+    - Während sich die traditionelle Finanzwelt in diesen revolutionären Krypto-Asset stürzt, nimmt seine Volatilität mit der Zeit tendenziell ab. Der Preis von Bitcoin hat historisch ein beeindruckendes Wachstum von fast +90 %/Jahr im Durchschnitt gezeigt, jedes Jahr in den letzten 10 Jahren.
+  usage: Wertaufbewahrungsmittel
+  links:
+    - https://bitcoin.org
+    - https://bitcoin.org/bitcoin.pdf
+    - https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/
+
+- identifier: gold
+  name: Gold
+  description:
+    - Als überlieferter sicherer Hafen hat Gold historisch vor Inflation und Krisen geschützt. Im Gegensatz zu anderen Wertaufbewahrungsmitteln ist es physisch und weltweit anerkannt, ohne auf ein Computersystem angewiesen zu sein, aber es ist in der Praxis für den regelmäßigen Austausch zwischen Bürgern kaum praktikabel, außer im Falle einer erheblichen Störung der Normalität.
+  usage: Wertaufbewahrungsmittel
+  links:
+    - https://www.bitgild.com/en
+    - https://celticgold.eu
+
+- identifier: silver
+  name: Silver
+  description:
+    - Krisen-Tauschmittel, leichter für regelmäßige Austausche und Käufe im Krisenfall in Betracht zu ziehen aufgrund seiner geringeren Wertdichte als Gold. Es kombiniert industrielle Nutzung und Unverfolgbarkeit, etwas, das der digitale Euro nicht bieten kann.
+  usage: Kritisches Zahlungsmittel
+  links:
+    - https://www.bitgild.com/en
+    - https://celticgold.eu

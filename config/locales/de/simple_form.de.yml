@@ -1,0 +1,180 @@
+de:
+  simple_form:
+    "yes": "Yes"
+    "no": "No"
+    required:
+      text: "required"
+      mark: "*"
+    error_notification:
+      default_message: "Please review the problems below:"
+
+    labels:
+      defaults:
+        theme: Theme
+        latitude: Latitude
+        longitude: Longitude
+        zoom: Zoom
+        gestureHandling: GestureHandling
+        fitBounds: FitBounds
+        attribution: Attribution
+
+        query: Search
+        category: Category
+        around_me: Delivery around my position
+        city: City
+        postcode: Postal Code
+        department: Department 🇫🇷
+        region: Region 🇫🇷
+        country: Country
+        world: World
+
+      questions:
+        profile: I am
+        level: My level
+        service: I want
+      map:
+        delivery: With home delivery
+        no_kyc: Don't ask for a <abbr title="Know Your Customer">KYC</abbr>
+        with_atms: Include <abbr title="Automated Teller Machine">ATMs</abbr>
+        category:
+          all: All retail categories
+          craft: Craft
+          catering: Catering
+          store: Stores
+          aesthetic: Hygiene and aesthetics
+          health: Health
+          financial: Financial services
+          other: Others
+
+      itinerary:
+        my_address: My adress
+        use_my_ip: Geolocate me by IP
+        detailed_steps: Display driving steps details ?
+
+      category:
+        other: Other category (specify)
+
+      tutorial_report:
+        title: Title
+        description: Description
+
+      merchant_report:
+        description: Description
+
+      comment:
+        affidavit: I hereby certify that I have had the indicated experience with this merchant
+
+    placeholders:
+      defaults:
+        latitude: Default latitude
+        longitude: Default longitude
+        query: Search by name or description
+        city: Paris or 75000
+        phone: 01 02 03 04 05
+        opening_hours: Monday at Friday from 9 a.m. to 6 p.m.
+        email: johndoe@example.com
+        website: "https://mywebsite.com"
+
+      map:
+        search: Find a business by name, address or description
+
+      itinerary:
+        my_address: 1 Church street, London
+
+      merchant_proposal:
+        contact_session: Your public Session identifier or URL
+        contact_signal: Your public Signal identifier or URL
+        contact_matrix: Your public Matrix identifier or URL
+        contact_jabber: Your public Jabber identifier or URL
+        contact_telegram: Your public Telegram identifier or URL
+        contact_facebook: Your public Facebook identifier or URL
+        contact_instagram: Your public Instagram identifier or URL
+        contact_twitter: Your public Twitter/X identifier or URL
+        contact_youtube: Your public Youtube identifier or URL
+        contact_tiktok: Your public Tiktok identifier or URL
+        contact_linkedin: Your public Linkedin identifier or URL
+        contact_tripadvisor: Your public Tripadvisor identifier or URL
+        contact_odysee: Your public Odysee identifier or URL
+        contact_crowdbunker: Your public Crowdbunker identifier or URL
+        contact_francelibretv: Your public FranceLibre.tv identifier or URL
+        delivery_zone: UK, London, EU, World
+        proposition_from: johndoe@example.com
+
+        street: 1 Liberty street
+        postcode: W1U 4QF
+        city: London
+
+      tutorial_report:
+        title: Clear and concise title of the anomaly
+        description: Clearly describe the anomaly(ies) you encountered while reading the tutorial.
+
+      merchant_report:
+        description: Description of the anomaly
+
+      comment:
+        content: Your comment
+        pseudonym: Your pseudonym (optional)
+
+      comment_report:
+        description: Please explain why you are reporting this comment
+
+      address:
+        label: Address, departement, region, ...
+
+      weblinks:
+        url: "https://website.com/my/super/page"
+        title: Webpage title
+
+    prompts:
+      questions:
+        profile: Choose your profile
+        level: Choose your level
+        service: Select your service
+
+      merchant_proposal:
+        category: Select a business category
+        country: Select a country
+
+      comment:
+        rating: Select a rating
+
+      comment_report:
+        flag_reason: Select the reason for reporting
+
+      directory:
+        category: Select a category
+
+    hints:
+      defaults:
+        around_me: Results determined from your IP address
+
+      merchant_proposal:
+        ask_kyc: Check if the merchant requires identity verification to be payed
+        proposition_from: Please provide your email address if you would like to be kept informed of this merchant's processing.
+
+      itinerary:
+        my_address: Your location is not logged on the server
+        use_my_ip: IP geolocation can be inaccurate and may not correspond if you use a VPN.
+        detailed_steps: If checked, steps to reach the destination will be displayed.
+
+      directory:
+        banner: Background banner
+        address:
+          label: Leave blank or provide an approximate address to protect the merchant's anonymity.<br /> This information is used by the "Around Me" feature and influences the relevance of geolocated results based on latitude and longitude.
+
+      weblinks:
+        title: Leave blank to display the URL or specify a human-friendly title
+
+    include_blanks:
+      defaults:
+        continent: All continents
+        country: All countries
+        region: All regions
+        department: All departements
+        category: 🔹 All categories
+        zoom: Default zoom
+        theme: Default theme
+        gestureHandling: Default value
+        fitBounds: Default value
+        clusters: Default value
+        attribution: Default value

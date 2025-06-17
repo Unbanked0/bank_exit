@@ -1,0 +1,136 @@
+de:
+  cancel: Abbrechen
+  confirm: Bestätigen
+  close: Schließen
+  search: Suchen
+  print: Drucken
+  share_by_email: Per E-Mail teilen
+  copied: Kopiert !
+  address: Adresse
+  description: Beschreibung
+  contact: Kontakt
+  weblinks: Quellen
+  other: Sonstiges
+  add: Hinzufügen
+  see: Sehen
+  report: Melden
+  breadcrumb: Breadcrumb
+  details: Details
+  link: Link
+  spotlight: Spotlight
+  reset_search: Suche zurücksetzen
+
+  grid: Gitter
+  table: Tabelle
+
+  download: Herunterladen
+  video_tutorial: Video-Tutorial
+  useful_links: Nützliche Links
+  coin: Münze
+
+  enabled: Aktiviert
+  disabled: Deaktiviert
+
+  added_on: Vor %{date} hinzugefügt
+  updated_on: Aktualisiert vor %{date}
+
+  copy_to_clipboard: In Zwischenablage kopieren
+
+  x_results:
+    zero: "%{count} Ergebnis"
+    one: "%{count} Ergebnis"
+    other: "%{count} Ergebnisse"
+
+  from: von
+  to: bis
+  and: und
+  by: von
+  or: oder
+
+  mo: Montag
+  tu: Dienstag
+  we: Mittwoch
+  th: Donnerstag
+  fr: Freitag
+  sa: Samstag
+  su: Sonntag
+
+  today: Heute
+  yesterday: Gestern
+  month: Monat(e)
+  day: Tag(e)
+  hour: Stunde(n)
+  minute: Minute(n)
+  second: Sekunde(n)
+
+  distance:
+    centi:
+      one: "Zentimeter"
+      other: "Zentimeter"
+    unit:
+      one: "Meter"
+      other: "Meter"
+    thousand:
+      one: "Kilometer"
+      other: "Kilometer"
+
+  time:
+    am: vorm.
+    formats:
+      default: "%d.%m.%Y um %H:%M Uhr"
+
+  helpers:
+    submit:
+      questions:
+        submit: Suchen
+      merchant_proposal:
+        create: Händler vorschlagen
+      comment_report:
+        create: Diesen Kommentar melden
+      directory:
+        suggest: Diesen Eintrag vorschlagen
+
+  questions:
+    individual: Eine Einzelperson
+    company: Ein Unternehmen
+    association: Ein Verein
+    politic: Ein gewählter Amtsträger oder Politiker
+
+    zero_knowledge: Ich weiß nichts über Debanking oder Kryptos
+    beginner: Ich kenne es dem Namen nach
+    intermediate: Ich habe bereits welche (Anfänger)
+    expert: Ich habe bereits welche (fortgeschritten)
+
+    fetch_services:
+      debank: Mich entbanken
+      privacy: Rückverfolgung vermeiden
+      anonymous: Anonym sein
+      inflation: Inflation begrenzen
+      messaging: Anonymes Messaging
+      social_network: Ein unzensiertes soziales Netzwerk
+      accounting: Meine Buchhaltung vereinfachen
+      help: Dem Kollektiv helfen
+
+      buy_btc: Bitcoin kaufen
+      buy_xmr: Monero kaufen
+      convert: Bitcoin <> Monero tauschen
+      spend: Mit Monero ausgeben! (Online und/oder in lokalen Geschäften)
+      kitty: Eine unzensierbare Gemeinschaftskasse erstellen
+
+      buy_no_kyc: P2P no-KYC kaufen
+      node: Einen Knoten in 3 Klicks starten
+      tor_ipfs: Zu Tor/IPFS wechseln
+
+  # Used by GithubAPI to assign label - don't translate
+  languages:
+    fr: french
+    en: english
+    es: spanish
+    de: german
+    it: italian
+    nl: dutch
+    pl: polish
+    pt: portuguese
+    ro: romanian
+    ru: russian
+    tr: turkish

@@ -1,0 +1,12 @@
+#Federal, more complex : ~71 Landkreise et kreisfreie Städte
+de:
+  departments:
+    # Quelques exemples pour la Bavière
+    DE-BY-M: "München (ville)" # München (kreisfreie Stadt)
+    DE-BY-A: "Augsburg (ville)" # Augsburg (kreisfreie Stadt)
+    DE-BY-N: "Nürnberg (ville)" # Nürnberg (kreisfreie Stadt)
+    DE-BY-ERH: "Erlangen-Höchstadt" # Landkreis Erlangen-Höchstadt
+    DE-BY-STA: "Starnberg" # Landkreis Starnberg
+    DE-BY-RO: "Rosenheim (Landkreis)" # Landkreis Rosenheim
+    # ... et ainsi de suite pour les ~71 Landkreise et kreisfreie Städte de Bavière,
+    # plus tous les autres Länder.

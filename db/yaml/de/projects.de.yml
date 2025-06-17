@@ -1,0 +1,54 @@
+---
+- route: maps#index
+  image: map_monero.jpg
+  title: Karte
+  description: Bitcoin- und Monero-Geschäfte weltweit anzeigen und filtern
+  external: false
+  identifier: map
+
+- route: blogs#show
+  identifier: flyer
+  image: flyer.jpg
+  title: Flyer
+  description: Monero und Bitcoin für Privatpersonen und Profis
+
+- route: projects#show
+  image: epicerie_monero.png
+  website_screenshot: not_iframe/grocery.jpg
+  title: Freedom Grocers
+  description: Hochwertige Monero-Produkte kaufen
+  external: false
+  iframe_url: https://monero-map.org/epicerie
+  github_url: https://github.com/Unbanked0/Freedom_Grocers
+  identifier: grocery
+
+- route: projects#show
+  image: cheque_monero.png
+  website_screenshot: not_iframe/cheque.jpg
+  title: Schecks
+  description: Druckbare Schecks zur Zahlung in Bitcoin und Monero generieren
+  external: false
+  iframe_url: https://monero-map.org/cheque
+  github_url: https://github.com/Unbanked0/Monero_Cheque
+  identifier: cheque
+  figure:
+    video:
+      url: https://youtube.com/embed/mK3AaPkwxSk
+      title: "MONERO KRYPTO-SCHECK - Beschleunigung der Akzeptanz, greifbar, telefonfrei #MoneroCheque"
+      created_at: "2024-10-26"
+
+- route: projects#show
+  image: sticker_monero.png
+  website_screenshot: not_iframe/sticker.jpg
+  title: Aufkleber
+  description: Bitcoin- und Monero-Spenden- oder Zahlungsbanner generieren
+  external: false
+  iframe_url: https://monero-map.org/crypto_box
+  github_url: https://github.com/Unbanked0/Crypto_Box_sticker
+  identifier: sticker
+
+- route: local_groups#index
+  image: local_groups.jpg
+  title: Lokale Gruppen
+  description:
+    Finden Sie die verschiedenen

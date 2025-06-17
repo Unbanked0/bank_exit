@@ -1,0 +1,73 @@
+---
+- title: Flyer Bank Exit
+  identifier: flyer
+  created_at: "2025-04-10"
+  content:
+    - render:
+        pdf: /pdfs/Flyers_SDB_2025_V4_8_ENG.pdf
+        caption: Vollversion Bitcoin und Monero von <strong>Bank Exit</strong> auf <strong>Github</strong>
+      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_EN_English/Flyers_SDB_2025_V4_8_ENG.pdf
+
+    - figure:
+        - image: projects/flyers/flyer_schmidt1024_poster_en.jpg
+          caption: Einzelne Monero-Version von <strong>Schmidt1024</strong> auf <strong>Gitea</strong>
+      url: https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/en/Monero%20for%20Merchants%20Booklet%20-%20english.pdf
+
+  useful_links:
+    - url: /pdfs/Flyers_SDB_2025_V4_9_accroche_pros.pdf
+      description: Aufhänger für Händler und Handwerker in PDF (auf Französisch)
+
+- title: Bank Exit Präsentation
+  identifier: presentation-bank-exit
+  created_at: "2025-01-31"
+  content:
+    - body:
+        - Dieser Artikel gibt einen Überblick über die Wirtschaftslage in Frankreich und der Europäischen Union sowie konkrete Lösungen zum Schutz vor der kommenden Dystopie.
+
+    - render:
+        pdf: /pdfs/Prez_SortieDeBanque_2.8_janv25.pdf
+        caption: Präsentation PDF v2.8
+
+  useful_links:
+    - url: https://github.com/Unbanked0/Sortie_De_Banque/blob/615d6ae934f9bd966d0501eeb3dea9ca821e5614/Prez_SortieDeBanque_2.8_janv25.pdf
+      description: PDF der Präsentation auf Github
+
+- title: Digitaler €uro "Cash+"
+  identifier: cbdc-digital-euro
+  banner: banner-cbdc
+  created_at: "2025-04-15"
+  content:
+    - title: Einleitung
+      body:
+        - Der digitale Euro "Cash+" ist ein Projekt der Europäischen Zentralbank (EZB) zur Verbesserung digitaler Bankdienstleistungen und zur Vereinfachung von Zahlungen in ganz Europa.
+        - Dieses Projekt zielt darauf ab, ein universelles, sicheres und benutzerfreundliches System zu schaffen, das es den Bürgern ermöglicht, auf ihre Konten zuzugreifen und Online-Finanztransaktionen durchzuführen, auch ohne Internetverbindung oder in ländlichen Gebieten.
+        - Die Idee ist, Zahlungen für die Menschen nahtloser und kostengünstiger zu gestalten und gleichzeitig die Sicherheit und Vertraulichkeit der Finanzinformationen zu gewährleisten.
+        - Die Vorbereitungsphase soll bis Oktober 2025 abgeschlossen sein, mit einem geplanten Start vor 2030.
+
+    - render:
+        partial: countdown
+
+    - title: Warnungen ⚠️
+      body:
+        - "- <strong>Verlust der Privatsphäre</strong>: Die weit verbreitete Nutzung digitaler Konten und elektronischer Zahlungen könnte zu einer verstärkten Überwachung und Sammlung persönlicher Daten durch Behörden und Unternehmen führen."
+        - "- <strong>Machtungleichgewicht</strong>: Eine einzige, universell akzeptierte Währung könnte Finanzinstitutionen und der Regierung zu viel Macht verleihen und möglicherweise zu restriktiven politischen Entscheidungen führen, die dem öffentlichen Interesse widersprechen."
+        - "- <strong>Zugangsprobleme</strong>: Bevölkerungsgruppen ohne Zugang zum Internet oder zu digitalen Technologien könnten von digitalen Währungen ausgeschlossen werden, was zu finanzieller und sozialer Segregation führen würde."
+        - "- <strong>Cyberrisiko und Anfälligkeit</strong>: Die weit verbreitete Nutzung eines digitalen Systems könnte Benutzer erheblichen Cyber-Sicherheitsrisiken wie Phishing-Angriffen, Marktvolatilität oder sogar Erpressung aussetzen."
+        - "- <strong>Übermäßige Abhängigkeit von Technologie</strong>: Eine Wirtschaft, die auf einem digitalen System basiert, könnte anfällig für technische Störungen und Netzwerkausfälle sein."
+      mode: warning
+
+    - title: Roadmap Cash+ EZB
+      render:
+        partial: cbdc_timeline
+
+  useful_links:
+    - url: https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline
+      description: Digitaler €uro von der EZB
+    - url: https://www.ecb.europa.eu/euro/digital_euro/progress/shared/pdf/241202-timeline-digital-euro-project.fr.pdf
+      description: Digitaler €uro EZB Roadmap (in PDF)
+
+  figure:
+    video:
+      url: https://youtube.com/embed/dXJBB60qZo0?start=116
+      title: Präsentation von Cash+ von Grand Angle (auf Französisch)
+      created_at: "2023-07-02"

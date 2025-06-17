@@ -1,0 +1,49 @@
+---
+- question: Ich möchte einen neuen Händler vorschlagen. Wie mache ich das?
+  content:
+    - answer: Um einen neuen Händler vorzuschlagen, klicken Sie auf die grüne Schaltfläche <mark>Händler vorschlagen</mark> über der Karte oder klicken Sie direkt auf die URL {{merchant_proposals#new}} und füllen Sie das Formular aus.
+    - answer: Das Kollektiv wird dann über Ihre Anfrage benachrichtigt und den Händler zu OpenStreetMap hinzufügen.
+  categories:
+    - map
+
+- question: Wie kann man einen Händler überzeugen?
+  content:
+    - answer:
+        - Drucken Sie (oder lassen Sie drucken) einige Flyer (Artikel zu {{blogs#show->flyer}}).
+        - Helfen Sie ihnen, eine Monero-Wallet mit CakeWallet zu erstellen (Tutorial zu {{tutorials#show->cakewallet-monero}}).
+        - Einmal im Jahr tragen Sie ihre Monero-Verkäufe in die vorbereitete Excel-Datei ein (Tutorial zu {{tutorials#show->accounting}}).
+        - Sobald dies erledigt ist, fügen Sie sie der Karte hinzu, indem Sie auf die grüne Schaltfläche <mark>Händler vorschlagen</mark> auf {{maps#index}} oder direkt im Formular {{merchant_proposals#new}} klicken!
+  categories:
+    - map
+    - merchant
+
+- question: Ich möchte von der Karte entfernt werden. Wie mache ich das?
+  content:
+    - answer: Wenn Sie derzeit auf der Karte des Kollektivs gelistet sind und nicht mehr erscheinen möchten, müssen Sie einen Entfernungsantrag direkt bei <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a> stellen. Die Bank-Exit-Website besitzt die Daten nicht und ruft nur öffentliche und Open-Source-Informationen von deren Website ab.
+  categories:
+    - map
+
+- question: Was ist KYC?
+  content:
+    - answer:
+        - KYC (Know Your Customer) ist ein Prozess, bei dem Finanzinstitute die Identität ihrer Kunden überprüfen. Das Ziel ist, Geldwäsche und Terrorismusfinanzierung zu bekämpfen.
+        - Hier sind die Warnungen zum Thema KYC:
+        - "<strong>Verletzung der Privatsphäre</strong>: KYC erfordert die Weitergabe sensibler persönlicher Informationen. Die Weitergabe solcher Daten kann Sie Identitätsdiebstahl oder Missbrauch durch böswillige Organisationen aussetzen."
+        - "<strong>Sicherheitsrisiken</strong>: Einige Unternehmen, die KYC verlangen, können die Sicherheit Ihrer Daten nicht immer garantieren. Es besteht das Risiko, dass Ihre Informationen gehackt oder für unautorisierte Zwecke verwendet werden könnten."
+        - "<strong>Diskriminierung und Überwachung</strong>: Diskriminierung und Überwachung: KYC kann zu Diskriminierung oder Voreingenommenheit beim Zugang zu Finanzdienstleistungen führen, und einige Personen könnten aufgrund ihrer Profile unfair überwacht oder ausgeschlossen werden."
+        - "<strong>Schwierigkeiten beim Zugang zu Dienstleistungen</strong>: Einige Benutzer könnten Schwierigkeiten haben, die erforderlichen Dokumente bereitzustellen, was sie daran hindern könnte, auf Finanzdienstleistungen zuzugreifen oder an legalen Aktivitäten teilzunehmen."
+    - mode: info
+      answer: Eine Liste von Websites und Diensten, die kein KYC erfordern, finden Sie unter <a href="https://kycnot.me" target="_blank">kycnot.me</a>.
+
+  categories:
+    - general
+    - kyc
+
+- question: Was ist der Unterschied zwischen der Karte und dem Verzeichnis?
+  content:
+    - answer:
+        - Die Karte listet Händler mit präziser Geolokalisierung (Breiten- und Längengrad) auf.
+        - Das Verzeichnis listet Unternehmen auf, die keine spezifische Adresse haben, entweder weil sie anonym bleiben wollen oder weil der Dienst für die Lieferung in ein ganzes Gebiet oder Land verfügbar ist. Zum Beispiel ein alternatives Medienunternehmen oder ein Online-Geschäft.
+  categories:
+    - map
+    - directory

@@ -1,0 +1,94 @@
+- A:
+    - acronym: ATM
+      original_full_title: Automated Teller Machine
+      description:
+        - Ein Automat, der es Menschen ermöglicht, Bargeld abzuheben oder ihren Kontostand zu überprüfen, ohne eine Bankfiliale zu betreten.
+        - Einige Geldautomaten ermöglichen auch den Kauf oder Verkauf von Kryptowährungen wie Bitcoin.
+
+- B:
+    - acronym: BTC
+      original_full_title: Bitcoin
+      description:
+        - Eine im Jahr 2009 erstellte digitale Währung, die es Menschen ermöglicht, Geld online ohne Bank zu senden.
+        - Sie funktioniert über ein globales Netzwerk miteinander verbundener Computer.
+
+- E:
+    - acronym: ECB
+      original_full_title: European Central Bank
+      description:
+        - Die Institution, die für die Verwaltung des Euro und die Geldpolitik in den Eurozonen-Ländern zuständig ist.
+        - Sie hilft, die Preise stabil zu halten und die Zinssätze zu kontrollieren.
+
+- G:
+    - acronym: G1
+      original_full_title: Ğ1 (ausgesprochen „June“)
+      description:
+        - Eine alternative Währung, die fair unter all ihren Nutzern geteilt werden soll.
+        - Jedes Mitglied erhält eine regelmäßige „universelle Dividende“ allein durch die Zugehörigkeit zum Netzwerk.
+
+- I:
+    - acronym: IP
+      original_full_title: Internet Protocol
+      description:
+        - Ein System zur Identifizierung von Geräten im Internet.
+        - Jedes Gerät hat eine eindeutige IP-Adresse, wie eine Postadresse für den Empfang von Daten.
+
+- K:
+    - acronym: KYC
+      original_full_title: Know Your Customer
+      description:
+        - Ein rechtlicher Prozess, bei dem Banken und Dienstleister die Identität ihrer Kunden überprüfen müssen.
+        - Es wird verwendet, um Geldwäsche und Terrorismusfinanzierung zu verhindern.
+
+- L:
+    - acronym: LN
+      original_full_title: Lightning Network
+      description:
+        - Eine Technologie, die Bitcoin-Transaktionen schneller und billiger macht.
+        - Sie funktioniert, indem sie kleine Zahlungen außerhalb der Haupt-Blockchain durchführt.
+
+- M:
+    - acronym: Monero
+      original_full_title: Monero
+      description:
+        - Eine Kryptowährung, die sich auf den Schutz der Privatsphäre der Benutzer konzentriert.
+        - Sie verbirgt Transaktionsdetails wie Beträge und Adressen standardmäßig.
+
+- P:
+    - acronym: PGP
+      original_full_title: Pretty Good Privacy
+      description:
+        - PGP ist ein Tool, das Nachrichten oder Dateien verschlüsselt, um sie privat zu halten.
+        - Es wird oft verwendet, um E-Mails auf sichere Weise zu versenden.
+
+    - acronym: PoW
+      original_full_title: Proof of Work
+      description:
+        - Eine von Bitcoin verwendete Methode zur Überprüfung von Transaktionen durch Computer, die komplexe Rätsel lösen.
+        - Es ist sicher, verbraucht aber viel Energie.
+
+    - acronym: PoS
+      original_full_title: Proof of Stake
+      description:
+        - Eine umweltfreundlichere Methode zur Überprüfung von Kryptowährungstransaktionen.
+        - Je mehr Münzen jemand besitzt, desto wahrscheinlicher ist es, dass er zur Validierung neuer Transaktionen beiträgt.
+
+- V:
+    - acronym: VPN
+      original_full_title: Virtual Private Network
+      description:
+        - Ein VPN ist ein Dienst, der die Internetverbindung schützt und persönliche Daten sicherer hält.
+        - Es kann auch den Anschein erwecken, dass die Verbindung aus einem anderen Land stammt.
+
+    - acronym: VPS
+      original_full_title: Virtual Private Server
+      description:
+        - Ein virtueller Computer, der online gemietet wird, um Websites oder Apps zu betreiben.
+        - Es ist, als hätte man einen eigenen kleinen privaten Server, ohne Hardware kaufen zu müssen.
+
+- X:
+    - acronym: XMR
+      original_full_title: Monero
+      description:
+        - Eine Kryptowährung, die den Schutz der Privatsphäre der Benutzer gewährleisten soll.
+        - Sie verbirgt standardmäßig Transaktionsdetails wie Beträge und Adressen.

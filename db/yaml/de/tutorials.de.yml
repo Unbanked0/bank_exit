@@ -1,0 +1,106 @@
+---
+- title: CakeWallet und Monero
+  identifier: cakewallet-monero
+  level: 0
+  time: 15
+  created_at: "2024-05-12"
+  highlight: true
+  banner: banner-library
+  content: []
+  figure:
+    video:
+      url: https://youtube.com/embed/e7dywiZIpWg
+      title: 15-minütiges Tutorial "Leben ohne Bank" - CakeWallet und Monero
+      created_at: "2024-05-12"
+
+- title: Komplette Bank Exit Ausbildung
+  identifier: crash-course
+  level: 0
+  time: 90
+  created_at: "2024-01-30"
+  highlight: true
+  banner: banner-library
+  figure:
+    video:
+      url: https://www.youtube.com/embed/hESmJ9Amq7w
+      title: Bitcoin Monero Trainings-Workshop - Bank Exit Kollektiv
+      created_at: "2024-01-30"
+
+- title: Private Session-Nachrichten
+  identifier: session-messaging
+  level: 0
+  time: 10
+  created_at: "2024-08-28"
+  highlight: true
+  banner: banner-messaging
+  short_description:
+    Tutorial zur Installation und Konfiguration von Session-verschlüsselten Nachrichten
+    als Ersatz für WhatsApp oder Telegram
+  content:
+    - title: Einleitung
+      body:
+        - Session ist eine Messaging-Anwendung mit Ende-zu-Ende-Verschlüsselung, die Anonymität und Datenschutz gewährleistet.
+        - Sie wurde entwickelt, um die Privatsphäre der Benutzer zu schützen und ihnen zu ermöglichen, ohne Überwachung zu kommunizieren.
+        - Sie ist eine Open-Source-Software, die auf dem Signal-Protokoll basiert.
+        - Session funktioniert über ein dezentrales Netzwerk von Knotenpunkten, was es widerstandsfähiger gegen Zensur und Abschaltungen macht.
+        - Im Gegensatz zu anderen Messaging-Diensten müssen Sie für die Nutzung von Session weder Ihre Telefonnummer noch Ihre E-Mail-Adresse angeben.
+
+    - title: Warum Session anstelle von WhatsApp oder Telegram?
+      body:
+        - "<strong>Verbesserter Datenschutz</strong>: Session speichert keine Metadaten über Ihre Kommunikation (wer, wann, wo). WhatsApp und Telegram sammeln Metadaten, die zur Profilerstellung verwendet werden können."
+        - "<strong>Anonymität</strong>: Session erfordert keine persönlichen Daten (Telefonnummer, E-Mail-Adresse) zur Registrierung. Sie verwenden eine Session-ID."
+        - "<strong>Dezentralisierung</strong>: Session basiert auf einem dezentralen Netzwerk, wodurch es resistenter gegen Ausfälle und Zensur ist."
+        - "<strong>Open Source</strong>: Der Code von Session ist Open Source, was eine unabhängige Überprüfung ermöglicht."
+      mode: warning
+
+    - render:
+        partial: tutorials/session_messaging
+
+  useful_links:
+    - url: https://getsession.org/
+      description: Session offizielle Website
+
+- title: Monero- und Bitcoin-Buchhaltung für Unternehmen
+  short_title: Buchhaltung
+  identifier: accounting
+  level: 0
+  banner: banner-accountings
+  short_description: Ihre Bitcoin- und Monero-Einnahmen ganz einfach in Ihre Einkommensberechnungen integrieren
+  content:
+    - mode: info
+      body:
+        - Sie sind Händler und die Verwaltung Ihrer Buchhaltung mit Monero und Bitcoin hat Sie bisher immer abgeschreckt?
+        - Zögern Sie nicht länger und wagen Sie jetzt den Sprung mit diesem neuen automatischen Rechner, der vom Kollektiv eingerichtet und von einem Wirtschaftsprüfer validiert wurde!
+
+    - render:
+        partial: tutorials/accounting_download
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg
+          caption: Parameter und Erklärungen
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_03.jpg
+          caption: Manueller Import von Transaktionen
+
+    - figure:
+        - image: tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025_04.jpg
+          caption: Buchhaltungsergebnisse
+
+    - render:
+        partial: tutorials/accounting_download
+
+- title: Vollständige Einrichtung von Monero- und Bitcoin-Zahlungen für Ihr Unternehmen
+  short_title: Kompletter Leitfaden für Ihr Unternehmen
+  identifier: cryptopayment-for-business
+  level: 0
+  banner: banner-accountings
+  short_description: Vollständige Einrichtung von Monero- und Bitcoin-Zahlungen für Ihr Unternehmen
+  content:
+    - render:
+        pdf: /pdfs/Installation_TPE_paiement_Monero_professionnel_v1_compressed.pdf
+        caption: PDF zur vollständigen Einrichtung von Monero-Zahlungen für Ihr Unternehmen
+
+  useful_links:
+    - url: https://github.com/Unbanked0/TPE_Monero_Installation_Pro
+      description: Github der PDF-Präsentation (auf Französisch)

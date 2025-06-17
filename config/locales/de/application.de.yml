@@ -1,0 +1,50 @@
+de:
+  application:
+    scam_alert:
+      title: Beware of scams
+      headline_html: "Always check that the site displayed in your browser corresponds to %{url}"
+
+    nav:
+      collectif: Bank Exit
+      bank_exit: Collective
+      # inverted, depending on the language
+
+      menu:
+        home: Home
+        map: Map
+        directories: Directory
+        projects: Projects
+        monero_wallet: Monero wallet
+        articles: Articles
+        tutorials: Tutorials
+        blogs: Blog
+        faq: Frequently Asked Questions (FAQ)
+        contact: Contact
+        pros: Pros
+        github_title: Link to the Github repository
+
+    language_switcher:
+      fr: Français
+      en: English
+      es: Español
+
+    theme_switcher:
+      switch_to_light: Switch to light mode
+      switch_to_dark: Switch to dark mode
+
+    countdown:
+      label: before the end of the preparation phase
+      source_html: source <abbr title="European Central Bank">ECB</abbr>
+
+    upper_footer:
+      navigation: Navigation
+      projects: Projects
+      warning_title: ⚠️ Disclaimer of liability (to read) ⚠️
+      license: User license
+
+    contacts:
+      title: Networks and contacts
+
+    footer:
+      copyright_html: Copyright &copy; Bank Exit 2022 - %{year} &bullet; All rights reserved
+      developed_by_html: Developed with %{heart} by the Bank Exit Collective
