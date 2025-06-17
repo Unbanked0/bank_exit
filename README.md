@@ -120,11 +120,11 @@ Adresses autocomplete are fetched from the Nominatim API through the [geocoder g
 
 ## 🌐 Internationalization
 
-Refer to the Wiki article to add or update a new locale.
+Refer to the [Wiki article](https://github.com/Unbanked0/bank_exit/wiki/Internationalization-(i18n)) to add or update a new locale.
 
 ## 🎓 Tutorials
 
-Refer to the Wiki article to add or update a tutorial article.
+Refer to the [Wiki article](https://github.com/Unbanked0/bank_exit/wiki/Tutorials-Configuration-Documentation) to add or update a tutorial article.
 
 ## 🖼️ Assets and Media
 
