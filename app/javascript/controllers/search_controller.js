@@ -111,6 +111,18 @@ export default class extends ApplicationController {
       formData.delete("continent");
     }
 
+    // Continent resets country params
+    if (e.target.name == "continent") {
+      formData.delete("country");
+      this.countryTarget.selectedIndex = 0;
+    }
+
+    // Coountry resets continent params
+    if (e.target.name == "country") {
+      formData.delete("continent");
+      this.continentTarget.selectedIndex = 0;
+    }
+
     const params = new URLSearchParams(formData);
     const url = new URL(this.formTarget.action + "?" + params);
 
