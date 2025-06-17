@@ -14,7 +14,7 @@ nav.navbar
       .lg:hidden tabindex="0" role="button"
         = lucide_icon 'menu', class: 'w-7 h-7 cursor-pointer'
 
-      ul.menu.menu-md.dropdown-content.bg-base-100.rounded-box.z-1.mt-3.w-64.p-2.shadow.border.border-base-content/20 tabindex="0"
+      ul.menu.menu-md.dropdown-content.bg-base-100.rounded-box.z-1.mt-2.w-max.overflow-auto.p-2.shadow.border.border-base-content/20 tabindex="0" class="max-h-[90vh] max-w-[90vw]"
         li
           = link_to maps_path, class: ('text-primary' if params[:controller] == 'maps') do
             = t('.menu.map')
@@ -28,7 +28,7 @@ nav.navbar
             = grocery.title
 
         li
-          span class=('text-primary' if active_project)
+          .menu-title class=('text-primary' if active_project)
             = t('.menu.projects')
 
           ul.p-2
@@ -43,7 +43,7 @@ nav.navbar
                     = lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1'
 
         li
-          span class=('text-primary' if active_article)
+          .menu-title class=('text-primary' if active_article)
             = t('.menu.articles')
 
           ul.p-2
@@ -56,7 +56,7 @@ nav.navbar
                 = t('.menu.tutorials')
 
         li
-          span class=('text-primary' if active_other)
+          .menu-title class=('text-primary' if active_other)
             = t('other')
 
           ul.p-2
@@ -67,7 +67,7 @@ nav.navbar
             li
               = link_to local_groups_path, class: ('text-primary' if params[:controller] == 'local_groups') do
                 = local_groups.title
-                = image_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white w-5 rounded-full', title: 'Telegram'
+                = image_tag "contacts/telegram.svg", class: 'inline-flex bg-white w-5 rounded-full', title: 'Telegram'
 
             li
               = link_to media_path, class: ('text-primary' if params[:controller] == 'media') do
@@ -78,9 +78,9 @@ nav.navbar
             = t('.menu.contact')
 
         li
-          span
-            = t('.menu.pros')
-            .status.status-primary
+          .menu-title
+            => t('.menu.pros')
+            span.status.status-primary
 
           ul.p-2
             li
@@ -158,7 +158,7 @@ nav.navbar
               - local_groups = projects.find(&:local_groups?)
               = link_to local_groups_path, class: ('text-primary' if params[:controller] == 'local_groups') do
                 = local_groups.title
-                = image_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white w-5 rounded-full', title: 'Telegram'
+                = image_tag "contacts/telegram.svg", class: 'inline-flex bg-white w-5 rounded-full', title: 'Telegram'
 
             li
               = link_to media_path, class: ('text-primary' if params[:controller] == 'media') do
