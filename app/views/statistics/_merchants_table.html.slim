@@ -21,9 +21,11 @@
           td
             = I18n.l(row.created_at, format: '%Hh%M')
           td
-            p= link_to 'OpenStreetMap', row.osm_link, target: :_blank, class: 'btn btn-link w-full text-xs'
+            p.text-center
+              = link_to 'OpenStreetMap', row.osm_link, target: :_blank, class: 'btn btn-link btn-sm'
 
-            p= link_to t('details'), merchant_path(row), class: 'btn btn-base-300 w-full text-xs'
+            p.text-center
+              = link_to t('details'), merchant_path(row), class: 'btn btn-primary btn-sm'
 
 .mt-2.text-xs.text-center.font-semibold.italic
   = t('.merchants_added_on_title', date: date)
