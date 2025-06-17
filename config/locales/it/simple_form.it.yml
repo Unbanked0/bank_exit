@@ -1,0 +1,180 @@
+it:
+  simple_form:
+    "yes": "Sì"
+    "no": "No"
+    required:
+      text: "obbligatorio"
+      mark: "*"
+    error_notification:
+      default_message: "Si prega di rivedere i problemi seguenti:"
+
+    labels:
+      defaults:
+        theme: Tema
+        latitude: Latitudine
+        longitude: Longitudine
+        zoom: Zoom
+        gestureHandling: Gestione dei gesti
+        fitBounds: Adatta i limiti
+        attribution: Attribuzione
+
+        query: Cerca
+        category: Categoria
+        around_me: Consegna intorno alla mia posizione
+        city: Città
+        postcode: Codice postale
+        department: Dipartimento 
+        region: Regione 
+        country: Paese
+        world: Mondo
+
+      questions:
+        profile: Io sono
+        level: Il mio livello
+        service: Io voglio
+      map:
+        delivery: Con consegna a domicilio
+        no_kyc: Non chiedere un <abbr title="Know Your Customer">KYC</abbr>
+        with_atms: Includi <abbr title="Automated Teller Machine">ATM</abbr>
+        category:
+          all: Tutte le categorie di vendita al dettaglio
+          craft: Artigianato
+          catering: Ristorazione
+          store: Negozi
+          aesthetic: Igiene ed estetica
+          health: Salute
+          financial: Servizi finanziari
+          other: Altri
+
+      itinerary:
+        my_address: Il mio indirizzo
+        use_my_ip: Geolocalizzami tramite IP
+        detailed_steps: Mostra i dettagli dei passaggi di guida?
+
+      category:
+        other: Altra categoria (specificare)
+
+      tutorial_report:
+        title: Titolo
+        description: Descrizione
+
+      merchant_report:
+        description: Descrizione
+
+      comment:
+        affidavit: Dichiaro di aver avuto l'esperienza indicata con questo commerciante
+
+    placeholders:
+      defaults:
+        latitude: Latitudine predefinita
+        longitude: Longitudine predefinita
+        query: Cerca per nome o descrizione
+        city: Parigi o 75000
+        phone: 01 02 03 04 05
+        opening_hours: Dal lunedì al venerdì dalle 9:00 alle 18:00
+        email: johndoe@example.com
+        website: "https://mywebsite.com"
+
+      map:
+        search: Trova un'attività per nome, indirizzo o descrizione
+
+      itinerary:
+        my_address: 1 Church street, Londra
+
+      merchant_proposal:
+        contact_session: Il tuo identificatore pubblico Session o URL
+        contact_signal: Il tuo identificatore pubblico Signal o URL
+        contact_matrix: Il tuo identificatore pubblico Matrix o URL
+        contact_jabber: Il tuo identificatore pubblico Jabber o URL
+        contact_telegram: Il tuo identificatore pubblico Telegram o URL
+        contact_facebook: Il tuo identificatore pubblico Facebook o URL
+        contact_instagram: Il tuo identificatore pubblico Instagram o URL
+        contact_twitter: Il tuo identificatore pubblico Twitter/X o URL
+        contact_youtube: Il tuo identificatore pubblico Youtube o URL
+        contact_tiktok: Il tuo identificatore pubblico Tiktok o URL
+        contact_linkedin: Il tuo identificatore pubblico Linkedin o URL
+        contact_tripadvisor: Il tuo identificatore pubblico Tripadvisor o URL
+        contact_odysee: Il tuo identificatore pubblico Odysee o URL
+        contact_crowdbunker: Il tuo identificatore pubblico Crowdbunker o URL
+        contact_francelibretv: Il tuo identificatore pubblico FranceLibre.tv o URL
+        delivery_zone: Regno Unito, Londra, UE, Mondo
+        proposition_from: johndoe@example.com
+
+        street: 1 Liberty street
+        postcode: W1U 4QF
+        city: Londra
+
+      tutorial_report:
+        title: Titolo chiaro e conciso dell'anomalia
+        description: Descrivere chiaramente l'anomalia/e riscontrata/e durante la lettura del tutorial.
+
+      merchant_report:
+        description: Descrizione dell'anomalia
+
+      comment:
+        content: Il tuo commento
+        pseudonym: Il tuo pseudonimo (opzionale)
+
+      comment_report:
+        description: Spiega perché stai segnalando questo commento
+
+      address:
+        label: Indirizzo, dipartimento, regione, ...
+
+      weblinks:
+        url: "https://website.com/my/super/page"
+        title: Titolo della pagina web
+
+    prompts:
+      questions:
+        profile: Scegli il tuo profilo
+        level: Scegli il tuo livello
+        service: Seleziona il tuo servizio
+
+      merchant_proposal:
+        category: Seleziona una categoria di attività
+        country: Seleziona un paese
+
+      comment:
+        rating: Seleziona una valutazione
+
+      comment_report:
+        flag_reason: Seleziona il motivo della segnalazione
+
+      directory:
+        category: Seleziona una categoria
+
+    hints:
+      defaults:
+        around_me: Risultati determinati dal tuo indirizzo IP
+
+      merchant_proposal:
+        ask_kyc: Verifica se il commerciante richiede la verifica dell'identità per essere pagato
+        proposition_from: Fornisci la tua email se desideri essere informato sull'elaborazione di questo commerciante.
+
+      itinerary:
+        my_address: La tua posizione non è registrata sul server
+        use_my_ip: La geolocalizzazione IP può essere imprecisa e potrebbe non corrispondere se utilizzi una VPN.
+        detailed_steps: Se selezionato, verranno visualizzati i passaggi per raggiungere la destinazione.
+
+      directory:
+        banner: Banner di sfondo
+        address:
+          label: Lascia vuoto o fornisci un indirizzo approssimativo per proteggere l'anonimato del commerciante.<br /> Queste informazioni vengono utilizzate dalla funzione "Intorno a me" e influenzano la rilevanza dei risultati geolocalizzati basati su latitudine e longitudine.
+
+      weblinks:
+        title: Lascia vuoto per visualizzare l'URL o specifica un titolo leggibile dall'uomo
+
+    include_blanks:
+      defaults:
+        continent: Tutti i continenti
+        country: Tutti i paesi
+        region: Tutte le regioni
+        department: Tutti i dipartimenti
+        category: Tutte le categorie
+        zoom: Zoom predefinito
+        theme: Tema predefinito
+        gestureHandling: Valore predefinito
+        fitBounds: Valore predefinito
+        clusters: Valore predefinito
+        attribution: Valore predefinito

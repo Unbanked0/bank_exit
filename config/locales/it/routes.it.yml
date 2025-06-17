@@ -1,6 +1,5 @@
-es:
+it:
   routes:
-    # keep it in english to be easily accessed and printed on flyer
     maps: map
     merchants: merchants
     faq: faq

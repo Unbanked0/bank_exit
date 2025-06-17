@@ -1,0 +1,22 @@
+it:
+  regions:
+    IT-21: "Piemonte"
+    IT-23: "Valle d'Aosta"
+    IT-22: "Lombardia"
+    IT-32: "Trentino-Alto Adige"
+    IT-34: "Veneto"
+    IT-36: "Friuli-Venezia Giulia"
+    IT-42: "Liguria"
+    IT-45: "Emilia-Romagna"
+    IT-52: "Toscana"
+    IT-57: "Umbria"
+    IT-62: "Marche"
+    IT-65: "Lazio"
+    IT-67: "Abruzzo"
+    IT-77: "Molise"
+    IT-72: "Campania"
+    IT-75: "Puglia"
+    IT-78: "Basilicata"
+    IT-82: "Calabria"
+    IT-88: "Sicilia"
+    IT-GR: "Sardegna" # Note: Sardegna uses a different ISO code format for historical reasons (IT-GR instead of IT-xx).

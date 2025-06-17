@@ -1,0 +1,136 @@
+it:
+  cancel: Annulla
+  confirm: Conferma
+  close: Chiudi
+  search: Cerca
+  print: Stampa
+  share_by_email: Condividi via email
+  copied: Copiato !
+  address: Indirizzo
+  description: Descrizione
+  contact: Contatto
+  weblinks: Fonti
+  other: Altro
+  add: Aggiungi
+  see: Vedi
+  report: Segnala
+  breadcrumb: Percorso
+  details: Dettagli
+  link: Link
+  spotlight: In evidenza
+  reset_search: Reimposta ricerca
+
+  grid: Griglia
+  table: Tabella
+
+  download: Scarica
+  video_tutorial: Video tutorial
+  useful_links: Link utili
+  coin: Moneta
+
+  enabled: Abilitato
+  disabled: Disabilitato
+
+  added_on: Aggiunto %{date} fa
+  updated_on: Aggiornato %{date} fa
+
+  copy_to_clipboard: Copia negli appunti
+
+  x_results:
+    zero: "%{count} risultato"
+    one: "%{count} risultato"
+    other: "%{count} risultati"
+
+  from: da
+  to: a
+  and: e
+  by: di
+  or: o
+
+  mo: lunedì
+  tu: martedì
+  we: mercoledì
+  th: giovedì
+  fr: venerdì
+  sa: sabato
+  su: domenica
+
+  today: Oggi
+  yesterday: Ieri
+  month: mese(i)
+  day: giorno(i)
+  hour: ora(e)
+  minute: minuto(i)
+  second: secondo(i)
+
+  distance:
+    centi:
+      one: "centimetro"
+      other: "centimetri"
+    unit:
+      one: "metro"
+      other: "metri"
+    thousand:
+      one: "chilometro"
+      other: "chilometri"
+
+  time:
+    am: am
+    formats:
+      default: "%d/%m/%Y alle %Hh%M"
+
+  helpers:
+    submit:
+      questions:
+        submit: Cerca
+      merchant_proposal:
+        create: Suggerisci commerciante
+      comment_report:
+        create: Segnala questo commento
+      directory:
+        suggest: Suggerisci questa voce
+
+  questions:
+    individual: Un individuo
+    company: Un'azienda
+    association: Un'associazione
+    politic: Un funzionario eletto o politico
+
+    zero_knowledge: Non so nulla di de-banking o cripto
+    beginner: Conosco di nome
+    intermediate: Ne ho già alcuni (principiante)
+    expert: Ne ho già (avanzato)
+
+    fetch_services:
+      debank: Fatti sbanalizzare
+      privacy: Evita il tracciamento
+      anonymous: Essere anonimo
+      inflation: Limitare l'inflazione
+      messaging: Messaggistica anonima
+      social_network: Un social network non censurato
+      accounting: Semplifica la mia contabilità
+      help: Aiutare il collettivo
+
+      buy_btc: Compra Bitcoin
+      buy_xmr: Compra Monero
+      convert: Scambia Bitcoin <> Monero
+      spend: Spendi con Monero! (Online e/o nei negozi locali)
+      kitty: Crea un kitty incensurabile
+
+      buy_no_kyc: Acquista in P2P senza KYC
+      node: Avvia un nodo in 3 clic
+      tor_ipfs: Passa a Tor/IPFS
+
+  # Used by GithubAPI to assign label - don't translate
+  languages:
+    fr: french
+    en: english
+    es: spanish
+    it: italian
+    de: german
+    nl: dutch
+    pl: polish
+    pt: portuguese
+    ro: romanian
+    ru: russian
+    tr: turkish

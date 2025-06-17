@@ -1,0 +1,107 @@
+- A:
+    - acronym: ATM
+      original_full_title: Automated Teller Machine
+      description:
+        - A machine that allows people to withdraw cash or check their bank balance without entering a bank.
+        - Some ATMs also allow buying or selling cryptocurrencies like Bitcoin.
+
+- B:
+    - acronym: BTC
+      original_full_title: Bitcoin
+      description:
+        - A digital currency created in 2009 that lets people send money online without using a bank.
+        - It operates using a global network of connected computers.
+
+- E:
+    - acronym: ECB
+      original_full_title: European Central Bank
+      description:
+        - The institution in charge of managing the euro and monetary policy in eurozone countries.
+        - It helps keep prices stable and controls interest rates.
+
+- G:
+    - acronym: G1
+      original_full_title: Ğ1 (pronounced “June”)
+      description:
+        - An alternative currency designed to be shared fairly among all its users.
+        - Each member receives a regular “universal dividend” just for being part of the network.
+
+- I:
+    - acronym: IP
+      original_full_title: Internet Protocol
+      description:
+        - A system used to identify devices on the internet.
+        - Each device has a unique IP address, like a postal address for receiving data.
+
+- K:
+    - acronym: KYC
+      original_full_title: Know Your Customer
+      description:
+        - A legal process where banks and services must verify who their customers are.
+        - It helps prevent fraud, terrorism financing, and money laundering.
+
+- L:
+    - acronym: LN
+      original_full_title: Lightning Network
+      description:
+        - A technology for making fast and low-cost Bitcoin transactions.
+        - It works like a payment shortcut, avoiding congestion on the main network.
+
+- N:
+    - acronym: Node
+      original_full_title: Node
+      description:
+        - A computer that participates in a cryptocurrency network.
+        - It stores data, checks transactions, and helps others access the network.
+
+    - acronym: Nostr
+      original_full_title: Notes and Other Stuff Transmitted by Relays
+      description:
+        - A decentralized protocol for creating social networks and messaging without central servers.
+        - It allows anyone to publish messages without censorship.
+
+- O:
+    - acronym: OSM
+      original_full_title: OpenStreetMap
+      description:
+        - A collaborative project to create a free and editable world map, like Wikipedia for geography.
+        - Used in navigation, apps, and games.
+
+- P:
+    - acronym: PGP
+      original_full_title: Pretty Good Privacy
+      description:
+        - PGP is a tool that encrypts messages or files to keep them private.
+        - It is often used to send emails in a secure way.
+
+    - acronym: PoW
+      original_full_title: Proof of Work
+      description:
+        - A method used by Bitcoin to verify transactions using computers solving complex puzzles.
+        - It is secure but uses a lot of energy.
+
+    - acronym: PoS
+      original_full_title: Proof of Stake
+      description:
+        - A more eco-friendly method for verifying cryptocurrency transactions.
+        - The more coins someone owns, the more likely they are to help validate new transactions.
+
+- V:
+    - acronym: VPN
+      original_full_title: Virtual Private Network
+      description:
+        - A VPN is a service that protects the internet connection and keeps personal data more secure.
+        - It can also make it seem like the connection is coming from another country.
+
+    - acronym: VPS
+      original_full_title: Virtual Private Server
+      description:
+        - A virtual computer rented online to run websites or apps.
+        - It's like having your own small private server without buying hardware.
+
+- X:
+    - acronym: XMR
+      original_full_title: Monero
+      description:
+        - A cryptocurrency designed to protect user privacy.
+        - It hides transaction details like amounts and addresses by default.

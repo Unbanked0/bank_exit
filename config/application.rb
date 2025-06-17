@@ -36,7 +36,7 @@ module BankExit
     config.time_zone = 'Europe/Paris'
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.i18n.available_locales = %i[en fr es]
+    config.i18n.available_locales = %i[en fr es de it]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
   end

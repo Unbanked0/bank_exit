@@ -1,0 +1,393 @@
+it:
+  categories:
+    # Food
+    restaurant: Ristorante
+    bar: Bar
+    pub: Pub
+    cafe: Caffè
+    pastry: Pasticceria
+    bakery: Panetteria
+    confectionery: Confetteria
+    beverages: Bevande
+
+    # Health
+    dentist: Dentista
+    doctor: Medico di base
+    midwife: Ostetrica
+    nurse: Infermiere
+    ophthalmology: Oculista
+    osteopathy: Osteopatia
+    optician: Ottico
+    pharmacy: Farmacia
+    psychiatry: Psicologo
+    orthopaedics: Ortopedia
+    physiotherapist: Fisioterapista
+    sophrologist: Sofrologo
+    traditional_chinese_medicine: Medicina Tradizionale Cinese
+    naturopathy: Naturopatia
+    magnetizer: Magnetizzatore
+
+    # Jobs
+    jewelry: Gioielleria
+    hairdresser: Parrucchiere
+    florist: Fiorista
+    clothes: Abbigliamento
+    beauty: Bellezza
+    veterinary: Veterinario
+    window_tinting: Tinteggiatura vetri
+    car_repair: Riparazione auto
+    tattoo: Tatuaggio
+    massage: Massaggio
+    electrician: Elettricista
+    electronics: Elettronica
+    greengrocer: Fruttivendolo
+    bicycle_repair_station: Riparazione biciclette
+    copyshop: Copisteria
+    printing: Tipografia
+    garden_centre: Garden centre
+    pet_grooming: Toelettatura animali domestici
+    car_rental: Noleggio auto
+    dojo: Dojo
+
+    # Drugs
+    alcohol: Alcolici
+    wine: Vino
+    e-cigarette: Sigaretta elettronica
+    cannabis: Cannabis
+
+    # Food stores
+    supermarket: Supermercato
+    grocery: Alimentari
+    deli: Gastronomia
+    farm: Fattoria
+    fast_food: Fast food
+
+    # Informatique
+    it: Informatica
+    hardware: Hardware
+    telecommunication: Telecomunicazioni
+    mobile_phone: Telefono cellulare
+    photo: Foto
+    video_games: Videogiochi
+    camera: Fotocamera
+    computer: Computer
+    hifi: Hi-fi
+
+    # Financial
+    atm: Distributore ATM
+    bank: Banca
+    exchange: Ufficio di cambio
+    payment_terminal: Terminale di pagamento
+    money_transfer: Trasferimento di denaro
+
+    # Accommodation
+    hotel: Hotel
+    guest_house: Guest house
+    bed and breakfast: Bed and breakfast
+    apartment: Appartamento
+    motel: Motel
+    chalet: Chalet
+    camp_site: Campeggio
+
+    # By hand
+    handicraft: Artigianato
+    doityourself: Fai da te
+    artwork: Opera d'arte
+
+    # Kids
+    toys: Giocattolo
+    games: Gioco
+    kindergarten: Asilo
+    model: Modellismo
+    theme_park: Parco a tema
+
+    # Culture
+    books: Libro
+    dancing_school: Scuola di ballo
+    gallery: Galleria
+    tourism: Ufficio del turismo
+    concept store: Concept store
+
+    # Misc
+    motorcycle: Motocicletta
+    car_parts: Ricambi auto
+    repair: Riparazione
+    appliance: Elettrodomestico
+    bag: Borsa
+    anime: Anime
+    candles: Candele
+    tool_hire: Noleggio attrezzi
+    pest_control: Controllo parassiti
+    medical_supply: Forniture mediche
+
+    ### To categorised later
+    advertising_agency: Agenzia di pubblicità
+    architect: Architetto
+    beekeeper: Apicoltore
+    cleaning: Pulizie
+    company: Azienda
+    construction_company: Impresa di costruzioni
+    consulting: Consulenza
+    electronics_repair: Riparazione elettronica
+    estate_agent: Agente immobiliare
+    financial_advisor: Consulente finanziario
+    gardener: Giardiniere
+    glassblower: Vetraio
+    glaziery: Vetreria
+    hvac: Riscaldamento, ventilazione e aria condizionata
+    lawyer: Avvocato
+    notary: Notaio
+    plumber: Idraulico
+    photographer: Fotografo
+    sculptor: Scultore
+    studio: Studio
+    therapist: Terapista
+    tutoring: Lezioni private
+    watchmaker: Orologiaio
+    winery: Cantina
+    archery: Tiro con l'arco
+    10pin: Bowling
+    fitness: Fitness
+    free_flying: Volo libero
+
+    # New batch 20/04/25
+    Hospitality Supplies: Forniture per l'ospitalità
+    accountant: Commercialista
+    agency: Agenzia
+    agrarian: Agrario
+    agricultural_engines: Motori agricoli
+    alpine_hut: Baita alpina
+    alternative: Alternativo
+    animal_boarding: Pensione per animali
+    animal_breeding: Allevamento animali
+    animal_protraits: Ritratti di animali
+    antiques: Antiquariato
+    art: Arte
+    arts_centre: Centro artistico
+    association: Associazione
+    atelier: Laboratorio
+    balloon: Palloncino
+    barber: Barbiere
+    bathroom_furnishing: Arredo bagno
+    bed: Letto
+    behavior: Comportamento
+    bicycle: Bicicletta
+    bicycle_rental: Noleggio biciclette
+    biergarten: Birreria all'aperto
+    billiards: Biliardo
+    bioresonanz: Biorisonanza
+    bitcoin: Bitcoin
+    blacksmith: Fabbro
+    boat_rental: Noleggio barche
+    bowling: Bowling
+    boxing: Boxe
+    brewery: Birrificio
+    builder: Costruttore
+    business_headquarters: Sede centrale
+    butcher: Macellaio
+    canoe: Canoa
+    capoeira: Capoeira
+    car: Auto
+    car_wash: Autolavaggio
+    caravan: Caravan
+    carpenter: Falegname
+    carpet: Tappeto
+    cartridges: Cartuccia
+    caterer: Catering
+    charging_station: Stazione di ricarica
+    cheese: Negozio di formaggi
+    chemist: Farmacista
+    childcare: Asilo nido
+    chiropractic: Chiropratica
+    chocolate: Cioccolateria
+    clinic: Clinica
+    collector: Collezionista
+    college: Scuola superiore
+    colonics: Idrocolonterapia
+    community_centre: Centro comunitario
+    conceptstore: Concept Store
+    cosmetics: Prodotti di bellezza
+    coworking_space: Spazio di coworking
+    crystal: Cristallo
+    curtain: Tende
+    dance: Danza
+    dental_oral_maxillo_facial_surgery: Chirurgia dentale
+    distillery: Distilleria
+    dive_centre: Centro immersioni
+    doors: Porte
+    driving_school: Scuola guida
+    dry_cleaning: Lavanderia a secco
+    earrings: Orecchini
+    electric_scooters: Monopattini elettrici
+    electrical: Elettrico
+    embroiderer: Ricamatore
+    energy: Energia
+    energy_supplier: Fornitore di energia
+    engineer: Ingegnere
+    equestrian: Equitazione
+    equipment_rental: Noleggio attrezzature
+    erotic: Erotico
+    event_planner: Organizzatore di eventi
+    events_venue: Sede per eventi
+    fireplace: Camino
+    flight_school: Scuola di volo
+    food: Cibo
+    football: Calcio
+    frame: Cornice
+    frozen_food: Surgelati
+    fuel: Carburante
+    funeral_directors: Onoranze funebri
+    furniture: Mobili
+    gas: Gas
+    general_trade: Commercio generale
+    gift: Regali
+    gold_buyer: Compro oro
+    golf: Golf
+    growshop: Grow shop
+    guide: Guida
+    gynaecology: Ginecologia
+    health_food: Alimenti naturali
+    herbalist: Erborista
+    hobby: Hobby
+    hochbeete: Aiuole rialzate
+    honey: Apicoltura
+    houseware: Articoli per la casa
+    humanistic: Umanistico
+    hypnosis: Ipnosi
+    ice_cream: Gelato
+    incense: Incenso
+    industrial_supplies: Forniture industriali
+    insurance: Assicurazioni
+    interior_decoration: Decorazione d'interni
+    internet_marketing_company_office: Marketing su internet
+    key_cutter: Duplicatore chiavi
+    kiosk: Chiosco
+    kitchen: Cucina
+    language_school: Scuola di lingue
+    laundry: Lavanderia
+    leather: Pelle
+    lighting: Illuminazione
+    locksmith: Fabbro (serrature)
+    luthier: Liutaio
+    marcha_nórdica: Nordic Walking
+    marketing: Marketing
+    metal_construction: Costruzioni metalliche
+    motorcycle_rental: Noleggio motociclette
+    moving_company: Ditta di traslochi
+    multi: Multi
+    music: Musica
+    music_school: Scuola di musica
+    natural_health_advice: Consulenza sulla salute naturale
+    newsagent: Edicola
+    newspaper: Giornale
+    ngo: Organizzazione Non Governativa
+    nightclub: Nightclub
+    nutrition_counselling: Nutrizionista
+    nutrition_supplements: Integratori alimentari
+    occupational_safety: Sicurezza sul lavoro
+    occupational_therapist: Terapista occupazionale
+    office: Ufficio
+    online_store: Negozio online
+    orthodontics: Ortodonzia
+    outpost: Avamposto
+    painter: Pittore
+    parachuting: Paracadutismo
+    parking: Parcheggio
+    parquet_layer: Posatore di parquet
+    party: Festa
+    pasta: Pasta
+    pawnbroker: Banco dei pegni
+    payment_centre: Centro pagamenti
+    perfumery: Profumeria
+    pet: Animali domestici
+    photographic_laboratory: Laboratorio fotografico
+    physiotherapy: Fisioterapia
+    pilates: Pilates
+    plasterer: Intonacatore
+    plastic_surgery: Chirurgia plastica
+    post_office: Ufficio postale
+    pottery: Ceramica
+    precious_metals: Metalli preziosi
+    private_investigator: Investigatore privato
+    protesi: Protesi
+    psychotherapist: Psicoterapeuta
+    radiotechnics: Radiotecnica
+    reflexology: Riflessologia
+    rehabilitation: Riabilitazione
+    reiki: Reiki
+    relationship_therapist: Terapista di coppia
+    rental: Noleggio
+    reseller: Rivenditore
+    roofer: Tettoia
+    running: Corsa
+    saddler: Sellaio
+    safety_equipment: Attrezzature di sicurezza
+    school: Scuola
+    seafood: Frutti di mare
+    second_hand: Seconda mano
+    security: Sicurezza
+    shoes: Scarpe
+    shooting: Riprese
+    signmaker: Produttore di insegne
+    skate_shop: Negozio di skateboard
+    skateboard: Skateboard
+    skiing: Sci
+    solar_panels: Pannelli solari
+    speech_therapist: Logopedista
+    spices: Spezie
+    sports: Sport
+    stationery: Cartoleria
+    stomatology: Stomatologia
+    stonemason: Scalpellino
+    street_workout: Street workout
+    studio_tecnico: Studio tecnico
+    substance_analysis_kits: Kit analisi sostanze
+    surf: Surf
+    surf_school: Scuola di surf
+    surgery: Chirurgo
+    surveyor: Geometra
+    swimming_pool: Piscina
+    systemic: Sistemico
+    tailor: Sarto
+    tax_advisor: Consulente fiscale
+    taxi: Taxi
+    tea: Tè
+    tennis: Tennis
+    textile_manufacturer: Produttore tessile
+    theatre: Teatro
+    ticket: Biglietteria
+    tiler: Piastrellista
+    tobacco: Tabacco
+    trade: Commercio
+    translator: Traduttore
+    travel_agency: Agenzia di viaggi
+    tyres: Pneumatici
+    university: Università
+    variety_store: Negozio di varietà
+    vending_machine: Distributore automatico
+    vine: Vite
+    watches: Orologi
+    water_filter: Filtro acqua
+    water_sports: Sport acquatici
+    web_design: Web design
+    wedding_planner: Organizzatore di matrimoni
+    weightlifting: Sollevamento pesi
+    window_construction: Costruzione finestre
+    workshop: Workshop
+    writer: Scrittore
+    "yes": Categoria sconosciuta
+    yoga: Yoga
+    dressmaker: Sarta
+
+  directories_categories:
+    food: 🍎 Cibo e bevande
+    health: ⚕️ Igiene e salute
+    clothing: 👕 Abbigliamento
+    electronic: 🔌 Elettronica ed energia
+    building: 🛠 Edilizia/Riparazione
+    services: 💼 Servizi professionali
+    travel: ✈️ Servizi di viaggio
+    handicraft: 🎨 Artigianato
+    media: 📰 Media e stampa alternativa
+    classified_ads: 📢 Annunci economici / Marketplace
+    association: 🤝 Associazione

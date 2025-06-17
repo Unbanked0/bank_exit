@@ -1,0 +1,49 @@
+it:
+  application:
+    scam_alert:
+      title: Attenzione alle truffe
+      headline_html: "Verifica sempre che il sito visualizzato nel tuo browser corrisponda a %{url}"
+
+    nav:
+      collectif: Bank Exit
+      bank_exit: Collettivo
+
+      menu:
+        home: Home
+        map: Mappa
+        directories: Elenco
+        projects: Progetti
+        monero_wallet: Portafoglio Monero
+        articles: Articoli
+        tutorials: Tutorial
+        blogs: Blog
+        faq: Domande frequenti (FAQ)
+        contact: Contatti
+        pros: Professionisti
+        github_title: Link al repository Github
+
+    language_switcher:
+      fr: Français
+      en: English
+      es: Español
+
+    theme_switcher:
+      switch_to_light: Passa alla modalità chiara
+      switch_to_dark: Passa alla modalità scura
+
+    countdown:
+      label: prima della fine della fase di preparazione
+      source_html: fonte <abbr title="Banca Centrale Europea">BCE</abbr>
+
+    upper_footer:
+      navigation: Navigazione
+      projects: Progetti
+      warning_title: ⚠️ Dichiarazione di non responsabilità (da leggere) ⚠️
+      license: Licenza d'uso
+
+    contacts:
+      title: Reti e contatti
+
+    footer:
+      copyright_html: Copyright &copy; Bank Exit 2022 - %{year} &bullet; Tutti i diritti riservati
+      developed_by_html: Sviluppato con %{heart} dal Collettivo Bank Exit
