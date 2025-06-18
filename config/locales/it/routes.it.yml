@@ -1,0 +1,4 @@
+it:
+  routes:
+    maps: map
+    statistics: stats

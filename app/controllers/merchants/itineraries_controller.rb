@@ -5,6 +5,7 @@ module Merchants
     # @route GET /fr/merchants/:merchant_id/itinerary/new {locale: "fr"} (new_merchant_itinerary_fr)
     # @route GET /es/merchants/:merchant_id/itinerary/new {locale: "es"} (new_merchant_itinerary_es)
     # @route GET /de/merchants/:merchant_id/itinerary/new {locale: "de"} (new_merchant_itinerary_de)
+    # @route GET /it/merchants/:merchant_id/itinerary/new {locale: "it"} (new_merchant_itinerary_it)
     # @route GET /en/merchants/:merchant_id/itinerary/new {locale: "en"} (new_merchant_itinerary_en)
     # @route GET /merchants/:merchant_id/itinerary/new
     def new
@@ -13,6 +14,7 @@ module Merchants
     # @route POST /fr/merchants/:merchant_id/itinerary {locale: "fr"} (merchant_itinerary_fr)
     # @route POST /es/merchants/:merchant_id/itinerary {locale: "es"} (merchant_itinerary_es)
     # @route POST /de/merchants/:merchant_id/itinerary {locale: "de"} (merchant_itinerary_de)
+    # @route POST /it/merchants/:merchant_id/itinerary {locale: "it"} (merchant_itinerary_it)
     # @route POST /en/merchants/:merchant_id/itinerary {locale: "en"} (merchant_itinerary_en)
     # @route POST /merchants/:merchant_id/itinerary
     def create

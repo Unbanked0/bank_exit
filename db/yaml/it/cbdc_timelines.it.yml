@@ -1,0 +1,56 @@
+---
+- started_on: 2023-10-01
+  title: Q4 2023
+  description:
+    - Implementazione della fase preparatoria
+    - Pubblicazione del parere legale della BCE
+
+- started_on: 2024-01-01
+  title: Q1 2024
+  description:
+    - Revisione del regolamento da parte dei Direttori Regionali Generali (RDG)
+    - Pubblicazione del Bando di Gara (CfA)
+    - Finalizzazione dei requisiti relativi alla fornitura
+
+- started_on: 2024-04-01
+  title: Q2 2024
+  description:
+    - Avvio delle discussioni di mercato sul massimo ammontare consentito di "Cash+"
+
+- started_on: 2024-07-01
+  title: Q3 2024
+  description:
+    - Invio della documentazione di offerta di acquisto ai partecipanti
+    - Avvio della ricerca utenti
+
+- started_on: 2024-10-01
+  title: Q4 2024
+  description:
+    - Valutazione e negoziazione delle offerte di fornitura [in 'Cash+']
+
+- started_on: 2025-01-01
+  title: Q1 2025
+  description:
+    - Negoziazione delle offerte di acquisto
+    - Avvio delle attività per il secondo ciclo delle procedure di approvvigionamento
+    - Avvio della pianificazione della fase successiva
+
+- started_on: 2025-04-01
+  title: Q2 2025
+  description:
+    - Selezione dei fornitori
+    - Finalizzazione dell’architettura
+    - Valutazione dell’impatto sulla protezione dei dati
+    - Piano di posizionamento e sensibilizzazione
+    - Dettagli sull’approccio di gestione e implementazione
+
+- started_on: 2025-07-01
+  title: Q3 2025
+  description:
+    - Bozza del regolamento pronta
+    - Preparazione della decisione del Consiglio Direttivo
+
+- started_on: 2025-10-01
+  title: Ottobre 2025 ⚠️
+  description:
+    - Decisione del Consiglio Direttivo sul possibile avvio della fase successiva

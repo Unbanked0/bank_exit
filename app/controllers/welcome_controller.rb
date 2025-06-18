@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
   # @route GET /fr {locale: "fr"} (root_fr)
   # @route GET /es {locale: "es"} (root_es)
   # @route GET /de {locale: "de"} (root_de)
+  # @route GET /it {locale: "it"} (root_it)
   # @route GET /en {locale: "en"} (root_en)
   # @route GET / (root)
   def index

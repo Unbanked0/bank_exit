@@ -1,0 +1,107 @@
+- A:
+    - acronym: ATM
+      original_full_title: Automated Teller Machine
+      description:
+        - Una macchina che permette alle persone di prelevare contanti o controllare il saldo bancario senza entrare in banca.
+        - Alcuni ATM permettono anche di comprare o vendere criptovalute come Bitcoin.
+
+- B:
+    - acronym: BTC
+      original_full_title: Bitcoin
+      description:
+        - Una valuta digitale creata nel 2009 che consente di inviare denaro online senza usare una banca.
+        - Funziona tramite una rete globale di computer connessi.
+
+- E:
+    - acronym: ECB
+      original_full_title: European Central Bank
+      description:
+        - L’istituzione incaricata di gestire l’euro e la politica monetaria nei paesi della zona euro.
+        - Aiuta a mantenere stabili i prezzi e controlla i tassi di interesse.
+
+- G:
+    - acronym: G1
+      original_full_title: Ğ1 (pronunciato “June”)
+      description:
+        - Una moneta alternativa progettata per essere condivisa equamente tra tutti gli utenti.
+        - Ogni membro riceve un “dividendo universale” regolare solo per far parte della rete.
+
+- I:
+    - acronym: IP
+      original_full_title: Internet Protocol
+      description:
+        - Un sistema usato per identificare i dispositivi su Internet.
+        - Ogni dispositivo ha un indirizzo IP unico, come un indirizzo postale per ricevere dati.
+
+- K:
+    - acronym: KYC
+      original_full_title: Know Your Customer
+      description:
+        - Un processo legale in cui banche e servizi devono verificare l’identità dei loro clienti.
+        - Aiuta a prevenire frodi, finanziamento del terrorismo e riciclaggio di denaro.
+
+- L:
+    - acronym: LN
+      original_full_title: Lightning Network
+      description:
+        - Una tecnologia per effettuare transazioni Bitcoin veloci e a basso costo.
+        - Funziona come una scorciatoia per i pagamenti, evitando congestioni sulla rete principale.
+
+- N:
+    - acronym: Node
+      original_full_title: Node
+      description:
+        - Un computer che partecipa a una rete di criptovalute.
+        - Conserva dati, verifica transazioni e aiuta altri ad accedere alla rete.
+
+    - acronym: Nostr
+      original_full_title: Notes and Other Stuff Transmitted by Relays
+      description:
+        - Un protocollo decentralizzato per creare social network e messaggistica senza server centrali.
+        - Permette a chiunque di pubblicare messaggi senza censura.
+
+- O:
+    - acronym: OSM
+      original_full_title: OpenStreetMap
+      description:
+        - Un progetto collaborativo per creare una mappa mondiale libera e modificabile, come Wikipedia per la geografia.
+        - Usato in navigazione, app e giochi.
+
+- P:
+    - acronym: PGP
+      original_full_title: Pretty Good Privacy
+      description:
+        - PGP è uno strumento che cripta messaggi o file per mantenerli privati.
+        - È spesso usato per inviare email in modo sicuro.
+
+    - acronym: PoW
+      original_full_title: Proof of Work
+      description:
+        - Un metodo usato da Bitcoin per verificare le transazioni tramite computer che risolvono complessi puzzle.
+        - È sicuro ma consuma molta energia.
+
+    - acronym: PoS
+      original_full_title: Proof of Stake
+      description:
+        - Un metodo più ecologico per verificare le transazioni in criptovalute.
+        - Più monete possiede qualcuno, più è probabile che possa aiutare a validare nuove transazioni.
+
+- V:
+    - acronym: VPN
+      original_full_title: Virtual Private Network
+      description:
+        - Una VPN è un servizio che protegge la connessione internet e rende i dati personali più sicuri.
+        - Può anche far sembrare che la connessione provenga da un altro paese.
+
+    - acronym: VPS
+      original_full_title: Virtual Private Server
+      description:
+        - Un computer virtuale affittato online per far funzionare siti web o app.
+        - È come avere un piccolo server privato senza dover comprare hardware.
+
+- X:
+    - acronym: XMR
+      original_full_title: Monero
+      description:
+        - Una criptovaluta progettata per proteggere la privacy degli utenti.
+        - Nasconde i dettagli delle transazioni come importi e indirizzi per impostazione predefinita.

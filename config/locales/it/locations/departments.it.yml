@@ -1,0 +1,96 @@
+it:
+  departments:
+    FR-01: Ain
+    FR-02: Aisne
+    FR-03: Allier
+    FR-04: Alpi dell'Alta Provenza
+    FR-05: Alte Alpi
+    FR-06: Alpi Marittime
+    FR-07: Ardèche
+    FR-08: Ardenne
+    FR-09: Ariège
+    FR-10: Aube
+    FR-11: Aude
+    FR-12: Aveyron
+    FR-13: Bocche del Rodano
+    FR-14: Calvados
+    FR-15: Cantal
+    FR-16: Charente
+    FR-17: Charente Marittima
+    FR-18: Cher
+    FR-19: Corrèze
+    FR-21: Costa d'Oro
+    FR-22: Côtes d'Armor
+    FR-23: Creuse
+    FR-24: Dordogna
+    FR-25: Doubs
+    FR-26: Drôme
+    FR-27: Eure
+    FR-28: Eure e Loir
+    FR-29: Finistère
+    FR-30: Gard
+    FR-31: Alta Garonna
+    FR-32: Gers
+    FR-33: Gironda
+    FR-34: Erault
+    FR-35: Ille e Vilaine
+    FR-36: Indre
+    FR-37: Indre e Loira
+    FR-38: Isère
+    FR-39: Giura
+    FR-40: Landes
+    FR-41: Loir e Cher
+    FR-42: Loira
+    FR-43: Alta Loira
+    FR-44: Loira Atlantico
+    FR-45: Loiret
+    FR-46: Lot
+    FR-47: Lot e Garonna
+    FR-48: Lozère
+    FR-49: Maine e Loira
+    FR-50: Manica
+    FR-51: Marna
+    FR-52: Alta Marna
+    FR-53: Mayenne
+    FR-54: Meurthe e Mosella
+    FR-55: Meuse
+    FR-56: Morbihan
+    FR-57: Mosella
+    FR-58: Nièvre
+    FR-59: Nord
+    FR-60: Oise
+    FR-61: Orne
+    FR-62: Passo di Calais
+    FR-63: Puy-de-Dôme
+    FR-64: Pirenei Atlantici
+    FR-65: Alte Pirenei
+    FR-66: Pirenei Orientali
+    FR-67: Basso Reno
+    FR-68: Alto Reno
+    FR-69: Rodano
+    FR-70: Alta Saona
+    FR-71: Saona e Loira
+    FR-72: Sarthe
+    FR-73: Savoia
+    FR-74: Alta Savoia
+    FR-75: Parigi
+    FR-76: Senna Marittima
+    FR-77: Senna e Marna
+    FR-78: Yvelines
+    FR-79: Due Sèvres
+    FR-80: Somme
+    FR-81: Tarn
+    FR-82: Tarn e Garonna
+    FR-83: Var
+    FR-84: Vaucluse
+    FR-85: Vandea
+    FR-86: Vienne
+    FR-87: Alta Vienne
+    FR-88: Vosgi
+    FR-89: Yonne
+    FR-90: Territorio di Belfort
+    FR-91: Essonne
+    FR-92: Alti della Senna
+    FR-93: Senna-Saint-Denis
+    FR-94: Val-de-Marne
+    FR-95: Val-d'Oise

@@ -5,6 +5,7 @@ module Merchants
     # @route GET /fr/merchants/:merchant_id/popup {locale: "fr"} (merchant_popup_fr)
     # @route GET /es/merchants/:merchant_id/popup {locale: "es"} (merchant_popup_es)
     # @route GET /de/merchants/:merchant_id/popup {locale: "de"} (merchant_popup_de)
+    # @route GET /it/merchants/:merchant_id/popup {locale: "it"} (merchant_popup_it)
     # @route GET /en/merchants/:merchant_id/popup {locale: "en"} (merchant_popup_en)
     # @route GET /merchants/:merchant_id/popup
     def show

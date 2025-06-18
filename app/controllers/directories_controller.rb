@@ -10,6 +10,7 @@ class DirectoriesController < ApplicationController
   # @route GET /fr/directories {locale: "fr"} (directories_fr)
   # @route GET /es/directories {locale: "es"} (directories_es)
   # @route GET /de/directories {locale: "de"} (directories_de)
+  # @route GET /it/directories {locale: "it"} (directories_it)
   # @route GET /en/directories {locale: "en"} (directories_en)
   # @route GET /directories
   def index
@@ -40,6 +41,7 @@ class DirectoriesController < ApplicationController
   # @route GET /fr/directories/new {locale: "fr"} (new_directory_fr)
   # @route GET /es/directories/new {locale: "es"} (new_directory_es)
   # @route GET /de/directories/new {locale: "de"} (new_directory_de)
+  # @route GET /it/directories/new {locale: "it"} (new_directory_it)
   # @route GET /en/directories/new {locale: "en"} (new_directory_en)
   # @route GET /directories/new
   def new
@@ -52,6 +54,7 @@ class DirectoriesController < ApplicationController
   # @route POST /fr/directories {locale: "fr"} (directories_fr)
   # @route POST /es/directories {locale: "es"} (directories_es)
   # @route POST /de/directories {locale: "de"} (directories_de)
+  # @route POST /it/directories {locale: "it"} (directories_it)
   # @route POST /en/directories {locale: "en"} (directories_en)
   # @route POST /directories
   def create
@@ -75,6 +78,7 @@ class DirectoriesController < ApplicationController
   # @route GET /fr/directories/:id {locale: "fr"} (directory_fr)
   # @route GET /es/directories/:id {locale: "es"} (directory_es)
   # @route GET /de/directories/:id {locale: "de"} (directory_de)
+  # @route GET /it/directories/:id {locale: "it"} (directory_it)
   # @route GET /en/directories/:id {locale: "en"} (directory_en)
   # @route GET /directories/:id
   def show

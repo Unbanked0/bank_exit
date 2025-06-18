@@ -1,0 +1,425 @@
+payment_methods_accepted: &payment_methods_accepted
+  bitcoin_accepted: Bitcoin accettato
+  monero_accepted: Monero accettato
+  lightning_accepted: Bitcoin Lightning accettato
+  contact_less_accepted: Pagamento contactless accettato
+  june_accepted: June accettato
+payment_methods_not_accepted: &payment_methods_not_accepted
+  bitcoin_not_accepted: Bitcoin non accettato
+  monero_not_accepted: Monero non accettato
+  lightning_not_accepted: Bitcoin Lightning non accettato
+  contact_less_not_accepted: Pagamento contactless non accettato
+  june_not_accepted: June non accettato
+
+it:
+  pundit:
+    default: Non hai i permessi per accedere a questa pagina
+
+  seo:
+    default:
+      title: Collettivo Bank-Exit
+      description: Un collettivo volontario e apartitico che mira a offrire strumenti legali, pacifici e sovrani al maggior numero possibile di cittadini, per favorire l’emancipazione bancaria e la resilienza contro le politiche governative.
+
+  missing_content_for_locale: Questo contenuto non è ancora disponibile in italiano. Viene mostrato il contenuto nella lingua predefinita.
+
+  welcome:
+    index:
+      title: Collettivo Bank-Exit
+      headline: Un collettivo volontario e apartitico che mira a offrire strumenti legali, pacifici e sovrani al maggior numero possibile di cittadini, per favorire l’emancipazione bancaria e la resilienza.
+      video_caption: Feedback da un orticoltore che usa Monero
+
+      map:
+        title: La mappa
+        subtitle: Commercianti in evidenza
+        merchant_highlight_tooltip_html: |
+          Vengono mostrati a caso 3 commercianti che accettano Monero, sono in Francia e non richiedono KYC.
+        discover_all: Scopri tutti i commercianti
+
+    questions_form:
+      title: Cerca contenuti
+
+    cbdc:
+      title: Euro digitale "Cash+"
+      body:
+        - L’euro digitale "Cash+" è un progetto della <abbr title="Banca Centrale Europea">BCE</abbr> destinato ai paesi dell’Unione Europea.
+        - Il Collettivo avverte che questo progetto sembra mirare a eliminare gli ultimi scambi di valuta fisica, consentendo così alle autorità una sorveglianza totale delle transazioni finanziarie. Questo potrebbe rappresentare un passo verso l’istituzione di un sistema di pagamento unico, controllato dallo stato (distopia).
+        - La fase di preparazione è prevista per concludersi entro ottobre 2025, con un lancio pianificato prima del 2030.
+      more_about: Scopri di più sull’euro digitale "Cash+"
+
+    coins:
+      title: Denaro e monete
+      headline: Il collettivo raccomanda i seguenti mezzi di scambio per la loro decentralizzazione e non tracciabilità, se possibile (come il contante).
+
+    projects:
+      title: Progetti
+      headline: Il Collettivo sta lavorando su vari strumenti volti a migliorare l’esperienza quotidiana e sovrana di Bitcoin e Monero.
+
+    tutorials:
+      title: Tutorial importanti
+      see_all_tutorials: Vedi tutti i tutorial
+
+    statistics:
+      see_all_statistics: Vedi tutte le statistiche
+
+  questions:
+    results:
+      title: In costruzione!
+      headline: Il Collettivo non ha ancora definito la pagina più adatta alla tua richiesta. Torna presto o fai un’altra ricerca.
+      try_another_request: Fai un’altra ricerca
+
+  articles:
+    wrapper:
+      beginner: Principiante
+      intermediate: Intermedio
+      expert: Avanzato
+
+  blogs:
+    index:
+      title: Blog
+    show:
+      subject: "[Collettivo Bank-Exit] Blog %{title}"
+      body: "Scopri questo articolo sul blog del Collettivo Bank-Exit: %{link}"
+
+  tutorials:
+    index:
+      title: Tutorial
+      description: Elenco dei vari tutorial e guide scritti dal Collettivo sui temi del de-banking e della privacy
+
+      features_tutorials_title: Tutorial importanti
+      other_tutorials_title: Altri tutorial
+
+    show:
+      subject: "[Collettivo Bank-Exit] Tutorial %{title}"
+      body: "Scopri questo tutorial sul sito del Collettivo Bank-Exit: %{link}"
+      pending_redaction: Tutorial in fase di redazione
+      tutorial_might_be_outdated: Questo tutorial è stato scritto oltre due anni fa. Poiché il mondo della tecnologia evolve rapidamente, alcune informazioni potrebbero non essere più aggiornate rispetto alle nuove versioni dei software o applicazioni presentate.
+
+      report_a_fault:
+        title: Segnala un’anomalia nel tutorial
+
+    reports:
+      create:
+        notice: La segnalazione dell’anomalia è stata inviata con successo al Collettivo
+
+      modal:
+        introduction: Segnala eventuali bug individuati nel tutorial. Sarà creato automaticamente un issue su Github così gli sviluppatori potranno analizzarlo e correggerlo.
+        submit: Segnala l’anomalia
+
+    accounting_download:
+      download_document: Scarica il documento
+
+  faqs:
+    show:
+      title: Domande Frequenti (FAQ)
+      headline: Hai domande sui servizi del Collettivo? Cerca nell’elenco seguente e non esitare a contattarci se non trovi la risposta.
+      button_cta: Vedi tutte le domande
+    faq:
+      map: mappa
+      merchant: commerciante
+      general: generale
+      kyc: kyc
+      directory: directory
+
+  media:
+    index:
+      title: Interviste e media
+      interviews_title: Interviste
+      newspapers_title: Parlano del Collettivo
+
+  local_groups:
+    index:
+      title: Gruppi locali
+      headline: "Ecco una lista dei gruppi locali: unisciti a quello più vicino o chiedi di crearne uno tuo (su Session)!"
+      no_link_yet: Link in arrivo...
+
+  risks:
+    index:
+      title: Esclusione di responsabilità
+      body_html: |
+        <p>Le informazioni presentate sono fornite così come sono e a scopo informativo e non devono in alcun modo essere considerate come consigli d’investimento o raccomandazioni di acquisto o vendita.</p>
+
+         <p><strong>Le informazioni contenute possono diventare <u>obsolete</u> nel tempo</strong>.</p>
+
+         <p>Investire in prodotti finanziari (criptovalute, metalli preziosi, ecc...) è rischioso per natura e deve essere considerato nel lungo termine.</p>
+
+         <p>È fondamentale fare le proprie ricerche prima di prendere qualsiasi decisione d’investimento o consultare un professionista del settore finanziario per un’opinione informata sulla compatibilità di tali investimenti con la propria situazione personale.</p>
+
+         <p><strong>Il collettivo non ha intenzione e non è in grado di fornire consigli d’investimento</strong>.</p>
+
+         <p><strong>Il collettivo declina ogni responsabilità</strong> per il contenuto di questa presentazione e le informazioni in essa contenute.</p>
+
+         <p><strong>Il collettivo declina ogni responsabilità</strong> per azioni personali e conseguenze che potresti aver intrapreso basandoti sulle informazioni contenute in questa presentazione o nei nostri contenuti media/social, altrimenti disponibili pubblicamente.</p>
+
+  projects:
+    show:
+      website_homepage: Homepage del sito web
+
+  maps:
+    index:
+      title: La mappa di Monero, Bitcoin e June
+      headline_html: |
+        "Cerchi un mezzo di scambio globale decentralizzato che sia fungibile, sovrano, a basse commissioni e non tracciabile di default."
+        <br />
+        Libertà del contante, per la prima volta in 2500 anni.   #noCBDC
+
+      suggest_merchant: Suggerisci un commerciante
+      show_search: Mostra il modulo di ricerca
+      hide_search: Nascondi il modulo di ricerca
+
+      free_open_data_html: I dati mostrati sulla mappa sono <strong>liberi</strong>, <strong>open source</strong> e provengono da <strong>OpenStreetMap</strong>.
+
+    filters_form:
+      clear_search_query: Cancella ricerca
+      clear_search_category: Cancella categoria
+      clear_search_country: Cancella paese
+      clear_search_continent: Cancella continente
+      tooltip_bitcoin_html: I dati Bitcoin sono limitati a Europa occidentale, America e Oceania
+
+    merchants:
+      tips_pagination:
+        use: Usa
+        or: o
+        move_through: dalla tastiera per cambiare pagina
+
+    dropdown_map_actions:
+      map_title: Mappa
+      last_updated_at: Aggiornato il %{last_updated_at}
+      map_fit_bounds: Focalizza sulle attività
+      map_gesture_handling: Blocca lo scroll
+      help_embed: Documentazione per l’embed
+
+      refresh_confirm_html: Sei sicuro di voler aggiornare i commercianti? <br /> Attendi qualche minuto, potrebbe richiedere tempo.
+      refresh: Aggiorna dati commercianti
+
+    helps:
+      show:
+        integration_description_html: Per integrare la mappa di Bitcoin, Monero e June nel tuo sito web, scegli la versione %{url} o %{iframe}.
+        parameters_description: Puoi usare le seguenti impostazioni per regolare il rendering della mappa.
+        iframe: <iframe>
+        url_to_embed: Copia il link URL da integrare
+        iframe_to_embed: Copia il <iframe> da integrare
+        parameters: Parametri
+        examples: Esempi
+
+        generator:
+          title: Generatore automatico
+          description: Usa il modulo qui sotto per creare la tua versione personalizzata della mappa integrabile.
+
+      table:
+        thead:
+          parameter: Parametro
+          type: Tipo
+          allowed_values: Valori consentiti
+          default_value: Valore predefinito
+          description: Descrizione
+        description:
+          theme: Tema della mappa
+          latitude: Latitudine per centrare la mappa
+          longitude: Longitudine per centrare la mappa
+          zoom: Livello di zoom della mappa
+          country_html: Filtra per paese per mostrare solo risultati localizzati (<strong>ISO 3166-1 alpha-2</strong>).
+          continent_html: Filtra per continente per mostrare solo risultati localizzati (<strong>CC</strong>).
+          country_info_html: I paesi elencati sono quelli con almeno un commerciante registrato.<br /> Qualsiasi paese specificato nel formato corretto è valido.
+          continent_info_html: Questo parametro ignora <b>country</b> se è anch’esso specificato
+          coins: Criptovalute per filtrare e mostrare solo i risultati corrispondenti
+          gesture_handling: Impedisce agli utenti di rimanere bloccati sulla mappa durante lo scorrimento di una pagina lunga
+          fit_bounds: Centra automaticamente la mappa in modo che tutti i marker siano visibili sullo schermo
+          fit_bounds_warning: Ignora i valori di latitudine, longitudine e zoom, se presenti
+          clusters: Raggruppa i marker vicini in cluster per ridurre il numero di elementi visualizzati
+          clusters_warning: Potrebbe rallentare il browser se ci sono molti marker da mostrare
+          attribution: Mostra le menzioni del Collettivo in basso a destra sulla mappa
+
+    directory_friends:
+      other_directories_to_spend_title: Altri modi per spendere
+
+  merchant_proposals:
+    new:
+      title: Proposta per un nuovo commerciante
+      introduction_html: Puoi suggerire un nuovo commerciante compilando il modulo seguente. Verrà quindi aperta una <a href="https://github.com/Unbanked0/bank_exit/issues" target="_blank">issue</a> su Github affinché il Collettivo possa verificarla e aggiungere il commerciante su OpenStreetMap.
+      form:
+        general_info: Informazioni generali
+        coins: Monete accettate
+        contact: Mezzi di contatto
+        other_contact: Altri mezzi di contatto
+        additional_info: Informazioni aggiuntive
+
+    create:
+      notice: Grazie, la tua richiesta di aggiungere un commerciante è stata inviata e sarà elaborata dal Collettivo al più presto!
+
+  merchants:
+    merchant:
+      home_delivery: Consegna a domicilio
+
+    show:
+      <<: *payment_methods_accepted
+
+      back_to_map: Torna alla mappa
+      website: Sito web
+      home_delivery: Consegna a domicilio
+      itinerary_title: Itinerario
+      last_survey_on: Ultimo sondaggio il %{date}
+      view_on_osm: Visualizza su OpenStreetMap
+
+      share_by_email:
+        subject: "[Bank Exit] Commerciante %{name}"
+        body: "Scopri questo commerciante sulla pagina del Collettivo Bank Exit: %{link}"
+
+      comments:
+        title: Pubblica un commento
+
+      report_a_fault:
+        title: Segnala un’anomalia su questo commerciante
+
+      itinerary:
+        calculate_my_itinerary: Calcola il mio itinerario in auto
+
+      tooltip_itinerary_html: |
+        Usa la scorciatoia da tastiera <kbd class="kbd text-base-content">Ctrl</kbd> + <kbd class="kbd text-base-content">/</kbd> per navigare automaticamente alla pagina dell’itinerario
+
+    comments:
+      create:
+        notice: Il tuo commento è stato pubblicato con successo.
+
+      modal:
+        title_html: Commenta su <strong>%{name}</strong>
+
+      form:
+        introduction: Scrivi una recensione solo se hai avuto una reale esperienza con questo commerciante.
+        submit: Pubblica il commento
+
+      no_comment_yet: Non ci sono ancora recensioni, sii il primo a lasciare un’opinione su questo commerciante se hai avuto una reale esperienza con lui.
+      tooltip_no_moderation: Il Collettivo non valida le opinioni lasciate dagli utenti.
+
+    itineraries:
+      new:
+        title: Calcola il mio itinerario
+        back_to_merchant: Torna al commerciante
+        start_address: Indirizzo di partenza
+        end_address: Indirizzo di arrivo
+
+      details:
+        no_results: Impossibile trovare l’indirizzo.
+        start: Partenza
+        distance: Distanza
+        duration: Durata
+        routing_details: Dettagli del percorso
+
+    refresh:
+      notice: L’elenco dei commercianti è in fase di aggiornamento. Attendere, un messaggio ti informerà al completamento.
+      refresh_success: I commercianti sono stati aggiornati, puoi ricaricare la mappa per accedere ai dati più recenti.
+
+    popups:
+      show:
+        <<:
+          - *payment_methods_accepted
+          - *payment_methods_not_accepted
+        payment_methods: Metodi di pagamento
+        home_delivery: Consegna a domicilio
+        last_survey_on: Ultimo sondaggio il %{date}
+        view_on_osm: Visualizza su OpenStreetMap
+
+    reports:
+      create:
+        notice: La segnalazione dell’anomalia è stata inviata al Collettivo
+        alert: La descrizione deve essere compilata
+
+      modal:
+        introduction_html: Indica per favore le anomalie che hai riscontrato nel profilo del commerciante. Verrà aperta una <a href="https://github.com/Unbanked0/bank_exit/issues" target="_blank">issue</a> su Github affinché il Collettivo possa analizzare la richiesta.
+        submit: Segnala anomalie
+
+  comments:
+    flag_tag:
+      flagged_comment: Commento segnalato al Collettivo
+
+    reports:
+      create:
+        notice: Grazie, il commento è stato segnalato al Collettivo
+
+  collectives:
+    show:
+      title: Il Collettivo
+      subtitle: Chi siamo?
+      description_html: |
+        <p>Siamo un gruppo di cittadini resilienti formatosi intorno a maggio 2022. Amiamo la libertà e siamo anche esperti di criptovalute libere e resilienti (solo lo 0,1% delle 'cripto').</p>
+
+        <p>Siamo suddivisi in %{local_groups_link} e gruppi informali in Francia, dove tutti possono incontrarsi e aiutarsi reciprocamente su questioni di resilienza, in particolare <strong>Monero</strong> (XMR), <strong>Bitcoin</strong> (XBT/BTC) e <strong>June</strong> (G1). Ad oggi, metà dei membri del collettivo ha più di 50 anni.</p>
+
+        <p>Il nostro obiettivo è offrire un'alternativa all'euro digitale e proteggere i nostri soldi, così come quelli di quanti più francesi possibile. La priorità è quindi <strong>proteggere</strong> i nostri patrimoni da vari rischi (bankruns, crisi finanziarie come nel 2008, sequestri da parte delle autorità, CBDC, ecc.), mantenendo al contempo il nostro <strong>potere d'acquisto</strong>.</p>
+
+      local_groups_label: 35 piccoli gruppi locali
+      workshop_caption: Workshop pratico su Monero e Bitcoin condotto da Pierre
+
+  contacts:
+    show:
+      pgp_key: Chiave PGP
+      pgp_fingerprint: Impronta PGP
+      pgp_tooltip_html: |
+        <strong>Pretty Good Privacy</strong> (PGP) è un algoritmo crittografico ibrido che può essere usato per criptare e firmare dati, tra le altre cose. <br /> Configura questa chiave nel tuo client email per contattare il Collettivo in modo privato.
+
+  directories:
+    index:
+      new_entry_title: Suggerisci una voce
+
+    new:
+      title: Suggerisci una voce per la directory
+      introduction_html: Puoi suggerire un nuovo commerciante da aggiungere alla directory compilando il modulo seguente. Un membro del Collettivo esaminerà la richiesta. Il tuo suggerimento resterà invisibile fino a quando non sarà approvato dal Collettivo.
+
+    form:
+      new_coin_wallet: Nuovo portafoglio crypto
+      new_delivery_zone: Nuova zona di consegna
+      new_contact_way: Nuovo mezzo di contatto
+      new_weblink: Nuova fonte
+
+      coin_wallet_description: Specifica le criptovalute accettate dal commerciante e, se necessario, l’indirizzo pubblico associato (opzionale)
+      delivery_zone_description: Specifica la/le zona/e di consegna di questo commerciante (opzionale)
+      contact_way_description: Specifica il/i metodo/i di contatto del commerciante (opzionale)
+      weblink_description: Specifica il/i link di fonte associato/i a questo commerciante (opzionale)
+
+    create:
+      notice: Grazie, il tuo suggerimento è stato inviato! Resterà nascosto fino a validazione da parte del Collettivo
+
+    show:
+      title: Directory
+    directory:
+      pending_link: Link in attesa
+    directories:
+      empty_results: Nessun risultato
+    filters:
+      tooltip_geocoder_ip_html:
+        - <p>Per dedurre la tua geolocalizzazione dall’indirizzo IP, Bank-Exit utilizza il servizio web esterno <b>https://ip-api.com</b> trasmettendo il tuo indirizzo IP <b>in chiaro</b> (non criptato).</p>
+        - <p>Per ridurre il numero di richieste esterne, la risposta della geolocalizzazione viene poi memorizzata in <b>cache criptata</b> per 10 minuti.</p>
+        - <p>Per una migliore anonimizzazione, si consiglia l’uso di una <b>VPN</b>, a scapito della precisione del filtro.</p>
+
+  statistics:
+    show:
+      title: Statistiche
+      description: "Scopri le statistiche sui commercianti che accettano Monero (XMR), Bitcoin (BTC/LN) e June (G1): distribuzione geografica e settori di attività."
+      not_atm_warning_html: I dati di tipo <abbr title="Sportello automatico (distributore automatico)">ATM</abbr> sono esclusi dalle statistiche perché non rilevanti
+      new_merchants_west_europe_title: Nuovi commercianti in Europa occidentale
+      new_merchants_north_america_oceania_title: Nuovi commercianti in Nord America e Oceania
+      new_merchants_south_america_title: Nuovi commercianti in Sud America
+      new_merchants_africa_title: Nuovi commercianti in Africa
+      new_directories_title: Voci della directory
+      monero_france_by_week_title: Commercianti Monero in Francia per settimana
+      monero_by_country_title: Commercianti Monero per paese (minimo 3)
+      june_by_country_title: Commercianti June per paese
+      merchants_by_categories_title: Commercianti per categorie essenziali
+      merchants_and_coins_title: Commercianti e valute accettate
+      merchants_west_european_title: Commercianti in Europa occidentale
+
+    merchants_table:
+      merchants_added_on_title: Commercianti aggiunti il %{date}
+
+    statistics_numbers:
+      new_merchants_title: Nuovi commercianti
+      all_merchants_enabled_title: Commercianti visibili
+      monero_france_title: Monero 🇫🇷
+      monero_world_title: Monero nel mondo
+      june_world_title: June nel mondo
+      on_date: al %{date}
+      dated: datato %{date}
+
+  glossaries:
+    show:
+      title: Glossario
+      description: "Un glossario facile da comprendere dei termini chiave sulle criptovalute, blockchain, finanza digitale e reti decentralizzate: Bitcoin, KYC, Lightning Network, IP, Monero e altro."

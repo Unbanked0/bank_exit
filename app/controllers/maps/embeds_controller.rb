@@ -17,6 +17,7 @@ module Maps
     # @route GET /fr/map/embed {locale: "fr"} (maps_embed_fr)
     # @route GET /es/map/embed {locale: "es"} (maps_embed_es)
     # @route GET /de/map/embed {locale: "de"} (maps_embed_de)
+    # @route GET /it/map/embed {locale: "it"} (maps_embed_it)
     # @route GET /en/map/embed {locale: "en"} (maps_embed_en)
     # @route GET /maps/embed
     def show
