@@ -114,7 +114,7 @@
         input type="checkbox" id="#{category}-option" value=category class="hidden peer" name="category" data-action="input->search#syncSelectCategories input->search#submit" checked=(params.dig(:category) == category.to_s)
         label.pretty-checkbox.flex.flex-col.items-center.justify-center.gap-2 for="#{category}-option" tabindex="0"
           = merchant_icon_svg icon_for_category(category), width: 50, height: 50
-          .text-xs.xl:text-base
+          .text-xs.xl:text-base.wrap-anywhere.text-center
             = t("categories.#{category}")
 
   ul.grid.w-full.gap-2.grid-cols-3.mb-3

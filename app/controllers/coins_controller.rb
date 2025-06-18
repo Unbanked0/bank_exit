@@ -3,6 +3,7 @@ class CoinsController < ApplicationController
 
   # @route GET /fr/coins/:id {locale: "fr"} (coin_fr)
   # @route GET /es/coins/:id {locale: "es"} (coin_es)
+  # @route GET /de/coins/:id {locale: "de"} (coin_de)
   # @route GET /en/coins/:id {locale: "en"} (coin_en)
   # @route GET /coins/:id
   def show

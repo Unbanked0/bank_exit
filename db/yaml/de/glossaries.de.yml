@@ -1,0 +1,107 @@
+- A:
+    - acronym: ATM
+      original_full_title: Automated Teller Machine
+      description:
+        - Ein Geldautomat, an dem man Bargeld abheben oder den Kontostand prüfen kann – ohne eine Bankfiliale zu betreten.
+        - Manche ATMs ermöglichen auch den Kauf oder Verkauf von Kryptowährungen wie Bitcoin.
+
+- B:
+    - acronym: BTC
+      original_full_title: Bitcoin
+      description:
+        - Eine digitale Währung, die 2009 entwickelt wurde und Geldtransfers ohne Bank ermöglicht.
+        - Sie basiert auf einem weltweiten Netzwerk miteinander verbundener Computer.
+
+- E:
+    - acronym: ECB
+      original_full_title: European Central Bank
+      description:
+        - Die Institution, die den Euro verwaltet und die Geldpolitik in der Eurozone bestimmt.
+        - Sie sorgt für Preisstabilität und legt die Leitzinsen fest.
+
+- G:
+    - acronym: G1
+      original_full_title: Ğ1 (ausgesprochen „June“)
+      description:
+        - Eine alternative Währung aus Frankreich, die für eine faire Geldverteilung unter allen Mitgliedern sorgt.
+        - Jedes Mitglied erhält regelmäßig ein sogenanntes „Universelles Grundeinkommen“.
+
+- I:
+    - acronym: IP
+      original_full_title: Internet Protocol
+      description:
+        - Ein System zur Identifikation von Geräten im Internet.
+        - Jedes Gerät hat eine eindeutige IP-Adresse – wie eine Postadresse für Daten.
+
+- K:
+    - acronym: KYC
+      original_full_title: Know Your Customer
+      description:
+        - Ein gesetzlich vorgeschriebenes Verfahren, bei dem Banken und Dienste die Identität ihrer Kunden überprüfen müssen.
+        - Ziel ist es, Betrug, Terrorfinanzierung und Geldwäsche zu verhindern.
+
+- L:
+    - acronym: LN
+      original_full_title: Lightning Network
+      description:
+        - Eine Technologie für schnelle und günstige Bitcoin-Zahlungen.
+        - Sie funktioniert wie eine Abkürzung und entlastet das Hauptnetzwerk.
+
+- N:
+    - acronym: Node
+      original_full_title: Node
+      description:
+        - Ein Computer, der Teil eines Kryptowährungsnetzwerks ist.
+        - Er speichert Daten, prüft Transaktionen und hält das Netzwerk am Laufen.
+
+    - acronym: Nostr
+      original_full_title: Notes and Other Stuff Transmitted by Relays
+      description:
+        - Ein dezentralisiertes Protokoll für soziale Netzwerke und Nachrichten – ohne zentrale Server.
+        - Jeder kann Beiträge veröffentlichen, ohne zensiert zu werden.
+
+- O:
+    - acronym: OSM
+      original_full_title: OpenStreetMap
+      description:
+        - Ein Gemeinschaftsprojekt zur Erstellung einer freien, bearbeitbaren Weltkarte – wie Wikipedia für Geodaten.
+        - Wird in Navigations-Apps, Karten und Spielen verwendet.
+
+- P:
+    - acronym: PGP
+      original_full_title: Pretty Good Privacy
+      description:
+        - Ein Werkzeug zur Verschlüsselung von Nachrichten oder Dateien.
+        - Wird oft für den sicheren Versand von E-Mails eingesetzt.
+
+    - acronym: PoW
+      original_full_title: Proof of Work
+      description:
+        - Ein Verfahren, das Bitcoin nutzt, um Transaktionen durch Rechenaufgaben zu bestätigen.
+        - Sehr sicher, aber energieintensiv.
+
+    - acronym: PoS
+      original_full_title: Proof of Stake
+      description:
+        - Ein energieeffizienteres Verfahren zur Transaktionsverifizierung bei Kryptowährungen.
+        - Je mehr Coins jemand besitzt, desto eher darf er neue Transaktionen bestätigen.
+
+- V:
+    - acronym: VPN
+      original_full_title: Virtual Private Network
+      description:
+        - Ein Dienst, der deine Internetverbindung schützt und persönliche Daten sichert.
+        - Ermöglicht auch, deinen Standort im Netz zu verbergen.
+
+    - acronym: VPS
+      original_full_title: Virtual Private Server
+      description:
+        - Ein gemieteter virtueller Computer für den Betrieb von Webseiten oder Anwendungen.
+        - Wie ein eigener kleiner Server, aber ohne eigene Hardware.
+
+- X:
+    - acronym: XMR
+      original_full_title: Monero
+      description:
+        - Eine Kryptowährung, die auf vollständige Privatsphäre ausgelegt ist.
+        - Transaktionen (Beträge, Absender, Empfänger) sind standardmäßig verborgen.

@@ -4,6 +4,7 @@ module Merchants
 
     # @route GET /fr/merchants/:merchant_id/comments/new {locale: "fr"} (new_merchant_comment_fr)
     # @route GET /es/merchants/:merchant_id/comments/new {locale: "es"} (new_merchant_comment_es)
+    # @route GET /de/merchants/:merchant_id/comments/new {locale: "de"} (new_merchant_comment_de)
     # @route GET /en/merchants/:merchant_id/comments/new {locale: "en"} (new_merchant_comment_en)
     # @route GET /merchants/:merchant_id/comments/new
     def new
@@ -18,6 +19,7 @@ module Merchants
 
     # @route POST /fr/merchants/:merchant_id/comments {locale: "fr"} (merchant_comments_fr)
     # @route POST /es/merchants/:merchant_id/comments {locale: "es"} (merchant_comments_es)
+    # @route POST /de/merchants/:merchant_id/comments {locale: "de"} (merchant_comments_de)
     # @route POST /en/merchants/:merchant_id/comments {locale: "en"} (merchant_comments_en)
     # @route POST /merchants/:merchant_id/comments
     def create

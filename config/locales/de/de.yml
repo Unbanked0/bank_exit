@@ -1,0 +1,126 @@
+de:
+  cancel: Abbrechen
+  confirm: Bestätigen
+  close: Schließen
+  search: Suchen
+  print: Drucken
+  share_by_email: Per E-Mail teilen
+  copied: Kopiert!
+  address: Adresse
+  description: Beschreibung
+  contact: Kontakt
+  weblinks: Quellen
+  other: Sonstiges
+  add: Hinzufügen
+  see: Ansehen
+  report: Melden
+  breadcrumb: Navigationspfad
+  details: Details
+  link: Link
+  spotlight: Im Rampenlicht
+  reset_search: Suche zurücksetzen
+
+  grid: Raster
+  table: Tabelle
+
+  download: Herunterladen
+  video_tutorial: Videoanleitung
+  useful_links: Nützliche Links
+  coin: Coin
+
+  enabled: Aktiviert
+  disabled: Deaktiviert
+
+  added_on: Hinzugefügt vor %{date}
+  updated_on: Aktualisiert vor %{date}
+
+  copy_to_clipboard: In die Zwischenablage kopieren
+
+  x_results:
+    zero: "%{count} Ergebnis"
+    one: "%{count} Ergebnis"
+    other: "%{count} Ergebnisse"
+
+  from: von
+  to: bis
+  and: und
+  by: durch
+  or: oder
+
+  mo: Montag
+  tu: Dienstag
+  we: Mittwoch
+  th: Donnerstag
+  fr: Freitag
+  sa: Samstag
+  su: Sonntag
+
+  today: Heute
+  yesterday: Gestern
+  month: Monat(e)
+  day: Tag(e)
+  hour: Stunde(n)
+  minute: Minute(n)
+  second: Sekunde(n)
+
+  distance:
+    centi:
+      one: "Zentimeter"
+      other: "Zentimeter"
+    unit:
+      one: "Meter"
+      other: "Meter"
+    thousand:
+      one: "Kilometer"
+      other: "Kilometer"
+
+  date:
+    formats:
+      short: "%d.%m.%Y"
+
+  time:
+    am: Uhr
+    formats:
+      default: "%d.%m.%Y um %H:%M Uhr"
+
+  helpers:
+    submit:
+      questions:
+        submit: Suchen
+      merchant_proposal:
+        create: Händler vorschlagen
+      comment_report:
+        create: Kommentar melden
+      directory:
+        suggest: Eintrag vorschlagen
+
+  questions:
+    individual: Eine Privatperson
+    company: Ein Unternehmen
+    association: Ein Verein
+    politic: Ein Politiker oder Mandatsträger
+
+    zero_knowledge: Ich weiß nichts über Entbankung oder Kryptowährungen
+    beginner: Ich kenne es vom Namen her
+    intermediate: Ich habe bereits welche (Anfänger)
+    expert: Ich bin fortgeschritten und habe welche
+
+    fetch_services:
+      debank: Ich will entbankt werden
+      privacy: Verfolgung vermeiden
+      anonymous: Anonym bleiben
+      inflation: Inflation begrenzen
+      messaging: Anonyme Kommunikation
+      social_network: Unzensiertes soziales Netzwerk
+      accounting: Buchhaltung vereinfachen
+      help: Kollektiv unterstützen
+
+      buy_btc: Bitcoin kaufen
+      buy_xmr: Monero kaufen
+      convert: Bitcoin <> Monero tauschen
+      spend: Mit Monero bezahlen! (Online oder lokal)
+      kitty: Unzensierbare Kasse erstellen
+
+      buy_no_kyc: P2P ohne KYC kaufen
+      node: Node mit 3 Klicks starten
+      tor_ipfs: Auf Tor/IPFS umsteigen

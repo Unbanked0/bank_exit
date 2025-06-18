@@ -1,0 +1,393 @@
+de:
+  categories:
+    # Lebensmittel
+    restaurant: Restaurant
+    bar: Bar
+    pub: Kneipe
+    cafe: Café
+    pastry: Konditorei
+    bakery: Bäckerei
+    confectionery: Confiserie
+    beverages: Getränke
+
+    # Gesundheit
+    dentist: Zahnarzt
+    doctor: Allgemeinmediziner
+    midwife: Hebamme
+    nurse: Krankenschwester
+    ophthalmology: Augenarzt
+    osteopathy: Osteopathie
+    optician: Optiker
+    pharmacy: Apotheke
+    psychiatry: Psychiater
+    orthopaedics: Orthopädie
+    physiotherapist: Physiotherapeut
+    sophrologist: Sophrologe
+    traditional_chinese_medicine: Traditionelle Chinesische Medizin
+    naturopathy: Naturheilkunde
+    magnetizer: Magnetiseur
+
+    # Handwerk & Dienstleistungen
+    jewelry: Schmuck
+    hairdresser: Friseur
+    florist: Florist
+    clothes: Bekleidung
+    beauty: Kosmetik
+    veterinary: Tierarzt
+    window_tinting: Scheibentönung
+    car_repair: Autoreparatur
+    tattoo: Tätowierung
+    massage: Massage
+    electrician: Elektriker
+    electronics: Elektronik
+    greengrocer: Gemüsehändler
+    bicycle_repair_station: Fahrradwerkstatt
+    copyshop: Copyshop
+    printing: Druckerei
+    garden_centre: Gartencenter
+    pet_grooming: Tierpflege
+    car_rental: Autovermietung
+    dojo: Dojo
+
+    # Genussmittel
+    alcohol: Alkohol
+    wine: Wein
+    e-cigarette: E-Zigarette
+    cannabis: Cannabis
+
+    # Lebensmittelgeschäfte
+    supermarket: Supermarkt
+    grocery: Lebensmittelgeschäft
+    deli: Feinkostladen
+    farm: Bauernhof
+    fast_food: Fastfood
+
+    # IT & Telekommunikation
+    it: IT
+    hardware: Hardware
+    telecommunication: Telekommunikation
+    mobile_phone: Mobiltelefon
+    photo: Fotografie
+    video_games: Videospiele
+    camera: Kamera
+    computer: Computer
+    hifi: HiFi
+
+    # Finanzen
+    atm: Geldautomat
+    bank: Bank
+    exchange: Wechselstube
+    payment_terminal: Zahlungsterminal
+    money_transfer: Geldtransfer
+
+    # Unterkünfte
+    hotel: Hotel
+    guest_house: Pension
+    bed_and_breakfast: Bed & Breakfast
+    apartment: Ferienwohnung
+    motel: Motel
+    chalet: Chalet
+    camp_site: Campingplatz
+
+    # Handwerk
+    handicraft: Handwerk
+    doityourself: Heimwerken
+    artwork: Kunsthandwerk
+
+    # Kinder
+    toys: Spielzeug
+    games: Spiele
+    kindergarten: Kindergarten
+    model: Modellbau
+    theme_park: Freizeitpark
+
+    # Kultur
+    books: Bücher
+    dancing_school: Tanzschule
+    gallery: Galerie
+    tourism: Tourismusbüro
+    concept_store: Concept Store
+
+    # Sonstiges
+    motorcycle: Motorrad
+    car_parts: Autoteile
+    repair: Reparatur
+    appliance: Haushaltsgerät
+    bag: Tasche
+    anime: Anime
+    candles: Kerzen
+    tool_hire: Werkzeugverleih
+    pest_control: Schädlingsbekämpfung
+    medical_supply: Medizinischer Bedarf
+
+    # Weitere Kategorien
+    advertising_agency: Werbeagentur
+    architect: Architekt
+    beekeeper: Imker
+    cleaning: Reinigungsdienst
+    company: Unternehmen
+    construction_company: Bauunternehmen
+    consulting: Beratung
+    electronics_repair: Elektronikreparatur
+    estate_agent: Immobilienmakler
+    financial_advisor: Finanzberater
+    gardener: Gärtner
+    glassblower: Glasbläser
+    glaziery: Glaserei
+    hvac: Heizung, Lüftung, Klimaanlage
+    lawyer: Anwalt
+    notary: Notar
+    plumber: Klempner
+    photographer: Fotograf
+    sculptor: Bildhauer
+    studio: Studio
+    therapist: Therapeut
+    tutoring: Nachhilfe
+    watchmaker: Uhrmacher
+    winery: Weingut
+    archery: Bogenschießen
+    10pin: Bowling
+    fitness: Fitnessstudio
+    free_flying: Freiflug
+
+    # Neu hinzugefügt
+    hospitality_supplies: Gastronomiebedarf
+    accountant: Buchhalter
+    agency: Agentur
+    agrarian: Agrarwirtschaft
+    agricultural_engines: Landmaschinen
+    alpine_hut: Berghütte
+    alternative: Alternativmedizin
+    animal_boarding: Tierpension
+    animal_breeding: Tierzucht
+    animal_portraits: Tierporträts
+    antiques: Antiquitäten
+    art: Kunst
+    arts_centre: Kulturzentrum
+    association: Verein
+    atelier: Atelier
+    balloon: Ballonfahrt
+    barber: Barbier
+    bathroom_furnishing: Badezimmerausstattung
+    bed: Bettwaren
+    behavior: Verhaltensberatung
+    bicycle: Fahrrad
+    bicycle_rental: Fahrradverleih
+    biergarten: Biergarten
+    billiards: Billard
+    bioresonanz: Bioresonanz
+    bitcoin: Bitcoin
+    blacksmith: Schmied
+    boat_rental: Bootsverleih
+    bowling: Bowlingbahn
+    boxing: Boxen
+    brewery: Brauerei
+    builder: Bauunternehmer
+    business_headquarters: Firmensitz
+    butcher: Metzger
+    canoe: Kanu
+    capoeira: Capoeira
+    car: Autohaus
+    car_wash: Autowäsche
+    caravan: Wohnwagen
+    carpenter: Tischler
+    carpet: Teppichboden
+    cartridges: Druckerpatronen
+    caterer: Catering
+    charging_station: Ladestation
+    cheese: Käseladen
+    chemist: Chemiker
+    childcare: Kinderbetreuung
+    chiropractic: Chiropraktik
+    chocolate: Schokoladenladen
+    clinic: Klinik
+    collector: Sammler
+    college: Hochschule
+    colonics: Colon-Hydro-Therapie
+    community_centre: Gemeindezentrum
+    conceptstore: Concept Store
+    cosmetics: Kosmetikprodukte
+    coworking_space: Coworking Space
+    crystal: Kristalle
+    curtain: Vorhänge
+    dance: Tanzschule
+    dental_oral_maxillo_facial_surgery: Zahn-, Mund- und Kieferchirurgie
+    distillery: Brennerei
+    dive_centre: Tauchschule
+    doors: Türen
+    driving_school: Fahrschule
+    dry_cleaning: Reinigung
+    earrings: Ohrringe
+    electric_scooters: Elektroroller
+    electrical: Elektroinstallation
+    embroiderer: Stickerei
+    energy: Energieversorgung
+    energy_supplier: Energieanbieter
+    engineer: Ingenieur
+    equestrian: Reitsport
+    equipment_rental: Ausrüstungsverleih
+    erotic: Erotik
+    event_planner: Eventplaner
+    events_venue: Veranstaltungsort
+    fireplace: Kamin
+    flight_school: Flugschule
+    food: Lebensmittel
+    football: Fußball
+    frame: Bilderrahmen
+    frozen_food: Tiefkühlkost
+    fuel: Kraftstoff
+    funeral_directors: Bestatter
+    furniture: Möbel
+    gas: Gasversorgung
+    general_trade: Großhandel
+    gift: Geschenke
+    gold_buyer: Goldankauf
+    golf: Golf
+    growshop: Growshop
+    guide: Reiseführer
+    gynaecology: Gynäkologie
+    health_food: Gesundheitsnahrung
+    herbalist: Kräuterkunde
+    hobby: Hobbybedarf
+    hochbeete: Hochbeete
+    honey: Honig
+    houseware: Haushaltswaren
+    humanistic: Humanistische Psychologie
+    hypnosis: Hypnose
+    ice_cream: Eisdiele
+    incense: Räucherstäbchen
+    industrial_supplies: Industrielle Versorgung
+    insurance: Versicherung
+    interior_decoration: Inneneinrichtung
+    internet_marketing_company_office: Internet-Marketing
+    key_cutter: Schlüsseldienst
+    kiosk: Kiosk
+    kitchen: Küche
+    language_school: Sprachschule
+    laundry: Wäscherei
+    leather: Lederwaren
+    lighting: Beleuchtung
+    locksmith: Schlüsseldienst
+    luthier: Lautenmacher
+    marcha_nórdica: Nordic Walking
+    marketing: Marketing
+    metal_construction: Metallbau
+    motorcycle_rental: Motorradverleih
+    moving_company: Umzugsunternehmen
+    multi: Mehrzweck
+    music: Musikgeschäft
+    music_school: Musikschule
+    natural_health_advice: Naturheilberatung
+    newsagent: Zeitungshändler
+    newspaper: Zeitung
+    ngo: Nichtregierungsorganisation
+    nightclub: Nachtclub
+    nutrition_counselling: Ernährungsberatung
+    nutrition_supplements: Nahrungsergänzungsmittel
+    occupational_safety: Arbeitsschutz
+    occupational_therapist: Ergotherapeut
+    office: Bürobedarf
+    online_store: Online-Shop
+    orthodontics: Kieferorthopädie
+    outpost: Außenstelle
+    painter: Maler
+    parachuting: Fallschirmspringen
+    parking: Parken
+    parquet_layer: Parkettleger
+    party: Partybedarf
+    pasta: Pasta
+    pawnbroker: Pfandleiher
+    payment_centre: Zahlungszentrum
+    perfumery: Parfümerie
+    pet: Haustiere
+    photographic_laboratory: Fotolabor
+    physiotherapy: Physiotherapie
+    pilates: Pilates
+    plasterer: Stuckateur
+    plastic_surgery: Plastische Chirurgie
+    post_office: Postamt
+    pottery: Töpferei
+    precious_metals: Edelmetalle
+    private_investigator: Privatdetektiv
+    protesi: Prothetik
+    psychotherapist: Psychotherapeut
+    radiotechnics: Radiotechnik
+    reflexology: Reflexzonenmassage
+    rehabilitation: Rehabilitation
+    reiki: Reiki
+    relationship_therapist: Paartherapeut
+    rental: Vermietung
+    reseller: Wiederverkäufer
+    roofer: Dachdecker
+    running: Laufen
+    saddler: Sattler
+    safety_equipment: Sicherheitsausrüstung
+    school: Schule
+    seafood: Meeresfrüchte
+    second_hand: Second-Hand
+    security: Sicherheit
+    shoes: Schuhe
+    shooting: Filmproduktion
+    signmaker: Schildermacher
+    skate_shop: Skateshop
+    skateboard: Skateboard
+    skiing: Skifahren
+    solar_panels: Solarpanels
+    speech_therapist: Logopäde
+    spices: Gewürze
+    sports: Sport
+    stationery: Schreibwaren
+    stomatology: Stomatologie
+    stonemason: Steinmetz
+    street_workout: Street Workout
+    studio_tecnico: Technisches Büro
+    substance_analysis_kits: Substanzanalyse-Kits
+    surf: Surfen
+    surf_school: Surfschule
+    surgery: Chirurgie
+    surveyor: Vermessungsingenieur
+    swimming_pool: Schwimmbad
+    systemic: Systemische Therapie
+    tailor: Schneider
+    tax_advisor: Steuerberater
+    taxi: Taxi
+    tea: Tee
+    tennis: Tennis
+    textile_manufacturer: Textilhersteller
+    theatre: Theater
+    ticket: Ticketverkauf
+    tiler: Fliesenleger
+    tobacco: Tabak
+    trade: Handel
+    translator: Übersetzer
+    travel_agency: Reisebüro
+    tyres: Reifen
+    university: Universität
+    variety_store: Gemischtwarenladen
+    vending_machine: Verkaufsautomat
+    vine: Reben
+    watches: Uhren
+    water_filter: Wasserfilter
+    water_sports: Wassersport
+    web_design: Webdesign
+    wedding_planner: Hochzeitsplaner
+    weightlifting: Gewichtheben
+    window_construction: Fensterbau
+    workshop: Werkstatt
+    writer: Schriftsteller
+    "yes": Unbekannte Kategorie
+    yoga: Yoga
+    dressmaker: Näherin
+
+  directories_categories:
+    food: 🍎 Lebensmittel und Getränke
+    health: ⚕️ Hygiene und Gesundheit
+    clothing: 👕 Kleidung
+    electronic: 🔌 Elektronik und Energie
+    building: 🛠 Bauwesen / Reparatur
+    services: 💼 Dienstleistungen
+    travel: ✈️ Reiseservices
+    handicraft: 🎨 Handwerk
+    media: 📰 Medien und alternative Presse
+    classified_ads: 📢 Kleinanzeigen / Marktplatz
+    association: 🤝 Verein / Gemeinschaft

@@ -6,6 +6,7 @@ class MerchantProposalsController < ApplicationController
 
   # @route GET /fr/merchant_proposals {locale: "fr"} (merchant_proposals_fr)
   # @route GET /es/merchant_proposals {locale: "es"} (merchant_proposals_es)
+  # @route GET /de/merchant_proposals {locale: "de"} (merchant_proposals_de)
   # @route GET /en/merchant_proposals {locale: "en"} (merchant_proposals_en)
   # @route GET /merchant_proposals
   def index
@@ -14,6 +15,7 @@ class MerchantProposalsController < ApplicationController
 
   # @route GET /fr/merchant_proposals/new {locale: "fr"} (new_merchant_proposal_fr)
   # @route GET /es/merchant_proposals/new {locale: "es"} (new_merchant_proposal_es)
+  # @route GET /de/merchant_proposals/new {locale: "de"} (new_merchant_proposal_de)
   # @route GET /en/merchant_proposals/new {locale: "en"} (new_merchant_proposal_en)
   # @route GET /merchant_proposals/new
   def new
@@ -24,6 +26,7 @@ class MerchantProposalsController < ApplicationController
 
   # @route POST /fr/merchant_proposals {locale: "fr"} (merchant_proposals_fr)
   # @route POST /es/merchant_proposals {locale: "es"} (merchant_proposals_es)
+  # @route POST /de/merchant_proposals {locale: "de"} (merchant_proposals_de)
   # @route POST /en/merchant_proposals {locale: "en"} (merchant_proposals_en)
   # @route POST /merchant_proposals
   def create
