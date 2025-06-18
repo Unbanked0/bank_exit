@@ -69,4 +69,21 @@ module ApplicationHelper
       'logo.png'
     end
   end
+
+  # Find the corresponding flag associated to a
+  # language code. Tweak the country if the language
+  # is not linked to a flag directly.
+  def emoji_by_locale(locale)
+    locale = locale.to_s.upcase
+
+    country = case locale
+              when 'EN' then 'GB'
+              else
+                locale
+              end
+
+    ISO3166::Country[country].emoji_flag
+  rescue StandardError
+    nil
+  end
 end
