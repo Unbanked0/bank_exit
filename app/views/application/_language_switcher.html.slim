@@ -1,7 +1,7 @@
 details.dropdown
   summary
     = image_tag "languages/#{I18n.locale}.svg", class: 'w-5 h-5'
-    span.hidden.xl:block= t(".#{I18n.locale}")
+    span.hidden.xl:block= Rails.configuration.i18n_human_languages[I18n.locale]
 
   ul.p-2.bg-base-300.w-max
     - I18n.available_locales.each do |locale|
@@ -10,4 +10,4 @@ details.dropdown
         = link_to url_for(locale: locale.to_s, params: request.query_parameters), role: :menuitem, hreflang: locale.to_s, rel: 'alternate' do
           .inline-flex.items-center
             = image_tag "languages/#{locale}.svg", class: 'h-3.5 w-3.5 me-2'
-            = t(".#{locale}")
+            = Rails.configuration.i18n_human_languages[locale]

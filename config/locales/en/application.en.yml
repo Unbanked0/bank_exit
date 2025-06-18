@@ -22,13 +22,6 @@ en:
         pros: Pros
         github_title: Link to the Github repository
 
-    language_switcher:
-      fr: Français
-      en: English
-      es: Español
-      de: Deutsch
-      it: Italiano
-
     theme_switcher:
       switch_to_light: Switch to light mode
       switch_to_dark: Switch to dark mode

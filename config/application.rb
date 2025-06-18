@@ -39,5 +39,13 @@ module BankExit
     config.i18n.available_locales = %i[en fr es de it]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
+
+    config.i18n_human_languages = {
+      fr: 'Français',
+      en: 'English',
+      es: 'Español',
+      de: 'Deutsch',
+      it: 'Italiano'
+    }.freeze
   end
 end

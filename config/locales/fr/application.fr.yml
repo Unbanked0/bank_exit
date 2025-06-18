@@ -22,13 +22,6 @@ fr:
         pros: Pros
         github_title: Lien vers le dépôt Github
 
-    language_switcher:
-      fr: Français
-      en: English
-      es: Español
-      de: Deutsch
-      it: Italiano
-
     theme_switcher:
       switch_to_light: Basculer sur le thème clair
       switch_to_dark: Basculer sur le thème sombre

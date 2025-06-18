@@ -22,13 +22,6 @@ it:
         pros: Professionisti
         github_title: Link al repository GitHub
 
-    language_switcher:
-      fr: Français
-      en: English
-      es: Español
-      de: Deutsch
-      it: Italiano
-
     theme_switcher:
       switch_to_light: Passa alla modalità chiara
       switch_to_dark: Passa alla modalità scura
