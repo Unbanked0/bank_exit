@@ -2,8 +2,8 @@ module Merchants
   class CommentsController < ApplicationController
     before_action :set_merchant
 
-    # @route GET /fr/commercants/:merchant_id/comments/new {locale: "fr"} (new_merchant_comment_fr)
-    # @route GET /es/comerciantes/:merchant_id/comments/new {locale: "es"} (new_merchant_comment_es)
+    # @route GET /fr/merchants/:merchant_id/comments/new {locale: "fr"} (new_merchant_comment_fr)
+    # @route GET /es/merchants/:merchant_id/comments/new {locale: "es"} (new_merchant_comment_es)
     # @route GET /en/merchants/:merchant_id/comments/new {locale: "en"} (new_merchant_comment_en)
     # @route GET /merchants/:merchant_id/comments/new
     def new
@@ -16,8 +16,8 @@ module Merchants
       end
     end
 
-    # @route POST /fr/commercants/:merchant_id/comments {locale: "fr"} (merchant_comments_fr)
-    # @route POST /es/comerciantes/:merchant_id/comments {locale: "es"} (merchant_comments_es)
+    # @route POST /fr/merchants/:merchant_id/comments {locale: "fr"} (merchant_comments_fr)
+    # @route POST /es/merchants/:merchant_id/comments {locale: "es"} (merchant_comments_es)
     # @route POST /en/merchants/:merchant_id/comments {locale: "en"} (merchant_comments_en)
     # @route POST /merchants/:merchant_id/comments
     def create

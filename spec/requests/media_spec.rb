@@ -7,21 +7,11 @@ RSpec.describe 'Media' do
     it { expect(response).to have_http_status :ok }
   end
 
-  describe 'GET /en/media' do
-    subject! { get '/en/media' }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/media" do
+      subject! { get "/#{locale}/media" }
 
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /fr/medias' do
-    subject! { get '/fr/medias' }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /es/medios' do
-    subject! { get '/es/medios' }
-
-    it { expect(response).to have_http_status :ok }
+      it { expect(response).to have_http_status :ok }
+    end
   end
 end

@@ -13,22 +13,18 @@ RSpec.describe 'MerchantProposals' do
     it { expect(response).to have_http_status :ok }
   end
 
-  describe 'GET /en/merchant_proposals/new' do
-    subject! { get '/en/merchant_proposals/new' }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/merchant_proposals" do
+      subject! { get "/#{locale}/merchant_proposals" }
 
-    it { expect(response).to have_http_status :ok }
-  end
+      it { expect(response).to redirect_to send("new_merchant_proposal_#{locale}_path") }
+    end
 
-  describe 'GET /fr/merchant_proposals/new' do
-    subject! { get '/fr/merchant_proposals/new' }
+    describe "GET /#{locale}/merchant_proposals/new" do
+      subject! { get "/#{locale}/merchant_proposals/new" }
 
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /es/merchant_proposals/new' do
-    subject! { get '/es/merchant_proposals/new' }
-
-    it { expect(response).to have_http_status :ok }
+      it { expect(response).to have_http_status :ok }
+    end
   end
 
   describe 'POST /merchant_proposals' do

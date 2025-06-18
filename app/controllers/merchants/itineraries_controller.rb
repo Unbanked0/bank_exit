@@ -2,15 +2,15 @@ module Merchants
   class ItinerariesController < ApplicationController
     before_action :set_merchant
 
-    # @route GET /fr/commercants/:merchant_id/itinerary/new {locale: "fr"} (new_merchant_itinerary_fr)
-    # @route GET /es/comerciantes/:merchant_id/itinerary/new {locale: "es"} (new_merchant_itinerary_es)
+    # @route GET /fr/merchants/:merchant_id/itinerary/new {locale: "fr"} (new_merchant_itinerary_fr)
+    # @route GET /es/merchants/:merchant_id/itinerary/new {locale: "es"} (new_merchant_itinerary_es)
     # @route GET /en/merchants/:merchant_id/itinerary/new {locale: "en"} (new_merchant_itinerary_en)
     # @route GET /merchants/:merchant_id/itinerary/new
     def new
     end
 
-    # @route POST /fr/commercants/:merchant_id/itinerary {locale: "fr"} (merchant_itinerary_fr)
-    # @route POST /es/comerciantes/:merchant_id/itinerary {locale: "es"} (merchant_itinerary_es)
+    # @route POST /fr/merchants/:merchant_id/itinerary {locale: "fr"} (merchant_itinerary_fr)
+    # @route POST /es/merchants/:merchant_id/itinerary {locale: "es"} (merchant_itinerary_es)
     # @route POST /en/merchants/:merchant_id/itinerary {locale: "en"} (merchant_itinerary_en)
     # @route POST /merchants/:merchant_id/itinerary
     def create

@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: :show
 
-  # @route GET /fr/projets/:id {locale: "fr"} (project_fr)
-  # @route GET /es/proyectos/:id {locale: "es"} (project_es)
+  # @route GET /fr/projects/:id {locale: "fr"} (project_fr)
+  # @route GET /es/projects/:id {locale: "es"} (project_es)
   # @route GET /en/projects/:id {locale: "en"} (project_en)
   # @route GET /projects/:id
   def show

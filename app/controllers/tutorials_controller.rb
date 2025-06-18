@@ -6,8 +6,8 @@ class TutorialsController < ApplicationController
   add_breadcrumb proc { I18n.t('application.nav.menu.articles') }
   add_breadcrumb proc { I18n.t('application.nav.menu.tutorials') }, :tutorials_path
 
-  # @route GET /fr/tutoriels {locale: "fr"} (tutorials_fr)
-  # @route GET /es/tutoriales {locale: "es"} (tutorials_es)
+  # @route GET /fr/tutorials {locale: "fr"} (tutorials_fr)
+  # @route GET /es/tutorials {locale: "es"} (tutorials_es)
   # @route GET /en/tutorials {locale: "en"} (tutorials_en)
   # @route GET /tutorials
   def index
@@ -17,8 +17,8 @@ class TutorialsController < ApplicationController
     @other_tutorials = tutorials.reject(&:highlight?)
   end
 
-  # @route GET /fr/tutoriels/:id {locale: "fr"} (tutorial_fr)
-  # @route GET /es/tutoriales/:id {locale: "es"} (tutorial_es)
+  # @route GET /fr/tutorials/:id {locale: "fr"} (tutorial_fr)
+  # @route GET /es/tutorials/:id {locale: "es"} (tutorial_es)
   # @route GET /en/tutorials/:id {locale: "en"} (tutorial_en)
   # @route GET /tutorials/:id
   def show

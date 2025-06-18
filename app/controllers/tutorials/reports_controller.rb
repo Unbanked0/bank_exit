@@ -2,16 +2,16 @@ module Tutorials
   class ReportsController < ApplicationController
     before_action :set_tutorial
 
-    # @route GET /fr/tutoriels/:tutorial_id/report/new {locale: "fr"} (new_tutorial_report_fr)
-    # @route GET /es/tutoriales/:tutorial_id/report/new {locale: "es"} (new_tutorial_report_es)
+    # @route GET /fr/tutorials/:tutorial_id/report/new {locale: "fr"} (new_tutorial_report_fr)
+    # @route GET /es/tutorials/:tutorial_id/report/new {locale: "es"} (new_tutorial_report_es)
     # @route GET /en/tutorials/:tutorial_id/report/new {locale: "en"} (new_tutorial_report_en)
     # @route GET /tutorials/:tutorial_id/report/new
     def new
       @tutorial_report = TutorialReport.new
     end
 
-    # @route POST /fr/tutoriels/:tutorial_id/report {locale: "fr"} (tutorial_report_fr)
-    # @route POST /es/tutoriales/:tutorial_id/report {locale: "es"} (tutorial_report_es)
+    # @route POST /fr/tutorials/:tutorial_id/report {locale: "fr"} (tutorial_report_fr)
+    # @route POST /es/tutorials/:tutorial_id/report {locale: "es"} (tutorial_report_es)
     # @route POST /en/tutorials/:tutorial_id/report {locale: "en"} (tutorial_report_en)
     # @route POST /tutorials/:tutorial_id/report
     def create

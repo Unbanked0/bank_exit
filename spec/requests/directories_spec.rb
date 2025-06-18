@@ -9,46 +9,51 @@ RSpec.describe 'Directories' do
     it { expect(response).to have_http_status :ok }
   end
 
-  describe 'GET /en/directories' do
-    subject! { get '/en/directories' }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /fr/annuaire' do
-    subject! { get '/fr/annuaire' }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /es/anuario' do
-    subject! { get '/es/anuario' }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
   describe 'GET /directories/new' do
     subject! { get '/directories/new' }
 
     it { expect(response).to have_http_status :ok }
   end
 
-  describe 'GET /en/directories/new' do
-    subject! { get '/en/directories/new' }
+  describe 'GET /directories/:id' do
+    subject! { get "/directories/#{directory.id}" }
+
+    let(:directory) { directories.first }
 
     it { expect(response).to have_http_status :ok }
   end
 
-  describe 'GET /fr/annuaire/new' do
-    subject! { get '/fr/annuaire/new' }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/directories" do
+      subject! { get "/#{locale}/directories" }
 
-    it { expect(response).to have_http_status :ok }
-  end
+      it { expect(response).to have_http_status :ok }
+    end
 
-  describe 'GET /es/anuario/new' do
-    subject! { get '/es/anuario/new' }
+    describe "GET /#{locale}/directories/new" do
+      subject! { get "/#{locale}/directories/new" }
 
-    it { expect(response).to have_http_status :ok }
+      it { expect(response).to have_http_status :ok }
+    end
+
+    describe "GET /#{locale}/directories/:id" do
+      subject(:action) { get "/#{locale}/directories/#{directory.id}" }
+
+      let(:directory) { directories.first }
+
+      before do
+        stub_geocoder_from_fixture!
+
+        create :coin_wallet, :bitcoin, walletable: directory
+        create :contact_way, :twitter, contactable: directory
+        create :delivery_zone, :department_75, deliverable: directory
+        create :weblink, weblinkable: directory
+
+        action
+      end
+
+      it { expect(response).to have_http_status :ok }
+    end
   end
 
   describe 'POST /directories' do
@@ -95,48 +100,5 @@ RSpec.describe 'Directories' do
         expect(flash[:notice]).to eq(I18n.t('directories.create.notice'))
       end
     end
-  end
-
-  describe 'GET /directories/:id' do
-    subject! { get "/directories/#{directory.id}" }
-
-    let(:directory) { directories.first }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /en/directories/:id' do
-    subject! { get "/en/directories/#{directory.id}" }
-
-    let(:directory) { directories.first }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /fr/annuaire/:id' do
-    subject(:action) { get "/fr/annuaire/#{directory.id}" }
-
-    let(:directory) { directories.first }
-
-    before do
-      stub_geocoder_from_fixture!
-
-      create :coin_wallet, :bitcoin, walletable: directory
-      create :contact_way, :twitter, contactable: directory
-      create :delivery_zone, :department_75, deliverable: directory
-      create :weblink, weblinkable: directory
-
-      action
-    end
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /es/anuario/:id' do
-    subject! { get "/es/anuario/#{directory.id}" }
-
-    let(:directory) { directories.first }
-
-    it { expect(response).to have_http_status :ok }
   end
 end

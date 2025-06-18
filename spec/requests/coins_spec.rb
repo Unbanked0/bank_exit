@@ -23,51 +23,21 @@ RSpec.describe 'Coins' do
     end
   end
 
-  describe 'GET /en/coins/:id' do
-    coin_ids.each do |coin|
-      context "when #{coin}" do
-        subject! { get "/en/coins/#{coin}" }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/coins/:id" do
+      coin_ids.each do |coin|
+        context "when #{coin}" do
+          subject! { get "/#{locale}/coins/#{coin}" }
 
-        it { expect(response).to have_http_status :ok }
+          it { expect(response).to have_http_status :ok }
+        end
       end
-    end
 
-    context 'when coin does not exist' do
-      subject! { get "/en/coins/#{invalid_coin_id}" }
+      context 'when coin does not exist' do
+        subject! { get "/#{locale}/coins/#{invalid_coin_id}" }
 
-      it { expect(response).to have_http_status :not_found }
-    end
-  end
-
-  describe 'GET /fr/coins/:id' do
-    coin_ids.each do |coin|
-      context "when #{coin}" do
-        subject! { get "/fr/coins/#{coin}" }
-
-        it { expect(response).to have_http_status :ok }
+        it { expect(response).to have_http_status :not_found }
       end
-    end
-
-    context 'when coin does not exist' do
-      subject! { get "/fr/coins/#{invalid_coin_id}" }
-
-      it { expect(response).to have_http_status :not_found }
-    end
-  end
-
-  describe 'GET /es/coins/:id' do
-    coin_ids.each do |coin|
-      context "when #{coin}" do
-        subject! { get "/es/coins/#{coin}" }
-
-        it { expect(response).to have_http_status :ok }
-      end
-    end
-
-    context 'when coin does not exist' do
-      subject! { get "/es/coins/#{invalid_coin_id}" }
-
-      it { expect(response).to have_http_status :not_found }
     end
   end
 end
