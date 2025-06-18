@@ -14,9 +14,9 @@ module Maps
 
     layout 'minimal'
 
-    # @route GET /fr/map/embed {locale: "fr"}
-    # @route GET /es/map/embed {locale: "es"}
-    # @route GET /en/map/embed {locale: "en"}
+    # @route GET /fr/map/embed {locale: "fr"} (maps_embed_fr)
+    # @route GET /es/map/embed {locale: "es"} (maps_embed_es)
+    # @route GET /en/map/embed {locale: "en"} (maps_embed_en)
     # @route GET /maps/embed
     def show
     end

@@ -36,7 +36,7 @@ class MerchantReportIssue < ApplicationService
 
       ---
 
-      - Merchant on Bank-Exit: #{merchant_url(@merchant)}
+      - Merchant on Bank-Exit: #{merchant_en_url(@merchant)}
       - Merchant on OpenStreetMap: #{@merchant.osm_link}
 
       *Note: this issue has been automatically opened from bank-exit website using the Github API.*

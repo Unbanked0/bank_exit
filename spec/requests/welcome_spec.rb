@@ -12,21 +12,11 @@ RSpec.describe 'Welcome' do
     it { expect(response).to have_http_status :ok }
   end
 
-  describe 'GET /en' do
-    subject! { get '/en' }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}" do
+      subject! { get "/#{locale}" }
 
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /fr' do
-    subject! { get '/fr' }
-
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /es' do
-    subject! { get '/es' }
-
-    it { expect(response).to have_http_status :ok }
+      it { expect(response).to have_http_status :ok }
+    end
   end
 end

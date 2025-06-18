@@ -28,69 +28,27 @@ RSpec.describe 'Merchants' do
     end
   end
 
-  describe 'GET /en/merchants/:id' do
-    context 'when merchant exists' do
-      subject(:action) { get "/en/merchants/#{merchant.identifier}" }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/merchants/:id" do
+      context 'when merchant exists' do
+        subject(:action) { get "/#{locale}/merchants/#{merchant.identifier}" }
 
-      before do
-        create_list :comment, 3, commentable: merchant
-        create :comment, :flagged
+        before do
+          create_list :comment, 3, commentable: merchant
+          create :comment, :flagged
 
-        action
+          action
+        end
+
+        it { expect(response).to have_http_status :ok }
       end
 
-      it { expect(response).to have_http_status :ok }
-    end
+      context 'when merchant does not exist' do
+        subject! { get "/#{locale}/merchants/#{invalid_merchant_id}" }
 
-    context 'when merchant does not exist' do
-      subject! { get "/en/merchants/#{invalid_merchant_id}" }
-
-      it { expect(response).to have_http_status :moved_permanently }
-      it { expect(response).to redirect_to maps_en_path }
-    end
-  end
-
-  describe 'GET /fr/commercants/:id' do
-    context 'when merchant exists' do
-      subject(:action) { get "/fr/commercants/#{merchant.identifier}" }
-
-      before do
-        create_list :comment, 3, commentable: merchant
-        create :comment, :flagged
-
-        action
+        it { expect(response).to have_http_status :moved_permanently }
+        it { expect(response).to redirect_to send("maps_#{locale}_path") }
       end
-
-      it { expect(response).to have_http_status :ok }
-    end
-
-    context 'when merchant does not exist' do
-      subject! { get "/fr/commercants/#{invalid_merchant_id}" }
-
-      it { expect(response).to have_http_status :moved_permanently }
-      it { expect(response).to redirect_to maps_fr_path }
-    end
-  end
-
-  describe 'GET /es/comerciantes/:id' do
-    context 'when merchant exists' do
-      subject(:action) { get "/es/comerciantes/#{merchant.identifier}" }
-
-      before do
-        create_list :comment, 3, commentable: merchant
-        create :comment, :flagged
-
-        action
-      end
-
-      it { expect(response).to have_http_status :ok }
-    end
-
-    context 'when merchant does not exist' do
-      subject! { get "/es/comerciantes/#{invalid_merchant_id}" }
-
-      it { expect(response).to have_http_status :moved_permanently }
-      it { expect(response).to redirect_to maps_es_path }
     end
   end
 

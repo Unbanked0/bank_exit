@@ -1,17 +1,4 @@
 fr:
   routes:
-    # keep it in english to be easily accessed and printed on flyer
     maps: map
-
-    merchants: commercants
-    faq: foire-aux-questions
-    risks: risques
-    media: medias
-    local_groups: groupes-locaux
-    projects: projets
-    collective: le-collectif
-    tutorials: tutoriels
-    contacts: contacts
     statistics: stats
-    glossaries: glossaire
-    directories: annuaire

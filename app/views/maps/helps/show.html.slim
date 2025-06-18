@@ -1,4 +1,4 @@
-- default_map_iframe_html = html_escape_once("<iframe src=\"#{map_embed_url}\" width=\"100%\" height=\"100%\"></iframe>")
+- default_map_iframe_html = html_escape_once("<iframe src=\"#{maps_embed_url}\" width=\"100%\" height=\"100%\"></iframe>")
 
 .space-y-6
   div
@@ -10,11 +10,11 @@
 
       .relative
         .panel.panel-base-200.overflow-x-auto.w-full
-          = map_embed_url
+          = maps_embed_url
 
         .absolute.top-1.right-1
           = render 'copy_to_clipboard',
-                  clipboard_value: map_embed_url,
+                  clipboard_value: maps_embed_url,
                   clipboard_success_text_value: nil,
                   title: t('.url_to_embed')
 
@@ -132,7 +132,7 @@
                     required: false,
                     collection: map_enabled_disabled_collection_values_for_select
 
-      iframe.w-full.lg:w-1/2.rounded-lg.h-96.lg:h-auto src=map_embed_path data-map--embed-generator-target="iframe"
+      iframe.w-full.lg:w-1/2.rounded-lg.h-96.lg:h-auto src=maps_embed_path data-map--embed-generator-target="iframe"
 
     div
       p.text-primary.mb-1 URL
@@ -140,12 +140,12 @@
       .relative
         .panel.panel-base-200.overflow-x-auto.w-full
           .w-full
-            = map_embed_url
+            = maps_embed_url
             mark data-map--embed-generator-target="queryRenderer"
 
         .absolute.top-1.right-1
           = render 'copy_to_clipboard',
-                  clipboard_value: map_embed_url,
+                  clipboard_value: maps_embed_url,
                   clipboard_success_text_value: nil,
                   title: t('.url_to_embed'),
                   extra_action: 'map--embed-generator:copyUrl@window->clipboard#setContent'
@@ -157,7 +157,7 @@
         .panel.panel-base-200.overflow-x-auto.w-full
           .w-full
             = html_escape_once('<iframe src="')
-            = map_embed_url
+            = maps_embed_url
             mark data-map--embed-generator-target="queryRenderer"
             = html_escape_once('" width="100%" height="100%"></iframe>')
 

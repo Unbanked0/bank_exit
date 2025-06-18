@@ -7,21 +7,17 @@ RSpec.describe 'Statistics' do
     create_list :directory, 3
   end
 
-  describe 'GET /en/stats' do
-    subject! { get '/en/stats' }
+  describe 'GET /stats' do
+    subject! { get '/stats' }
 
-    it { expect(response).to have_http_status :ok }
+    it { expect(response).to redirect_to statistics_en_path }
   end
 
-  describe 'GET /fr/stats' do
-    subject! { get '/fr/stats' }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/stats" do
+      subject! { get '/en/stats' }
 
-    it { expect(response).to have_http_status :ok }
-  end
-
-  describe 'GET /es/stats' do
-    subject! { get '/es/stats' }
-
-    it { expect(response).to have_http_status :ok }
+      it { expect(response).to have_http_status :ok }
+    end
   end
 end

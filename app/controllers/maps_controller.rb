@@ -15,10 +15,6 @@ class MapsController < ApplicationController
   # @route GET /fr/map {locale: "fr"} (maps_fr)
   # @route GET /es/map {locale: "es"} (maps_es)
   # @route GET /en/map {locale: "en"} (maps_en)
-  # @route GET /maps
-  # @route GET /fr/map {locale: "fr"} (map_fr)
-  # @route GET /es/map {locale: "es"} (map_es)
-  # @route GET /en/map {locale: "en"} (map_en)
   # @route GET /map
   # @route GET /fr/map/:zoom {locale: "fr"}
   # @route GET /es/map/:zoom {locale: "es"}

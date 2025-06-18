@@ -12,11 +12,6 @@ Rails.application.routes.draw do
   get 'manifest' => 'rails/pwa#manifest', as: :pwa_manifest
   get 'service-worker' => 'rails/pwa#service_worker', as: :pwa_service_worker
 
-  # Shortcut that redirect to explicit slug for SEO
-  # Short version is used to easily print a link to a flyer
-  # for example.
-  get '/compta', to: redirect('/tutoriels/accounting')
-
   draw :legacy
 
   namespace :maps do
@@ -63,18 +58,14 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :maps, only: %i[index] do
-      scope module: :maps do
-        collection do
-          resource :embed, only: :show, as: :map_embed
-        end
-      end
+    namespace :maps do
+      resource :embed, only: :show
     end
 
     constraints zoom: /\d+/,
                 lat: /[+-]?(\d*\.)?\d+/,
                 lon: /[+-]?(\d*\.)?\d+/ do
-      get '/map', to: 'maps#index'
+      get '/map', to: 'maps#index', as: :maps
       get '/map/:zoom', to: 'maps#index'
       get '/map/:zoom/:lat', to: 'maps#index'
       get '/map/:zoom/:lat/:lon', to: 'maps#index', as: :pretty_map

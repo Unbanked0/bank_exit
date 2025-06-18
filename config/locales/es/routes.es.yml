@@ -1,17 +1,4 @@
 es:
   routes:
-    # keep it in english to be easily accessed and printed on flyer
     maps: map
-
-    merchants: comerciantes
-    faq: preguntas-mas-frecuentes
-    risks: riesgos
-    media: medios
-    local_groups: grupos-locales
-    projects: proyectos
-    collective: el-colectivo
-    tutorials: tutoriales
-    contacts: contactos
     statistics: stats
-    glossaries: glosario
-    directories: anuario

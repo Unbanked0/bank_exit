@@ -2,8 +2,8 @@ module Merchants
   class PopupsController < ApplicationController
     before_action :set_merchant
 
-    # @route GET /fr/commercants/:merchant_id/popup {locale: "fr"} (merchant_popup_fr)
-    # @route GET /es/comerciantes/:merchant_id/popup {locale: "es"} (merchant_popup_es)
+    # @route GET /fr/merchants/:merchant_id/popup {locale: "fr"} (merchant_popup_fr)
+    # @route GET /es/merchants/:merchant_id/popup {locale: "es"} (merchant_popup_es)
     # @route GET /en/merchants/:merchant_id/popup {locale: "en"} (merchant_popup_en)
     # @route GET /merchants/:merchant_id/popup
     def show

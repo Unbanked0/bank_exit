@@ -4,17 +4,23 @@ RSpec.describe 'Tutorials::Reports' do
   let(:identifier) { 'session-messaging' }
   let(:invalid_tutorial_id) { 'fakeID' }
 
-  describe 'GET /en/tutorials/:id/report/new' do
-    context 'when tutorial exists' do
-      subject! { get "/en/tutorials/#{identifier}/report/new", as: :turbo_stream }
+  I18n.available_locales.each do |locale|
+    describe "GET /#{locale}/tutorials/:id/report/new" do
+      subject! do
+        get "/#{locale}/tutorials/#{identifier}/report/new", as: :turbo_stream
+      end
 
-      it { expect(response).to have_http_status :ok }
-    end
+      context 'when tutorial exists' do
+        let(:identifier) { 'session-messaging' }
 
-    context 'when tutorial does not exist' do
-      subject! { get "/en/tutorials/#{invalid_tutorial_id}/report/new", as: :turbo_stream }
+        it { expect(response).to have_http_status :ok }
+      end
 
-      it { expect(response).to have_http_status :not_found }
+      context 'when tutorial does not exist' do
+        let(:identifier) { invalid_tutorial_id }
+
+        it { expect(response).to have_http_status :not_found }
+      end
     end
   end
 

@@ -36,7 +36,7 @@ class TutorialReportIssue < ApplicationService
 
       ---
 
-      - Tutorial: #{tutorial_url(tutorial.identifier)}
+      - Tutorial: #{tutorial_en_url(tutorial.identifier)}
 
       *Note: this issue has been automatically opened from bank-exit website using the Github API.*
     MARKDOWN

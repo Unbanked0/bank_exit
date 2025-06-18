@@ -7,8 +7,8 @@ class DirectoriesController < ApplicationController
   add_breadcrumb proc { I18n.t('application.nav.menu.home') }, :root_path
   add_breadcrumb proc { Directory.model_name.human.capitalize }, :directories_referer_path
 
-  # @route GET /fr/annuaire {locale: "fr"} (directories_fr)
-  # @route GET /es/anuario {locale: "es"} (directories_es)
+  # @route GET /fr/directories {locale: "fr"} (directories_fr)
+  # @route GET /es/directories {locale: "es"} (directories_es)
   # @route GET /en/directories {locale: "en"} (directories_en)
   # @route GET /directories
   def index
@@ -36,8 +36,8 @@ class DirectoriesController < ApplicationController
     end
   end
 
-  # @route GET /fr/annuaire/new {locale: "fr"} (new_directory_fr)
-  # @route GET /es/anuario/new {locale: "es"} (new_directory_es)
+  # @route GET /fr/directories/new {locale: "fr"} (new_directory_fr)
+  # @route GET /es/directories/new {locale: "es"} (new_directory_es)
   # @route GET /en/directories/new {locale: "en"} (new_directory_en)
   # @route GET /directories/new
   def new
@@ -47,8 +47,8 @@ class DirectoriesController < ApplicationController
     @directory.build_address
   end
 
-  # @route POST /fr/annuaire {locale: "fr"} (directories_fr)
-  # @route POST /es/anuario {locale: "es"} (directories_es)
+  # @route POST /fr/directories {locale: "fr"} (directories_fr)
+  # @route POST /es/directories {locale: "es"} (directories_es)
   # @route POST /en/directories {locale: "en"} (directories_en)
   # @route POST /directories
   def create
@@ -69,8 +69,8 @@ class DirectoriesController < ApplicationController
     end
   end
 
-  # @route GET /fr/annuaire/:id {locale: "fr"} (directory_fr)
-  # @route GET /es/anuario/:id {locale: "es"} (directory_es)
+  # @route GET /fr/directories/:id {locale: "fr"} (directory_fr)
+  # @route GET /es/directories/:id {locale: "es"} (directory_es)
   # @route GET /en/directories/:id {locale: "en"} (directory_en)
   # @route GET /directories/:id
   def show
