@@ -1,0 +1,9 @@
+it:
+  continents:
+    EU: Europa
+    AF: Africa
+    NA: America del Nord
+    SA: America del Sud
+    AS: Asia
+    OC: Oceania
+    AN: Antartide

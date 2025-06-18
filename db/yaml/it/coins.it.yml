@@ -1,0 +1,55 @@
+---
+- identifier: monero
+  name: Monero
+  ticker: XMR
+  description:
+    - Un mezzo di scambio focalizzato sulla totale riservatezza, garantisce transazioni non tracciabili come il contante digitale. Protetto da Proof of Work (PoW) su un computer convenzionale, le autorità fiscali USA hanno offerto 620.000$ a chiunque riuscisse a violare la sua crittografia, senza successo.
+    - La sua forza risiede nella completa anonimato, a differenza dell’euro digitale, che sarà fortemente monitorato. Sebbene i sistemi bancari e governativi lo denigrino per timore, gli attacchi contro Monero lo hanno notevolmente rafforzato.
+    - Il suo prezzo è rimasto relativamente stabile dal 2022 al 2025 rispetto alla crescita di Bitcoin.
+  usage: Metodo di pagamento
+  links:
+    - https://getmonero.org/it
+    - https://monero.eco
+    - https://www.abcbourse.com/graphes/eod/XMRUSDu/lc9
+
+- identifier: june
+  name: June
+  ticker: Ğ1
+  description:
+    - Una criptovaluta inventata in Francia basata sulla Teoria Relativa della Moneta (TRM), che garantisce una creazione monetaria equa tra i suoi membri. Il suo vantaggio è il modello decentralizzato e centrato sull’umano grazie al Web of Trust (WoT), una rete unica al mondo.
+    - Sebbene altamente tracciabile, June non ha un cambio in euro ed è quindi molto indipendente e resiliente rispetto al sistema finanziario, radicato profondamente nella connessione locale ai mercati G regolari.
+  usage: Identità cittadina
+  links:
+    - https://monnaie-libre.fr
+    - https://forum.monnaie-libre.fr/c/rencontres/21
+    - https://carte.monnaie-libre.fr/?lat=46.240651955001695&lng=2.1972656250000004&zoom=5
+
+- identifier: bitcoin
+  name: Bitcoin
+  ticker: BTC
+  description:
+    - La prima criptovaluta decentralizzata, protetta da Proof of Work (PoW), Bitcoin è considerato oro digitale, e i suoi 15 anni di esistenza hanno dimostrato il suo potenziale come riserva di valore globale. Sebbene altamente tracciabile, la sua scarsità e indipendenza dalle banche lo rendono resistente a inflazione e furti.
+    - Con l’ingresso della finanza tradizionale in questo crypto-asset rivoluzionario, la sua volatilità tende a ridursi nel tempo. Il prezzo di Bitcoin ha storicamente mostrato una crescita impressionante di quasi +90%/anno in media, ogni anno negli ultimi 10 anni.
+  usage: Riserva di valore
+  links:
+    - https://bitcoin.org
+    - https://bitcoin.org/files/bitcoin-paper/bitcoin_it.pdf
+    - https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/
+
+- identifier: gold
+  name: Oro
+  description:
+    - Un rifugio sicuro ancestrale, l’oro ha storicamente protetto dall’inflazione e dalle crisi. A differenza di altre riserve di valore, è fisico e riconosciuto a livello mondiale senza dipendere da un sistema informatico, ma difficilmente praticabile per scambi regolari tra cittadini salvo in caso di interruzioni significative della normalità.
+  usage: Riserva di valore
+  links:
+    - https://www.bitgild.com/en
+    - https://celticgold.eu
+
+- identifier: silver
+  name: Argento
+  description:
+    - Mezzo di scambio in caso di crisi, più facile da considerare per scambi e acquisti regolari durante una crisi grazie alla sua densità di valore inferiore rispetto all’oro. Combina uso industriale e non tracciabilità, qualità che l’euro digitale non può offrire.
+  usage: Metodo di pagamento critico
+  links:
+    - https://www.bitgild.com/en
+    - https://celticgold.eu

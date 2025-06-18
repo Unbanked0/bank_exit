@@ -1,0 +1,181 @@
+it:
+  simple_form:
+    "yes": "Sì"
+    "no": "No"
+    required:
+      text: "obbligatorio"
+      mark: "*"
+    error_notification:
+      default_message: "Si prega di controllare i seguenti problemi:"
+
+    labels:
+      defaults:
+        theme: Tema
+        latitude: Latitudine
+        longitude: Longitudine
+        zoom: Zoom
+        gestureHandling: Gestione dei gesti
+        fitBounds: Adatta ai limiti
+        attribution: Attribuzione
+
+        query: Ricerca
+        category: Categoria
+        around_me: Consegna vicino alla mia posizione
+        city: Città
+        postcode: CAP
+        department: Dipartimento 🇫🇷
+        region: Regione 🇫🇷
+        country: Paese
+        world: Mondo
+
+      questions:
+        profile: Sono
+        level: Il mio livello
+        service: Voglio
+
+      map:
+        delivery: Con consegna a domicilio
+        no_kyc: Non richiedere <abbr title="Know Your Customer">KYC</abbr>
+        with_atms: Includi <abbr title="Automated Teller Machine">bancomat</abbr>
+        category:
+          all: Tutte le categorie
+          craft: Artigianato
+          catering: Ristorazione
+          store: Negozi
+          aesthetic: Igiene ed estetica
+          health: Salute
+          financial: Servizi finanziari
+          other: Altri
+
+      itinerary:
+        my_address: Il mio indirizzo
+        use_my_ip: Geolocalizzami tramite IP
+        detailed_steps: Mostrare i dettagli del percorso?
+
+      category:
+        other: Altra categoria (specificare)
+
+      tutorial_report:
+        title: Titolo
+        description: Descrizione
+
+      merchant_report:
+        description: Descrizione
+
+      comment:
+        affidavit: Dichiaro di aver avuto l’esperienza indicata con questo commerciante
+
+    placeholders:
+      defaults:
+        latitude: Latitudine predefinita
+        longitude: Longitudine predefinita
+        query: Cerca per nome o descrizione
+        city: Parigi o 75000
+        phone: 01 02 03 04 05
+        opening_hours: Dal lunedì al venerdì dalle 9:00 alle 18:00
+        email: mariorossi@example.com
+        website: "https://ilmiosito.com"
+
+      map:
+        search: Trova un'attività per nome, indirizzo o descrizione
+
+      itinerary:
+        my_address: Via Roma, 123 00100 Roma
+
+      merchant_proposal:
+        contact_session: Il tuo identificatore pubblico Session o URL
+        contact_signal: Il tuo identificatore pubblico Signal o URL
+        contact_matrix: Il tuo identificatore pubblico Matrix o URL
+        contact_jabber: Il tuo identificatore pubblico Jabber o URL
+        contact_telegram: Il tuo identificatore pubblico Telegram o URL
+        contact_facebook: Il tuo identificatore pubblico Facebook o URL
+        contact_instagram: Il tuo identificatore pubblico Instagram o URL
+        contact_twitter: Il tuo identificatore pubblico Twitter/X o URL
+        contact_youtube: Il tuo identificatore pubblico YouTube o URL
+        contact_tiktok: Il tuo identificatore pubblico TikTok o URL
+        contact_linkedin: Il tuo identificatore pubblico LinkedIn o URL
+        contact_tripadvisor: Il tuo identificatore pubblico Tripadvisor o URL
+        contact_odysee: Il tuo identificatore pubblico Odysee o URL
+        contact_crowdbunker: Il tuo identificatore pubblico Crowdbunker o URL
+        contact_francelibretv: Il tuo identificatore pubblico FranceLibre.tv o URL
+        delivery_zone: IT, Roma, UE, Mondo
+        proposition_from: mariorossi@example.com
+
+        street: Via Roma, 123
+        postcode: "00100"
+        city: Roma
+
+      tutorial_report:
+        title: Titolo chiaro e conciso dell’anomalia
+        description: Descrivi chiaramente l’anomalia o le anomalie riscontrate durante la lettura del tutorial.
+
+      merchant_report:
+        description: Descrizione dell’anomalia
+
+      comment:
+        content: Il tuo commento
+        pseudonym: Il tuo pseudonimo (facoltativo)
+
+      comment_report:
+        description: Spiega perché segnali questo commento
+
+      address:
+        label: Indirizzo, dipartimento, regione, ...
+
+      weblinks:
+        url: "https://sito.com/la/mia/pagina"
+        title: Titolo della pagina web
+
+    prompts:
+      questions:
+        profile: Scegli il tuo profilo
+        level: Scegli il tuo livello
+        service: Seleziona il servizio
+
+      merchant_proposal:
+        category: Seleziona una categoria commerciale
+        country: Seleziona un paese
+
+      comment:
+        rating: Seleziona una valutazione
+
+      comment_report:
+        flag_reason: Seleziona il motivo della segnalazione
+
+      directory:
+        category: Seleziona una categoria
+
+    hints:
+      defaults:
+        around_me: Risultati determinati dal tuo indirizzo IP
+
+      merchant_proposal:
+        ask_kyc: Verifica se il commerciante richiede l'identificazione per accettare pagamenti
+        proposition_from: Inserisci la tua email se desideri essere informato sullo stato di elaborazione di questo commerciante
+
+      itinerary:
+        my_address: La tua posizione non è memorizzata sul server
+        use_my_ip: La geolocalizzazione IP può essere imprecisa, specialmente se utilizzi una VPN
+        detailed_steps: Se selezionato, verranno mostrati i passaggi per raggiungere la destinazione
+
+      directory:
+        banner: Banner di sfondo
+        address:
+          label: Lascia vuoto o inserisci un indirizzo approssimativo per proteggere l’anonimato del commerciante.<br />Questa informazione viene utilizzata dalla funzione "Intorno a me" e influenza la rilevanza dei risultati geolocalizzati in base a latitudine e longitudine.
+
+      weblinks:
+        title: Lascia vuoto per mostrare l’URL oppure specifica un titolo leggibile
+
+    include_blanks:
+      defaults:
+        continent: Tutti i continenti
+        country: Tutti i paesi
+        region: Tutte le regioni
+        department: Tutti i dipartimenti
+        category: 🔹 Tutte le categorie
+        zoom: Zoom predefinito
+        theme: Tema predefinito
+        gestureHandling: Valore predefinito
+        fitBounds: Valore predefinito
+        clusters: Valore predefinito
+        attribution: Valore predefinito

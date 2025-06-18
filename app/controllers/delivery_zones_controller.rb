@@ -4,6 +4,7 @@ class DeliveryZonesController < ApplicationController
   # @route GET /fr/delivery_zones/mode_values {locale: "fr"} (mode_values_delivery_zones_fr)
   # @route GET /es/delivery_zones/mode_values {locale: "es"} (mode_values_delivery_zones_es)
   # @route GET /de/delivery_zones/mode_values {locale: "de"} (mode_values_delivery_zones_de)
+  # @route GET /it/delivery_zones/mode_values {locale: "it"} (mode_values_delivery_zones_it)
   # @route GET /en/delivery_zones/mode_values {locale: "en"} (mode_values_delivery_zones_en)
   # @route GET /delivery_zones/mode_values
   def mode_values

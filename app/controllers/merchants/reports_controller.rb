@@ -5,6 +5,7 @@ module Merchants
     # @route GET /fr/merchants/:merchant_id/report/new {locale: "fr"} (new_merchant_report_fr)
     # @route GET /es/merchants/:merchant_id/report/new {locale: "es"} (new_merchant_report_es)
     # @route GET /de/merchants/:merchant_id/report/new {locale: "de"} (new_merchant_report_de)
+    # @route GET /it/merchants/:merchant_id/report/new {locale: "it"} (new_merchant_report_it)
     # @route GET /en/merchants/:merchant_id/report/new {locale: "en"} (new_merchant_report_en)
     # @route GET /merchants/:merchant_id/report/new
     def new
@@ -14,6 +15,7 @@ module Merchants
     # @route POST /fr/merchants/:merchant_id/report {locale: "fr"} (merchant_report_fr)
     # @route POST /es/merchants/:merchant_id/report {locale: "es"} (merchant_report_es)
     # @route POST /de/merchants/:merchant_id/report {locale: "de"} (merchant_report_de)
+    # @route POST /it/merchants/:merchant_id/report {locale: "it"} (merchant_report_it)
     # @route POST /en/merchants/:merchant_id/report {locale: "en"} (merchant_report_en)
     # @route POST /merchants/:merchant_id/report
     def create

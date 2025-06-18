@@ -9,6 +9,7 @@ class TutorialsController < ApplicationController
   # @route GET /fr/tutorials {locale: "fr"} (tutorials_fr)
   # @route GET /es/tutorials {locale: "es"} (tutorials_es)
   # @route GET /de/tutorials {locale: "de"} (tutorials_de)
+  # @route GET /it/tutorials {locale: "it"} (tutorials_it)
   # @route GET /en/tutorials {locale: "en"} (tutorials_en)
   # @route GET /tutorials
   def index
@@ -21,6 +22,7 @@ class TutorialsController < ApplicationController
   # @route GET /fr/tutorials/:id {locale: "fr"} (tutorial_fr)
   # @route GET /es/tutorials/:id {locale: "es"} (tutorial_es)
   # @route GET /de/tutorials/:id {locale: "de"} (tutorial_de)
+  # @route GET /it/tutorials/:id {locale: "it"} (tutorial_it)
   # @route GET /en/tutorials/:id {locale: "en"} (tutorial_en)
   # @route GET /tutorials/:id
   def show

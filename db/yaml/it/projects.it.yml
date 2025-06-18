@@ -1,0 +1,64 @@
+---
+- route: maps#index
+  image: map_monero.jpg
+  title: Mappa
+  description: Visualizza e filtra le attività commerciali Bitcoin e Monero in tutto il mondo
+  external: false
+  identifier: map
+
+- route: blogs#show
+  identifier: flyer
+  image: flyer.jpg
+  title: Volantino
+  description: Monero e Bitcoin per privati e professionisti
+
+- route: projects#show
+  image: epicerie_monero.png
+  website_screenshot: not_iframe/grocery.jpg
+  title: Alimentari Libero
+  description: Acquista prodotti di qualità in Monero
+  external: false
+  iframe_url: https://monero-map.org/epicerie
+  github_url: https://github.com/Unbanked0/Freedom_Grocers
+  identifier: grocery
+
+- route: projects#show
+  image: cheque_monero.png
+  website_screenshot: not_iframe/cheque.jpg
+  title: Assegni
+  description: Genera assegni stampabili per pagare in Bitcoin e Monero
+  external: false
+  iframe_url: https://monero-map.org/cheque
+  github_url: https://github.com/Unbanked0/Monero_Cheque
+  identifier: cheque
+  figure:
+    video:
+      url: https://youtube.com/embed/mK3AaPkwxSk
+      title: "MONERO CRYPTO CHEQUE - Accelerare l’adozione, tangibile, senza telefono #MoneroCheque"
+      created_at: "2024-10-26"
+
+- route: projects#show
+  image: sticker_monero.png
+  website_screenshot: not_iframe/sticker.jpg
+  title: Adesivi
+  description: Genera banner per donazioni o pagamenti in Bitcoin e Monero
+  external: false
+  iframe_url: https://monero-map.org/crypto_box
+  github_url: https://github.com/Unbanked0/Crypto_Box_sticker
+  identifier: sticker
+
+- route: local_groups#index
+  image: local_groups.jpg
+  title: Gruppi locali
+  description:
+    Trova i diversi gruppi Bank Exit in Francia (Parigi, Rennes, Lille,
+    Lione, ...)
+  external: false
+  identifier: local_groups
+
+- route: tutorials#show
+  image: accounting.jpg
+  title: Contabilità aziendale
+  description: Gestisci facilmente la contabilità della tua attività con un file Excel che automatizza il calcolo dei tuoi incassi in Monero e Bitcoin
+  external: false
+  identifier: accounting

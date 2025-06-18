@@ -4,6 +4,7 @@ class MerchantsController < ApplicationController
   # @route GET /fr/merchants/:id {locale: "fr"} (merchant_fr)
   # @route GET /es/merchants/:id {locale: "es"} (merchant_es)
   # @route GET /de/merchants/:id {locale: "de"} (merchant_de)
+  # @route GET /it/merchants/:id {locale: "it"} (merchant_it)
   # @route GET /en/merchants/:id {locale: "en"} (merchant_en)
   # @route GET /merchants/:id
   def show
@@ -18,6 +19,7 @@ class MerchantsController < ApplicationController
   # @route POST /fr/merchants/refresh {locale: "fr"} (refresh_merchants_fr)
   # @route POST /es/merchants/refresh {locale: "es"} (refresh_merchants_es)
   # @route POST /de/merchants/refresh {locale: "de"} (refresh_merchants_de)
+  # @route POST /it/merchants/refresh {locale: "it"} (refresh_merchants_it)
   # @route POST /en/merchants/refresh {locale: "en"} (refresh_merchants_en)
   # @route POST /merchants/refresh
   def refresh

@@ -5,6 +5,7 @@ module Comments
     # @route GET /fr/comments/:comment_id/report/new {locale: "fr"} (new_comment_report_fr)
     # @route GET /es/comments/:comment_id/report/new {locale: "es"} (new_comment_report_es)
     # @route GET /de/comments/:comment_id/report/new {locale: "de"} (new_comment_report_de)
+    # @route GET /it/comments/:comment_id/report/new {locale: "it"} (new_comment_report_it)
     # @route GET /en/comments/:comment_id/report/new {locale: "en"} (new_comment_report_en)
     # @route GET /comments/:comment_id/report/new
     def new
@@ -16,6 +17,7 @@ module Comments
     # @route POST /fr/comments/:comment_id/report {locale: "fr"} (comment_report_fr)
     # @route POST /es/comments/:comment_id/report {locale: "es"} (comment_report_es)
     # @route POST /de/comments/:comment_id/report {locale: "de"} (comment_report_de)
+    # @route POST /it/comments/:comment_id/report {locale: "it"} (comment_report_it)
     # @route POST /en/comments/:comment_id/report {locale: "en"} (comment_report_en)
     # @route POST /comments/:comment_id/report
     def create
