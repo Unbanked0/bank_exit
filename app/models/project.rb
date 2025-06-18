@@ -15,7 +15,6 @@ class Project
   attribute :url, :string
   attribute :route, :string
   attribute :external, :boolean
-  attribute :missing_content_for_locale, :boolean, default: false
 
   attr_accessor :model
   attr_writer :figure

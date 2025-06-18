@@ -12,7 +12,6 @@ class Article
   attribute :short_description, :string
   attribute :created_at, :date
   attribute :highlight, :boolean, default: false
-  attribute :missing_content_for_locale, :boolean, default: false
 
   attr_accessor :model
   attr_writer :content, :figure, :useful_links, :url

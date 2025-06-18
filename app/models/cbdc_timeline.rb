@@ -6,7 +6,5 @@ class CBDCTimeline
   attribute :started_on, :date
   attribute :title, :string
 
-  attribute :missing_content_for_locale, :boolean, default: false
-
   attr_accessor :description
 end

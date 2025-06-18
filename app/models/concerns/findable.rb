@@ -2,6 +2,8 @@ module Findable
   extend ActiveSupport::Concern
 
   included do
+    attribute :missing_content_for_locale, :boolean, default: false
+
     def self.all(decorate: false)
       folder = name.underscore.pluralize.downcase
 
