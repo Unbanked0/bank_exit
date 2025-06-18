@@ -58,9 +58,7 @@ Rails.application.routes.draw do
       end
     end
 
-    namespace :maps do
-      resource :embed, only: :show
-    end
+    get '/map/embed', to: 'maps/embeds#show', as: :maps_embed
 
     constraints zoom: /\d+/,
                 lat: /[+-]?(\d*\.)?\d+/,
@@ -111,7 +109,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resource :statistics, only: :show
+    resource :statistics, only: :show, path: 'stats'
     resource :glossaries, only: :show
   end
 
