@@ -4,7 +4,7 @@
       | Fiche admin
 
   li
-    = link_to merchant_path(merchant), target: :_blank do
+    = link_to merchant_path(merchant, debug: merchant.deleted? ? 'true' : nil), target: :_blank do
       | Commerçant sur Bank-Exit
 
 

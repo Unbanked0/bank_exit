@@ -23,6 +23,11 @@
                   data: { turbo_stream: true } do
           = lucide_icon 'bug'
 
+    - if @merchant.deleted?
+      p.panel.panel-error.panel-sm.mx-3.mt-3
+        = lucide_icon 'info', class: 'inline-flex w-4 h-4'
+        span=< t('.soft_deleted_warning')
+
     article.p-3.space-y-6 data-controller="merchants"
       header.flex.flex-col.items-center.space-y-3
         = merchant_icon_svg(@merchant.icon)

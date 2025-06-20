@@ -35,6 +35,11 @@ class MerchantsController < ApplicationController
 
   def set_merchant
     @merchant = Merchant.find_by!(identifier: merchant_id).decorate
+
+    if @merchant.deleted? && !debug_mode?
+      flash[:alert] = t('.alert')
+      redirect_to maps_path, status: :found
+    end
   rescue ActiveRecord::RecordNotFound
     # Indicates to search engines that some already referenced
     # merchants URLs have been removed by using a permanent
@@ -44,5 +49,9 @@ class MerchantsController < ApplicationController
 
   def merchant_id
     params[:id].split('-').first
+  end
+
+  def debug_mode?
+    params[:debug] == 'true'
   end
 end

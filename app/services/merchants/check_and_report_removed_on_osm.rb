@@ -55,7 +55,7 @@ module Merchants
 
     def merchants_list
       @merchants_list ||= MerchantDecorator.wrap(merchants).map do |merchant|
-        "- [ ] **#{merchant.name}** (##{merchant.identifier}): [On Bank-Exit](#{merchant_url(merchant)}) / [On OpenStreetMap](#{merchant.osm_link})"
+        "- [ ] **#{merchant.name}** (##{merchant.identifier}): [On Bank-Exit](#{merchant_url(merchant, debug: 'true')}) / [On OpenStreetMap](#{merchant.osm_link})"
       end
     end
 

@@ -259,6 +259,8 @@ fr:
       itinerary_title: Itinéraire
       last_survey_on: Dernière actualisation le %{date}
       view_on_osm: Ouvrir sur OpenStreetMap
+      soft_deleted_warning: Ce commerçant a été marqué comme pré-supprimé. Il ne ressortira plus dans les résultats de recherche tant qu'il n'aura pas été réactivé ou supprimé définitivement.
+      alert: Ce commerçant n'est plus accessible car il a été marqué comme pré-supprimé.
 
       share_by_email:
         subject: "[Sortie de Banque] Commerçant %{name}"

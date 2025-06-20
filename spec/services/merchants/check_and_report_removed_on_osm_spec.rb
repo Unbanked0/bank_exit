@@ -16,7 +16,7 @@ RSpec.describe Merchants::CheckAndReportRemovedOnOSM do
     before do
       stub_request(:patch, /api.github.com/)
         .with(body: {
-          body: "Some merchants seems to have been removed on OpenStreetMap but are still present in Bank-Exit.org website.\nPlease check the relevance of the information below:\n\n- [ ] **John** (#1234ABCD): [On Bank-Exit](http://example.test/en/merchants/1234ABCD-john) / [On OpenStreetMap](https://www.openstreetmap.org/node/1234ABCD)\n\n---\n\n*Note: this issue has been automatically updated from bank-exit website using the Github API.*\n"
+          body: "Some merchants seems to have been removed on OpenStreetMap but are still present in Bank-Exit.org website.\nPlease check the relevance of the information below:\n\n- [ ] **John** (#1234ABCD): [On Bank-Exit](http://example.test/en/merchants/1234ABCD-john?debug=true) / [On OpenStreetMap](https://www.openstreetmap.org/node/1234ABCD)\n\n---\n\n*Note: this issue has been automatically updated from bank-exit website using the Github API.*\n"
         }.to_json)
         .to_return_json(status: 200)
 

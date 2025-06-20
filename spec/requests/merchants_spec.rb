@@ -26,6 +26,28 @@ RSpec.describe 'Merchants' do
       it { expect(response).to have_http_status :moved_permanently }
       it { expect(response).to redirect_to maps_en_path }
     end
+
+    describe '[pre-deleted]' do
+      before do
+        merchant.update(deleted_at: 1.hour.ago)
+      end
+
+      context 'when debug flag is true' do
+        subject! do
+          get "/merchants/#{merchant.identifier}", params: { debug: 'true' }
+        end
+
+        it { expect(response).to have_http_status :ok }
+      end
+
+      context 'when debug flag is missing' do
+        subject! { get "/merchants/#{merchant.identifier}" }
+
+        it { expect(response).to have_http_status :found }
+        it { expect(response).to redirect_to maps_en_path }
+        it { expect(flash[:alert]).to eq I18n.t('merchants.show.alert', locale: :en) }
+      end
+    end
   end
 
   I18n.available_locales.each do |locale|
@@ -48,6 +70,27 @@ RSpec.describe 'Merchants' do
 
         it { expect(response).to have_http_status :moved_permanently }
         it { expect(response).to redirect_to send("maps_#{locale}_path") }
+      end
+
+      describe '[pre-deleted]' do
+        before do
+          merchant.update(deleted_at: 1.hour.ago)
+        end
+
+        context 'when debug flag is true' do
+          subject! do
+            get "/#{locale}/merchants/#{merchant.identifier}", params: { debug: 'true' }
+          end
+
+          it { expect(response).to have_http_status :ok }
+        end
+
+        context 'when debug flag is missing' do
+          subject! { get "/#{locale}/merchants/#{merchant.identifier}" }
+
+          it { expect(response).to have_http_status :found }
+          it { expect(response).to redirect_to send("maps_#{locale}_path") }
+        end
       end
     end
   end
