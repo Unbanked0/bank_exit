@@ -17,7 +17,7 @@ class OpeningHoursParser < ApplicationService
       days = raw_days&.split('-') # Mo-Fr
       hours_ranges = raw_hours&.split(',') # 10:00-14:00,15:00-19:00
 
-      days_str = if days.count > 1
+      days_str = if days.many?
                    days.map do |day|
                      days_by_prefix(day)
                    end.join(" #{I18n.t('to')} ")
@@ -34,7 +34,7 @@ class OpeningHoursParser < ApplicationService
           hours_str << I18n.t('to') if index.zero?
         end
 
-        hours_str << I18n.t('and') if range_index.zero? && hours_ranges.count > 1
+        hours_str << I18n.t('and') if range_index.zero? && hours_ranges.many?
       end
 
       "#{days_str} #{hours_str.join(' ')}"
