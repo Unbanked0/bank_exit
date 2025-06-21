@@ -105,7 +105,7 @@ article
               - elsif contact_way.session? || contact_way.signal?
                 = contact_way.value
               - else
-                = link_to contact_way.clean_url.truncate(50), contact_way.value, target: :_blank
+                = link_to clean_url(contact_way.value).truncate(50), contact_way.value, target: :_blank
 
     - if weblinks.any?
       div
@@ -117,11 +117,11 @@ article
               - weblinks.each do |weblink|
                 li
                   = link_to weblink.url, target: :_blank do
-                    = weblink.title.presence || weblink.clean_url
+                    = weblink.title.presence || clean_url(weblink.url)
           - else
             - weblink = weblinks.first
             = link_to weblink.url, target: :_blank do
-              = weblink.title.presence || weblink.clean_url
+              = weblink.title.presence || clean_url(weblink.url)
 
     .italic
       p title=l(@directory.created_at)

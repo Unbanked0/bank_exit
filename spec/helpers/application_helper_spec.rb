@@ -21,4 +21,44 @@ RSpec.describe ApplicationHelper do
       it { is_expected.to eq 'Fake' }
     end
   end
+
+  describe '#clean_url' do
+    subject { clean_url(url) }
+
+    context 'when URL starts with http://' do
+      let(:url) { 'http://foobar.test' }
+
+      it { is_expected.to eq 'foobar.test' }
+    end
+
+    context 'when URL starts with https://' do
+      let(:url) { 'https://foobar.test' }
+
+      it { is_expected.to eq 'foobar.test' }
+    end
+
+    context 'when URL starts with www.' do
+      let(:url) { 'www.foobar.test' }
+
+      it { is_expected.to eq 'foobar.test' }
+    end
+
+    context 'when URL starts with http://www.' do
+      let(:url) { 'http://www.foobar.test' }
+
+      it { is_expected.to eq 'foobar.test' }
+    end
+
+    context 'when URL starts with https://www.' do
+      let(:url) { 'https://www.foobar.test' }
+
+      it { is_expected.to eq 'foobar.test' }
+    end
+
+    context 'when URL ends with /' do
+      let(:url) { 'https://www.foobar.test/' }
+
+      it { is_expected.to eq 'foobar.test' }
+    end
+  end
 end
