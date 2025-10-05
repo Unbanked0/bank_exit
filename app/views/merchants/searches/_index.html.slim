@@ -32,6 +32,10 @@ ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scr
                 span
                   = highlight(merchant.name, params[:query])
 
+                - if merchant.category.present?
+                  span.badge.badge-xs.badge-secondary
+                    = merchant.friendly_category
+
                 - outdated_level = merchant.outdated_level
                 - icon_class = 'w-3.5 h-3.5'
 

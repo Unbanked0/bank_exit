@@ -16,7 +16,9 @@ RSpec.describe ExtractCategory do
         sport: 'sport',
         shop: 'shop',
         tourism: 'tourism',
-        leisure: 'leisure'
+        leisure: 'leisure',
+        aeroway: 'aeroway',
+        attraction: 'attraction'
       }.as_json
     end
 
@@ -145,6 +147,43 @@ RSpec.describe ExtractCategory do
       end
 
       it { is_expected.to eq 'leisure' }
+    end
+
+    context 'when [aeroway] is present' do
+      before do
+        properties.delete('healthcare:speciality')
+        properties.delete('healthcare')
+        properties.delete('amenity')
+        properties.delete('amenity_1')
+        properties.delete('amenity_2')
+        properties.delete('craft')
+        properties.delete('office')
+        properties.delete('sport')
+        properties.delete('shop')
+        properties.delete('tourism')
+        properties.delete('leisure')
+      end
+
+      it { is_expected.to eq 'aeroway' }
+    end
+
+    context 'when [attraction] is present' do
+      before do
+        properties.delete('healthcare:speciality')
+        properties.delete('healthcare')
+        properties.delete('amenity')
+        properties.delete('amenity_1')
+        properties.delete('amenity_2')
+        properties.delete('craft')
+        properties.delete('office')
+        properties.delete('sport')
+        properties.delete('shop')
+        properties.delete('tourism')
+        properties.delete('leisure')
+        properties.delete('aeroway')
+      end
+
+      it { is_expected.to eq 'theme_park' }
     end
   end
 
@@ -380,5 +419,29 @@ RSpec.describe ExtractCategory do
     let(:properties) { { amenity: 'paint' }.as_json }
 
     it { is_expected.to eq 'painter' }
+  end
+
+  context 'when category is :skateboard' do
+    let(:properties) { { amenity: 'skateboard' }.as_json }
+
+    it { is_expected.to eq 'skate_shop' }
+  end
+
+  context 'when category is :skate' do
+    let(:properties) { { amenity: 'skate' }.as_json }
+
+    it { is_expected.to eq 'skate_shop' }
+  end
+
+  context 'when category is :ski' do
+    let(:properties) { { amenity: 'ski' }.as_json }
+
+    it { is_expected.to eq 'skiing' }
+  end
+
+  context 'when category is :billard' do
+    let(:properties) { { amenity: 'billard' }.as_json }
+
+    it { is_expected.to eq 'billiards' }
   end
 end

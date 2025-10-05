@@ -16,7 +16,9 @@ class ExtractCategory < ApplicationService
                properties['sport'].presence ||
                properties['shop'].presence ||
                properties['tourism'].presence ||
-               properties['leisure'].presence
+               properties['leisure'].presence ||
+               properties['aeroway'].presence ||
+               properties['attraction'].presence
 
     return if category.blank?
 
@@ -58,6 +60,9 @@ class ExtractCategory < ApplicationService
     when 'stickerei' then 'embroiderer'
     when 'cosmetic_skincare' then 'cosmetic'
     when 'paint' then 'painter'
+    when 'skateboard', 'skate' then 'skate_shop'
+    when 'ski' then 'skiing'
+    when 'billard' then 'billiards'
     else
       category
     end
