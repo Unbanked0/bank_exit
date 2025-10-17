@@ -26,12 +26,10 @@
       p.mt-1= t('.comments_no_moderation')
 
   .space-y-3
-    == pagy_nav(pagy) if pagy.count > pagy.limit
-
     #comments.space-y-2
       = render comments if comments.any?
 
-    == pagy_nav(pagy) if pagy.count > pagy.limit
+    = render 'pagination', pagy: pagy
 
   - if comments.empty?
     #empty_comments.alert.alert-success.alert-sm

@@ -67,11 +67,12 @@ class MapsController < PublicController
       )
     end
 
-    @pagy, page_ids = pagy_array(
-      merchant_ids.ids, params: ->(params) { params.compact_blank.merge!(pagy: true) }
+    @pagy, page_ids = pagy(
+      :offset, merchant_ids.ids,
+      querify: ->(q) { q.merge!(pagy: true) }
     )
 
-    merchants = Merchant.where(id: page_ids).in_order_of(:id, page_ids).includes(:logo_attachment)
+    merchants = Merchant.where(id: page_ids).in_order_of(:id, page_ids || []).includes(:logo_attachment)
 
     variant = session[:merchants_display].to_sym
 

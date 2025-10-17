@@ -21,7 +21,7 @@ module API
     end
 
     def per_page
-      per <= 0 ? Pagy::DEFAULT[:limit] : per
+      per <= 0 ? Pagy::OPTIONS[:limit] : per
     end
 
     def with_comments?

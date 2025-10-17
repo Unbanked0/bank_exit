@@ -17,7 +17,7 @@ module Admin
       comments = comments.flagged if show_flagged?
       comments = CommentDecorator.wrap(comments)
 
-      @pagy, @comments = pagy_array(comments)
+      @pagy, @comments = pagy(:offset, comments)
     end
 
     # @route PATCH /fr/admin/comments/:id {locale: "fr"} (admin_comment_fr)

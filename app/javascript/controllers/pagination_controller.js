@@ -2,14 +2,21 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["pagyTop"];
+  static values = {
+    keyboardEnabled: { type: Boolean, default: false },
+  };
 
   connect() {
-    this._onKeydown = this.#onKeydown.bind(this);
-    document.addEventListener("keydown", this._onKeydown);
+    if (this.keyboardEnabledValue) {
+      this._onKeydown = this.#onKeydown.bind(this);
+      document.addEventListener("keydown", this._onKeydown);
+    }
   }
 
   disconnect() {
-    document.removeEventListener("keydown", this._onKeydown);
+    if (this.keyboardEnabledValue) {
+      document.removeEventListener("keydown", this._onKeydown);
+    }
   }
 
   #onKeydown(e) {
@@ -36,7 +43,7 @@ export default class extends Controller {
 
     if (number == "<" || number == ">") {
       const currentNumber = document.querySelector(
-        'a[role="link"].current',
+        'a[role="link"][aria-current="page"]',
       ).text;
 
       if (number == "<") {
@@ -49,9 +56,7 @@ export default class extends Controller {
     current.searchParams.set("page", number);
     window.history.pushState("id", "", current);
 
-    if (this.hasPagyTopTarget) {
-      this.#scrollToTopResults();
-    }
+    this.#scrollToTopResults();
   }
 
   #prevPageHandler(_e) {
@@ -75,6 +80,6 @@ export default class extends Controller {
   }
 
   #scrollToTopResults() {
-    this.pagyTopTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+    this.element.parentNode.scrollIntoView();
   }
 }

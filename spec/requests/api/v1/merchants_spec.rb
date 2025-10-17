@@ -73,7 +73,7 @@ RSpec.describe 'API::V1::Merchants' do
           expect(merchant['attributes']).to include(:id)
 
           expect(json['meta']).to include('current_page', 'items_count', 'total_pages', 'per_page')
-          expect(json['links']).to include('first', 'last', 'prev', 'next')
+          expect(json['links']).to include('first', 'last')
         end
       end
 

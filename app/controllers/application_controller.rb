@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   prepend ActionPolicy::SimpleDelegator
   include HttpAuthConcern if Rails.env.staging?
-  include Pagy::Backend
+  include Pagy::Method
 
   rate_limit to: 100, within: 1.minute, by: -> { encrypted_ip }
 

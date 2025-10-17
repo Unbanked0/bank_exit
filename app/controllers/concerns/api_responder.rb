@@ -2,7 +2,7 @@ module APIResponder
   extend ActiveSupport::Concern
 
   included do
-    include Pagy::Backend
+    include Pagy::Method
   end
 
   def render_collection(collection, pagy:, blueprint: nil, type: nil, **)
@@ -16,7 +16,7 @@ module APIResponder
     render json: {
       data: collection.map { |record| serialize_resource(record, blueprint, type: type, **) },
       meta: pagination_meta(pagy),
-      links: pagy_jsonapi_links(pagy, absolute: true)
+      links: pagy.urls_hash(absolute: true)
     }
   end
 
@@ -47,8 +47,8 @@ module APIResponder
   def pagination_meta(pagy)
     {
       current_page: pagy.page,
-      total_pages: pagy.pages,
-      per_page: pagy.vars[:limit],
+      total_pages: pagy.last,
+      per_page: pagy.limit,
       items_count: pagy.count
     }
   end

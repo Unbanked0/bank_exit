@@ -230,7 +230,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.3)
+    json (2.19.4)
     json-schema (6.2.0)
       addressable (~> 2.8)
       bigdecimal (>= 3.1, < 5)
@@ -364,7 +364,10 @@ GEM
       version_gem (~> 1.1, >= 1.1.9)
     osrm_text_instructions (0.1.1)
     ostruct (0.6.3)
-    pagy (9.4.0)
+    pagy (43.5.2)
+      json
+      uri
+      yaml
     parallel (1.28.0)
     parser (3.3.11.1)
       ast (~> 2.4.1)
@@ -631,6 +634,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yaml (0.4.0)
     zeitwerk (2.7.5)
 
 PLATFORMS
@@ -691,7 +695,7 @@ DEPENDENCIES
   nostr_ruby
   osrm_text_instructions
   ostruct
-  pagy (~> 9)
+  pagy
   positioning
   pretender
   propshaft

@@ -1,7 +1,4 @@
-.space-y-3 data-controller="pagination"
-  == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true" data-action="click->pagination#addPageToURL" data-pagination-target="pagyTop"') if pagy.count > pagy.limit
-
+.space-y-3.scroll-mt-2
   = render merchants
 
-  - if pagy.count > pagy.limit
-    == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true" data-action="click->pagination#addPageToURL"')
+  = render 'pagination', pagy: pagy

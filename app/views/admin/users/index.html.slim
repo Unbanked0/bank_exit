@@ -6,8 +6,6 @@
     = add_link_to new_admin_user_path, hotkey: 'a'
 
 section.space-y-3
-  == pagy_nav(@pagy) if @pagy.count > @pagy.limit
-
   .table-wrapper
     table.table.table-zebra
       thead
@@ -20,4 +18,4 @@ section.space-y-3
       tbody
         = render @users
 
-  == pagy_nav(@pagy) if @pagy.count > @pagy.limit
+  = render 'pagination', pagy: @pagy
