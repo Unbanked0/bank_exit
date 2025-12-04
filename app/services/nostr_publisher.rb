@@ -1,9 +1,10 @@
 class NostrPublisher < ApplicationService
   attr_reader :merchant_sync, :identifier
 
-  def initialize(merchant_sync, identifier:)
+  def initialize(merchant_sync, identifier:, relays: [])
     @merchant_sync = merchant_sync
     @identifier = identifier
+    @relays = relays
     @responses = Set.new
   end
 
@@ -140,7 +141,8 @@ class NostrPublisher < ApplicationService
   end
 
   def relays
-    ENV.fetch('NOSTR_RELAYS_URLS', nil)&.split(';')
+    @relays.presence ||
+      ENV.fetch('NOSTR_RELAYS_URLS', nil)&.split(';')
   end
 
   def original_bank_exit_pubkey

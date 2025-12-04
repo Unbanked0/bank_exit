@@ -3,13 +3,17 @@ require 'rails_helper'
 RSpec.describe NostrPublisher do
   let(:identifier) { 'foobar-123' }
   let(:merchant_sync) { create :merchant_sync }
+  let(:relays) { [] }
 
   before { enable_feature :nostr }
 
   describe '#call' do
     subject(:call) do
-      described_class
-        .call(merchant_sync, identifier: identifier)
+      described_class.call(
+        merchant_sync,
+        identifier: identifier,
+        relays: relays
+      )
     end
 
     let(:client) { instance_double(Nostr::Client) }
@@ -45,7 +49,32 @@ RSpec.describe NostrPublisher do
         stub_env('NOSTR_RELAYS_URLS', nil)
       end
 
-      it { expect { call }.to raise_error(NostrErrors::MissingRelayUrl) }
+      context 'when no relays are provided' do
+        it { expect { call }.to raise_error(NostrErrors::MissingRelayUrl) }
+      end
+
+      context 'when manual relays are provided' do
+        let(:relays) { ['wss://foobar.test', 'wss://lorem.ipsum'] }
+        let(:merchant_sync) { create :merchant_sync, added_merchants_count: 3 }
+
+        it { expect { call }.to_not raise_error }
+
+        it 'calls Nostr::Event with correct relay', :aggregate_failures do
+          call
+
+          expect(Nostr::Client).to have_received(:new)
+            .with(
+              private_key: instance_of(String),
+              relay: 'wss://foobar.test'
+            )
+
+          expect(Nostr::Client).to have_received(:new)
+            .with(
+              private_key: instance_of(String),
+              relay: 'wss://lorem.ipsum'
+            )
+        end
+      end
     end
 
     context 'when new merchant count is positive' do
@@ -79,6 +108,14 @@ RSpec.describe NostrPublisher do
 
       context 'when relays does not hang' do
         before { call }
+
+        it 'calls Nostr::Event with correct relay' do
+          expect(Nostr::Client).to have_received(:new)
+            .with(
+              private_key: instance_of(String),
+              relay: 'wss://demo.test'
+            )
+        end
 
         it 'connects to relay', :aggregate_failures do
           expect(client).to have_received(:connect)
