@@ -3,7 +3,9 @@ module Admin
     pre_check :require_super_admins!
 
     def create?
-      record.nostr_event.nil? || nostr_step&.error?
+      record.sync? &&
+        record.added_merchants_count.positive? &&
+        (record.nostr_event.nil? || nostr_step&.error?)
     end
 
     private

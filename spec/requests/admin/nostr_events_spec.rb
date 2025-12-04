@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Admin::NostrEvents' do
-  let!(:merchant_sync) { create :merchant_sync }
+  let!(:merchant_sync) do
+    create :merchant_sync,
+           mode: mode,
+           added_merchants_count: added_merchants_count
+  end
+
+  let(:mode) { :sync }
+  let(:added_merchants_count) { 3 }
 
   describe 'POST /admin/merchant_syncs/:merchant_sync_id/nostr_events' do
     subject(:action) do
@@ -65,6 +72,18 @@ RSpec.describe 'Admin::NostrEvents' do
           it { expect(nostr_step.status).to eq('error') }
           it { expect(response).to redirect_to admin_merchant_syncs_path }
           it { expect(flash[:alert]).to eq 'CrashTest' }
+        end
+
+        context 'with :clear mode' do
+          let(:mode) { :clear }
+
+          it_behaves_like 'access denied'
+        end
+
+        context 'when :added_merchants_count is zero' do
+          let(:added_merchants_count) { 0 }
+
+          it_behaves_like 'access denied'
         end
       end
     end
