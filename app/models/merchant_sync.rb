@@ -199,10 +199,7 @@ end
 #  payload_updated_merchants        :json             not null
 #  payload_soft_deleted_merchants   :json             not null
 #  payload_countries                :json             not null
-#  payload_error                    :json             not null
-#  process_logs                     :json             not null
 #  created_at                       :datetime         not null
 #  updated_at                       :datetime         not null
-#  payload_nostr                    :json             not null
 #  notes                            :text
 #
