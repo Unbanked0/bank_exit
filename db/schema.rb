@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_06_163305) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_06_165214) do
   create_table "active_analytics_browsers_per_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date", null: false
@@ -85,13 +85,10 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_06_163305) do
 
   create_table "announcements", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.text "description"
     t.boolean "enabled", default: true, null: false
-    t.string "link_to_visit"
     t.string "locale"
     t.integer "mode"
     t.datetime "published_at"
-    t.string "title"
     t.datetime "unpublished_at"
     t.datetime "updated_at", null: false
   end

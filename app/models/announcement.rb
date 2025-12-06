@@ -60,11 +60,8 @@ end
 # Database name: primary
 #
 #  id             :integer          not null, primary key
-#  title          :string
-#  description    :text
 #  locale         :string
 #  mode           :integer
-#  link_to_visit  :string
 #  published_at   :datetime
 #  unpublished_at :datetime
 #  enabled        :boolean          default(TRUE), not null
