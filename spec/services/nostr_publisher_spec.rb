@@ -239,6 +239,17 @@ RSpec.describe NostrPublisher do
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XMR Monero XG1 June]) }
         it { expect(content).to match(/Discover \*\*1\*\* newly listed Monero \(🔒\), June \(🟡\) merchant now featured on the /) }
       end
+
+      context 'when merchants category is unknown' do
+        before do
+          create :merchant, :monero, :june,
+                 category: 'yes',
+                 original_identifier: 'node/123'
+          call
+        end
+
+        it { expect(content).to_not match(/(Unknown Category)/) }
+      end
     end
 
     context 'when new merchant count is null' do
