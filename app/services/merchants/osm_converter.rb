@@ -100,6 +100,8 @@ module Merchants
 
     def transform_to_key_equal_value
       @data.map do |key, value|
+        next if value.blank?
+
         if key == '_extra_keys'
           <<~TEXT
 
