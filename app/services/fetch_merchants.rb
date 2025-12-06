@@ -65,7 +65,12 @@ class FetchMerchants < ApplicationService
     # Broadcast with message scoped by locale
     I18n.available_locales.each do |locale|
       I18n.with_locale(locale) do
-        message = I18n.t('refresh_success', link: maps_url, scope: i18n_scope)
+        message = I18n.t(
+          'refresh_success',
+          link: maps_url,
+          scope: 'merchants.refresh',
+          count: @merchant_sync.added_merchants_count
+        )
 
         Merchant.broadcast_flash(
           :notice, message, locale: locale, disappear: false
@@ -242,10 +247,6 @@ class FetchMerchants < ApplicationService
     end.compact_blank
 
     Merchant.upsert_all(data, unique_by: :identifier)
-  end
-
-  def i18n_scope
-    'merchants.refresh'
   end
 
   # Manually invalidate cache after Overpass sync

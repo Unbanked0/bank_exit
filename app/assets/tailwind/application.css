@@ -201,7 +201,6 @@ a {
 }
 
 a:not(.btn, .badge):hover,
-.alert-success a:not(.btn),
 .alert-info a:not(.btn),
 .highlight-link a,
 #faq a {

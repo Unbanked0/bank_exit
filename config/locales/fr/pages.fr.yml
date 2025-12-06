@@ -307,7 +307,10 @@ fr:
 
     refresh:
       notice: La liste des commerçants est en cours de rafraîchissement. Veuillez patienter, un message vous informera dès que cela sera terminé.
-      refresh_success: Les commerçants ont été mis à jour, vous pouvez actualiser la carte pour accéder aux dernières données ou cliquer sur <a href="%{link}">la carte</a>.
+      refresh_success:
+        zero: La synchronisation est terminée.
+        one: 'La synchronisation est terminée, <strong>1</strong> nouveau commerçant a été référencé sur <a href="%{link}">la carte</a> 🎉'
+        other: 'La synchronisation est terminée, <strong>%{count}</strong> nouveaux commerçants ont été référencés sur <a href="%{link}">la carte</a> 🎉'
 
     popups:
       show:

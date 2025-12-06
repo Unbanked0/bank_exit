@@ -294,7 +294,10 @@ it:
 
     refresh:
       notice: L’elenco dei commercianti è in fase di aggiornamento. Attendere, un messaggio ti informerà al completamento.
-      refresh_success: I commercianti sono stati aggiornati, puoi ricaricare la mappa per accedere ai dati più recenti.
+      refresh_success:
+        zero: La sincronizzazione è completata.
+        one: 'La sincronizzazione è completata, <strong>1</strong> nuovo commerciante è stato aggiunto alla <a href="%{link}">mappa</a> 🎉'
+        other: 'La sincronizzazione è completata, <strong>%{count}</strong> nuovi commercianti sono stati aggiunti alla <a href="%{link}">mappa</a> 🎉'
 
     popups:
       show:

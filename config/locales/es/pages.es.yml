@@ -297,7 +297,10 @@ es:
 
     refresh:
       notice: La lista de comerciantes se está actualizando actualmente. Por favor espere, un mensaje le informará tan pronto como esto se complete.
-      refresh_success: Se han actualizado los comerciantes, puedes actualizar el mapa para acceder a los datos más recientes.
+      refresh_success:
+        zero: La sincronización ha terminado.
+        one: 'La sincronización ha terminado, se ha añadido <strong>1</strong> nuevo comerciante al <a href="%{link}">mapa</a> 🎉'
+        other: 'La sincronización ha terminado, se han añadido <strong>%{count}</strong> nuevos comerciantes al <a href="%{link}">mapa</a> 🎉'
 
     popups:
       show:

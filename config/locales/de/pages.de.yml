@@ -294,7 +294,10 @@ de:
 
     refresh:
       notice: Die Händlerliste wird gerade aktualisiert. Bitte warte, eine Nachricht informiert dich, sobald der Vorgang abgeschlossen ist.
-      refresh_success: Die Händler wurden aktualisiert. Du kannst die Karte neu laden, um die neuesten Daten zu sehen.
+      refresh_success:
+        zero: Die Synchronisierung ist abgeschlossen.
+        one: 'Die Synchronisierung ist abgeschlossen, <strong>1</strong> neuer Händler wurde zur <a href="%{link}">Karte</a> hinzugefügt 🎉'
+        other: 'Die Synchronisierung ist abgeschlossen, <strong>%{count}</strong> neue Händler wurden zur <a href="%{link}">Karte</a> hinzugefügt 🎉'
 
     popups:
       show:
