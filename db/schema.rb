@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_06_161823) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_06_163305) do
   create_table "active_analytics_browsers_per_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date", null: false
@@ -168,10 +168,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_06_161823) do
     t.string "category"
     t.integer "comments_count", default: 0, null: false
     t.datetime "created_at", null: false
-    t.text "description_legacy"
     t.boolean "enabled", default: true, null: false
     t.integer "merchant_id"
-    t.string "name_legacy"
     t.integer "position", null: false
     t.boolean "spotlight", default: false, null: false
     t.datetime "updated_at", null: false

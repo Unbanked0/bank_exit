@@ -69,17 +69,15 @@ end
 # Table name: directories
 # Database name: primary
 #
-#  id                 :integer          not null, primary key
-#  name_legacy        :string
-#  description_legacy :text
-#  category           :string
-#  spotlight          :boolean          default(FALSE), not null
-#  enabled            :boolean          default(TRUE), not null
-#  position           :integer          not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  merchant_id        :integer
-#  comments_count     :integer          default(0), not null
+#  id             :integer          not null, primary key
+#  category       :string
+#  spotlight      :boolean          default(FALSE), not null
+#  enabled        :boolean          default(TRUE), not null
+#  position       :integer          not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  merchant_id    :integer
+#  comments_count :integer          default(0), not null
 #
 # Indexes
 #
