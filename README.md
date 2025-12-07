@@ -81,22 +81,21 @@ A voluntary, non-partisan collective whose aim is to offer legal, peaceful and s
 $ git clone https://github.com/Bank-Exit/bank_exit
 $ cd bank_exit
 
-$ bin/setup
+$ bin/setup # default setup, no merchants sync
+
+# Fetch all merchants from Overpass API
+$ bin/setup --sync-merchants
+
+# Same as above but skip country assignment that would take hours
+$ bin/setup --sync-merchants --skip-countries
 ```
 
 > [!TIP]
 > Website is now ready to be accessed at http://localhost:3000 ! 🎉
 
-To initially populate the database with merchants data, run the command in a Rails console:
-
-```
-❯ bin/rails console
-bank-exit(dev)> FetchMerchants.call
-```
-
 > [!WARNING]
-> This process would take few hours because an individual geocoding call is involved for each row to get the country code.  
-> To speed up process, comment the `Merchants::AssignCountry.call` in the [FetchMerchants](app/services/fetch_merchants.rb) service to skip the country data.
+> `$ bin/setup --sync-merchants` would take hours because an individual geocoding call is involved for each row to get the country code.  
+> To speed up process, use the `--skip-countries` flag when calling setup script.
 
 ## 💻 Available Commands
 

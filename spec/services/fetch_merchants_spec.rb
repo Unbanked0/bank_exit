@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe FetchMerchants do
-  subject(:call) { described_class.call }
+  subject(:call) { described_class.call(skip_countries: skip_countries) }
 
   let(:merchant_sync) { MerchantSync.last }
+  let(:skip_countries) { false }
 
   before do
     disable_feature :nostr
@@ -169,27 +170,38 @@ RSpec.describe FetchMerchants do
   end
 
   describe '[AssignCountry]' do
-    let(:merchant_sync_step) { merchant_sync.merchant_sync_steps.assign_country.first }
+    context 'when :skip_countries is true' do
+      let(:skip_countries) { true }
 
-    context 'when success' do
-      before do
-        call
-      end
+      before { call }
 
-      it { expect(Merchants::AssignCountry).to have_received(:call).once }
-
-      it { expect(merchant_sync.status).to eq 'success' }
-      it { expect(merchant_sync_step.status).to eq 'success' }
+      it { expect(Merchants::AssignCountry).to_not have_received(:call) }
     end
 
-    context 'when error' do
-      before do
-        allow(Merchants::AssignCountry).to receive(:call).and_raise(StandardError)
-        call
+    context 'when :skip_countries is false' do
+      let(:skip_countries) { false }
+      let(:merchant_sync_step) { merchant_sync.merchant_sync_steps.assign_country.first }
+
+      context 'when success' do
+        before do
+          call
+        end
+
+        it { expect(Merchants::AssignCountry).to have_received(:call).once }
+
+        it { expect(merchant_sync.status).to eq 'success' }
+        it { expect(merchant_sync_step.status).to eq 'success' }
       end
 
-      it { expect(merchant_sync.status).to eq 'success_with_error' }
-      it { expect(merchant_sync_step.status).to eq 'error' }
+      context 'when error' do
+        before do
+          allow(Merchants::AssignCountry).to receive(:call).and_raise(StandardError)
+          call
+        end
+
+        it { expect(merchant_sync.status).to eq 'success_with_error' }
+        it { expect(merchant_sync_step.status).to eq 'error' }
+      end
     end
   end
 

@@ -9,10 +9,12 @@ class FetchMerchants < ApplicationService
     HTTParty::Error, Timeout, Net::OpenTimeout, Net::ReadTimeout
   ].freeze
 
-  attr_reader :instigator
+  attr_reader :instigator, :skip_countries
 
-  def initialize(instigator = :task)
+  def initialize(instigator = :task, skip_countries: false)
     @instigator = instigator
+    @skip_countries = skip_countries
+
     @current_features = Merchant.pluck(:raw_feature)
   end
 
@@ -32,11 +34,11 @@ class FetchMerchants < ApplicationService
     geojson, geojson_merchant_ids = convert_to_geojson_step(overpass_response)
 
     save_data_step(geojson)
-    payload_countries = assign_country_step
+    assign_country_step unless skip_countries?
 
     notify_github_step(geojson_merchant_ids)
     reactivate_disabled_step(geojson_merchant_ids)
-    diff_change_step(payload_countries)
+    diff_change_step
 
     attach_json_step(geojson)
     purge_old_attachments_step
@@ -177,7 +179,7 @@ class FetchMerchants < ApplicationService
     end
   end
 
-  def diff_change_step(payload_countries)
+  def diff_change_step
     diff_change_step = @merchant_sync.merchant_sync_steps.create!(step: :diff_change)
 
     begin
@@ -203,8 +205,7 @@ class FetchMerchants < ApplicationService
         soft_deleted_merchants_count: soft_deleted_merchants.count,
 
         payload_added_merchants: added_merchants.map(&:raw_feature),
-        payload_soft_deleted_merchants: soft_deleted_merchants.map(&:raw_feature),
-        payload_countries: payload_countries
+        payload_soft_deleted_merchants: soft_deleted_merchants.map(&:raw_feature)
       )
 
       diff_change_step.success!
@@ -265,4 +266,8 @@ class FetchMerchants < ApplicationService
     records.each(&:destroy)
   end
   # :nocov:
+
+  def skip_countries?
+    skip_countries
+  end
 end

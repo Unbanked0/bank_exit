@@ -107,6 +107,7 @@ end
 
 group :development do
   gem 'chusaku', require: false
+  gem 'foreman', require: false
   gem 'hotwire-spark'
   gem 'letter_opener_web'
 

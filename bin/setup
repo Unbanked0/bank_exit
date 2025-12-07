@@ -24,6 +24,18 @@ FileUtils.chdir APP_ROOT do
   system! "bin/rails db:prepare"
   system! "bin/rails db:reset" if ARGV.include?("--reset")
 
+  if ARGV.include?("--sync-merchants")
+    require_relative "../config/environment"
+
+    if ARGV.include?("--skip-countries")
+      puts "\n== Fetch merchants, (❌ countries) =="
+      FetchMerchants.call(:manual, skip_countries: true)
+    else
+      puts "\n== Fetch merchants (✅ countries) =="
+      FetchMerchants.call(:manual)
+    end
+  end
+
   puts "\n== Removing old logs and tempfiles =="
   system! "bin/rails log:clear tmp:clear"
 
