@@ -45,6 +45,16 @@ RSpec.describe MerchantData do
       it { is_expected.to include(name: 'John Doe') }
     end
 
+    context 'when [name] is missing but [name:en] is present' do
+      let(:twicked_feature) do
+        feature[:properties].delete(:name)
+        feature[:properties]['name:en'] = 'Name English'
+        feature
+      end
+
+      it { is_expected.to include(name: 'Name English') }
+    end
+
     context 'when [name] is missing but [brand] is present' do
       let(:twicked_feature) do
         feature[:properties].delete(:name)

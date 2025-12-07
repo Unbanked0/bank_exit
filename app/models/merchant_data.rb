@@ -84,7 +84,10 @@ class MerchantData
   end
 
   def name
-    properties['name'].presence || properties['brand'] || original_id
+    properties['name'].presence ||
+      properties['name:en'].presence ||
+      properties['brand'] ||
+      original_id
   end
 
   def slug
