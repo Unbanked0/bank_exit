@@ -41,7 +41,7 @@ class OpeningHoursParser < ApplicationService
 
       "#{days_str} #{hours_str.join(' ')}"
     end
-  rescue I18n::MissingTranslationData => _e
+  rescue StandardError => _e
     [opening_hours]
   end
 
