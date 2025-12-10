@@ -12,13 +12,13 @@
             tracks,
             controls: true,
             autoplay: false,
-            class: 'rounded-box mx-auto max-h-[550px] border-4 border-base-300',
+            class: 'rounded-box mx-auto max-h-[550px] border-4 border-base-content',
             poster: image_path('poster_first_market_gardener_monero.jpg'),
             data: { reload_subtitles: true }
-          figcaption.text-sm.mt-1.text-center.italic.text-white
+          figcaption.text-sm.mt-1.text-center.italic
             = t('.video_caption')
 
-        .lg:w-1/3.text-center.order-1.lg:order-none.text-white
+        .lg:w-1/3.text-center.order-1.lg:order-none
           = image_tag logo_by_locale, class: 'w-48 mx-auto mb-3 hover:scale-110 motion-safe:transition-transform', alt: "Logo #{t('.title')}"
 
           h1.text-3xl.font-bold.mb-6= t('.title')

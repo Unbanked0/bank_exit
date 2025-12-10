@@ -3,7 +3,7 @@ article
     .hero-overlay
     .hero-content.py-16
       .max-w-xl
-        .text-center.space-y-5.text-neutral-content
+        .text-center.space-y-5
           h1.text-3xl.font-bold= t('.title')
           .space-y-5= t('.headline')
 
@@ -11,5 +11,4 @@ article
     p.font-bold.text-center.text-lg
       = t('.try_another_request')
 
-    .text-center
-      = render 'welcome/questions_form', profiles: @profiles, levels: @levels
+    = render 'welcome/questions_form', profiles: @profiles, levels: @levels, center: true

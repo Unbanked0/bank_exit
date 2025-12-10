@@ -1,11 +1,12 @@
 = link_to merchant_path(merchant),
-         class: "card border border-base-content/20 hover:border-primary bg-base-200 hover:!text-inherit focus-visible:ring-2 focus-visible:ring-primary #{'image-full' if merchant.banner.attached?}",
+         class: "card bg-base-300 border border-base-content/20 hover:border-primary hover:text-inherit! focus-visible:ring-2 focus-visible:ring-primary",
          id: "merchant-#{merchant.identifier}" do
   - if merchant.banner.attached?
-    figure
-      = image_tag url_for(merchant.banner.variant(:thumb)), alt: "Banner for #{merchant.name}"
+    figure.absolute.inset-0
+      = image_tag url_for(merchant.banner.variant(:thumb)), class: 'w-full h-full object-cover', alt: "Banner for #{merchant.name}"
 
-  .card-body.space-y-3
+  .absolute.inset-0.bg-base-100/80.rounded-box
+  .card-body.space-y-3.z-10
     .flex.items-center.justify-between
       .flex.items-center.gap-2
         = render 'logo_or_initials', model: merchant
@@ -30,7 +31,8 @@
       - unless merchant.ask_kyc.nil?
         div= merchant_kyc_no_kyc(merchant.ask_kyc?)
 
-    .flex.items-start.border-t.border-base-content/20.pt-3 class=(merchant.delivery.present? ? 'justify-between' : 'justify-center')
+    .divider
+    .flex.items-start class=(merchant.delivery.present? ? 'justify-between' : 'justify-center')
       - if merchant.address?
         .flex.flex-col.items-center.gap-2.text-center
           = lucide_icon 'home', class: 'w-5'

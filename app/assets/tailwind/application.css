@@ -163,6 +163,14 @@
     @apply border border-base-content/10;
 }
 
+@utility hero-content {
+    @apply text-base-content;
+}
+
+@utility hero-overlay {
+    @apply bg-base-100/50;
+}
+
 @utility card {
     &.image-full {
         > figure img {

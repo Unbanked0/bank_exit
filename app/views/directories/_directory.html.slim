@@ -2,12 +2,13 @@
 - delivery_zones = directory.delivery_zones.enabled
 - contact_ways = directory.contact_ways.enabled
 
-= link_to directory_path(directory), class: "card bg-base-200 shadow-sm hover:-translate-y-1 motion-safe:transition-transform hover:!text-inherit #{'image-full' if directory.banner.attached?} #{'border-l-2 border-success' if delivery_zones.exists?}" do
+= link_to directory_path(directory), class: "card bg-base-200 shadow-sm hover:-translate-y-1 motion-safe:transition-transform hover:text-inherit! #{'border-l-2 border-success' if delivery_zones.exists?}" do
   - if directory.banner.attached?
-    figure
-      = image_tag url_for(directory.banner.variant(:thumb)), alt: "Directory's banner"
+    figure.absolute.inset-0
+      = image_tag url_for(directory.banner.variant(:thumb)), class: 'w-full h-full object-cover', alt: "Directory's banner"
 
-  .card-body.space-y-4.justify-between
+  .absolute.inset-0.bg-base-100/80
+  .card-body.space-y-4.justify-between.z-10
     .flex.items-center.justify-between
       .flex.items-center.gap-2
         = render 'logo_or_initials', model: directory, mode: :small

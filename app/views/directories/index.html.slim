@@ -1,7 +1,7 @@
 article data-controller="directories" data-directories-autocomplete-url-value= addresses_search_path
   header.hero.bg-fixed.bg-banner-directories
     .hero-overlay
-    .hero-content.text-center.text-neutral-content
+    .hero-content.text-center
       .max-w-3xl.space-y-6
         section.space-y-3
           h1.text-3xl.font-bold= t('application.nav.menu.directories')
@@ -19,7 +19,7 @@ article data-controller="directories" data-directories-autocomplete-url-value= a
               = t('.headline_directory_physical_merchants_html', link: link)
 
         - if @directories_spotlight.any?
-          hr.border-neutral-content/50.w-1/2.mx-auto
+          .divider.w-1/2.mx-auto
 
           section.space-y-3
             p.font-bold

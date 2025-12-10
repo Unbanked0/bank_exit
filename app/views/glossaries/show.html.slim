@@ -3,17 +3,17 @@ article
     .hero-overlay
     .hero-content.py-16
       .max-w-5xl
-        .text-center.space-y-6.text-neutral-content
+        .text-center.space-y-6
           h1.text-3xl.font-bold= t('.title')
 
   .article-body.max-w-5xl class="!space-y-10"
     nav.text-center.space-x-2
       - @glossaries.keys.each do |letter|
-        = link_to letter, "##{letter}", class: 'badge badge-neutral hover:badge-secondary badge-xl'
+        = link_to letter, "##{letter}", class: 'badge badge-soft badge-primary hover:badge-secondary badge-xl'
 
     - @glossaries.each do |letter, glossaries|
-      section.space-y-3 id=letter
-        = link_to letter, "##{letter}", class: 'badge badge-primary hover:badge-secondary badge-xl'
+      section.space-y-3.before:block.before:h-24.before:-mt-24 id=letter
+        = link_to letter, "##{letter}", class: 'badge badge-soft badge-primary hover:badge-secondary badge-xl'
 
         .space-y-3
           - glossaries.each do |glossary|
