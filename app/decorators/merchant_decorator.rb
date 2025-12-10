@@ -10,7 +10,7 @@ class MerchantDecorator < ProfesionalDecorator
   }.freeze
 
   def friendly_category
-    I18n.t("categories.#{category}", default: category.titleize)
+    I18n.t("categories.#{category}", default: category&.titleize)
   end
 
   def address?

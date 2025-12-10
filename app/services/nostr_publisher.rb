@@ -5,7 +5,9 @@ class NostrPublisher < ApplicationService
     @merchant_sync = merchant_sync
     @identifier = identifier
     @relays = relays
+
     @responses = Set.new
+    @errors = []
   end
 
   def prepare
@@ -37,11 +39,15 @@ class NostrPublisher < ApplicationService
 
       @responses << response
     rescue StandardError => e
-      Rails.logger.error { e.message }
+      Rails.logger.tagged('NostrPublisher') do
+        Rails.logger.error { e.message }
+      end
+
+      @errors << e.message
       next
     end
 
-    raise NostrErrors::PublicationError if @responses.blank?
+    raise NostrErrors::PublicationError, @errors.join if @responses.blank?
 
     response = @responses.first
 

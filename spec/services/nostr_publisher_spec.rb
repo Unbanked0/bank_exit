@@ -298,5 +298,27 @@ RSpec.describe NostrPublisher do
         expect(client).to_not have_received(:close)
       end
     end
+
+    context 'when merchant category is nil' do
+      let(:merchant_sync) do
+        create :merchant_sync,
+               added_merchants_count: 1,
+               payload_added_merchants: [
+                 { 'id' => 'node/123' }
+               ],
+               started_at: Time.current
+      end
+
+      before do
+        create :merchant, :bitcoin, original_identifier: 'node/123', name: 'Bitcoin Coffee', category: nil
+        call
+      end
+
+      it 'has correct content' do
+        content = published_event.event.content
+
+        expect(content).to match(/Bitcoin Coffee/)
+      end
+    end
   end
 end
