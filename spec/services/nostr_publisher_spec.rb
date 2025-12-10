@@ -55,7 +55,18 @@ RSpec.describe NostrPublisher do
 
       context 'when manual relays are provided' do
         let(:relays) { ['wss://foobar.test', 'wss://lorem.ipsum'] }
-        let(:merchant_sync) { create :merchant_sync, added_merchants_count: 3 }
+        let(:merchant_sync) do
+          create :merchant_sync,
+                 added_merchants_count: 1,
+                 payload_added_merchants: [
+                   { 'id' => 'node/123' }
+                 ],
+                 started_at: Time.current
+        end
+
+        before do
+          create :merchant, :bitcoin, original_identifier: 'node/123', name: 'Bitcoin Coffee'
+        end
 
         it { expect { call }.to_not raise_error }
 
@@ -258,6 +269,28 @@ RSpec.describe NostrPublisher do
       end
 
       before { call }
+
+      it 'does not connect to relay', :aggregate_failures do
+        expect(client).to_not have_received(:connect)
+        expect(client).to_not have_received(:publish_and_wait)
+        expect(client).to_not have_received(:close)
+      end
+    end
+
+    context 'when geocoding fails to assign merchants country' do
+      let(:merchant_sync) do
+        create :merchant_sync,
+               added_merchants_count: 1,
+               payload_added_merchants: [
+                 { 'id' => 'node/123' }
+               ],
+               started_at: Time.current
+      end
+
+      before do
+        create :merchant, :bitcoin, original_identifier: 'node/123', name: 'Bitcoin Coffee', country: nil
+        call
+      end
 
       it 'does not connect to relay', :aggregate_failures do
         expect(client).to_not have_received(:connect)

@@ -24,6 +24,10 @@ end
 Geocoder.configure(
   lookup: :nominatim,
   ip_lookup: :ipapi_com,
+  http_headers: {
+    'User-Agent' => 'Bank-Exit/1.x (sortiedebanque@tutamail.com)'
+  },
+  use_https: true,
   timeout: 30,
   cache: SecureCacheStore.new(Rails.cache, {}),
   cache_options: {

@@ -14,6 +14,7 @@ class NostrPublisher < ApplicationService
 
   def call
     return unless merchants_count.positive?
+    return unless merchants.group_by(&:country).any?
 
     @nostr_event = merchant_sync.nostr_event || merchant_sync.create_nostr_event!(identifier: identifier)
 
