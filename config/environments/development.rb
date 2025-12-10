@@ -99,7 +99,7 @@ Rails.application.configure do
     Bullet.add_footer = false
   end
 
-  config.hosts = %w[bank-exit.localhost bank-exit.local localhost 127.0.0.1]
+  config.hosts << %w[bank-exit.localhost bank-exit.local]
 end
 
 Rails.application.routes.default_url_options[:host] = "#{host}:#{port}"
