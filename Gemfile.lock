@@ -719,7 +719,6 @@ DEPENDENCIES
   thruster
   turbo-rails
   turbo_power
-  tzinfo-data
   web-console
   webmock
 
