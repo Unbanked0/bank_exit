@@ -6,7 +6,7 @@ article
         .text-center.space-y-6
           h1.text-3xl.font-bold= t('.title')
 
-  .article-body.max-w-5xl class="!space-y-10"
+  .article-body.max-w-5xl class="space-y-10!"
     nav.text-center.space-x-2
       - @glossaries.keys.each do |letter|
         = link_to letter, "##{letter}", class: 'badge badge-soft badge-primary hover:badge-secondary badge-xl'

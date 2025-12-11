@@ -22,7 +22,7 @@ article
               - coin_wallets.each do |coin_wallet|
                 = image_tag icon_by_coin(coin_wallet.coin), title: coin_wallet.coin.capitalize, class: 'w-10 h-10 hover:scale-110 motion-safe:transition-transform'
 
-  .article-body.max-w-5xl class="!space-y-8"
+  .article-body.max-w-5xl class="space-y-8!"
     .flex.items-center.justify-between.gap-2
       = render 'breadcrumb'
       - if logged_in?

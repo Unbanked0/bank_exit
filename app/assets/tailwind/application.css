@@ -311,7 +311,7 @@ forced to white to make texts readables */
     }
 
     li {
-        @apply flex whitespace-pre break-all !text-pretty;
+        @apply flex whitespace-pre break-all text-pretty!;
 
         .symbol {
             @apply mx-2;

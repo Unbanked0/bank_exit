@@ -26,7 +26,7 @@ html lang=I18n.locale
     script type="application/ld+json"
       == schema_dot_org_organization
 
-  body.max-w-screen-3xl.mx-auto data-controller=("layout" if welcome_page?) data-layout-header-background-class=("!bg-base-100" if welcome_page?)
+  body.max-w-screen-3xl.mx-auto data-controller=("layout" if welcome_page?) data-layout-header-background-class=("bg-base-100!" if welcome_page?)
     = render 'header', projects: @projects
 
     main.pt-20
