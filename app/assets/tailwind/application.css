@@ -147,6 +147,10 @@
     margin-bottom: 0;
 }
 
+@utility hero-overlay {
+    @apply bg-base-100/50;
+}
+
 @utility hero-content {
     @apply py-10 lg:py-16;
 }
@@ -163,19 +167,12 @@
     @apply border border-base-content/10;
 }
 
-@utility hero-content {
-    @apply text-base-content;
-}
-
-@utility hero-overlay {
-    @apply bg-base-100/50;
-}
-
 @utility card {
-    &.image-full {
-        > figure img {
-            --tw-brightness: brightness(28%);
-            @apply blur-sm;
+    .card-figure {
+        @apply absolute inset-0 rounded-box;
+
+        img {
+            @apply w-full h-full object-cover;
         }
     }
 }

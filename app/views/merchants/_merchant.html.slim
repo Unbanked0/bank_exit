@@ -2,8 +2,8 @@
          class: "card bg-base-300 border border-base-content/20 hover:border-primary hover:text-inherit! focus-visible:ring-2 focus-visible:ring-primary",
          id: "merchant-#{merchant.identifier}" do
   - if merchant.banner.attached?
-    figure.absolute.inset-0
-      = image_tag url_for(merchant.banner.variant(:thumb)), class: 'w-full h-full object-cover', alt: "Banner for #{merchant.name}"
+    figure.card-figure
+      = image_tag url_for(merchant.banner.variant(:thumb)), alt: "Banner for #{merchant.name}"
 
   .absolute.inset-0.bg-base-100/80.rounded-box
   .card-body.space-y-3.z-10
