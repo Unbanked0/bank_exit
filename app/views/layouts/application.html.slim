@@ -6,6 +6,7 @@ html lang=I18n.locale
     = csp_meta_tag
 
     = yield :head
+    = turbo_refreshes_with method: :morph, scroll: :preserve
 
     / Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!)
     = tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
