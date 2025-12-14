@@ -7,6 +7,10 @@
           li= error.full_message
 
   .flex.flex-col.lg:flex-row.gap-3
+    = f.input :identifier, disabled: true
+    = f.input :name, disabled: true
+
+  .flex.flex-col.lg:flex-row.gap-3
     .space-y-2.lg:w-1/2
       = f.input :logo, as: :file,
                 input_html: { \
