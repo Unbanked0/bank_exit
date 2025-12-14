@@ -111,7 +111,7 @@ module Merchants
         else
           "#{key}=#{value}"
         end
-      end.join("\n").chomp
+      end.compact_blank.join("\n").chomp
     end
 
     SOCIAL_NETWORKS.each do |social|
