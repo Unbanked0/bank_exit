@@ -1,31 +1,36 @@
 {
-  "name": "Collectif Sortie de Banque",
-  "short_name": "Sortie de Banque",
+  "name": "<%= [I18n.t('seo.default.title', locale: params[:locale]), Rails.env.production? ? nil : Rails.env].compact.join(" - ") %>",
+  "description": "<%= I18n.t('seo.default.description', locale: params[:locale]).html_safe %>",
+  "start_url": "/<%= params[:locale] %>/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#000",
+  "background_color": "#FFF",
   "icons": [
     {
-      "src": "<%= image_path(logo_by_locale) %>",
-      "type": "image/png",
-      "sizes": "400x400"
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/pwa/app-icon-512.png",
+      "type": "image/png"
     },
     {
-      "src": "<%= image_path(logo_by_locale) %>",
-      "type": "image/png",
-      "sizes": "400x400",
-      "purpose": "maskable"
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/pwa/app-icon-512-maskable.png",
+      "type": "image/png"
     }
   ],
   "screenshots": [
     {
-        "src": "<%= image_path(logo_by_locale) %>",
-        "type": "image/png",
-        "sizes": "400x400",
-        "form_factor": "wide"
+      "src": "/pwa/app-screenshot.jpg",
+      "type": "image/jpg",
+      "sizes": "2064x1418",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/pwa/app-screenshot.jpg",
+      "type": "image/jpg",
+      "sizes": "2064x1418"
     }
-  ],
-  "start_url": "/",
-  "display": "standalone",
-  "scope": "/",
-  "description": "Collectif apartisan et bénévole, dont l'objectif est d'offir des outils légaux, pacifiques et souverains à un maximum de citoyens, afin de permettre l'émancipation bancaire et la résilience.",
-  "theme_color": "white",
-  "background_color": "white"
+  ]
 }

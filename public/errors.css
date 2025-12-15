@@ -104,7 +104,8 @@ main header svg {
 
 main img {
     max-width: 100%;
-    width: min(100%, 6em);
+    width: min(100%, 10em);
+    margin-bottom: 1rem;
 
     &:hover {
         transform: scale(120%);
@@ -115,20 +116,8 @@ main img {
     }
 }
 
-main article {
-    width: min(100%, 30em);
-}
-
 main article p {
-    font-size: 75%;
-}
-
-main article br {
-    display: none;
-
-    @media (min-width: 48em) {
-        display: inline;
-    }
+    margin-bottom: 1rem;
 }
 
 main article a.button {
