@@ -24,7 +24,7 @@ class SessionsController < PublicController
     @user = login(session_params[:email], session_params[:password])
 
     if @user&.enabled?
-      redirect_back_or_to admin_root_path
+      redirect_to_before_login_path admin_root_path
     else
       logout
       flash.now[:alert] = 'Login failed'
