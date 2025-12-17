@@ -6,7 +6,7 @@ article#article
         h1.text-3xl.font-bold= t('.title')
 
         - if logged_in? && allowed_to?(:index?, EcosystemItem, namespace: Admin)
-          = edit_link_to admin_ecosystem_items_path
+          = edit_link_to admin_ecosystem_items_path, hotkey: true
 
         p= t('.description')
 

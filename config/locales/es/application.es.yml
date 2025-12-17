@@ -46,7 +46,6 @@ es:
       access_prev_page: Ir a la página anterior
       access_next_page: Ir a la página siguiente
       access_page_subtitle: (cuando hay paginación)
-      open_merchant_routing_form: Abrir la página para calcular la ruta hacia un comerciante
 
     snowflakes:
       enable_snowflakes: Activar la nieve

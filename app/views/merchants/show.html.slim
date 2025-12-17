@@ -1,7 +1,7 @@
 .flex.flex-col.lg:flex-row
   .lg:w-1/3.overflow-y-auto.space-y-3.p-3 class="lg:h-[calc(100vh-80px)]"
     .flex.items-center.justify-between.print:hidden
-      = back_link_to session[:map_referer_url].presence || maps_path, label: t('.back_to_map'), klass: 'btn btn-base-300 btn-sm'
+      = back_link_to session[:map_referer_url].presence || maps_path, label: t('.back_to_map')
 
       = render 'merchants/view_sections/dropdown_actions', merchant: @merchant, btn_klass: 'btn-md'
 
@@ -16,7 +16,7 @@
         span<
           = t('.last_survey_warning_html', date: time_ago_in_words(@merchant.last_survey_on), raw_date: l(@merchant.last_survey_on))
 
-    article.space-y-6 data-controller="merchants"
+    article.space-y-6
       header.flex.flex-col.items-center.space-y-3.rounded-lg
         .relative
           = render 'logo_or_initials', model: @merchant, mode: :extra_large

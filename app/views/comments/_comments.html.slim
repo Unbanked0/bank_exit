@@ -6,11 +6,11 @@
         =< Comment.model_name.human(count: commentable.comments_count)
 
     - if allowed_to?(:create?, Comment)
-      = link_to new_polymorphic_path([commentable, Comment.new]),
-                class: 'btn btn-success btn-sm',
-                data: { turbo_stream: true } do
-        = t('add')
+      = add_link_to new_polymorphic_path([commentable, Comment.new]),
+                    data: { turbo_stream: true },
+                    hotkey: 'c' do
         = lucide_icon 'message-square', class: 'w-4 inline-flex'
+        = t('add')
 
   .alert.alert-warning.text-xs
     = lucide_icon 'triangle-alert', class: 'w-5'

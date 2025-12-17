@@ -5,7 +5,8 @@
         = t('.title')
         = lucide_icon 'car', class: 'inline-flex'
 
-      = link_to merchant_path(@merchant), title: t('.back_to_merchant'), class: 'btn btn-square btn-sm' do
+      = back_link_to merchant_path(@merchant),
+                     title: t('.back_to_merchant') do
         = lucide_icon 'x'
 
     article.space-y-4

@@ -1,58 +1,116 @@
 module ButtonsHelper
-  def back_link_to(link, label: t('back'), klass: 'btn btn-sm btn-neutral', data: {})
-    link_to link, class: klass, data: data do
-      concat lucide_icon('move-left', class: 'inline-flex mr-1 w-4')
-      concat label
-    end
+  def raw_link_to(url, label: nil, hotkey: false, **, &block)
+    base_link_to(
+      url, label, nil, hotkey,
+      **, &block
+    )
   end
 
-  def add_link_to(link, label: t('add'), klass: 'btn btn-sm btn-success', data: {})
-    link_to link, class: klass, data: data do
-      concat label
-      concat lucide_icon('circle-plus', class: 'inline-flex ml-1 w-4')
-    end
+  def back_link_to(url, label: t('back'), hotkey: 'esc', **, &block)
+    base_link_to(
+      url, label, 'move-left', hotkey,
+      class: 'btn btn-sm bg-base-300',
+      **, &block
+    )
   end
 
-  def create_link_to(link, label: t('create'), klass: 'btn btn-sm btn-success', turbo_confirm: t('create_confirm'))
-    link_to link, class: klass, data: { turbo_method: :post, turbo_confirm: turbo_confirm } do
-      if block_given?
-        yield
-      else
-        concat label
-        concat lucide_icon('circle-plus', class: 'inline-flex ml-1 w-4')
+  def add_link_to(url, label: t('add'), hotkey: false, **, &block)
+    base_link_to(
+      url, label, 'circle-plus', hotkey,
+      class: 'btn btn-sm btn-success',
+      **, &block
+    )
+  end
+
+  def create_link_to(url, label: t('create'), hotkey: false, **options, &block)
+    base_link_to(
+      url, label, 'circle-plus', hotkey,
+      class: 'btn btn-sm btn-success',
+      **options.merge(
+        data: {
+          turbo_method: :post,
+          turbo_confirm: options[:turbo_confirm].presence || t('create_confirm')
+        }
+      ),
+      &block
+    )
+  end
+
+  def show_link_to(url, label: t('see'), hotkey: false, **, &block)
+    base_link_to(
+      url, label, 'eye', hotkey,
+      class: 'btn btn-sm btn-info',
+      **, &block
+    )
+  end
+
+  def edit_link_to(url, label: t('edit'), hotkey: false, **, &block)
+    base_link_to(
+      url, label, 'pencil', hotkey ? 'e' : false,
+      class: 'btn btn-sm btn-warning',
+      **, &block
+    )
+  end
+
+  def update_link_to(url, label: t('update'), hotkey: false, **options, &block)
+    base_link_to(
+      url, label, 'pencil', hotkey,
+      class: 'btn btn-sm btn-success',
+      **options.merge(
+        data: {
+          turbo_method: :patch,
+          turbo_confirm: options[:turbo_confirm].presence || t('update_confirm')
+        }
+      ),
+      &block
+    )
+  end
+
+  def destroy_link_to(url, label: t('destroy'), hotkey: false, **options, &block)
+    base_link_to(
+      url, label, 'trash', hotkey,
+      class: 'btn btn-sm btn-error',
+      **options.merge(
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: options[:turbo_confirm].presence || t('destroy_confirm')
+        }
+      ),
+      &block
+    )
+  end
+
+  private
+
+  def base_link_to(url, label, icon, hotkey, **options, &block)
+    if hotkey
+      options.deep_merge!(
+        data: {
+          controller: 'hotkey',
+          action: "keydown.#{hotkey}@document->hotkey#click"
+        }
+      )
+    end
+
+    link_to(url, **options) do
+      kbd = ''
+
+      if hotkey.is_a?(String)
+        hotkeys = hotkey.split('+')
+        parts = hotkeys.map do |key|
+          tag.kbd(key, class: 'kbd kbd-xs text-base-content uppercase hide-on-touch')
+        end
+        kbd = parts.join(' + ').html_safe # rubocop:disable Rails/OutputSafety
       end
-    end
-  end
 
-  def show_link_to(link, label: t('see'), klass: 'btn btn-sm btn-info', data: {}, blank: false)
-    link_to link, class: klass, data: data, target: ('_blank' if blank) do
       if block_given?
-        yield
+        content = capture(&block)
+        kbd.present? ? content + kbd : content
       else
-        concat label
-        concat lucide_icon('eye', class: 'inline-flex ml-1 w-4')
+        (icon ? lucide_icon(icon, class: 'inline-flex w-4') : '') +
+          (label ? tag.span(label, class: 'truncate') : '') +
+          kbd
       end
-    end
-  end
-
-  def edit_link_to(link, label: t('edit'), klass: 'btn btn-sm btn-warning', data: {})
-    link_to link, class: klass, data: data do
-      concat label
-      concat lucide_icon('pencil', class: 'inline-flex ml-1 w-4')
-    end
-  end
-
-  def update_link_to(link, label: t('update'), klass: 'btn btn-sm btn-success', turbo_confirm: t('update_confirm'))
-    link_to link, class: klass, data: { turbo_method: :patch, turbo_confirm: turbo_confirm } do
-      concat label
-      concat lucide_icon('pencil', class: 'inline-flex ml-1 w-4')
-    end
-  end
-
-  def destroy_link_to(link, label: t('destroy'), klass: 'btn btn-sm btn-error', turbo_confirm: t('destroy_confirm'))
-    link_to link, class: klass, data: { turbo_method: :delete, turbo_confirm: turbo_confirm } do
-      concat label
-      concat lucide_icon('trash', class: 'inline-flex ml-1 w-4')
     end
   end
 end

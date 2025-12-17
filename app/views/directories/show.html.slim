@@ -38,7 +38,7 @@ article
         ul.dropdown.dropdown-end.menu.bg-base-100.rounded-box.z-1.w-max.p-2.shadow-sm.border.border-base-content/20.space-y-2 tabindex="0" popover="" id="popover-directory" style="position-anchor:--anchor-directory"
           - if allowed_to?(:update?, @directory, namespace: Admin)
             li
-              = edit_link_to edit_admin_directory_path(@directory)
+              = edit_link_to edit_admin_directory_path(@directory), hotkey: true
 
           - if allowed_to?(:destroy?, @directory, namespace: Admin)
             li

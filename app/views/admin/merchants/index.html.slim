@@ -8,9 +8,11 @@
 
 - content_for :page_actions do
   - if allowed_to?(:index?, with: Admin::MerchantSyncPolicy)
-    = link_to admin_merchant_syncs_path, class: 'btn btn-sm btn-success' do
-      = t('.history')
+    = raw_link_to admin_merchant_syncs_path,
+                  class: 'btn btn-sm btn-success',
+                  hotkey: 'h' do
       = lucide_icon 'table', class: 'w-5 h-5'
+      span.truncate=< t('.history')
 
 = render 'stats',
          merchant_sync: @merchant_sync,

@@ -332,3 +332,9 @@ forced to white to make texts readables */
         }
     }
 }
+
+.hide-on-touch {
+    @media (any-hover: none) {
+        display: none;
+    }
+}

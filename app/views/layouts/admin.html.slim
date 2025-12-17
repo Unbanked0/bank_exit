@@ -32,7 +32,7 @@ html lang=I18n.locale
     main.drawer.lg:drawer-open
       input#sidebarDrawer.drawer-toggle type="checkbox"
       .drawer-content
-        header.flex.items-center.justify-between.bg-base-200.border-b-2.border-primary.p-2.lg:pl-4
+        header.flex.flex-col.lg:flex-row.items-center.justify-between.bg-base-200.border-b-2.border-primary.p-2.lg:pl-4.gap-3
           .flex.items-center.gap-2
             = link_to admin_root_path, class: 'lg:hidden' do
               = image_tag logo_by_locale, class: 'w-12'
