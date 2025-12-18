@@ -3,7 +3,7 @@
 
 - content_for :page_actions do
   - if allowed_to?(:create?, User)
-    = add_link_to new_admin_user_path
+    = add_link_to new_admin_user_path, hotkey: 'a'
 
 section.space-y-3
   == pagy_nav(@pagy) if @pagy.count > @pagy.limit

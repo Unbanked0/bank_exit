@@ -7,7 +7,7 @@
   - if merchant_sync.nostr_event?
     li
       - event_id = merchant_sync.nostr_event.event_identifier
-      = show_link_to njump_url(event_id), blank: true do
+      = show_link_to njump_url(event_id), target: :_blank do
         = social_contact_icon(:nostr, klass: '-mr-1')
         =< t('.see_on_nostr')
 

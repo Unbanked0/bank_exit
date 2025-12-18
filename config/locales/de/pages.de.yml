@@ -254,7 +254,7 @@ de:
 
     merchants_dropdown:
       to_navigate: zum Navigieren,
-      to_close_modal: zum Schließen des Modalfensters
+      to_close_modal: zum Schließen
 
     show:
       <<: *payment_methods_accepted

@@ -9,6 +9,7 @@ RSpec.describe 'Admin::Merchants' do
     before do
       merchants = create_list :merchant, 3
       create_list :comment, 2, commentable: merchants.first
+      create :merchant, :deleted
     end
 
     %i[super_admin admin publisher moderator].each do |role|

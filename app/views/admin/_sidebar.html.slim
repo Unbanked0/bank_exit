@@ -15,59 +15,82 @@
 
       ul.menu.bg-base-200.border.border-base-content/20.rounded-lg.w-full.items-center.space-y-2
         li
-          = link_to t('admin.dashboards.show.title'), admin_dashboard_path, class: ('menu-active' if params[:controller] == 'admin/dashboards')
+          = raw_link_to admin_dashboard_path,
+                        class: ('menu-active' if params[:controller] == 'admin/dashboards'),
+                        hotkey: 'j' do
+            = t('admin.dashboards.show.title')
 
         li
-          = link_to admin_merchants_path, class: ('menu-active' if params[:controller].in?(['admin/merchants', 'admin/merchant_syncs'])) do
-            = Merchant.model_name.human(count: 2).capitalize
+          = raw_link_to admin_merchants_path,
+                        class: ('menu-active' if params[:controller].in?(['admin/merchants', 'admin/merchant_syncs'])),
+                        hotkey: 'm' do
             - if Merchant.deleted.any?
-              span< title=t('.merchants_disabled')
-                = lucide_icon 'triangle-alert', class: 'w-4'
+              span> title=t('.merchants_disabled')
+                = lucide_icon 'triangle-alert', class: 'w-4 text-warning'
+            = Merchant.model_name.human(count: 2).capitalize
 
         li
-          = link_to admin_directories_path, class: ('menu-active' if params[:controller] == 'admin/directories') do
+          = raw_link_to admin_directories_path,
+                        class: ('menu-active' if params[:controller] == 'admin/directories'),
+                        hotkey: 'd' do
             = Directory.model_name.human(count: 2).capitalize
 
         - if allowed_to?(:index?, Comment)
           li
-            = link_to admin_comments_path, class: ('menu-active' if params[:controller] == 'admin/comments') do
-              = Comment.model_name.human(count: 2).capitalize
+            = raw_link_to admin_comments_path,
+                          class: ('menu-active' if params[:controller] == 'admin/comments'),
+                          hotkey: 'c' do
               - if Comment.flagged.any?
-                span< title=t('.comments_disabled')
-                  = lucide_icon 'triangle-alert', class: 'w-4'
+                span> title=t('.comments_disabled')
+                  = lucide_icon 'triangle-alert', class: 'w-4 text-warning'
+              = Comment.model_name.human(count: 2).capitalize
 
         - if allowed_to?(:index?, Announcement)
           li
-            = link_to admin_announcements_path, class: ('menu-active' if params[:controller] == 'admin/announcements') do
+            = raw_link_to admin_announcements_path,
+                          class: ('menu-active' if params[:controller] == 'admin/announcements'),
+                          hotkey: 'i' do
               = Announcement.model_name.human(count: 2).capitalize
 
         - if allowed_to?(:index?, User)
           li
-            = link_to admin_users_path, class: ('menu-active' if params[:controller] == 'admin/users') do
+            = raw_link_to admin_users_path,
+                          class: ('menu-active' if params[:controller] == 'admin/users'),
+                          hotkey: 'u' do
               = User.model_name.human(count: 2).capitalize
 
         - if allowed_to?(:index?, EcosystemItem)
           li
-            = link_to admin_ecosystem_items_path, class: ('menu-active' if params[:controller] == 'admin/ecosystem_items') do
+            = raw_link_to admin_ecosystem_items_path,
+                          class: ('menu-active' if params[:controller] == 'admin/ecosystem_items'),
+                          hotkey: 'x' do
               = t('.monero_ecosystem')
 
         - if allowed_to?(:index?, APIToken)
           li
-            = link_to admin_api_tokens_path, class: ('menu-active' if params[:controller] == 'admin/api_tokens') do
+            = raw_link_to admin_api_tokens_path,
+                          class: ('menu-active' if params[:controller] == 'admin/api_tokens'),
+                          hotkey: 'k' do
               = APIToken.model_name.human(count: 2).upcase_first
 
         - if allowed_to?(:mission_control?, User)
           li
-            = link_to admin_mission_control_jobs_path, target: :_blank do
+            = raw_link_to admin_mission_control_jobs_path,
+                          target: :_blank,
+                          hotkey: 'w' do
               | Mission Control Jobs
 
         - if allowed_to?(:analytics?, User)
           li
-            = link_to admin_active_analytics_path, target: :_blank do
+            = raw_link_to admin_active_analytics_path,
+                          target: :_blank,
+                          hotkey: 'y' do
               | Analytics
 
         li
-          = link_to 'https://bank-exit-uptime-production.up.railway.app', target: :_blank do
+          = raw_link_to 'https://bank-exit-uptime-production.up.railway.app',
+                        target: :_blank,
+                        hotkey: 'z' do
             | Uptime Kuma
 
       label.flex.cursor-pointer.gap-2.justify-center.items-center.my-5
@@ -99,11 +122,11 @@
         .dropdown-content.bg-base-200.rounded-box.z-1.shadow-sm.border.border-base-content/20.w-full
           ul.menu.space-y-2.w-full.text-center
             li
-              = back_link_to root_path, label: t('.back_to_home')
+              = back_link_to root_path, label: t('.back_to_home'), hotkey: false
             li
-              = back_link_to maps_path, label: t('.back_to_map')
+              = back_link_to maps_path, label: t('.back_to_map'), hotkey: false
             li
-              = back_link_to directories_path, label: t('.back_to_directory')
+              = back_link_to directories_path, label: t('.back_to_directory'), hotkey: false
             li
               = link_to t('.edit_my_profile'), edit_admin_profile_path
 

@@ -2,7 +2,7 @@
 
 = content_for :dropdown_menu, flush: true do
   li
-    = show_link_to polymorphic_path([commentable]), blank: true do
+    = show_link_to polymorphic_path([commentable]), target: :_blank do
       = t('.view_merchant_public_page')
 
   - if allowed_to?(:update?, comment)

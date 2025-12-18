@@ -3,7 +3,7 @@
 
 - content_for :page_actions do
   - if allowed_to?(:create?, Directory, namespace: Admin)
-    = add_link_to new_admin_directory_path
+    = add_link_to new_admin_directory_path, hotkey: 'a'
 
 .stats.shadow.bg-base-200.mb-3.w-full.lg:w-auto
   .stat

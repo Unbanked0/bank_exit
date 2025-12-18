@@ -3,7 +3,8 @@
     h2.mb-2.uppercase.font-bold.text-primary= t('merchants.show.itinerary_title')
 
     .alert.flex.items-center.justify-between
-      = link_to new_merchant_itinerary_path(merchant),
-                data: { merchants_target: :itinerary } do
-        = t('merchants.show.itinerary.calculate_my_itinerary')
-        = lucide_icon 'car', class: 'inline-flex ml-2'
+      = raw_link_to new_merchant_itinerary_path(merchant),
+                    class: 'flex items-center gap-2',
+                    hotkey: 'j' do
+        = lucide_icon 'car', class: 'inline-flex'
+        =< t('merchants.show.itinerary.calculate_my_itinerary')

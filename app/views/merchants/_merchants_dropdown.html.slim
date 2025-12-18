@@ -61,11 +61,10 @@
     .bg-base-100.p-2 data-controller="pagination"
       == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true"')
 
-  footer.bg-base-200.p-2.text-sm.rounded-b-box.space-y-2.flex.items-center.justify-between
-    p.flex.items-center.gap-2.mb-0
-      span.inline-block.w-1.h-3.bg-secondary.rounded-box
+  footer.bg-base-200.p-2.text-sm.rounded-b-box.flex.items-center.justify-between
+    p.badge.badge-secondary.badge-xs
       = Directory.model_name.human.capitalize
-    p.hidden.lg:flex.items-center.gap-2
+    p.hidden-on-touch.flex.items-center.gap-2
       span
         kbd.kbd.kbd-sm Tab
         =< t('or')

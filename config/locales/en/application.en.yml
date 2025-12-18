@@ -48,7 +48,6 @@ en:
       access_prev_page: Go to previous page
       access_next_page: Go to next page
       access_page_subtitle: (when pagination is present)
-      open_merchant_routing_form: Open route planner to reach a merchant
 
     snowflakes:
       enable_snowflakes: Enable snow
