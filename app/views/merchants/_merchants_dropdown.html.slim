@@ -12,8 +12,6 @@
 
                 h3= directory.name
 
-                = lucide_icon 'star', class: 'stroke-yellow-500 fill-yellow-500 w-4'
-
               == coins_list(directory.coin_wallets.map(&:coin), with_logo: true, with_name: false, size: 'w-5', inline: true)
 
             - if directory.description.present?
