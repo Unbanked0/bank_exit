@@ -97,10 +97,7 @@ module ButtonsHelper
 
       if hotkey.is_a?(String)
         hotkeys = hotkey.split('+')
-        parts = hotkeys.map do |key|
-          tag.kbd(key, class: 'kbd kbd-xs text-base-content uppercase hide-on-touch')
-        end
-        kbd = parts.join(' + ').html_safe # rubocop:disable Rails/OutputSafety
+        kbd = hotkey_label(hotkeys).html_safe # rubocop:disable Rails/OutputSafety
       end
 
       if block_given?

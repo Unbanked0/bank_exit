@@ -66,12 +66,12 @@
       = Directory.model_name.human.capitalize
     p.hidden-on-touch.flex.items-center.gap-2
       span
-        kbd.kbd.kbd-sm Tab
+        == hotkey_label('tab')
         =< t('or')
-        kbd.kbd.kbd-sm< ▲
-        kbd.kbd.kbd-sm< ▼
+        ==< hotkey_label('▲')
+        ==< hotkey_label('▼')
         =< t('.to_navigate')
 
       span
-        kbd.kbd.kbd-sm Esc
+        ==< hotkey_label('esc')
         =< t('.to_close_modal')
