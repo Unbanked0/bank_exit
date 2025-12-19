@@ -78,3 +78,10 @@ document.addEventListener("turbo:render", (e) => {
   const clone = video.cloneNode(true);
   video.parentNode.replaceChild(clone, video);
 });
+
+// PWA activation
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
+  });
+}

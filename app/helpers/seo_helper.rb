@@ -11,6 +11,7 @@ module SEOHelper
       canonical: request.url,
       prev: pagy ? pagy_prev_url(pagy, absolute: true) : nil,
       next: pagy ? pagy_next_url(pagy, absolute: true) : nil,
+      manifest: pwa_manifest_path(format: :json),
       og: {
         title: :title,
         site_name: :site,
