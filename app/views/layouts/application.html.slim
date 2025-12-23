@@ -24,10 +24,10 @@ html lang=I18n.locale
     script type="application/ld+json"
       == schema_dot_org_organization
 
-  body.max-w-screen-3xl.mx-auto data-controller=("layout" if welcome_page?) data-layout-header-background-class=("bg-base-100!" if welcome_page?)
+  body.max-w-screen-3xl.mx-auto
     = render 'header', projects: @projects
 
-    main.pt-20
+    main
       = yield
 
     = render 'footer', projects: @projects, contacts: @contacts
@@ -36,7 +36,6 @@ html lang=I18n.locale
 
     #modal
     = render 'modal', id: 'turbo-confirm'
-    = render 'command_palette'
     = render 'modal_help'
     = render 'modal_about'
 

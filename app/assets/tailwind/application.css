@@ -152,7 +152,11 @@
 }
 
 @utility hero-content {
-    @apply py-10 lg:py-16;
+    @apply py-20;
+}
+
+@utility hero-content-main {
+    @apply pt-28 pb-12;
 }
 
 @utility dropdown-content {

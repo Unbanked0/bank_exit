@@ -1,2 +1,5 @@
-= turbo_stream.update :command_palette_results do
-  = render 'merchants_dropdown', merchants: @merchants, pagy: @pagy
+= turbo_stream.update :menu do
+  = render 'merchants/searches/index',
+           merchants: @merchants,
+           directories: @directories,
+           pagy: @pagy

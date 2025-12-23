@@ -16,7 +16,9 @@ es:
         faq: Preguntas más frecuentes (FAQ)
         contact: Contacto
         pros: Pros
-        github_title: Enlace al repositorio Github
+
+    header:
+      github_title: Enlace al repositorio Github
 
     theme_switcher:
       switch_to_light: Cambiar al tema claro
@@ -41,7 +43,6 @@ es:
       shortcut: Atajo
       description: Descripción
       open_help_modal: Abrir la ventana de ayuda
-      open_command_palette_modal: Mostrar la paleta de comandos
       open_about_modal: Mostrar modal "Acerca de"
       access_prev_page: Ir a la página anterior
       access_next_page: Ir a la página siguiente

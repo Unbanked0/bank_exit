@@ -16,7 +16,9 @@ de:
         faq: Häufig gestellte Fragen (FAQ)
         contact: Kontakt
         pros: Profis
-        github_title: Link zum GitHub-Repository
+
+    header:
+      github_title: Link zum GitHub-Repository
 
     theme_switcher:
       switch_to_light: In den hellen Modus wechseln
@@ -41,7 +43,6 @@ de:
       shortcut: Tastenkürzel
       description: Beschreibung
       open_help_modal: Hilfe-Modal öffnen
-      open_command_palette_modal: Befehlsübersicht anzeigen
       open_about_modal: Modales Fenster „Über“ anzeigen
       access_prev_page: Zur vorherigen Seite gehen
       access_next_page: Zur nächsten Seite gehen

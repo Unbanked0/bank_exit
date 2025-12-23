@@ -5,7 +5,6 @@ class PublicController < ApplicationController
 
   before_action :set_projects
   before_action :set_contacts
-  before_action :set_default_command_palette_data
 
   private
 
@@ -15,14 +14,6 @@ class PublicController < ApplicationController
 
   def set_contacts
     @contacts = Contact.all
-  end
-
-  def set_default_command_palette_data
-    default_merchants = Merchant.available.by_country(country_for_locale).includes(:logo_attachment).last(Pagy::DEFAULT[:limit])
-    @default_merchants = MerchantDecorator.wrap(default_merchants)
-
-    directories_spotlight = Directory.enabled.spotlights.includes(:logo_attachment, :string_translations, :text_translations, :coin_wallets).shuffle
-    @directories_spotlight = DirectoryDecorator.wrap(directories_spotlight)
   end
 
   # Remove empty GET params from URL

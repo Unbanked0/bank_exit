@@ -5,20 +5,17 @@
   = raw_link_to url_for(params: req_params.merge(display: :map)),
                 class: "btn btn-sm gap-2 #{merchants_as_map? ? 'btn-success' : 'btn-neutral'}",
                 title: t('display_map'),
-                hotkey: 'shift+m',
-                size: 'xs' do
+                hotkey: 'shift+m' do
     = lucide_icon 'map'
 
   = raw_link_to url_for(params: req_params.merge(display: :table)),
                 class: "btn btn-sm gap-2 #{merchants_as_table? ? 'btn-info' : 'btn-neutral'}",
                 title: t('display_table'),
-                hotkey: 'shift+t',
-                size: 'xs' do
+                hotkey: 'shift+t' do
     = lucide_icon 'rows-3'
 
   = raw_link_to url_for(params: req_params.merge(display: :grid)),
                 class: "btn btn-sm gap-2 #{merchants_as_grid? ? 'btn-warning' : 'btn-neutral'}",
                 title: t('display_grid'),
-                hotkey: 'shift+g',
-                size: 'xs' do
+                hotkey: 'shift+g' do
     = lucide_icon 'grid-3x3'

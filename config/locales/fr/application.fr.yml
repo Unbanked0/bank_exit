@@ -1,8 +1,8 @@
 fr:
   application:
     nav:
-      collectif: Sortie
-      bank_exit: De Banque
+      collectif: Collectif
+      bank_exit: Sortie De Banque
       admin_area: Espace admin
       back_to_my_account: Retour à mon vrai compte
 
@@ -18,7 +18,9 @@ fr:
         faq: Foire Aux Questions (FAQ)
         contact: Contact
         pros: Pros
-        github_title: Lien vers le dépôt Github
+
+    header:
+      github_title: Lien vers le dépôt Github
 
     theme_switcher:
       switch_to_light: Basculer sur le thème clair
@@ -43,7 +45,6 @@ fr:
       shortcut: Raccourci
       description: Description
       open_help_modal: Ouvrir la modale d'aide
-      open_command_palette_modal: Afficher la palette de commande
       open_about_modal: Afficher modale "A propos"
       access_prev_page: Accéder à la page précédente
       access_next_page: Accéder à la page suivante

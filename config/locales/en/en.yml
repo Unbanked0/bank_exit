@@ -33,6 +33,7 @@ en:
   refresh: Refresh
   help: Help
   about: About
+  menu: Menu
 
   display_map: Map display
   display_grid: Grid display

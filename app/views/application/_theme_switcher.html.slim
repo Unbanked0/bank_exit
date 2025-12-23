@@ -1,15 +1,18 @@
-label.swap.swap-rotate
-  input#theme-switcher.theme-controller(
-    type="checkbox"
-    value=@themes[:dark]
-    data-controller="themes"
-    data-action="click->themes#switch"
-    data-themes-light-value=@themes[:light]
-    data-themes-dark-value=@themes[:dark]
-  )
+.flex.items-center.gap-1
+  label.swap.swap-rotate.hover:text-primary.motion-safe:transition-colors
+    input#theme-switcher.theme-controller(
+      type="checkbox"
+      value=@themes[:dark]
+      data-controller="themes hotkey"
+      data-action="click->themes#switch keydown.t@document->hotkey#click"
+      data-themes-light-value=@themes[:light]
+      data-themes-dark-value=@themes[:dark]
+    )
 
-  span.swap-on title=t('.switch_to_dark')
-    = lucide_icon 'sun', class: 'h-6 w-6 fill-current'
+    span.swap-on title=t('.switch_to_dark')
+      = lucide_icon 'sun', class: 'h-4 w-4 fill-current'
 
-  span.swap-off title=t('.switch_to_light')
-    = lucide_icon 'moon', class: 'h-6 w-6 fill-current'
+    span.swap-off title=t('.switch_to_light')
+      = lucide_icon 'moon', class: 'h-4 w-4 fill-current'
+
+  = hotkey_label('t', size: 'xs')

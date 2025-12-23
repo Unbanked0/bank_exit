@@ -18,7 +18,9 @@ en:
         faq: Frequently Asked Questions (FAQ)
         contact: Contact
         pros: Pros
-        github_title: Link to the Github repository
+
+    header:
+      github_title: Link to the Github repository
 
     theme_switcher:
       switch_to_light: Switch to light mode
@@ -43,7 +45,6 @@ en:
       shortcut: Shortcut
       description: Description
       open_help_modal: Open help modal
-      open_command_palette_modal: Show command palette
       open_about_modal: Show "About" modal
       access_prev_page: Go to previous page
       access_next_page: Go to next page

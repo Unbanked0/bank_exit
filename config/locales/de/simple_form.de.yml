@@ -81,7 +81,7 @@ de:
 
       map:
         search: Finde ein Geschäft nach Name, Adresse oder Beschreibung
-      command_palette:
+      research:
         search: Einen Händler nach Name, Adresse oder Beschreibung suchen
 
       itinerary:

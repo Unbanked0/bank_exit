@@ -94,7 +94,7 @@ fr:
 
       map:
         search: Rechercher par nom, adresse ou description
-      command_palette:
+      research:
         search: Rechercher un commerçant par nom, adresse ou description
 
       itinerary:
