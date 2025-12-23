@@ -82,6 +82,13 @@ module ButtonsHelper
 
   private
 
+  def build_hotkey_kbd(hotkey, **)
+    return unless hotkey.is_a?(String)
+
+    hotkeys = hotkey.split('+')
+    hotkey_label(hotkeys, **).html_safe # rubocop:disable Rails/OutputSafety
+  end
+
   def base_link_to(url, label, icon, hotkey, **options, &block)
     if hotkey
       options.deep_merge!(
@@ -90,19 +97,21 @@ module ButtonsHelper
           action: "keydown.#{hotkey}@document->hotkey#click"
         }
       )
+
     end
 
+    kbd = build_hotkey_kbd(hotkey, **options.slice(:size))
+    content_for :hotkey, kbd, flush: true if kbd
+
     link_to(url, **options) do
-      kbd = ''
-
-      if hotkey.is_a?(String)
-        hotkeys = hotkey.split('+')
-        kbd = hotkey_label(hotkeys).html_safe # rubocop:disable Rails/OutputSafety
-      end
-
       if block_given?
         content = capture(&block)
-        kbd.present? ? content + kbd : content
+
+        if options[:yield_hotkey]
+          content
+        else
+          content + kbd
+        end
       else
         (icon ? lucide_icon(icon, class: 'inline-flex w-4') : '') +
           (label ? tag.span(label, class: 'truncate') : '') +

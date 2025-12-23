@@ -3,12 +3,14 @@ module HotkeysHelper
     # kbd-xs / kbd-sm
     klass = "kbd kbd-#{size} text-base-content hide-on-touch"
 
-    if hotkey.is_a?(Array)
-      hotkey.map do |key|
-        tag.kbd(key.capitalize, class: klass)
-      end.join('&nbsp;+&nbsp;')
-    else
-      tag.kbd(hotkey.capitalize, class: klass)
+    content_tag :span, class: 'hide-on-touch' do
+      if hotkey.is_a?(Array)
+        hotkey.map do |key|
+          tag.kbd(key.capitalize, class: klass)
+        end.join('&nbsp;+&nbsp;').html_safe
+      else
+        tag.kbd(hotkey.capitalize, class: klass).html_safe
+      end
     end
   end
 end

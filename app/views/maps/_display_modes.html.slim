@@ -2,17 +2,20 @@
   - req_params = request.query_parameters.compact_blank
   - req_params.delete(:pagy)
 
-  = link_to url_for(params: req_params.merge(display: :map)),
-    class: "btn btn-square #{merchants_as_map? ? 'btn-success' : 'btn-neutral'}",
-            title: t('display_map') do
+  = raw_link_to url_for(params: req_params.merge(display: :map)),
+                class: "btn gap-2 #{merchants_as_map? ? 'btn-success' : 'btn-neutral'}",
+                title: t('display_map'),
+                hotkey: 'shift+m' do
     = lucide_icon 'map'
 
-  = link_to url_for(params: req_params.merge(display: :table)),
-            class: "btn btn-square #{merchants_as_table? ? 'btn-info' : 'btn-neutral'}",
-            title: t('display_table') do
+  = raw_link_to url_for(params: req_params.merge(display: :table)),
+                class: "btn gap-2 #{merchants_as_table? ? 'btn-info' : 'btn-neutral'}",
+                title: t('display_table'),
+                hotkey: 'shift+t' do
     = lucide_icon 'rows-3'
 
-  = link_to url_for(params: req_params.merge(display: :grid)),
-            class: "btn btn-square #{merchants_as_grid? ? 'btn-warning' : 'btn-neutral'}",
-            title: t('display_grid') do
+  = raw_link_to url_for(params: req_params.merge(display: :grid)),
+                class: "btn gap-2 #{merchants_as_grid? ? 'btn-warning' : 'btn-neutral'}",
+                title: t('display_grid'),
+                hotkey: 'shift+g' do
     = lucide_icon 'grid-3x3'
