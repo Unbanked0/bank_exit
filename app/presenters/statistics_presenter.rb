@@ -149,9 +149,9 @@ class StatisticsPresenter < ApplicationPresenter
         .group_by_day(:created_at, range: range)
         .count
         .map do |date, count|
-        hash[
-          [label, I18n.l(date, format: :short)]
-        ] = count
+          hash[
+            [label, I18n.l(date, format: :short)]
+          ] = count
       end
     end
   end
