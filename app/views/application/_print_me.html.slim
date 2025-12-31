@@ -1,5 +1,5 @@
 = link_to '#',
-          class: (klass if defined?(klass)),
+          class: 'flex items-center gap-2',
           title: t('print'),
           data: { \
             controller: 'printer',
@@ -8,3 +8,4 @@
   = lucide_icon 'printer',
                 class: (icon_klass if defined?(icon_klass))
   = yield
+  == hotkey_label(['ctrl', 'p'], size: 'xs')

@@ -34,15 +34,19 @@ ul.dropdown.dropdown-end.menu.bg-base-100.rounded-box.z-1.w-max.p-2.shadow-sm.bo
       = t('print')
 
   li
-    = link_to merchant.osm_link, target: :_blank do
+    = link_to merchant.osm_link,
+              class: 'flex items-center gap-2',
+              target: :_blank do
       = lucide_icon 'map-pin'
-      span
-        = t('merchants.show.view_on_osm')
+      = t('merchants.show.view_on_osm')
 
   li
-    = link_to new_merchant_report_path(merchant),
-              title: t('merchants.show.report_a_fault.title'),
-              data: { turbo_stream: true } do
+    = raw_link_to new_merchant_report_path(merchant),
+                  class: 'flex items-center gap-2',
+                  title: t('merchants.show.report_a_fault.title'),
+                  data: { turbo_stream: true },
+                  hotkey: 'w',
+                  size: 'xs' do
       = lucide_icon 'bug'
       = t('merchants.show.report_a_fault.title')
 

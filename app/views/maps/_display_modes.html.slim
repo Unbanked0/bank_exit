@@ -3,19 +3,22 @@
   - req_params.delete(:pagy)
 
   = raw_link_to url_for(params: req_params.merge(display: :map)),
-                class: "btn gap-2 #{merchants_as_map? ? 'btn-success' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 #{merchants_as_map? ? 'btn-success' : 'btn-neutral'}",
                 title: t('display_map'),
-                hotkey: 'shift+m' do
+                hotkey: 'shift+m',
+                size: 'xs' do
     = lucide_icon 'map'
 
   = raw_link_to url_for(params: req_params.merge(display: :table)),
-                class: "btn gap-2 #{merchants_as_table? ? 'btn-info' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 #{merchants_as_table? ? 'btn-info' : 'btn-neutral'}",
                 title: t('display_table'),
-                hotkey: 'shift+t' do
+                hotkey: 'shift+t',
+                size: 'xs' do
     = lucide_icon 'rows-3'
 
   = raw_link_to url_for(params: req_params.merge(display: :grid)),
-                class: "btn gap-2 #{merchants_as_grid? ? 'btn-warning' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 #{merchants_as_grid? ? 'btn-warning' : 'btn-neutral'}",
                 title: t('display_grid'),
-                hotkey: 'shift+g' do
+                hotkey: 'shift+g',
+                size: 'xs' do
     = lucide_icon 'grid-3x3'

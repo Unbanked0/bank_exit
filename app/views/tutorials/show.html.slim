@@ -8,9 +8,12 @@
     = render 'print_me',
               icon_klass: 'w-8 h-8'
 
-    = link_to new_tutorial_report_path(@tutorial.identifier),
-              title: t('.report_a_fault.title'),
-              data: { turbo_stream: true } do
+    = raw_link_to new_tutorial_report_path(@tutorial.identifier),
+                  title: t('.report_a_fault.title'),
+                  class: 'flex items-center gap-2',
+                  data: { turbo_stream: true },
+                  hotkey: 'w',
+                  size: 'xs' do
       = lucide_icon 'bug', class: 'w-8 h-8'
 
 - content_for :outdated_content do
