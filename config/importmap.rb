@@ -9,7 +9,7 @@ pin '@hotwired/stimulus-loading', to: 'stimulus-loading.js'
 
 pin_all_from 'app/javascript/controllers', under: 'controllers', preload: :application
 
-pin '@rails/request.js', to: 'https://ga.jspm.io/npm:@rails/request.js@0.0.12/src/index.js'
+pin '@rails/request.js', to: 'https://ga.jspm.io/npm:@rails/request.js@0.0.13/src/index.js'
 
 pin 'stimulus-use', to: 'https://ga.jspm.io/npm:stimulus-use@0.52.3/dist/index.js', preload: :application
 pin 'stimulus-use/hotkeys', to: 'stimulus-use--hotkeys.js', preload: :application # @0.52.3
