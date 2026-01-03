@@ -1,14 +1,32 @@
 import { Controller } from "@hotwired/stimulus";
-import { useHotkeys } from "stimulus-use/hotkeys";
 
 export default class extends Controller {
   static targets = ["pagyTop"];
 
   connect() {
-    useHotkeys(this, {
-      "ctrl+left": [this.#prevPageHandler],
-      "ctrl+right": [this.#nextPageHandler],
-    });
+    this._onKeydown = this.#onKeydown.bind(this);
+    document.addEventListener("keydown", this._onKeydown);
+  }
+
+  disconnect() {
+    document.removeEventListener("keydown", this._onKeydown);
+  }
+
+  #onKeydown(e) {
+    if (!e.ctrlKey) {
+      return;
+    }
+
+    switch (e.key) {
+      case "ArrowLeft":
+        e.preventDefault();
+        this.#prevPageHandler();
+        break;
+      case "ArrowRight":
+        e.preventDefault();
+        this.#nextPageHandler();
+        break;
+    }
   }
 
   addPageToURL(e) {

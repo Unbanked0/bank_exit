@@ -12,8 +12,6 @@ pin_all_from 'app/javascript/controllers', under: 'controllers', preload: :appli
 pin '@rails/request.js', to: 'https://ga.jspm.io/npm:@rails/request.js@0.0.13/src/index.js'
 
 pin 'stimulus-use', to: 'https://ga.jspm.io/npm:stimulus-use@0.52.3/dist/index.js', preload: :application
-pin 'stimulus-use/hotkeys', to: 'stimulus-use--hotkeys.js', preload: :application # @0.52.3
-pin 'hotkeys-js' # @3.13.15
 
 pin 'leaflet', to: 'https://ga.jspm.io/npm:leaflet@1.9.4/dist/leaflet-src.js'
 pin 'leaflet-gesture-handling', to: 'https://ga.jspm.io/npm:leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js'
