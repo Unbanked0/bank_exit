@@ -64,7 +64,10 @@ article
                           prompt: :translate,
                           format: :with_flag,
                           wrapper: false,
-                          input_html: { class: 'select w-full' },
+                          input_html: { \
+                            autocomplete: false, \
+                            class: 'select w-full' \
+                          },
                           label_html: { class: 'fieldset-legend' }
 
               = f.input :latitude, as: :float

@@ -44,7 +44,7 @@
         = render 'delivery_zones/formatted_geocoder_details', geocoder: @my_geocoder
 
   fieldset.fieldset.w-full
-    label.fieldset-legend= Directory.human_attribute_name(:coins).capitalize
+    .fieldset-legend= Directory.human_attribute_name(:coins).capitalize
     ul.grid.w-full.gap-2.grid-cols-3
       - [:monero, :bitcoin, :june].each do |coin|
         li.flex.flex-col.items-center.justify-start.gap-2
@@ -100,6 +100,7 @@
               include_blank: :translate,
               selected: params[:region],
               input_html: { \
+                autocomplete: false,
                 data: { \
                   directories_target: 'region',
                   action: 'change->directories#deliveryZoneChanged' \
@@ -114,6 +115,7 @@
                 wrapper: false,
                 selected: params[:country],
                 input_html: { \
+                  autocomplete: false,
                   class: 'select w-full',
                   data: { \
                     directories_target: 'country',

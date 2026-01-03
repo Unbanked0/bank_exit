@@ -25,7 +25,7 @@ div data-controller="snowflakes"
       .snow__fall
 
   label.swap.hover:text-primary.motion-safe:transition-colors
-    input type="checkbox" data-snowflakes-target="input" data-action="click->snowflakes#switch"
+    input#snowflakes-toggler type="checkbox" data-snowflakes-target="input" data-action="click->snowflakes#switch"
 
     span.swap-on
       = lucide_icon 'snowflake', class: 'h-5 w-5 fill-current inline-flex mr-1'

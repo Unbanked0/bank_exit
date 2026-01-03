@@ -68,6 +68,7 @@ section
                   only: Merchant.pluck(:country).uniq,
                   selected: params[:country],
                   input_html: { \
+                    autocomplete: false,
                     class: 'select w-full', \
                     data: { \
                       admin__search_target: :country \
