@@ -1,7 +1,7 @@
 article
   .hero.bg-fixed style=("background-image: url(#{rails_blob_path(@merchant.banner.variant(:thumb))})" if @merchant.banner.attached?) class=(@merchant.banner.attached? ? 'bg-contain' : 'bg-banner-default')
     .hero-overlay
-    .hero-content.py-16
+    .hero-content.hero-content-main
       header.max-w-xl
         .text-center.space-y-6
           = render 'logo_or_initials', model: @merchant, mode: :extra_large

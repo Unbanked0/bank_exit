@@ -11,6 +11,7 @@ class SessionsController < PublicController
   # @route GET /en/session/new {locale: "en"} (new_session_en)
   # @route GET /session/new
   def new
+    @header_absolute = false
     redirect_to admin_root_path if logged_in?
   end
 

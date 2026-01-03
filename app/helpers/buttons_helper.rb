@@ -91,10 +91,16 @@ module ButtonsHelper
 
   def base_link_to(url, label, icon, hotkey, **options, &block)
     if hotkey
+      action = if options[:alt_key]
+                 "keydown.#{hotkey}@document->hotkey#click keydown.meta+#{hotkey}@document->hotkey#click keydown.ctrl+#{hotkey}@document->hotkey#click keydown.shift+#{hotkey}@document->hotkey#click"
+               else
+                 "keydown.#{hotkey}@document->hotkey#click"
+               end
+
       options.deep_merge!(
         data: {
           controller: 'hotkey',
-          action: "keydown.#{hotkey}@document->hotkey#click"
+          action: action
         }
       )
 
@@ -103,7 +109,7 @@ module ButtonsHelper
     kbd = build_hotkey_kbd(hotkey, **options.slice(:size))
     content_for :hotkey, kbd, flush: true if kbd
 
-    link_to(url, **options) do
+    link_to(url, **options.slice(:data, :class, :id)) do
       if block_given?
         content = capture(&block)
 

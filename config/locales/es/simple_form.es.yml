@@ -82,7 +82,7 @@ es:
 
       map:
         search: Encuentrar una empresa por nombre, dirección o descripción
-      command_palette:
+      research:
         search: Buscar un comerciante por nombre, dirección o descripción
 
       itinerary:

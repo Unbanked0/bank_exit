@@ -22,5 +22,7 @@ class WelcomeController < PublicController
 
     merchants_sample = Merchant.available.monero.in_france.no_kyc.includes(:logo_attachment, :banner_attachment).sample(3)
     @merchants_sample = MerchantDecorator.wrap(merchants_sample)
+
+    @header_absolute = false
   end
 end

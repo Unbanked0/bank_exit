@@ -90,7 +90,7 @@ en:
 
       map:
         search: Find a business by name, address or description
-      command_palette:
+      research:
         search: Find a business by name, address or description
 
       itinerary:

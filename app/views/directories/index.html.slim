@@ -1,7 +1,7 @@
 article data-controller="directories" data-directories-autocomplete-url-value= addresses_search_path
   header.hero.bg-fixed.bg-banner-directories
     .hero-overlay
-    .hero-content.text-center
+    .hero-content.hero-content-main.text-center
       .max-w-3xl.space-y-6
         section.space-y-3
           h1.text-3xl.font-bold= t('application.nav.menu.directories')
@@ -13,7 +13,7 @@ article data-controller="directories" data-directories-autocomplete-url-value= a
             p.italic
               = t('.headline_directory_explanation')
             p.italic
-              - link = raw_link_to maps_path, class: 'btn btn-secondary btn-xs', hotkey: 'm' do
+              - link = raw_link_to maps_path, class: 'btn btn-secondary btn-xs', hotkey: 'm', size: 'xs' do
                 = lucide_icon 'map', class: 'w-4'
                 = t('.physical_merchants')
               = t('.headline_directory_physical_merchants_html', link: link)

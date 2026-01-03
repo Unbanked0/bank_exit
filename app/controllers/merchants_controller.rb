@@ -13,6 +13,11 @@ class MerchantsController < PublicController
   # @route GET /en/merchants {locale: "en"} (merchants_en)
   # @route GET /merchants
   def index
+    if params[:page].nil? || params[:page].to_i == 1
+      directories_filter = Directories::Filter.new(query: query)
+      @directories = DirectoryDecorator.wrap(directories_filter.call)
+    end
+
     @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo)
     @merchants = MerchantDecorator.wrap(merchants)
   end
@@ -35,7 +40,12 @@ class MerchantsController < PublicController
 
     # Render adapted `show.html+banner` template if
     # merchant has an attached banner to highlight.
-    request.variant = :banner if @merchant.banner.attached?
+
+    @header_absolute = false
+    return unless @merchant.banner.attached?
+
+    @header_absolute = true
+    request.variant = :banner
   end
 
   # @route POST /fr/merchants/refresh {locale: "fr"} (refresh_merchants_fr)

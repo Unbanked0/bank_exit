@@ -8,32 +8,88 @@
 - active_article = params[:controller].in?(%w[blogs tutorials]) && params[:id] != 'flyer'  && params[:id] != 'accounting' && params[:id] != 'cryptopayment-for-business'
 - active_other = params[:controller].in?(%w[local_groups collectives ecosystems media statistics])
 
-nav.navbar data-controller="navbar"
-  .navbar-start.lg:w-full
-    / Mobile
-    .dropdown
-      .lg:hidden tabindex="0" role="button" aria-label="Menu"
-        = lucide_icon 'menu', class: 'w-7 h-7 cursor-pointer'
+#popover-menu.dropdown.lg:dropdown-center.menu.rounded-box.bg-base-100/80.max-w-3xl.space-y-3.p-3.border.border-base-content/20.backdrop-blur-md(
+  class="w-[95dvw] mt-1"
+  popover=""
+  style="position-anchor:--anchor-menu"
+  data-controller="research"
+  data-research-search-url-value=merchants_path
+)
 
-      ul.menu.menu-md.dropdown-content.z-1.mt-2.w-max.overflow-auto.p-2 tabindex="0" class="max-h-[90vh] max-w-[90vw]"
-        li.menu-title= "#{t('.collectif')} #{t('.bank_exit')}"
-        li
-          = link_to maps_path, class: ('text-primary' if active_map) do
+  form#research.flex.items-center.gap-2 data-action="reset->research#search"
+    .relative.w-full
+      input.input.w-full.bg-base-100/50.focus:outline-hidden.pl-9.border-2.focus-visible:border-primary(
+        type="text"
+        name="query"
+        placeholder=t('simple_form.placeholders.research.search')
+        data-research-target="input"
+        data-action="input->research#search"
+      )
+      = lucide_icon 'search', class: 'w-5 absolute top-1/2 -translate-y-1/2 left-2'
+
+      span.spinner.hidden.absolute.right-2.top-1/2.-translate-y-1/2.z-1 data-research-target="spinner"
+        span.loading.loading-spinner.w-6.h-6.text-primary
+
+    button.btn.btn-xs.btn-circle.btn-primary tabindex="0" title=t('maps.filters_form.clear_search_query') role="button" type="reset"
+      = lucide_icon 'undo', class: 'p-1'
+
+  #menu.space-y-3 data-research-target="initialContent"
+    .grid.grid-cols-3.gap-3
+      = raw_link_to maps_path,
+                    class: 'relative block aspect-square overflow-hidden rounded-box hover:text-inherit! group',
+                    hotkey: '1',
+                    alt_key: true,
+                    yield_hotkey: true do
+        .absolute.inset-0.bg-banner-map.bg-cover.bg-center.filter.blur-xs.group-focus-visible:scale-125.group-hover:scale-125.motion-safe:transition-transform
+        .absolute.inset-0.bg-base-100/50
+
+        .relative.z-10.flex.flex-col.gap-3.h-full.items-center.justify-center
+          = lucide_icon 'map', class: 'w-8 h-auto'
+          p.text-base.font-medium.leading-tight.text-center.break-words.px-1
             = t('.menu.map')
+          = content_for(:hotkey)
 
-        li
-          = link_to directories_path, class: ('text-primary' if params[:controller] == 'directories') do
-            = t('.menu.directories')
+      = raw_link_to directories_path,
+                    class: 'relative block aspect-square overflow-hidden rounded-box hover:text-inherit! group',
+                    hotkey: '2',
+                    alt_key: true,
+                    yield_hotkey: true do
+        .absolute.inset-0.bg-banner-directories.bg-cover.bg-center.filter.blur-xs.group-focus-visible:scale-125.group-hover:scale-125.motion-safe:transition-transform
+        .absolute.inset-0.bg-base-100/50
 
-        li
-          = link_to project_path(:grocery), class: ('text-primary' if params[:controller] == 'projects' && params[:id] == 'grocery') do
+        .relative.z-10.flex.flex-col.gap-3.h-full.items-center.justify-center
+          = lucide_icon 'notebook', class: 'w-8 h-auto'
+          p.text-base.font-medium.leading-tight.text-center.break-words.px-1
+            = t('application.nav.menu.directories')
+          = content_for(:hotkey)
+
+      = raw_link_to project_path(:grocery),
+                    class: 'relative block aspect-square overflow-hidden rounded-box hover:text-inherit! group',
+                    hotkey: '3',
+                    alt_key: true,
+                    yield_hotkey: true do
+        .absolute.inset-0.bg-banner-1.bg-cover.bg-center.filter.blur-xs.group-focus-visible:scale-125.group-hover:scale-125.motion-safe:transition-transform
+        .absolute.inset-0.bg-base-100/50
+
+        .relative.z-10.flex.flex-col.gap-3.h-full.items-center.justify-center
+          = lucide_icon 'store', class: 'w-8 h-auto'
+          p.text-base.font-medium.leading-tight.text-center.break-words.px-1
             = grocery.title
+          = content_for(:hotkey)
 
-        li
-          .menu-title class=('text-primary' if active_project)
+    ul.w-full.overflow-y-auto.max-h-96
+      li
+        = raw_link_to root_path,
+                      hotkey: '0',
+                      alt_key: true do
+          == t('.menu.home')
+
+      li
+        details open=("" if active_project)
+          summary class=("text-primary" if active_project)
             = t('.menu.projects')
 
-          ul.p-2
+          ul
             - projects.each do |project|
               - next if project.identifier.in?(%w[map grocery local_groups accounting])
               li
@@ -45,59 +101,67 @@ nav.navbar data-controller="navbar"
                     = lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1'
 
             li
-              = link_to 'https://coinadoptionscore.com', target: :_blank do
+              = link_to 'https://coinadoptionscore.com',
+                        target: :_blank do
                 | CoinAdoptionScore
 
-        li
-          .menu-title class=('text-primary' if active_article)
+      li
+        details open=('' if active_article)
+          summary class=('text-primary' if active_article)
             = t('.menu.articles')
 
-          ul.p-2
+          ul
             li
-              = link_to blogs_path, class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do
+              = link_to blogs_path,
+                        class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do
                 = t('.menu.blogs')
 
             li
-              = link_to tutorials_path, class: ('text-primary' if params[:controller] == 'tutorials') do
+              = link_to tutorials_path,
+                        class: ('text-primary' if params[:controller] == 'tutorials') do
                 = t('.menu.tutorials')
 
-        li
-          .menu-title class=('text-primary' if active_other)
+      li
+        details open=('' if active_other)
+          summary class=('text-primary' if active_other)
             = t('other')
 
-          ul.p-2
+          ul
             li
-              = link_to collective_path, class: ('text-primary' if params[:controller] == 'collectives') do
+              = link_to collective_path,
+                        class: ('text-primary' if params[:controller] == 'collectives') do
                 = t('collectives.show.title')
 
             li
-              = link_to local_groups_path, class: ('text-primary' if params[:controller] == 'local_groups') do
+              = link_to local_groups_path,
+                        class: ('text-primary' if params[:controller] == 'local_groups') do
                 = local_groups.title
                 = inline_svg_tag "contacts/telegram.svg", class: 'inline-flex bg-white text-[#27A7E7] w-5 rounded-full', title: 'Telegram', alt: 'Logo Telegram'
 
             li
-              = link_to media_path, class: ('text-primary' if params[:controller] == 'media') do
+              = link_to media_path,
+                        class: ('text-primary' if params[:controller] == 'media') do
                 = t('media.index.title')
 
             li
-              = link_to ecosystem_path, class: ('text-primary' if params[:controller] == 'ecosystems') do
+              = link_to ecosystem_path,
+                        class: ('text-primary' if params[:controller] == 'ecosystems') do
                 = t('ecosystems.show.title')
                 = image_tag icon_by_coin('monero'), class: 'w-5'
 
             li
-              = link_to statistics_path, class: ('text-primary' if params[:controller] == 'statistics') do
+              = link_to statistics_path,
+                        class: ('text-primary' if params[:controller] == 'statistics') do
                 = t('statistics.show.title')
 
-        li
-          = link_to '#contact' do
-            = t('.menu.contact')
-
-        li
-          .menu-title
-            => t('.menu.pros')
+      li
+        - active_pro = params[:id].in?(%w[accounting cryptopayment-for-business])
+        details open=('' if active_pro)
+          summary class=("text-primary" if active_pro)
+            = t('.menu.pros')
             span.status.status-primary
 
-          ul.p-2
+          ul
             li
               = link_to tutorial_path(business_guide_tutorial.identifier),
                         class: ('text-primary' if params[:id] == 'cryptopayment-for-business') do
@@ -107,145 +171,26 @@ nav.navbar data-controller="navbar"
               = link_to project.link,
                         class: ('text-primary' if params[:id] == 'accounting') do
                 = project.title
-
-    / Desktop
-    = link_to root_path, class: 'flex items-center justify-center gap-2 ml-3 lg:ml-0' do
-      = image_tag logo_by_locale, class: 'w-16 h-16 object-cover rounded-full', alt: 'Logo Bank-Exit'
-      span.self-center.font-semibold.whitespace-nowrap.hidden.lg:block
-        span.block= t('.collectif')
-        span.block=< t('.bank_exit')
-
-  .navbar-center.hidden class="lg:flex!"
-    ul.menu.menu-horizontal.px-1
-      li
-        = link_to maps_path, class: ('text-primary' if active_map) do
-          = t('.menu.map')
-
-      li
-        = link_to directories_path, class: ('text-primary' if params[:controller] == 'directories') do
-          = t('.menu.directories')
-
-      li
-        = link_to project_path(:grocery), class: ('text-primary' if params[:controller] == 'projects' && params[:id] == 'grocery') do
-          = grocery.title
-
-      li
-        details
-          summary class=("text-primary" if active_project)
-            = t('.menu.projects')
-
-          ul.w-max
-            - projects.each do |project|
-              - next if project.identifier.in?(%w[map grocery local_groups accounting])
-              li
-                = link_to project.link,
-                          class: ('text-primary' if params[:id] == project.identifier),
-                          target: (:_blank if project.external?) do
-                  = project.title
-                  - if project.external?
-                    = lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1'
-
-            li
-              = link_to 'https://coinadoptionscore.com', target: :_blank do
-                | CoinAdoptionScore
-
-      li
-        details
-          summary class=('text-primary' if active_article)
-            = t('.menu.articles')
-
-          ul.w-max
-            li
-              = link_to blogs_path, class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do
-                = t('.menu.blogs')
-
-            li
-              = link_to tutorials_path, class: ('text-primary' if params[:controller] == 'tutorials') do
-                = t('.menu.tutorials')
-
-      li
-        details
-          summary class=('text-primary' if active_other)
-            = t('other')
-
-          ul.w-max
-            li
-              = link_to collective_path, class: ('text-primary' if params[:controller] == 'collectives') do
-                = t('collectives.show.title')
-
-            li
-              - local_groups = projects.find(&:local_groups?)
-              = link_to local_groups_path, class: ('text-primary' if params[:controller] == 'local_groups') do
-                = local_groups.title
-                = inline_svg_tag "contacts/telegram.svg", class: 'inline-flex bg-white text-[#27A7E7] w-5 rounded-full', title: 'Telegram', alt: 'Logo Telegram'
-
-            li
-              = link_to media_path, class: ('text-primary' if params[:controller] == 'media') do
-                = t('media.index.title')
-
-            li.border-b.border-base-content/20.pb-2.mb-2
-              = link_to ecosystem_path, class: ('text-primary' if params[:controller] == 'ecosystems') do
-                = t('ecosystems.show.title')
-                = image_tag icon_by_coin('monero'), class: 'w-5'
-
-            li
-              = link_to statistics_path, class: ('text-primary' if params[:controller] == 'statistics') do
-                = t('statistics.show.title')
 
       li
         = link_to '#contact' do
           = t('.menu.contact')
 
-      li
-        details
-          summary class=("text-primary" if params[:id].in?(%w[accounting cryptopayment-for-business]))
-            .status.status-primary
-            = t('.menu.pros')
-
-          ul.w-max
-            li
-              = link_to tutorial_path(business_guide_tutorial.identifier),
-                        class: ('text-primary' if params[:id] == 'cryptopayment-for-business') do
-                = business_guide_tutorial.short_title
-
-            li
-              = link_to project.link,
-                        class: ('text-primary' if params[:id] == 'accounting') do
-                = project.title
-
-  .navbar-end.w-full
-    ul.menu.menu-horizontal.items-center.px-1
-      li
-        = render 'language_switcher'
-
-      li
-        button.btn.btn-ghost.btn-sm(
-          aria-label="Command Palette"
-          data-controller="dispatcher"
-          data-action="click->dispatcher#dispatch"
-          data-dispatch-event="command-palette:open"
-        )
-          = lucide_icon 'search', class: 'w-5'
-
-      li
-        = render 'theme_switcher'
-
-      li
-        = link_to github_organization_url, target: :_blank, title: t('.menu.github_title') do
-          = lucide_icon 'github', class: "w-6"
-
       - if logged_in?
         li
           - color = color_for_role(current_user.role)
-          details
-            summary.avatar.avatar-placeholder.cursor-pointer
-              / .bg-error / .bg-success / .bg-warning / .bg-info
-              / .text-error-content / .text-success-content
-              / .text-warning-content / .text-info-content
-              .w-8.rounded-full.uppercase class="bg-#{color} text-#{color}-content"
-                = current_user.email.first(2)
+          details open=''
+            summary
+              .avatar.avatar-placeholder
+                / .bg-error / .bg-success / .bg-warning / .bg-info
+                / .text-error-content / .text-success-content
+                / .text-warning-content / .text-info-content
+                .w-8.rounded-full.uppercase class="bg-#{color} text-#{color}-content"
+                  = current_user.email.first(2)
 
-            ul.w-max.space-y-2.-ml-12
+              span.text-base-content/50.underline= current_user.email
+
+            ul
               li
                 = link_to t('.admin_area'), admin_root_path
 
@@ -254,10 +199,10 @@ nav.navbar data-controller="navbar"
                   = link_to t('.back_to_my_account'),
                               stop_impersonating_admin_users_path,
                               data: { turbo_method: :post },
-                              class: 'btn btn-warning btn-sm'
+                              class: 'text-warning'
 
               li
                 = link_to t('logout'),
                           session_path,
                           data: { turbo_method: :delete },
-                          class: 'btn btn-error btn-sm'
+                          class: 'text-error'

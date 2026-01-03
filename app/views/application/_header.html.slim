@@ -1,3 +1,33 @@
-header.fixed.max-w-screen-3xl.w-full.print:hidden.bg-base-100/80.border-b-2.border-primary.motion-safe:transition-colors class=('z-[9999]') class=('bg-base-100!' unless welcome_page?) data-layout-target=("header" if welcome_page?)
-  #flashes= render 'flashes'
+header.p-3.print:hidden class=(@header_absolute == false && params[:controller] != 'welcome' ? 'bg-base-200 border-b-2 border-base-content/5' : 'fixed w-full z-50')
+  button.flex.items-center.lg:mx-auto.cursor-pointer.rounded-box.gap-3.pl-2.py-2.pr-6.border.border-base-content/20.bg-base-100/80.hover:bg-base-100.transition-colors.backdrop-blur-sm(
+    popovertarget="popover-menu"
+    style="anchor-name:--anchor-menu"
+    data-controller="hotkey"
+    data-action="keydown.j@document->hotkey#click"
+    aria-label=t('menu')
+  )
+    .avatar class=('avatar-online' if logged_in?)
+      .w-12.rounded-full
+        = image_tag logo_by_locale, alt: 'Logo Bank-Exit'
+
+    .space-y-1
+      p.font-semibold
+        span= t('application.nav.collectif')
+        span=< t('application.nav.bank_exit')
+      p.text-xs
+        span.uppercase.text-base-content/70.mr-2= t('menu')
+        / kbd-xs / kbd-sm
+        = hotkey_label('j', size: 'xs')
+
   = render 'nav', projects: @projects
+
+  .absolute.top-3.right-3.flex.items-center.gap-3.bg-base-100/80.rounded-box.border.border-base-content/20.px-2.py-1
+    = render 'language_switcher'
+    = render 'theme_switcher'
+
+    = link_to github_organization_url,
+              target: :_blank,
+              title: t('.github_title') do
+      = lucide_icon 'github', class: "w-4"
+
+  #flashes= render 'flashes'

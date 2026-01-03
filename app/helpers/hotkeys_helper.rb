@@ -1,6 +1,5 @@
 module HotkeysHelper
   def hotkey_label(hotkey, size: 'sm')
-    # kbd-xs / kbd-sm
     klass = "kbd kbd-#{size} text-base-content hide-on-touch"
 
     content_tag :span, class: 'hide-on-touch print:hidden' do

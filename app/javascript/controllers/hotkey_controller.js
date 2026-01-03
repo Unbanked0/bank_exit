@@ -6,13 +6,14 @@ export default class extends Controller {
     if (this.#isClickable && !this.#shouldIgnore(event)) {
       event.preventDefault();
       this.element.click();
+      this.element.focus();
     }
   }
 
   #shouldIgnore(event) {
     return (
       event.defaultPrevented ||
-      event.target.closest("input, textarea") ||
+      event.target.closest("input[type='text'], textarea") ||
       (event.key == "Escape" &&
         (document.querySelector("[popover]:popover-open") ||
           document.querySelector("dialog[open]")))

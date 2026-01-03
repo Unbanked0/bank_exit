@@ -1,7 +1,7 @@
 article
   header.hero.bg-fixed.bg-banner-statistics.bg-bottom
     .hero-overlay
-    .hero-content.py-16.w-full.lg:w-auto
+    .hero-content.w-full.lg:w-auto class=('hero-content-main' if params[:controller] == 'statistics')
       .w-full.max-w-5xl
         .text-center.space-y-5
           h1.text-3xl.font-bold

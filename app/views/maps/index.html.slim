@@ -1,3 +1,5 @@
+= render 'page_header', offset: true
+
 .flex.flex-col.lg:flex-row.items-start
   = render 'sidebar', h_screen: false do
     - if @directory_friends.present?
@@ -22,8 +24,6 @@
                   = directory_friend.name
 
   = render 'maps/merchants_table_or_grid', merchants: @merchants, pagy: @pagy
-
-= render 'page_header'
 
 - if @faqs.any?
   = render template: 'faqs/show'
