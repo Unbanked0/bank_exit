@@ -1,4 +1,5 @@
 import MapBaseController from "controllers/map_base_controller";
+import { Marker } from "leaflet";
 
 export default class MapItemController extends MapBaseController {
   static values = {
@@ -10,7 +11,7 @@ export default class MapItemController extends MapBaseController {
     super.connect();
     super._initMap();
 
-    this.marker = L.marker(
+    this.marker = new Marker(
       [this.merchantValue.latitude, this.merchantValue.longitude],
       {
         icon: this.assignMarker(this.merchantValue.icon),

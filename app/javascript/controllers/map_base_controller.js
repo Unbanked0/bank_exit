@@ -1,7 +1,9 @@
 import { Controller } from "@hotwired/stimulus";
 import { get } from "@rails/request.js";
+import L, { Map, Popup, Control, TileLayer, DivIcon } from "leaflet";
+import "leaflet-v1-polyfill";
 import "leaflet-gesture-handling";
-import "leaflet.fullscreen";
+import { FullScreen } from "leaflet.fullscreen";
 
 export default class MapBaseController extends Controller {
   static values = {
@@ -13,15 +15,12 @@ export default class MapBaseController extends Controller {
   };
 
   connect() {
+    applyAllPolyfills();
+
     this.mapOptions = {
       attributionControl: this.showAttributionValue,
       zoomControl: false,
       gestureHandling: true,
-      fullscreenControl: true,
-      fullscreenControlOptions: {
-        position: "topright",
-        forceSeparateButton: true,
-      },
       minZoom: 2,
       maxBounds: [
         [-85, -180], // Sud-Ouest
@@ -30,7 +29,7 @@ export default class MapBaseController extends Controller {
       maxBoundsViscosity: 1.0,
     };
     this.markers = [];
-    this.popup = L.popup({ offset: [0, -43] });
+    this.popup = new Popup({ offset: [0, -43] });
   }
 
   disconnect() {
@@ -43,7 +42,14 @@ export default class MapBaseController extends Controller {
   }
 
   _initMap() {
-    this.map = L.map(this.element, this.mapOptions);
+    this.map = new Map(this.element, this.mapOptions);
+    this.map.addControl(
+      new FullScreen({
+        position: "topright",
+        forceSeparateButton: true,
+      }),
+    );
+
     this.map.setView([this.latitudeValue, this.longitudeValue], this.zoomValue);
 
     if (
@@ -63,14 +69,14 @@ export default class MapBaseController extends Controller {
       } catch {}
     }
 
-    L.control.zoom({ position: "topright" }).addTo(this.map);
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
-      this.map,
-    );
+    new Control.Zoom({ position: "topright" }).addTo(this.map);
+    new TileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: false,
+    }).addTo(this.map);
   }
 
   assignMarker(icon, extraClass = "") {
-    return L.divIcon({
+    return new DivIcon({
       html: `
         <div aria-label="${icon} icon">
           <svg width="32" height="43" viewBox="0 0 32 43" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +97,7 @@ export default class MapBaseController extends Controller {
   async loadPopupContent({ sourceTarget }) {
     const merchant = sourceTarget.options.merchant;
 
-    this.popup = L.popup({ offset: [0, -43] });
+    this.popup = new Popup({ offset: [0, -43] });
 
     if (this.popup.isOpen()) {
       return false;
