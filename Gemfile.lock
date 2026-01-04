@@ -116,6 +116,7 @@ GEM
     bundler-audit (0.9.3)
       bundler (>= 1.2.0)
       thor (~> 1.0)
+    cgi (0.5.1)
     chartkick (5.2.1)
     childprocess (5.1.0)
       logger (~> 1.5)
@@ -659,6 +660,7 @@ DEPENDENCIES
   breadcrumbs_on_rails
   bullet
   bundler-audit
+  cgi
   chartkick
   chusaku
   country_select
