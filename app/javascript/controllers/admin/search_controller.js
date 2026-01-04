@@ -1,6 +1,7 @@
-import { useDebounce, ApplicationController } from "stimulus-use";
+import { Controller } from "@hotwired/stimulus";
+import { useDebounce } from "stimulus-use";
 
-export default class extends ApplicationController {
+export default class extends Controller {
   static targets = ["query", "category", "country"];
   static debounces = ["submit"];
 
