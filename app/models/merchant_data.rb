@@ -47,7 +47,7 @@ class MerchantData
       contact_telegram: SocialUrlPrefixer.call(:telegram, properties['contact:telegram']),
       contact_facebook: SocialUrlPrefixer.call(:facebook, properties['contact:facebook']),
       contact_instagram: SocialUrlPrefixer.call(:instagram, properties['contact:instagram']),
-      contact_twitter: SocialUrlPrefixer.call(:twitter, properties['contact:twitter']),
+      contact_twitter: SocialUrlPrefixer.call(:x, properties['contact:twitter'] || properties['contact:x']),
       contact_youtube: SocialUrlPrefixer.call(:youtube, properties['contact:youtube']),
       contact_tiktok: SocialUrlPrefixer.call(:tiktok, properties['contact:tiktok']),
       contact_linkedin: SocialUrlPrefixer.call(:linkedin, properties['contact:linkedin']),
