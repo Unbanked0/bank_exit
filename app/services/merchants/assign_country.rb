@@ -36,7 +36,7 @@ module Merchants
           country_code = 'CW' if country == 'Curacao'
           country_code = 'SX' if country == 'Sint Maarten'
           # Bonaire, Sint Eustatius and Saba
-          country_code = 'BQ' if result.data.dig('address', 'ISO3166-2-lvl8')
+          country_code = 'BQ' if result.data.dig('address', 'ISO3166-2-lvl8')&.starts_with?('BQ-')
 
           # Assign corresponding continent for the
           # identified `country_code`.

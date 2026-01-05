@@ -88,6 +88,16 @@ FactoryBot.define do
       longitude { 2.26 }
     end
 
+    trait :bonaire_na do
+      latitude { 12.130539 }
+      longitude { -68.2843722 }
+    end
+
+    trait :greater_london_eu do
+      latitude { 51.5047828 }
+      longitude { -0.0973671 }
+    end
+
     trait :with_geometry_polygon do
       geometry do
         {

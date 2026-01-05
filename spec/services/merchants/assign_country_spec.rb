@@ -73,6 +73,20 @@ RSpec.describe Merchants::AssignCountry do
         it { expect(merchant.reload.country).to eq 'YT' }
         it { expect(merchant.reload.continent_code).to eq 'AF' }
       end
+
+      context 'when merchant has a ISO3166-2-lvl8 BQ-BO' do
+        let(:trait) { :bonaire_na }
+
+        it { expect(merchant.reload.country).to eq 'BQ' }
+        it { expect(merchant.reload.continent_code).to eq 'NA' }
+      end
+
+      context 'when merchant has a ISO3166-2-lvl8 GB-SWK' do
+        let(:trait) { :greater_london_eu }
+
+        it { expect(merchant.reload.country).to eq 'GB' }
+        it { expect(merchant.reload.continent_code).to eq 'EU' }
+      end
     end
   end
 end
