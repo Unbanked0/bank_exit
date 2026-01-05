@@ -1,5 +1,5 @@
 - details_html = {} unless defined?(details_html)
-- btn_style = defined?(button_style) ? button_style : { class: 'btn-ghost' }
+- btn_style = defined?(button_style) ? button_style : {}
 - aria_attrs = defined?(aria) ? { aria: aria } : {}
 
 button.btn.btn-square popovertarget="popover-#{item_id}" style="anchor-name:--anchor-#{item_id}" *{**btn_style} *{**aria_attrs}

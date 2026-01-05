@@ -35,9 +35,9 @@ fr:
   about: A propos
   menu: Menu
 
-  display_map: Affichage carte
-  display_grid: Affichage grille
-  display_table: Affichage tableau
+  display_map: Carte
+  display_grid: Grille
+  display_table: Tableau
 
   download: Télécharger
   video_tutorial: Tutoriel vidéo

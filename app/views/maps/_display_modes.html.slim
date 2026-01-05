@@ -1,21 +1,27 @@
-#display_modes.flex.items-center.gap-2
+#display_modes.flex.items-center.gap-2.w-full
   - req_params = request.query_parameters.compact_blank
   - req_params.delete(:pagy)
 
   = raw_link_to url_for(params: req_params.merge(display: :map)),
-                class: "btn btn-sm gap-2 #{merchants_as_map? ? 'btn-success' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 flex-1 #{'btn-info' if merchants_as_map?}",
                 title: t('display_map'),
-                hotkey: 'shift+m' do
+                hotkey: 'shift+m',
+                size: 'xs' do
     = lucide_icon 'map'
+    span.lg:hidden= t('display_map')
 
   = raw_link_to url_for(params: req_params.merge(display: :table)),
-                class: "btn btn-sm gap-2 #{merchants_as_table? ? 'btn-info' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 flex-1 #{'btn-info' if merchants_as_table?}",
                 title: t('display_table'),
-                hotkey: 'shift+t' do
+                hotkey: 'shift+t',
+                size: 'xs' do
     = lucide_icon 'rows-3'
+    span.lg:hidden= t('display_table')
 
   = raw_link_to url_for(params: req_params.merge(display: :grid)),
-                class: "btn btn-sm gap-2 #{merchants_as_grid? ? 'btn-warning' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 flex-1 #{'btn-info' if merchants_as_grid?}",
                 title: t('display_grid'),
-                hotkey: 'shift+g' do
+                hotkey: 'shift+g',
+                size: 'xs' do
     = lucide_icon 'grid-3x3'
+    span.lg:hidden= t('display_grid')

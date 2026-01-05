@@ -6,9 +6,6 @@
   .relative.w-full.h-full.lg:w-2/3 class=map_css_height
     = render 'maps/map'
 
-    .absolute.top-3.left-3
-      = render 'display_modes'
-
     - if @directory_friends.present?
       = render 'directory_friends', directory_friends: @directory_friends
 

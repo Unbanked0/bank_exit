@@ -8,8 +8,8 @@
 - active_article = params[:controller].in?(%w[blogs tutorials]) && params[:id] != 'flyer'  && params[:id] != 'accounting' && params[:id] != 'cryptopayment-for-business'
 - active_other = params[:controller].in?(%w[local_groups collectives ecosystems media statistics])
 
-#popover-menu.dropdown.lg:dropdown-center.menu.rounded-box.bg-base-100/80.max-w-3xl.space-y-3.p-3.border.border-base-content/20.backdrop-blur-md(
-  class="w-[95dvw] mt-1"
+#popover-menu.dropdown.lg:dropdown-center.menu.rounded-box.bg-base-200.lg:bg-base-200/80.max-w-3xl.space-y-3.p-3.border.border-base-content/20.lg:backdrop-blur-md(
+  class="w-[95dvw] mt-1.5"
   popover=""
   style="position-anchor:--anchor-menu"
   data-controller="research"
@@ -45,7 +45,7 @@
 
         .relative.z-10.flex.flex-col.gap-3.h-full.items-center.justify-center
           = lucide_icon 'map', class: 'w-8 h-auto'
-          p.text-base.font-medium.leading-tight.text-center.break-words.px-1
+          p.lg:text-base.font-medium.leading-tight.text-center.break-words.px-1
             = t('.menu.map')
           = content_for(:hotkey)
 
@@ -59,7 +59,7 @@
 
         .relative.z-10.flex.flex-col.gap-3.h-full.items-center.justify-center
           = lucide_icon 'notebook', class: 'w-8 h-auto'
-          p.text-base.font-medium.leading-tight.text-center.break-words.px-1
+          p.lg:text-base.font-medium.leading-tight.text-center.break-words.px-1
             = t('application.nav.menu.directories')
           = content_for(:hotkey)
 
@@ -73,7 +73,7 @@
 
         .relative.z-10.flex.flex-col.gap-3.h-full.items-center.justify-center
           = lucide_icon 'store', class: 'w-8 h-auto'
-          p.text-base.font-medium.leading-tight.text-center.break-words.px-1
+          p.lg:text-base.font-medium.leading-tight.text-center.break-words.px-1
             = grocery.title
           = content_for(:hotkey)
 

@@ -10,8 +10,8 @@
           p.text-xl.font-bold= t('.title')
           p= t('.subtitle')
 
-      ul.menu.absolute.top-1.right-1
-        li= render 'language_switcher', with_label: false
+      .absolute.top-1.right-1.bg-base-200/80.rounded-box.border.border-base-content/20.px-2.py-1
+        = render 'language_switcher'
 
       ul.menu.bg-base-200.border.border-base-content/20.rounded-lg.w-full.items-center.space-y-2
         li

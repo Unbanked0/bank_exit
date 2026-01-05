@@ -3,17 +3,21 @@
 
   = raw_link_to url_for(params: req_params.merge(display: :grid)),
                 data: { turbo_stream: true },
-                class: "btn gap-2 #{directories_as_grid? ? 'btn-warning' : 'btn-neutral'}",
+                class: "btn btn-sm gap-2 #{'btn-info' if directories_as_grid?}",
                 title: t('display_grid'),
-                hotkey: 'shift+g' do
+                hotkey: 'shift+g',
+                size: 'xs' do
     = lucide_icon 'grid-3x3'
+    span.lg:hidden= t('display_grid')
 
   = raw_link_to url_for(params: req_params.merge(display: :table)),
                 data: { turbo_stream: true },
-                class: "btn gap-2 #{directories_as_grid? ? 'btn-neutral' : 'btn-info'}",
+                class: "btn btn-sm gap-2 #{'btn-info' unless directories_as_grid?}",
                 title: t('display_table'),
-                hotkey: 'shift+t' do
+                hotkey: 'shift+t',
+                size: 'xs' do
     = lucide_icon 'rows-3'
+    span.lg:hidden= t('display_table')
 
 - if directories.any?
   - if pagy.count > pagy.limit
