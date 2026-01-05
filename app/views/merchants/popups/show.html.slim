@@ -14,7 +14,7 @@
         =< @merchant.friendly_category
 
   - if @merchant.address? || @merchant.opening_hours.present? || @merchant.delivery.present?
-    .alert.alert-vertical.text-sm
+    .alert.alert-vertical
       - if @merchant.address?
         .flex.items-center.gap-2
           .flex-shrink-0= lucide_icon 'home', class: 'w-4'

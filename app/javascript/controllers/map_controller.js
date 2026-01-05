@@ -1,5 +1,6 @@
 import MapBaseController from "controllers/map_base_controller";
-import "leaflet.markercluster";
+import { Marker } from "leaflet";
+import { MarkerClusterGroup } from "leaflet.markercluster";
 import { get, patch } from "@rails/request.js";
 import { useIntersection } from "stimulus-use";
 
@@ -41,14 +42,14 @@ export default class MapController extends MapBaseController {
 
       const body = await response.json;
 
-      this.bitcoinMarkers = L.markerClusterGroup({
+      this.bitcoinMarkers = new MarkerClusterGroup({
         spiderfyOnMaxZoom: true,
         showCoverageOnHover: false,
         zoomToBoundsOnClick: true,
         chunkedLoading: true,
       });
 
-      this.otherMarkers = L.markerClusterGroup({
+      this.otherMarkers = new MarkerClusterGroup({
         spiderfyOnMaxZoom: true,
         showCoverageOnHover: false,
         zoomToBoundsOnClick: true,
@@ -56,7 +57,7 @@ export default class MapController extends MapBaseController {
       });
 
       body.forEach((data) => {
-        const marker = L.marker([data.latitude, data.longitude], {
+        const marker = new Marker([data.latitude, data.longitude], {
           icon: this.assignMarker(data.icon),
           merchant: data,
         });

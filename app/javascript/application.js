@@ -2,13 +2,9 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 
-import * as L from "leaflet";
 import TurboPower from "turbo_power";
 
 TurboPower.initialize(Turbo.StreamActions);
-
-// Prevent scrolling to anchor on map actions (zoom)
-L.Control.prototype._refocusOnMap = function _refocusOnMap() {};
 
 // @see https://gorails.com/episodes/custom-hotwire-turbo-confirm-modals
 Turbo.config.forms.confirm = (message, element) => {

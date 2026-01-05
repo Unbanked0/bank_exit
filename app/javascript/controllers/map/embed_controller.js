@@ -1,5 +1,6 @@
 import MapBaseController from "controllers/map_base_controller";
-import "leaflet.markercluster";
+import { Marker, FeatureGroup } from "leaflet";
+import { MarkerClusterGroup } from "leaflet.markercluster";
 import { get } from "@rails/request.js";
 
 export default class MapEmbedController extends MapBaseController {
@@ -20,14 +21,14 @@ export default class MapEmbedController extends MapBaseController {
     super._initMap();
 
     if (this.useClustersValue) {
-      this.markers = L.markerClusterGroup({
+      this.markers = new MarkerClusterGroup({
         spiderfyOnMaxZoom: true,
         showCoverageOnHover: false,
         zoomToBoundsOnClick: true,
         chunkedLoading: true,
       });
     } else {
-      this.markers = L.featureGroup();
+      this.markers = new FeatureGroup();
     }
 
     try {
@@ -42,7 +43,7 @@ export default class MapEmbedController extends MapBaseController {
       const body = await response.json;
 
       body.forEach((data) => {
-        const marker = L.marker([data.latitude, data.longitude], {
+        const marker = new Marker([data.latitude, data.longitude], {
           icon: this.assignMarker(data.icon),
           merchant: data,
         });

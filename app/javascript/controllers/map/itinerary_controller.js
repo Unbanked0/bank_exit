@@ -1,4 +1,5 @@
 import MapBaseController from "controllers/map_base_controller";
+import { Marker } from "leaflet";
 import polyUtil from "polyline-encoded";
 
 export default class MapItineraryController extends MapBaseController {
@@ -30,13 +31,13 @@ export default class MapItineraryController extends MapBaseController {
       lineJoin: "round",
     };
 
-    const homeMarker = L.marker([this.myLatValue, this.myLonValue], {
+    const homeMarker = new Marker([this.myLatValue, this.myLonValue], {
       icon: this.assignMarker("home", "home-icon"),
       title: "Départ",
     });
     homeMarker.addTo(this.map);
 
-    this.marker = L.marker(
+    this.marker = new Marker(
       [this.merchantValue.latitude, this.merchantValue.longitude],
       {
         icon: this.assignMarker(this.merchantValue.icon),
@@ -94,7 +95,7 @@ export default class MapItineraryController extends MapBaseController {
   }
 
   zoomRoad({ detail: { stepIndex } }) {
-    const $path = document.querySelector(`svg path.${stepIndex}`);
+    // const $path = document.querySelector(`svg path.${stepIndex}`);
 
     const item = this.routings.find((routing) => {
       return routing.stepIndex === stepIndex;
