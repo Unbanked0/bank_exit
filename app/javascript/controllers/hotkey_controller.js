@@ -13,7 +13,7 @@ export default class extends Controller {
   #shouldIgnore(event) {
     return (
       event.defaultPrevented ||
-      event.target.closest("input[type='text'], textarea") ||
+      event.target.closest("input:not([type='checkbox']), textarea") ||
       (event.key == "Escape" &&
         (document.querySelector("[popover]:popover-open") ||
           document.querySelector("dialog[open]")))
