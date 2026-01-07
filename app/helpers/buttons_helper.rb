@@ -109,7 +109,9 @@ module ButtonsHelper
     kbd = build_hotkey_kbd(hotkey, **options.slice(:size))
     content_for :hotkey, kbd, flush: true if kbd
 
-    link_to(url, **options.slice(:data, :class, :id, :title)) do
+    link_to(url, **options.slice(
+      :data, :class, :id, :title, :target
+    )) do
       if block_given?
         content = capture(&block)
 

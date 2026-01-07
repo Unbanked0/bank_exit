@@ -2,6 +2,12 @@
   = t('.title')
 
 - content_for :page_actions do
+  = raw_link_to rswag_ui_path,
+                class: 'btn btn-sm btn-info',
+                target: :_blank do
+    = lucide_icon 'book', class: 'w-5'
+    =< 'Documentation'
+
   - if allowed_to?(:create?, APIToken, namespace: Admin)
     = add_link_to new_admin_api_token_path, hotkey: 'a'
 
