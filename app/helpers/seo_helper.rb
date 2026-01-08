@@ -52,7 +52,7 @@ module SEOHelper
         '@type': 'Person',
         name: 'Pierre'
       },
-      foundingDate: Date.new(2002, 1, 1),
+      foundingDate: Date.new(2022, 1, 1),
       sameAs: [
         'https://x.com/SortieDeBanque',
         'https://x.com/Bank_Exit',
