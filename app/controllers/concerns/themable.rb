@@ -8,7 +8,7 @@ module Themable
   private
 
   def set_theme_finder
-    @themes_finder = ThemesFinder.new(forced_theme: theme)
+    @themes_finder = ThemesFinder.new
     @themes = @themes_finder.call
   end
 

@@ -42,7 +42,9 @@ document.addEventListener("turbo:load", () => {
   const triggerButtons = document.querySelectorAll("[popovertarget]");
 
   triggerButtons.forEach((button) => {
-    const popoverId = button.getAttribute("popovertarget");
+    const popoverId = button.getAttribute(
+      "[popovertarget]:not([popovertarget='popover-menu']",
+    );
     const popover = document.getElementById(popoverId);
 
     if (!popover) return;

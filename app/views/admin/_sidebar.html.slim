@@ -93,19 +93,7 @@
                         hotkey: 'z' do
             | Uptime Kuma
 
-      label.flex.cursor-pointer.gap-2.justify-center.items-center.my-5
-        = lucide_icon 'sun', class: 'swap-on h-5 w-5 fill-current'
-
-        input#theme-switcher.toggle.toggle-sm.theme-controller(
-          type="checkbox"
-          value=@themes[:dark]
-          data-controller="themes"
-          data-action="click->themes#switch"
-          data-themes-light-value=@themes[:light]
-          data-themes-dark-value=@themes[:dark]
-        )
-
-        = lucide_icon 'moon', class: 'swap-off h-5 w-5 fill-current'
+      = render 'theme_switcher'
 
     - color = color_for_role(current_user.role)
 

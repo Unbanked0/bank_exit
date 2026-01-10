@@ -2,27 +2,14 @@ require 'rails_helper'
 
 RSpec.describe ThemesFinder do
   let(:instance) do
-    described_class.new(date, forced_theme: forced_theme)
+    described_class.new(date)
   end
   let(:date) { Date.new(2026, 5, 1) } # May 1st
-  let(:forced_theme) { nil }
 
   before { travel_to date }
 
   describe '#call' do
     subject { instance.call }
-
-    context 'when theme is forced to christmas' do
-      let(:forced_theme) { :christmas }
-
-      it { is_expected.to eq({ light: :christmas, dark: :dark_christmas }) }
-    end
-
-    context 'when during Christmas time' do
-      let(:date) { Date.new(2025, 12, 25) }
-
-      it { is_expected.to eq({ light: :christmas, dark: :dark_christmas }) }
-    end
 
     context 'when during regular time' do
       let(:date) { Date.new(2025, 3, 1) } # March 1st

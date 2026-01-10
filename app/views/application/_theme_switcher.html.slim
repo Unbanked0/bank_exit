@@ -1,18 +1,14 @@
-.flex.items-center.gap-1
-  label.swap.swap-rotate.hover:text-primary.motion-safe:transition-colors
-    input#theme-switcher.theme-controller(
-      type="checkbox"
-      value=@themes[:dark]
-      data-controller="themes hotkey"
-      data-action="click->themes#switch keydown.t@document->hotkey#click"
-      data-themes-light-value=@themes[:light]
-      data-themes-dark-value=@themes[:dark]
-    )
+.flex.gap-2.justify-center.items-center role="radiogroup" aria-label="Theme" data-action="keydown.t@document->theme#switchTheme"
+  label.btn.btn-square.has-checked:btn-primary title=t('.switch_to_light')
+    input.radio.sr-only type="radio" name="theme" value="light" data-action="change->theme#setLight" data-theme-target="lightButton" aria-label=t('.switch_to_light')
+    = lucide_icon 'sun', class: 'h-5 w-5 fill-current'
 
-    span.swap-on title=t('.switch_to_dark')
-      = lucide_icon 'sun', class: 'h-4 w-4 fill-current'
+  label.btn.btn-square.has-checked:btn-primary title=t('.switch_to_dark')
+    input.radio.sr-only type="radio" name="theme" value="dark" data-action="change->theme#setDark" data-theme-target="darkButton" aria-label=t('.switch_to_dark')
+    = lucide_icon 'moon', class: 'h-5 w-5 fill-current'
 
-    span.swap-off title=t('.switch_to_light')
-      = lucide_icon 'moon', class: 'h-4 w-4 fill-current'
+  label.btn.btn-square.has-checked:btn-primary title=t('.switch_to_auto')
+    input.radio.sr-only type="radio" name="theme" value="auto" data-action="change->theme#setAuto" data-theme-target="autoButton" aria-label=t('.switch_to_auto')
+    = lucide_icon 'monitor', class: 'h-5 w-5 fill-current'
 
-  = hotkey_label('t', size: 'xs')
+  = hotkey_label('t')

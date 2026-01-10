@@ -1,5 +1,5 @@
 article
-  .hero.bg-fixed style=("background-image: url(#{rails_blob_path(@merchant.banner.variant(:thumb))})" if @merchant.banner.attached?) class=(@merchant.banner.attached? ? 'bg-contain' : 'bg-banner-default')
+  .hero.bg-fixed style=("background-image: url(#{rails_blob_path(@merchant.banner.variant(:thumb))})" if @merchant.banner.attached?) class=(@merchant.banner.attached? ? 'bg-cover lg:bg-contain' : 'bg-banner-default')
     .hero-overlay
     .hero-content.hero-content-main
       header.max-w-xl
