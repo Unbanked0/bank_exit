@@ -9,7 +9,7 @@
 
         .collapse-content.grid.grid-cols-4.gap-5
           - @directory_friends.each do |directory_friend|
-            = link_to directory_friend.link, target: :_blank, class: 'card pt-1 space-y-3 focus-visible:ring-2 focus-visible:ring-primary' do
+            = link_to directory_friend.link, target: :_blank, class: 'card pt-1 space-y-3' do
               figure
                 - image_size = 'w-6 h-6 lg:w-10 lg:h-10 mx-auto'
                 - if directory_friend.icon?

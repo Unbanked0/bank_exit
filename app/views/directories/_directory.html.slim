@@ -2,12 +2,12 @@
 - delivery_zones = directory.delivery_zones.enabled
 - contact_ways = directory.contact_ways.enabled
 
-= link_to directory_path(directory), class: "card bg-base-200 shadow-sm hover:-translate-y-1 motion-safe:transition-transform hover:text-inherit! #{'border-l-2 border-success' if delivery_zones.exists?}" do
+= link_to directory_path(directory), class: "card bg-base-200 shadow-sm hover:-translate-y-1 motion-safe:transition-transform hover:text-inherit!#{' border-l-2 border-success' if delivery_zones.exists?}" do
   - if directory.banner.attached?
     figure.card-figure
       = image_tag url_for(directory.banner.variant(:thumb)), alt: "Directory's banner"
 
-  .absolute.inset-0.bg-base-100/80
+  .absolute.inset-0.bg-base-100/80.rounded-box
   .card-body.space-y-4.justify-between.z-10
     .flex.items-center.justify-between
       .flex.items-center.gap-2
