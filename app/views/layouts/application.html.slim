@@ -27,7 +27,7 @@ html lang=I18n.locale
   body.max-w-screen-3xl.mx-auto
     = render 'header', projects: @projects
 
-    main
+    main class=('pt-20' unless hero_header?)
       = yield
 
     = render 'footer', projects: @projects, contacts: @contacts

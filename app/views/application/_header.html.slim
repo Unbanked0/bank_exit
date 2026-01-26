@@ -1,5 +1,5 @@
-header.p-3.print:hidden class=(@header_absolute == false && params[:controller] != 'welcome' ? 'bg-base-100 border-b-2 lg:border-b-4 border-base-content/10' : 'fixed w-full z-50')
-  button.flex.items-center.lg:mx-auto.cursor-pointer.rounded-box.gap-3.pl-2.py-2.pr-6.border.border-base-content/20.bg-base-200/80.hover:bg-base-100.transition-colors.backdrop-blur-sm(
+header.fixed.w-full.z-50.p-2.print:hidden
+  button.flex.items-center.lg:mx-auto.cursor-pointer.rounded-box.gap-3.pl-2.py-2.pr-6.border.border-base-content/20.bg-base-200.hover:bg-base-100.transition-colors.backdrop-blur-sm(
     popovertarget="popover-menu"
     style="anchor-name:--anchor-menu"
     data-controller="hotkey"
@@ -21,7 +21,7 @@ header.p-3.print:hidden class=(@header_absolute == false && params[:controller] 
 
   = render 'nav', projects: @projects
 
-  .absolute.top-3.right-3.flex.items-center.gap-3.bg-base-200/80.rounded-box.border.border-base-content/20.px-2.py-1
+  .absolute.top-2.right-2.flex.items-center.gap-3.bg-base-200/80.rounded-box.border.border-base-content/20.px-2.py-1
     = render 'language_switcher'
     = render 'theme_switcher'
 

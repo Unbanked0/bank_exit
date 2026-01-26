@@ -344,3 +344,31 @@ forced to white to make texts readables */
         display: none;
     }
 }
+
+[popover]::backdrop {
+    backdrop-filter: blur(0);
+    background-color: transparent;
+    transition:
+        backdrop-filter 300ms ease,
+        background-color 300ms ease;
+}
+
+[popover]:popover-open::backdrop {
+    backdrop-filter: blur(2px);
+    @apply bg-base-200/50;
+}
+
+@starting-style {
+    [popover]:popover-open::backdrop {
+        backdrop-filter: blur(0);
+        background-color: transparent;
+    }
+}
+
+@layer components {
+    html:has(dialog:modal),
+    html:has(:popover-open) {
+        overflow: hidden;
+        scrollbar-gutter: stable;
+    }
+}

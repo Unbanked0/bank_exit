@@ -9,7 +9,6 @@ module Merchants
     # @route GET /en/merchants/:merchant_id/itinerary/new {locale: "en"} (new_merchant_itinerary_en)
     # @route GET /merchants/:merchant_id/itinerary/new
     def new
-      @header_absolute = false
     end
 
     # @route POST /fr/merchants/:merchant_id/itinerary {locale: "fr"} (merchant_itinerary_fr)

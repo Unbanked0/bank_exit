@@ -79,7 +79,6 @@ class MapsController < PublicController
 
     @merchants = MerchantDecorator.wrap(merchants)
 
-    @header_absolute = variant != :map
     render variants: [variant]
   end
 

@@ -41,10 +41,8 @@ class MerchantsController < PublicController
     # Render adapted `show.html+banner` template if
     # merchant has an attached banner to highlight.
 
-    @header_absolute = false
     return unless @merchant.banner.attached?
 
-    @header_absolute = true
     request.variant = :banner
   end
 

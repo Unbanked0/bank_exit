@@ -9,6 +9,16 @@ module ApplicationHelper
     params[:controller] == 'welcome'
   end
 
+  def hero_header?
+    if params[:controller] == 'merchants'
+      request.variant == [:banner]
+    elsif params[:controller] == 'maps'
+      session[:merchants_display] != 'map'
+    else
+      true
+    end
+  end
+
   def icon_for_category(category)
     MerchantIcon.call(category)
   end
