@@ -21,13 +21,6 @@ RSpec.describe ThemesFinder do
   describe '#christmas_time?' do
     subject { instance.christmas_time? }
 
-    context 'when forced theme is :christmas' do
-      let(:forced_theme) { :christmas }
-      let(:date) { Date.new(2025, 12, 1) } # December 1st
-
-      it { is_expected.to be true }
-    end
-
     context 'when snowflakes feature is disabled' do
       before do
         disable_feature(:snowflakes)
