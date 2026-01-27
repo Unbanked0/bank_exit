@@ -1,6 +1,6 @@
 - link_klass = "block w-full p-2 space-y-3 border-l-4 hover:border-l-primary hover:text-inherit! focus-visible:outline-none focus-visible:border-l-primary rounded-none"
 
-ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scroll-py-2 class="max-h-[65svh]"
+ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scroll-py-2 class="max-h-[58svh]"
   - if defined?(directories) && directories.present?
     - directories.each do |directory|
       li
@@ -66,9 +66,9 @@ ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scr
     == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true"')
 
 - unless merchants.empty?
-  hr.my-3.border-base-content/20
+  hr.border-base-content/20
 
-  footer.text-xs.flex.items-center.justify-between
+  footer.p-2.text-xs.flex.items-center.justify-between
     p.badge.badge-secondary.badge-xs
       = Directory.model_name.human.capitalize
     p.hide-on-touch.flex.items-center.gap-2

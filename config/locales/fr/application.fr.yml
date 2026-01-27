@@ -25,6 +25,7 @@ fr:
     theme_switcher:
       switch_to_light: Basculer sur le thème clair
       switch_to_dark: Basculer sur le thème sombre
+      switch_to_auto: Basculer sur le thème système
 
     countdown:
       label: avant la fin de la phase de préparation de l'€uro numérique

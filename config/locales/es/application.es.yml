@@ -23,6 +23,7 @@ es:
     theme_switcher:
       switch_to_light: Cambiar al tema claro
       switch_to_dark: Cambiar al tema oscuro
+      switch_to_auto: Cambiar al tema del sistema
 
     countdown:
       label: antes del final de la fase de preparación

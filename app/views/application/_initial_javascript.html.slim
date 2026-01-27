@@ -1,18 +1,9 @@
 / Execute this code at the very beginning of page loading
 / to avoid FOUC
 / @see https://wiki.adminforge.de/wiki/Flash_of_unstyled_content?lang=en
+
 javascript:
-  // Website theme (light/dark)
-  (function () {
-    let theme = "#{Setting::LIGHT_THEME_NAME}";
-    let colorMode = localStorage.getItem('color-mode') || 'light';
-
-    if(#{params[:theme].present?}) {
-      localStorage.removeItem('color-theme');
-      theme = #{raw(@themes.to_json)}[colorMode];
-    } else {
-      theme = localStorage.getItem('color-theme') || theme;
-    }
-
-    document.documentElement.setAttribute('data-theme', theme);
-  })();
+  const theme = localStorage.getItem("theme")
+  if (theme && theme !== "auto") {
+    document.documentElement.dataset.theme = theme
+  }

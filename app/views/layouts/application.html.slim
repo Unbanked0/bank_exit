@@ -4,6 +4,9 @@ html lang=I18n.locale
     = seo_meta_tags(@pagy)
     = csrf_meta_tags
     = csp_meta_tag
+    meta name="color-scheme" content="light dark"
+    meta name="theme-color" content="#f7f4f5" media="(prefers-color-scheme: light)"
+    meta name="theme-color" content="#282a36" media="(prefers-color-scheme: dark)"
 
     = yield :head
     = turbo_refreshes_with method: :morph, scroll: :preserve
@@ -24,7 +27,11 @@ html lang=I18n.locale
     script type="application/ld+json"
       == schema_dot_org_organization
 
-  body.max-w-screen-3xl.mx-auto
+  body.max-w-screen-3xl.mx-auto(
+    data-controller="theme"
+    data-theme-light-value=@themes[:light]
+    data-theme-dark-value=@themes[:dark]
+  )
     = render 'header', projects: @projects
 
     main class=('pt-20' unless hero_header?)

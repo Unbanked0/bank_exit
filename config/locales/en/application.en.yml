@@ -25,6 +25,7 @@ en:
     theme_switcher:
       switch_to_light: Switch to light mode
       switch_to_dark: Switch to dark mode
+      switch_to_auto: Switch to system theme
 
     countdown:
       label: before the end of the preparation phase

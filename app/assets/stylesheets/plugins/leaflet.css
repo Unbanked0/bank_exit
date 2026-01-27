@@ -117,20 +117,41 @@
         height: 24px;
     }
 }
+@media (prefers-color-scheme: light) {
+    [data-theme="dracula"] {
+        .leaflet-layer,
+        .leaflet-control-zoom-in,
+        .leaflet-control-zoom-out,
+        .leaflet-fullscreen-icon,
+        .leaflet-bar-part,
+        .marker-cluster {
+            filter: invert(100%) hue-rotate(180deg) brightness(0.95)
+                contrast(90%);
+        }
 
-[data-theme="dracula"],
-[data-theme="dark_christmas"] {
-    .leaflet-layer,
-    .leaflet-control-zoom-in,
-    .leaflet-control-zoom-out,
-    .leaflet-fullscreen-icon,
-    .leaflet-bar-part,
-    .marker-cluster {
-        filter: invert(100%) hue-rotate(180deg) brightness(0.95) contrast(90%);
+        img.map-loader {
+            filter: invert(100%) hue-rotate(180deg) brightness(0.95)
+                contrast(90%) blur(5px);
+        }
     }
+}
 
-    img.map-loader {
-        filter: invert(100%) hue-rotate(180deg) brightness(0.95) contrast(90%)
-            blur(5px);
+@media (prefers-color-scheme: dark) {
+    [data-theme="dracula"],
+    html:not([data-theme]) {
+        .leaflet-layer,
+        .leaflet-control-zoom-in,
+        .leaflet-control-zoom-out,
+        .leaflet-fullscreen-icon,
+        .leaflet-bar-part,
+        .marker-cluster {
+            filter: invert(100%) hue-rotate(180deg) brightness(0.95)
+                contrast(90%);
+        }
+
+        img.map-loader {
+            filter: invert(100%) hue-rotate(180deg) brightness(0.95)
+                contrast(90%) blur(5px);
+        }
     }
 }

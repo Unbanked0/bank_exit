@@ -21,7 +21,11 @@ html lang=I18n.locale
 
     = debugbar_head if defined?(Debugbar)
 
-  body.admin
+  body.admin(
+    data-controller="theme"
+    data-theme-light-value=@themes[:light]
+    data-theme-dark-value=@themes[:dark]
+  )
     = turbo_stream_from :flashes
     = turbo_stream_from [:flashes, I18n.locale]
     #flashes= render 'flashes'
