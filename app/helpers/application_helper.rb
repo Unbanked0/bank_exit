@@ -10,9 +10,12 @@ module ApplicationHelper
   end
 
   def hero_header?
-    if params[:controller] == 'merchants'
+    case params[:controller]
+    when 'sessions'
+      false
+    when 'merchants'
       request.variant == [:banner]
-    elsif params[:controller] == 'maps'
+    when 'maps'
       session[:merchants_display] != 'map'
     else
       true
