@@ -93,7 +93,7 @@ class MerchantSync < ApplicationRecord
                 .includes(:raw_json_attachment)
                 .where(active_storage_attachments: { name: 'raw_json' })
                 .find_each do |record|
-                  record.raw_json.purge_later if record.raw_json.attached?
+      record.raw_json.purge_later if record.raw_json.attached?
     end
   end
 
