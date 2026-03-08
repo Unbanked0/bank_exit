@@ -18,7 +18,8 @@ class ExtractCategory < ApplicationService
                properties['tourism'].presence ||
                properties['leisure'].presence ||
                properties['aeroway'].presence ||
-               properties['attraction'].presence
+               properties['attraction'].presence ||
+               properties['residential'].presence
 
     return if category.blank?
 
