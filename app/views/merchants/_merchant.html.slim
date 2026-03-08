@@ -1,71 +1,87 @@
-= link_to merchant_path(merchant),
-         class: "card bg-base-300 border border-base-content/20 hover:border-primary hover:text-inherit!",
-         id: "merchant-#{merchant.identifier}" do
-  - if merchant.banner.attached?
-    figure.card-figure
-      = image_tag url_for(merchant.banner.variant(:thumb)), alt: "Banner for #{merchant.name}"
+details.collapse.collapse-arrow.bg-base-200.relative open=('true' if params[:search].present?)
+  summary.collapse-title.space-y-1
+    .flex.items-center.gap-1
+      - if merchant.country.present?
+        span title=merchant.country
+          = emoji_by_locale(merchant.country)
 
-  .absolute.inset-0.bg-base-100/80.rounded-box
-  .card-body.space-y-3.z-10
-    .flex.items-center.justify-between
-      .flex.items-center.gap-2
-        = render 'logo_or_initials', model: merchant
-        h3.card-title
-          span
-            = highlight(merchant.name, params[:search])
+      span.font-bold
+        = highlight(merchant.name, params[:search])
 
-      = render 'comments_and_rating_icons', model: merchant
+    .flex.items-center.gap-3
+      - if merchant.category.present?
+        .badge.badge-secondary.badge-sm
+          = merchant_icon_svg(merchant.icon, width: 12, height: 12, naked: true)
+          = merchant.friendly_category
 
-    - if merchant.description.present?
-      div
-        = highlight(merchant.description&.truncate(150), params[:search])
-
-    - if merchant.category.present?
-      .badge.badge-secondary.mx-auto
-        = merchant_icon_svg(merchant.icon, width: 20, height: 20, naked: true)
-        = merchant.friendly_category
-
-    .flex.items-center.justify-center.gap-3
-      == coins_list(merchant.coins, with_logo: true, with_name: false, size: 'w-10', inline: true)
-
-      - unless merchant.ask_kyc.nil?
-        div= merchant_kyc_no_kyc(merchant.ask_kyc?)
-
-    .divider
-    .flex.items-start class=(merchant.delivery.present? ? 'justify-between' : 'justify-center')
-      - if merchant.address?
-        .flex.flex-col.items-center.gap-2.text-center
-          = lucide_icon 'home', class: 'w-5'
-          div==< highlight(merchant.full_address_with_country, params[:search])
-
-      - if merchant.delivery.present?
-        .flex.flex-col.items-center.gap-2.text-center
-          = lucide_icon 'truck', class: 'w-5'
-          = t('.home_delivery')
-          - if merchant.delivery_zone
-            =< "(#{merchant.delivery_zone})"
-
-    .flex.items-center.justify-between
       .flex.items-center.gap-3
-        - main_group = []
-        - extra_group = []
+        == coins_list(merchant.coins, with_logo: true, with_name: false, size: 'w-7', inline: true)
 
-        - merchant.all_contacts.each.with_index(1) do |contact, index|
-          - if index > 5
-            - extra_group << contact
-          - else
-            - main_group << contact
+        - unless merchant.ask_kyc.nil?
+          div= merchant_kyc_no_kyc(merchant.ask_kyc?, klass: 'w-7 h-7 text-xs')
 
-        - main_group.each do |(contact, value)|
-          = social_contact_icon contact, title: value
+  .collapse-content.relative
+    - if merchant.banner.attached?
+      .absolute.inset-0.bg-base-100/80.z-1
+      .absolute.inset-0.z-0 style=("background-image: url(#{url_for(merchant.banner.variant(:thumb))})")
 
-        - if extra_group.present?
-          - text = extra_group.map { social_contact_icon(it.first) }.join(' ')
-          = render 'tooltip',
-                   position: :right,
-                   text: text,
-                   mode: 'info',
-                   lucide_ikon: 'ellipsis'
+    .relative.z-2.space-y-3 class=("pt-2" if merchant.banner.attached?)
+      .divider
 
-      .card-actions.justify-end
-        .btn.btn-sm.btn-secondary= t('see')
+      - if merchant.description.present?
+        blockquote.italic
+          = highlight(merchant.description&.truncate(150), params[:search])
+
+      .flex.items-start class=(merchant.delivery.present? ? 'justify-between' : 'justify-center')
+        - if merchant.address?
+          .flex.flex-col.items-center.gap-2.text-center
+            = lucide_icon 'home', class: 'w-5'
+            div==< highlight(merchant.full_address_with_country, params[:search])
+
+        - if merchant.delivery.present?
+          .flex.flex-col.items-center.gap-2.text-center
+            = lucide_icon 'truck', class: 'w-5'
+            = t('.home_delivery')
+            - if merchant.delivery_zone
+              =< "(#{merchant.delivery_zone})"
+
+      - if allowed_to?(:index?, Comment)
+        .flex.items-center.justify-center.gap-3
+          .text-lg title="#{merchant.comments_count} #{Comment.model_name.human(count: merchant.comments_count)}"
+            = lucide_icon 'message-square', class: 'inline-flex mr-1 font-normal w-4'
+            = merchant.comments_count
+
+          - if merchant.comments_count > 0
+            .flex.items-center.gap-1
+              .rating.rating-md
+                .mask.mask-star.bg-primary aria-label="#{merchant.average_rating} star" aria-current="true" title="#{merchant.average_rating}/5"
+              p.text-lg
+                = number_with_precision(merchant.average_rating, strip_insignificant_zeros: true, precision: 2)
+                | /5
+
+      .divider
+
+      .flex.items-center.justify-between
+        .flex.items-center.gap-3
+          - main_group = []
+          - extra_group = []
+
+          - merchant.all_contacts.each.with_index(1) do |contact, index|
+            - if index > 5
+              - extra_group << contact
+            - else
+              - main_group << contact
+
+          - main_group.each do |(contact, value)|
+            = social_contact_icon contact, title: value
+
+          - if extra_group.present?
+            - text = extra_group.map { social_contact_icon(it.first) }.join(' ')
+            = render 'tooltip',
+                    position: :right,
+                    text: text,
+                    mode: 'info',
+                    lucide_ikon: 'ellipsis'
+
+        = link_to merchant_path(merchant), class: 'btn btn-sm btn-secondary' do
+          = t('see')
