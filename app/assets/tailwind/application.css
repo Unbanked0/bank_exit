@@ -262,6 +262,13 @@ select {
     --tw-ring-color: transparent;
 }
 
+[popover] {
+    position-try-fallbacks:
+        flip-block,
+        flip-inline,
+        flip-block flip-inline;
+}
+
 [popover]::backdrop {
     backdrop-filter: blur(0);
     background-color: transparent;
