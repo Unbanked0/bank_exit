@@ -5,7 +5,7 @@ RSpec.describe 'Statistics API' do
     get 'Fetch statistics' do
       tags 'Statistics'
       produces 'application/json'
-      security [bearer_auth: []]
+      security [{ bearer_auth: [] }]
 
       include_context 'with locale parameter'
 

@@ -5,7 +5,7 @@ RSpec.describe 'API::V1::Merchants' do
     get 'List merchants' do
       tags 'Merchants'
       produces 'application/json'
-      security [bearer_auth: []]
+      security [{ bearer_auth: [] }]
 
       include_context 'with locale parameter'
 
@@ -98,7 +98,7 @@ RSpec.describe 'API::V1::Merchants' do
       tags 'Merchants'
       consumes 'application/json'
       produces 'application/json'
-      security [bearer_auth: []]
+      security [{ bearer_auth: [] }]
 
       include_context 'with locale parameter'
       parameter name: :id, in: :path, type: :string, required: true
