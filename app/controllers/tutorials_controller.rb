@@ -15,8 +15,8 @@ class TutorialsController < PublicController
   def index
     tutorials = Tutorial.all(decorate: true)
 
-    @highlighted_tutorials = tutorials.select(&:highlight?)
-    @other_tutorials = tutorials.reject(&:highlight?)
+    @highlighted_tutorials, @other_tutorials =
+      tutorials.partition(&:highlight?)
   end
 
   # @route GET /fr/tutorials/:id {locale: "fr"} (tutorial_fr)
