@@ -236,6 +236,8 @@ es:
     new:
       title: Propuesta de un nuevo comerciante
       introduction_html: Puedes sugerir un nuevo comerciante rellenando el siguiente formulario. Luego se abrirá un issue en Github para que el Colectivo pueda verificarlo y agregar al comerciante a OpenStreetMap.
+      physical_store_notice_html: Utilice este formulario solo si el comerciante tiene una tienda física. Para las tiendas en línea, complete el %{link}.
+      directory_proposal_link: formulario de propuesta de directorio
       form:
         general_info: Información general
         coins: Monedas aceptadas
@@ -374,6 +376,8 @@ es:
     new:
       title: Propuesta de una entrada en el directorio
       introduction_html: Puede sugerir un nuevo comerciante para añadirlo al directorio completando el siguiente formulario. Un miembro del Colectivo revisará la solicitud. Su sugerencia permanecerá oculta hasta que el Colectivo la apruebe.
+      online_shop_notice_html: Utilice este formulario solo si el comerciante tiene una tienda en línea. Para las tiendas físicas, complete el %{link}.
+      merchant_proposal_link: formulario de propuesta de comerciante
 
     form:
       new_coin_wallet: Nueva cartera de criptomonedas

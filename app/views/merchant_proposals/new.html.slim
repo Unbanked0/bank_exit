@@ -10,6 +10,10 @@ article
   .article-body.max-w-5xl
     = render 'breadcrumb'
 
+    .alert.alert-info
+      - link = link_to t('.directory_proposal_link'), new_directory_path
+      p= t('.physical_store_notice_html', link: link)
+
     - if @merchant_proposal.errors.any?
       .alert.alert-error.mt-3
         ul.list-disc.list-inside

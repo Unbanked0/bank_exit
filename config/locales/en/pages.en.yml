@@ -243,6 +243,8 @@ en:
     new:
       title: Proposal for a new merchant
       introduction_html: You can suggest a new merchant by filling in the following form. An issue will be then opened at Github so the Collective could check it and add the merchant to OpenStreetMap.
+      physical_store_notice_html: Only use this form if the merchant has a physical store. For online shops, please fill the %{link}.
+      directory_proposal_link: directory proposal form
       form:
         general_info: General informations
         coins: Accepted coins
@@ -393,6 +395,8 @@ en:
     new:
       title: Suggest a directory entry
       introduction_html: You can suggest a new merchant to add to the directory by completing the following form. A member of the Collective will review the request. Your suggestion will remain invisible until it has been approved by the Collective.
+      online_shop_notice_html: Only use this form if the merchant has an online shop. For physical stores, please fill the %{link}.
+      merchant_proposal_link: merchant proposal form
 
     form:
       new_coin_wallet: New crypto wallet

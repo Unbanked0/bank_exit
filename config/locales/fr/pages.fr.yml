@@ -243,6 +243,8 @@ fr:
     new:
       title: Proposition d'un nouveau commerçant
       introduction_html: Vous pouvez suggérer un nouveau commerçant en remplissant le formulaire suivant. Une issue sera alors ouverte sur Github afin que le Collectif puisse vérifier les données et ajouter le commerçant sur OpenStreetMap.
+      physical_store_notice_html: Utilisez ce formulaire uniquement si le commerçant possède une boutique physique. Pour les boutiques en ligne, veuillez remplir le %{link}.
+      directory_proposal_link: formulaire de proposition d’annuaire
       form:
         general_info: Informations générales
         coins: Les monnaies acceptées
@@ -393,6 +395,8 @@ fr:
     new:
       title: Proposition d'une entrée de l'annuaire
       introduction_html: Vous pouvez suggérer un nouveau commerçant à ajouter à l'annuaire en remplissant le formulaire suivant. Un membre du Collectif analysera la demande. Votre proposition restera invisible tant qu'elle n'aura pas été validée par le Collectif.
+      online_shop_notice_html: Utilisez ce formulaire uniquement si le commerçant possède une boutique en ligne. Pour les boutiques physiques, veuillez remplir le %{link}.
+      merchant_proposal_link: formulaire de proposition de commerçant
 
     form:
       new_coin_wallet: Nouveau portefeuille crypto

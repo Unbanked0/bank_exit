@@ -235,6 +235,8 @@ de:
     new:
       title: Vorschlag für einen neuen Händler
       introduction_html: Du kannst einen neuen Händler vorschlagen, indem du das folgende Formular ausfüllst. Ein Issue wird dann auf Github erstellt, damit das Kollektiv den Vorschlag prüfen und den Händler zu OpenStreetMap hinzufügen kann.
+      physical_store_notice_html: Verwenden Sie dieses Formular nur, wenn der Händler ein Ladengeschäft hat. Für Online-Shops füllen Sie bitte das %{link} aus.
+      directory_proposal_link: Verzeichnis-Vorschlagsformular
       form:
         general_info: Allgemeine Informationen
         coins: Akzeptierte Coins
@@ -371,6 +373,8 @@ de:
     new:
       title: Verzeichniseintrag vorschlagen
       introduction_html: Du kannst einen neuen Händler vorschlagen, indem du das folgende Formular ausfüllst. Ein Mitglied des Kollektivs wird die Anfrage prüfen. Dein Vorschlag bleibt unsichtbar, bis er vom Kollektiv bestätigt wurde.
+      online_shop_notice_html: Verwenden Sie dieses Formular nur, wenn der Händler einen Online-Shop hat. Für Ladengeschäfte füllen Sie bitte das %{link} aus.
+      merchant_proposal_link: Händler-Vorschlagsformular
 
     form:
       new_coin_wallet: Neue Wallet-Adresse

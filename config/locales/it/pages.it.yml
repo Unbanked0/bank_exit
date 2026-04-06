@@ -235,6 +235,8 @@ it:
     new:
       title: Proposta per un nuovo commerciante
       introduction_html: Puoi suggerire un nuovo commerciante compilando il modulo seguente. Verrà quindi aperta una issue su Github affinché il Collettivo possa verificarla e aggiungere il commerciante su OpenStreetMap.
+      physical_store_notice_html: Utilizza questo modulo solo se il commerciante ha un negozio fisico. Per i negozi online, compila il %{link}.
+      directory_proposal_link: modulo di proposta directory
       form:
         general_info: Informazioni generali
         coins: Monete accettate
@@ -371,6 +373,8 @@ it:
     new:
       title: Suggerisci una voce per la directory
       introduction_html: Puoi suggerire un nuovo commerciante da aggiungere alla directory compilando il modulo seguente. Un membro del Collettivo esaminerà la richiesta. Il tuo suggerimento resterà invisibile fino a quando non sarà approvato dal Collettivo.
+      online_shop_notice_html: Utilizza questo modulo solo se il commerciante ha un negozio online. Per i negozi fisici, compila il %{link}.
+      merchant_proposal_link: modulo di proposta commerciante
 
     form:
       new_coin_wallet: Nuovo portafoglio crypto
