@@ -68,7 +68,7 @@ export default class extends Controller {
               .join("");
       },
 
-      onSubmit: ({ index, element, object }) => {
+      onSubmit: ({ object }) => {
         // Store the last selected address to storage to
         // avoid asking user to retype it on next merchant
         sessionStorage.setItem("myLocation", object.value);

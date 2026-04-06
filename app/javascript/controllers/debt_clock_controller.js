@@ -5,7 +5,7 @@ export default class extends Controller {
     d0: Number, // Initial debt amount in euros (at the reference timestamp)
     t0: Number, // Reference timestamp in Unix seconds (when the debt was d0)
     rate: Number, // Growth rate in euros per second (how fast the debt increases)
-    locale: { type: String, value: "en" }, // Locale code for formatting (e.g., 'fr-FR', 'en-US')
+    locale: { type: String, default: "en" }, // Locale code for formatting (e.g., 'fr-FR', 'en-US')
   };
 
   static targets = ["amount"];

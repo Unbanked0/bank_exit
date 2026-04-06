@@ -54,7 +54,7 @@ export default class extends Controller {
     }
   }
 
-  #prevPageHandler(e) {
+  #prevPageHandler(_e) {
     const $nav = document.querySelector("nav.pagy");
 
     if ($nav == null) {
@@ -64,7 +64,7 @@ export default class extends Controller {
     $nav.firstChild.click();
   }
 
-  #nextPageHandler(e) {
+  #nextPageHandler(_e) {
     const $nav = document.querySelector("nav.pagy");
 
     if ($nav == null) {

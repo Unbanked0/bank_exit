@@ -16,7 +16,6 @@ export default class extends Controller {
       return;
     }
 
-    const id = e.item.id;
     const newPosition = e.newIndex + 1;
 
     patch(e.item.dataset.updateUrl, {

@@ -7,7 +7,7 @@ export default class extends Controller {
   };
 
   loadAssociatedSelect(_e) {
-    const $profile = document.getElementById("questions_profile");
+    // const $profile = document.getElementById("questions_profile");
     const $level = document.getElementById("questions_level");
     const $service = document.getElementById("questions_service");
 

@@ -7,7 +7,7 @@ import TurboPower from "turbo_power";
 TurboPower.initialize(Turbo.StreamActions);
 
 // @see https://gorails.com/episodes/custom-hotwire-turbo-confirm-modals
-Turbo.config.forms.confirm = (message, element) => {
+Turbo.config.forms.confirm = (message, _element) => {
   let dialog = document.getElementById("turbo-confirm");
 
   const $body = dialog.querySelector(".body");
@@ -16,7 +16,7 @@ Turbo.config.forms.confirm = (message, element) => {
 
   dialog.showModal();
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _reject) => {
     dialog.addEventListener(
       "close",
       () => {
@@ -39,7 +39,7 @@ window.addEventListener("click", function (e) {
 // After a Turbo navigation, <track> subtitles often disappear because
 // the <video> element persists in memory. Cloning it forces the browser
 // to re-parse the <track> elements and reload subtitles properly.
-document.addEventListener("turbo:render", (e) => {
+document.addEventListener("turbo:render", (_e) => {
   const video = document.querySelector("video[data-reload-subtitles]");
   if (!video) return;
 

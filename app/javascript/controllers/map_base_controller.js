@@ -11,7 +11,7 @@ export default class MapBaseController extends Controller {
     longitude: { type: Number, default: 3.0824 },
     zoom: { type: Number, default: 5 },
     showAttribution: { type: Boolean, default: true },
-    attributionHtml: { type: String },
+    attributionHtml: String,
   };
 
   connect() {

@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["form", "country", "queryRenderer", "iframe"];
 
-  print(e) {
+  print(_e) {
     let data = new FormData(this.formTarget);
     let formParams = new URLSearchParams(data);
     formParams.delete("authenticity_token");
