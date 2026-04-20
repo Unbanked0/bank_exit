@@ -8,68 +8,80 @@
       link: https://t.me/SortieDeBanque
 
       regions:
-        - name: Paris et Ile-de-France
+        - name: Paris (75)
           link: https://t.me/Bitcoin_Paris_stop_CBDC
-        - name: Val d'Oise 95
+        - name: Val d'Oise (95)
           link: https://t.me/Bitcoin_95_anti_CBDC
-        - name: Evreux (Eure 27)
+        - name: Evreux (27)
           link: https://t.me/BitcoinEvreuxSTOPCBDC
-        - name: Rouen
+        - name: Rouen (76)
           link: https://t.me/+eNG5nXOGydYwZTQ0
         - name: Maurepas (78)
           link: https://t.me/SortieDeBanque_Maurepas_78
-        - name: Lille
+        - name: Lille (59)
           link: https://t.me/Bitcoin_Lille_stop_CBDC
-        - name: Metz
+        - name: Metz (57)
           link: https://t.me/BitcoinMetz_antiCBDC
-        - name: Strasbourg
+        - name: Strasbourg (67)
           link: https://t.me/Strasbourg_Vivre_sans_banque
-        - name: Orléans
+        - name: Orléans (45)
           link: https://t.me/Bitcoin_Orleans_stopCBDC
-        - name: Poitiers
+        - name: Poitiers (86)
           link: https://t.me/+FhZFTD6PVnxjOGM0
-        - name: Rennes
+        - name: Rennes (35)
           link: https://t.me/SortieDeBanqueRennes
-        - name: Dinard
+        - name: Dinard (35)
           link: https://t.me/+1XLUPVtJ4p02ODlk
-        - name: Brest
+        - name: Brest (29)
           link: https://t.me/Bitcoin_BREST_anti_CBDC
-        - name: Vannes
+        - name: Vannes (56)
           link: https://t.me/Vannes_antiCBDC
-        - name: Lorient
+        - name: Lorient (56)
           link: https://t.me/+aHWkuZSOz3UxNjc0
-        - name: Nantes
+        - name: Nantes (44)
           link: https://t.me/s2bbcn
-        - name: La Rochelle
+        - name: La Rochelle (17)
           link: https://t.me/+VsjIaUvzke03YWM8
-        - name: Bordeaux
+        - name: Bordeaux (33)
           link: https://t.me/Bitcoin_Bordeaux_anti_CBDC
-        - name: Lyon
+        - name: Lyon (69)
           link: https://t.me/BitcoinLyon_anti_CBDC
-        - name: Ain 01 / Alpes
+        - name: Ain / Alpes (01)
           link: https://t.me/+Dwo3A5JY5_MwNGNk
-        - name: Aix-en-Provence
+        - name: Aix-en-Provence (13)
           link: https://t.me/kryptaix_noCBDC
-        - name: Marseille
+        - name: Marseille (13)
           link: https://t.me/MarseilleMoneros
-        - name: Frejus/Cannes
+        - name: Frejus (83)
           link: https://t.me/bitcoin_frejus_anti_cbdc
-        - name: Nice
+        - name: Nice (06)
           link: https://t.me/nice_sortiedebanque
-        - name: Corse
+        - name: Corse (2A/2B)
           link: https://t.me/Corse_anti_CBDC
-        - name: Agen
+        - name: Agen (47)
           link: https://t.me/Agen_SortieDeBanque
-        - name: Toulouse
+        - name: Toulouse (31)
           link: https://t.me/+3INN7fZj07cxNDk0
-        - name: Montpellier
+        - name: Montpellier (34)
           link: https://t.me/i0mfe0gfoTI5MzE0
-        - name: Beziers/Agde
+        - name: Beziers / Agde (34)
           link: https://t.me/beziersmonero
-        - name: Perpignan/Narbonne (11,66)
+        - name: Perpignan / Narbonne (11 / 66)
           link: https://t.me/+8E07wtyG424yYjRk
         - name: Pyrénées
           link: https://t.me/Bitcoin_Pyrenees_antiCBDC
+        - name: Pau (64)
+          link: https://t.me/+Ef6qUxFPaMI1NTU0
+        - name: Périgueux (24)
+          link: https://t.me/+qSUFm_ax8sE5NjJk
+        - name: Montauban (82)
+          link: https://t.me/+VNkQQDT6JHtkM2Vk
+        - name: Clermont-Ferrand (63)
+          link: https://t.me/+2AvsYL_7jUE5Y2Y0
+        - name: Bourges (18)
+          link: https://t.me/+sPpFoHG71vRkZmFk
+        - name: Euskadi - Pays Basque
+          link: https://t.me/+VuptQl_jqHcyNGFk
         - name: Guadeloupe
           link: https://t.me/BTC_Guadeloupe_stop_CBDC
         - name: Martinique
@@ -84,3 +96,11 @@
     - name: Italy
       alpha2: IT
       link: https://t.me/+1HIz3ht2sWMzOTI0
+
+    - name: Spain
+      alpha2: ES
+      link: https://t.me/+PKO-h-4py2A4ZWE0
+
+    - name: Netherlands
+      alpha2: NL
+      link: https://t.me/Bank_Exit_NL_BE
