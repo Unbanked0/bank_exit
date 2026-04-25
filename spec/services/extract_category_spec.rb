@@ -19,7 +19,8 @@ RSpec.describe ExtractCategory do
         leisure: 'leisure',
         aeroway: 'aeroway',
         attraction: 'attraction',
-        residential: 'trailer_park'
+        residential: 'trailer_park',
+        education: 'training'
       }.as_json
     end
 
@@ -202,6 +203,27 @@ RSpec.describe ExtractCategory do
         properties.delete('leisure')
         properties.delete('aeroway')
         properties.delete('attraction')
+      end
+
+      it { is_expected.to eq 'trailer_park' }
+    end
+
+    context 'when [education] is present' do
+      before do
+        properties.delete('healthcare:speciality')
+        properties.delete('healthcare')
+        properties.delete('amenity')
+        properties.delete('amenity_1')
+        properties.delete('amenity_2')
+        properties.delete('craft')
+        properties.delete('office')
+        properties.delete('sport')
+        properties.delete('shop')
+        properties.delete('tourism')
+        properties.delete('leisure')
+        properties.delete('aeroway')
+        properties.delete('attraction')
+        properties.delete('trailer_park')
       end
 
       it { is_expected.to eq 'trailer_park' }
