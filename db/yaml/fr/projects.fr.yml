@@ -47,6 +47,15 @@
   github_url: https://github.com/Bank-Exit/Crypto_Box_sticker
   identifier: sticker
 
+- route: projects#show
+  image: voxpopuli.jpg
+  website_screenshot: voxpopuli.jpg
+  title: VoxPopuli
+  description: La démocratie directe, libre et accessible à tous
+  external: false
+  iframe_url: https://vote.libre-market.com
+  identifier: voxpopuli
+
 - route: local_groups#index
   image: local_groups.jpg
   title: Les groupes locaux
