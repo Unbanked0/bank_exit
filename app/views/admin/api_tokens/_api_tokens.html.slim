@@ -1,6 +1,4 @@
 section.space-y-3
-  == pagy_nav(pagy) if pagy.count > pagy.limit
-
   .table-wrapper
     table.table.table-zebra
       thead
@@ -18,4 +16,4 @@ section.space-y-3
             td.text-center.italic colspan="100%"
               = t('.empty_results')
 
-  == pagy_nav(pagy) if pagy.count > pagy.limit
+  = render 'pagination', pagy: pagy

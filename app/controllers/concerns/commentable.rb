@@ -10,7 +10,7 @@ module Commentable
   def set_comments
     comments = CommentDecorator.wrap(commentable.comments)
 
-    @pagy, @comments = pagy_array(comments, limit: 5)
+    @pagy, @comments = pagy(:offset, comments, limit: 5)
   end
 
   def commentable

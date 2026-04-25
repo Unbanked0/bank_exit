@@ -12,9 +12,9 @@ module API
       # @route GET /en/api/v1/merchants {format: :json, locale: "en"} (api_v1_merchants_en)
       # @route GET /api/v1/merchants {format: :json}
       def index
-        pagy, page_ids = pagy_array(merchant_ids.ids, limit: per_page)
+        pagy, page_ids = pagy(:offset, merchant_ids.ids, limit: per_page)
 
-        merchants = Merchant.where(id: page_ids).in_order_of(:id, page_ids)
+        merchants = Merchant.where(id: page_ids).in_order_of(:id, page_ids || [])
 
         args = with_comments? ? { view: :with_comments } : {}
 

@@ -24,7 +24,7 @@ module Admin
           @dashboard_presenter = Admin::DashboardPresenter.new
           @merchant_sync = MerchantSync.sync.last
         end
-        format.turbo_stream if params[:turbo_stream] == 'true'
+        format.turbo_stream
       end
     end
 

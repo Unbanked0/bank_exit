@@ -38,7 +38,7 @@ module Admin
 
       @merchant_sync = MerchantSync.sync.last
 
-      @pagy, @merchants = pagy_array(merchants)
+      @pagy, @merchants = pagy(:offset, merchants)
     end
 
     # @route GET /fr/admin/merchants/:id {locale: "fr"} (admin_merchant_fr)
@@ -51,7 +51,7 @@ module Admin
       authorize! @merchant
 
       comments = CommentDecorator.wrap(@merchant.comments)
-      @pagy, @comments = pagy_array(comments)
+      @pagy, @comments = pagy(:offset, comments)
 
       set_meta_tags title: @merchant.name
     end

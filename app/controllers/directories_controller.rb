@@ -34,7 +34,7 @@ class DirectoriesController < PublicController
 
     directories = DirectoryDecorator.wrap(directories.uniq)
 
-    @pagy, @directories = pagy_array(directories)
+    @pagy, @directories = pagy(:offset, directories)
     @directories_spotlight = Directory.enabled.spotlights.includes(:logo_attachment, :string_translations).shuffle
 
     set_meta_tags canonical: directories_url

@@ -4,6 +4,10 @@
     justify-content: center;
     gap: 0.25rem;
     font-size: 0.875rem;
+    background-color: var(--color-base-200);
+    border: var(--border) solid var(--color-base-300);
+    border-radius: var(--radius-box);
+    padding: 0.25rem;
 }
 
 .pagy a {
@@ -16,7 +20,7 @@
 
 .pagy a:not(.gap):not([href]),
 .pagy a:not(.gap):not([href]):hover {
-    background-color: var(--color-base-200);
+    background-color: var(--color-base-300);
     color: var(--color-base-content);
     cursor: not-allowed;
 }
@@ -27,7 +31,7 @@
     color: var(--color-base-content);
 }
 
-.pagy a:not(.gap).current,
+.pagy a:not(.gap)[aria-current="page"],
 .pagy a:not(.gap):hover {
     background-color: var(--color-primary);
     color: white;

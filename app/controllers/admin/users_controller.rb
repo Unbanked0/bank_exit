@@ -13,7 +13,7 @@ module Admin
     def index
       authorize! User
 
-      @pagy, @users = pagy(User.all)
+      @pagy, @users = pagy(:offset, User.all)
     end
 
     # @route GET /fr/admin/users/new {locale: "fr"} (new_admin_user_fr)

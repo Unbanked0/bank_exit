@@ -65,9 +65,7 @@ ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scr
       = lucide_icon 'store', class: 'w-20 h-auto'
       p.text-lg= t('empty_results')
 
-- if defined?(pagy) && pagy.count > pagy.limit
-  .p-2 data-controller="pagination"
-    == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true"')
+= render 'pagination', pagy: pagy, add_page_to_url: false
 
 - unless merchants.empty?
   hr.border-base-content/20

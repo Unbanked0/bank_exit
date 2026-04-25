@@ -1,4 +1,4 @@
-.flex.items-center.justify-end.gap-2 data-controller=("pagination" if pagy.count > pagy.limit)
+.flex.items-center.justify-end.gap-2
   - req_params = request.query_parameters.compact_blank
 
   = raw_link_to url_for(params: req_params.merge(display: :grid)),
@@ -20,9 +20,6 @@
     span.lg:hidden= t('display_table')
 
 - if directories.any?
-  - if pagy.count > pagy.limit
-    == pagy_nav pagy
-
   - if directories_as_grid?
     .grid.grid-cols-1.lg:grid-cols-3.gap-2.lg:gap-3
       = render directories
@@ -42,8 +39,7 @@
           - directories.each do |directory|
             = render 'directory_table_row', directory: directory
 
-  - if pagy.count > pagy.limit
-    == pagy_nav pagy
+  = render 'pagination', pagy: pagy
 
 - else
   .flex.flex-col.items-center.justify-center.gap-3.text-base-content/60.py-10

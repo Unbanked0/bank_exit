@@ -9,8 +9,8 @@ module SEOHelper
       lang: I18n.locale,
       alternate: alternates,
       canonical: request.url,
-      prev: pagy ? pagy_prev_url(pagy, absolute: true) : nil,
-      next: pagy ? pagy_next_url(pagy, absolute: true) : nil,
+      prev: pagy&.page_url(:previous, absolute: true),
+      next: pagy&.page_url(:next, absolute: true),
       manifest: pwa_manifest_path(format: :json),
       og: {
         title: :title,

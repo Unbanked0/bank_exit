@@ -1,10 +1,5 @@
-- should_paginate = pagy.count > pagy.limit
-
-#merchants_results.relative.w-full.h-full.lg:w-2/3.px-3.py-3.space-y-3 data-controller=("pagination" if should_paginate)
+#merchants_results.relative.w-full.h-full.lg:w-2/3.px-3.py-3.space-y-3.scroll-mt-20
   - if merchants.any?
-    - if should_paginate
-      == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true" data-action="click->pagination#addPageToURL"')
-
     - if merchants_as_table?
       .overflow-x-auto
         table.table.table-zebra.lg:table-fixed.w-max.min-w-full.lg:w-auto
@@ -22,11 +17,10 @@
               = render 'merchants_table_row', merchant: merchant
 
     - elsif merchants_as_grid?
-      .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-2.lg:gap-3
+      .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-3
         = render merchants
 
-    - if should_paginate
-      == pagy_nav(pagy, anchor_string: 'data-turbo-stream="true" data-action="click->pagination#addPageToURL"')
+    = render 'pagination', pagy: pagy
 
   - else
     .flex.flex-col.items-center.justify-center.gap-3.text-base-content/60.py-10

@@ -1,8 +1,6 @@
 - can_batch_merchants = allowed_to?(:destroy?, with: Admin::Merchants::BatchActionPolicy)
 
 section.space-y-3 data-controller="admin--table"
-  == pagy_nav(pagy) if pagy.count > pagy.limit
-
   - if can_batch_merchants
     = render 'batch_actions'
 
@@ -32,4 +30,4 @@ section.space-y-3 data-controller="admin--table"
             td.text-center.italic colspan="100%"
               = t('.empty_results')
 
-  == pagy_nav(pagy) if pagy.count > pagy.limit
+  = render 'pagination', pagy: pagy
