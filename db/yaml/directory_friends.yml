@@ -1,7 +1,11 @@
 ---
-- name: I18n/Directory
+- name: I18n/model/Directory
   link: directories#index
   icon: notebook
+
+- name: I18n/application.nav.menu.freedom_grocers
+  link: https://libre-market.com/m/epicerie
+  image: freedom_grocers.svg
 
 - name: XmrBazaar
   link: https://xmrbazaar.com

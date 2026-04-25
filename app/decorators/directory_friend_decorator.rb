@@ -1,11 +1,17 @@
 class DirectoryFriendDecorator < ApplicationDecorator
   def name
     value = object.name
+
     return value unless value.include?('I18n/')
 
-    model = value.split('I18n/').last
+    i18n = value.split('I18n/').last
 
-    model.constantize.model_name.human.capitalize
+    if i18n.starts_with?('model/')
+      model = i18n.split('model/').last
+      model.constantize.model_name.human.capitalize
+    else
+      I18n.t(i18n)
+    end
   rescue StandardError
     object.name
   end
