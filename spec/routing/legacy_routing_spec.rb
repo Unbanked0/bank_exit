@@ -22,7 +22,7 @@ RSpec.describe 'Legacy', type: :request do
   describe '/epicerie' do
     subject! { get('/epicerie') }
 
-    it { is_expected.to redirect_to('https://monero-map.org/epicerie/') }
+    it { is_expected.to redirect_to('https://libre-market.com/m/epicerie') }
   end
 
   describe '/les-marchands/:id' do

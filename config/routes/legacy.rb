@@ -4,7 +4,7 @@
 # compatibilty purposes !!!
 get '/cheque', to: redirect('https://monero-map.org/cheque/')
 get '/crypto_box', to: redirect('https://monero-map.org/crypto_box/')
-get '/epicerie', to: redirect('https://monero-map.org/epicerie/')
+get '/epicerie', to: redirect('https://libre-market.com/m/epicerie')
 get '/map.html', to: redirect('/en/map')
 get '/c', to: redirect(QueryRedirector.new('https://monero-map.org/c/'))
 
