@@ -31,11 +31,11 @@ article
             - groups_count = country['regions']&.count || 0
 
             - if groups_count == 0
-              header.alert.cursor-not-allowed class=('justify-between' if has_link)
+              header.alert.alert-soft.cursor-not-allowed class=('justify-between' if has_link)
                 h3.text-lg.font-bold
                   - c = ISO3166::Country[:"#{country['alpha2']}"]
                   = c.emoji_flag
-                  span.mx-2= c.translations[I18n.locale.to_s]
+                  span.mx-1= c.translations[I18n.locale.to_s]
                   = "(#{groups_count})"
 
                 - if has_link
@@ -44,12 +44,12 @@ article
 
 
             - else
-              details.space-y-3 open=('true' if country['alpha2'].downcase == I18n.locale.to_s)
-                summary.alert.cursor-pointer class=('justify-between' if has_link)
+              details open=('true' if country['alpha2'].downcase == I18n.locale.to_s) class="open:space-y-3"
+                summary.alert.alert-soft.cursor-pointer class=('justify-between' if has_link)
                   h3.text-lg.font-bold
                     - c = ISO3166::Country[:"#{country['alpha2']}"]
                     = c.emoji_flag
-                    span.mx-2= c.translations[I18n.locale.to_s]
+                    span.mx-1= c.translations[I18n.locale.to_s]
                     = "(#{groups_count})"
 
                   - if has_link
