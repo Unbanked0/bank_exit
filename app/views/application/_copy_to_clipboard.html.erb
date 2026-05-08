@@ -1,0 +1,27 @@
+<%# locals: (clipboard_value:, extra_class: nil, extra_action: nil, attr_title: nil, clipboard_success_text_value: I18n.t("copied"), copy_icon: lucide_icon("copy", class: "w-4")) %>
+
+<% css_classes = class_names(
+  "btn btn-square btn-sm btn-ghost",
+  extra_class
+)
+
+actions = class_names(
+  "click->clipboard#copy:prevent",
+  extra_action
+) %>
+
+<%= content_tag :div,
+  class: css_classes,
+  title: attr_title.presence || t("copy_to_clipboard"),
+  data: {
+    controller: "clipboard",
+    action: actions,
+    clipboard_content_value: clipboard_value,
+    clipboard_success_icon_value: html_escape_once(
+      lucide_icon("check-check", class: "inline-flex w-4")
+    ),
+    clipboard_success_text_value: clipboard_success_text_value,
+    clipboard_success_class: "btn-success"
+  }.compact_blank do %>
+  <%= copy_icon %>
+<% end %>

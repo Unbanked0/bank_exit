@@ -1,0 +1,88 @@
+<%# locals: (id: nil, data: {}, data_attributes: {}, modal_size: "max-w-xl", modal_title: nil, modal_body: nil, modal_body_html: nil) %>
+
+<% is_turbo_confirm = id == "turbo-confirm"
+
+data.merge!(controller: :modal) if request.format.turbo_stream?
+
+modal_box_classes = class_names(
+  "modal-box",
+  "space-y-3",
+  modal_size
+)
+
+modal_body_classes = class_names(
+  "body",
+  "space-y-2",
+  "overflow-y-auto",
+  "max-h-[80lvh]"
+) %>
+
+<%#
+  When the modal is loaded via Turbo Stream, the original button click
+  that would trigger this controller no longer exists.
+
+  Therefore, we manually open the modal in the `connect()` method.
+  This ensures the modal still appears as expected even when injected dynamically.
+%>
+
+<%= tag.dialog(
+  id: id,
+  class: "modal",
+  data: data
+) do %>
+  <div class="<%= modal_box_classes %>">
+    <header class="sticky">
+      <% if modal_title.present? %>
+        <h3 class="text-lg font-bold">
+          <%= modal_title %>
+        </h3>
+      <% elsif content_for?(:modal_title) %>
+        <h3 class="text-lg font-bold">
+          <%= yield :modal_title %>
+        </h3>
+      <% end %>
+    </header>
+
+    <form method="dialog">
+      <button
+        class="btn btn-sm btn-square btn-ghost absolute right-2 top-2"
+        aria-label="Close"
+      >
+        <%= lucide_icon "x" %>
+      </button>
+    </form>
+
+    <div class="<%= modal_body_classes %>">
+      <% if modal_body.present? %>
+        <%= simple_format(modal_body) %>
+      <% elsif modal_body_html.present? %>
+        <%= modal_body_html %>
+      <% end %>
+    </div>
+
+    <% if is_turbo_confirm %>
+      <div class="modal-action justify-center">
+        <form method="dialog">
+          <button class="btn btn-error btn-sm mr-2" value="cancel">
+            <%= lucide_icon "x", class: "w-3" %>
+            <%= t("cancel") %>
+          </button>
+
+          <button class="btn btn-success btn-sm" value="confirm">
+            <%= lucide_icon "check", class: "w-3" %>
+            <%= t("confirm") %>
+          </button>
+        </form>
+      </div>
+    <% end %>
+  </div>
+
+  <% unless is_turbo_confirm %>
+    <%# Not displayed %>
+    <form class="modal-backdrop" method="dialog">
+      <button>
+        <%= t("close") %>
+      </button>
+    </form>
+  <% end %>
+<% end %>

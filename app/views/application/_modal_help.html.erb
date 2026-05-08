@@ -1,0 +1,62 @@
+<%= render_modal id: 'modal_help',
+                 modal_title: t('help'),
+                 data: { controller: :help } do %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="whitespace-nowrap"><%= t('.shortcut') %></th>
+        <td><%= t('.description') %></td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="whitespace-nowrap">
+          <%= hotkey_label(['shift', '?']) %>
+        </td>
+
+        <td>
+          <%= t('.open_help_modal') %>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="whitespace-nowrap">
+          <%= hotkey_label(['ctrl', 'i']) %>
+        </td>
+
+        <td>
+          <%= t('.open_about_modal') %>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="whitespace-nowrap">
+          <%= hotkey_label(['ctrl', '◀︎']) %>
+        </td>
+
+        <td>
+          <span><%= t('.access_prev_page') %></span>
+
+          <span class="block italic text-sm text-base-content/50">
+            <%= t('.access_page_subtitle') %>
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="whitespace-nowrap">
+          <%= hotkey_label(['ctrl', '▶︎']) %>
+        </td>
+
+        <td>
+          <span><%= t('.access_next_page') %></span>
+
+          <span class="block italic text-sm text-base-content/50">
+            <%= t('.access_page_subtitle') %>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

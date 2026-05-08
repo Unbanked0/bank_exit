@@ -1,0 +1,55 @@
+<header class="fixed w-full z-50 p-2 print:hidden">
+  <button
+    class="
+      flex items-center lg:mx-auto cursor-pointer rounded-box gap-3 pl-2
+      py-2 pr-6 border border-base-content/20 bg-base-200 hover:bg-base-100
+      transition-colors backdrop-blur-sm
+    "
+    data-controller="hotkey"
+    data-action="keydown.j@document->hotkey#click"
+    popovertarget="popover-menu"
+    style="anchor-name:--anchor-menu"
+    aria-label="<%= t('menu') %>"
+  >
+    <div class="<%= class_names([ "avatar", 'avatar-online': authenticated? ]) %>">
+      <div class="w-12 rounded-full">
+        <%= image_tag logo_by_locale, alt: 'Logo Bank-Exit' %>
+      </div>
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-semibold">
+        <span><%= t('application.nav.collectif') %></span>
+        <span><%= t('application.nav.bank_exit') %></span>
+      </p>
+
+      <p class="text-xs">
+        <span class="uppercase text-base-content/70 mr-2">
+          <%= t('menu') %>
+        </span>
+
+        <%# kbd-xs / kbd-sm %>
+        <%= hotkey_label('j', size: 'xs') %>
+      </p>
+    </div>
+  </button>
+
+  <%= render 'nav', projects: projects %>
+
+  <div
+    class="
+      absolute top-2 right-2 flex items-center gap-3 bg-base-200/80
+      rounded-box border border-base-content/20 px-2 py-1
+    "
+  >
+    <%= render 'language_switcher' %>
+
+    <%= link_to github_organization_url,
+                target: :_blank,
+                title: t('.github_title') do %>
+      <%= lucide_icon 'github', class: "w-4" %>
+    <% end %>
+  </div>
+
+  <div id="flashes"><%= render 'flashes' %></div>
+</header>

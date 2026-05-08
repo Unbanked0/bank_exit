@@ -1,0 +1,29 @@
+<% if allowed_to?(:index?, Comment) %>
+  <div class="flex flex-col items-center gap-1">
+    <div
+      class="text-xs ml-1"
+      title="<%= model.comments_count %> <%= Comment.model_name.human(count: model.comments_count) %>"
+    >
+      <%= lucide_icon 'message-square', class: 'inline-flex mr-0.5 font-normal w-3.5' %>
+      <%= model.comments_count %>
+    </div>
+
+    <% if model.comments_count > 0 %>
+      <div class="flex items-center gap-1">
+        <div class="rating rating-xs">
+          <div
+            aria-current="true"
+            aria-label="<%= model.average_rating %> star"
+            class="mask mask-star bg-primary"
+            title="<%= model.average_rating %>/5"
+          ></div>
+        </div>
+
+        <p class="text-xs">
+          <%= number_with_precision(model.average_rating, strip_insignificant_zeros: true, precision: 2) %>
+          /5
+        </p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

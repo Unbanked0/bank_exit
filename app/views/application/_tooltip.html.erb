@@ -1,0 +1,16 @@
+<%#
+  .tooltip-primary, .tooltip-secondary
+  .tooltip-success, .tooltip-info, .tooltip-warning
+  .tooltip-error, tooltip-neutral, .tooltip-accent
+  .tooltip-top, .tooltip-bottom, .tooltip-left, .tooltip-right
+%>
+
+<% icon = local_assigns[:lucide_ikon].presence || 'info' %>
+
+<div class="tooltip tooltip-primary<%= " tooltip-#{position}" if defined?(position) %><%= " tooltip-#{mode}" if defined?(mode) %>">
+  <div class="tooltip-content p-2">
+    <%== text %>
+  </div>
+
+  <%= lucide_icon icon, class: 'text-base-content/70 w-5 h-5 cursor-pointer' %>
+</div>

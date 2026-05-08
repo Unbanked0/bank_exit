@@ -1,0 +1,43 @@
+<%# TODO: Extract me in a dedicated helper %>
+<% if flash_type == 'notice'
+  flash_classes = 'alert-success'
+  close_button_classes = 'btn-success'
+elsif flash_type == 'info'
+  flash_classes = 'alert-info'
+  close_button_classes = 'btn-info'
+elsif flash_type == 'warning'
+  flash_classes = 'alert-warning'
+  close_button_classes = 'btn-warning'
+else
+  flash_classes = 'alert-error'
+  close_button_classes = 'btn-error'
+end %>
+
+<div
+  role="alert"
+  class="<%= class_names(['alert max-w-96 place-items-start items-center gap-2', flash_classes, 'appear-then-fade': disappear]) %>"
+  data-controller="removals"
+  data-action="animationend->removals#remove"
+>
+  <%= lucide_icon 'info', class: 'w-4 h-4' %>
+
+  <div>
+    <% unless disappear %>
+      <p class="text-xs italic mb-1"><%= l(Time.current) %></p>
+    <% end %>
+
+    <div class="max-h-64 overflow-y-auto">
+      <%= message %>
+    </div>
+  </div>
+
+  <% unless disappear %>
+    <button
+      class="<%= class_names(['btn btn-xs btn-square', close_button_classes]) %>"
+      aria-label="Close"
+      data-action="click->removals#forceRemove"
+    >
+      <%= lucide_icon 'x' %>
+    </button>
+  <% end %>
+</div>

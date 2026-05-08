@@ -81,7 +81,7 @@ article
                     = render 'copy_to_clipboard',
                             clipboard_value: coin_wallet.public_address,
                             clipboard_success_text_value: nil,
-                            title: nil
+                            attr_title: nil
 
                     = link_to coin_wallet, data: { turbo_stream: true }, title: 'QRcode' do
                       = lucide_icon('qr-code')

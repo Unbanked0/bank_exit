@@ -37,7 +37,7 @@
     <%= debugbar_head if defined?(Debugbar) %>
 
     <script type="application/ld+json">
-      <%= schema_dot_org_organization %>
+      <%== schema_dot_org_organization %>
     </script>
   </head>
 
@@ -53,7 +53,7 @@
       <%= yield %>
     </main>
 
-    <%= render 'footer', projects: @projects, contacts: @contacts %>
+    <%= render 'footer', projects: @projects, contacts: @contacts, themes_finder: @themes_finder %>
 
     <%= turbo_frame_tag :announcements, src: announcements_path %>
 

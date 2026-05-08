@@ -1,0 +1,12 @@
+<%#
+  Execute this code at the very beginning of page loading to avoid FOUC
+  @see https://wiki.adminforge.de/wiki/Flash_of_unstyled_content?lang=en
+%>
+
+<script nonce="<%= request.content_security_policy_nonce %>">
+  const theme = localStorage.getItem("theme")
+
+  if (theme && theme !== "auto") {
+    document.documentElement.dataset.theme = theme
+  }
+</script>

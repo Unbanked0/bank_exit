@@ -1,0 +1,33 @@
+<%# locals: (f:, input_name: :description) %>
+<% max_counter_value = Setting::MAX_DEFAULT_DESCRIPTION_LENGTH
+content_length = f.object.send(input_name)&.length || 0 %>
+
+<div
+  data-controller="character-counter"
+  data-character-counter-max-counter-value="<%= max_counter_value %>"
+  data-character-counter-near-class="badge-warning"
+  data-character-counter-out-class="badge-error"
+  data-character-counter-within-class="badge-success"
+>
+  <%= f.input input_name,
+              as: :text,
+              label: f.object.class.human_attribute_name(:description),
+              input_html: {
+                data: {
+                  character_counter_target: 'textarea',
+                  action: 'keyup->character-counter#change'
+                }
+              } %>
+
+  <p class="text-right text-sm mt-2">
+    <span class="
+      <%= class_names([
+      "badge badge-sm",
+      'badge-warning': content_length < 50,
+      "badge-success": content_length >= 50 && content_length < max_counter_value,
+      "badge-error": content_length >= max_counter_value
+      ]) %>
+    " data-character-counter-target="counter"><%= content_length %></span>
+    / <%= max_counter_value %>
+  </p>
+</div>

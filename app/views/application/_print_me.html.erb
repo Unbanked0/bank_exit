@@ -1,0 +1,13 @@
+<%= button_tag type: :button,
+               class: 'flex items-center gap-2 cursor-pointer hover:text-primary transition-colors',
+               title: t('print'),
+               data: {
+                 controller: 'printer',
+                 action: 'click->printer#print'
+               } do %>
+  <%= lucide_icon 'printer', class: (icon_klass if local_assigns.key?(:icon_klass)) %>
+
+  <%= yield %>
+
+  <%= hotkey_label(['ctrl', 'p'], size: 'xs') %>
+<% end %>

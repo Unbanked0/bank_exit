@@ -15,7 +15,7 @@
         = render 'copy_to_clipboard',
                 clipboard_value: maps_embed_url,
                 clipboard_success_text_value: nil,
-                title: t('.url_to_embed'),
+                attr_title: t('.url_to_embed'),
                 extra_action: 'map--embed-generator:copyUrl@window->clipboard#setContent',
                 extra_class: 'btn-xs! mr-2',
                 copy_icon: lucide_icon('copy', class: 'w-3')
@@ -44,7 +44,7 @@
           = render 'copy_to_clipboard',
                   clipboard_value: default_map_iframe_html,
                   clipboard_success_text_value: nil,
-                  title: t('.iframe_to_embed'),
+                  attr_title: t('.iframe_to_embed'),
                   extra_action: 'map--embed-generator:copyIframe@window->clipboard#setContent'
 
     = simple_form_for '',

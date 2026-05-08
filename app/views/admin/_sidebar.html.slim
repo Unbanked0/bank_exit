@@ -98,7 +98,7 @@
     - color = color_for_role(current_user.role)
 
     .space-y-2
-      = render 'pretender_message' if true_user != current_user
+      = render 'admin/pretender_message' if true_user != current_user
 
       details.dropdown.dropdown-top.dropdown-center.w-full
         summary.btn.btn-block.py-7 class="btn-#{color}"

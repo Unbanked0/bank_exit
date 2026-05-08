@@ -1,0 +1,26 @@
+<% if pagy.count > pagy.limit %>
+  <% attributes = defined?(attrs) ? attrs : {} %>
+  <% keyboard_enabled = defined?(keyboard_enabled) ? keyboard_enabled.to_s : 'true' %>
+  <% push_page_to_url = defined?(add_page_to_url) ? add_page_to_url : true %>
+  <div
+    class="flex items-center justify-center gap-2 p-2"
+    data-controller="pagination"
+    data-pagination-keyboard-enabled-value="<%= keyboard_enabled %>"
+    id="<%= ('pagy_top' if defined?(pagy_top) && pagy_top) %>"
+  >
+    <% if keyboard_enabled && pagy.previous %>
+      <%= hotkey_label(['Ctrl', '◀︎'], size: 'xs') %>
+    <% end %>
+
+    <%== pagy.series_nav(anchor_string: [
+          'data-turbo-stream="true"',
+          ('data-action="click->pagination#addPageToURL"' if push_page_to_url)
+       ]
+       .join(' ')
+       .concat(attributes[:anchor_string] || '')) %>
+
+    <% if keyboard_enabled && pagy.next %>
+      <%= hotkey_label(['Ctrl', '▶︎'], size: 'xs') %>
+    <% end %>
+  </div>
+<% end %>

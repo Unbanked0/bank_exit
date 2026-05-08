@@ -1,0 +1,93 @@
+<% box_class = "bg-neutral rounded-box text-neutral-content flex flex-col p-2 items-center"
+end_time = Time.zone.parse("2027-10-01")
+initial_counter = countdown_to(end_time) %>
+
+<figure class="text-center">
+  <div
+    class="flex flex-wrap justify-center gap-8 lg:gap-5"
+    data-controller="countdown"
+    data-countdown-end-time-value="<%= end_time.to_s %>"
+  >
+    <div class="<%= box_class %>">
+      <span class="countdown font-mono text-5xl">
+        <span
+          aria-live="polite"
+          aria-label="<%= initial_counter[:months] %>"
+          data-countdown-target="months"
+          style="--value:<%= initial_counter[:months] %>;"
+        >
+          <%= initial_counter[:months] %>
+        </span>
+      </span>
+
+      <%= t('month') %>
+    </div>
+
+    <div class="<%= box_class %>">
+      <span class="countdown font-mono text-5xl">
+        <span
+          aria-live="polite"
+          aria-label="<%= initial_counter[:days] %>"
+          data-countdown-target="days"
+          style="--value:<%= initial_counter[:days] %>;"
+        >
+          <%= initial_counter[:days] %>
+        </span>
+      </span>
+
+      <%= t('day') %>
+    </div>
+
+    <div class="<%= box_class %>">
+      <span class="countdown font-mono text-5xl">
+        <span
+          aria-live="polite"
+          aria-label="<%= initial_counter[:hours] %>"
+          data-countdown-target="hours"
+          style="--value:<%= initial_counter[:hours] %>;"
+        >
+          <%= initial_counter[:hours] %>
+        </span>
+      </span>
+
+      <%= t('hour') %>
+    </div>
+
+    <div class="<%= box_class %>">
+      <span class="countdown font-mono text-5xl">
+        <span
+          aria-live="polite"
+          aria-label="<%= initial_counter[:minutes] %>"
+          data-countdown-target="minutes"
+          style="--value:<%= initial_counter[:minutes] %>;"
+        >
+          <%= initial_counter[:minutes] %>
+        </span>
+      </span>
+
+      <%= t('minute') %>
+    </div>
+
+    <div class="<%= box_class %>">
+      <span class="countdown font-mono text-5xl">
+        <span
+          aria-live="polite"
+          aria-label="<%= initial_counter[:seconds] %>"
+          data-countdown-target="seconds"
+          style="--value:<%= initial_counter[:seconds] %>;"
+        >
+          <%= initial_counter[:seconds] %>
+        </span>
+      </span>
+
+      <%= t('second') %>
+    </div>
+  </div>
+
+  <figcaption class="mt-2 italic text-sm">
+    <%= t('.label') %> (
+    <%= link_to 'https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline', target: :_blank do %>
+      <%= t('.source_html') %>
+    <% end %>)
+  </figcaption>
+</figure>
