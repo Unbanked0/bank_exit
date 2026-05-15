@@ -93,6 +93,10 @@
         - name: Commerçant
           link: https://t.me/Bitcoin_commerces
 
+    - name: Switzerland
+      alpha2: CH
+      link: https://t.me/+To62xowh_jZjOTg8
+
     - name: Italy
       alpha2: IT
       link: https://t.me/+1HIz3ht2sWMzOTI0
@@ -100,6 +104,10 @@
     - name: Spain
       alpha2: ES
       link: https://t.me/+PKO-h-4py2A4ZWE0
+
+    - name: Portugal
+      alpha2: PT
+      link: https://t.me/+WR6E6NOzg2YzZjBk
 
     - name: Netherlands
       alpha2: NL
