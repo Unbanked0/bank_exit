@@ -36,7 +36,6 @@ article
                   - c = ISO3166::Country[:"#{country['alpha2']}"]
                   = c.emoji_flag
                   span.mx-1= c.translations[I18n.locale.to_s]
-                  = "(#{groups_count})"
 
                 - if has_link
                   = link_to country['link'], class: 'justify-self-end', target: :_blank do
