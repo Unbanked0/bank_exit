@@ -20,7 +20,7 @@ article
     .space-y-8
       - @local_groups.each do |zone|
         .space-y-3
-          header.alert.alert-success
+          header.alert.alert-vertical.md:alert-horizontal.alert-success
             h2.text-xl.font-bold= zone.name
             - if zone.link && zone.link != '#'
               = link_to zone.link, class: 'justify-self-end', target: :_blank do
@@ -31,7 +31,7 @@ article
             - groups_count = country['regions']&.count || 0
 
             - if groups_count == 0
-              header.alert.alert-soft.cursor-not-allowed class=('justify-between' if has_link)
+              header.alert.alert-vertical.md:alert-horizontal.alert-soft class=('justify-between' if has_link)
                 h3.text-lg.font-bold
                   - c = ISO3166::Country[:"#{country['alpha2']}"]
                   = c.emoji_flag
@@ -44,7 +44,7 @@ article
 
             - else
               details open=('true' if country['alpha2'].downcase == I18n.locale.to_s) class="open:space-y-3"
-                summary.alert.alert-soft.cursor-pointer class=('justify-between' if has_link)
+                summary.alert.alert-vertical.md:alert-horizontal.alert-soft.cursor-pointer class=('justify-between' if has_link)
                   h3.text-lg.font-bold
                     - c = ISO3166::Country[:"#{country['alpha2']}"]
                     = c.emoji_flag
@@ -56,13 +56,14 @@ article
                       = country['link']
 
 
-                .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-3.gap-3.align-center
+                .columns-1.md:columns-2.lg:columns-3.gap-3
                   - country['regions']&.each do |region|
                     - if region['link'] && region['link'] != '#'
-                      = link_to region['link'], target: :_blank, class: 'card bg-base-200' do
+                      = link_to region['link'], target: :_blank, class: 'card break-inside-avoid mb-3 bg-base-200 border border-base-content/20 hover:border-primary transition-colors' do
                         .card-body
                           h4.card-title= region['name']
                           p
+                            = inline_svg_tag 'contacts/telegram.svg', class: 'w-4 inline-flex mr-1', title: 'Telegram', alt: 'Logo Telegram'
                             = region['link']
                             = lucide_icon 'square-arrow-out-up-right', class: 'inline-flex ml-1 w-4'
                     - else
