@@ -37,17 +37,13 @@ module Merchandable
     end
   end
 
-  def query
-  end
+  def query; end
 
-  def category
-  end
+  def category; end
 
-  def country
-  end
+  def country; end
 
-  def continent
-  end
+  def continent; end
 
   def coins
     []

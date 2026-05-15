@@ -10,7 +10,7 @@ RSpec.describe FetchMerchants do
     disable_feature :nostr
 
     allow(Merchants::CheckAndReportRemovedOnOSM).to receive(:call)
-    allow(Merchants::AssignCountry).to receive(:call) { {} }
+    allow(Merchants::AssignCountry).to receive(:call).and_return({})
     allow(Merchants::CheckAndReactivate).to receive(:call)
 
     stub_overpass_request_success
@@ -22,7 +22,7 @@ RSpec.describe FetchMerchants do
     context 'when error' do
       before { stub_overpass_request_failure }
 
-      it { expect { call }.to_not change { Merchant.count } }
+      it { expect { call }.not_to(change(Merchant, :count)) }
       it { expect { call }.to have_broadcasted_to(:flashes) }
 
       describe 'status' do
@@ -34,7 +34,7 @@ RSpec.describe FetchMerchants do
     end
 
     context 'when success' do
-      it { expect { call }.to change { Merchant.count }.by(3) }
+      it { expect { call }.to change(Merchant, :count).by(3) }
 
       describe 'status' do
         before { call }
@@ -175,7 +175,7 @@ RSpec.describe FetchMerchants do
 
       before { call }
 
-      it { expect(Merchants::AssignCountry).to_not have_received(:call) }
+      it { expect(Merchants::AssignCountry).not_to have_received(:call) }
     end
 
     context 'when :skip_countries is false' do
@@ -234,7 +234,7 @@ RSpec.describe FetchMerchants do
           call
         end
 
-        it { expect(NostrPublisher).to_not have_received(:call) }
+        it { expect(NostrPublisher).not_to have_received(:call) }
       end
     end
 
@@ -244,7 +244,7 @@ RSpec.describe FetchMerchants do
         call
       end
 
-      it { expect(NostrPublisher).to_not have_received(:call) }
+      it { expect(NostrPublisher).not_to have_received(:call) }
     end
 
     context 'when :nostr feature raise an error' do

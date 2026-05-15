@@ -99,7 +99,7 @@ RSpec.describe 'MerchantProposals' do
             .to_return_json(body: { message: 'Foobar error' }, status: 422)
         end
 
-        it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_new_merchant) }
+        it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_new_merchant) }
 
         describe '[HTTP status]' do
           before { action }
@@ -113,7 +113,7 @@ RSpec.describe 'MerchantProposals' do
     context 'when params are invalid' do
       let(:params) { { merchant_proposal: { name: 'Foobar' } } }
 
-      it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_new_merchant) }
+      it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_new_merchant) }
 
       describe '[HTTP status]' do
         before { action }
@@ -137,7 +137,7 @@ RSpec.describe 'MerchantProposals' do
         }
       end
 
-      it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_new_merchant) }
+      it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_new_merchant) }
 
       describe '[HTTP Status]' do
         before { action }
@@ -163,7 +163,7 @@ RSpec.describe 'MerchantProposals' do
         }
       end
 
-      it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_new_merchant) }
+      it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_new_merchant) }
 
       describe '[HTTP Status]' do
         before { action }
@@ -189,7 +189,7 @@ RSpec.describe 'MerchantProposals' do
         }
       end
 
-      it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_new_merchant) }
+      it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_new_merchant) }
 
       describe '[HTTP Status]' do
         before { action }

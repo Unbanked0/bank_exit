@@ -21,7 +21,7 @@ RSpec.describe NostrPublisher do
 
     before do
       allow(Nostr::Client).to receive(:new) { client }
-      allow(client).to receive(:public_key) { 'fake_pubkey' }
+      allow(client).to receive(:public_key).and_return('fake_pubkey')
       allow(client).to receive(:connect)
       allow(client).to receive(:close)
       allow(client).to receive(:sign) { |event| event }
@@ -68,7 +68,7 @@ RSpec.describe NostrPublisher do
           create :merchant, :bitcoin, original_identifier: 'node/123', name: 'Bitcoin Coffee'
         end
 
-        it { expect { call }.to_not raise_error }
+        it { expect { call }.not_to raise_error }
 
         it 'calls Nostr::Event with correct relay', :aggregate_failures do
           call
@@ -106,7 +106,7 @@ RSpec.describe NostrPublisher do
         create :merchant, :bitcoin, original_identifier: 'way/789', name: 'Feel SO light'
         create :merchant, :deleted, original_identifier: 'node/111', name: 'Deleted merchant'
 
-        travel_to Time.zone.local(2025, 11, 20, 16, 30, 00)
+        travel_to Time.zone.local(2025, 11, 20, 16, 30, 0)
       end
 
       context 'when relays hangs with a timeout' do
@@ -154,7 +154,7 @@ RSpec.describe NostrPublisher do
           expect(content).to match(/MM salon de thé, pâtisserie, chocolaterie/)
           expect(content).to match(/Feel SO light/)
           expect(content).to match(/_Merchants are based on free and open data from OpenStreetMap. Information may change over time and could differ from what is shown here, with some links potentially no longer existing._/)
-          expect(content).to_not match(/Deleted merchant/)
+          expect(content).not_to match(/Deleted merchant/)
         end
 
         it 'has correct response payload', :aggregate_failures do
@@ -259,7 +259,7 @@ RSpec.describe NostrPublisher do
           call
         end
 
-        it { expect(content).to_not match(/(Unknown Category)/) }
+        it { expect(content).not_to match(/(Unknown Category)/) }
       end
     end
 
@@ -271,9 +271,9 @@ RSpec.describe NostrPublisher do
       before { call }
 
       it 'does not connect to relay', :aggregate_failures do
-        expect(client).to_not have_received(:connect)
-        expect(client).to_not have_received(:publish_and_wait)
-        expect(client).to_not have_received(:close)
+        expect(client).not_to have_received(:connect)
+        expect(client).not_to have_received(:publish_and_wait)
+        expect(client).not_to have_received(:close)
       end
     end
 
@@ -293,9 +293,9 @@ RSpec.describe NostrPublisher do
       end
 
       it 'does not connect to relay', :aggregate_failures do
-        expect(client).to_not have_received(:connect)
-        expect(client).to_not have_received(:publish_and_wait)
-        expect(client).to_not have_received(:close)
+        expect(client).not_to have_received(:connect)
+        expect(client).not_to have_received(:publish_and_wait)
+        expect(client).not_to have_received(:close)
       end
     end
 

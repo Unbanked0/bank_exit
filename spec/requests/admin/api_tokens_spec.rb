@@ -67,7 +67,7 @@ RSpec.describe 'Admin::APITokens' do
           let(:flash_notice) { I18n.t('admin.api_tokens.create.notice') }
         end
 
-        it { expect { action }.to change { APIToken.count }.by(1) }
+        it { expect { action }.to change(APIToken, :count).by(1) }
       end
     end
 
@@ -169,7 +169,7 @@ RSpec.describe 'Admin::APITokens' do
           let(:flash_notice) { I18n.t('admin.api_tokens.destroy.notice') }
         end
 
-        it { expect { action }.to change { APIToken.count }.by(-1) }
+        it { expect { action }.to change(APIToken, :count).by(-1) }
       end
     end
 

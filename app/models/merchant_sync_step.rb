@@ -51,13 +51,13 @@ class MerchantSyncStep < ApplicationRecord
     )
   end
 
-  def mark_as_fail(e)
+  def mark_as_fail(exception)
     update(
       status: :error,
       payload_error: {
-        exception: e.class.name,
-        message: e.message,
-        backtrace: e.backtrace
+        exception: exception.class.name,
+        message: exception.message,
+        backtrace: exception.backtrace
       }
     )
   end

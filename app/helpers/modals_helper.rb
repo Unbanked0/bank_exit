@@ -1,6 +1,6 @@
 module ModalsHelper
-  def render_modal(data: {}, **, &block)
-    modal_body_html = capture(&block) if block_given?
+  def render_modal(data: {}, **, &)
+    modal_body_html = capture(&) if block_given?
 
     render(
       'application/modal',

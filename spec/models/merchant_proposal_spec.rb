@@ -15,16 +15,16 @@ RSpec.describe MerchantProposal do
   it { is_expected.to allow_values(*allowed_categories).for(:category) }
   it { is_expected.to validate_presence_of(:coins) }
   it { is_expected.to allow_values(*allowed_coins).for(:coins) }
-  it { is_expected.to_not allow_values(nil, '').for(:coins) }
+  it { is_expected.not_to allow_values(nil, '').for(:coins) }
   it { is_expected.to validate_presence_of(:proposition_from).allow_blank }
   it { is_expected.to allow_values(nil, '', 'foobar@demo.com').for(:proposition_from) }
-  it { is_expected.to_not allow_value('foobar').for(:proposition_from) }
+  it { is_expected.not_to allow_value('foobar').for(:proposition_from) }
   it { is_expected.to validate_absence_of(:nickname) }
 
   context 'when category is :bakery' do
     subject { build_stubbed :merchant_proposal, category: :bakery }
 
-    it { is_expected.to_not validate_presence_of(:other_category) }
+    it { is_expected.not_to validate_presence_of(:other_category) }
   end
 
   context 'when category is :other' do

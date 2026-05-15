@@ -37,7 +37,7 @@ RSpec.describe 'Comments' do
             it { expect(flash[:notice]).to eq I18n.t('comments.create.notice', locale: locale) }
           end
 
-          it { expect { action }.to change { Comment.count }.by(1) }
+          it { expect { action }.to change(Comment, :count).by(1) }
         end
 
         context 'when acceptance is not checked' do
@@ -51,7 +51,7 @@ RSpec.describe 'Comments' do
             it { expect(response).to have_http_status :unprocessable_content }
           end
 
-          it { expect { action }.to_not change { Comment.count } }
+          it { expect { action }.not_to(change(Comment, :count)) }
         end
 
         context 'when acceptance is filled with random value' do
@@ -65,7 +65,7 @@ RSpec.describe 'Comments' do
             it { expect(response).to have_http_status :ok }
           end
 
-          it { expect { action }.to change { Comment.count }.by(1) }
+          it { expect { action }.to change(Comment, :count).by(1) }
         end
 
         context 'when params are invalid' do
@@ -77,7 +77,7 @@ RSpec.describe 'Comments' do
             it { expect(response).to have_http_status :unprocessable_content }
           end
 
-          it { expect { action }.to_not change { Comment.count } }
+          it { expect { action }.not_to(change(Comment, :count)) }
         end
 
         context 'when captcha is filled' do
@@ -92,7 +92,7 @@ RSpec.describe 'Comments' do
             it { expect(flash[:notice]).to eq I18n.t('comments.create.notice', locale: locale) }
           end
 
-          it { expect { action }.to_not change { Comment.count } }
+          it { expect { action }.not_to(change(Comment, :count)) }
         end
       end
     end
@@ -134,7 +134,7 @@ RSpec.describe 'Comments' do
             it { expect(flash[:notice]).to eq I18n.t('comments.create.notice', locale: locale) }
           end
 
-          it { expect { action }.to change { Comment.count }.by(1) }
+          it { expect { action }.to change(Comment, :count).by(1) }
         end
 
         context 'when acceptance is not checked' do
@@ -148,7 +148,7 @@ RSpec.describe 'Comments' do
             it { expect(response).to have_http_status :unprocessable_content }
           end
 
-          it { expect { action }.to_not change { Comment.count } }
+          it { expect { action }.not_to(change(Comment, :count)) }
         end
 
         context 'when acceptance is filled with random value' do
@@ -162,7 +162,7 @@ RSpec.describe 'Comments' do
             it { expect(response).to have_http_status :ok }
           end
 
-          it { expect { action }.to change { Comment.count }.by(1) }
+          it { expect { action }.to change(Comment, :count).by(1) }
         end
 
         context 'when params are invalid' do
@@ -174,7 +174,7 @@ RSpec.describe 'Comments' do
             it { expect(response).to have_http_status :unprocessable_content }
           end
 
-          it { expect { action }.to_not change { Comment.count } }
+          it { expect { action }.not_to(change(Comment, :count)) }
         end
 
         context 'when captcha is filled' do
@@ -189,7 +189,7 @@ RSpec.describe 'Comments' do
             it { expect(flash[:notice]).to eq I18n.t('comments.create.notice', locale: locale) }
           end
 
-          it { expect { action }.to_not change { Comment.count } }
+          it { expect { action }.not_to(change(Comment, :count)) }
         end
       end
     end

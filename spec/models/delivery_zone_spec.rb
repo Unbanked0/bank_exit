@@ -12,6 +12,6 @@ RSpec.describe DeliveryZone do
   context 'when :mode is :world' do
     subject { build :delivery_zone, mode: :world }
 
-    it { is_expected.to_not validate_presence_of(:value) }
+    it { is_expected.not_to validate_presence_of(:value) }
   end
 end

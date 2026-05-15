@@ -21,7 +21,7 @@ RSpec.describe Announcement do
       result = described_class.enabled
 
       expect(result).to include(enabled_announcement)
-      expect(result).to_not include(disabled_announcement)
+      expect(result).not_to include(disabled_announcement)
     end
   end
 
@@ -36,8 +36,8 @@ RSpec.describe Announcement do
       result = described_class.published
 
       expect(result).to include(published)
-      expect(result).to_not include(not_yet_published)
-      expect(result).to_not include(already_unpublished)
+      expect(result).not_to include(not_yet_published)
+      expect(result).not_to include(already_unpublished)
     end
   end
 

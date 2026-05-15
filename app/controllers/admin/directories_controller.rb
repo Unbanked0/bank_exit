@@ -31,6 +31,18 @@ module Admin
       @directory.build_address
     end
 
+    # @route GET /fr/admin/directories/:id/edit {locale: "fr"} (edit_admin_directory_fr)
+    # @route GET /es/admin/directories/:id/edit {locale: "es"} (edit_admin_directory_es)
+    # @route GET /de/admin/directories/:id/edit {locale: "de"} (edit_admin_directory_de)
+    # @route GET /it/admin/directories/:id/edit {locale: "it"} (edit_admin_directory_it)
+    # @route GET /en/admin/directories/:id/edit {locale: "en"} (edit_admin_directory_en)
+    # @route GET /admin/directories/:id/edit
+    def edit
+      authorize! @directory
+
+      @directory.build_address if @directory.address.blank?
+    end
+
     # @route POST /fr/admin/directories {locale: "fr"} (admin_directories_fr)
     # @route POST /es/admin/directories {locale: "es"} (admin_directories_es)
     # @route POST /de/admin/directories {locale: "de"} (admin_directories_de)
@@ -51,18 +63,6 @@ module Admin
 
         render :new, status: :unprocessable_content
       end
-    end
-
-    # @route GET /fr/admin/directories/:id/edit {locale: "fr"} (edit_admin_directory_fr)
-    # @route GET /es/admin/directories/:id/edit {locale: "es"} (edit_admin_directory_es)
-    # @route GET /de/admin/directories/:id/edit {locale: "de"} (edit_admin_directory_de)
-    # @route GET /it/admin/directories/:id/edit {locale: "it"} (edit_admin_directory_it)
-    # @route GET /en/admin/directories/:id/edit {locale: "en"} (edit_admin_directory_en)
-    # @route GET /admin/directories/:id/edit
-    def edit
-      authorize! @directory
-
-      @directory.build_address if @directory.address.blank?
     end
 
     # @route PATCH /fr/admin/directories/:id {locale: "fr"} (admin_directory_fr)

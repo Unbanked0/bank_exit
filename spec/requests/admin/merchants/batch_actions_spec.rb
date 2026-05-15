@@ -52,7 +52,7 @@ RSpec.describe 'Admin::Merchants::BatchActions' do
           let(:flash_notice) { I18n.t('admin.merchants.batch_actions.destroy.notice') }
         end
 
-        it { expect { action }.to change { Merchant.count }.by(-2) }
+        it { expect { action }.to change(Merchant, :count).by(-2) }
       end
     end
 

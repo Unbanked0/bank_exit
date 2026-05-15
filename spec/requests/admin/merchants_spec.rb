@@ -105,7 +105,7 @@ RSpec.describe 'Admin::Merchants' do
           let(:flash_notice) { I18n.t('admin.merchants.destroy.notice') }
         end
 
-        it { expect { action }.to change { Merchant.count }.by(-1) }
+        it { expect { action }.to change(Merchant, :count).by(-1) }
       end
     end
 

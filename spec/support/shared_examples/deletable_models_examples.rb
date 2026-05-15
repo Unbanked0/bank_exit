@@ -59,12 +59,12 @@ RSpec.shared_examples 'deletable model' do |model_class|
 
     let(:object) { create model_class_symbolized }
 
-    it { expect { object.soft_delete! }.to change { object.deleted_at } }
+    it { expect { object.soft_delete! }.to(change(object, :deleted_at)) }
 
     context 'without at defines' do
       before { object.soft_delete! }
 
-      it { is_expected.to_not be_nil }
+      it { is_expected.not_to be_nil }
     end
 
     context 'with at defines' do

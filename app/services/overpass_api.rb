@@ -8,7 +8,7 @@ class OverpassAPI
   # API call that returns XBT, lightning, XMR and XG1 results.
   def fetch_merchants
     self.class.get('/api/interpreter', query: {
-      data: <<-OVERPASSQL
+                     data: <<-OVERPASSQL
         [out:json][timeout:360];
         (
           // Nodes
@@ -29,7 +29,7 @@ class OverpassAPI
         out body;
         >;
         out skel qt;
-      OVERPASSQL
-    })
+                     OVERPASSQL
+                   })
   end
 end

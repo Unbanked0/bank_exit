@@ -69,14 +69,12 @@ module Mixin
       end
     end
 
-    def prepare
-    end
+    def prepare; end
 
     def call
       raise NotImplementedError, "#{self.class} must implement #call"
     end
 
-    def finish
-    end
+    def finish; end
   end
 end

@@ -5,6 +5,5 @@ class RisksController < PublicController
   # @route GET /it/risks {locale: "it"} (risks_it)
   # @route GET /en/risks {locale: "en"} (risks_en)
   # @route GET /risks
-  def index
-  end
+  def index; end
 end

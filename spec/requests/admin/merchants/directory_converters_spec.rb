@@ -34,7 +34,7 @@ RSpec.describe 'Admin::Merchants::DirectoryConverters' do
 
           it_behaves_like 'access denied'
 
-          it { expect { action }.to_not change { Directory.count } }
+          it { expect { action }.not_to(change(Directory, :count)) }
         end
 
         context 'when directory does not yet exist' do

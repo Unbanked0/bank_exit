@@ -7,9 +7,9 @@ class OSRMRouterAPI
     coordinates = "#{dep_long},#{dep_lat};#{arr_long},#{arr_lat}"
 
     self.class.get("/route/v1/driving/#{coordinates}", query: {
-      overview: :full,
-      steps: detailed_steps,
-      alternatives: false
-    })
+                     overview: :full,
+                     steps: detailed_steps,
+                     alternatives: false
+                   })
   end
 end

@@ -70,7 +70,7 @@ RSpec.describe 'Admin::Announcements' do
           let(:flash_notice) { I18n.t('admin.announcements.create.notice') }
         end
 
-        it { expect { action }.to change { Announcement.count }.by(1) }
+        it { expect { action }.to change(Announcement, :count).by(1) }
       end
     end
 
@@ -172,7 +172,7 @@ RSpec.describe 'Admin::Announcements' do
           let(:flash_notice) { I18n.t('admin.announcements.destroy.notice') }
         end
 
-        it { expect { action }.to change { Announcement.count }.by(-1) }
+        it { expect { action }.to change(Announcement, :count).by(-1) }
       end
     end
 

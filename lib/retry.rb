@@ -9,8 +9,8 @@ class Retry
   # @param exception_classes [Array<Error>] the exceptions to retry
   # @param times [Integer] number of retries before raise the exception
   # @param waiting_time [Integer, Float] delay in seconds before retrying ; for millis, use a float value
-  def self.on(*exception_classes, times: DEFAULT_RETRIES_TIME, waiting_time: DEFAULT_WAITING_TIME, &block)
-    new(exception_classes, times: times, waiting_time: waiting_time).run(&block)
+  def self.on(*exception_classes, times: DEFAULT_RETRIES_TIME, waiting_time: DEFAULT_WAITING_TIME, &)
+    new(exception_classes, times: times, waiting_time: waiting_time).run(&)
   end
 
   # @param exception_classes [Array<Error>] the exceptions to retry

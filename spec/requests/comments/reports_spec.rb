@@ -55,7 +55,7 @@ RSpec.describe 'Comments::Reports' do
             { comment_report: { flag_reason: :spam, description: '' } }
           end
 
-          it { expect { action }.to_not have_enqueued_mail(CommentMailer, :send_report_comment) }
+          it { expect { action }.not_to have_enqueued_mail(CommentMailer, :send_report_comment) }
 
           describe '[HTTP Status]' do
             before { action }
@@ -70,7 +70,7 @@ RSpec.describe 'Comments::Reports' do
             { comment_report: { flag_reason: :spam, description: 'Foobar', nickname: 'bot' } }
           end
 
-          it { expect { action }.to_not have_enqueued_mail(CommentMailer, :send_report_comment) }
+          it { expect { action }.not_to have_enqueued_mail(CommentMailer, :send_report_comment) }
 
           describe '[HTTP Status]' do
             before { action }
@@ -134,7 +134,7 @@ RSpec.describe 'Comments::Reports' do
             { comment_report: { flag_reason: :spam, description: '' } }
           end
 
-          it { expect { action }.to_not have_enqueued_mail(CommentMailer, :send_report_comment) }
+          it { expect { action }.not_to have_enqueued_mail(CommentMailer, :send_report_comment) }
 
           describe '[HTTP Status]' do
             before { action }
@@ -149,7 +149,7 @@ RSpec.describe 'Comments::Reports' do
             { comment_report: { flag_reason: :spam, description: 'Foobar', nickname: 'bot' } }
           end
 
-          it { expect { action }.to_not have_enqueued_mail(CommentMailer, :send_report_comment) }
+          it { expect { action }.not_to have_enqueued_mail(CommentMailer, :send_report_comment) }
 
           describe '[HTTP Status]' do
             before { action }

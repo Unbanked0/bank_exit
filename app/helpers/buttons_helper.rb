@@ -1,28 +1,28 @@
 module ButtonsHelper
-  def raw_link_to(url, label: nil, hotkey: false, **, &block)
+  def raw_link_to(url, label: nil, hotkey: false, **, &)
     base_link_to(
       url, label, nil, hotkey,
-      **, &block
+      **, &
     )
   end
 
-  def back_link_to(url, label: t('back'), hotkey: 'esc', **, &block)
+  def back_link_to(url, label: t('back'), hotkey: 'esc', **, &)
     base_link_to(
       url, label, 'move-left', hotkey,
       class: 'btn btn-sm bg-base-300',
-      **, &block
+      **, &
     )
   end
 
-  def add_link_to(url, label: t('add'), hotkey: false, **, &block)
+  def add_link_to(url, label: t('add'), hotkey: false, **, &)
     base_link_to(
       url, label, 'circle-plus', hotkey,
       class: 'btn btn-sm btn-success',
-      **, &block
+      **, &
     )
   end
 
-  def create_link_to(url, label: t('create'), hotkey: false, **options, &block)
+  def create_link_to(url, label: t('create'), hotkey: false, **options, &)
     base_link_to(
       url, label, 'circle-plus', hotkey,
       class: 'btn btn-sm btn-success',
@@ -32,27 +32,27 @@ module ButtonsHelper
           turbo_confirm: options[:turbo_confirm].presence || t('create_confirm')
         }
       ),
-      &block
+      &
     )
   end
 
-  def show_link_to(url, label: t('see'), hotkey: false, **, &block)
+  def show_link_to(url, label: t('see'), hotkey: false, **, &)
     base_link_to(
       url, label, 'eye', hotkey,
       class: 'btn btn-sm btn-info',
-      **, &block
+      **, &
     )
   end
 
-  def edit_link_to(url, label: t('edit'), hotkey: false, **, &block)
+  def edit_link_to(url, label: t('edit'), hotkey: false, **, &)
     base_link_to(
       url, label, 'pencil', hotkey ? 'e' : false,
       class: 'btn btn-sm btn-warning',
-      **, &block
+      **, &
     )
   end
 
-  def update_link_to(url, label: t('update'), hotkey: false, **options, &block)
+  def update_link_to(url, label: t('update'), hotkey: false, **options, &)
     base_link_to(
       url, label, 'pencil', hotkey,
       class: 'btn btn-sm btn-success',
@@ -62,11 +62,11 @@ module ButtonsHelper
           turbo_confirm: options[:turbo_confirm].presence || t('update_confirm')
         }
       ),
-      &block
+      &
     )
   end
 
-  def destroy_link_to(url, label: t('destroy'), hotkey: false, **options, &block)
+  def destroy_link_to(url, label: t('destroy'), hotkey: false, **options, &)
     base_link_to(
       url, label, 'trash', hotkey,
       class: 'btn btn-sm btn-error',
@@ -76,7 +76,7 @@ module ButtonsHelper
           turbo_confirm: options[:turbo_confirm].presence || t('destroy_confirm')
         }
       ),
-      &block
+      &
     )
   end
 
@@ -89,7 +89,7 @@ module ButtonsHelper
     hotkey_label(hotkeys, **).html_safe # rubocop:disable Rails/OutputSafety
   end
 
-  def base_link_to(url, label, icon, hotkey, **options, &block)
+  def base_link_to(url, label, icon, hotkey, **options, &)
     if hotkey
       action = if options[:alt_key]
                  "keydown.#{hotkey}@document->hotkey#click keydown.meta+#{hotkey}@document->hotkey#click keydown.ctrl+#{hotkey}@document->hotkey#click keydown.shift+#{hotkey}@document->hotkey#click"
@@ -113,7 +113,7 @@ module ButtonsHelper
       :data, :class, :id, :title, :target
     )) do
       if block_given?
-        content = capture(&block)
+        content = capture(&)
 
         if options[:yield_hotkey]
           content

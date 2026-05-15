@@ -1,12 +1,12 @@
 module FeatureFlagHelper
   def enable_feature(key)
-    allow(FeatureFlag).to receive(:enabled?).with(key.to_sym) { true }
-    allow(FeatureFlag).to receive(:disabled?).with(key.to_sym) { false }
+    allow(FeatureFlag).to receive(:enabled?).with(key.to_sym).and_return(true)
+    allow(FeatureFlag).to receive(:disabled?).with(key.to_sym).and_return(false)
   end
 
   def disable_feature(key)
-    allow(FeatureFlag).to receive(:enabled?).with(key.to_sym) { false }
-    allow(FeatureFlag).to receive(:disabled?).with(key.to_sym) { true }
+    allow(FeatureFlag).to receive(:enabled?).with(key.to_sym).and_return(false)
+    allow(FeatureFlag).to receive(:disabled?).with(key.to_sym).and_return(true)
   end
 
   def stub_feature(key, value)

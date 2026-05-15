@@ -73,7 +73,7 @@ RSpec.describe 'Admin::Comments' do
             let(:flash_notice) { I18n.t('admin.comments.destroy.notice') }
           end
 
-          it { expect { action }.to change { Comment.count }.by(-1) }
+          it { expect { action }.to change(Comment, :count).by(-1) }
         end
       end
 
@@ -103,7 +103,7 @@ RSpec.describe 'Admin::Comments' do
             let(:flash_notice) { I18n.t('admin.comments.destroy.notice') }
           end
 
-          it { expect { action }.to change { Comment.count }.by(-1) }
+          it { expect { action }.to change(Comment, :count).by(-1) }
         end
       end
 

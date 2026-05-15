@@ -71,8 +71,8 @@ RSpec.describe 'Directories' do
         { directory: { category: :food } }
       end
 
-      it { expect { action }.to_not change { Directory.count } }
-      it { expect { action }.to_not have_enqueued_mail(DirectoryMailer, :send_new_directory) }
+      it { expect { action }.not_to(change(Directory, :count)) }
+      it { expect { action }.not_to have_enqueued_mail(DirectoryMailer, :send_new_directory) }
 
       it 'does not create a new Directory', :aggregate_failures do
         action
@@ -85,8 +85,8 @@ RSpec.describe 'Directories' do
         { directory: attributes_for(:directory).merge(nickname: 'iamabot') }
       end
 
-      it { expect { action }.to_not change { Directory.count } }
-      it { expect { action }.to_not have_enqueued_mail(DirectoryMailer, :send_new_directory) }
+      it { expect { action }.not_to(change(Directory, :count)) }
+      it { expect { action }.not_to have_enqueued_mail(DirectoryMailer, :send_new_directory) }
 
       it 'creates a new Directory', :aggregate_failures do
         action
@@ -100,8 +100,8 @@ RSpec.describe 'Directories' do
         { directory: attributes_for(:directory).merge(proposition_from: 'fake') }
       end
 
-      it { expect { action }.to_not change { Directory.count } }
-      it { expect { action }.to_not have_enqueued_mail(DirectoryMailer, :send_new_directory) }
+      it { expect { action }.not_to(change(Directory, :count)) }
+      it { expect { action }.not_to have_enqueued_mail(DirectoryMailer, :send_new_directory) }
 
       describe '[HTTP Status]' do
         before { action }
@@ -123,7 +123,7 @@ RSpec.describe 'Directories' do
         }
       end
 
-      it { expect { action }.to change { Directory.count }.by(1) }
+      it { expect { action }.to change(Directory, :count).by(1) }
       it { expect { action }.to have_enqueued_mail(DirectoryMailer, :send_new_directory) }
 
       it 'creates a new Directory', :aggregate_failures do

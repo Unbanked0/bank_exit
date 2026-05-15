@@ -55,7 +55,7 @@ RSpec.describe 'Admin::Directories' do
           let(:flash_notice) { I18n.t('admin.directories.create.notice') }
         end
 
-        it { expect { action }.to change { Directory.count }.by(1) }
+        it { expect { action }.to change(Directory, :count).by(1) }
       end
     end
 
@@ -134,7 +134,7 @@ RSpec.describe 'Admin::Directories' do
           let(:flash_notice) { I18n.t('admin.directories.destroy.notice') }
         end
 
-        it { expect { action }.to change { Directory.count }.by(-1) }
+        it { expect { action }.to change(Directory, :count).by(-1) }
       end
     end
 

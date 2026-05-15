@@ -66,7 +66,7 @@ RSpec.describe 'Admin::EcosystemItems' do
           let(:flash_notice) { I18n.t('admin.ecosystem_items.create.notice') }
         end
 
-        it { expect { action }.to change { EcosystemItem.count }.by(1) }
+        it { expect { action }.to change(EcosystemItem, :count).by(1) }
       end
     end
 
@@ -145,7 +145,7 @@ RSpec.describe 'Admin::EcosystemItems' do
           let(:flash_notice) { I18n.t('admin.ecosystem_items.destroy.notice') }
         end
 
-        it { expect { action }.to change { EcosystemItem.count }.by(-1) }
+        it { expect { action }.to change(EcosystemItem, :count).by(-1) }
       end
     end
 

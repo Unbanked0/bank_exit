@@ -66,7 +66,7 @@ RSpec.describe 'Merchants::Reports' do
               .to_return_json(body: { message: 'Foobar error' }, status: 422)
           end
 
-          it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_report_merchant) }
+          it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_report_merchant) }
 
           describe '[HTTP Status]' do
             before { action }
@@ -80,7 +80,7 @@ RSpec.describe 'Merchants::Reports' do
       context 'when :description is empty' do
         let(:params) { { merchant_report: { description: '' } } }
 
-        it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_report_merchant) }
+        it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_report_merchant) }
 
         describe '[HTTP Status]' do
           before { action }
@@ -93,7 +93,7 @@ RSpec.describe 'Merchants::Reports' do
       context 'when bot make the request' do
         let(:params) { { merchant_report: { description: 'Foobar', nickname: 'bot' } } }
 
-        it { expect { action }.to_not have_enqueued_mail(MerchantMailer, :send_report_merchant) }
+        it { expect { action }.not_to have_enqueued_mail(MerchantMailer, :send_report_merchant) }
 
         describe '[HTTP Status]' do
           before { action }

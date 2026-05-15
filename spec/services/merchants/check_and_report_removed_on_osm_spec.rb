@@ -29,7 +29,7 @@ RSpec.describe Merchants::CheckAndReportRemovedOnOSM do
           .to_return_json(status: 200)
       end
 
-      it { expect { call }.to_not raise_error }
+      it { expect { call }.not_to raise_error }
     end
 
     context 'when merchant ids is present' do

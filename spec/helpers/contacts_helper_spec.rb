@@ -53,7 +53,7 @@ RSpec.describe ContactsHelper, type: :helper do
       end
     end
 
-    context 'for :svg images mode' do
+    context 'with :svg images mode' do
       %i[
         session
         signal

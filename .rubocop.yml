@@ -1,13 +1,10 @@
-inherit_from:
-  - .rubocop-custom.yml
-  - .rubocop-disabled.yml
-
 plugins:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
 
 AllCops:
+  NewCops: enable
   SuggestExtensions: false
   Exclude:
     - "bin/*"
@@ -17,12 +14,9 @@ AllCops:
     - "vendor/**/*"
     - "tmp/**/*"
 
-Rails/I18nLocaleTexts:
-  Enabled: false
-
 Rails/RedundantActiveRecordAllMethod:
   AllowedReceivers:
-    - FAQ
+    - FAQ # false positive
 
 RSpec/VariableName:
   AllowedPatterns:
@@ -30,4 +24,57 @@ RSpec/VariableName:
 
 Style/RedundantParentheses:
   Exclude:
-    - config/sitemap.rb # False positive
+    - config/sitemap.rb # false positive
+
+# This cop makes sure that all numbered variables use the configured style, snake_case, normalcase, or non_integer, for their numbering.
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+  CheckSymbols: false
+  CheckMethodNames: false
+
+# This cop checks that environments called with Rails.env predicates exist.
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production
+
+# Check for nested example groups.
+RSpec/NestedGroups:
+  Max: 5
+
+## Disabled cops
+
+# Check the length of lines in the source code
+Layout/LineLength:
+  Enabled: false
+
+# Call super to initialize state of the parent class.
+Lint/MissingSuper:
+  Enabled: false
+
+# Disable all Metrics related cops
+Metrics:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+# This cop checks for the use of methods which skip validations.
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+# Document classes and non-namespace modules.
+Style/Documentation:
+  Enabled: false
+
+# Add the frozen_string_literal comment to the top of files to help transition from Ruby 2.3.0 to Ruby 3.0.
+Style/FrozenStringLiteralComment:
+  Enabled: false

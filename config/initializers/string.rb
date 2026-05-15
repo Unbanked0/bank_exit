@@ -12,33 +12,33 @@ class String
   def to_rgb
     hash = Zlib.crc32(self)
 
-    r = (hash >> 16) & 0xFF
-    g = (hash >> 8) & 0xFF
-    b = hash & 0xFF
+    red = (hash >> 16) & 0xFF
+    green = (hash >> 8) & 0xFF
+    blue = hash & 0xFF
 
-    r, g, b = adjust_contrast(r, g, b)
+    red, green, blue = adjust_contrast(red, green, blue)
 
-    format('#%<r>02X%<g>02X%<b>02X', r: r, g: g, b: b)
+    format('#%<r>02X%<g>02X%<b>02X', r: red, g: green, b: blue)
   end
 
   private
 
-  def adjust_contrast(r, g, b)
+  def adjust_contrast(red, green, blue)
     # Compute perceived luminance (WCAG formula)
-    luminance = (0.2126 * r) + (0.7152 * g) + (0.0722 * b)
+    luminance = (0.2126 * red) + (0.7152 * green) + (0.0722 * blue)
 
     if luminance < 64
       # Too dark → lighten
-      r = [r + 60, 255].min
-      g = [g + 60, 255].min
-      b = [b + 60, 255].min
+      red = [red + 60, 255].min
+      green = [green + 60, 255].min
+      blue = [blue + 60, 255].min
     elsif luminance > 200
       # Too light → darken
-      r = [r - 60, 0].max
-      g = [g - 60, 0].max
-      b = [b - 60, 0].max
+      red = [red - 60, 0].max
+      green = [green - 60, 0].max
+      blue = [blue - 60, 0].max
     end
 
-    [r, g, b]
+    [red, green, blue]
   end
 end

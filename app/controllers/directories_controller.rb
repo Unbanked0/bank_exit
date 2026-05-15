@@ -45,6 +45,19 @@ class DirectoriesController < PublicController
     end
   end
 
+  # @route GET /fr/directories/:id {locale: "fr"} (directory_fr)
+  # @route GET /es/directories/:id {locale: "es"} (directory_es)
+  # @route GET /de/directories/:id {locale: "de"} (directory_de)
+  # @route GET /it/directories/:id {locale: "it"} (directory_it)
+  # @route GET /en/directories/:id {locale: "en"} (directory_en)
+  # @route GET /directories/:id
+  def show
+    add_breadcrumb @directory.name
+
+    set_meta_tags title: @directory.name,
+                  description: @directory.description
+  end
+
   # @route GET /fr/directories/new {locale: "fr"} (new_directory_fr)
   # @route GET /es/directories/new {locale: "es"} (new_directory_es)
   # @route GET /de/directories/new {locale: "de"} (new_directory_de)
@@ -94,19 +107,6 @@ class DirectoriesController < PublicController
 
       render :new, status: :unprocessable_content
     end
-  end
-
-  # @route GET /fr/directories/:id {locale: "fr"} (directory_fr)
-  # @route GET /es/directories/:id {locale: "es"} (directory_es)
-  # @route GET /de/directories/:id {locale: "de"} (directory_de)
-  # @route GET /it/directories/:id {locale: "it"} (directory_it)
-  # @route GET /en/directories/:id {locale: "en"} (directory_en)
-  # @route GET /directories/:id
-  def show
-    add_breadcrumb @directory.name
-
-    set_meta_tags title: @directory.name,
-                  description: @directory.description
   end
 
   private

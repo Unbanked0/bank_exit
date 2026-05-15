@@ -8,8 +8,7 @@ module Merchants
     # @route GET /it/merchants/:merchant_id/itinerary/new {locale: "it"} (new_merchant_itinerary_it)
     # @route GET /en/merchants/:merchant_id/itinerary/new {locale: "en"} (new_merchant_itinerary_en)
     # @route GET /merchants/:merchant_id/itinerary/new
-    def new
-    end
+    def new; end
 
     # @route POST /fr/merchants/:merchant_id/itinerary {locale: "fr"} (merchant_itinerary_fr)
     # @route POST /es/merchants/:merchant_id/itinerary {locale: "es"} (merchant_itinerary_es)

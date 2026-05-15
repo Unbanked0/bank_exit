@@ -20,9 +20,9 @@ class ApplicationController < ActionController::Base
     FeatureFlag.enabled?(:comments)
   end
 
-  def unauthorized_access(e)
-    policy_name = e.policy.class.to_s.underscore
-    message = t("#{policy_name}.#{e.rule}", scope: 'pundit', default: :default)
+  def unauthorized_access(exception)
+    policy_name = exception.policy.class.to_s.underscore
+    message = t("#{policy_name}.#{exception.rule}", scope: 'pundit', default: :default)
 
     redirect_to main_url_helpers.root_path, alert: message
   end

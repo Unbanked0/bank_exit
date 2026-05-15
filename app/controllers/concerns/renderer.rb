@@ -3,7 +3,7 @@ module Renderer
 
   private
 
-  def render_unauthorized_authentication(e)
+  def render_unauthorized_authentication(exception)
     response.headers['WWW-Authenticate'] = 'Bearer realm="Bank-Exit", error="invalid_token"'
 
     render json: {
@@ -11,13 +11,13 @@ module Renderer
         {
           status: 401,
           title: 'Unauthorized',
-          detail: e.message
+          detail: exception.message
         }
       ]
     }, status: :unauthorized
   end
 
-  def render_forbidden_authentication(e)
+  def render_forbidden_authentication(exception)
     response.headers['WWW-Authenticate'] = 'Bearer realm="Bank-Exit", error="disabled_or_expired_token"'
 
     render json: {
@@ -25,18 +25,18 @@ module Renderer
         {
           status: 403,
           title: 'Forbidden',
-          detail: e.message
+          detail: exception.message
         }
       ]
     }, status: :forbidden
   end
 
-  def render_not_found(e)
+  def render_not_found(exception)
     locale = find_locale
     message =
-      if e.is_a?(ActiveRecord::RecordNotFound)
-        scope = "exceptions.#{e.model&.underscore}"
-        I18n.t('not_found', scope: scope, default: e.message, locale: locale)
+      if exception.is_a?(ActiveRecord::RecordNotFound)
+        scope = "exceptions.#{exception.model&.underscore}"
+        I18n.t('not_found', scope: scope, default: exception.message, locale: locale)
       end
 
     render json: {

@@ -16,6 +16,16 @@ module Admin
       @pagy, @api_tokens = pagy(APIToken.all)
     end
 
+    # @route GET /fr/admin/api_tokens/:id {locale: "fr"} (admin_api_token_fr)
+    # @route GET /es/admin/api_tokens/:id {locale: "es"} (admin_api_token_es)
+    # @route GET /de/admin/api_tokens/:id {locale: "de"} (admin_api_token_de)
+    # @route GET /it/admin/api_tokens/:id {locale: "it"} (admin_api_token_it)
+    # @route GET /en/admin/api_tokens/:id {locale: "en"} (admin_api_token_en)
+    # @route GET /admin/api_tokens/:id
+    def show
+      authorize! @api_token
+    end
+
     # @route GET /fr/admin/api_tokens/new {locale: "fr"} (new_admin_api_token_fr)
     # @route GET /es/admin/api_tokens/new {locale: "es"} (new_admin_api_token_es)
     # @route GET /de/admin/api_tokens/new {locale: "de"} (new_admin_api_token_de)
@@ -26,6 +36,16 @@ module Admin
       authorize!
 
       @api_token = APIToken.new
+    end
+
+    # @route GET /fr/admin/api_tokens/:id/edit {locale: "fr"} (edit_admin_api_token_fr)
+    # @route GET /es/admin/api_tokens/:id/edit {locale: "es"} (edit_admin_api_token_es)
+    # @route GET /de/admin/api_tokens/:id/edit {locale: "de"} (edit_admin_api_token_de)
+    # @route GET /it/admin/api_tokens/:id/edit {locale: "it"} (edit_admin_api_token_it)
+    # @route GET /en/admin/api_tokens/:id/edit {locale: "en"} (edit_admin_api_token_en)
+    # @route GET /admin/api_tokens/:id/edit
+    def edit
+      authorize! @api_token
     end
 
     # @route POST /fr/admin/api_tokens {locale: "fr"} (admin_api_tokens_fr)
@@ -46,26 +66,6 @@ module Admin
       else
         render :new, status: :unprocessable_content
       end
-    end
-
-    # @route GET /fr/admin/api_tokens/:id {locale: "fr"} (admin_api_token_fr)
-    # @route GET /es/admin/api_tokens/:id {locale: "es"} (admin_api_token_es)
-    # @route GET /de/admin/api_tokens/:id {locale: "de"} (admin_api_token_de)
-    # @route GET /it/admin/api_tokens/:id {locale: "it"} (admin_api_token_it)
-    # @route GET /en/admin/api_tokens/:id {locale: "en"} (admin_api_token_en)
-    # @route GET /admin/api_tokens/:id
-    def show
-      authorize! @api_token
-    end
-
-    # @route GET /fr/admin/api_tokens/:id/edit {locale: "fr"} (edit_admin_api_token_fr)
-    # @route GET /es/admin/api_tokens/:id/edit {locale: "es"} (edit_admin_api_token_es)
-    # @route GET /de/admin/api_tokens/:id/edit {locale: "de"} (edit_admin_api_token_de)
-    # @route GET /it/admin/api_tokens/:id/edit {locale: "it"} (edit_admin_api_token_it)
-    # @route GET /en/admin/api_tokens/:id/edit {locale: "en"} (edit_admin_api_token_en)
-    # @route GET /admin/api_tokens/:id/edit
-    def edit
-      authorize! @api_token
     end
 
     # @route PATCH /fr/admin/api_tokens/:id {locale: "fr"} (admin_api_token_fr)

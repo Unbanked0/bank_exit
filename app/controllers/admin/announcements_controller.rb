@@ -16,6 +16,16 @@ module Admin
       @pagy, @announcements = pagy(Announcement.all)
     end
 
+    # @route GET /fr/admin/announcements/:id {locale: "fr"} (admin_announcement_fr)
+    # @route GET /es/admin/announcements/:id {locale: "es"} (admin_announcement_es)
+    # @route GET /de/admin/announcements/:id {locale: "de"} (admin_announcement_de)
+    # @route GET /it/admin/announcements/:id {locale: "it"} (admin_announcement_it)
+    # @route GET /en/admin/announcements/:id {locale: "en"} (admin_announcement_en)
+    # @route GET /admin/announcements/:id
+    def show
+      authorize! @announcement
+    end
+
     # @route GET /fr/admin/announcements/new {locale: "fr"} (new_admin_announcement_fr)
     # @route GET /es/admin/announcements/new {locale: "es"} (new_admin_announcement_es)
     # @route GET /de/admin/announcements/new {locale: "de"} (new_admin_announcement_de)
@@ -26,6 +36,16 @@ module Admin
       authorize!
 
       @announcement = Announcement.new
+    end
+
+    # @route GET /fr/admin/announcements/:id/edit {locale: "fr"} (edit_admin_announcement_fr)
+    # @route GET /es/admin/announcements/:id/edit {locale: "es"} (edit_admin_announcement_es)
+    # @route GET /de/admin/announcements/:id/edit {locale: "de"} (edit_admin_announcement_de)
+    # @route GET /it/admin/announcements/:id/edit {locale: "it"} (edit_admin_announcement_it)
+    # @route GET /en/admin/announcements/:id/edit {locale: "en"} (edit_admin_announcement_en)
+    # @route GET /admin/announcements/:id/edit
+    def edit
+      authorize! @announcement
     end
 
     # @route POST /fr/admin/announcements {locale: "fr"} (admin_announcements_fr)
@@ -46,26 +66,6 @@ module Admin
       else
         render :new, status: :unprocessable_content
       end
-    end
-
-    # @route GET /fr/admin/announcements/:id {locale: "fr"} (admin_announcement_fr)
-    # @route GET /es/admin/announcements/:id {locale: "es"} (admin_announcement_es)
-    # @route GET /de/admin/announcements/:id {locale: "de"} (admin_announcement_de)
-    # @route GET /it/admin/announcements/:id {locale: "it"} (admin_announcement_it)
-    # @route GET /en/admin/announcements/:id {locale: "en"} (admin_announcement_en)
-    # @route GET /admin/announcements/:id
-    def show
-      authorize! @announcement
-    end
-
-    # @route GET /fr/admin/announcements/:id/edit {locale: "fr"} (edit_admin_announcement_fr)
-    # @route GET /es/admin/announcements/:id/edit {locale: "es"} (edit_admin_announcement_es)
-    # @route GET /de/admin/announcements/:id/edit {locale: "de"} (edit_admin_announcement_de)
-    # @route GET /it/admin/announcements/:id/edit {locale: "it"} (edit_admin_announcement_it)
-    # @route GET /en/admin/announcements/:id/edit {locale: "en"} (edit_admin_announcement_en)
-    # @route GET /admin/announcements/:id/edit
-    def edit
-      authorize! @announcement
     end
 
     # @route PATCH /fr/admin/announcements/:id {locale: "fr"} (admin_announcement_fr)

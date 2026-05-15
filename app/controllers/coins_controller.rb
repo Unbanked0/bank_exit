@@ -7,8 +7,7 @@ class CoinsController < PublicController
   # @route GET /it/coins/:id {locale: "it"} (coin_it)
   # @route GET /en/coins/:id {locale: "en"} (coin_en)
   # @route GET /coins/:id
-  def show
-  end
+  def show; end
 
   private
 

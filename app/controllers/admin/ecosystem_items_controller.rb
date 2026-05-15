@@ -28,6 +28,16 @@ module Admin
       @ecosystem_item = EcosystemItem.new
     end
 
+    # @route GET /fr/admin/ecosystem_items/:id/edit {locale: "fr"} (edit_admin_ecosystem_item_fr)
+    # @route GET /es/admin/ecosystem_items/:id/edit {locale: "es"} (edit_admin_ecosystem_item_es)
+    # @route GET /de/admin/ecosystem_items/:id/edit {locale: "de"} (edit_admin_ecosystem_item_de)
+    # @route GET /it/admin/ecosystem_items/:id/edit {locale: "it"} (edit_admin_ecosystem_item_it)
+    # @route GET /en/admin/ecosystem_items/:id/edit {locale: "en"} (edit_admin_ecosystem_item_en)
+    # @route GET /admin/ecosystem_items/:id/edit
+    def edit
+      authorize! @ecosystem_item
+    end
+
     # @route POST /fr/admin/ecosystem_items {locale: "fr"} (admin_ecosystem_items_fr)
     # @route POST /es/admin/ecosystem_items {locale: "es"} (admin_ecosystem_items_es)
     # @route POST /de/admin/ecosystem_items {locale: "de"} (admin_ecosystem_items_de)
@@ -46,16 +56,6 @@ module Admin
       else
         render :new, status: :unprocessable_content
       end
-    end
-
-    # @route GET /fr/admin/ecosystem_items/:id/edit {locale: "fr"} (edit_admin_ecosystem_item_fr)
-    # @route GET /es/admin/ecosystem_items/:id/edit {locale: "es"} (edit_admin_ecosystem_item_es)
-    # @route GET /de/admin/ecosystem_items/:id/edit {locale: "de"} (edit_admin_ecosystem_item_de)
-    # @route GET /it/admin/ecosystem_items/:id/edit {locale: "it"} (edit_admin_ecosystem_item_it)
-    # @route GET /en/admin/ecosystem_items/:id/edit {locale: "en"} (edit_admin_ecosystem_item_en)
-    # @route GET /admin/ecosystem_items/:id/edit
-    def edit
-      authorize! @ecosystem_item
     end
 
     # @route PATCH /fr/admin/ecosystem_items/:id {locale: "fr"} (admin_ecosystem_item_fr)

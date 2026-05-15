@@ -28,6 +28,16 @@ module Admin
       @user = User.new
     end
 
+    # @route GET /fr/admin/users/:id/edit {locale: "fr"} (edit_admin_user_fr)
+    # @route GET /es/admin/users/:id/edit {locale: "es"} (edit_admin_user_es)
+    # @route GET /de/admin/users/:id/edit {locale: "de"} (edit_admin_user_de)
+    # @route GET /it/admin/users/:id/edit {locale: "it"} (edit_admin_user_it)
+    # @route GET /en/admin/users/:id/edit {locale: "en"} (edit_admin_user_en)
+    # @route GET /admin/users/:id/edit
+    def edit
+      authorize! @user
+    end
+
     # @route POST /fr/admin/users {locale: "fr"} (admin_users_fr)
     # @route POST /es/admin/users {locale: "es"} (admin_users_es)
     # @route POST /de/admin/users {locale: "de"} (admin_users_de)
@@ -46,16 +56,6 @@ module Admin
       else
         render :new, status: :unprocessable_content
       end
-    end
-
-    # @route GET /fr/admin/users/:id/edit {locale: "fr"} (edit_admin_user_fr)
-    # @route GET /es/admin/users/:id/edit {locale: "es"} (edit_admin_user_es)
-    # @route GET /de/admin/users/:id/edit {locale: "de"} (edit_admin_user_de)
-    # @route GET /it/admin/users/:id/edit {locale: "it"} (edit_admin_user_it)
-    # @route GET /en/admin/users/:id/edit {locale: "en"} (edit_admin_user_en)
-    # @route GET /admin/users/:id/edit
-    def edit
-      authorize! @user
     end
 
     # @route PATCH /fr/admin/users/:id {locale: "fr"} (admin_user_fr)

@@ -13,5 +13,5 @@ RSpec.describe 'rake sitemap:refresh:no_ping', type: :task do
     end
   end
 
-  it { expect { task.invoke }.to_not raise_error }
+  it { expect { task.invoke }.not_to raise_error }
 end

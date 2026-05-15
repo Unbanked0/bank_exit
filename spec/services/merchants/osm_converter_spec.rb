@@ -65,7 +65,7 @@ RSpec.describe Merchants::OSMConverter do
       context 'when value is nil' do
         let(:ask_kyc) { nil }
 
-        it { is_expected.to_not match 'payment:kyc' }
+        it { is_expected.not_to match 'payment:kyc' }
       end
 
       context 'when value is true' do
@@ -93,8 +93,8 @@ RSpec.describe Merchants::OSMConverter do
       context 'when value is false' do
         let(:delivery) { false }
 
-        it { is_expected.to_not match 'delivery=yes' }
-        it { is_expected.to_not match 'delivery_zone=' }
+        it { is_expected.not_to match 'delivery=yes' }
+        it { is_expected.not_to match 'delivery_zone=' }
       end
 
       context 'when value is true' do
@@ -111,7 +111,7 @@ RSpec.describe Merchants::OSMConverter do
           let(:delivery_zone) { nil }
 
           it { is_expected.to match 'delivery=yes' }
-          it { is_expected.to_not match 'delivery_zone=' }
+          it { is_expected.not_to match 'delivery_zone=' }
         end
       end
     end
@@ -124,10 +124,10 @@ RSpec.describe Merchants::OSMConverter do
       context 'when no coins are present' do
         let(:coins) { [] }
 
-        it { is_expected.to_not match 'payment:onchain' }
-        it { is_expected.to_not match 'currency:XBT' }
-        it { is_expected.to_not match 'currency:XMR' }
-        it { is_expected.to_not match 'currency:XG1' }
+        it { is_expected.not_to match 'payment:onchain' }
+        it { is_expected.not_to match 'currency:XBT' }
+        it { is_expected.not_to match 'currency:XMR' }
+        it { is_expected.not_to match 'currency:XG1' }
       end
 
       context 'when bitcoin is true' do
@@ -135,8 +135,8 @@ RSpec.describe Merchants::OSMConverter do
 
         it { is_expected.to match 'payment:onchain=yes' }
         it { is_expected.to match 'currency:XBT=yes' }
-        it { is_expected.to_not match 'currency:XMR' }
-        it { is_expected.to_not match 'currency:XG1' }
+        it { is_expected.not_to match 'currency:XMR' }
+        it { is_expected.not_to match 'currency:XG1' }
       end
 
       context 'when monero is true' do
@@ -144,38 +144,38 @@ RSpec.describe Merchants::OSMConverter do
 
         it { is_expected.to match 'payment:onchain=yes' }
         it { is_expected.to match 'currency:XMR=yes' }
-        it { is_expected.to_not match 'currency:XBT' }
-        it { is_expected.to_not match 'currency:XG1' }
+        it { is_expected.not_to match 'currency:XBT' }
+        it { is_expected.not_to match 'currency:XG1' }
       end
 
       context 'when june is true' do
         let(:coins) { ['june'] }
 
         it { is_expected.to match 'payment:onchain=yes' }
-        it { is_expected.to_not match 'currency:XMR' }
-        it { is_expected.to_not match 'currency:XBT' }
+        it { is_expected.not_to match 'currency:XMR' }
+        it { is_expected.not_to match 'currency:XBT' }
         it { is_expected.to match 'currency:XG1=yes' }
       end
 
       context 'when silver is true' do
         let(:coins) { ['silver'] }
 
-        it { is_expected.to_not match 'payment:onchain' }
-        it { is_expected.to_not match 'currency:XMR' }
-        it { is_expected.to_not match 'currency:XBT' }
-        it { is_expected.to_not match 'currency:XG1' }
+        it { is_expected.not_to match 'payment:onchain' }
+        it { is_expected.not_to match 'currency:XMR' }
+        it { is_expected.not_to match 'currency:XBT' }
+        it { is_expected.not_to match 'currency:XG1' }
         it { is_expected.to match 'silver=yes' }
-        it { is_expected.to_not match 'gold' }
+        it { is_expected.not_to match 'gold' }
       end
 
       context 'when gold is true' do
         let(:coins) { ['gold'] }
 
-        it { is_expected.to_not match 'payment:onchain' }
-        it { is_expected.to_not match 'currency:XMR' }
-        it { is_expected.to_not match 'currency:XBT' }
-        it { is_expected.to_not match 'currency:XG1' }
-        it { is_expected.to_not match 'silver' }
+        it { is_expected.not_to match 'payment:onchain' }
+        it { is_expected.not_to match 'currency:XMR' }
+        it { is_expected.not_to match 'currency:XBT' }
+        it { is_expected.not_to match 'currency:XG1' }
+        it { is_expected.not_to match 'silver' }
         it { is_expected.to match 'gold=yes' }
       end
     end

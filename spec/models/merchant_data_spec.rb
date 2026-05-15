@@ -83,7 +83,7 @@ RSpec.describe MerchantData do
         feature
       end
 
-      it { is_expected.to_not include(:country) }
+      it { is_expected.not_to include(:country) }
     end
 
     context 'when [contact:country] is present' do
@@ -92,13 +92,13 @@ RSpec.describe MerchantData do
         feature
       end
 
-      it { is_expected.to_not include(:country) }
+      it { is_expected.not_to include(:country) }
     end
 
     context 'when [*:country] is not present' do
       let(:twicked_feature) { feature }
 
-      it { is_expected.to_not include(:country) }
+      it { is_expected.not_to include(:country) }
     end
   end
 

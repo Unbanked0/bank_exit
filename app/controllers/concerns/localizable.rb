@@ -23,11 +23,11 @@ module Localizable
     redirect_to url_for(locale: find_locale.to_s, params: request.query_parameters)
   end
 
-  def switch_locale(&action)
+  def switch_locale(&)
     locale = find_locale
     session[:last_known_locale] = locale
 
-    I18n.with_locale(locale, &action)
+    I18n.with_locale(locale, &)
   end
 
   def find_locale
