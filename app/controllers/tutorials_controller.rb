@@ -35,7 +35,7 @@ class TutorialsController < PublicController
   private
 
   def set_tutorial
-    @tutorial = Tutorial.find(params[:id], decorate: true)
+    @tutorial = Tutorial.find(params.expect(:id), decorate: true)
   end
 
   def set_coins

@@ -112,7 +112,7 @@ class DirectoriesController < PublicController
   private
 
   def set_directory
-    @directory = Directory.enabled.find(params[:id]).decorate
+    @directory = Directory.enabled.find(params.expect(:id)).decorate
   end
 
   def directory_params

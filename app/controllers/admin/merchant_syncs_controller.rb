@@ -115,7 +115,7 @@ module Admin
     end
 
     def set_merchant_sync
-      @merchant_sync = MerchantSync.find(params[:id])
+      @merchant_sync = MerchantSync.find(params.expect(:id))
     end
 
     def query

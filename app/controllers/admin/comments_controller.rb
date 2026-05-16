@@ -61,7 +61,7 @@ module Admin
     private
 
     def set_comment
-      @comment = Comment.find(params[:id]).decorate
+      @comment = Comment.find(params.expect(:id)).decorate
     end
 
     def show_flagged?

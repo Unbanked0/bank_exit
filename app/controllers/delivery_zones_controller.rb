@@ -10,7 +10,7 @@ class DeliveryZonesController < PublicController
   def mode_values
     @target = params[:target]
     @mode = params[:mode]
-    @name = params[:name].gsub('[mode]', '[value]')
+    @name = params.expect(:name).gsub('[mode]', '[value]')
 
     @data = case @mode
             when 'region'

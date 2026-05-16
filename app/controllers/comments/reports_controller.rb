@@ -71,15 +71,15 @@ module Comments
 
       case klass.to_s
       when 'Merchant'
-        identifier = params['merchant_id'].split('-')
+        identifier = params.expect('merchant_id').split('-')
         @commentable = klass.find_by!(identifier: identifier)
       when 'Directory'
-        @commentable = klass.find(params[:directory_id])
+        @commentable = klass.find(params.expect(:directory_id))
       end
     end
 
     def set_comment
-      @comment = @commentable.comments.find(params[:comment_id]).decorate
+      @comment = @commentable.comments.find(params.expect(:comment_id)).decorate
     end
 
     def description

@@ -31,6 +31,6 @@ class BlogsController < PublicController
   private
 
   def set_blog
-    @blog = Blog.find(params[:id], decorate: true)
+    @blog = Blog.find(params.expect(:id), decorate: true)
   end
 end

@@ -152,7 +152,7 @@ module Admin
     end
 
     def merchant_id
-      params[:id].split('-').first
+      params.expect(:id).split('-').first
     end
   end
 end

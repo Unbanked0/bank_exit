@@ -129,7 +129,7 @@ module Admin
     end
 
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(params.expect(:id))
     end
   end
 end

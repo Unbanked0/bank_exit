@@ -47,7 +47,7 @@ module Tutorials
     end
 
     def set_tutorial
-      @tutorial = Tutorial.find(params[:tutorial_id])
+      @tutorial = Tutorial.find(params.expect(:tutorial_id))
     end
 
     def bot?

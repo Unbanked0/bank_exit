@@ -20,7 +20,7 @@ module Merchants
     end
 
     def merchant_id
-      params[:merchant_id].split('-').first
+      params.expect(:merchant_id).split('-').first
     end
   end
 end

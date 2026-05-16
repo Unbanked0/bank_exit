@@ -55,7 +55,7 @@ module MobilityQueryable
 
         raise ArgumentError, "Unsupported or missing type for attribute #{attr.inspect}" unless %i[string text].include?(type)
 
-        self.queryable_attributes_with_types[attr] = type
+        queryable_attributes_with_types[attr] = type
       end
 
       klass = self

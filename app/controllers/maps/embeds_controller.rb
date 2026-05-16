@@ -26,11 +26,15 @@ module Maps
 
     private
 
+    def current_theme
+      params.fetch(:theme, Setting::MAP_DEFAULT_THEME)&.to_sym
+    end
+
     def set_options
       @theme = {
         light: Setting::LIGHT_THEME_NAME,
         dark: Setting::DARK_THEME_NAME
-      }[params[:theme]&.to_sym] || Setting::MAP_DEFAULT_THEME
+      }[current_theme]
 
       @latitude = params[:latitude]
       @longitude = params[:longitude]

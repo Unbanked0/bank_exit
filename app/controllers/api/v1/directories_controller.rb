@@ -43,7 +43,7 @@ module API
       end
 
       def set_directory
-        @directory = Directory.find(params[:id])
+        @directory = Directory.find(params.expect(:id))
       end
 
       def per

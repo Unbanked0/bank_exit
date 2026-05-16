@@ -13,7 +13,7 @@ class MerchantsController < PublicController
   # @route GET /en/merchants {locale: "en"} (merchants_en)
   # @route GET /merchants
   def index
-    if params[:page].nil? || params[:page].to_i == 1
+    if params[:page].nil? || params.expect(:page).to_i == 1
       directories_filter = Directories::Filter.new(query: query)
       @directories = DirectoryDecorator.wrap(directories_filter.call)
     end
@@ -83,7 +83,7 @@ class MerchantsController < PublicController
   end
 
   def merchant_id
-    params[:id].split('-').first
+    params.expect(:id).split('-').first
   end
 
   def debug_mode?

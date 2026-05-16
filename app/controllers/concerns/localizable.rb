@@ -13,10 +13,10 @@ module Localizable
   def should_redirect_to_localized_path?
     return false unless params[:locale].nil?
 
-    !params[:controller].in?(
+    !params.expect(:controller).in?(
       ['licenses', 'maps', 'maps/referers', 'addresses/searches']
     ) &&
-      !params[:action].in?(['toggle_atms'])
+      !params.expect(:action).in?(['toggle_atms'])
   end
 
   def redirect_to_localized_path

@@ -114,7 +114,7 @@ module Admin
     end
 
     def set_ecosystem_item
-      @ecosystem_item = EcosystemItem.find(params[:id])
+      @ecosystem_item = EcosystemItem.find(params.expect(:id))
     end
   end
 end

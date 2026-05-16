@@ -10,7 +10,7 @@ class ContactsController < PublicController
   # @route GET /en/contacts/:id {locale: "en"} (contact_en)
   # @route GET /contacts/:id
   def show
-    unless params[:id].in?(ALLOWED_CONTACTS)
+    unless params.expect(:id).in?(ALLOWED_CONTACTS)
       head :not_found
       return
     end

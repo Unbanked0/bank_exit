@@ -38,7 +38,7 @@ class MapsController < PublicController
   def index
     session[:map_referer_url] = clean_url(request.url.gsub('&pagy=true', ''))
 
-    if params[:display].present? && params[:display].in?(%w[map table grid])
+    if params[:display].present? && params.expect(:display).in?(%w[map table grid])
       session[:merchants_display] = params[:display]
     else
       session[:merchants_display] ||= 'map'

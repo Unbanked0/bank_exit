@@ -16,6 +16,6 @@ class CoinWalletsController < PublicController
   private
 
   def set_coin_wallet
-    @coin_wallet = CoinWallet.enabled.find(params[:id])
+    @coin_wallet = CoinWallet.enabled.find(params.expect(:id))
   end
 end

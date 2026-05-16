@@ -28,7 +28,7 @@ module Admin
     private
 
     def set_nostr_eventable
-      @nostr_eventable = MerchantSync.find(params[:merchant_sync_id])
+      @nostr_eventable = MerchantSync.find(params.expect(:merchant_sync_id))
     end
   end
 end

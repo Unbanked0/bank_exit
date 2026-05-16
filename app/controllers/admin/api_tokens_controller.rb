@@ -119,7 +119,7 @@ module Admin
     end
 
     def set_api_token
-      @api_token = APIToken.find(params[:id])
+      @api_token = APIToken.find(params.expect(:id))
     end
   end
 end
