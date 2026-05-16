@@ -66,7 +66,8 @@ class Merchant < ApplicationRecord
       )
     end
 
-    directory.save
+    # Merchants can miss required fields for a `Directory` entry
+    directory.save(validate: false)
     directory
   end
 

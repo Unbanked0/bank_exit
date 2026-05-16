@@ -17,7 +17,7 @@
 
   - if allowed_to?(:create?, merchant, with: Admin::Merchants::DirectoryConverterPolicy)
     li
-      = create_link_to admin_merchant_reactivate_path(merchant),
+      = create_link_to admin_directory_converters_path(merchant),
                        turbo_confirm: t('.convert_to_directory_confirm_html') do
         = t('.convert_to_directory')
 
