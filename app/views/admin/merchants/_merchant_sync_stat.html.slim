@@ -43,3 +43,15 @@
 
     - else
       = render 'admin/merchant_syncs/refresh_button', disabled: false
+
+    - if Merchant.by_country(nil).any?
+      = button_to admin_merchants_assign_countries_path,
+                  class: 'btn btn-info btn-xs',
+                  data: { \
+                    controller: 'hotkey', \
+                    action: 'keydown.f@document->hotkey#click', \
+                    turbo_confirm: t('.assign_countries_confirm_html') \
+                  } do
+        = lucide_icon 'flag', class: 'w-3 h-3'
+        =< t('.assign_countries')
+        == hotkey_label('f', size: 'xs')

@@ -50,6 +50,9 @@ module Merchants
             country_full_name: country,
             continent_code: continent_code
           }
+
+          # Trying sleep to prevent `429 Too Many Requests`
+          sleep 1
         end
 
         if @updated_merchants.present?

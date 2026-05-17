@@ -164,6 +164,8 @@ en:
       merchant_sync_stat:
         last_update: Last update
         there_is: There is %{time}
+        assign_countries: Assign countries
+        assign_countries_confirm_html: Are you sure you want to assign the missing countries to the merchants?
 
       actions:
         merchant_admin_page: Admin profile
@@ -173,6 +175,10 @@ en:
         convert_to_directory_confirm_html: Do you want to convert this merchant and add it to the directory?<br />(the merchant on the map will not be modified)
         reactivate_confirm: Do you want to reactivate this merchant to reference them again on the map?
         destroy_confirm_html: Do you want to delete this merchant?<br /> ⚠️ They will no longer be listed on the map.
+
+      assign_countries:
+        create:
+          notice: Merchants are currently being processed to assign them a country
 
       batch_actions:
         update:

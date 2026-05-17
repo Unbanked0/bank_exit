@@ -164,6 +164,8 @@ fr:
       merchant_sync_stat:
         last_update: Dernière actualisation
         there_is: Il y a %{time}
+        assign_countries: Assigner les pays
+        assign_countries_confirm_html: Êtes-vous sûr de vouloir assigner les pays manquants aux commerçants ?
 
       actions:
         merchant_admin_page: Fiche admin
@@ -173,6 +175,10 @@ fr:
         convert_to_directory_confirm_html: Voulez-vous convertir ce commerçant et l'intégrer dans l'annuaire ?<br />(le commerçant de la carte ne sera pas modifié)
         reactivate_confirm: Voulez-vous réactiver ce commerçant pour le référencer à nouveau sur la carte ?
         destroy_confirm_html: Voulez-vous supprimer ce commerçant ? <br /> ⚠️ Il ne sera plus référencé sur la carte.
+
+      assign_countries:
+        create:
+          notice: Les commerçants sont en cours de traitement pour leur assigner un pays
 
       batch_actions:
         update:

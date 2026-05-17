@@ -138,6 +138,7 @@ Rails.application.routes.draw do
           end
 
           collection do
+            resource :assign_countries, only: %i[create], as: :merchants_assign_countries
             resource :batch_actions, only: %i[update destroy], as: :merchants_batch_actions
           end
         end
