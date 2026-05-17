@@ -60,32 +60,64 @@ RSpec.describe 'Admin::Comments' do
   end
 
   describe 'DELETE /admin/comments/:id' do
-    subject(:action) { delete "/admin/comments/#{comment.id}" }
+    context 'when comment is not flagged' do
+      subject(:action) { delete "/admin/comments/#{comment.id}" }
 
-    let!(:comment) { create :comment, :flagged }
+      let!(:comment) { create :comment }
 
-    %i[super_admin admin moderator].each do |role|
-      context "when role is #{role}" do
-        include_context 'with user role', role
-        it_behaves_like 'access granted with redirection' do
-          let(:redirection_url) { admin_comments_path }
-          let(:flash_notice) { I18n.t('admin.comments.destroy.notice') }
+      %i[super_admin admin moderator].each do |role|
+        context "when role is #{role}" do
+          include_context 'with user role', role
+          it_behaves_like 'access granted with redirection' do
+            let(:redirection_url) { admin_comments_path }
+            let(:flash_notice) { I18n.t('admin.comments.destroy.notice') }
+          end
+
+          it { expect { action }.to change { Comment.count }.by(-1) }
         end
+      end
 
-        it { expect { action }.to change { Comment.count }.by(-1) }
+      %i[publisher].each do |role|
+        context "when role is #{role}" do
+          include_context 'with user role', role
+          it_behaves_like 'access denied'
+        end
+      end
+
+      context 'when logged out' do
+        include_context 'without login'
+        it_behaves_like 'access unauthenticated'
       end
     end
 
-    %i[publisher].each do |role|
-      context "when role is #{role}" do
-        include_context 'with user role', role
-        it_behaves_like 'access denied'
-      end
-    end
+    context 'when comment is flagged' do
+      subject(:action) { delete "/admin/comments/#{comment.id}" }
 
-    context 'when logged out' do
-      include_context 'without login'
-      it_behaves_like 'access unauthenticated'
+      let!(:comment) { create :comment, :flagged }
+
+      %i[super_admin admin moderator].each do |role|
+        context "when role is #{role}" do
+          include_context 'with user role', role
+          it_behaves_like 'access granted with redirection' do
+            let(:redirection_url) { admin_comments_path }
+            let(:flash_notice) { I18n.t('admin.comments.destroy.notice') }
+          end
+
+          it { expect { action }.to change { Comment.count }.by(-1) }
+        end
+      end
+
+      %i[publisher].each do |role|
+        context "when role is #{role}" do
+          include_context 'with user role', role
+          it_behaves_like 'access denied'
+        end
+      end
+
+      context 'when logged out' do
+        include_context 'without login'
+        it_behaves_like 'access unauthenticated'
+      end
     end
   end
 end

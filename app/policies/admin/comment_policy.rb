@@ -5,11 +5,11 @@ module Admin
     end
 
     def update?
-      destroy?
+      admins_or_moderator? && record.flag_reason.present?
     end
 
     def destroy?
-      admins_or_moderator? && record.flag_reason.present?
+      admins_or_moderator?
     end
   end
 end
