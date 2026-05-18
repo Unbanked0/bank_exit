@@ -62,9 +62,9 @@
   created_at: "2025-04-10"
   content:
     - render:
-        pdf: /pdfs/Flyers_SDB_2025_V4_9.pdf
+        pdf: /pdfs/Flyers_SDB_2026_V5_1.pdf
         caption: Version complète Bitcoin et Monero par <strong>Sortie de Banque</strong> sur <strong>Github</strong>
-      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_SDB_2025_V4_8.pdf
+      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_SDB_2026_V5_1.pdf
 
     - figure:
         - image: projects/flyers/flyer_schmidt1024_poster_fr.jpg
