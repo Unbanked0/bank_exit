@@ -105,7 +105,7 @@ RSpec.describe 'Admin::Users' do
   describe 'PATCH /admin/users/:id' do
     subject { patch "/admin/users/#{user.id}", params: valid_params }
 
-    let(:valid_params) { { user: { email: 'newemail@demo.test' } } }
+    let(:valid_params) { { user: { email_address: 'newemail@demo.test' } } }
 
     %i[super_admin].each do |role|
       context "when role is #{role}" do

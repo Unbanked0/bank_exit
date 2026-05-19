@@ -125,7 +125,7 @@ module Admin
     private
 
     def user_params
-      params.expect(user: %i[email password password_confirmation role enabled])
+      params.expect(user: %i[email_address password password_confirmation role enabled])
     end
 
     def set_user

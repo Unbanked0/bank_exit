@@ -1,4 +1,6 @@
 class PublicController < ApplicationController
+  allow_unauthenticated_access
+
   include Localizable
   include Analyticable
   include Themable

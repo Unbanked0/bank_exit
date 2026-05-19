@@ -103,7 +103,7 @@
       details.dropdown.dropdown-top.dropdown-center.w-full
         summary.btn.btn-block.py-7 class="btn-#{color}"
           p
-            = current_user.email
+            = current_user.email_address
             br
             small= User.human_enum_name(:role, current_user.role)
 

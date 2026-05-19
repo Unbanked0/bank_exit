@@ -14,6 +14,7 @@ payment_methods_not_accepted: &payment_methods_not_accepted
 en:
   pundit:
     default: You do not have permission to access this page
+    not_authenticated: You must be authenticated to access this page
 
   seo:
     default:
@@ -21,6 +22,10 @@ en:
       description: A voluntary, non-partisan collective whose aim is to offer legal, peaceful and sovereign tools to as many citizens as possible, to enable banking emancipation and resilience against government policy.
 
   missing_content_for_locale: This content has not yet been translated. The default language content is displayed instead.
+
+  sessions:
+    create:
+      alert: Login failed
 
   welcome:
     index:

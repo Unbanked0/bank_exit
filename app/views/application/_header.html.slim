@@ -6,7 +6,7 @@ header.fixed.w-full.z-50.p-2.print:hidden
     data-action="keydown.j@document->hotkey#click"
     aria-label=t('menu')
   )
-    .avatar class=('avatar-online' if logged_in?)
+    .avatar class=('avatar-online' if authenticated?)
       .w-12.rounded-full
         = image_tag logo_by_locale, alt: 'Logo Bank-Exit'
 

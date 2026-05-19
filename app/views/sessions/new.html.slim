@@ -6,8 +6,8 @@
     h1.card-title.lg:text-3xl.text-primary.justify-center
       = t('welcome.index.title')
 
-    = simple_form_for :session, url: session_path, html: { class: 'space-y-4' } do |f|
-      = f.input :email
+    = simple_form_for '', url: session_path, html: { class: 'space-y-4' } do |f|
+      = f.input :email_address
       = f.input :password
 
       .card-actions.justify-end

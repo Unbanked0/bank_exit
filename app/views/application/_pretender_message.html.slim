@@ -1,7 +1,7 @@
 .alert.alert-warning.alert-vertical.place-items-center.justify-center.text-center
   p
     | Vous êtes actuellement connecté en tant que
-    strong=< current_user.email
+    strong=< current_user.email_address
     |< (
     = User.human_enum_name(:role, current_user.role)
     | )

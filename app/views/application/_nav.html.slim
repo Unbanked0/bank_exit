@@ -177,7 +177,7 @@
         = link_to '#contact' do
           = t('.menu.contact')
 
-      - if logged_in?
+      - if authenticated?
         li
           - color = color_for_role(current_user.role)
           details open=''
@@ -187,9 +187,9 @@
                 / .text-error-content / .text-success-content
                 / .text-warning-content / .text-info-content
                 .w-8.rounded-full.uppercase class="bg-#{color} text-#{color}-content"
-                  = current_user.email.first(2)
+                  = current_user.email_address.first(2)
 
-              span.text-base-content/50.underline= current_user.email
+              span.text-base-content/50.underline= current_user.email_address
 
             ul
               li

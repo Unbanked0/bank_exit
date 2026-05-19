@@ -1,9 +1,9 @@
 RSpec.shared_context 'with user role' do |role|
   let(:current_user) { create :user, role: role }
 
-  before { login_user current_user }
+  before { sign_in_as current_user }
 
-  after { logout_user }
+  after { sign_out }
 end
 
 RSpec.shared_context 'without login' do
@@ -28,7 +28,7 @@ RSpec.shared_examples 'access unauthenticated' do
     main_url_helpers = Rails.application.routes.url_helpers
 
     expect(response).to redirect_to main_url_helpers.new_session_path
-    expect(flash[:alert]).to eq 'Vous devez être authentifié pour accéder à cette page'
+    expect(flash[:alert]).to eq I18n.t('pundit.not_authenticated')
   end
 end
 

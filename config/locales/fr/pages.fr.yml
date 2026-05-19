@@ -14,6 +14,7 @@ payment_methods_not_accepted: &payment_methods_not_accepted
 fr:
   pundit:
     default: Vous n'avez pas l'autorisation d'accéder à cette page
+    not_authenticated: Vous devez être authentifié pour accéder à cette page
 
   seo:
     default:
@@ -21,6 +22,10 @@ fr:
       description: Collectif apartisan et bénévole, dont l'objectif est d'offir des outils légaux, pacifiques et souverains à un maximum de citoyens, afin de permettre l'émancipation bancaire et la résilience.
 
   missing_content_for_locale: Ce contenu n'existe pas encore en français. La contenu de la langue par défaut est affiché en remplacement.
+
+  sessions:
+    create:
+      alert: Echec de la connexion
 
   welcome:
     index:

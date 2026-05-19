@@ -52,7 +52,6 @@ gem 'rqrcode'
 gem 'simple_form'
 gem 'sitemap_generator'
 gem 'slim-rails'
-gem 'sorcery'
 
 # Deployment and drivers
 gem 'bootsnap', require: false

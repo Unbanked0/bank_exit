@@ -14,6 +14,7 @@ payment_methods_not_accepted: &payment_methods_not_accepted
 it:
   pundit:
     default: Non hai i permessi per accedere a questa pagina
+    not_authenticated: È necessario autenticarsi per accedere a questa pagina
 
   seo:
     default:
@@ -21,6 +22,10 @@ it:
       description: Un collettivo volontario e apartitico che mira a offrire strumenti legali, pacifici e sovrani al maggior numero possibile di cittadini, per favorire l’emancipazione bancaria e la resilienza contro le politiche governative.
 
   missing_content_for_locale: Questo contenuto non è ancora disponibile in italiano. Viene mostrato il contenuto nella lingua predefinita.
+
+  sessions:
+    create:
+      alert: Connessione non riuscita
 
   welcome:
     index:

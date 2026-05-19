@@ -14,6 +14,7 @@ payment_methods_not_accepted: &payment_methods_not_accepted
 es:
   pundit:
     default: No tienes permiso para acceder a esta página
+    not_authenticated: Debe iniciar sesión para acceder a esta página
 
   seo:
     default:
@@ -21,6 +22,10 @@ es:
       description: Un grupo voluntario y apartidista cuyo objetivo es ofrecer herramientas legales, pacíficas y soberanas al mayor número posible de ciudadanos, con el fin de promover la emancipación bancaria y la resiliencia.
 
   missing_content_for_locale: Este contenido aún no existe en Español. En su lugar se muestra el contenido del idioma predeterminado.
+
+  sessions:
+    create:
+      alert: Error de conexión
 
   welcome:
     index:

@@ -25,7 +25,7 @@ article
   .article-body.max-w-5xl class="space-y-8!"
     .flex.items-center.justify-between.gap-2
       = render 'breadcrumb'
-      - if logged_in?
+      - if authenticated?
         button.btn.btn-square.btn-lg(
           role="button"
           tabindex="0"
