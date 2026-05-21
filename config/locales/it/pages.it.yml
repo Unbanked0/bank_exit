@@ -143,6 +143,7 @@ it:
       title: Gruppi locali
       headline: "Ecco una lista dei gruppi locali: unisciti a quello più vicino o chiedi di crearne uno tuo (su Session)!"
       no_link_yet: Link in arrivo...
+      info_markers: Clicca su un indicatore della mappa per visualizzare il link aggiornato del gruppo Telegram.
 
   risks:
     index:

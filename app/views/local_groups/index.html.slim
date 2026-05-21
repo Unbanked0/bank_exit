@@ -11,16 +11,19 @@ article
 
   .article-body.max-w-5xl
     div
+      .alert.alert-info.mb-3
+        = lucide_icon 'info'
+        p Cliquez sur un marker de la carte pour afficher le lien du groupe Telegram à jour.
+
       iframe.rounded-lg.mb-1 class="h-96 lg:h-[600px]" width="100%" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation" src="//umap.openstreetmap.fr/fr/map/groupes-locaux-sortie-de-banque_1158100?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"
       p.text-center.text-sm
         a href="//umap.openstreetmap.fr/fr/map/groupes-locaux-sortie-de-banque_1158100?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true" target="_blank"
           | Voir en plein écran
 
-
     .space-y-8
       - @local_groups.each do |zone|
         .space-y-3
-          header.alert.alert-vertical.md:alert-horizontal.alert-success
+          header.alert.alert-vertical.items-center.md:alert-horizontal.alert-success
             h2.text-xl.font-bold= zone.name
             - if zone.link && zone.link != '#'
               = link_to zone.link, class: 'justify-self-end', target: :_blank do
@@ -31,7 +34,7 @@ article
             - groups_count = country['regions']&.count || 0
 
             - if groups_count == 0
-              header.alert.alert-vertical.md:alert-horizontal.alert-soft class=('justify-between' if has_link)
+              header.alert.alert-vertical.items-center.md:alert-horizontal.alert-soft class=('justify-between' if has_link)
                 h3.text-lg.font-bold
                   - c = ISO3166::Country[:"#{country['alpha2']}"]
                   = c.emoji_flag
@@ -44,7 +47,7 @@ article
 
             - else
               details open=('true' if country['alpha2'].downcase == I18n.locale.to_s) class="open:space-y-3"
-                summary.alert.alert-vertical.md:alert-horizontal.alert-soft.cursor-pointer class=('justify-between' if has_link)
+                summary.alert.alert-vertical.items-center.md:alert-horizontal.alert-soft.cursor-pointer class=('justify-between' if has_link)
                   h3.text-lg.font-bold
                     - c = ISO3166::Country[:"#{country['alpha2']}"]
                     = c.emoji_flag

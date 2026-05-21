@@ -143,6 +143,7 @@ de:
       title: Lokale Gruppen
       headline: "Hier ist eine Liste von lokalen Gruppen: Tritt der nächstgelegenen bei oder fordere an, deine eigene zu erstellen (auf Session)!"
       no_link_yet: Link kommt bald...
+      info_markers: Klicken Sie auf eine Kartenmarkierung, um den aktuellen Telegram-Gruppenlink anzuzeigen.
 
   risks:
     index:

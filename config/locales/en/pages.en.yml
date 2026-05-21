@@ -143,6 +143,7 @@ en:
       title: Local groups
       headline: "Here's a list of local groups: join the one nearest you or ask to create your own (on Session)!"
       no_link_yet: Link coming soon...
+      info_markers: Click on a map marker to display the updated Telegram group link.
 
   risks:
     index:

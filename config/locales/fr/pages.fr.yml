@@ -161,6 +161,7 @@ fr:
       title: Les groupes locaux
       headline: "Voici la liste des groupes locaux: rejoignez le plus proche de chez-vous ou demandez pour créer le votre (sur Session) !"
       no_link_yet: Lien à venir...
+      info_markers: Cliquez sur un marker de la carte pour afficher le lien du groupe Telegram à jour.
 
   projects:
     show:
