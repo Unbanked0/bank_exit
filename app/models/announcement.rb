@@ -15,7 +15,7 @@ class Announcement < ApplicationRecord
 
   translates :title, type: :string
   translates :description, type: :text
-  translates :link_to_visit, type: :string, fallbacks: false
+  translates :link_to_visit, type: :string
 
   validates :title_en, presence: true
   validates :description_en, presence: true

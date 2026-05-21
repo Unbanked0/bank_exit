@@ -25,7 +25,11 @@ export default class extends Controller {
       localStorage.setItem(this.localKey, true);
     }
 
-    Turbo.visit(e.target.href);
+    if (e.target.hasAttribute("target")) {
+      window.open(e.target.href, "_blank");
+    } else {
+      Turbo.visit(e.target.href);
+    }
   }
 
   hide(_e) {

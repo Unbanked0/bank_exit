@@ -18,12 +18,16 @@
         .space-y-2
           == simple_format announcement.description
     - else
-      div
+      .space-y-3
         == simple_format announcement.description
 
     - if announcement.link_to_visit.present?
+      / TODO: extract me inside an helper
+      - is_external = announcement.link_to_visit.match?(/\Ahttps?:\/\//i) && !announcement.link_to_visit.match?(/\Ahttps?:\/\/bank-exit\.org\//i)
+      - label = is_external ? announcement.link_to_visit : t('see')
+
       .text-right
-        = link_to t('see'),
-                  announcement.link_to_visit,
+        = link_to label, announcement.link_to_visit,
                   class: 'btn btn-secondary btn-sm w-full lg:w-auto',
-                  data: { action: 'click->announcement#openLink:prevent', turbo_frame: :_top }
+                  data: { action: 'click->announcement#openLink:prevent', turbo_frame: :_top },
+                  target: (:_blank if is_external)
