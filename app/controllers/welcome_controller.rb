@@ -23,4 +23,11 @@ class WelcomeController < PublicController
     merchants_sample = Merchant.available.monero.in_france.no_kyc.includes(:logo_attachment, :banner_attachment).sample(3)
     @merchants_sample = MerchantDecorator.wrap(merchants_sample)
   end
+
+  # TODO: Remove code once a new Rails version is released
+  # @see https://github.com/rails/rails/pull/57184
+  # @route GET /offline (pwa_offline)
+  def offline
+    render template: 'pwa/offline', layout: false
+  end
 end
