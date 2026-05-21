@@ -9,7 +9,7 @@
     = simple_form_for current_user,
                       url: admin_profile_path,
                       html: { class: 'space-y-3' } do |f|
-      = f.input :email, as: :string
+      = f.input :email_address, as: :string
       = f.input :password
       = f.input :password_confirmation
 

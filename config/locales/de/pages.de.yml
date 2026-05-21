@@ -14,6 +14,7 @@ payment_methods_not_accepted: &payment_methods_not_accepted
 de:
   pundit:
     default: Du hast keine Berechtigung, auf diese Seite zuzugreifen
+    not_authenticated: Sie müssen angemeldet sein, um auf diese Seite zuzugreifen
 
   seo:
     default:
@@ -21,6 +22,10 @@ de:
       description: Ein freiwilliges, überparteiliches Kollektiv, dessen Ziel es ist, so vielen Bürgern wie möglich legale, friedliche und souveräne Werkzeuge anzubieten, um eine Bankentrennung und Resilienz gegenüber der Regierungspolitik zu ermöglichen.
 
   missing_content_for_locale: Dieser Inhalt existiert noch nicht auf Deutsch. Stattdessen wird der Inhalt der Standardsprache angezeigt.
+
+  sessions:
+    create:
+      alert: Verbindung fehlgeschlagen
 
   welcome:
     index:

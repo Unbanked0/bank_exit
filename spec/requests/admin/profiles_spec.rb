@@ -18,7 +18,7 @@ RSpec.describe 'Admin::Users' do
   describe 'PATCH /admin/profile' do
     subject(:action) { patch '/admin/profile', params: valid_params }
 
-    let(:valid_params) { { user: { email: 'newemail@demo.test' } } }
+    let(:valid_params) { { user: { email_address: 'newemail@demo.test' } } }
 
     context 'when logged in' do
       include_context 'with user role', :admin
@@ -26,7 +26,7 @@ RSpec.describe 'Admin::Users' do
         let(:redirection_url) { admin_root_path }
         let(:flash_notice) { I18n.t('admin.profiles.update.notice') }
 
-        it { expect { action }.to change { current_user.reload.email }.to 'newemail@demo.test' }
+        it { expect { action }.to change { current_user.reload.email_address }.to 'newemail@demo.test' }
       end
     end
 

@@ -47,7 +47,7 @@ footer.bg-base-200.text-base-content.p-5.lg:p-10.border-base-content/10.border-t
       - if @themes_finder.christmas_time?
         = render 'snowflakes'
 
-      - unless logged_in?
+      - unless authenticated?
         = link_to '.', new_session_path
 
       = image_tag 'logo_by_mondetta.jpeg', class: 'w-32 mx-auto rounded-full mt-4', title: 'Logo by Mondetta', alt: 'Logo by Mondetta'

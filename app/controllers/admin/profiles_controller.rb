@@ -36,7 +36,7 @@ module Admin
 
     def user_params
       params.expect(
-        user: %i[email password password_confirmation]
+        user: %i[email_address password password_confirmation]
       )
     end
   end

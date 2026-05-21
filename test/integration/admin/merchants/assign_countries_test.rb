@@ -4,12 +4,12 @@ module Admin
   module Merchants
     class AssignCountriesTest < ActionDispatch::IntegrationTest
       teardown do
-        logout_user
+        sign_out
       end
 
       test 'should assign countries when user is super_admin' do
         @user = FactoryBot.create(:user, role: :super_admin)
-        login_user
+        sign_in_as(@user)
 
         post '/admin/merchants/assign_countries'
 
@@ -19,7 +19,7 @@ module Admin
 
       test 'should assign countries when user is admin' do
         @user = FactoryBot.create(:user, role: :admin)
-        login_user
+        sign_in_as(@user)
 
         post '/admin/merchants/assign_countries'
 
@@ -29,7 +29,7 @@ module Admin
 
       test 'should not assign countries when user is moderator' do
         @user = FactoryBot.create(:user, role: :moderator)
-        login_user
+        sign_in_as(@user)
 
         post '/admin/merchants/assign_countries'
 

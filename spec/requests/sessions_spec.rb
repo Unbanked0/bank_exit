@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Risks' do
+RSpec.describe 'Sessions' do
   describe 'GET /session' do
     subject! { get '/session' }
 
@@ -36,25 +36,34 @@ RSpec.describe 'Risks' do
     describe "POST /#{locale}/session" do
       subject(:action) { post "/#{locale}/session", params: params }
 
+      context 'when credentials are missing' do
+        let(:params) { {} }
+
+        before { action }
+
+        it { expect(response).to have_http_status :redirect }
+        it { expect(flash[:alert]).to eq I18n.t('sessions.create.alert', locale: locale) }
+      end
+
       context 'when credentials are invalid' do
         let(:params) do
-          { session: { email: 'fake@demo.test', password: 'fake' } }
+          { email_address: 'fake@demo.test', password: 'fake' }
         end
 
         before { action }
 
-        it { expect(response).to have_http_status :unprocessable_content }
-        it { expect(flash[:alert]).to eq 'Login failed' }
+        it { expect(response).to have_http_status :redirect }
+        it { expect(flash[:alert]).to eq I18n.t('sessions.create.alert', locale: locale) }
       end
 
       context 'when credentials are valid' do
         before do
-          create :user, email: 'foobar@demo.test', password: 'password', enabled: enabled
+          create :user, email_address: 'foobar@demo.test', password: 'password', enabled: enabled
           action
         end
 
         let(:params) do
-          { session: { email: 'foobar@demo.test', password: 'password' } }
+          { email_address: 'foobar@demo.test', password: 'password' }
         end
 
         context 'when user is enabled' do
@@ -66,8 +75,8 @@ RSpec.describe 'Risks' do
         context 'when user is not enabled' do
           let(:enabled) { false }
 
-          it { expect(response).to have_http_status :unprocessable_content }
-          it { expect(flash[:alert]).to eq 'Login failed' }
+          it { expect(response).to have_http_status :redirect }
+          it { expect(flash[:alert]).to eq I18n.t('sessions.create.alert', locale: locale) }
         end
       end
     end

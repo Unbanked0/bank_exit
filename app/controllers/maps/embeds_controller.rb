@@ -1,5 +1,7 @@
 module Maps
   class EmbedsController < ApplicationController
+    allow_unauthenticated_access
+
     content_security_policy do |policy|
       policy.frame_ancestors '*'
     end

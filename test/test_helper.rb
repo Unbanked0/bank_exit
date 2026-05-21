@@ -2,12 +2,10 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
-require './spec/support/sorcery'
+Rails.root.glob('test/test_helpers/**/*.rb').each { |f| require f }
 
 module ActiveSupport
   class TestCase
-    include Sorcery::TestHelpers::Rails::Request
-
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
 

@@ -50,7 +50,7 @@ ul.dropdown.dropdown-end.menu.bg-base-100.rounded-box.z-1.w-max.p-2.shadow-sm.bo
       = lucide_icon 'bug'
       = t('merchants.show.report_a_fault.title')
 
-  - if logged_in?
+  - if authenticated?
     - if allowed_to?(:update?, merchant, namespace: Admin)
       li
         = edit_link_to edit_admin_merchant_path(merchant), hotkey: true

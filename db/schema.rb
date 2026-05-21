@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_06_165214) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_19_142825) do
   create_table "active_analytics_browsers_per_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date", null: false
@@ -316,15 +316,25 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_06_165214) do
     t.index ["nostr_eventable_type", "nostr_eventable_id"], name: "index_nostr_events_on_nostr_eventable"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "ip_address"
+    t.datetime "updated_at", null: false
+    t.string "user_agent"
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "crypted_password"
-    t.string "email", null: false
+    t.string "email_address", null: false
     t.boolean "enabled", default: false, null: false
+    t.string "password_digest"
     t.integer "role", default: 3, null: false
     t.string "salt"
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
   create_table "weblinks", force: :cascade do |t|
@@ -342,4 +352,5 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_06_165214) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "directories", "merchants"
   add_foreign_key "merchant_sync_steps", "merchant_syncs"
+  add_foreign_key "sessions", "users"
 end

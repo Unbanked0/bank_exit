@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  prepend ActionPolicy::SimpleDelegator
   include HttpAuthConcern if Rails.env.staging?
+  include Authentication
+  prepend ActionPolicy::SimpleDelegator
   include Pagy::Method
 
   rate_limit to: 100, within: 1.minute, by: -> { encrypted_ip }
@@ -17,12 +18,6 @@ class ApplicationController < ActionController::Base
 
   def comments_enabled?
     FeatureFlag.enabled?(:comments)
-  end
-
-  def not_authenticated
-    redirect_to main_url_helpers.new_session_path,
-                alert: 'Vous devez être authentifié pour accéder à cette page',
-                status: :see_other
   end
 
   def unauthorized_access(e)
