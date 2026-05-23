@@ -193,6 +193,16 @@ GEM
     groupdate (6.8.0)
       activesupport (>= 7.2)
     hashdiff (1.2.1)
+    herb (0.10.1-aarch64-linux-gnu)
+    herb (0.10.1-aarch64-linux-musl)
+    herb (0.10.1-arm-linux-gnu)
+    herb (0.10.1-arm-linux-musl)
+    herb (0.10.1-arm64-darwin)
+    herb (0.10.1-x86-linux-gnu)
+    herb (0.10.1-x86-linux-musl)
+    herb (0.10.1-x86_64-darwin)
+    herb (0.10.1-x86_64-linux-gnu)
+    herb (0.10.1-x86_64-linux-musl)
     hotwire-spark (0.1.13)
       listen
       rails (>= 7.0.0)
@@ -643,6 +653,7 @@ DEPENDENCIES
   foreman
   geocoder
   groupdate
+  herb
   hotwire-spark
   httparty
   image_processing (~> 1.2)

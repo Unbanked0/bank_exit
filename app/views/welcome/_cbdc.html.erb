@@ -1,0 +1,19 @@
+<div class="alert alert-vertical bg-base-100 justify-center px-5 py-12!">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <h2 class="text-3xl text-center"><%= t('.title') %></h2>
+
+    <%= render 'countdown' %>
+
+    <div class="alert alert-warning alert-vertical">
+      <% t('.body').each do |paragraph| %>
+        <p><%= paragraph %></p>
+      <% end %>
+    </div>
+
+    <p class="text-center">
+      <%= link_to t('.more_about'),
+blog_path('cbdc-digital-euro'),
+class: 'btn btn-link' %>
+    </p>
+  </div>
+</div>
