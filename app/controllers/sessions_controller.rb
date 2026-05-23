@@ -23,7 +23,7 @@ class SessionsController < PublicController
   # @route POST /en/session {locale: "en"} (session_en)
   # @route POST /session
   def create
-    user = User.authenticate_by(params.permit(:email_address, :password))
+    user = User.authenticate_by(session_params)
 
     if user&.enabled?
       start_new_session_for user

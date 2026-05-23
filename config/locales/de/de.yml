@@ -114,6 +114,8 @@ de:
         create: Kommentar melden
       directory:
         suggest: Eintrag vorschlagen
+      session:
+        submit: Anmelden
 
   questions:
     individual: Eine Privatperson

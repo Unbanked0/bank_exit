@@ -210,7 +210,7 @@ it:
         expired_at: Scade il
 
       user:
-        email: Indirizzo email
+        email_address: Indirizzo email
         password: Password
         password_confirmation: Conferma password
         enabled: Attivo?

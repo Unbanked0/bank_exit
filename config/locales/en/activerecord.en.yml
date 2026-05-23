@@ -207,7 +207,7 @@ en:
         expired_at: Expires on
 
       user:
-        email: Email address
+        email_address: Email address
         password: Password
         enabled: Enabled ?
         role: Role

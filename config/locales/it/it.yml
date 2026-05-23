@@ -114,6 +114,8 @@ it:
         create: Segnala questo commento
       directory:
         suggest: Suggerisci questa voce
+      session:
+        submit: Accedi
 
   questions:
     individual: Un individuo

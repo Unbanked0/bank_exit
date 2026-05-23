@@ -68,6 +68,10 @@ de:
       ecosystem_item:
         remove_picture: Bild entfernen?
 
+      session:
+        email_address: E-Mail-Adresse
+        password: Passwort
+
     placeholders:
       defaults:
         latitude: Standard-Breitengrad

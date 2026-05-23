@@ -110,6 +110,8 @@ es:
         create: Señalar este comentario
       directory:
         suggest: Sugerir esta entrada
+      session:
+        submit: Iniciar sesión
 
   questions:
     individual: Un particular

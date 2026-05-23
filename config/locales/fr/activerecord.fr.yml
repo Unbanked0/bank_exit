@@ -226,7 +226,7 @@ fr:
         expired_at: Expiration le
 
       user:
-        email: Adresse email
+        email_address: Adresse email
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
         enabled: Activé ?

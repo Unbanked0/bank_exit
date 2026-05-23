@@ -69,6 +69,10 @@ es:
       ecosystem_item:
         remove_picture: ¿Eliminar la imagen?
 
+      session:
+        email_address: Dirección de correo electrónico
+        password: Contraseña
+
     placeholders:
       defaults:
         latitude: Latitud predeterminado

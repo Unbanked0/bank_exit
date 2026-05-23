@@ -74,7 +74,7 @@ en:
         remove_picture: Remove the picture?
 
       session:
-        email: Email address
+        email_address: Email address
         password: Password
 
     placeholders:

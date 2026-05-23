@@ -78,7 +78,7 @@ fr:
         remove_picture: Supprimer l'image ?
 
       session:
-        email: Adresse email
+        email_address: Adresse email
         password: Mot de passe
 
     placeholders:

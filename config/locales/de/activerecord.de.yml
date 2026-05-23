@@ -210,7 +210,7 @@ de:
         expired_at: Läuft ab am
 
       user:
-        email: E-Mail-Adresse
+        email_address: E-Mail-Adresse
         password: Passwort
         password_confirmation: Passwortbestätigung
         enabled: Aktiviert?

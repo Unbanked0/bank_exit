@@ -37,7 +37,7 @@ RSpec.describe 'Sessions' do
       subject(:action) { post "/#{locale}/session", params: params }
 
       context 'when credentials are missing' do
-        let(:params) { {} }
+        let(:params) { { session: { email_address: '', password: '' } } }
 
         before { action }
 
@@ -47,7 +47,7 @@ RSpec.describe 'Sessions' do
 
       context 'when credentials are invalid' do
         let(:params) do
-          { email_address: 'fake@demo.test', password: 'fake' }
+          { session: { email_address: 'fake@demo.test', password: 'fake' } }
         end
 
         before { action }
@@ -63,7 +63,7 @@ RSpec.describe 'Sessions' do
         end
 
         let(:params) do
-          { email_address: 'foobar@demo.test', password: 'password' }
+          { session: { email_address: 'foobar@demo.test', password: 'password' } }
         end
 
         context 'when user is enabled' do

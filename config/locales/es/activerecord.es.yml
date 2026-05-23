@@ -215,7 +215,7 @@ es:
         expired_at: Expira el
 
       user:
-        email: Dirección de correo
+        email_address: Dirección de correo
         password: Contraseña
         password_confirmation: Confirmación de contraseña
         enabled: ¿Activado?
