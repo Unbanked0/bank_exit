@@ -1,5 +1,5 @@
 - content_for :page_title do
-  = MerchantSync.model_name.human
+  = t('admin.sidebar.monero_ecosystem')
 
 - content_for :page_actions do
   - if allowed_to?(:create?, EcosystemItem, namespace: Admin)
