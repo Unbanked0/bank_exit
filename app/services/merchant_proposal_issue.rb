@@ -27,8 +27,23 @@ class MerchantProposalIssue < ApplicationService
       #{merchant_proposal.to_osm}
       ```
 
+      > [!NOTE]
+      > - Country: `#{merchant_proposal.pretty_country}`
+      > - Latitude: `#{merchant_proposal.latitude.presence || '--'}`
+      > - Longitude: `#{merchant_proposal.longitude.presence || '--'}`
+
       > [!WARNING]
-      > `category` key need special care to follows OSM practices.
+      > Merchants added to OpenStreetMap must comply with OSM mapping rules and best practices:
+      >
+      > - https://wiki.openstreetmap.org/wiki/Key:shop
+      > - https://wiki.openstreetmap.org/wiki/Good_practice
+      > - https://gitea.btcmap.org/teambtcmap/btcmap-general/wiki/Tagging-Merchants
+      >
+      > Online-only businesses must **not** be added to OSM. A merchant must have a real, verifiable physical location.
+      >
+      > If the business operates exclusively online and does not have a verifiable physical location, it should instead be proposed for inclusion in the Bank-Exit directory.
+      >
+      > The submitted category should also be reviewed and refined, as overly generic categories reduce data quality and usability.
 
       ---
 

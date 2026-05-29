@@ -11,7 +11,6 @@ module Merchants
     def initialize(merchant_proposal)
       @merchant_proposal = merchant_proposal.decorate
       @data = []
-      @extra_keys = {}
     end
 
     delegate :name, :description,
@@ -30,6 +29,7 @@ module Merchants
       set_coins_keys
       set_social_contact_keys
       set_other_keys
+      set_source_key
 
       transform_to_key_equal_value
     end
@@ -47,13 +47,9 @@ module Merchants
       @data << ['addr:postcode', postcode] if postcode
       @data << ['addr:city', city] if city
 
-      if country
-        @data << ['addr:country', country]
-        @extra_keys['country'] = merchant_proposal.pretty_country
-      end
+      return unless country
 
-      @extra_keys['latitude'] = latitude if latitude
-      @extra_keys['longitude'] = longitude if longitude
+      @data << ['addr:country', country]
     end
 
     def set_main_contact_keys
@@ -86,6 +82,10 @@ module Merchants
       @data << ['payment:kyc', ask_kyc ? 'yes' : 'no']
     end
 
+    def set_source_key
+      @data << ['source', '<insert Github issue URL here>']
+    end
+
     def set_other_keys
       if delivery
         @data << %w[delivery yes]
@@ -94,23 +94,13 @@ module Merchants
 
       @data << ['opening_hours', opening_hours] if opening_hours
       @data << ['survey:date', last_survey_on] if last_survey_on
-
-      @data << ['_extra_keys', @extra_keys] if @extra_keys.present?
     end
 
     def transform_to_key_equal_value
       @data.map do |key, value|
         next if value.blank?
 
-        if key == '_extra_keys'
-          <<~TEXT
-
-            --- EXTRA DATA TO IGNORE ---
-            #{value.map { |k, v| "#{k}=#{v}" }.join("\n")}
-          TEXT
-        else
-          "#{key}=#{value}"
-        end
+        "#{key}=#{value}"
       end.compact_blank.join("\n").chomp
     end
 

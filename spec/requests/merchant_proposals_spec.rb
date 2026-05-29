@@ -67,13 +67,26 @@ RSpec.describe 'MerchantProposals' do
                 currency:XBT=yes
                 currency:XMR=yes
                 contact:odysee=https://www.odysee.com/WoodToys
-
-                --- EXTRA DATA TO IGNORE ---
-                country=🇫🇷 France
+                source=<insert Github issue URL here>
                 ```
 
+                > [!NOTE]
+                > - Country: `🇫🇷 France`
+                > - Latitude: `--`
+                > - Longitude: `--`
+
                 > [!WARNING]
-                > `category` key need special care to follows OSM practices.
+                > Merchants added to OpenStreetMap must comply with OSM mapping rules and best practices:
+                >
+                > - https://wiki.openstreetmap.org/wiki/Key:shop
+                > - https://wiki.openstreetmap.org/wiki/Good_practice
+                > - https://gitea.btcmap.org/teambtcmap/btcmap-general/wiki/Tagging-Merchants
+                >
+                > Online-only businesses must **not** be added to OSM. A merchant must have a real, verifiable physical location.
+                >
+                > If the business operates exclusively online and does not have a verifiable physical location, it should instead be proposed for inclusion in the Bank-Exit directory.
+                >
+                > The submitted category should also be reviewed and refined, as overly generic categories reduce data quality and usability.
 
                 ---
 

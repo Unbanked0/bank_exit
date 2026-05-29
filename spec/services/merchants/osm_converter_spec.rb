@@ -49,11 +49,7 @@ RSpec.describe Merchants::OSMConverter do
         delivery=yes
         opening_hours=Mo-Su 09:00-18:00
         survey:date=2025-11-11
-
-        --- EXTRA DATA TO IGNORE ---
-        country=🇨🇭 Switzerland
-        latitude=123.456
-        longitude=456.123
+        source=<insert Github issue URL here>
       TEXT
     end
 
