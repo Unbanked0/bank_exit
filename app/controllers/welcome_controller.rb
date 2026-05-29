@@ -2,6 +2,7 @@ class WelcomeController < PublicController
   include Merchandable
   include Statisticable
 
+  before_action :resume_session
   before_action :set_statistics
 
   # @route GET /fr {locale: "fr"} (root_fr)
