@@ -320,12 +320,10 @@ active_other = params[:controller].in?(%w[local_groups collectives ecosystems me
 
       <% if authenticated? %>
         <li>
-          <% color = color_for_role(current_user.role) %>
-
           <details open>
             <summary>
               <div class="avatar avatar-placeholder">
-                <div class="w-8 rounded-full uppercase bg-<%= color %> text-<%= color %>-content">
+                <div class="w-8 rounded-full uppercase <%= color_for_role(current_user.role).join(' ') %>">
                   <%= current_user.email_address.first(2) %>
                 </div>
               </div>

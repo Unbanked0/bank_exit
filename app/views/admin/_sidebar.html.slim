@@ -95,13 +95,11 @@
 
       = render 'theme_switcher'
 
-    - color = color_for_role(current_user.role)
-
     .space-y-2
       = render 'admin/pretender_message' if true_user != current_user
 
       details.dropdown.dropdown-top.dropdown-center.w-full
-        summary.btn.btn-block.py-7 class="btn-#{color}"
+        summary.btn.btn-block.py-7 class=user_btn_color_for_role(current_user.role)
           p
             = current_user.email_address
             br

@@ -11,18 +11,27 @@ module UsersHelper
   def user_badge_color_for_role(role)
     {
       super_admin: 'badge-error',
-      admin: 'bage-warning',
+      admin: 'badge-warning',
       publisher: 'badge-info',
       moderator: 'badge-success'
     }[role.to_sym]
   end
 
+  def user_btn_color_for_role(role)
+    {
+      super_admin: 'btn-error',
+      admin: 'btn-warning',
+      publisher: 'btn-info',
+      moderator: 'btn-success'
+    }[role.to_sym]
+  end
+
   def color_for_role(role)
     {
-      super_admin: 'error',
-      admin: 'warning',
-      publisher: 'info',
-      moderator: 'success'
+      super_admin: %w[bg-error text-error-content],
+      admin: %w[bg-warning text-warning-content],
+      publisher: %w[bg-info text-info-content],
+      moderator: %w[bg-success text-success-content]
     }[role.to_sym]
   end
 end
