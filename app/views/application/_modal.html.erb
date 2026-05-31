@@ -2,7 +2,7 @@
 
 <% is_turbo_confirm = id == "turbo-confirm"
 
-data.merge!(controller: :modal) if request.format.turbo_stream?
+data.merge!(controller: :modal) if request.format.turbo_stream? && (modal_body.present? || modal_body_html.present?)
 
 modal_box_classes = class_names(
   "modal-box",
