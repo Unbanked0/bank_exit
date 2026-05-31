@@ -14,9 +14,12 @@ class User < ApplicationRecord
   has_many :sessions, dependent: :destroy
 
   validates :email_address, presence: true, uniqueness: true
-  validates :password, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
-  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
+
+  with_options if: -> { new_record? || password.present? } do
+    validates :password, length: { minimum: 8 }
+    validates :password, confirmation: true
+    validates :password_confirmation, presence: true
+  end
 
   scope :enabled, -> { where(enabled: true) }
 end
@@ -26,15 +29,13 @@ end
 # Table name: users
 # Database name: primary
 #
-#  id               :integer          not null, primary key
-#  email_address    :string           not null
-#  crypted_password :string
-#  salt             :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  role             :integer          default("moderator"), not null
-#  enabled          :boolean          default(FALSE), not null
-#  password_digest  :string
+#  id              :integer          not null, primary key
+#  email_address   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  role            :integer          default("moderator"), not null
+#  enabled         :boolean          default(FALSE), not null
+#  password_digest :string
 #
 # Indexes
 #

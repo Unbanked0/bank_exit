@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_19_142825) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_31_164827) do
   create_table "active_analytics_browsers_per_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "date", null: false
@@ -327,12 +327,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_142825) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.string "crypted_password"
     t.string "email_address", null: false
     t.boolean "enabled", default: false, null: false
     t.string "password_digest"
     t.integer "role", default: 3, null: false
-    t.string "salt"
     t.datetime "updated_at", null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
