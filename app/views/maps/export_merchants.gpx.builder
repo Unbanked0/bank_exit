@@ -26,7 +26,7 @@ xml.gpx(
     end
 
     xml.link(href: maps_url) do
-      xml.text t('application.nav.menu.map')
+      xml.text t('application.header.map')
       xml.type 'text/html'
     end
 

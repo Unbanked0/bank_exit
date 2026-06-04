@@ -1,25 +1,22 @@
 de:
   application:
-    nav:
-      collectif: Bank-Exit
-      bank_exit: Kollektiv
-
-      menu:
-        home: Startseite
-        map: Karte
-        directories: Verzeichnis
-        projects: Projekte
-        monero_wallet: Monero-Wallet
-        articles: Artikel
-        tutorials: Anleitungen
-        blogs: Blog
-        faq: Häufig gestellte Fragen (FAQ)
-        contact: Kontakt
-        pros: Profis
-        freedom_grocers: Freiheits-Lebensmittel
-
     header:
-      github_title: Link zum GitHub-Repository
+      collectif: Kollektiv
+      bank_exit: Bank-Exit
+      subtitle: Strategien zur Entbankung
+      home: Startseite
+      map: Karte
+      merchants: Händler
+      directories: Verzeichnis
+      projects: Projekte
+      guides: Leitfäden
+      articles: Artikel
+      tutorials: Anleitungen
+      blogs: Blog
+      faq: Häufig gestellte Fragen (FAQ)
+      contact: Kontakt
+      pros: Profis
+      freedom_grocers: Freiheits-Lebensmittel
 
     theme_switcher:
       switch_to_light: In den hellen Modus wechseln

@@ -1,0 +1,65 @@
+<dialog
+  id="search_modal"
+  class="modal"
+  data-controller="research"
+  data-research-search-url-value="<%= merchants_path %>"
+>
+  <div class="modal-box p-0! w-11/12 lg:w-2/3 max-w-3xl">
+    <form
+      class="flex items-stretch"
+      data-action="reset->research#search"
+      id="research"
+    >
+      <div class="relative w-full">
+        <input
+          type="text"
+          autocomplete="false"
+          class="
+            p-3 w-full text-lg pl-12 peer focus-visible:outline-none!
+            bg-base-200
+          "
+          data-action="input->research#search"
+          data-research-target="input"
+          name="query"
+          placeholder="<%= t('simple_form.placeholders.research.search') %>"
+        >
+
+        <%= lucide_icon 'search', class: 'w-8 absolute top-1/2 -translate-y-1/2 left-2 peer-focus:text-primary' %>
+
+        <span
+          class="spinner hidden absolute right-2 top-1/2 -translate-y-1/2 z-1"
+          data-research-target="spinner"
+        >
+          <span class="loading loading-spinner w-8 h-8 text-primary"></span>
+        </span>
+      </div>
+
+      <button
+        class="btn btn-primary rounded-none h-auto"
+        role="button"
+        tabindex="0"
+        title="<%= t('maps.filters_form.clear_search_query') %>"
+        type="reset"
+      >
+        <%= lucide_icon 'undo', class: 'p-1' %>
+      </button>
+    </form>
+
+    <div data-research-target="initialContent" id="menu">
+      <%= render 'merchants/searches/index',
+                 merchants: merchants,
+                 directories: directories,
+                 pagy: pagy %>
+    </div>
+
+    <footer class="my-3">
+      <p class="text-center text-xs">
+        <% heart = lucide_icon('heart', class: 'h-4 w-4 stroke-red-600 fill-red-600 inline-flex mx-0.5 hover:scale-150 motion-safe:transition-transform') %><%= t('application.footer.developed_by_html', heart: heart) %>
+      </p>
+    </footer>
+  </div>
+
+  <form method="dialog" class="modal-backdrop">
+    <button>Close</button>
+  </form>
+</dialog>

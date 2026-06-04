@@ -12,6 +12,8 @@ export default class extends Controller {
   connect() {
     useDebounce(this, { wait: 300 });
 
+    this.inputTarget.focus();
+
     if (this.hasInitialContentTarget) {
       this.initialContent = this.initialContentTarget.innerHTML;
     }

@@ -93,9 +93,9 @@ fr:
         website: "https://monsite.com"
 
       map:
-        search: Rechercher par nom, adresse ou description
+        search: nom, adresse ou description
       research:
-        search: Rechercher un commerçant par nom, adresse ou description
+        search: nom, adresse ou description
 
       itinerary:
         my_address: 1 rue de l'Eglise, Paris

@@ -3,7 +3,7 @@
   link: directories#index
   icon: notebook
 
-- name: I18n/application.nav.menu.freedom_grocers
+- name: I18n/application.header.freedom_grocers
   link: https://libre-market.com/m/epicerie
   image: freedom_grocers.svg
 

@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @source not "./daisyui{,*}.mjs";
+@custom-variant dark (&:where([data-theme="dracula"], [data-theme="dracula"] *));
 
 @theme {
+    --breakpoint-xs: 35rem;
     --map-road-color: #3388ff;
 }
 
@@ -55,7 +57,7 @@
 }
 
 @utility hero-content-main {
-    @apply pt-28 pb-12;
+    @apply py-12;
 }
 
 @utility dropdown-content {
@@ -117,6 +119,7 @@ a:not(.btn, .badge):hover,
 
 footer a[target="_blank"],
 p a[target="_blank"],
+.megamenu a[target="_blank"],
 .admin a[target="_blank"],
 .modal a[target="_blank"],
 .alert a[target="_blank"],
@@ -253,13 +256,6 @@ select {
     --tw-ring-offset-shadow: none;
     --tw-ring-shadow: none;
     --tw-ring-color: transparent;
-}
-
-[popover] {
-    position-try-fallbacks:
-        flip-block,
-        flip-inline,
-        flip-block flip-inline;
 }
 
 @layer components {

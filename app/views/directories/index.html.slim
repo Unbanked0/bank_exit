@@ -4,7 +4,7 @@ article data-controller="directories" data-directories-autocomplete-url-value= a
     .hero-content.hero-content-main.text-center
       .max-w-3xl.space-y-6
         section.space-y-3
-          h1.text-3xl.font-bold= t('application.nav.menu.directories')
+          h1.text-3xl.font-bold= t('application.header.directories')
 
           - if authenticated? && allowed_to?(:index?, Directory, namespace: Admin)
             = edit_link_to admin_directories_path, hotkey: true

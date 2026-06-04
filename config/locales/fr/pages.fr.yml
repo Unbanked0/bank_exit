@@ -33,15 +33,22 @@ fr:
       headline: Collectif apartisan et bénévole, dont l'objectif est d'offir des outils légaux, pacifiques et souverains à un maximum de citoyens, afin de permettre l'émancipation bancaire et la résilience.
       video_caption: Retour d'expérience d'un maraîcher avec Monero
 
+      headlines:
+        part1: Trouvez des
+        part2:
+          pros: professionnels
+        part3: et dépensez en
+
+        subtitle: Découvrez les commerces physiques, boutiques en ligne et services qui acceptent les paiements en BTC, XMR et June.
+
       map:
-        title: La carte
-        subtitle: Commerçants en vedette
-        merchant_highlight_tooltip_html: |
-          3 commerçants sont affichés de manière aléatoire parmi ceux qui acceptent Monero, se trouvent en France et ne demandent pas de KYC.
+        title: Carte des commerces
+        subtitle: Explorez les établissements proches de vous
         discover_all: Découvrir tous les commerçants
 
     questions_form:
       title: Rechercher un contenu
+      subtitle: Accéder directement au contenu correspondant à votre profil et votre niveau
 
     debt_clock:
       title: Dette publique de la France 🇫🇷 en temps réel

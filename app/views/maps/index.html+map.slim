@@ -1,9 +1,9 @@
-.flex.flex-col.lg:flex-row.items-start.flex-col-reverse
+.flex.flex-col.md:flex-row.items-start.flex-col-reverse
   = render 'sidebar', h_screen: true do
     #map_results
       = render 'maps/merchants', merchants: @merchants, pagy: @pagy
 
-  .relative.w-full.h-full.lg:w-2/3 class=map_css_height
+  .relative.w-full.h-full.md:w-1/2.xl:w-2/3 class=map_css_height
     = render 'maps/map'
 
     - if @directory_friends.present?

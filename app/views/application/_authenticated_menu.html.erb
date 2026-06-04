@@ -32,6 +32,19 @@
     <% end %>
   </div>
 
+  <% if true_user != current_user %>
+    <div>
+      <span class="badge">
+        Retour à mon vrai compte
+        <span class="opacity-60">(<%= true_user.email_address %>)</span>
+      </span>
+
+      <%= link_to stop_impersonating_admin_users_path, data: { turbo_method: :post }, class: "btn btn-lg btn-circle btn-error" do %>
+        <%= lucide_icon "user-round-x" %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div>
     <span class="badge"><%= t('logout') %></span>
 

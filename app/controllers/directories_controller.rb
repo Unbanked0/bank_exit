@@ -6,7 +6,7 @@ class DirectoriesController < PublicController
 
   helper_method :around_me?
 
-  add_breadcrumb proc { I18n.t('application.nav.menu.home') }, :root_path
+  add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
   add_breadcrumb proc { Directory.model_name.human.capitalize }, :directories_referer_path
 
   # @route GET /fr/directories {locale: "fr"} (directories_fr)

@@ -47,13 +47,14 @@
     data-theme-light-value="<%= @themes[:light] %>"
     data-theme-dark-value="<%= @themes[:dark] %>"
   >
-    <%= render 'header', projects: @projects %>
+    <main>
+      <%= render 'header', projects: @projects %>
+      <%= render "search", merchants: @merchants, directories: @directories, pagy: @pagy %>
 
-    <main class="<%= "pt-20" unless hero_header? %>">
       <%= yield %>
-    </main>
 
-    <%= render 'footer', projects: @projects, contacts: @contacts, themes_finder: @themes_finder %>
+      <%= render 'footer', projects: @projects, contacts: @contacts, themes_finder: @themes_finder %>
+    </main>
 
     <%= turbo_frame_tag :announcements, src: announcements_path %>
 

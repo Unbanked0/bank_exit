@@ -1,6 +1,6 @@
 module MapsHelper
   def map_css_height
-    'lg:h-[calc(100dvh-80px)]'
+    'md:h-[calc(100dvh-64px)]'
   end
 
   def map_enabled_disabled_collection_values_for_select

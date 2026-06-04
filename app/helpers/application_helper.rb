@@ -20,6 +20,10 @@ module ApplicationHelper
     end
   end
 
+  def random_bg_hero_banner
+    "bg-banner-#{rand(1..5)}"
+  end
+
   def icon_for_category(category)
     MerchantIcon.call(category)
   end

@@ -1,8 +1,8 @@
 class MerchantProposalsController < PublicController
   before_action :set_faqs, only: :new
 
-  add_breadcrumb proc { I18n.t('application.nav.menu.home') }, :root_path
-  add_breadcrumb proc { I18n.t('application.nav.menu.map') }, :map_referer_path
+  add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
+  add_breadcrumb proc { I18n.t('application.header.map') }, :map_referer_path
 
   # @route GET /fr/merchant_proposals {locale: "fr"} (merchant_proposals_fr)
   # @route GET /es/merchant_proposals {locale: "es"} (merchant_proposals_es)

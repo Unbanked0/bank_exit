@@ -1,27 +1,26 @@
 fr:
   application:
     nav:
-      collectif: Collectif
-      bank_exit: Sortie De Banque
       admin_area: Espace admin
       back_to_my_account: Retour à mon vrai compte
 
-      menu:
-        home: Accueil
-        map: La carte
-        directories: L'annuaire en ligne
-        projects: Les projets
-        monero_wallet: Portefeuille Monero
-        articles: Les articles
-        tutorials: Les tutoriels
-        blogs: Le blog
-        faq: Foire Aux Questions (FAQ)
-        contact: Contact
-        pros: Pros
-        freedom_grocers: L'épicerie Libre
-
     header:
-      github_title: Lien vers le dépôt Github
+      collectif: Collectif
+      bank_exit: Sortie De Banque
+      subtitle: Stratégies de débancarisation
+      home: Accueil
+      map: Carte
+      merchants: Commerçants
+      directories: Annuaire en ligne
+      projects: Projets
+      guides: Guides
+      articles: Articles
+      tutorials: Tutoriels
+      blogs: Blog
+      faq: Foire Aux Questions (FAQ)
+      contact: Contact
+      pros: Pros
+      freedom_grocers: L'épicerie Libre
 
     theme_switcher:
       switch_to_light: Basculer sur le thème clair

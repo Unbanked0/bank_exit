@@ -1,15 +1,15 @@
+<%# locals: (profiles:, levels:, center: false) %>
+
 <%= simple_form_for :questions,
                     url: results_questions_path,
                     method: :get,
                     html: {
                       class: [
-                        "order-2 lg:order-none w-full md:w-sm relative",
-                        "mx-auto": defined?(center) && center
+                        "max-w-sm mx-auto": center,
+                        "md:w-1/3": !center
                       ]
                     } do |f| %>
   <fieldset class="bg-base-200/95 border-base-content/20 rounded-box border p-4">
-    <legend class="badge badge-primary"><%= t('.title') %></legend>
-
     <div class="space-y-4">
       <%# = render 'questions/profile_input', f: f, profiles: profiles %>
 

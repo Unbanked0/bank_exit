@@ -85,9 +85,9 @@ es:
         website: "https://misitio.com"
 
       map:
-        search: Encuentrar una empresa por nombre, dirección o descripción
+        search: nombre, dirección o descripción
       research:
-        search: Buscar un comerciante por nombre, dirección o descripción
+        search: nombre, dirección o descripción
 
       itinerary:
         my_address: 1 calle de la Iglesia, Madrid

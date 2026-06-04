@@ -1,9 +1,9 @@
 class BlogsController < PublicController
   before_action :set_blog, only: :show
 
-  add_breadcrumb proc { I18n.t('application.nav.menu.home') }, :root_path
-  add_breadcrumb proc { I18n.t('application.nav.menu.articles') }
-  add_breadcrumb proc { I18n.t('application.nav.menu.blogs') }, :blogs_path
+  add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
+  add_breadcrumb proc { I18n.t('application.header.guides') }
+  add_breadcrumb proc { I18n.t('application.header.blogs') }, :blogs_path
 
   # @route GET /fr/blogs {locale: "fr"} (blogs_fr)
   # @route GET /es/blogs {locale: "es"} (blogs_es)

@@ -33,15 +33,21 @@ en:
       headline: A voluntary, non-partisan collective whose aim is to offer legal, peaceful and sovereign tools to as many citizens as possible, to enable banking emancipation and resilience.
       video_caption: Feedback from a market gardener using Monero
 
+      headlines:
+        part1: Find
+        part2:
+          pros: professionals
+        part3: and spend in
+        subtitle: Discover physical stores, online shops, and services that accept payments in BTC, XMR, and June.
+
       map:
-        title: The map
-        subtitle: Featured merchants
-        merchant_highlight_tooltip_html: |
-          3 merchants are randomly displayed among those who accept Monero, are in France and don't ask for KYC.
+        title: Business Map
+        subtitle: Explore businesses near you
         discover_all: Discover all merchants
 
     questions_form:
       title: Look for a content
+      subtitle: Access content tailored to your profile and level
 
     debt_clock:
       title: 🇫🇷 France's public debt in real time

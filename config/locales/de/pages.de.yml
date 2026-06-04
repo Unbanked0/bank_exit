@@ -33,15 +33,21 @@ de:
       headline: Ein freiwilliges, überparteiliches Kollektiv, dessen Ziel es ist, so vielen Bürgern wie möglich legale, friedliche und souveräne Werkzeuge anzubieten, um eine Bankentrennung und Resilienz zu ermöglichen.
       video_caption: Rückmeldung eines Markgärtners, der Monero nutzt
 
+      headlines:
+        part1: Finden Sie
+        part2:
+          pros: Fachleute
+        part3: und bezahlen Sie mit
+        subtitle: Entdecken Sie Ladengeschäfte, Online-Shops und Dienstleistungen, die Zahlungen in BTC, XMR und June akzeptieren.
+
       map:
-        title: Die Karte
-        subtitle: Ausgewählte Händler
-        merchant_highlight_tooltip_html: |
-          3 Händler werden zufällig unter denen angezeigt, die Monero akzeptieren, sich in Deutschland befinden und keine KYC verlangen.
+        title: Geschäftekarte
+        subtitle: Entdecke Geschäfte in deiner Nähe
         discover_all: Alle Händler entdecken
 
     questions_form:
       title: Suche nach einem Inhalt
+      subtitle: Greife direkt auf Inhalte zu, die zu deinem Profil und deinem Niveau passen
 
     debt_clock:
       title: Staatsschulden Frankreichs 🇫🇷 in Echtzeit

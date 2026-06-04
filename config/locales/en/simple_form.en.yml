@@ -89,9 +89,9 @@ en:
         website: "https://mywebsite.com"
 
       map:
-        search: Find a business by name, address or description
+        search: name, address or description
       research:
-        search: Find a business by name, address or description
+        search: name, address or description
 
       itinerary:
         my_address: 1 Church street, London

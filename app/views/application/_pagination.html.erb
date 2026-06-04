@@ -1,7 +1,6 @@
+<%# locals: (pagy:, search_path: nil, add_page_to_url: true, keyboard_enabled: 'true', attrs: {}) %>
+
 <% if pagy.count > pagy.limit %>
-  <% attributes = defined?(attrs) ? attrs : {} %>
-  <% keyboard_enabled = defined?(keyboard_enabled) ? keyboard_enabled.to_s : 'true' %>
-  <% push_page_to_url = defined?(add_page_to_url) ? add_page_to_url : true %>
   <div
     class="flex items-center justify-center gap-2 p-2"
     data-controller="pagination"
@@ -12,12 +11,15 @@
       <%= hotkey_label(['Ctrl', '◀︎'], size: 'xs') %>
     <% end %>
 
-    <%== pagy.series_nav(anchor_string: [
+    <%== pagy.series_nav(
+        path: search_path,
+        anchor_string: [
           'data-turbo-stream="true"',
-          ('data-action="click->pagination#addPageToURL"' if push_page_to_url)
-       ]
+          ('data-action="click->pagination#addPageToURL"' if add_page_to_url)
+        ]
        .join(' ')
-       .concat(attributes[:anchor_string] || '')) %>
+       .concat(attrs[:anchor_string] || '')
+    ) %>
 
     <% if keyboard_enabled && pagy.next %>
       <%= hotkey_label(['Ctrl', '▶︎'], size: 'xs') %>

@@ -107,20 +107,21 @@
             option value=other selected=(params.dig(:category) == other)
               = t(other, scope: category_scope)
 
-      ul.grid.w-full.gap-2.grid-cols-4
-        - %i[bar cafe restaurant grocery].each do |category|
-          li
-            input type="checkbox" id="#{category}-option" value=category class="sr-only peer" name="category" data-map--filter-target="input" data-action="change->map--filter#syncSelectCategories" checked=(params[:category] == category.to_s)
-            label.pretty-checkbox.flex.flex-col.items-center.justify-center.gap-2.peer-focus:outline-2.peer-focus:outline-offset-2 for="#{category}-option"
-              = merchant_icon_svg icon_for_category(category), width: 50, height: 50
-              .text-xs.3xl:text-base.wrap-anywhere.text-center
-                = t("categories.#{category}")
+      div class="@container"
+        ul.grid.gap-2.grid-cols-2 class="@md:grid-cols-4"
+          - %i[bar cafe restaurant grocery].each do |category|
+            li
+              input type="checkbox" id="#{category}-option" value=category class="sr-only peer" name="category" data-map--filter-target="input" data-action="change->map--filter#syncSelectCategories" checked=(params[:category] == category.to_s)
+              label.pretty-checkbox.flex.flex-col.items-center.justify-center.gap-2.peer-focus:outline-2.peer-focus:outline-offset-2 for="#{category}-option"
+                = merchant_icon_svg icon_for_category(category), width: 50, height: 50
+                .text-xs.3xl:text-base.wrap-anywhere.text-center
+                  = t("categories.#{category}")
 
     span.btn.btn-xs.btn-circle.btn-primary tabindex="0" title=t('.clear_search_category') role="button" data-action="click->map--filter#clearField keyup.enter->map--filter#clearField click->map--filter#syncQuickCategories keyup.enter->map--filter#syncQuickCategories" data-resetable="category"
       = lucide_icon 'undo', class: 'p-1'
 
-  .flex.items-center.gap-2
-    ul.grid.w-full.gap-2.grid-cols-3
+  .flex.items-center.gap-2 class="@container"
+    ul.grid.gap-2.grid-cols-1.w-full class="@lg:grid-cols-3"
       - Setting::MERCHANTS_FILTER_COINS.each do |coin|
         li.flex.flex-col.items-center.justify-start.gap-2
           .w-full

@@ -1,15 +1,168 @@
-<div class="hero bg-fixed <%= "bg-banner-#{rand(1..5)}" %>">
+<section class="hero bg-fixed overflow-hidden <%= random_bg_hero_banner %>">
   <div class="hero-overlay"></div>
 
-  <div class="hero-content hero-content-main text-center">
-    <div class="max-w-max space-y-8">
-      <div class="flex flex-col lg:flex-row items-center gap-5 justify-between">
-        <figure class="order-3 lg:order-0">
-          <% tracks = [ \
+  <div class="container mx-auto px-4 py-10 relative">
+    <div class="space-y-8 mx-auto max-w-4xl text-center">
+      <%= image_tag logo_by_locale, class: "w-48 mx-auto hover:scale-110 motion-safe:transition-transform", alt: "Logo Bank-Exit" %>
+
+      <div class="text-5xl md:text-6xl font-black tracking-tight">
+        <span>
+          <span><%= t('.headlines.part1') %></span>
+
+          <span class="text-rotate duration-8000">
+            <span>
+              <span class="bg-base-content text-base-100 rounded-lg px-2 max-xs:mx-auto">
+                <%= Merchant.model_name.human.downcase.pluralize %>
+              </span>
+
+              <span class="bg-base-content text-base-100 rounded-lg px-2 max-xs:mx-auto">
+                <%= t('.headlines.part2.pros') %>
+              </span>
+            </span>
+          </span>
+
+          <span class="inline-block"><%= t('.headlines.part3') %></span>
+
+          <span class="text-rotate duration-8000 delay-1000">
+            <span>
+              <span
+                class="
+                  flex items-center gap-3 bg-[#f7931a] text-white px-2
+                  rounded-lg max-xs:mx-auto
+                "
+              >
+                Bitcoin
+              </span>
+
+              <span
+                class="
+                  flex items-center gap-3 bg-[#ff6600] text-white px-2
+                  rounded-lg max-xs:mx-auto
+                "
+              >
+                Monero
+              </span>
+
+              <span
+                class="
+                  flex items-center gap-3 bg-[#f8ed5a] text-black/90 px-2
+                  rounded-lg max-xs:mx-auto
+                "
+              >
+                June
+              </span>
+            </span>
+          </span>
+        </span>
+      </div>
+
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        <%= t('.headlines.subtitle') %>
+      </p>
+    </div>
+
+    <div class="mx-auto mt-12 max-w-3xl">
+      <%= simple_form_for '',
+              url: maps_path,
+              method: :get,
+              html: { class: 'join max-md:join-vertical w-full', id: 'home_search' } do |f| %>
+        <%= f.input :search, label: false, wrapper: false, input_html: { class: "input input-lg max-md:py-3 md:input-xl join-item" }, placeholder: t('simple_form.placeholders.research.search') %>
+
+        <%= f.submit t('search'), class: 'btn md:btn-xl btn-primary join-item' %>
+      <% end %>
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        <div>
+          <input
+            type="checkbox"
+            id="monero-option"
+            value="monero"
+            class="sr-only peer"
+            name="coins[]"
+            form="home_search"
+            checked
+          >
+
+          <label
+            class="
+              badge bg-[#ff6600] text-white opacity-50
+              peer-checked:opacity-100 cursor-pointer peer-focus:outline-2 peer-focus:outline-offset-2 peer-focus:outline-[#ff6600]
+            "
+            for="monero-option"
+          >
+            ɱ Monero
+          </label>
+        </div>
+
+        <div>
+          <input
+            type="checkbox"
+            id="bitcoin-option"
+            value="bitcoin"
+            class="sr-only peer"
+            name="coins[]"
+            form="home_search"
+            checked
+          >
+
+          <label
+            class="
+              badge bg-[#f7931a] text-white opacity-50
+              peer-checked:opacity-100 cursor-pointer peer-focus:outline-2 peer-focus:outline-offset-2 peer-focus:outline-[#f7931a]
+            "
+            for="bitcoin-option"
+          >
+            ₿ Bitcoin
+          </label>
+        </div>
+
+        <div>
+          <input
+            type="checkbox"
+            id="june-option"
+            value="june"
+            class="sr-only peer"
+            name="coins[]"
+            form="home_search"
+            checked
+          >
+
+          <label
+            class="
+              badge bg-[#f8ed5a] text-black/90 opacity-50 peer-checked:opacity-100
+              cursor-pointer peer-focus:outline-2 peer-focus:outline-offset-2 peer-focus:outline-[#f8ed5a]
+            "
+            for="june-option"
+          >
+            Ğ1 June
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="container mx-auto px-4">
+    <div class="xl:w-2/3 mx-auto flex max-md:flex-col items-start justify-center gap-6">
+      <div class="flex-1 text-center space-y-6 md:order-1">
+        <%= image_tag logo_by_locale, class: 'w-48 mx-auto', alt: "Logo #{t('.title')}" %>
+
+        <h1 class="text-3xl font-bold">
+          <%= t('.title') %>
+        </h1>
+
+        <p class="text-xl"><%= t('.headline') %></p>
+
+        <%= link_to t("learn_more"), collective_path, class: "btn btn-primary max-sm:flex" %>
+      </div>
+
+      <figure class="md:order-0 mx-auto">
+        <% tracks = [ \
               { src: "first_market_gardener_monero.#{I18n.locale}.vtt", srclang: I18n.locale, default: I18n.locale != :fr } \
           ] %>
 
-          <%= video_with_tracks_tag 'first_market_gardener_monero.mp4',
+        <%= video_with_tracks_tag 'first_market_gardener_monero.mp4',
               tracks,
               controls: true,
               autoplay: false,
@@ -17,78 +170,172 @@
               poster: image_path('poster_first_market_gardener_monero.jpg'),
               data: { reload_subtitles: true } %>
 
-          <figcaption class="text-sm mt-1 text-center italic">
-            <%= t('.video_caption') %>
-          </figcaption>
-        </figure>
+        <figcaption class="text-sm mt-1 text-center italic">
+          <%= t('.video_caption') %>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-        <div class="lg:w-1/3 text-center order-1 lg:order-0">
-          <%= image_tag logo_by_locale, class: 'w-48 mx-auto mb-3 hover:scale-110 motion-safe:transition-transform', alt: "Logo #{t('.title')}" %>
+<%= render "welcome/coins", coins: @coins %>
 
-          <h1 class="text-3xl font-bold mb-6">
-            <%= t('.title') %>
-          </h1>
+<section class="py-10">
+  <div class="container mx-auto px-4">
+    <div class="flex max-sm:flex-col justify-between gap-4 mb-8">
+      <div class="space-y-2">
+        <h2 class="text-4xl font-bold">
+          <%= t("title", scope: "welcome.index.map") %>
+        </h2>
 
-          <p class="text-xl"><%= t('.headline') %></p>
-        </div>
+        <p class="opacity-60">
+          <%= t("subtitle", scope: "welcome.index.map") %>
+        </p>
+      </div>
 
-        <%= render 'questions_form', profiles: @profiles, levels: @levels %>
+      <%= link_to t("discover_all", scope: "welcome.index.map"), maps_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <div class="max-xl:container mx-auto px-4">
+    <div class="flex max-md:flex-col gap-3">
+      <div class="w-full lg:w-1/2 xl:w-2/3">
+        <%= render 'maps/map' %>
+      </div>
+
+      <div class="w-full lg:w-1/2 xl:w-1/3">
+        <ul class="list bg-base-200 rounded-box shadow-sm">
+          <% @merchants_sample.each do |merchant| %>
+            <li class="list-row hover:bg-base-100 motion-safe:transition-colors">
+              <div>
+                <%= render 'logo_or_initials', model: merchant %>
+              </div>
+
+              <div>
+                <p>
+                  <%= link_to merchant.name, merchant_path(merchant), class: "text-lg" %>
+                </p>
+
+                <% if merchant.category.present? %>
+                  <p class="badge badge-sm badge-secondary">
+                    <%= merchant.friendly_category %>
+                  </p>
+                <% end %>
+              </div>
+
+              <% if merchant.description %>
+                <p class="list-col-wrap text-xs opacity-70">
+                  <%= merchant.description.truncate(100) %>
+                </p>
+              <% end %>
+
+              <div class="flex items-center gap-3">
+                <%= coins_list(merchant.coins, with_logo: true, with_name: false, size: 'w-8', inline: true) %>
+
+                <%= link_to t("see"), merchant_path(merchant), class: "btn btn-primary btn-sm" %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<%= render 'debt_clock' %>
-<%= render 'coins', coins: @coins %>
+<section class="py-8">
+  <div class="container mx-auto px-4 space-y-8">
+    <div class="space-y-2">
+      <h2 class="text-4xl font-bold">
+        <%= t('welcome.projects.title') %>
+      </h2>
 
-<div class="container mx-auto flex flex-col lg:flex-row items-center lg:items-start">
-  <%= render 'maps/map', from_welcome: true %>
-
-  <div
-    class="
-      w-full lg:w-1/2 space-y-3 lg:overflow-y-auto pb-4 lg:border-l
-      dark:border-gray-500 p-3 lg:h-[600px]
-    "
-  >
-    <header class="text-center space-y-2">
-      <%= link_to maps_path, class: 'text-primary' do %>
-        <h2 class="text-3xl"><%= t('.map.title') %></h2>
-      <% end %>
-
-      <p class="text-lg"><%= t('.map.subtitle') %></p>
-
-      <div class="alert alert-info">
-        <%= t('.map.merchant_highlight_tooltip_html') %>
-      </div>
-    </header>
-
-    <div class="space-y-3">
-      <% @merchants_sample.each do |merchant| %>
-        <%= render 'merchants/merchant', merchant: merchant %>
-      <% end %>
-
-      <p class="text-center lg:text-right">
-        <%= link_to maps_path, class: 'btn btn-success btn-block' do %>
-          <%= t('.map.discover_all') %>
-        <% end %>
+      <p class="opacity-60">
+        <%= t('welcome.projects.headline') %>
       </p>
     </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6">
+      <%= render @projects %>
+    </div>
   </div>
-</div>
+</section>
 
-<%= render 'welcome/statistics',
-            statistics_presenter: @statistics_presenter,
-            merchants_statistics: @merchants_statistics,
-            countries_statistics: @countries_statistics,
-            coins_statistics: @coins_statistics,
-            categories_statistics: @categories_statistics %>
+<section class="py-8">
+  <div class="container mx-auto px-4 space-y-8">
+    <div class="space-y-2">
+      <h2 class="text-4xl font-bold">
+        <%= t('welcome.questions_form.title') %>
+      </h2>
 
-<%= render 'projects', projects: @projects %>
+      <p class="opacity-60">
+        <%= t('welcome.questions_form.subtitle') %>
+      </p>
+    </div>
 
-<% if @highlighted_tutorials %>
-  <%= render 'tutorials', highlighted_tutorials: @highlighted_tutorials %>
-<% end %>
+    <div class="flex max-md:flex-col gap-3 justify-between">
+      <%= render 'questions_form', profiles: @profiles, levels: @levels %>
 
-<%= render template: 'faqs/show' %>
+      <%= image_tag "banners/banner-btc-monero-farmer.jpeg", alt: "Banner farmer BTC/XMR", class: "max-md:hidden md:w-2/3 rounded-box object-cover border border-base-content/20 opacity-50" %>
+    </div>
+  </div>
+</section>
 
-<%# = render 'cbdc' %>
+<section class="py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex max-sm:flex-col justify-between gap-4 mb-8">
+      <div class="space-y-2">
+        <h2 class="text-4xl font-bold">
+          <%= t('statistics.show.title') %>
+        </h2>
+      </div>
+
+      <%= link_to t("welcome.statistics.see_all_statistics"), statistics_path, class: "btn btn-primary" %>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="stat bg-base-200 rounded-box">
+        <% merchants_count = @merchants_statistics[:enabled] %>
+
+        <div class="stat-value text-primary">
+          <%= number_with_delimiter(merchants_count) %>
+        </div>
+
+        <div class="stat-title">
+          <%= Merchant.model_name.human(count: merchants_count).capitalize %>
+        </div>
+      </div>
+
+      <div class="stat bg-base-200 rounded-box">
+        <div class="stat-value">
+          <%= number_with_delimiter(@coins_statistics[:bitcoin_world].count) %>
+        </div>
+
+        <div class="stat-title">
+          Bitcoin
+        </div>
+      </div>
+
+      <div class="stat bg-base-200 rounded-box">
+        <div class="stat-value">
+          <%= number_with_delimiter(@coins_statistics[:monero_world].count) %>
+        </div>
+
+        <div class="stat-title">
+          Monero
+        </div>
+      </div>
+
+      <div class="stat bg-base-200 rounded-box">
+        <% directories_count = @directories_statistics[:enabled].count %>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(directories_count) %>
+        </div>
+
+        <div class="stat-title">
+          <%= Directory.model_name.human(count: directories_count).capitalize %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

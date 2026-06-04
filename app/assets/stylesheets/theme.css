@@ -1,0 +1,22 @@
+.map-dark {
+    display: none;
+}
+
+html[data-theme="dracula"] .map-light {
+    display: none;
+}
+
+html[data-theme="dracula"] .map-dark {
+    display: block;
+}
+
+/* System theme */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) .map-light {
+        display: none;
+    }
+
+    html:not([data-theme]) .map-dark {
+        display: block;
+    }
+}

@@ -84,9 +84,9 @@ de:
         website: "https://meinewebseite.de"
 
       map:
-        search: Finde ein Geschäft nach Name, Adresse oder Beschreibung
+        search: Name, Adresse oder Beschreibung
       research:
-        search: Einen Händler nach Name, Adresse oder Beschreibung suchen
+        search: Name, Adresse oder Beschreibung suchen
 
       itinerary:
         my_address: Musterstraße 1, Berlin

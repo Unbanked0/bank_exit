@@ -33,15 +33,21 @@ es:
       headline: Un grupo voluntario y apartidista cuyo objetivo es ofrecer herramientas legales, pacíficas y soberanas al mayor número posible de ciudadanos, con el fin de promover la emancipación bancaria y la resiliencia.
       video_caption: Comentarios de un horticultor que utiliza Monero
 
+      headlines:
+        part1: Encuentra
+        part2:
+          pros: profesionales
+        part3: y paga con
+        subtitle: Descubre comercios físicos, tiendas en línea y servicios que aceptan pagos en BTC, XMR y June.
+
       map:
-        title: El mapa
-        subtitle: Comerciantes destacados
-        merchant_highlight_tooltip_html: |
-          Se muestran 3 comerciantes al azar entre los que aceptan Monero, están ubicados en Francia y no requieren KYC.
+        title: Mapa de comercios
+        subtitle: Explora los establecimientos cercanos
         discover_all: Descubra todos los distribuidores
 
     questions_form:
       title: Buscar a un contenido
+      subtitle: Accede directamente al contenido adaptado a tu perfil y nivel
 
     debt_clock:
       title: Deuda pública de Francia 🇫🇷 en tiempo real

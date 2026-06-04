@@ -1,54 +1,360 @@
-<header class="fixed w-full z-50 p-2 print:hidden">
-  <button
-    class="
-      flex items-center lg:mx-auto cursor-pointer rounded-box gap-3 pl-2
-      py-2 pr-6 border border-base-content/20 bg-base-200 hover:bg-base-100
-      transition-colors backdrop-blur-sm
-    "
-    data-controller="hotkey"
-    data-action="keydown.j@document->hotkey#click"
-    popovertarget="popover-menu"
-    style="anchor-name:--anchor-menu"
-    aria-label="<%= t('menu') %>"
-  >
-    <div class="<%= class_names([ "avatar", 'avatar-online': authenticated? ]) %>">
-      <div class="w-12 rounded-full">
-        <%= image_tag logo_by_locale, alt: 'Logo Bank-Exit' %>
+<% grocery = projects.find(&:grocery?)
+local_groups = projects.find(&:local_groups?)
+business_guide_tutorial = Tutorial.find('cryptopayment-for-business')
+accounting_project = projects.find(&:accounting?)
+
+active_map = params[:controller].in?(%w[maps merchants])
+active_directories = params[:controller] == "directories"
+active_guides = params[:controller].in?(%w[blogs tutorials ecosystems]) && params[:id] != 'flyer'
+active_about = params[:controller].in?(%w[local_groups collectives media])
+
+megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center text-base-content gap-6 lg:py-3" %>
+
+<header
+  class="
+    sticky top-0 bg-base-100/90 z-50 border-b border-base-content/10
+    backdrop-blur
+  "
+>
+  <div class="navbar shadow-sm">
+    <div class="navbar-start max-sm:w-full">
+      <%= link_to root_path,
+            class: "flex items-center gap-3",
+            data: {
+              controller: "hotkey",
+              action: "keydown.shift+0@document->hotkey#click"
+            } do %>
+        <%= image_tag logo_by_locale, class: 'w-12', alt: "Logo #{t('.title')}" %>
+
+        <div>
+          <div class="font-bold lg:text-lg">
+            <%= t('.bank_exit') %>
+          </div>
+
+          <div class="text-xs opacity-60">
+            <%= t(".subtitle") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="navbar-center text-base-content">
+      <div
+        class="megamenu max-lg:megamenu-vertical megamenu-full text-base-content"
+        id="main_menu"
+        popover
+      >
+        <span class="megamenu-active"></span>
+
+        <button popovertarget="d1">
+          <%= t(".merchants") %>
+        </button>
+
+        <div id="d1" class="bg-base-100/98" popover>
+          <div class="<%= megamenu_popover_class %>">
+            <ul class="menu menu-horizontal items-start gap-6">
+              <li>
+                <%= raw_link_to maps_path,
+                      class: class_names("text-primary": active_map),
+                      hotkey: 'shift+1' do %>
+                  <%= t('.map') %>
+                <% end %>
+
+                <ul class="mb-3">
+                  <% Setting::MERCHANTS_FILTER_COINS.each do |coin| %>
+                    <li>
+                      <%= link_to maps_path(coins: [coin]) do %>
+                        <div class="avatar">
+                          <div class="w-5">
+                            <%= image_tag "coins/logo-#{coin}.svg", alt: "Logo #{coin}" %>
+                          </div>
+                        </div>
+
+                        <%= coin.capitalize %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+
+                <ul class="mb-3">
+                  <% I18n.available_locales.each do |locale| %>
+                    <li>
+                      <% locale = :gb if locale == :en %>
+
+                      <%= link_to maps_path(country: locale.upcase) do %>
+                        <%= pretty_country_html(locale) %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+
+                <%= link_to statistics_path,
+                        class: class_names(
+                            "btn btn-secondary",
+                        ) do %>
+                  <%= t('statistics.show.title') %>
+                  <%= lucide_icon "chart-line" %>
+                <% end %>
+              </li>
+
+              <li>
+                <%= raw_link_to directories_path,
+                        class: class_names("text-primary": active_directories),
+                        hotkey: 'shift+2' do %>
+                  <%= t('.directories') %>
+                <% end %>
+
+                <ul>
+                  <% Setting::MERCHANTS_FILTER_COINS.each do |coin| %>
+                    <li>
+                      <%= link_to directories_path(coins: [coin]) do %>
+                        <div class="avatar">
+                          <div class="w-5">
+                            <%= image_tag "coins/logo-#{coin}.svg", alt: "Logo #{coin}" %>
+                          </div>
+                        </div>
+
+                        <%= coin.capitalize %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+
+            <%= link_to maps_path, class: "md:max-w-sm max-lg:hidden" do %>
+              <%= image_tag "map_light.jpg", class: "rounded-lg map-light", alt: "Map light preview", loading: :lazy %>
+              <%= image_tag "map_dark.jpg", class: "rounded-lg map-dark", alt: "Map dark preview", loading: :lazy %>
+            <% end %>
+          </div>
+        </div>
+
+        <button popovertarget="d2"><%= t('.projects') %></button>
+
+        <div id="d2" class="bg-base-100/98" popover>
+          <div class="<%= megamenu_popover_class %>">
+            <ul class="menu">
+              <li>
+                <span class="text-base-content/50 uppercase">
+                  <%= t('.projects') %>
+                </span>
+
+                <ul>
+                  <% projects.each do |project| %>
+                    <% next if project.identifier.in?(%w[map local_groups accounting]) %>
+
+                    <li>
+                      <%= link_to project.link,
+                                class: ('text-primary' if params[:id] == project.identifier),
+                                target: (:_blank if project.external?) do %>
+                        <%= project.title %>
+
+                        <% if project.external? %>
+                          <%= lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1' %>
+                        <% end %>
+                      <% end %>
+                    </li>
+                  <% end %>
+
+                  <li>
+                    <a target="_blank" href="https://coinadoptionscore.com">
+                      CoinAdoptionScore
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <%= link_to grocery.link, class: "md:max-w-sm max-lg:hidden" do %>
+              <%= image_tag "projects/epicerie_monero.png", class: "rounded-lg", alt: "Epicerie Libre Monero", loading: :lazy %>
+            <% end %>
+          </div>
+        </div>
+
+        <button
+          popovertarget="d3"
+          class="<%= class_names("text-primary": active_guides) %>"
+        >
+          <%= t(".guides") %>
+        </button>
+
+        <div id="d3" class="bg-base-100/98" popover>
+          <div class="<%= megamenu_popover_class %>">
+            <ul class="menu menu-horizontal items-start">
+              <li>
+                <span class="text-base-content/50 uppercase">
+                  <%= t('.articles') %>
+                </span>
+
+                <ul>
+                  <li>
+                    <%= link_to blogs_path,
+                        class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do %>
+                      <%= t('.blogs') %>
+                    <% end %>
+                  </li>
+
+                  <li>
+                    <%= link_to tutorials_path,
+                        class: ('text-primary' if params[:controller] == 'tutorials' && !params[:id].in?(%w[cryptopayment-for-business accounting])) do %>
+                      <%= t('.tutorials') %>
+                    <% end %>
+                  </li>
+
+                  <li>
+                    <%= link_to ecosystem_path,
+                      class: ('text-primary' if params[:controller] == 'ecosystems') do %>
+                      <%= t('ecosystems.show.title') %>
+                      <%= image_tag icon_by_coin('monero'), class: 'w-5', alt: "Monero" %>
+                    <% end %>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="text-base-content/50 uppercase">
+                  <%= t('.pros') %>
+                </span>
+
+                <ul>
+                  <li>
+                    <a
+                      class="<%= ('text-primary' if params[:id] == 'cryptopayment-for-business') %>"
+                      href="<%= tutorial_path(business_guide_tutorial.identifier) %>"
+                    >
+                      <%= business_guide_tutorial.short_title %>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="<%= ('text-primary' if params[:id] == 'accounting') %>"
+                      href="<%= url_for(accounting_project.link) %>"
+                    >
+                      <%= accounting_project.title %>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="avatar-group -space-x-6 md:max-w-sm max-lg:hidden">
+              <div class="avatar">
+                <div class="w-16">
+                  <%= image_tag "coins/logo-monero.svg", alt: "Monero logo", loading: :lazy %>
+                </div>
+              </div>
+
+              <div class="avatar">
+                <div class="w-16">
+                  <%= image_tag "coins/logo-bitcoin.svg", alt: "Bitcoin logo", loading: :lazy %>
+                </div>
+              </div>
+
+              <div class="avatar">
+                <div class="w-16">
+                  <%= image_tag "coins/logo-june.svg", alt: "June logo", loading: :lazy %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          popovertarget="d4"
+          class="<%= class_names("text-primary": active_about) %>"
+        >
+          <%= t('about') %>
+        </button>
+
+        <div id="d4" class="bg-base-100/98" popover>
+          <div class="<%= megamenu_popover_class %>">
+            <ul class="menu md:menu-horizontal items-start">
+              <li>
+                <span class="text-base-content/50 uppercase">Le Collectif</span>
+
+                <ul>
+                  <li>
+                    <a
+                      class="<%= ('text-primary' if params[:controller] == 'collectives') %>"
+                      href="<%= collective_path %>"
+                    >
+                      <%= t('collectives.show.title') %>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="<%= ('text-primary' if params[:controller] == 'local_groups') %>"
+                      href="<%= local_groups_path %>"
+                    >
+                      <%= local_groups.title %>
+                      <%= inline_svg_tag "contacts/telegram.svg", class: 'inline-flex bg-white text-[#27A7E7] w-5 rounded-full', title: 'Telegram', alt: 'Logo Telegram' %>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="<%= ('text-primary' if params[:controller] == 'media') %>"
+                      href="<%= media_path %>"
+                    >
+                      <%= t('media.index.title') %>
+                    </a>
+                  </li>
+
+                  <li>
+                    <%= link_to '#contact', data: { turbo: false }, onclick: "main_menu.hidePopover();" do %>
+                      <%= t('.contact') %>
+                      <%= lucide_icon "anchor", class: "w-4" %>
+                    <% end %>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="avatar-group -space-x-6 md:max-w-sm max-lg:hidden">
+              <div class="avatar">
+                <div class="w-28">
+                  <%= image_tag logo_by_locale, alt: "Bank-Exit logo", loading: :lazy %>
+                </div>
+              </div>
+
+              <div class="avatar">
+                <div class="w-28">
+                  <%= image_tag 'logo_by_mondetta.jpeg', alt: 'Logo Bank-Exit by Mondetta' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="space-y-1">
-      <p class="font-semibold">
-        <span><%= t('application.nav.collectif') %></span>
-        <span><%= t('application.nav.bank_exit') %></span>
-      </p>
+    <div class="navbar-end gap-2">
+      <div class="flex items-center gap-0.5">
+        <button
+          class="btn btn-ghost btn-circle"
+          data-controller="hotkey"
+          data-action="keydown.ctrl+k@document->hotkey#click"
+          onclick="search_modal.showModal()"
+        >
+          <%= lucide_icon 'search', class: "h-5 w-5" %>
+        </button>
 
-      <p class="text-xs">
-        <span class="uppercase text-base-content/70 mr-2">
-          <%= t('menu') %>
-        </span>
+        <%= hotkey_label(['ctrl', 'k'], size: 'xs') %>
+      </div>
 
-        <%# kbd-xs / kbd-sm %>
-        <%= hotkey_label('j', size: 'xs') %>
-      </p>
+      <%= link_to new_merchant_proposal_path, class: 'btn btn-primary btn-sm max-md:hidden' do %>
+        <%= t("maps.sidebar.suggest_merchant") %>
+      <% end %>
+
+      <button
+        class="btn btn-square btn-soft lg:hidden"
+        popovertarget="main_menu"
+      >
+        <%= lucide_icon "menu" %>
+      </button>
     </div>
-  </button>
-
-  <%= render 'nav', projects: projects %>
-
-  <div
-    class="
-      absolute top-2 right-2 flex items-center gap-3 bg-base-200/80
-      rounded-box border border-base-content/20 px-2 py-1
-    "
-  >
-    <%= render 'language_switcher' %>
-
-    <%= link_to github_organization_url,
-                target: :_blank,
-                title: t('.github_title') do %>
-      <%= lucide_icon 'github', class: "w-4" %>
-    <% end %>
   </div>
 
   <div id="flashes"><%= render 'flashes' %></div>

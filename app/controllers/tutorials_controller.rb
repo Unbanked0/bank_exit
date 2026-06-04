@@ -2,9 +2,9 @@ class TutorialsController < PublicController
   before_action :set_tutorial, only: :show
   before_action :set_coins, only: :show
 
-  add_breadcrumb proc { I18n.t('application.nav.menu.home') }, :root_path
-  add_breadcrumb proc { I18n.t('application.nav.menu.articles') }
-  add_breadcrumb proc { I18n.t('application.nav.menu.tutorials') }, :tutorials_path
+  add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
+  add_breadcrumb proc { I18n.t('application.header.guides') }
+  add_breadcrumb proc { I18n.t('application.header.tutorials') }, :tutorials_path
 
   # @route GET /fr/tutorials {locale: "fr"} (tutorials_fr)
   # @route GET /es/tutorials {locale: "es"} (tutorials_es)

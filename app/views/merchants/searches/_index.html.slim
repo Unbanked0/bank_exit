@@ -65,7 +65,7 @@ ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scr
       = lucide_icon 'store', class: 'w-20 h-auto'
       p.text-lg= t('empty_results')
 
-= render 'pagination', pagy: pagy, add_page_to_url: false
+= render 'pagination', pagy: pagy, add_page_to_url: false, search_path: merchants_path
 
 - unless merchants.empty?
   hr.border-base-content/20
@@ -73,7 +73,7 @@ ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scr
   footer.p-2.text-xs.flex.items-center.justify-between
     p.badge.badge-secondary.badge-xs
       = Directory.model_name.human.capitalize
-    p.hide-on-touch.flex.items-center.gap-2
+    p.hide-on-touch.max-sm:hidden.md:flex.items-center.gap-2
       span
         == hotkey_label('tab', size: 'xs')
         =< t('or')

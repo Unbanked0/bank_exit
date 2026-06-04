@@ -1,25 +1,22 @@
 es:
   application:
-    nav:
+    header:
       collectif: Colectivo
       bank_exit: Bank-Exit
-
-      menu:
-        home: Inicio
-        map: El mapa
-        directories: El directorio
-        projects: Los proyectos
-        monero_wallet: Monedero Monero
-        articles: Los artículos
-        tutorials: Los tutoriales
-        blogs: El blog
-        faq: Preguntas más frecuentes (FAQ)
-        contact: Contacto
-        pros: Pros
-        freedom_grocers: La Tienda Libre
-
-    header:
-      github_title: Enlace al repositorio Github
+      subtitle: Estrategias de desbancarización
+      home: Inicio
+      map: Mapa
+      merchants: Comerciantes
+      directories: Directorio
+      projects: Proyectos
+      guides: Guías
+      articles: Artículos
+      tutorials: Tutoriales
+      blogs: Blog
+      faq: Preguntas más frecuentes (FAQ)
+      contact: Contacto
+      pros: Pros
+      freedom_grocers: La Tienda Libre
 
     theme_switcher:
       switch_to_light: Cambiar al tema claro

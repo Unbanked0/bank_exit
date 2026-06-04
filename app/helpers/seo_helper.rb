@@ -75,7 +75,7 @@ module SEOHelper
           '@type': 'ListItem',
           position: 1,
           item: {
-            name: I18n.t('application.nav.menu.home'),
+            name: I18n.t('application.header.home'),
             url: root_url
           }
         },
@@ -83,7 +83,7 @@ module SEOHelper
           '@type': 'ListItem',
           position: 2,
           item: {
-            name: I18n.t('application.nav.menu.blogs'),
+            name: I18n.t('application.header.blogs'),
             url: blogs_url
           }
         },
@@ -110,7 +110,7 @@ module SEOHelper
           '@type': 'ListItem',
           position: 1,
           item: {
-            name: I18n.t('application.nav.menu.home'),
+            name: I18n.t('application.header.home'),
             url: root_url
           }
         },
@@ -118,7 +118,7 @@ module SEOHelper
           '@type': 'ListItem',
           position: 2,
           item: {
-            name: I18n.t('application.nav.menu.tutorials'),
+            name: I18n.t('application.header.tutorials'),
             url: tutorials_url
           }
         },

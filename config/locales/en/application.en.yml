@@ -1,27 +1,25 @@
 en:
   application:
     nav:
-      collectif: Bank-Exit
-      bank_exit: Collective
       admin_area: Admin area
       back_to_my_account: Back to my real account
 
-      menu:
-        home: Home
-        map: Map
-        directories: Online directory
-        projects: Projects
-        monero_wallet: Monero wallet
-        articles: Articles
-        tutorials: Tutorials
-        blogs: Blog
-        faq: Frequently Asked Questions (FAQ)
-        contact: Contact
-        pros: Pros
-        freedom_grocers: Freedom Grocers
-
     header:
-      github_title: Link to the Github repository
+      bank_exit: Bank-Exit
+      collectif: Collective
+      subtitle: Debanking Strategies
+      home: Home
+      map: Map
+      directories: Online directory
+      projects: Projects
+      guides: Guides
+      articles: Articles
+      tutorials: Tutorials
+      blogs: Blog
+      faq: Frequently Asked Questions (FAQ)
+      contact: Contact
+      pros: Pros
+      freedom_grocers: Freedom Grocers
 
     theme_switcher:
       switch_to_light: Switch to light mode

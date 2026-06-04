@@ -3,8 +3,8 @@ class MerchantsController < PublicController
 
   include Commentable if -> { comments_enabled? }
 
-  add_breadcrumb proc { I18n.t('application.nav.menu.home') }, :root_path
-  add_breadcrumb proc { I18n.t('application.nav.menu.map') }, :map_referer_path
+  add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
+  add_breadcrumb proc { I18n.t('application.header.map') }, :map_referer_path
 
   # @route GET /fr/merchants {locale: "fr"} (merchants_fr)
   # @route GET /es/merchants {locale: "es"} (merchants_es)
@@ -12,15 +12,7 @@ class MerchantsController < PublicController
   # @route GET /it/merchants {locale: "it"} (merchants_it)
   # @route GET /en/merchants {locale: "en"} (merchants_en)
   # @route GET /merchants
-  def index
-    if params[:page].nil? || params.expect(:page).to_i == 1
-      directories_filter = Directories::Filter.new(query: query)
-      @directories = DirectoryDecorator.wrap(directories_filter.call)
-    end
-
-    @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo)
-    @merchants = MerchantDecorator.wrap(merchants)
-  end
+  def index; end
 
   # @route GET /fr/merchants/:id {locale: "fr"} (merchant_fr)
   # @route GET /es/merchants/:id {locale: "es"} (merchant_es)
