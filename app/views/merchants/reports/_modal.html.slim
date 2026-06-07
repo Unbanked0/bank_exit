@@ -3,7 +3,7 @@
 - content_for(:modal_title) do
   = merchant.name
 
-= render_modal do
+= render_modal auto_open: true do
   .alert.alert-info
     p.text-sm= t('introduction_html', scope: i18n_scope)
 

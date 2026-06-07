@@ -3,7 +3,7 @@
 - content_for(:modal_title) do
   = tutorial.title
 
-= render_modal do
+= render_modal auto_open: true do
   = simple_form_for tutorial_report,
                     url: tutorial_report_path(tutorial.identifier),
                     method: :post,

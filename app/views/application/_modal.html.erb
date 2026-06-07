@@ -1,8 +1,8 @@
-<%# locals: (id: nil, data: {}, data_attributes: {}, modal_size: "max-w-xl", modal_title: nil, modal_body: nil, modal_body_html: nil) %>
+<%# locals: (id: nil, data: {}, data_attributes: {}, modal_size: "max-w-xl", modal_title: nil, modal_body: nil, modal_body_html: nil, auto_open: false) %>
 
 <% is_turbo_confirm = id == "turbo-confirm"
 
-data.merge!(controller: :modal) if request.format.turbo_stream? && (modal_body.present? || modal_body_html.present?)
+data.merge!(controller: :modal) if auto_open
 
 modal_box_classes = class_names(
   "modal-box",

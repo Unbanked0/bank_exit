@@ -1,6 +1,7 @@
 = turbo_stream.update :modal do
   = render_modal modal_title: @contact.title,
-                modal_size: 'max-w-2xl' do
+                 modal_size: 'max-w-2xl',
+                 auto_open: true do
     - if @contact.sticker
       = link_to @contact.main_link, target: :_blank do
         = image_tag @contact.sticker, class: 'lg:max-w-2/3 mx-auto'
