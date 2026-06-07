@@ -12,7 +12,7 @@ ul.overflow-y-auto.divide-y.divide-base-content/20.motion-safe:scroll-smooth.scr
 
               h3= highlight(directory.name, params[:query])
 
-            == coins_list(directory.coin_wallets.map(&:coin), with_logo: true, with_name: false, size: 'w-5', inline: true)
+            == coins_list(directory.coin_wallets.enabled.map(&:coin), with_logo: true, with_name: false, size: 'w-5', inline: true)
 
           - if directory.description.present?
             .truncate.text-sm.mt-2

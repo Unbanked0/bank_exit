@@ -48,7 +48,7 @@ class Directory < ApplicationRecord
   scope :by_coins, lambda { |coins|
     # Handle BTC onchain and Lightning in a similar way
     coins <<= 'lightning' if coins.include?('bitcoin')
-    joins(:coin_wallets).where(coin_wallets: { coin: coins })
+    joins(:coin_wallets).merge(CoinWallet.enabled).where(coin_wallets: { coin: coins })
   }
 
   def allowed_categories
