@@ -8,7 +8,7 @@ module Directories
     end
 
     def call
-      directories = relation.order(position: :asc)
+      directories = relation.order(position: :asc).with_attached_logo.eager_load(:string_translations, :text_translations)
 
       directories = Directories::AroundMeFilter.call(directories, geocoder_ip) if around_me? && geocoder_ip.present?
 
