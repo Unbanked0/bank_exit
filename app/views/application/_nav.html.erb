@@ -313,7 +313,7 @@ active_other = params[:controller].in?(%w[local_groups collectives ecosystems me
       </li>
 
       <li>
-        <%= link_to '#contact' do %>
+        <%= link_to '#contact', data: { turbo: false } do %>
           <%= t('.menu.contact') %>
         <% end %>
       </li>

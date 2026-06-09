@@ -19,7 +19,8 @@ export default class MapController extends MapBaseController {
     this.bounds;
     this.#showLoader();
 
-    window.addEventListener("popstate", this.handlePopState.bind(this));
+    this.boundHandlePopState = this.handlePopState.bind(this);
+    window.addEventListener("popstate", this.boundHandlePopState);
   }
 
   async appear() {
@@ -149,7 +150,7 @@ export default class MapController extends MapBaseController {
       this.otherMarkers.clearLayers();
     }
 
-    window.removeEventListener("popstate", this.handlePopState.bind(this));
+    window.removeEventListener("popstate", this.boundHandlePopState);
 
     super.disconnect();
   }
@@ -228,7 +229,9 @@ export default class MapController extends MapBaseController {
     return localStorage.getItem("force-gesture-handling") == "true";
   }
 
+  // FIXME: Disabled to prevent backend call when
+  // clicking anchor link.
   handlePopState(_e) {
-    Turbo.visit(window.location.href);
+    // Turbo.visit(window.location.href);
   }
 }
