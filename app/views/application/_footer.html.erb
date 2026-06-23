@@ -29,9 +29,8 @@
             block cursor-pointer hover:text-primary
             motion-safe:transition-colors
           "
-          data-action="click->dispatcher#dispatch"
-          data-controller="dispatcher"
-          data-dispatch-event="help:open"
+          commandfor="modal_help"
+          command="show-modal"
         >
           <%= lucide_icon 'circle-question-mark', class: 'w-4 inline-flex' %>
           <%= t('help') %>
@@ -49,9 +48,8 @@
             block cursor-pointer hover:text-primary
             motion-safe:transition-colors
           "
-          data-action="click->dispatcher#dispatch"
-          data-controller="dispatcher"
-          data-dispatch-event="about:open"
+          commandfor="modal_about"
+          command="show-modal"
         >
           <%= lucide_icon 'info', class: 'w-4 inline-flex' %>
           <%= t('about') %>
