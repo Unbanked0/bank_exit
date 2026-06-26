@@ -1,15 +1,15 @@
 module HotkeysHelper
   def hotkey_label(hotkey, size: 'sm')
-    klass = "kbd kbd-#{size} bg-base-100 text-base-content hide-on-touch"
+    klass = "kbd kbd-#{size} text-base-content print:hidden hide-on-touch max-sm:hidden"
 
-    content_tag :span, class: 'hide-on-touch print:hidden' do
-      if hotkey.is_a?(Array)
+    if hotkey.is_a?(Array)
+      content_tag :span, class: "hide-on-touch max-sm:hidden print:hidden text-#{size}" do
         hotkey.map do |key|
-          tag.kbd(key.capitalize, class: klass)
+          tag.kbd(key.capitalize, class: "kbd kbd-#{size} text-base-content")
         end.join('&nbsp;+&nbsp;').html_safe # rubocop:disable Rails/OutputSafety
-      else
-        tag.kbd(hotkey.capitalize, class: klass).html_safe # rubocop:disable Rails/OutputSafety
       end
+    else
+      tag.kbd(hotkey.capitalize, class: klass).html_safe # rubocop:disable Rails/OutputSafety
     end
   end
 end
