@@ -17,7 +17,7 @@ pin 'leaflet', to: 'https://ga.jspm.io/npm:leaflet@2.0.0-alpha.1/dist/leaflet.js
 pin 'leaflet-v1-polyfill'
 pin 'leaflet-gesture-handling', to: 'https://ga.jspm.io/npm:leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js'
 pin 'leaflet.markercluster', to: 'https://ga.jspm.io/npm:@kristjan.esperanto/leaflet.markercluster@3.0.0/dist/leaflet.markercluster.js'
-pin 'leaflet.fullscreen', to: 'https://ga.jspm.io/npm:leaflet.fullscreen@5.3.0/dist/Control.FullScreen.js'
+pin 'leaflet.fullscreen', to: 'https://ga.jspm.io/npm:leaflet.fullscreen@5.3.1/dist/Control.FullScreen.js'
 pin 'polyline-encoded', to: 'https://ga.jspm.io/npm:polyline-encoded@0.0.9/Polyline.encoded.js', preload: :application
 
 pin 'turbo_power', preload: :application # @0.7.1
@@ -26,4 +26,4 @@ pin 'autocomplete', to: 'autocomplete.esm.min.js', preload: :application # @2.0.
 pin 'chartkick', to: 'chartkick.js', preload: :application
 pin 'Chart.bundle', to: 'Chart.bundle.js', preload: :application
 
-pin 'sortablejs', to: 'https://ga.jspm.io/npm:sortablejs@1.15.6/modular/sortable.core.esm.js'
+pin 'sortablejs', to: 'https://ga.jspm.io/npm:sortablejs@1.15.7/modular/sortable.core.esm.js'
