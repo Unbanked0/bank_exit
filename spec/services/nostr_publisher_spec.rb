@@ -149,12 +149,12 @@ RSpec.describe NostrPublisher do
         it 'has correct content', :aggregate_failures do
           content = published_event.event.content
 
-          expect(content).to match(/Discover \*\*3\*\* newly listed Bitcoin \(₿\) merchants now featured on the /)
-          expect(content).to match(/Bitcoin Coffee/)
-          expect(content).to match(/MM salon de thé, pâtisserie, chocolaterie/)
-          expect(content).to match(/Feel SO light/)
+          expect(content).to include('Discover **3** newly listed Bitcoin (₿) merchants now featured on the ')
+          expect(content).to include('Bitcoin Coffee')
+          expect(content).to include('MM salon de thé, pâtisserie, chocolaterie')
+          expect(content).to include('Feel SO light')
           expect(content).to match(/_Merchants are based on free and open data from OpenStreetMap. Information may change over time and could differ from what is shown here, with some links potentially no longer existing._/)
-          expect(content).not_to match(/Deleted merchant/)
+          expect(content).not_to include('Deleted merchant')
         end
 
         it 'has correct response payload', :aggregate_failures do
@@ -193,7 +193,7 @@ RSpec.describe NostrPublisher do
         end
 
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XBT Bitcoin]) }
-        it { expect(content).to match(/Discover \*\*1\*\* newly listed Bitcoin \(₿\) merchant now featured on the /) }
+        it { expect(content).to include('Discover **1** newly listed Bitcoin (₿) merchant now featured on the ') }
       end
 
       context 'when merchant is Bitcoin LN' do
@@ -204,7 +204,7 @@ RSpec.describe NostrPublisher do
         end
 
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XBT Bitcoin LightningNetwork]) }
-        it { expect(content).to match(/Discover \*\*1\*\* newly listed Bitcoin Lightning \(⚡\) merchant now featured on the /) }
+        it { expect(content).to include('Discover **1** newly listed Bitcoin Lightning (⚡) merchant now featured on the ') }
       end
 
       context 'when merchant is Bitcoin LN contactless' do
@@ -215,7 +215,7 @@ RSpec.describe NostrPublisher do
         end
 
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XBT Bitcoin LightningNetwork]) }
-        it { expect(content).to match(/Discover \*\*1\*\* newly listed Bitcoin Lightning \(⚡\) merchant now featured on the /) }
+        it { expect(content).to include('Discover **1** newly listed Bitcoin Lightning (⚡) merchant now featured on the ') }
       end
 
       context 'when merchant is Monero' do
@@ -226,7 +226,7 @@ RSpec.describe NostrPublisher do
         end
 
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XMR Monero]) }
-        it { expect(content).to match(/Discover \*\*1\*\* newly listed Monero \(🔒\) merchant now featured on the /) }
+        it { expect(content).to include('Discover **1** newly listed Monero (🔒) merchant now featured on the ') }
       end
 
       context 'when merchant is June' do
@@ -237,7 +237,7 @@ RSpec.describe NostrPublisher do
         end
 
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XG1 June]) }
-        it { expect(content).to match(/Discover \*\*1\*\* newly listed June \(🟡\) merchant now featured on the /) }
+        it { expect(content).to include('Discover **1** newly listed June (🟡) merchant now featured on the ') }
       end
 
       context 'when merchants have multiple coins' do
@@ -248,7 +248,7 @@ RSpec.describe NostrPublisher do
         end
 
         it { expect(tags).to match_nostr_tags(t: %w[Bank-Exit SortieDeBanque XMR Monero XG1 June]) }
-        it { expect(content).to match(/Discover \*\*1\*\* newly listed Monero \(🔒\), June \(🟡\) merchant now featured on the /) }
+        it { expect(content).to include('Discover **1** newly listed Monero (🔒), June (🟡) merchant now featured on the ') }
       end
 
       context 'when merchants category is unknown' do
@@ -317,7 +317,7 @@ RSpec.describe NostrPublisher do
       it 'has correct content' do
         content = published_event.event.content
 
-        expect(content).to match(/Bitcoin Coffee/)
+        expect(content).to include('Bitcoin Coffee')
       end
     end
   end
