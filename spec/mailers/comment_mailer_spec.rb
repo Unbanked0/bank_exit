@@ -24,7 +24,7 @@ RSpec.describe CommentMailer do
     end
 
     it 'renders the body', :aggregate_failures do
-      expect(mail.body.encoded).to match(/Lorem ispum spam/)
+      expect(mail.body.encoded).to include('Lorem ispum spam')
       expect(mail.body.encoded).to match(/#{I18n.t('activerecord.attributes.comment.flag_reasons.spam')}/)
     end
 

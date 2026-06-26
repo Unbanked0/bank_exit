@@ -31,7 +31,7 @@ RSpec.describe MerchantMailer do
     end
 
     it 'renders the body' do
-      expect(mail.body.encoded).to match(/Great merchant XMR/)
+      expect(mail.body.encoded).to include('Great merchant XMR')
     end
   end
 
@@ -52,7 +52,7 @@ RSpec.describe MerchantMailer do
     end
 
     it 'renders the body' do
-      expect(mail.body.encoded).to match(/Lorem ispum error on coins/)
+      expect(mail.body.encoded).to include('Lorem ispum error on coins')
     end
 
     it 'creates a TXT file of the mail' do

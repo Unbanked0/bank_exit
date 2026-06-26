@@ -37,7 +37,7 @@ RSpec.describe DirectoryMailer do
     end
 
     it 'renders the body' do
-      expect(mail.body.encoded).to match(%r{admin/directories/1/edit})
+      expect(mail.body.encoded).to include('admin/directories/1/edit')
     end
   end
 end
