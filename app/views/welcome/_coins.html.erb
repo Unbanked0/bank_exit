@@ -1,18 +1,19 @@
-<div class="hero bg-fixed bg-banner-liberty">
-  <div class="hero-overlay"></div>
+<section class="py-8">
+  <div class="container mx-auto px-4 space-y-8">
+    <div class="flex max-sm:flex-col justify-between items-center gap-4 mb-8">
+      <div class="space-y-2">
+        <h2 class="text-4xl font-bold">
+          <%= t('.title') %>
+        </h2>
 
-  <div class="hero-content py-20">
-    <div class="max-w-5xl space-y-8">
-      <header class="text-center space-y-5">
-        <h2 class="text-3xl font-bold"><%= t('.title') %></h2>
-        <p class="text-lg"><%= t('.headline') %></p>
-      </header>
-
-      <div class="grid grid-cols-2 lg:grid-cols-5 gap-6">
-        <%= render coins %>
+        <p class="opacity-60">
+          <%= t('.headline') %>
+        </p>
       </div>
+    </div>
 
-      <%= turbo_frame_tag :coin %>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <%= render coins %>
     </div>
   </div>
-</div>
+</section>

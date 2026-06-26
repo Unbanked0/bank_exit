@@ -1,0 +1,19 @@
+<%= turbo_stream.update :modal do %>
+  <%= render_modal modal_title: name_with_ticker(@coin),
+                   modal_size: "max-w-3xl",
+                   auto_open: true do %>
+    <% @coin.description.each do |description| %>
+      <p><%= description %></p>
+    <% end %>
+
+    <% if @coin.links? %>
+      <ul class="list-disc list-inside mt-3">
+        <% @coin.links.each do |link| %>
+          <li class="truncate">
+            <%= link_to link, link, target: :_blank %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+<% end %>

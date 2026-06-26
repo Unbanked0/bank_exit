@@ -1,4 +1,17 @@
 module CoinsHelper
+  def name_with_ticker(coin)
+    value = image_tag(coin.image,
+                      title: coin.name,
+                      alt: "Logo for #{coin.name}",
+                      loading: :lazy,
+                      class: 'w-10 rounded-full inline-flex mr-2')
+    value += coin.name.capitalize
+
+    return value unless coin.ticker?
+
+    value + content_tag(:span, " (#{coin.ticker})", class: 'opacity-60')
+  end
+
   def icon_by_coin(coin)
     case coin.to_sym
     when :gold then 'coins/logo-gold.webp'

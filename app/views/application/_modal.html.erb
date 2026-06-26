@@ -34,7 +34,7 @@ modal_body_classes = class_names(
     <header class="sticky">
       <% if modal_title.present? %>
         <h3 class="text-lg font-bold">
-          <%= modal_title %>
+          <%== modal_title %>
         </h3>
       <% elsif content_for?(:modal_title) %>
         <h3 class="text-lg font-bold">
