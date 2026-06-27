@@ -1,0 +1,42 @@
+<div class="fab">
+  <div
+    title="<%= current_user.email_address %>"
+    tabindex="0"
+    role="button"
+    class="btn btn-lg btn-circle <%= color_for_role(current_user.role).join(' ') %> uppercase"
+    data-controller="hotkey"
+    data-action="keydown.z@document->hotkey#click"
+  >
+    <%= current_user.email_address.first(2) %>
+  </div>
+
+  <div class="fab-close">
+    <span class="badge"><%= t('close') %></span>
+
+    <span class="btn btn-circle btn-lg btn-error">✕</span>
+  </div>
+
+  <div>
+    <span class="badge"><%= t('application.nav.admin_area') %></span>
+
+    <%= link_to admin_root_path, class: "btn btn-lg btn-circle btn-success" do %>
+      <%= lucide_icon "lock-keyhole" %>
+    <% end %>
+  </div>
+
+  <div>
+    <span class="badge"><%= t('admin.sidebar.edit_my_profile') %></span>
+
+    <%= link_to edit_admin_profile_path, class: "btn btn-lg btn-circle btn-info" do %>
+      <%= lucide_icon "user-pen" %>
+    <% end %>
+  </div>
+
+  <div>
+    <span class="badge"><%= t('logout') %></span>
+
+    <%= link_to session_path, data: { turbo_method: :delete }, class: "btn btn-lg btn-circle btn-warning" do %>
+      <%= lucide_icon "log-out", class: "-rotate-180" %>
+    <% end %>
+  </div>
+</div>

@@ -63,6 +63,7 @@
     <%= render 'modal_about' %>
 
     <%= render 'ribbon' if FeatureFlag.enabled?(:ribbon) %>
+    <%= render "authenticated_menu" if authenticated? %>
 
     <%= turbo_stream_from :flashes %>
     <%= turbo_stream_from [:flashes, I18n.locale] %>
