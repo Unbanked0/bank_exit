@@ -49,4 +49,6 @@
     <% heart = lucide_icon('heart', class: 'h-5 w-5 stroke-red-600 fill-red-600 inline-flex mx-0.5') %>
     <%= t('application.footer.developed_by_html', heart: heart) %>
   </p>
+
+  <%= render 'ribbon' if FeatureFlag.enabled?(:ribbon) %>
 <% end %>
