@@ -19,6 +19,7 @@
     =HoGK
     -----END PGP PUBLIC KEY BLOCK-----
   pgp_key_fingerprint: 27F77D8D54A9A6B9CBB9A199290C7791E938D9CB
+  color_hex: "#f68067"
 
 - title: Session
   links:
@@ -26,21 +27,25 @@
   icon: session.svg
   public_key: 05d704f204260106008e80408c427d9819f71008dd7eedb874db6db1d2b5fcce78
   sticker: contacts/box_session.png
+  color_hex: "#00F782"
 
 - title: Youtube
   links:
     - https://www.youtube.com/@sortiedebanque
   icon: youtube.svg
+  color_hex: "#ff0000"
 
 - title: Twitter / X
   links:
     - https://x.com/SortieDeBanque
   icon: twitter.svg
+  color_hex: "#000000"
 
 - title: Telegram
   links:
     - http://t.me/SortieDeBanque
   icon: telegram.svg
+  color_hex: "#0088cc"
 
 - title: Nostr
   links:
@@ -49,8 +54,10 @@
   icon: nostr.svg
   public_key: npub1ve5njaylrety85mv3tlqszs6jw8ld7vnezlr5pp753rkt4lelz9sqqffzl
   sticker: contacts/box_nostr.png
+  color_hex: "#b780ff"
 
 - title: Linktree
   links:
     - https://linktr.ee/sortiedebanque
   icon: linktree.svg
+  color_hex: "#42e661"

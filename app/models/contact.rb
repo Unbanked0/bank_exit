@@ -10,6 +10,7 @@ class Contact
   attribute :sticker, :string
   attribute :pgp_key, :string
   attribute :pgp_key_fingerprint, :string
+  attribute :color_hex, :string
 
   attr_reader :contact
   attr_accessor :links
