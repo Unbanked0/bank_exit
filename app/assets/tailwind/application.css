@@ -276,3 +276,9 @@ select {
         scrollbar-gutter: stable;
     }
 }
+
+@property --aura-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
