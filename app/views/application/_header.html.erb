@@ -336,7 +336,8 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
           class="btn btn-ghost btn-circle"
           data-controller="hotkey"
           data-action="keydown.ctrl+k@document->hotkey#click"
-          onclick="search_modal.showModal()"
+          commandfor="search_modal"
+          command="show-modal"
         >
           <%= lucide_icon 'search', class: "h-5 w-5" %>
         </button>
