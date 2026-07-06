@@ -25,7 +25,7 @@ class PublicController < ApplicationController
       @directories = DirectoryDecorator.wrap(directories_filter.call)
     end
 
-    @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo.order(updated_at: :asc))
+    @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo.order(last_survey_on: :desc))
     @merchants = MerchantDecorator.wrap(merchants)
   end
 
