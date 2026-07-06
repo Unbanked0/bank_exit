@@ -1,5 +1,7 @@
 article
-  .hero.bg-fixed style=("background-image: url(#{rails_blob_path(@merchant.banner.variant(:thumb))})" if @merchant.banner.attached?) class=(@merchant.banner.attached? ? 'bg-cover lg:bg-contain' : 'bg-banner-default')
+  .hero.bg-fixed.relative style=("background-image: url(#{rails_blob_path(@merchant.banner.variant(:thumb))})" if @merchant.banner.attached?) class=(@merchant.banner.attached? ? 'bg-cover lg:bg-contain' : 'bg-banner-default')
+    .absolute.top-3.right-3
+      = render 'merchants/view_sections/dropdown_actions', merchant: @merchant, btn_klass: 'btn-md'
     .hero-overlay
     .hero-content.hero-content-main
       header.max-w-xl
@@ -21,9 +23,7 @@ article
               = merchant_kyc_no_kyc(@merchant.ask_kyc?, klass: 'w-12 h-12 text-xl')
 
   .article-body.max-w-5xl class="space-y-8!"
-    .flex.items-center.justify-between.gap-2
-      = render 'breadcrumb'
-      = render 'merchants/view_sections/dropdown_actions', merchant: @merchant, btn_klass: 'btn-lg'
+    = render 'breadcrumb'
 
     - if @merchant.deleted?
       p.alert.alert-error

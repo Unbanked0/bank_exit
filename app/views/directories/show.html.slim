@@ -4,7 +4,27 @@
 - weblinks = WeblinkDecorator.wrap(@directory.weblinks.enabled)
 
 article
-  .hero.bg-fixed.bg-no-repeat.bg-top style=("background-image: url(#{rails_blob_path(@directory.banner.variant(:thumb))})" if @directory.banner.attached?) class=(@directory.banner.attached? ? 'bg-cover lg:bg-contain' : 'bg-banner-default')
+  .hero.bg-fixed.bg-no-repeat.bg-top.relative style=("background-image: url(#{rails_blob_path(@directory.banner.variant(:thumb))})" if @directory.banner.attached?) class=(@directory.banner.attached? ? 'bg-cover lg:bg-contain' : 'bg-banner-default')
+    .absolute.top-3.right-3
+      - if authenticated?
+        button.btn.btn-square(
+          role="button"
+          tabindex="0"
+          aria-label="Menu for directory"
+          popovertarget="popover-directory"
+          style="anchor-name:--anchor-directory"
+        )
+          = lucide_icon 'ellipsis-vertical', class: 'w-6'
+
+        ul.dropdown.dropdown-end.menu.bg-base-100.rounded-box.z-1.w-max.p-2.shadow-sm.border.border-base-content/20.space-y-2 tabindex="0" popover="" id="popover-directory" style="position-anchor:--anchor-directory"
+          - if allowed_to?(:update?, @directory, namespace: Admin)
+            li
+              = edit_link_to edit_admin_directory_path(@directory), hotkey: true
+
+          - if allowed_to?(:destroy?, @directory, namespace: Admin)
+            li
+              = destroy_link_to admin_directory_path(@directory),
+                                turbo_confirm: t('admin.directories.actions.destroy_confirm')
     .hero-overlay
     .hero-content.hero-content-main
       header.max-w-xl
@@ -23,27 +43,7 @@ article
                 = image_tag icon_by_coin(coin_wallet.coin), title: coin_wallet.coin.capitalize, class: 'w-10 h-10 hover:scale-110 motion-safe:transition-transform'
 
   .article-body.max-w-5xl class="space-y-8!"
-    .flex.items-center.justify-between.gap-2
-      = render 'breadcrumb'
-      - if authenticated?
-        button.btn.btn-square.btn-lg(
-          role="button"
-          tabindex="0"
-          aria-label="Menu for directory"
-          popovertarget="popover-directory"
-          style="anchor-name:--anchor-directory"
-        )
-          = lucide_icon 'ellipsis-vertical', class: 'w-6'
-
-        ul.dropdown.dropdown-end.menu.bg-base-100.rounded-box.z-1.w-max.p-2.shadow-sm.border.border-base-content/20.space-y-2 tabindex="0" popover="" id="popover-directory" style="position-anchor:--anchor-directory"
-          - if allowed_to?(:update?, @directory, namespace: Admin)
-            li
-              = edit_link_to edit_admin_directory_path(@directory), hotkey: true
-
-          - if allowed_to?(:destroy?, @directory, namespace: Admin)
-            li
-              = destroy_link_to admin_directory_path(@directory),
-                                turbo_confirm: t('admin.directories.actions.destroy_confirm')
+    = render 'breadcrumb'
 
     - if @directory.description?
       div
