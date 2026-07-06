@@ -26,10 +26,8 @@
     div
       h2.text-primary.uppercase.mb-5= t('coin')
 
-      .flex.flex-col.items-center
-        .flex.items-center.gap-6.mb-3
-          = render @coins
-        .w-full= turbo_frame_tag :coin
+      .flex.items-center.justify-center.gap-6.mb-3
+        = render @coins
 
 - content_for :download do
   - if @tutorial.identifier == 'session-messaging'
