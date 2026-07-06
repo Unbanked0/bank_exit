@@ -1,7 +1,7 @@
 # This class acts as a model (not related to the database)
 # to interact more elegantly with the global settings.
 class Setting
-  LIGHT_THEME_NAME = :silk
+  LIGHT_THEME_NAME = :bumblebee
   DARK_THEME_NAME = :dracula
 
   MERCHANTS_DELTA_SYNC_TIME = 10.minutes

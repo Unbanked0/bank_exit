@@ -7,7 +7,7 @@
 
 @plugin "./daisyui.mjs" {
     themes:
-        silk --default,
+        bumblebee --default,
         dracula --prefersdark;
 
     /* See https://github.com/saadeghi/daisyui/issues/3882#issuecomment-3382480890 */
@@ -15,20 +15,13 @@
 }
 
 @plugin "./daisyui-theme.mjs" {
-    name: "silk";
+    name: "bumblebee";
     default: true;
 
     --color-primary: oklch(72.772% 0.149 33.2);
     --color-primary-content: oklch(0% 0 0);
-    --color-secondary: oklch(74.202% 0.148 301.883);
-    --color-secondary-content: oklch(14.84% 0.029 301.883);
-    --color-neutral-content: oklch(90% 0 0);
-    --radius-selector: 0.5rem;
-    --radius-field: 0.5rem;
-    --radius-box: 0.5rem;
-    --size-selector: 0.25rem;
-    --size-field: 0.25rem;
-    --border: 1px;
+    --color-secondary: oklch(85% 0.199 91.936);
+    --color-secondary-content: oklch(42% 0.095 57.708);
 }
 
 @plugin "./daisyui-theme.mjs" {

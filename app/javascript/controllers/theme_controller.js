@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["lightButton", "darkButton", "autoButton"];
   static values = {
-    light: { type: String, default: "silk" },
+    light: { type: String, default: "bumblebee" },
     dark: { type: String, default: "dracula" },
   };
 

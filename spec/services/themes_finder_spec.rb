@@ -14,7 +14,7 @@ RSpec.describe ThemesFinder do
     context 'when during regular time' do
       let(:date) { Date.new(2025, 3, 1) } # March 1st
 
-      it { is_expected.to eq({ light: :silk, dark: :dracula }) }
+      it { is_expected.to eq({ light: :bumblebee, dark: :dracula }) }
     end
   end
 
