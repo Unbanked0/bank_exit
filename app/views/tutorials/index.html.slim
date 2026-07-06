@@ -27,7 +27,7 @@ article
               h3.inline= tutorial.title
 
             - if tutorial.level?
-              span.badge.badge-sm.ml-3 class="badge-#{tutorial_class_by_level(tutorial.level)}"
+              span.badge.badge-sm.ml-3 class=tutorial_class_by_level(tutorial.level)
                 = t(tutorial.level, scope: 'articles.wrapper')
 
             - if tutorial.time?

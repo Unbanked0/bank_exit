@@ -9,4 +9,12 @@ class Tutorial < Article
   def level
     LEVELS[model[:level]]
   end
+
+  def cover?
+    Rails.root.join("app/assets/images/tutorials/_highlight/#{identifier}.png").exist?
+  end
+
+  def cover
+    "tutorials/_highlight/#{identifier}.png"
+  end
 end

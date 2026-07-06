@@ -18,7 +18,7 @@ article
 
         p
           - if article.level?
-            span.badge.inline-block class="badge-#{tutorial_class_by_level(article.level)}"
+            span.badge.inline-block class=tutorial_class_by_level(article.level)
               = t(".#{article.level}")
 
           - if article.time?

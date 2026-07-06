@@ -7,25 +7,25 @@ RSpec.describe TutorialsHelper do
     context 'when level is `beginner`' do
       let(:level) { :beginner }
 
-      it { is_expected.to eq :success }
+      it { is_expected.to eq 'badge-success' }
     end
 
     context 'when level is `intermediate`' do
       let(:level) { :intermediate }
 
-      it { is_expected.to eq :warning }
+      it { is_expected.to eq 'badge-warning' }
     end
 
     context 'when level is `expert`' do
       let(:level) { :expert }
 
-      it { is_expected.to eq :error }
+      it { is_expected.to eq 'badge-error' }
     end
 
     context 'when level is not handled' do
       let(:level) { :not_handled }
 
-      it { is_expected.to eq :neutral }
+      it { is_expected.to eq 'badge-neutral' }
     end
   end
 end
