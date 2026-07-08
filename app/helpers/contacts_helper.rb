@@ -30,8 +30,12 @@ module ContactsHelper
       else
         lucide_icon 'link', class: icon_klass
       end
-    when :session, :signal, :matrix, :jabber, :telegram, :facebook, :instagram, :twitter, :youtube, :odysee, :tiktok, :linkedin, :substack, :tripadvisor, :simplex, :crowdbunker, :francelibretv, :nostr
+    when :session, :signal, :matrix, :jabber, :telegram, :facebook, :instagram, :twitter, :youtube, :odysee, :tiktok, :linkedin, :substack, :tripadvisor, :simplex, :crowdbunker, :francelibretv, :nostr, :linktree
       inline_svg_tag "contacts/#{mode}.svg", class: image_klass, title: label, alt: label
     end
+  end
+
+  def modal_title(contact)
+    "#{social_contact_icon(contact.identifier, klass: 'w-12')} #{contact.title}"
   end
 end

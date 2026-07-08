@@ -1,5 +1,6 @@
 ---
-- title: Email
+- identifier: email
+  title: Email
   links:
     - sortiedebanque@tutamail.com
   icon: mail # Lucide icon
@@ -21,7 +22,8 @@
   pgp_key_fingerprint: 27F77D8D54A9A6B9CBB9A199290C7791E938D9CB
   color_hex: "#f68067"
 
-- title: Session
+- identifier: session
+  title: Session
   links:
     - https://getsession.org
   icon: session.svg
@@ -29,25 +31,29 @@
   sticker: contacts/box_session.png
   color_hex: "#00F782"
 
-- title: Youtube
+- identifier: youtube
+  title: Youtube
   links:
     - https://www.youtube.com/@sortiedebanque
   icon: youtube.svg
   color_hex: "#ff0000"
 
-- title: Twitter / X
+- identifier: twitter
+  title: Twitter / X
   links:
     - https://x.com/SortieDeBanque
   icon: twitter.svg
   color_hex: "#000000"
 
-- title: Telegram
+- identifier: telegram
+  title: Telegram
   links:
     - http://t.me/SortieDeBanque
   icon: telegram.svg
   color_hex: "#0088cc"
 
-- title: Nostr
+- identifier: nostr
+  title: Nostr
   links:
     - https://nostr.com
     - https://njump.me/npub1ve5njaylrety85mv3tlqszs6jw8ld7vnezlr5pp753rkt4lelz9sqqffzl
@@ -56,7 +62,8 @@
   sticker: contacts/box_nostr.png
   color_hex: "#b780ff"
 
-- title: Linktree
+- identifier: linktree
+  title: Linktree
   links:
     - https://linktr.ee/sortiedebanque
   icon: linktree.svg

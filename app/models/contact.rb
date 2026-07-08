@@ -4,6 +4,7 @@ class Contact
   include ActiveModel::Model
   include ActiveModel::Attributes
 
+  attribute :identifier, :string
   attribute :title, :string
   attribute :icon, :string
   attribute :public_key, :string
