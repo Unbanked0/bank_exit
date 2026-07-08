@@ -1,5 +1,7 @@
-#map.w-full.z-0.rounded-box.relative(
-  class="h-[600px] md:h-full"
+- local_assigns.with_defaults(map_class: "") => { map_class: }
+
+#map.w-full.z-0.relative(
+  class="h-[600px] md:h-full #{map_class}"
   data-controller="map"
   data-map-zoom-value=@zoom
   data-map-latitude-value=@latitude

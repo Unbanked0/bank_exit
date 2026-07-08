@@ -2,9 +2,10 @@
   id="search_modal"
   class="modal"
   data-controller="research"
+  data-action="toggle->research#toggle"
   data-research-search-url-value="<%= merchants_path %>"
 >
-  <div class="modal-box p-0! w-11/12 lg:w-2/3 max-w-3xl">
+  <div class="modal-box p-0! w-11/12 lg:w-2/3 max-w-5xl">
     <form
       class="flex items-stretch"
       data-action="reset->research#search"
@@ -45,14 +46,43 @@
       </button>
     </form>
 
-    <div data-research-target="initialContent" id="menu">
-      <%= render 'merchants/searches/index',
-                 merchants: merchants,
-                 directories: directories,
-                 pagy: pagy %>
-    </div>
+    <%= turbo_frame_tag :search_results,
+                        data: {
+                          research_target: :frame,
+                           action: "turbo:frame-load->research#loaded"
+                        } do %>
+      <div class="flex flex-col items-center justify-center gap-5 py-5">
+        <div class="loading loading-spinner loading-3xl text-primary"></div>
 
-    <footer class="my-3">
+        <noscript>
+          <p class="alert alert-error">
+            JavaScript is required to display results
+          </p>
+        </noscript>
+      </div>
+    <% end %>
+
+    <footer class="mb-2 text-xs space-y-2">
+      <hr class="border-base-content/20">
+
+      <p
+        class="
+          hide-on-touch max-sm:hidden md:flex items-center justify-end gap-2
+          px-2
+        "
+      >
+        <span>
+          <%== hotkey_label('tab', size: 'xs') %>&nbsp; <%= t('or') %>&nbsp;
+          <%== hotkey_label(['shift', 'tab'], size: 'xs') %>&nbsp;
+          <%= t('.to_navigate') %>
+        </span>
+
+        <span>
+          <%== hotkey_label('esc', size: 'xs') %>&nbsp;
+          <%= t('.to_close_modal') %>
+        </span>
+      </p>
+
       <p class="text-center text-xs">
         <% heart = lucide_icon('heart', class: 'h-4 w-4 stroke-red-600 fill-red-600 inline-flex mx-0.5 hover:scale-150 motion-safe:transition-transform') %><%= t('application.footer.developed_by_html', heart: heart) %>
       </p>

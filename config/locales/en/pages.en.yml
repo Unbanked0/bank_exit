@@ -276,11 +276,6 @@ en:
       last_survey_on: Last check %{date} ago
       last_survey_unknown: Last check date not specified
 
-    searches:
-      index:
-        to_navigate: to navigate,
-        to_close_modal: to close
-
     show:
       <<: *payment_methods_accepted
 

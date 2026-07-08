@@ -5,6 +5,10 @@ class ApplicationRecord < ActiveRecord::Base
     I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{enum_name.to_s.pluralize}.#{enum_value}", locale: locale)
   end
 
+  def self.human_count(count, pretty_count:)
+    "<strong>#{pretty_count}</strong> #{model_name.human(count: count)}"
+  end
+
   def self.broadcast_flash(type, message, locale: nil, disappear: true)
     Turbo::StreamsChannel.broadcast_prepend_to(
       locale ? [:flashes, locale] : :flashes,

@@ -79,9 +79,9 @@ es:
       coin_wallet: monedero cripto
       weblink: fuente
       merchant:
-        zero: Comerciante
-        one: Comerciante
-        other: Comerciantes
+        zero: comerciante
+        one: comerciante
+        other: comerciantes
       user:
         one: usuario
         other: usuarios

@@ -266,11 +266,6 @@ it:
     last_survey_on:
       last_survey_on: Ultimo sondaggio il %{date}
 
-    searches:
-      index:
-        to_navigate: per navigare,
-        to_close_modal: per chiudere
-
     show:
       <<: *payment_methods_accepted
 

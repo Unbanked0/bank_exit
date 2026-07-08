@@ -18,6 +18,10 @@ es:
       pros: Pros
       freedom_grocers: La Tienda Libre
 
+    search:
+      to_navigate: para navegar,
+      to_close_modal: para cerrar
+
     theme_switcher:
       switch_to_light: Cambiar al tema claro
       switch_to_dark: Cambiar al tema oscuro

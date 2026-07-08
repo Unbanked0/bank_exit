@@ -22,6 +22,10 @@ fr:
       pros: Pros
       freedom_grocers: L'épicerie Libre
 
+    search:
+      to_navigate: pour naviguer,
+      to_close_modal: pour fermer
+
     theme_switcher:
       switch_to_light: Basculer sur le thème clair
       switch_to_dark: Basculer sur le thème sombre

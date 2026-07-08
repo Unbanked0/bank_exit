@@ -3,7 +3,7 @@ import { useDebounce } from "stimulus-use";
 import { get } from "@rails/request.js";
 
 export default class extends Controller {
-  static targets = ["input", "spinner", "initialContent"];
+  static targets = ["input", "spinner", "frame"];
   static debounces = ["search"];
   static values = {
     searchUrl: String,
@@ -13,18 +13,28 @@ export default class extends Controller {
     useDebounce(this, { wait: 300 });
 
     this.inputTarget.focus();
+  }
 
-    if (this.hasInitialContentTarget) {
-      this.initialContent = this.initialContentTarget.innerHTML;
+  toggle() {
+    if (!this.element.open) return;
+
+    if (!this.frameTarget.src) {
+      this.frameTarget.src = this.searchUrlValue;
     }
+  }
+
+  loaded() {
+    if (this.initialContent) return;
+
+    this.initialContent = this.frameTarget.innerHTML;
   }
 
   async search() {
     const query = this.inputTarget.value.trim();
 
     if (query.length < 3) {
-      if (this.hasInitialContentTarget) {
-        this.initialContentTarget.innerHTML = this.initialContent;
+      if (this.hasFrameTarget) {
+        this.frameTarget.innerHTML = this.initialContent;
       }
 
       this.spinnerTarget.classList.add("hidden");

@@ -1,6 +1,6 @@
 <%# locals: (pagy:, search_path: nil, add_page_to_url: true, keyboard_enabled: 'true', attrs: {}) %>
 
-<% if pagy.count > pagy.limit %>
+<% if pagy.last > 1 %>
   <div
     class="flex items-center justify-center gap-2 p-2"
     data-controller="pagination"

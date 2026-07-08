@@ -7,7 +7,6 @@ class PublicController < ApplicationController
 
   before_action :set_projects
   before_action :set_contacts
-  before_action :set_default_search_merchants, if: :full_page_request?
 
   private
 
@@ -17,20 +16,6 @@ class PublicController < ApplicationController
 
   def set_contacts
     @contacts = Contact.all
-  end
-
-  def set_default_search_merchants
-    if params[:page].nil? || params.expect(:page).to_i == 1
-      directories_filter = Directories::Filter.new(query: query)
-      @directories = DirectoryDecorator.wrap(directories_filter.call)
-    end
-
-    @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo.order(last_survey_on: :desc))
-    @merchants = MerchantDecorator.wrap(merchants)
-  end
-
-  def full_page_request?
-    request.format.html? && !turbo_frame_request?
   end
 
   # Remove empty GET params from URL
@@ -48,6 +33,6 @@ class PublicController < ApplicationController
   end
 
   def query
-    nil
+    params[:query]
   end
 end

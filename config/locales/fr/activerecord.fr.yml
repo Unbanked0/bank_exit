@@ -83,9 +83,9 @@ fr:
       coin_wallet: portefeuille crypto
       weblink: source
       merchant:
-        zero: Commerçant
-        one: Commerçant
-        other: Commerçants
+        zero: commerçant
+        one: commerçant
+        other: commerçants
       user:
         one: utilisateur
         other: utilisateurs

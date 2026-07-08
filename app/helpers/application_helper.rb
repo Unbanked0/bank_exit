@@ -33,7 +33,7 @@ module ApplicationHelper
     enum.keys.map { |k| [klass.human_enum_name(enum_name, k), k] }
   end
 
-  def pretty_country_html(country, show_flag: true)
+  def pretty_country_html(country, show_label: true, show_flag: true)
     c = ISO3166::Country[country]
 
     name = c.translations[I18n.locale.to_s] ||
@@ -42,7 +42,9 @@ module ApplicationHelper
     return name unless show_flag
 
     flag = c.emoji_flag
-    "#{flag} #{name}"
+    return "#{flag} #{name}" if show_label && show_flag
+
+    flag
   rescue StandardError
     country
   end

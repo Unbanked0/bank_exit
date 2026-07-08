@@ -266,11 +266,6 @@ de:
     last_survey_on:
       last_survey_on: Letzte Überprüfung am %{date}
 
-    searches:
-      index:
-        to_navigate: zum Navigieren,
-        to_close_modal: zum Schließen
-
     show:
       <<: *payment_methods_accepted
 

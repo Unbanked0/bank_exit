@@ -80,9 +80,9 @@ en:
       coin_wallet: crypto wallet
       weblink: source
       merchant:
-        zero: Merchant
-        one: Merchant
-        other: Merchants
+        zero: merchant
+        one: merchant
+        other: merchants
       user:
         one: user
         other: users

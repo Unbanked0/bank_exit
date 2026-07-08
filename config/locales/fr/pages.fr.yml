@@ -277,11 +277,6 @@ fr:
       last_survey_on: Dernière actualisation il y a %{date}
       last_survey_unknown: Date de vérification inconnue
 
-    searches:
-      index:
-        to_navigate: pour naviguer,
-        to_close_modal: pour fermer
-
     show:
       <<: *payment_methods_accepted
 

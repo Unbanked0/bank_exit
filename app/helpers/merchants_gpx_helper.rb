@@ -13,7 +13,7 @@ module MerchantsGPXHelper
 
   def merchant_metadata_title(coins, category, continent, country, query)
     [
-      Merchant.model_name.human(count: 2),
+      Merchant.model_name.human(count: 2).capitalize,
       coins.map(&:capitalize).join(', '),
       (I18n.t(category, scope: :categories) if category),
       (I18n.t(continent, scope: :continents) if continent),

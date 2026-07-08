@@ -21,6 +21,10 @@ en:
       pros: Pros
       freedom_grocers: Freedom Grocers
 
+    search:
+      to_navigate: to navigate,
+      to_close_modal: to close
+
     theme_switcher:
       switch_to_light: Switch to light mode
       switch_to_dark: Switch to dark mode

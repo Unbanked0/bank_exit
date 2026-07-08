@@ -18,6 +18,10 @@ it:
       pros: Professionisti
       freedom_grocers: Alimentari Libero
 
+    search:
+      to_navigate: per navigare,
+      to_close_modal: per chiudere
+
     theme_switcher:
       switch_to_light: Passa alla modalità chiara
       switch_to_dark: Passa alla modalità scura

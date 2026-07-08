@@ -76,9 +76,9 @@ it:
       coin_wallet: portafoglio crypto
       weblink: fonte
       merchant:
-        zero: Commerciante
-        one: Commerciante
-        other: Commercianti
+        zero: commerciante
+        one: commerciante
+        other: commercianti
       user:
         one: utente
         other: utenti
