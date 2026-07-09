@@ -2,6 +2,8 @@ module Admin
   class CommentsController < BaseController
     before_action :set_comment, only: %i[update destroy]
 
+    add_breadcrumb :i18n_resource_name, :admin_comments_path
+
     # @route GET /fr/admin/comments {locale: "fr"} (admin_comments_fr)
     # @route GET /es/admin/comments {locale: "es"} (admin_comments_es)
     # @route GET /de/admin/comments {locale: "de"} (admin_comments_de)

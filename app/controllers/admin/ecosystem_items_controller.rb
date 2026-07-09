@@ -4,6 +4,8 @@ module Admin
       edit update destroy
     ]
 
+    add_breadcrumb :i18n_resource_name, :admin_ecosystem_items_path
+
     # @route GET /fr/admin/ecosystem_items {locale: "fr"} (admin_ecosystem_items_fr)
     # @route GET /es/admin/ecosystem_items {locale: "es"} (admin_ecosystem_items_es)
     # @route GET /de/admin/ecosystem_items {locale: "de"} (admin_ecosystem_items_de)

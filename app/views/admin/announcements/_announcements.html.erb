@@ -1,0 +1,49 @@
+<section class="space-y-3">
+  <div class="table-wrapper">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th scope="col">
+            <%= Announcement.human_attribute_name(:picture) %>
+          </th>
+
+          <th scope="col"><%= Announcement.human_attribute_name(:title) %></th>
+
+          <th scope="col">
+            <%= Announcement.human_attribute_name(:link_to_visit) %>
+          </th>
+
+          <th scope="col"><%= Announcement.human_attribute_name(:mode) %></th>
+
+          <th scope="col">
+            <%= Announcement.human_attribute_name(:published_at) %>
+          </th>
+
+          <th scope="col">
+            <%= Announcement.human_attribute_name(:unpublished_at) %>
+          </th>
+
+          <th scope="col">
+            <%= Announcement.human_attribute_name(:enabled) %>
+          </th>
+
+          <th scope="col"><%= t('actions') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render announcements %>
+
+        <% if announcements.blank? %>
+          <tr>
+            <td class="text-center italic" colspan="100%">
+              <%= t('.empty_results') %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= render 'pagination', pagy: pagy %>
+</section>

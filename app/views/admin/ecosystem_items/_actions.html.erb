@@ -1,0 +1,16 @@
+<%= content_for :dropdown_menu, flush: true do %>
+  <% if allowed_to?(:update?, ecosystem_item) %>
+    <li>
+      <%= edit_link_to edit_admin_ecosystem_item_path(ecosystem_item) %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, ecosystem_item) %>
+    <li>
+      <%= destroy_link_to admin_ecosystem_item_path(ecosystem_item),
+            turbo_confirm: t('.destroy_confirm') %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: ecosystem_item.id %>

@@ -100,7 +100,7 @@ fr:
       ecosystem_item:
         one: Elément de l'écosystème
         other: Eléments de l'écosystème
-      merchant_sync: Synchronisation commerçants
+      merchant_sync: Synchro commerçants
 
     attributes:
       merchant:

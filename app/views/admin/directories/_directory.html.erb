@@ -1,0 +1,93 @@
+<% can_update_position = allowed_to?(:update_position?, Directory) %>
+
+<tr
+  data-update-url="<%= update_position_admin_directory_path(directory) if can_update_position %>"
+  class="<%= class_names('opacity-25': !directory.enabled?) %>"
+>
+  <% if can_update_position %>
+    <td class="handle cursor-grab bg-primary/5">
+      <%= lucide_icon 'grip-vertical', class: 'mx-auto' %>
+    </td>
+  <% end %>
+
+  <td>
+    <span class="font-bold">#<%= directory.position %></span>
+  </td>
+
+  <td class="relative">
+    <% if directory.spotlight? %>
+      <div class="absolute top-0 left-0" title="<%= t('spotlight') %>">
+        <%= lucide_icon 'star', class: 'fill-yellow-500 stroke-black' %>
+      </div>
+    <% end %><%= render 'logo_or_initials', model: directory %>
+  </td>
+
+  <td scope="row">
+    <p class="mb-1">
+      <% if allowed_to?(:update?, directory) %>
+        <%= link_to edit_admin_directory_path(directory), class: 'font-bold' do %>
+          <%= highlight(directory.name, params[:query]) %>
+        <% end %>
+      <% else %>
+        <span class="font-bold">
+          <%= highlight(directory.name, params[:query]) %>
+        </span>
+      <% end %>
+    </p>
+
+    <% if directory.category.present? %>
+      <p class="text-xs">
+        <%= t(directory.category, scope: :directories_categories) %>
+      </p>
+    <% end %>
+  </td>
+
+  <td>
+    <% address = directory.address %>
+
+    <% if address&.geocoded? %>
+      <% if address.country_code %>
+        <span title="<%= address.label %>">
+          <%= pretty_country_html(address.country_code) %>
+        </span>
+      <% else %>
+        <span><%= address.label %></span>
+      <% end %>
+    <% end %>
+  </td>
+
+  <td>
+    <div class="flex flex-col items-center gap-3">
+      <% directory.coin_wallets.each do |coin_wallet| %>
+        <%= image_tag icon_by_coin(coin_wallet.coin),
+                      class: class_names(
+                        "w-5",
+                        "opacity-10": !coin_wallet.enabled?
+                      ),
+                      title: "#{coin_wallet.coin.capitalize} - #{coin_wallet.public_address}",
+                      alt: coin_wallet.coin %>
+      <% end %>
+    </div>
+  </td>
+
+  <td>
+    <%= render 'directories/contact_ways_list', directory: directory %>
+  </td>
+
+  <td class="<%= class_names("min-w-[200px]", "text-center": directory.updated?) %>">
+    <p title="<%= Merchant.human_attribute_name(:created_at) %>">
+      <%= l(directory.created_at) %>
+    </p>
+
+    <% if directory.updated? %>
+      <%= lucide_icon 'move-left', class: 'mx-auto w-5 h-5 -rotate-90 bg-primary text-primary-content rounded-full my-2 p-1' %>
+      <p title="<%= Merchant.human_attribute_name(:updated_at) %>">
+        <%= l(directory.updated_at) %>
+      </p>
+    <% end %>
+  </td>
+
+  <td>
+    <%= render 'actions', directory: directory %>
+  </td>
+</tr>

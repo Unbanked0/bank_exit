@@ -1,11 +1,11 @@
-<%# locals: (item_id:, details_html: {}, button_style: {}, aria: nil) %>
+<%# locals: (item_id:, btn_style: '', details_html: {}, button_style: {}, aria: nil) %>
 
 <% button_attributes = button_style.deep_dup
 button_attributes[:aria] = aria if aria.present?
 dropdown_attributes = details_html.deep_dup %>
 
 <button
-  class="btn btn-square"
+  class="btn btn-square <%= btn_style %>"
   popovertarget="popover-<%= item_id %>"
   style="anchor-name:--anchor-<%= item_id %>"
   <%= tag.attributes(button_attributes) %>
@@ -14,10 +14,7 @@ dropdown_attributes = details_html.deep_dup %>
 </button>
 
 <div
-  class="
-    dropdown dropdown-end rounded-box bg-base-100 border
-    border-base-content/20 shadow-sm
-  "
+  class="dropdown dropdown-end"
   popover
   id="popover-<%= item_id %>"
   style="position-anchor:--anchor-<%= item_id %>"

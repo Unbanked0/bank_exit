@@ -1,12 +1,11 @@
+<%# locals: (model:, mode: :medium) %>
 <%#
   To use this partial, you must send `model` params and
   it must respond to `#logo` (active_storage attachment),
   `#name` and `#initials`.
 %>
 
-<% mode = :medium unless defined?(mode)
-
-case mode
+<% case mode
 when :tiny
   size = 'w-5 h-5'
   font_size = 'text-xs'

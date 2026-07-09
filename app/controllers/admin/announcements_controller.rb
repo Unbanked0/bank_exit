@@ -4,6 +4,8 @@ module Admin
       show edit update destroy
     ]
 
+    add_breadcrumb :i18n_resource_name, :admin_announcements_path
+
     # @route GET /fr/admin/announcements {locale: "fr"} (admin_announcements_fr)
     # @route GET /es/admin/announcements {locale: "es"} (admin_announcements_es)
     # @route GET /de/admin/announcements {locale: "de"} (admin_announcements_de)
@@ -36,6 +38,8 @@ module Admin
       authorize!
 
       @announcement = Announcement.new
+
+      add_breadcrumb t('add'), :new_admin_announcement_path
     end
 
     # @route GET /fr/admin/announcements/:id/edit {locale: "fr"} (edit_admin_announcement_fr)

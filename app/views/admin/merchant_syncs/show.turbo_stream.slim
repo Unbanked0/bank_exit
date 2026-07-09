@@ -15,7 +15,7 @@
       = @merchant_sync.sync? ? 'Sync' : 'Cleanup'
       =< l(@merchant_sync.started_at)
 
-  = render_modal modal_size: @merchant_sync.error? ? 'max-w-5xl' : "max-w-3xl" do
+  = render_modal auto_open: true, modal_size: @merchant_sync.error? ? 'max-w-5xl' : "max-w-3xl" do
     - if @merchant_sync.success? || @merchant_sync.success_with_error?
       - if @merchant_sync.with_details?
         - if @merchant_sync.added_merchants_count > 0

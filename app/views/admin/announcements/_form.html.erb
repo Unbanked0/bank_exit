@@ -1,0 +1,59 @@
+<%= simple_form_for [:admin, announcement],
+html: { class: 'space-y-5' } do |f| %>
+  <% if announcement.errors.any? %>
+    <div class="alert alert-error">
+      <ul class="list-disc list-inside">
+        <% announcement.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="tabs tabs-box">
+    <% locales_select_helper.each do |label, locale| %>
+      <input
+        class="tab mb-1"
+        name="tabs_announcement"
+        type="radio"
+        aria-label="<%= label %>"
+        <% if locale == I18n.default_locale %>
+          checked
+        <% end %>
+      >
+
+      <div class="tab-content bg-base-100 border-base-300 rounded-box p-6 space-y-2">
+        <% title = :"title_#{Mobility.normalize_locale(locale)}"
+          description = :"description_#{Mobility.normalize_locale(locale)}"
+          link_to_visit = :"link_to_visit_#{Mobility.normalize_locale(locale)}" %>
+
+        <%= f.input title, label: Announcement.human_attribute_name(:title) %>
+        <%= f.input description, as: :text, label: Announcement.human_attribute_name(:description) %>
+        <%= f.input link_to_visit, label: Announcement.human_attribute_name(:link_to_visit) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.input :picture, as: :file %>
+
+    <% if f.object.picture.persisted? && f.object.picture.attached? %>
+      <%= image_tag url_for(f.object.picture.variant(:small)), class: 'w-32 rounded-lg my-1', alt: "Picture" %>
+      <%= f.input :remove_picture, as: :boolean %>
+    <% end %>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <%= f.input :mode,
+                collection: select_options_for(Announcement, :modes),
+                include_blank: false %>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <%= f.input :published_at, html5: true, wrapper_html: { class: 'w-1/2' } %>
+    <%= f.input :unpublished_at, html5: true, wrapper_html: { class: 'w-1/2' } %>
+  </div>
+
+  <%= f.input :enabled %>
+  <%= f.button :submit %>
+<% end %>

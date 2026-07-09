@@ -1,0 +1,33 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:create?, User) %>
+    <li>
+      <%= add_link_to new_admin_user_path, hotkey: 'a' %>
+    </li>
+  <% end %>
+<% end %>
+
+<section class="space-y-3">
+  <div class="table-wrapper">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th scope="col"><%= User.human_attribute_name(:email_address) %></th>
+          <th scope="col"><%= User.human_attribute_name(:role) %></th>
+          <th scope="col"><%= t('date_title') %></th>
+          <th scope="col"><%= User.human_attribute_name(:enabled) %></th>
+          <th scope="col"><%= t('actions') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render @users %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= render 'pagination', pagy: @pagy %>
+</section>

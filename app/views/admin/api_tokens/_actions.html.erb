@@ -1,0 +1,23 @@
+<%= content_for :dropdown_menu, flush: true do %>
+  <% if allowed_to?(:show?, api_token) %>
+    <li>
+      <%= show_link_to admin_api_token_path(api_token),
+            data: { turbo_stream: true } %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:update?, api_token) %>
+    <li>
+      <%= edit_link_to edit_admin_api_token_path(api_token) %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, api_token) %>
+    <li>
+      <%= destroy_link_to admin_api_token_path(api_token),
+            turbo_confirm: t('.destroy_confirm') %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: api_token.id %>

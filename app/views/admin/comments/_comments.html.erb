@@ -1,0 +1,31 @@
+<section class="space-y-3">
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.resource') %></th>
+
+          <th scope="col">
+            <%= Comment.human_attribute_name(:content) %>
+          </th>
+
+          <th scope="col"></th>
+          <th scope="col"><%= t('.report') %></th>
+          <th scope="col"><%= t('actions') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render comments %>
+
+        <% if comments.blank? %>
+          <tr>
+            <td class="text-center italic" colspan="100%">
+              <%= t('.empty_results') %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div><%= render 'pagination', pagy: pagy %>
+</section>

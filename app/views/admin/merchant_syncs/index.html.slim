@@ -4,9 +4,9 @@
 - content_for :page_title do
   = MerchantSync.model_name.human
 
-- content_for :page_actions do
-  - if allowed_to?(:index?, with: Admin::MerchantPolicy)
-    = back_link_to admin_merchants_path
+- if allowed_to?(:index?, with: Admin::MerchantPolicy)
+  - content_for :page_actions do
+    li= back_link_to admin_merchants_path
 
 = render 'admin/merchants/stats',
           merchant_sync: @merchant_sync,

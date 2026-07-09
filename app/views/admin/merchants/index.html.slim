@@ -6,10 +6,9 @@
   - else
     = t('.title')
 
-- content_for :page_actions do
-  - if allowed_to?(:index?, with: Admin::MerchantSyncPolicy)
-    = raw_link_to admin_merchant_syncs_path,
-                  class: 'btn btn-sm btn-success',
+- if allowed_to?(:index?, with: Admin::MerchantSyncPolicy)
+  - content_for :page_actions do
+    li= raw_link_to admin_merchant_syncs_path,
                   hotkey: 'h' do
       = lucide_icon 'table', class: 'w-5 h-5'
       span.truncate=< t('.history')

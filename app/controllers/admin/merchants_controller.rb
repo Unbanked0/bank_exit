@@ -4,6 +4,8 @@ module Admin
       show edit update destroy
     ]
 
+    add_breadcrumb :i18n_resource_name, :admin_merchants_path
+
     # @route GET /fr/admin/merchants {locale: "fr"} (admin_merchants_fr)
     # @route GET /es/admin/merchants {locale: "es"} (admin_merchants_es)
     # @route GET /de/admin/merchants {locale: "de"} (admin_merchants_de)
@@ -53,6 +55,8 @@ module Admin
       comments = CommentDecorator.wrap(@merchant.comments)
       @pagy, @comments = pagy(:offset, comments)
 
+      add_breadcrumb @merchant.name, :admin_merchant_path
+
       set_meta_tags title: @merchant.name
     end
 
@@ -64,6 +68,9 @@ module Admin
     # @route GET /admin/merchants/:id/edit
     def edit
       authorize! @merchant
+
+      add_breadcrumb @merchant.name, :admin_merchant_path
+      add_breadcrumb t('edit'), :edit_admin_merchant_path
     end
 
     # @route PATCH /fr/admin/merchants/:id {locale: "fr"} (admin_merchant_fr)

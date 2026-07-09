@@ -1,0 +1,108 @@
+<% today_i18n = l(dashboard_presenter.today.to_date)
+dated_i18n = t('statistics.statistics_numbers.dated', date: today_i18n)
+merchant_deleted_count = Merchant.deleted.count %>
+
+<div class="mb-6" id="merchant_stats">
+  <div class="stats shadow bg-base-200 w-full mb-2 overflow-y-auto">
+    <div class="stat">
+      <div class="stat-figure">
+        <%= lucide_icon 'store', class: 'w-12 h-12' %>
+      </div>
+
+      <div class="stat-title">
+        <span class="status status-success status-lg"></span>
+        <%= t('.merchants_visibles') %>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(Merchant.available.count) %>
+      </div>
+
+      <div class="stat-desc"><%= dated_i18n %></div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <%= lucide_icon 'store', class: 'w-12 h-12' %>
+      </div>
+
+      <div class="stat-title">
+        <span class="status status-error status-lg"></span>
+        <%= t('.merchants_disabled') %>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(merchant_deleted_count) %>
+      </div>
+
+      <% if merchant_deleted_count > 0 %>
+        <div class="stat-actions mt-1">
+          <% req_params = request.query_parameters.compact_blank %>
+
+          <%= link_to t('display'), admin_merchants_path(params: req_params.merge(show_deleted: true)), class: 'btn btn-error btn-xs' %>
+
+          <button
+            class="btn btn-square btn-ghost btn-xs ml-1"
+            onclick="merchants_deleted_help.showModal()"
+          >
+            <%= lucide_icon 'circle-question-mark', class: 'w-4' %>
+          </button>
+        </div>
+        <%= render 'modal',
+                   id: :merchants_deleted_help,
+                   modal_title: t('.merchants_disabled'),
+                   modal_body: t('.merchant_disabled_body_html') %>
+      <% end %>
+    </div>
+
+    <%= render 'admin/merchants/merchant_sync_stat',
+               merchant_sync: merchant_sync %>
+
+    <% unless Rails.env.test? %>
+      <% task = SolidQueue::RecurringTask.find_by(key: "periodic_fetch_merchants") %>
+      <% if task %>
+        <div class="stat">
+          <div class="stat-figure">
+            <%= lucide_icon 'clock-arrow-down', class: 'w-12 h-12' %>
+          </div>
+
+          <div class="stat-title">
+            <span class="status status-warning status-lg"></span>
+            <%= t('.next_recurring_sync_at') %>
+          </div>
+
+          <div class="stat-value text-lg">
+            <% next_run = task.next_time %>
+            <%= I18n.l(next_run.in_time_zone(Time.zone)) %>
+          </div>
+
+          <div class="stat-desc">
+            <%= time_ago_in_words(next_run) %>
+          </div>
+        </div>
+      <% end %>
+      <% task = SolidQueue::RecurringTask.find_by(key: "periodic_clear_merchants") %>
+      <% if task %>
+        <div class="stat">
+          <div class="stat-figure">
+            <%= lucide_icon 'calendar-clock', class: 'w-12 h-12' %>
+          </div>
+
+          <div class="stat-title">
+            <span class="status status-warning status-lg"></span>
+            <%= t('.next_recurring_clean_at') %>
+          </div>
+
+          <div class="stat-value text-lg">
+            <% next_run = task.next_time %>
+            <%= I18n.l(next_run.in_time_zone(Time.zone)) %>
+          </div>
+
+          <div class="stat-desc">
+            <%= time_ago_in_words(next_run) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

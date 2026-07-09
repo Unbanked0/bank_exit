@@ -1,0 +1,9 @@
+<%= content_for :dropdown_menu, flush: true do %>
+  <% if allowed_to?(:update?, user) %>
+    <li>
+      <%= edit_link_to edit_admin_user_path(user) %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: user.id %>

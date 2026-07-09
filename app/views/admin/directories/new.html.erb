@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:index?, Directory, namespace: Admin) %>
+    <li><%= back_link_to admin_directories_path %></li>
+  <% end %>
+<% end %>
+
+<section>
+  <%= render 'form', directory: @directory %>
+</section>

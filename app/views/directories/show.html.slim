@@ -35,7 +35,7 @@ article
 
           - if @directory.category.present?
             .badge.mx-auto.badge-secondary
-              = t(@directory.category, scope: :directories_categories)
+              = @directory.friendly_category
 
   .article-body.max-w-5xl class="space-y-8!"
     = render 'breadcrumb'

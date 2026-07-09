@@ -1,0 +1,24 @@
+<%= content_for :dropdown_menu, flush: true do %>
+  <% if allowed_to?(:show?, announcement) %>
+    <li>
+      <%= show_link_to admin_announcement_path(announcement),
+            label: t('preview'),
+            data: { turbo_stream: true } %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:update?, announcement) %>
+    <li>
+      <%= edit_link_to edit_admin_announcement_path(announcement) %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, announcement) %>
+    <li>
+      <%= destroy_link_to admin_announcement_path(announcement),
+            turbo_confirm: t('.destroy_confirm') %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: announcement.id %>

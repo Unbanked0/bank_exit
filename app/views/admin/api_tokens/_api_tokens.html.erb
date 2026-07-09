@@ -1,0 +1,33 @@
+<section class="space-y-3">
+  <div class="table-wrapper">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th scope="col"><%= APIToken.human_attribute_name(:name) %></th>
+
+          <th scope="col">
+            <%= APIToken.human_attribute_name(:requests_count) %>
+          </th>
+
+          <th scope="col"><%= APIToken.human_attribute_name(:expired_at) %></th>
+          <th scope="col"><%= APIToken.human_attribute_name(:enabled) %></th>
+          <th scope="col"><%= t('actions') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render api_tokens %>
+
+        <% if api_tokens.blank? %>
+          <tr>
+            <td class="text-center italic" colspan="100%">
+              <%= t('.empty_results') %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= render 'pagination', pagy: pagy %>
+</section>

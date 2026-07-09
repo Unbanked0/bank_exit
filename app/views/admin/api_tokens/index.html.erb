@@ -1,0 +1,25 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= raw_link_to rswag_ui_path,
+          class: 'btn btn-sm btn-info',
+          target: :_blank do %>
+      <%= lucide_icon 'book', class: 'w-5' %> Documentation
+    <% end %>
+  </li>
+
+  <% if allowed_to?(:create?, APIToken, namespace: Admin) %>
+    <li>
+      <%= add_link_to new_admin_api_token_path, hotkey: 'a' %>
+    </li>
+  <% end %>
+<% end %>
+
+<div id="api_tokens">
+  <%= render 'api_tokens', api_tokens: @api_tokens, pagy: @pagy %>
+</div>
+
+<div class="fixed lg:w-1/2 mx-auto z-50 space-y-2" id="api_token_preview"></div>

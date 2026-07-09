@@ -10,6 +10,8 @@ class MerchantDecorator < ProfesionalDecorator
   }.freeze
 
   def friendly_category
+    return I18n.t('unknown') if category.blank?
+
     I18n.t("categories.#{category}", default: category&.titleize)
   end
 

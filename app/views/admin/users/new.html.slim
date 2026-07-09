@@ -1,9 +1,0 @@
-- content_for :page_title do
-  = t('.title')
-
-- content_for :page_actions do
-  - if allowed_to?(:index?, User)
-    = back_link_to admin_users_path
-
-section
-  = render 'form', user: @user

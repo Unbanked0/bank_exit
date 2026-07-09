@@ -1,0 +1,15 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:index?, APIToken, namespace: Admin) %>
+    <li>
+      <%= back_link_to admin_api_tokens_path %>
+    </li>
+  <% end %>
+<% end %>
+
+<section>
+  <%= render 'form', api_token: @api_token %>
+</section>

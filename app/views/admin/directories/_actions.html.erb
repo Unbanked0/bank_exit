@@ -1,0 +1,22 @@
+<%= content_for :dropdown_menu, flush: true do %>
+  <li>
+    <%= show_link_to directory_path(directory), target: :_blank do %>
+      <%= t('.view_public_page') %>
+    <% end %>
+  </li>
+
+  <% if allowed_to?(:update?, directory) %>
+    <li>
+      <%= edit_link_to edit_admin_directory_path(directory) %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, directory) %>
+    <li>
+      <%= destroy_link_to admin_directory_path(directory),
+                          turbo_confirm: t('.destroy_confirm') %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: directory.id %>

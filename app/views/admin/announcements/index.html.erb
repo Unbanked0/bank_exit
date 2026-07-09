@@ -1,0 +1,20 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:create?, Announcement, namespace: Admin) %>
+    <li>
+      <%= add_link_to new_admin_announcement_path, hotkey: 'a' %>
+    </li>
+  <% end %>
+<% end %>
+
+<div id="announcements">
+  <%= render 'announcements', announcements: @announcements, pagy: @pagy %>
+</div>
+
+<div
+  class="fixed bottom-5 left-5 right-5 lg:w-1/2 mx-auto z-50 space-y-2"
+  id="announcement_preview"
+></div>

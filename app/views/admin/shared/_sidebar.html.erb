@@ -1,0 +1,225 @@
+<% active_api = params[:controller] == 'admin/api_tokens' %>
+
+<div class="drawer-side">
+  <label for="admin-drawer" class="drawer-overlay"></label>
+
+  <aside
+    class="
+      bg-base-200 w-80 border-r border-base-300 min-h-full flex flex-col
+      justify-between
+    "
+  >
+    <div class="p-3 space-y-3">
+      <%= link_to admin_root_path, class: "flex items-center gap-3 max-sm:mt-15" do %>
+        <%= image_tag logo_by_locale, class: 'w-12', alt: 'Bank-Exit logo' %>
+
+        <div class="text-sm">
+          <p class="font-semibold"><%= t('.title') %></p>
+          <p class="text-xs"><%= t('.subtitle') %></p>
+        </div>
+      <% end %>
+
+      <ul class="menu bg-base-300/50 w-full rounded-box space-y-1">
+        <li>
+          <%= raw_link_to admin_root_path,
+                        class: ('menu-active' if params[:controller] == 'admin/dashboards'),
+                        hotkey: 'e' do %>
+            <%= lucide_icon "gauge", class: "size-5 opacity-30" %>
+            <%= t('admin.dashboards.show.title') %>
+          <% end %>
+        </li>
+
+        <li>
+          <%= tag.details(open: !active_api) do %>
+            <summary class="collapse-menu-title">
+              <%= t('.general') %>
+            </summary>
+
+            <ul>
+              <li>
+                <%= raw_link_to admin_merchants_path,
+                      class: class_names([
+                        'menu-active': params[:controller].in?(['admin/merchants'])
+                      ]),
+                      hotkey: 'm' do %>
+                  <%= lucide_icon "store", class: "size-5 opacity-30" %>
+                  <%= Merchant.model_name.human(count: 2).capitalize %>
+                <% end %>
+
+                <% if allowed_to?(:index?, with: Admin::MerchantSyncPolicy) %>
+                  <ul>
+                    <li>
+                      <%= raw_link_to admin_merchant_syncs_path,
+                                class: ('menu-active' if params[:controller].in?(['admin/merchant_syncs'])),
+                                hotkey: 'h' do %>
+                        <%= lucide_icon "refresh-cw", class: "size-5 opacity-30" %>
+                        <%= MerchantSync.model_name.human.capitalize %>
+                      <% end %>
+                    </li>
+                  </ul>
+                <% end %>
+              </li>
+
+              <li>
+                <%= raw_link_to admin_directories_path,
+                            class: ('menu-active' if params[:controller] == 'admin/directories'),
+                            hotkey: 'd' do %>
+                  <%= lucide_icon "notebook", class: "size-5 opacity-30" %>
+                  <%= Directory.model_name.human.capitalize %>
+                <% end %>
+              </li>
+
+              <% if allowed_to?(:index?, Comment) %>
+                <li>
+                  <%= raw_link_to admin_comments_path,
+                            class: ('menu-active' if params[:controller] == 'admin/comments'),
+                            hotkey: 'c' do %>
+                    <%= lucide_icon "message-circle", class: "size-5 opacity-30" %>
+                    <%= Comment.model_name.human(count: 2).capitalize %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if allowed_to?(:index?, Announcement) %>
+                <li>
+                  <%= raw_link_to admin_announcements_path,
+                            class: ('menu-active' if params[:controller] == 'admin/announcements'),
+                            hotkey: 'i' do %>
+                    <%= lucide_icon "megaphone", class: "size-5 opacity-30" %>
+                    <%= Announcement.model_name.human(count: 2).capitalize %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if allowed_to?(:index?, EcosystemItem) %>
+                <li>
+                  <%= raw_link_to admin_ecosystem_items_path,
+                            class: ('menu-active' if params[:controller] == 'admin/ecosystem_items'),
+                            hotkey: 'x' do %>
+                    <%= lucide_icon "sprout", class: "size-5 opacity-30" %>
+                    <%= EcosystemItem.model_name.human(count: 2).capitalize %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if allowed_to?(:index?, User) %>
+                <li>
+                  <%= raw_link_to admin_users_path,
+                            class: ('menu-active' if params[:controller] == 'admin/users'),
+                            hotkey: 'u' do %>
+                    <%= lucide_icon "users", class: "size-5 opacity-30" %>
+                    <%= User.model_name.human(count: 2).capitalize %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+
+        <% if allowed_to?(:index?, APIToken) %>
+          <li>
+            <%= tag.details(open: active_api) do %>
+              <summary class="collapse-menu-title">
+                <%= t('.api') %>
+              </summary>
+
+              <ul>
+                <li>
+                  <%= raw_link_to admin_api_tokens_path,
+                        class: class_names([
+                          'menu-active': active_api
+                        ]),
+                        hotkey: 'k' do %>
+                    <%= lucide_icon "key-square", class: "size-5 opacity-30" %>
+                    <%= APIToken.model_name.human(count: 2).upcase_first %>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= raw_link_to rswag_ui_path, target: :_blank do %>
+                    <%= lucide_icon "book-text", class: "size-5 opacity-30" %>
+                    Documentation
+                  <% end %>
+                </li>
+              </ul>
+            <% end %>
+          </li>
+        <% end %>
+
+        <li>
+          <details>
+            <summary class="font-semibold text-base-content/40">
+              <%= t('.monitoring') %>
+            </summary>
+
+            <ul>
+              <% if allowed_to?(:mission_control?, User) %>
+                <li>
+                  <%= raw_link_to admin_mission_control_jobs_path,
+                            target: :_blank,
+                            hotkey: 'w' do %>
+                    <%= lucide_icon "list-checks", class: "size-5 opacity-30" %>
+                    Mission Control Jobs
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if allowed_to?(:analytics?, User) %>
+                <li>
+                  <%= raw_link_to admin_active_analytics_path,
+                            target: :_blank,
+                            hotkey: 'y' do %>
+                    <%= lucide_icon "chart-line", class: "size-5 opacity-30" %>
+                    Analytics
+                  <% end %>
+                </li>
+              <% end %>
+
+              <li>
+                <%= raw_link_to 'https://bank-exit-uptime-production.up.railway.app',
+                            target: :_blank,
+                            hotkey: 'z' do %>
+                  <%= lucide_icon "hourglass", class: "size-5 opacity-30" %>
+                  Uptime Kuma
+                <% end %>
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <details open>
+            <summary class="font-semibold text-base-content/40">
+              <%= t('.public') %>
+            </summary>
+
+            <ul>
+              <li>
+                <%= link_to root_path do %>
+                  <%= lucide_icon('move-left', class: 'inline-flex w-4 mr-1') %>
+                  <%= t('.back_to_home') %>
+                <% end %>
+              </li>
+
+              <li>
+                <%= link_to maps_path do %>
+                  <%= lucide_icon('move-left', class: 'inline-flex w-4 mr-1') %>
+                  <%= t('.back_to_map') %>
+                <% end %>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-3 p-3">
+      <%= render "admin/pretender_message" if true_user != current_user %>
+
+      <div class="flex justify-between items-center">
+        <%= render 'theme_switcher' %>
+        <%= render 'language_switcher', show_current_label: false %>
+      </div>
+    </div>
+  </aside>
+</div>

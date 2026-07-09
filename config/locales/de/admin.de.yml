@@ -215,17 +215,18 @@ de:
         logged_in_as: Angemeldet als
         logged_in_as_confirm_html: Möchten Sie sich als <strong>%{email}</strong> anmelden?
 
-    sidebar:
-      title: Bank-Exit
-      subtitle: Admin
+    shared:
+      sidebar:
+        title: Bank-Exit
+        subtitle: Admin
+        back_to_home: Zurück zur Startseite
+        back_to_map: Zurück zur Karte
+        back_to_directory: Zurück zum Verzeichnis
+      navbar:
+        edit_my_profile: Mein Profil bearbeiten
 
+    sidebar:
       monero_ecosystem: Monero-Ökosystem
 
       merchants_disabled: Deaktivierte Händler
       comments_disabled: Deaktivierte Kommentare
-
-      back_to_home: Zurück zur Startseite
-      back_to_map: Zurück zur Karte
-      back_to_directory: Zurück zum Verzeichnis
-
-      edit_my_profile: Mein Profil bearbeiten

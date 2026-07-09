@@ -54,6 +54,7 @@
 
 - else
   ruby:
+    list_id = SecureRandom.uuid
     options = {
       wrapper_html: { \
         class: 'auto-search-wrapper',
@@ -63,9 +64,10 @@
       },
       label_html: { class: 'mb-2' },
       input_html: { \
+        list: "delivery-zone-address-#{list_id}",
         data: { \
-          controller: 'admin--address',
-          admin__address_search_url_value: addresses_search_path \
+          admin__address_target: :input,
+          action: "input->admin--address#search" \
         } \
       },
       required: true
@@ -76,3 +78,4 @@
     end
 
   = f.input :value, options
+  datalist id="delivery-zone-address-#{list_id}" data-admin--address-target="datalist"

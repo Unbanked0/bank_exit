@@ -1,0 +1,48 @@
+<% commentable = comment.commentable.decorate %>
+
+<tr>
+  <td>
+    <div class="flex items-center gap-3">
+      <div class="avatar">
+        <div class="mask mask-squircle h-12 w-12">
+          <%= render "logo_or_initials", model: commentable.decorate %>
+        </div>
+      </div>
+
+      <div>
+        <div class="font-bold">
+          <%= link_to polymorphic_path([:admin, commentable]) do %>
+            <%= commentable.name %>
+          <% end %>
+        </div>
+
+        <p class="badge badge-secondary badge-sm">
+          <%= commentable.friendly_category %>
+        </p>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <%= render "comments/comment", comment: comment %>
+  </td>
+
+  <td>
+    <%= emoji_by_locale(comment.language) %>
+  </td>
+
+  <td>
+    <% if comment.flag_reason %>
+      <div
+        class="tooltip status status-lg status-error"
+        data-tip="<%= Comment.human_enum_name(:flag_reason, comment.flag_reason) %>"
+      ></div>
+    <% else %>
+      <div class="status status-lg status-success"></div>
+    <% end %>
+  </td>
+
+  <td>
+    <%= render 'admin/comments/actions', comment: comment %>
+  </td>
+</tr>
