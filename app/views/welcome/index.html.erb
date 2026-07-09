@@ -12,7 +12,7 @@
           <span class="text-rotate duration-8000">
             <span>
               <span class="bg-base-content text-base-100 rounded-lg px-2 max-xs:mx-auto">
-                <%= Merchant.model_name.human.downcase.pluralize %>
+                <%= Merchant.model_name.human(count: 2) %>
               </span>
 
               <span class="bg-base-content text-base-100 rounded-lg px-2 max-xs:mx-auto">
@@ -21,6 +21,7 @@
             </span>
           </span>
 
+          <br>
           <span class="inline-block"><%= t('.headlines.part3') %></span>
 
           <span class="text-rotate duration-8000 delay-1000">
