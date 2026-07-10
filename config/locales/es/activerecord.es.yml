@@ -52,6 +52,14 @@ es:
       invalid_url: no es una URL válida
 
   activemodel:
+    models:
+      blog:
+        one: blog
+        other: blogs
+      tutorial:
+        one: tutorial
+        other: tutoriales
+
     attributes:
       merchant_proposal:
         <<: *merchant_attributes

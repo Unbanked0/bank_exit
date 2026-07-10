@@ -1,0 +1,31 @@
+class SearchesController < PublicController
+  # @route GET /fr/search {locale: "fr"} (search_fr)
+  # @route GET /es/search {locale: "es"} (search_es)
+  # @route GET /de/search {locale: "de"} (search_de)
+  # @route GET /it/search {locale: "it"} (search_it)
+  # @route GET /en/search {locale: "en"} (search_en)
+  # @route GET /search
+  def show
+    if params[:page].nil? || params.expect(:page).to_i == 1
+      if query.present?
+        tutorials = Tutorial.by_query(query)
+        @tutorials = TutorialDecorator.wrap(tutorials)
+
+        blogs = Blog.by_query(query)
+        @blogs = BlogDecorator.wrap(blogs)
+      end
+
+      directories_filter = Directories::Filter.call(query: query)
+      @directories = DirectoryDecorator.wrap(directories_filter)
+    end
+
+    @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo.order(last_survey_on: :desc))
+    @merchants = MerchantDecorator.wrap(merchants)
+  end
+
+  private
+
+  def query
+    params[:query]
+  end
+end

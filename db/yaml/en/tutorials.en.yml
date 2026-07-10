@@ -15,25 +15,25 @@
     - body:
         - Select your search filters on the map page or leave them as default to export all merchants. In this example, we’ll use Monero merchants located in France. Open the menu by clicking the three vertical dots and download by clicking on <strong>Download merchants</strong>.
       figure:
-        - image: tutorials/comaps-merchants-gpx/en/00_export_merchants_as_gpx.png
+        - image: tutorials/import-merchants-in-comaps/en/00_export_merchants_as_gpx.png
           klass: "lg:w-1/2 border border-base-content/20"
 
     - body:
         - Then open the <strong>CoMaps</strong> app on your smartphone.
       figure:
-        - image: tutorials/comaps-merchants-gpx/logo_comaps.webp
+        - image: tutorials/import-merchants-in-comaps/logo_comaps.webp
           klass: "w-30"
 
     - body:
         - On the map view, tap the <strong>star icon</strong> in the bottom menu to access the <strong>Bookmarks and Tracks</strong> screen.
       figure:
-        - image: tutorials/comaps-merchants-gpx/en/01_empty_map.png
+        - image: tutorials/import-merchants-in-comaps/en/01_empty_map.png
           klass: "lg:w-1/2"
 
     - body:
         - In the options, select <strong>Import bookmarks and tracks</strong>.
       figure:
-        - image: tutorials/comaps-merchants-gpx/en/02_settings_import_gpx.png
+        - image: tutorials/import-merchants-in-comaps/en/02_settings_import_gpx.png
           klass: "lg:w-1/2"
 
     - body:
@@ -46,13 +46,13 @@
     - body:
         - Once imported, the merchants will appear on the map. You can now view or edit them for offline navigation.
       figure:
-        - image: tutorials/comaps-merchants-gpx/en/04_maps_with_opened_marker.png
+        - image: tutorials/import-merchants-in-comaps/en/04_maps_with_opened_marker.png
           klass: "lg:w-1/2"
 
     - body:
         - To hide the newly imported merchants, tap the <strong>star icon</strong> again at the bottom of the map and uncheck the small green eye next to the import entry. Tap the eye again to make them reappear.
       figure:
-        - image: tutorials/comaps-merchants-gpx/en/03_settings_gpx_imported.png
+        - image: tutorials/import-merchants-in-comaps/en/03_settings_gpx_imported.png
           klass: "lg:w-1/2"
 
     - mode: warning
@@ -193,27 +193,27 @@
         - Go to https://snort.social and click on "Register".
         - From there, the registration process begins, with several steps detailed below.
       figure:
-        - image: tutorials/social_network/1_home.jpg
+        - image: tutorials/nostr-social-network/1_home.jpg
 
     - body:
         - Choose a pseudonym.
       figure:
-        - image: tutorials/social_network/2_create_account.jpg
+        - image: tutorials/nostr-social-network/2_create_account.jpg
 
     - body:
         - Choose an avatar.
       figure:
-        - image: tutorials/social_network/3_choose_picture.jpg
+        - image: tutorials/nostr-social-network/3_choose_picture.jpg
 
     - body:
         - Choose your areas of interest.
       figure:
-        - image: tutorials/social_network/4_select_interests.jpg
+        - image: tutorials/nostr-social-network/4_select_interests.jpg
 
     - body:
         - Choose Nostr contacts to follow.
       figure:
-        - image: tutorials/social_network/5_follow_friends.jpg
+        - image: tutorials/nostr-social-network/5_follow_friends.jpg
 
     - body:
         - Choose the options that allow you to hide certain content from your feed (porn, politics, etc.).
@@ -224,18 +224,18 @@
         - You'll notice that at no point does the site ask for your email or telephone number. That's because Nostr is cryptographically based and doesn't need any personal information from you. Your account belongs entirely to you!
 
     - figure:
-        - image: tutorials/social_network/6_clean_feed.jpg
+        - image: tutorials/nostr-social-network/6_clean_feed.jpg
 
     - body:
         - "Congratulations \U0001F389 ! You're now on the home page of your Nostr feed!"
         - You can start searching for content by clicking on "Search" in the menu.
       figure:
-        - image: tutorials/social_network/7_search_content.jpg
+        - image: tutorials/nostr-social-network/7_search_content.jpg
 
     - body:
         - You can now follow any profile by clicking on the "Follow" button.
       figure:
-        - image: tutorials/social_network/8_follow_profiles.jpg
+        - image: tutorials/nostr-social-network/8_follow_profiles.jpg
 
     - body:
         - Now it's time to make a backup of your private key. To do this, click on "Export keys" in the settings.
@@ -246,13 +246,13 @@
         - Do not share the private key with anybody.
 
     - figure:
-        - image: tutorials/social_network/9_export_keys.jpg
-        - image: tutorials/social_network/10_export_keys.jpg
+        - image: tutorials/nostr-social-network/9_export_keys.jpg
+        - image: tutorials/nostr-social-network/10_export_keys.jpg
 
     - body:
         - You can edit your profile at any time to change your photo or description
       figure:
-        - image: tutorials/social_network/11_edit_your_profile.jpg
+        - image: tutorials/nostr-social-network/11_edit_your_profile.jpg
 
     - body:
         - Now it's time to publish your first message. To do this, click on the "New post" button at the bottom left and enter your content in the popup that opens.
@@ -262,13 +262,13 @@
         - From now on, you should assume that any content published on a Nostr relay will remain there. Even if the delete function exists, there is no guarantee that the relays will honour this request. What's more, as a message can be republished on any relay, it becomes more complicated to know where the message is. This is another of Nostr's strengths.
 
     - figure:
-        - image: tutorials/social_network/12_publish_message.jpg
-        - image: tutorials/social_network/13_publish_message.jpg
+        - image: tutorials/nostr-social-network/12_publish_message.jpg
+        - image: tutorials/nostr-social-network/13_publish_message.jpg
 
     - body:
         - "Congratulations \U0001F389 ! Your first message has just been published on the Nostr network!"
       figure:
-        - image: tutorials/social_network/14_message_broadcasted.jpg
+        - image: tutorials/nostr-social-network/14_message_broadcasted.jpg
 
   useful_links:
     - url: https://nostr.com

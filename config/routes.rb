@@ -109,6 +109,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resource :search, only: :show
+
     resource :statistics, only: :show, path: 'stats' do
       get :daily_merchants
     end

@@ -91,7 +91,7 @@ en:
       map:
         search: name, address or description
       research:
-        search: name, address or description
+        search: title, name, address or description
 
       itinerary:
         my_address: 1 Church street, London

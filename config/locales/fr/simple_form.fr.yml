@@ -95,7 +95,7 @@ fr:
       map:
         search: nom, adresse ou description
       research:
-        search: nom, adresse ou description
+        search: titre, nom, adresse ou description
 
       itinerary:
         my_address: 1 rue de l'Eglise, Paris

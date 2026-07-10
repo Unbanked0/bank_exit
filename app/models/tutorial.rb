@@ -11,10 +11,10 @@ class Tutorial < Article
   end
 
   def cover?
-    Rails.root.join("app/assets/images/tutorials/_highlight/#{identifier}.png").exist?
+    Rails.root.join("app/assets/images/tutorials/#{identifier}/logo.png").exist?
   end
 
   def cover
-    "tutorials/_highlight/#{identifier}.png"
+    "tutorials/#{identifier}/logo.png"
   end
 end

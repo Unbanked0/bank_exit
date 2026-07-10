@@ -1,6 +1,68 @@
 <% list_item_class = "list-row hover:bg-primary! hover:text-neutral!" %>
 
 <nav class="list bg-base-100 max-h-[62svh] overflow-y-auto p-2">
+  <% if tutorials.present? %>
+    <div class="p-2 text-xs opacity-60 tracking-wide">
+      <%== Tutorial.human_count(tutorials.count, pretty_count: number_with_delimiter(tutorials.count)) %>
+    </div>
+    <% tutorials.each do |tutorial| %>
+      <%= link_to tutorial_path(tutorial), class: list_item_class, data: { turbo_frame: :_top } do %>
+        <% if tutorial.cover? %>
+          <%= image_tag tutorial.cover, alt: tutorial.title, class: "object-cover w-10 h-10" %>
+        <% else %>
+          <div></div>
+        <% end %>
+
+        <div>
+          <div class="font-semibold text-md">
+            <%== highlight(tutorial.title, params[:query]) %>
+          </div>
+
+          <% if tutorial.level? %>
+            <span class="badge badge-xs inline-block <%= tutorial_class_by_level(tutorial.level) %>">
+              <%= t("articles.wrapper.#{tutorial.level}") %>
+            </span>
+          <% end %>
+
+          <% if tutorial.short_description.present? %>
+            <p class="list-col-wrap text-xs opacity-70 mt-2">
+              <%== highlight(tutorial.short_description,
+                  params[:query]).truncate(100) %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if blogs.present? %>
+    <div class="p-2 text-xs opacity-60 tracking-wide">
+      <%== Blog.human_count(blogs.count, pretty_count: number_with_delimiter(blogs.count)) %>
+    </div>
+    <% blogs.each do |blog| %>
+      <%= link_to blog_path(blog), class: list_item_class, data: { turbo_frame: :_top } do %>
+        <% if blog.cover? %>
+          <%= image_tag blog.cover, alt: blog.title, class: "object-cover w-10 h-10" %>
+        <% else %>
+          <div></div>
+        <% end %>
+
+        <div>
+          <div class="font-semibold text-md">
+            <%== highlight(blog.title, params[:query]) %>
+          </div>
+
+          <% if blog.short_description.present? %>
+            <p class="list-col-wrap text-xs opacity-70 mt-2">
+              <%== highlight(blog.short_description,
+                params[:query]).truncate(100) %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <% if directories.present? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
       <%== Directory.human_count(directories.count, pretty_count: number_with_delimiter(directories.count)) %>
@@ -97,7 +159,7 @@
     <% end %>
   <% end %>
 
-  <% if directories.blank? && merchants.blank? %>
+  <% if blogs.blank? && tutorials.blank? && directories.blank? && merchants.blank? %>
     <li>
       <div
         class="
@@ -113,4 +175,4 @@
   <% end %>
 </nav>
 
-<%= render 'pagination', pagy: pagy, add_page_to_url: false, search_path: merchants_path %>
+<%= render 'pagination', pagy: pagy, add_page_to_url: false, search_path: search_path %>

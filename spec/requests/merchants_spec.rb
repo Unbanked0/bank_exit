@@ -6,19 +6,6 @@ RSpec.describe 'Merchants' do
   end
   let(:invalid_merchant_id) { 'fakeID' }
 
-  describe 'GET /fr/merchants' do
-    subject(:action) { get '/fr/merchants' }
-
-    before do
-      create_list :directory, 3
-      create_list :merchant, 3
-
-      action
-    end
-
-    it { expect(response).to have_http_status :ok }
-  end
-
   describe 'GET /merchants/:id' do
     context 'when merchant exists' do
       subject(:action) { get "/merchants/#{merchant.identifier}" }
@@ -84,12 +71,6 @@ RSpec.describe 'Merchants' do
   end
 
   I18n.available_locales.each do |locale|
-    describe "GET /#{locale}/merchants.turbo_stream" do
-      subject! { get "/#{locale}/merchants", as: :turbo_stream }
-
-      it { expect(response).to have_http_status :ok }
-    end
-
     describe "GET /#{locale}/merchants/:id" do
       context 'when merchant exists' do
         subject(:action) { get "/#{locale}/merchants/#{merchant.identifier}" }

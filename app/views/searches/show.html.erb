@@ -1,0 +1,8 @@
+<%= turbo_frame_tag :search_results do %>
+  <%= render 'results',
+             merchants: @merchants,
+             directories: @directories,
+             tutorials: @tutorials,
+             blogs: @blogs,
+             pagy: @pagy %>
+<% end %>

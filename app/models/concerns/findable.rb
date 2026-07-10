@@ -56,5 +56,11 @@ module Findable
     def self.where(identifiers)
       all.select { it.identifier.in?(identifiers) }
     end
+
+    def self.by_query(query)
+      regex = /#{Regexp.escape(query)}/i
+
+      all.select { it.title.downcase.match?(regex) || it.contents.map(&:body).join.match?(regex) }
+    end
   end
 end

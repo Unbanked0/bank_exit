@@ -16,6 +16,10 @@ class Article
   attr_accessor :model
   attr_writer :content, :figure, :useful_links, :url
 
+  def self.human_count(count, pretty_count:)
+    "<strong>#{pretty_count}</strong> #{model_name.human(count: count)}"
+  end
+
   def initialize(model)
     super
     @model = model.with_indifferent_access

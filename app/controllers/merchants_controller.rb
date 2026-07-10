@@ -12,15 +12,7 @@ class MerchantsController < PublicController
   # @route GET /it/merchants {locale: "it"} (merchants_it)
   # @route GET /en/merchants {locale: "en"} (merchants_en)
   # @route GET /merchants
-  def index
-    if params[:page].nil? || params.expect(:page).to_i == 1 || query.present?
-      directories_filter = Directories::Filter.call(query: query)
-      @directories = DirectoryDecorator.wrap(directories_filter)
-    end
-
-    @pagy, merchants = pagy(Merchant.available.by_query(query).with_attached_logo.order(last_survey_on: :desc))
-    @merchants = MerchantDecorator.wrap(merchants)
-  end
+  def index; end
 
   # @route GET /fr/merchants/:id {locale: "fr"} (merchant_fr)
   # @route GET /es/merchants/:id {locale: "es"} (merchant_es)
@@ -92,9 +84,5 @@ class MerchantsController < PublicController
 
   def commentable
     @merchant
-  end
-
-  def query
-    params[:query]
   end
 end
