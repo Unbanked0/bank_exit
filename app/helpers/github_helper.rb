@@ -19,7 +19,7 @@ module GithubHelper
     { error: true, message: e.message }
   end
 
-  # :nocov:
+  # simplecov:disable
   # Feature is disabled for now
   def last_short_commit_id
     last_long_commit_id.first(7)
@@ -36,5 +36,5 @@ module GithubHelper
   rescue StandardError
     'Error'
   end
-  # :nocov:
+  # simplecov:enable
 end

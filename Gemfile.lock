@@ -145,7 +145,6 @@ GEM
       rails
     diff-lcs (1.6.2)
     diffy (3.4.4)
-    docile (1.4.1)
     dotenv (3.2.0)
     dotenv-rails (3.2.0)
       dotenv (= 3.2.0)
@@ -514,12 +513,7 @@ GEM
     simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
-    simplecov (0.22.0)
-      docile (~> 1.1)
-      simplecov-html (~> 0.11)
-      simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.13.2)
-    simplecov_json_formatter (0.1.4)
+    simplecov (1.0.0.rc5)
     sitemap_generator (7.0.1)
       builder (~> 3.0)
     slim (5.2.1)
@@ -692,7 +686,7 @@ DEPENDENCIES
   rubocop-rspec
   shoulda-matchers
   simple_form
-  simplecov
+  simplecov (= 1.0.0.rc5)
   sitemap_generator
   slim-rails
   solid_cable

@@ -251,7 +251,7 @@ class FetchMerchants < ApplicationService
   end
 
   # Manually invalidate cache after Overpass sync
-  # :nocov:
+  # simplecov:disable
   def invalidate_cache
     return if Rails.env.test?
 
@@ -265,7 +265,7 @@ class FetchMerchants < ApplicationService
     )
     records.each(&:destroy)
   end
-  # :nocov:
+  # simplecov:enable
 
   def skip_countries?
     skip_countries
