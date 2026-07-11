@@ -67,7 +67,7 @@
               url: maps_path,
               method: :get,
               html: { class: 'join max-md:join-vertical w-full', id: 'home_search' } do |f| %>
-        <%= f.input :search, label: false, wrapper: false, input_html: { class: "input input-lg max-md:py-3 md:input-xl join-item" }, placeholder: t('simple_form.placeholders.research.search') %>
+        <%= f.input :search, label: false, wrapper: false, input_html: { class: "input input-lg max-md:py-3 md:input-xl join-item" }, placeholder: t('simple_form.placeholders.map.search') %>
 
         <%= f.submit t('search'), class: 'btn md:btn-xl btn-primary join-item' %>
       <% end %>
