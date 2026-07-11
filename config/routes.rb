@@ -186,5 +186,14 @@ Rails.application.routes.draw do
 
   resource :license, only: :show
 
+  # Catch requests using an unsupported locale prefix (e.g. /xx/some-page).
+  # This keeps localized URLs consistent by redirecting users to the same path
+  # with the best supported locale (browser preference, session, or default locale).
+  constraints locale: /[a-zA-Z]{2}/ do
+    match '/:locale/*path',
+          to: 'public#redirect_to_localized_path',
+          via: :all
+  end
+
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
