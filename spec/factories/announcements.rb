@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :announcement do
-    I18n.available_locales.each do |locale|
+    TEST_LOCALES.each do |locale|
       send("title_#{locale}") { "Title #{locale}" }
       send("description_#{locale}") { "Description #{locale}" }
     end

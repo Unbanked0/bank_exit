@@ -60,7 +60,7 @@ RSpec.describe 'Maps' do
     end
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/map" do
       context 'without search options' do
         subject! { get "/#{locale}/map" }

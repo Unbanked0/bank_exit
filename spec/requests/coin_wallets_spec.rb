@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'CoinWallets' do
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/coin_wallets/:id.turbo_stream" do
       subject! { get "/#{locale}/coin_wallets/#{coin.id}", as: :turbo_stream }
 

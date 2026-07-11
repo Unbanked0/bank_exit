@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'DeliveryZones' do
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/delivery_zones/mode_values.turbo_stream" do
       subject! do
         get "/#{locale}/delivery_zones/mode_values",

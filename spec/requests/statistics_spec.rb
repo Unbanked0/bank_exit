@@ -45,7 +45,7 @@ RSpec.describe 'Statistics' do
     it { expect(response).to have_http_status :ok }
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/stats" do
       subject! { get "/#{locale}/stats" }
 

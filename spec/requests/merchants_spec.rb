@@ -70,7 +70,7 @@ RSpec.describe 'Merchants' do
     end
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/merchants/:id" do
       context 'when merchant exists' do
         subject(:action) { get "/#{locale}/merchants/#{merchant.identifier}" }

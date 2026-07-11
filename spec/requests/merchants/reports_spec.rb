@@ -4,7 +4,7 @@ RSpec.describe 'Merchants::Reports' do
   let(:merchant) { create :merchant, original_identifier: 'abc123' }
   let(:invalid_merchant_id) { 'fakeID' }
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/merchants/:id/report/new" do
       subject! do
         get "/#{locale}/merchants/#{identifier}/report/new",

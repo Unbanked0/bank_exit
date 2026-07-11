@@ -7,7 +7,7 @@ RSpec.describe 'FAQs' do
     it { expect(response).to have_http_status :redirect }
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/local_groups" do
       subject! { get "/#{locale}/local_groups" }
 

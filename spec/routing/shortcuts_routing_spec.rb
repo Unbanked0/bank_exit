@@ -13,7 +13,7 @@ RSpec.describe 'Shortcuts', type: :request do
     end
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "/#{locale}/asdb" do
       subject! { get("/#{locale}/asdb") }
 

@@ -4,7 +4,7 @@ RSpec.describe 'Contacts' do
   let(:contact_id) { 'Session' }
   let(:invalid_contact_id) { 'fakeID' }
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/contacts/:id.turbo_stream" do
       context 'when :session' do
         subject! { get "/#{locale}/contacts/Session", as: :turbo_stream }

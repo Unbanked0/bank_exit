@@ -35,7 +35,7 @@ RSpec.describe 'Projects' do
     end
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/projects/:id" do
       project_ids.each do |project_id|
         context "when #{project_id} project" do

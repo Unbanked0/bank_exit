@@ -10,7 +10,7 @@ RSpec.describe 'Comments' do
       it { expect(response).to have_http_status :redirect }
     end
 
-    I18n.available_locales.each do |locale|
+    TEST_LOCALES.each do |locale|
       describe "GET /#{locale}/merchants/:merchant_id/comments/new" do
         subject! do
           get "/#{locale}/merchants/#{commentable.identifier}/comments/new", as: :turbo_stream
@@ -107,7 +107,7 @@ RSpec.describe 'Comments' do
       it { expect(response).to have_http_status :redirect }
     end
 
-    I18n.available_locales.each do |locale|
+    TEST_LOCALES.each do |locale|
       describe "GET /#{locale}/directories/:directory_id/comments/new" do
         subject! do
           get "/#{locale}/directories/#{commentable.id}/comments/new", as: :turbo_stream

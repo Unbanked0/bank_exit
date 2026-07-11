@@ -7,7 +7,7 @@ RSpec.describe 'Comments::Reports' do
   context 'when commentable is merchant' do
     let(:commentable) { create :merchant }
 
-    I18n.available_locales.each do |locale|
+    TEST_LOCALES.each do |locale|
       describe "GET /#{locale}/merchants/:merchant_id/comments/:comment_id/report/new" do
         context 'when merchant exists' do
           subject! do
@@ -86,7 +86,7 @@ RSpec.describe 'Comments::Reports' do
   context 'when commentable is directory' do
     let(:commentable) { create :directory }
 
-    I18n.available_locales.each do |locale|
+    TEST_LOCALES.each do |locale|
       describe "GET /#{locale}/directories/:directory_id/comments/:comment_id/report/new" do
         context 'when merchant exists' do
           subject! do

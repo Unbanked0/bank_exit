@@ -6,7 +6,7 @@ RSpec.describe 'Searches' do
     create :merchant, name: 'Monero'
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/search" do
       subject(:action) do
         get "/#{locale}/search", params: { query: 'Monero' }

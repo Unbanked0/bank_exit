@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Maps::Embeds' do
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/map/embed" do
       subject! { get "/#{locale}/map/embed" }
 

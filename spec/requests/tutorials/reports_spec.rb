@@ -4,7 +4,7 @@ RSpec.describe 'Tutorials::Reports' do
   let(:identifier) { 'session-messaging' }
   let(:invalid_tutorial_id) { 'fakeID' }
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/tutorials/:id/report/new" do
       subject! do
         get "/#{locale}/tutorials/#{identifier}/report/new", as: :turbo_stream

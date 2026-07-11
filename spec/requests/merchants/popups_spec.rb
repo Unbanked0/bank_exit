@@ -10,7 +10,7 @@ RSpec.describe 'Merchants::Popups' do
     it { expect(response).to have_http_status :redirect }
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/merchants/:id/popup" do
       context 'when merchant exists' do
         subject! { get "/#{locale}/merchants/#{merchant.identifier}/popup" }

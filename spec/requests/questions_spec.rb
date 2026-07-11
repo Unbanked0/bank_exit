@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Questions' do
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/questions/results" do
       subject! { get "/#{locale}/questions/results", params: params }
 

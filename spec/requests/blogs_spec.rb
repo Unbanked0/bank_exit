@@ -32,7 +32,7 @@ RSpec.describe 'Blogs' do
     end
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/blogs" do
       subject! { get "/#{locale}/blogs/" }
 

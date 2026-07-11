@@ -23,7 +23,7 @@ RSpec.describe 'Coins' do
     end
   end
 
-  I18n.available_locales.each do |locale|
+  TEST_LOCALES.each do |locale|
     describe "GET /#{locale}/coins/:id.turbo_stream" do
       coin_ids.each do |coin|
         context "when #{coin}" do

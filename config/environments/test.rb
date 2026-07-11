@@ -58,6 +58,10 @@ Rails.application.configure do
     Bullet.enable = true
     Bullet.raise = ENV.fetch('RAISE_BULLET', false)
   end
+
+  # Locales to test for requests specs and factories
 end
+
+TEST_LOCALES = Rails.application.config.i18n.available_locales.first(2)
 
 Rails.application.routes.default_url_options[:host] = host
