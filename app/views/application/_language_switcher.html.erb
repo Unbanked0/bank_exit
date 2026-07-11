@@ -1,10 +1,12 @@
 <%# locals: (show_current_label: true, show_label: true) %>
 
-<details class="dropdown dropdown-end">
-  <summary
-    class="btn"
-    data-action="keydown.l@document->hotkey#click"
+<div class="flex items-center gap-1">
+  <button
+    class="btn btn-ghost btn-circle"
+    popovertarget="popover-language"
+    style="anchor-name:--anchor-language"
     data-controller="hotkey"
+    data-action="keydown.l@document->hotkey#click"
   >
     <%= emoji_by_locale(I18n.locale) %>
 
@@ -13,21 +15,25 @@
         <%= Rails.configuration.i18n_human_languages[locale] %>
       </span>
     <% end %>
+  </button>
 
-    <%= hotkey_label('l', size: 'xs') %>
-  </summary>
-
-  <ul class="menu dropdown-content w-max">
+  <ul
+    class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+    popover
+    id="popover-language"
+    style="position-anchor:--anchor-language"
+  >
     <% I18n.available_locales.each do |locale| %>
       <% next if locale == I18n.locale %>
 
       <li>
         <%= link_to url_for(
-              locale: locale.to_s,
-              params: request.query_parameters),
-              role: :menuitem,
-              hreflang: locale.to_s,
-              rel: 'alternate' do %>
+                      locale: locale.to_s,
+                      params: request.query_parameters
+                    ),
+                    role: :menuitem,
+                    hreflang: locale.to_s,
+                    rel: 'alternate' do %>
           <span>
             <%= emoji_by_locale(locale) %>
 
@@ -41,4 +47,6 @@
       </li>
     <% end %>
   </ul>
-</details>
+
+  <%= hotkey_label('l', size: 'xs') %>
+</div>

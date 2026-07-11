@@ -8,7 +8,7 @@ active_directories = params[:controller] == "directories"
 active_guides = params[:controller].in?(%w[blogs tutorials ecosystems]) && params[:id] != 'flyer'
 active_about = params[:controller].in?(%w[local_groups collectives media])
 
-megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center text-base-content gap-6 lg:py-3" %>
+megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center text-base-content gap-6 xl:py-3" %>
 
 <header
   class="
@@ -40,7 +40,7 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
 
     <div class="navbar-center text-base-content">
       <div
-        class="megamenu max-lg:megamenu-vertical megamenu-full text-base-content"
+        class="megamenu max-xl:megamenu-vertical megamenu-full text-base-content"
         id="main_menu"
         popover
       >
@@ -122,7 +122,7 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
               </li>
             </ul>
 
-            <%= link_to maps_path, class: "md:max-w-sm max-lg:hidden" do %>
+            <%= link_to maps_path, class: "md:max-w-sm max-xl:hidden" do %>
               <%= image_tag "map_light.jpg", class: "rounded-lg map-light", alt: "Map light preview", loading: :lazy %>
               <%= image_tag "map_dark.jpg", class: "rounded-lg map-dark", alt: "Map dark preview", loading: :lazy %>
             <% end %>
@@ -165,7 +165,7 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
               </li>
             </ul>
 
-            <%= link_to grocery.link, class: "md:max-w-sm max-lg:hidden" do %>
+            <%= link_to grocery.link, class: "md:max-w-sm max-xl:hidden" do %>
               <%= image_tag "projects/epicerie_monero.png", class: "rounded-lg", alt: "Epicerie Libre Monero", loading: :lazy %>
             <% end %>
           </div>
@@ -263,7 +263,7 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
               </li>
             </ul>
 
-            <div class="avatar-group -space-x-6 md:max-w-sm max-lg:hidden">
+            <div class="avatar-group -space-x-6 md:max-w-sm max-xl:hidden">
               <div class="avatar">
                 <div class="w-16">
                   <%= image_tag "coins/logo-monero.svg", alt: "Monero logo", loading: :lazy %>
@@ -337,7 +337,7 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
               </li>
             </ul>
 
-            <div class="avatar-group -space-x-6 md:max-w-sm max-lg:hidden">
+            <div class="avatar-group -space-x-6 md:max-w-sm max-xl:hidden">
               <div class="avatar">
                 <div class="w-28">
                   <%= image_tag logo_by_locale, alt: "Bank-Exit logo", loading: :lazy %>
@@ -355,7 +355,7 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
       </div>
     </div>
 
-    <div class="navbar-end gap-2">
+    <div class="navbar-end gap-1 md:gap-3">
       <div class="flex items-center gap-0.5">
         <button
           class="btn btn-ghost btn-circle"
@@ -370,12 +370,14 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
         <%= hotkey_label(['ctrl', 'k'], size: 'xs') %>
       </div>
 
+      <%= render 'language_switcher', show_current_label: false %>
+
       <%= link_to new_merchant_proposal_path, class: 'btn btn-primary btn-sm max-md:hidden' do %>
         <%= t("maps.sidebar.suggest_merchant") %>
       <% end %>
 
       <button
-        class="btn btn-square btn-soft lg:hidden"
+        class="btn btn-square btn-soft xl:hidden"
         popovertarget="main_menu"
       >
         <%= lucide_icon "menu" %>
