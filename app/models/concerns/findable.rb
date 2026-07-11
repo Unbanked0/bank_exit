@@ -53,8 +53,9 @@ module Findable
       record
     end
 
-    def self.where(identifiers)
-      all.select { it.identifier.in?(identifiers) }
+    def self.where(identifiers, decorate: false)
+      all(decorate: decorate)
+        .select { it.identifier.in?(identifiers) }
     end
 
     def self.by_query(query)

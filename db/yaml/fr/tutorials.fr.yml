@@ -78,6 +78,7 @@
   created_at: "2024-05-12"
   highlight: true
   banner: banner-library
+  coins: ["monero"]
   content: []
   figure:
     video:
@@ -92,6 +93,7 @@
   created_at: "2024-01-30"
   highlight: true
   banner: banner-library
+  coins: ["bitcoin", "monero"]
   figure:
     video:
       url: https://www.youtube.com/embed/hESmJ9Amq7w
@@ -288,6 +290,7 @@
   time: 10
   created_at: "2024-08-07"
   banner: banner-library
+  coins: ["bitcoin"]
   content: []
   figure:
     video:
@@ -301,6 +304,7 @@
   time: 10
   created_at: "2024-08-07"
   banner: banner-library
+  coins: ["monero"]
   content: []
   figure:
     video:
@@ -320,6 +324,7 @@
   author: Kerlann
   created_at: "2025-02-24"
   banner: banner-blockchain
+  coins: ["monero"]
   short_description: EasyNode simplifie l'installation d'un nœud MONERO et vous permet de configurer votre blockchain en quelques clics. Une configuration complète en moins de 10 minutes !
   content:
     - figure:
@@ -377,6 +382,7 @@
   identifier: cryptopayment-for-business
   level: 0
   banner: banner-accountings
+  coins: ["bitcoin", "monero"]
   short_description: Mise en place complète des paiements Monero et Bitcoin pour votre commerce
   content:
     - render:

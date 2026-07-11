@@ -39,11 +39,6 @@ class TutorialsController < PublicController
   end
 
   def set_coins
-    @coins = case params[:id]
-             when 'cakewallet-monero', 'monero-node-easymonerod', 'funding-monero'
-               [Coin.find('monero', decorate: true)]
-             when 'bitcoin-nokyc'
-               [Coin.find('bitcoin', decorate: true)]
-             end
+    @coins = Coin.where(@tutorial.coins, decorate: true)
   end
 end
