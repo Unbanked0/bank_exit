@@ -199,6 +199,31 @@ megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center te
                         class: ('text-primary' if params[:controller] == 'tutorials' && !params[:id].in?(%w[cryptopayment-for-business accounting])) do %>
                       <%= t('.tutorials') %>
                     <% end %>
+
+                    <ul>
+                      <li>
+                        <%= link_to bitcoin_tutorial,
+                                class: ('text-primary' if current_page?(polymorphic_path(bitcoin_tutorial))) do %>
+                          <%= bitcoin_tutorial.title %>
+                        <% end %>
+                      </li>
+
+                      <li>
+                        <%= link_to monero_tutorial,
+                                class: ('text-primary' if current_page?(polymorphic_path(monero_tutorial))) do %>
+                          <%= monero_tutorial.title %>
+                        <% end %>
+                      </li>
+
+                      <% highlighted_tutorials.each do |tutorial| %>
+                        <li>
+                          <%= link_to tutorial,
+                                    class: ('text-primary' if current_page?(polymorphic_path(tutorial))) do %>
+                            <%= tutorial.title %>
+                          <% end %>
+                        </li>
+                      <% end %>
+                    </ul>
                   </li>
 
                   <li>

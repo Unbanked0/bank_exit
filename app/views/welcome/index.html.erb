@@ -143,6 +143,20 @@
   </div>
 </section>
 
+<section class="pt-5">
+  <div class="flex max-sm:flex-col items-center justify-center gap-3 max-w-3xl mx-auto">
+    <%= link_to @bitcoin_tutorial, class: "btn btn-bitcoin" do %>
+      <%= Tutorial.model_name.human.capitalize %>: ₿
+      <%= @bitcoin_tutorial.title %>
+    <% end %>
+
+    <%= link_to @monero_tutorial, class: "btn btn-monero" do %>
+      <%= Tutorial.model_name.human.capitalize %>: ɱ
+      <%= @monero_tutorial.title %>
+    <% end %>
+  </div>
+</section>
+
 <section class="py-10">
   <div class="container mx-auto px-4">
     <div class="xl:w-2/3 mx-auto flex max-md:flex-col items-start justify-center gap-6">

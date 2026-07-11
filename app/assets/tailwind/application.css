@@ -42,6 +42,18 @@
     --depth: 0.5;
 }
 
+@layer components {
+    .btn.btn-bitcoin {
+        --btn-color: #f7931a;
+        --btn-fg: #ffffff !important;
+    }
+
+    .btn.btn-monero {
+        --btn-color: #ff6600;
+        --btn-fg: #ffffff !important;
+    }
+}
+
 @utility fieldset-legend {
     @apply cursor-pointer;
     padding-block: 0;

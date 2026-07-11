@@ -7,6 +7,7 @@ class PublicController < ApplicationController
 
   before_action :set_projects
   before_action :set_contacts
+  before_action :set_tutorials
 
   private
 
@@ -16,6 +17,12 @@ class PublicController < ApplicationController
 
   def set_contacts
     @contacts = Contact.all
+  end
+
+  def set_tutorials
+    @bitcoin_tutorial = Tutorial.find('bitcoin-nokyc')
+    @monero_tutorial = Tutorial.find('monero-nokyc')
+    @highlighted_tutorials = Tutorial.all.select(&:highlight?)
   end
 
   # Remove empty GET params from URL

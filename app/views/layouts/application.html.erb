@@ -48,7 +48,12 @@
     data-theme-dark-value="<%= @themes[:dark] %>"
   >
     <main>
-      <%= render 'header', projects: @projects %>
+      <%= render 'header',
+                 projects: @projects,
+                 highlighted_tutorials: @highlighted_tutorials,
+                 bitcoin_tutorial: @bitcoin_tutorial,
+                 monero_tutorial: @monero_tutorial %>
+
       <%= render "search" %>
 
       <%= yield %>

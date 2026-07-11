@@ -29,6 +29,10 @@ class Article
     identifier
   end
 
+  def persisted?
+    true
+  end
+
   def contents
     return [] unless model[:content]
 
@@ -59,5 +63,9 @@ class Article
 
   def useful_links?
     model[:useful_links].present?
+  end
+
+  def highlight?
+    highlight == true
   end
 end

@@ -1,8 +1,4 @@
 class ArticleDecorator < ApplicationDecorator
-  def highlight?
-    highlight == true
-  end
-
   def all_body
     contents.map(&:body).compact_blank.flatten
   end

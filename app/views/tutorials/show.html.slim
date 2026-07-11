@@ -41,5 +41,5 @@
 
 = render 'articles/wrapper', article: @tutorial do
   - if @tutorial.contents.is_a?(Array) && @tutorial.contents.blank?
-    .alert.alert-info
+    .alert
       p= t('tutorials.show.pending_redaction')
