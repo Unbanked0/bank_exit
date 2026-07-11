@@ -11,11 +11,11 @@
 
           <span class="text-rotate duration-8000">
             <span>
-              <span class="bg-base-content text-base-100 rounded-lg px-2 max-xs:mx-auto">
+              <span class="bg-base-content text-base-100 rounded-lg px-2">
                 <%= Merchant.model_name.human(count: 2) %>
               </span>
 
-              <span class="bg-base-content text-base-100 rounded-lg px-2 max-xs:mx-auto">
+              <span class="bg-base-content text-base-100 rounded-lg px-2">
                 <%= t('.headlines.part2.pros') %>
               </span>
             </span>
@@ -29,7 +29,7 @@
               <span
                 class="
                   flex items-center gap-3 bg-[#f7931a] text-white px-2
-                  rounded-lg max-xs:mx-auto
+                  rounded-lg
                 "
               >
                 Bitcoin
@@ -38,7 +38,7 @@
               <span
                 class="
                   flex items-center gap-3 bg-[#ff6600] text-white px-2
-                  rounded-lg max-xs:mx-auto
+                  rounded-lg
                 "
               >
                 Monero
@@ -47,7 +47,7 @@
               <span
                 class="
                   flex items-center gap-3 bg-[#f8ed5a] text-black/90 px-2
-                  rounded-lg max-xs:mx-auto
+                  rounded-lg
                 "
               >
                 June
@@ -146,12 +146,12 @@
 <section class="pt-5">
   <div class="flex max-sm:flex-col items-center justify-center gap-3 max-w-3xl mx-auto">
     <%= link_to @bitcoin_tutorial, class: "btn btn-bitcoin" do %>
-      <%= Tutorial.model_name.human.capitalize %>: ₿
+      <%= Tutorial.model_name.human.capitalize %> ₿:
       <%= @bitcoin_tutorial.title %>
     <% end %>
 
     <%= link_to @monero_tutorial, class: "btn btn-monero" do %>
-      <%= Tutorial.model_name.human.capitalize %>: ɱ
+      <%= Tutorial.model_name.human.capitalize %> ɱ:
       <%= @monero_tutorial.title %>
     <% end %>
   </div>

@@ -8,7 +8,7 @@
     data-controller="hotkey"
     data-action="keydown.l@document->hotkey#click"
   >
-    <%= emoji_by_locale(I18n.locale) %>
+    <span class="text-lg"><%= emoji_by_locale(I18n.locale) %></span>
 
     <% if show_current_label %>
       <span class="mx-1">

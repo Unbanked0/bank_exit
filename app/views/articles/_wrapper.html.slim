@@ -47,10 +47,15 @@ article
             .space-y-2
               - if content.body.first.starts_with?('- ')
                 ul.list-disc.list-inside
-                  - content.body.each do |body|
-                    li== auto_link(body.delete_prefix('- '), html: { target: :_blank }, sanitize: false)
+                  - content.body.each do |raw_body|
+                    - body = raw_body.delete_prefix('- ')
+                    - body = highlight(body, params[:q])
+
+                    li== auto_link(body, html: { target: :_blank }, sanitize: false)
               - else
-                - content.body.each do |body|
+                - content.body.each do |raw_body|
+                  - body = highlight(raw_body, params[:q])
+
                   p== auto_link(body, html: { target: :_blank }, sanitize: false)
 
           - if content.render?

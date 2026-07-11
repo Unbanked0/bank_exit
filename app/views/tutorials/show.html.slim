@@ -22,7 +22,7 @@
       p= t('.tutorial_might_be_outdated')
 
 - content_for :coins do
-  - if @coins
+  - if @coins.present?
     div
       h2.text-primary.uppercase.mb-5= t('coin')
 
