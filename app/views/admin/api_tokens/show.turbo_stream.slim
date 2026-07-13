@@ -2,7 +2,7 @@
   - content_for(:modal_title) do
     = @api_token.name
 
-  = render_modal do
+  = render_modal auto_open: true do
     .mb-5
       == simple_format @api_token.description
 
