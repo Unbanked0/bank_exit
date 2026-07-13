@@ -1,0 +1,5 @@
+<%= turbo_stream.prepend :announcement_preview do %>
+  <%= render 'announcements/announcement',
+             announcement: @announcement,
+             remember_hide_after_close: false %>
+<% end %>

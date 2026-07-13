@@ -1,0 +1,12 @@
+<%= turbo_stream.replace :merchants_results do %>
+  <%= render 'maps/merchants_table_or_grid', merchants: @merchants, pagy: @pagy %>
+<% end %>
+
+<% unless from_pagination? %>
+  <%= turbo_stream.update :merchants_count do %>
+    <%= render 'maps/merchants_count', pagy: @pagy %>
+  <% end %>
+  <%= turbo_stream.replace :display_modes do %>
+    <%= render 'display_modes' %>
+  <% end %>
+<% end %>

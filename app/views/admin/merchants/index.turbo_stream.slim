@@ -1,7 +1,0 @@
-= render_turbo_stream_flash_messages
-
-= turbo_stream.update :merchants do
-  = render 'merchants', merchants: @merchants, pagy: @pagy
-
-= turbo_stream.update :merchants_count do
-  = I18n.t('x_results', count: @pagy.count, formatted_count: number_with_delimiter(@pagy.count))

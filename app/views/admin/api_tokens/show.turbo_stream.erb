@@ -1,0 +1,15 @@
+<%= turbo_stream.update :api_token_preview do %>
+  <% content_for(:modal_title) do %>
+    <%= @api_token.name %>
+  <% end %>
+
+  <%= render_modal auto_open: true do %>
+    <div class="mb-5">
+      <%== simple_format @api_token.description %>
+    </div>
+
+    <div class="alert justify-center overflow-x-auto font-bold select-all text-lg <%= @api_token.live? ? 'alert-success' : 'alert-error' %>">
+      <%= @api_token.token %>
+    </div>
+  <% end %>
+<% end %>
