@@ -3,12 +3,15 @@ local_groups = projects.find(&:local_groups?)
 business_guide_tutorial = Tutorial.find('cryptopayment-for-business')
 accounting_project = projects.find(&:accounting?)
 
-active_map = params[:controller].in?(%w[maps merchants])
-active_directories = params[:controller] == "directories"
-active_guides = params[:controller].in?(%w[blogs tutorials ecosystems]) && params[:id] != 'flyer'
-active_about = params[:controller].in?(%w[local_groups collectives media])
+active_map = controller_path.in?(%w[maps merchants merchants/itineraries])
+active_directories = controller_name == "directories"
+active_merchants = active_map || active_directories
+active_guides = controller_name.in?(%w[blogs tutorials ecosystems]) && params[:id] != 'flyer'
+active_about = controller_name.in?(%w[local_groups collectives media])
+active_projects = controller_name == "projects" || (controller_name == "blogs" && params[:id] == "flyer")
 
-megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center text-base-content gap-6 xl:py-3" %>
+megamenu_popover_class = "flex max-lg:flex-col lg:items-center justify-center text-base-content gap-6 lg:py-3"
+root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
 
 <header
   class="
@@ -40,13 +43,16 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
     <div class="navbar-center text-base-content">
       <div
-        class="megamenu max-xl:megamenu-vertical megamenu-full text-base-content"
+        class="megamenu max-lg:megamenu-vertical megamenu-full text-base-content"
         id="main_menu"
         popover
       >
         <span class="megamenu-active"></span>
 
-        <button popovertarget="d1">
+        <button
+          popovertarget="d1"
+          class="<%= class_names("#{root_menu_active_class}": active_merchants) %>"
+        >
           <%= t(".merchants") %>
         </button>
 
@@ -55,7 +61,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
             <ul class="menu menu-horizontal items-start gap-6">
               <li>
                 <%= raw_link_to maps_path,
-                      class: class_names("text-primary": active_map),
+                      class: class_names("menu-active": active_map),
                       hotkey: 'shift+1' do %>
                   <%= t('.map') %>
                 <% end %>
@@ -99,7 +105,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
               <li>
                 <%= raw_link_to directories_path,
-                        class: class_names("text-primary": active_directories),
+                        class: class_names("menu-active": active_directories),
                         hotkey: 'shift+2' do %>
                   <%= t('.directories') %>
                 <% end %>
@@ -122,14 +128,19 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
               </li>
             </ul>
 
-            <%= link_to maps_path, class: "md:max-w-sm max-xl:hidden" do %>
+            <%= link_to maps_path, class: "md:max-w-sm max-lg:hidden" do %>
               <%= image_tag "map_light.jpg", class: "rounded-lg map-light", alt: "Map light preview", loading: :lazy %>
               <%= image_tag "map_dark.jpg", class: "rounded-lg map-dark", alt: "Map dark preview", loading: :lazy %>
             <% end %>
           </div>
         </div>
 
-        <button popovertarget="d2"><%= t('.projects') %></button>
+        <button
+          popovertarget="d2"
+          class="<%= class_names("#{root_menu_active_class}": active_projects) %>"
+        >
+          <%= t('.projects') %>
+        </button>
 
         <div id="d2" class="bg-base-100/98" popover>
           <div class="<%= megamenu_popover_class %>">
@@ -145,7 +156,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
                     <li>
                       <%= link_to project.link,
-                                class: ('text-primary' if params[:id] == project.identifier),
+                                class: ('menu-active' if current_page?(id: project.identifier)),
                                 target: (:_blank if project.external?) do %>
                         <%= project.title %>
 
@@ -157,15 +168,15 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
                   <% end %>
 
                   <li>
-                    <a target="_blank" href="https://coinadoptionscore.com">
+                    <%= link_to "https://coinadoptionscore.com", target: :_blank do %>
                       CoinAdoptionScore
-                    </a>
+                    <% end %>
                   </li>
                 </ul>
               </li>
             </ul>
 
-            <%= link_to grocery.link, class: "md:max-w-sm max-xl:hidden" do %>
+            <%= link_to grocery.link, class: "md:max-w-sm max-lg:hidden" do %>
               <%= image_tag "projects/epicerie_monero.png", class: "rounded-lg", alt: "Epicerie Libre Monero", loading: :lazy %>
             <% end %>
           </div>
@@ -173,7 +184,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
         <button
           popovertarget="d3"
-          class="<%= class_names("text-primary": active_guides) %>"
+          class="<%= class_names("#{root_menu_active_class}": active_guides) %>"
         >
           <%= t(".guides") %>
         </button>
@@ -189,28 +200,27 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
                 <ul>
                   <li>
                     <%= link_to blogs_path,
-                        class: ('text-primary' if params[:controller] == 'blogs' && params[:id] != 'flyer') do %>
+                        class: ('menu-active' if params[:controller] == 'blogs' && params[:id] != 'flyer') do %>
                       <%= t('.blogs') %>
                     <% end %>
                   </li>
 
                   <li>
-                    <%= link_to tutorials_path,
-                        class: ('text-primary' if params[:controller] == 'tutorials' && !params[:id].in?(%w[cryptopayment-for-business accounting])) do %>
+                    <%= link_to tutorials_path do %>
                       <%= t('.tutorials') %>
                     <% end %>
 
                     <ul>
                       <li>
                         <%= link_to bitcoin_tutorial,
-                                class: ('text-primary' if current_page?(polymorphic_path(bitcoin_tutorial))) do %>
+                                class: ('menu-active' if current_page?(polymorphic_path(bitcoin_tutorial))) do %>
                           <%= bitcoin_tutorial.title %>
                         <% end %>
                       </li>
 
                       <li>
                         <%= link_to monero_tutorial,
-                                class: ('text-primary' if current_page?(polymorphic_path(monero_tutorial))) do %>
+                                class: ('menu-active' if current_page?(polymorphic_path(monero_tutorial))) do %>
                           <%= monero_tutorial.title %>
                         <% end %>
                       </li>
@@ -218,7 +228,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
                       <% highlighted_tutorials.each do |tutorial| %>
                         <li>
                           <%= link_to tutorial,
-                                    class: ('text-primary' if current_page?(polymorphic_path(tutorial))) do %>
+                                    class: ('menu-active' if current_page?(polymorphic_path(tutorial))) do %>
                             <%= tutorial.title %>
                           <% end %>
                         </li>
@@ -228,7 +238,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
                   <li>
                     <%= link_to ecosystem_path,
-                      class: ('text-primary' if params[:controller] == 'ecosystems') do %>
+                      class: ('menu-active' if controller_name == "ecosystems") do %>
                       <%= t('ecosystems.show.title') %>
                       <%= image_tag icon_by_coin('monero'), class: 'w-5', alt: "Monero" %>
                     <% end %>
@@ -243,27 +253,23 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
                 <ul>
                   <li>
-                    <a
-                      class="<%= ('text-primary' if params[:id] == 'cryptopayment-for-business') %>"
-                      href="<%= tutorial_path(business_guide_tutorial.identifier) %>"
-                    >
+                    <%= link_to tutorial_path(business_guide_tutorial.identifier),
+                          class: class_names('menu-active': current_page?(id: 'cryptopayment-for-business')) do %>
                       <%= business_guide_tutorial.short_title %>
-                    </a>
+                    <% end %>
                   </li>
 
                   <li>
-                    <a
-                      class="<%= ('text-primary' if params[:id] == 'accounting') %>"
-                      href="<%= url_for(accounting_project.link) %>"
-                    >
+                    <%= link_to accounting_project.link,
+                          class: class_names('menu-active': current_page?(id: 'accounting')) do %>
                       <%= accounting_project.title %>
-                    </a>
+                    <% end %>
                   </li>
                 </ul>
               </li>
             </ul>
 
-            <div class="avatar-group -space-x-6 md:max-w-sm max-xl:hidden">
+            <div class="avatar-group -space-x-6 md:max-w-sm max-lg:hidden">
               <div class="avatar">
                 <div class="w-16">
                   <%= image_tag "coins/logo-monero.svg", alt: "Monero logo", loading: :lazy %>
@@ -287,7 +293,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
 
         <button
           popovertarget="d4"
-          class="<%= class_names("text-primary": active_about) %>"
+          class="<%= class_names("#{root_menu_active_class}": active_about) %>"
         >
           <%= t('about') %>
         </button>
@@ -296,35 +302,31 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
           <div class="<%= megamenu_popover_class %>">
             <ul class="menu md:menu-horizontal items-start">
               <li>
-                <span class="text-base-content/50 uppercase">Le Collectif</span>
+                <span class="text-base-content/50 uppercase">
+                  <%= t('collectives.show.title') %>
+                </span>
 
                 <ul>
                   <li>
-                    <a
-                      class="<%= ('text-primary' if params[:controller] == 'collectives') %>"
-                      href="<%= collective_path %>"
-                    >
+                    <%= link_to collective_path,
+                          class: class_names('menu-active': controller_name == "collectives") do %>
                       <%= t('collectives.show.title') %>
-                    </a>
+                    <% end %>
                   </li>
 
                   <li>
-                    <a
-                      class="<%= ('text-primary' if params[:controller] == 'local_groups') %>"
-                      href="<%= local_groups_path %>"
-                    >
+                    <%= link_to local_groups_path,
+                          class: class_names('menu-active': controller_name == "local_groups") do %>
                       <%= local_groups.title %>
                       <%= inline_svg_tag "contacts/telegram.svg", class: 'inline-flex bg-white text-[#27A7E7] w-5 rounded-full', title: 'Telegram', alt: 'Logo Telegram' %>
-                    </a>
+                    <% end %>
                   </li>
 
                   <li>
-                    <a
-                      class="<%= ('text-primary' if params[:controller] == 'media') %>"
-                      href="<%= media_path %>"
-                    >
+                    <%= link_to media_path,
+                            class: class_names('menu-active': controller_name == 'media') do %>
                       <%= t('media.index.title') %>
-                    </a>
+                    <% end %>
                   </li>
 
                   <li>
@@ -337,7 +339,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
               </li>
             </ul>
 
-            <div class="avatar-group -space-x-6 md:max-w-sm max-xl:hidden">
+            <div class="avatar-group -space-x-6 md:max-w-sm max-lg:hidden">
               <div class="avatar">
                 <div class="w-28">
                   <%= image_tag logo_by_locale, alt: "Bank-Exit logo", loading: :lazy %>
@@ -377,7 +379,7 @@ megamenu_popover_class = "flex max-xl:flex-col xl:items-center justify-center te
       <% end %>
 
       <button
-        class="btn btn-square btn-soft xl:hidden"
+        class="btn btn-square btn-soft lg:hidden"
         popovertarget="main_menu"
       >
         <%= lucide_icon "menu" %>
