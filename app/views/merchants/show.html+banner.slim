@@ -65,7 +65,9 @@ article
     = render 'merchants/view_sections/itinerary', merchant: @merchant
 
     - if allowed_to?(:index?, Comment)
-      = render 'comments/comments', commentable: @merchant, comments: @comments, pagy: @pagy
+      = turbo_frame_tag :comments_wrapper, src: merchant_comments_path(@merchant), loading: :lazy do
+        .text-center
+          .loading.loading-spinner.loading-3xl.text-primary
 
     - if params[:debug] == 'true'
       = render 'merchants/view_sections/debug', merchant: @merchant

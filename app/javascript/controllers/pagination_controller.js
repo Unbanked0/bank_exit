@@ -1,8 +1,8 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["pagyTop"];
   static values = {
+    scrollTop: { type: Boolean, default: true },
     keyboardEnabled: { type: Boolean, default: false },
   };
 
@@ -56,7 +56,9 @@ export default class extends Controller {
     current.searchParams.set("page", number);
     window.history.pushState("id", "", current);
 
-    this.#scrollToTopResults();
+    if (this.scrollTopValue) {
+      this.#scrollToTopResults();
+    }
   }
 
   #prevPageHandler(_e) {

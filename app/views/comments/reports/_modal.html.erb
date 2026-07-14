@@ -1,0 +1,28 @@
+<% commentable = comment.commentable %>
+
+<% content_for(:modal_title) do %>
+  <%= commentable.name %>
+<% end %>
+
+<%= render_modal auto_open: true do %>
+  <blockquote class="alert alert-vertical">
+    <%= simple_format(comment.content) %>
+  </blockquote>
+
+  <%= simple_form_for comment_report,
+                      url: polymorphic_path([commentable, comment, :report]),
+                      method: :post,
+                      html: { class: 'space-y-2 px-1' } do |f| %>
+    <%= f.input :flag_reason,
+                collection: select_options_for(Comment, :flag_reasons),
+                label: false,
+                prompt: :translate %>
+
+    <%= f.input :description, as: :text, label: false %>
+    <%= f.input :nickname, wrapper_html: { class: 'hidden' } %>
+
+    <div class="flex justify-end">
+      <%= f.button :submit, class: 'btn btn-success' %>
+    </div>
+  <% end %>
+<% end %>

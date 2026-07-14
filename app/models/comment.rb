@@ -10,7 +10,7 @@ class Comment < ApplicationRecord
 
   belongs_to :commentable, polymorphic: true, counter_cache: true
 
-  default_scope -> { order(updated_at: :desc) }
+  default_scope -> { order(created_at: :desc) }
 
   scope :flagged, -> { where.not(flag_reason: nil) }
   scope :available, -> { where(flag_reason: nil) }

@@ -1,0 +1,48 @@
+<% pseudo = comment.pseudonym.presence || t('unknown') %>
+
+<div class="chat chat-start">
+  <div class="chat-image avatar avatar-placeholder">
+    <div
+      class="w-10 text-white rounded-full"
+      style="background-color: <%= pseudo.to_rgb %>"
+    >
+      <span><%= pseudo.first(2).upcase %></span>
+    </div>
+  </div>
+
+  <div class="chat-header items-center gap-2">
+    <div>
+      <%= pseudo %>
+
+      <time class="text-xs opacity-50"><%= l(comment.created_at) %></time>
+    </div>
+
+    <% if comment.flagged? %>
+      <%= render 'comments/flag_tag' %>
+    <% elsif allowed_to?(:report?, comment) %>
+      <%= link_to new_polymorphic_path([comment.commentable, comment, :report]),
+                  class: 'tooltip text-base-content',
+                  id: "report_comment_#{comment.id}",
+                  data: { turbo_stream: true, tip: t('report') },
+                  'aria-label': 'Report comment' do %>
+        <%= lucide_icon 'flag', class: 'w-3' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="chat-bubble"><%= simple_format(comment.content) %></div>
+
+  <div class="chat-footer items-center mt-1">
+    <div class="rating rating-xs">
+      <% 5.times do |i| %>
+        <div
+          class="mask mask-star bg-primary"
+          aria-label="<%= i %> star"
+          aria-current="<%= 'true' if i + 1 == comment.rating %>"
+        ></div>
+      <% end %>
+    </div>
+
+    <span class="text-xs"><%= comment.rating %>/5</span>
+  </div>
+</div>

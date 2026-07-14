@@ -1,0 +1,9 @@
+<% i18n_scope = 'comments.modal' %>
+
+<% content_for(:modal_title) do %>
+  <%= t('title_html', name: commentable.name, scope: i18n_scope) %>
+<% end %>
+
+<%= render_modal auto_open: true do %>
+  <%= render 'form', commentable: commentable, comment: comment %>
+<% end %>

@@ -1,6 +1,26 @@
 class CommentsController < PublicController
   before_action :set_commentable
 
+  # @route GET /fr/merchants/:merchant_id/comments {locale: "fr"} (merchant_comments_fr)
+  # @route GET /es/merchants/:merchant_id/comments {locale: "es"} (merchant_comments_es)
+  # @route GET /de/merchants/:merchant_id/comments {locale: "de"} (merchant_comments_de)
+  # @route GET /it/merchants/:merchant_id/comments {locale: "it"} (merchant_comments_it)
+  # @route GET /en/merchants/:merchant_id/comments {locale: "en"} (merchant_comments_en)
+  # @route GET /merchants/:merchant_id/comments
+  # @route GET /fr/directories/:directory_id/comments {locale: "fr"} (directory_comments_fr)
+  # @route GET /es/directories/:directory_id/comments {locale: "es"} (directory_comments_es)
+  # @route GET /de/directories/:directory_id/comments {locale: "de"} (directory_comments_de)
+  # @route GET /it/directories/:directory_id/comments {locale: "it"} (directory_comments_it)
+  # @route GET /en/directories/:directory_id/comments {locale: "en"} (directory_comments_en)
+  # @route GET /directories/:directory_id/comments
+  def index
+    authorize! Comment
+
+    comments = CommentDecorator.wrap(@commentable.comments)
+
+    @pagy, @comments = pagy(:offset, comments, limit: 5)
+  end
+
   # @route GET /fr/merchants/:merchant_id/comments/new {locale: "fr"} (new_merchant_comment_fr)
   # @route GET /es/merchants/:merchant_id/comments/new {locale: "es"} (new_merchant_comment_es)
   # @route GET /de/merchants/:merchant_id/comments/new {locale: "de"} (new_merchant_comment_de)

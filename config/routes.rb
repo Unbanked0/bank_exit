@@ -72,7 +72,7 @@ Rails.application.routes.draw do
     resources :merchant_proposals, only: %i[index new create]
 
     concern :commentable do
-      resources :comments, only: %i[new create] do
+      resources :comments, only: %i[index new create] do
         scope module: :comments do
           resource :report, only: %i[new create]
         end

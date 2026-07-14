@@ -62,7 +62,7 @@
           .rating.rating-xs
             .mask.mask-star.bg-primary aria-label="#{@merchant.average_rating} star" aria-current="true" title="#{@merchant.average_rating}/5"
           p.text-xs
-            = number_with_precision(@merchant.average_rating, strip_insignificant_zeros: true, precision: 2)
+            = number_with_precision(@merchant.average_rating, strip_insignificant_zeros: true, precision: 1)
             | /5
 
         .text-xs.ml-1 title="#{@merchant.comments_count} #{Comment.model_name.human(count: @merchant.comments_count)}"

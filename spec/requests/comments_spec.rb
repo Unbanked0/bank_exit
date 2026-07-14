@@ -4,6 +4,12 @@ RSpec.describe 'Comments' do
   context 'when commentable is merchant' do
     let(:commentable) { create :merchant }
 
+    describe 'GET /merchants/:merchant_id/comments' do
+      subject! { get "/merchants/#{commentable.identifier}/comments" }
+
+      it { expect(response).to have_http_status :redirect }
+    end
+
     describe 'GET /merchants/:merchant_id/comments/new' do
       subject! { get "/merchants/#{commentable.identifier}/comments/new", as: :turbo_stream }
 
@@ -11,6 +17,19 @@ RSpec.describe 'Comments' do
     end
 
     TEST_LOCALES.each do |locale|
+      describe "GET /#{locale}/merchants/:merchant_id/comments" do
+        subject(:action) do
+          get "/#{locale}/merchants/#{commentable.identifier}/comments"
+        end
+
+        before do
+          create_list :comment, 3, commentable: commentable
+          action
+        end
+
+        it { expect(response).to have_http_status :ok }
+      end
+
       describe "GET /#{locale}/merchants/:merchant_id/comments/new" do
         subject! do
           get "/#{locale}/merchants/#{commentable.identifier}/comments/new", as: :turbo_stream
@@ -101,6 +120,12 @@ RSpec.describe 'Comments' do
   context 'when commentable is directory' do
     let(:commentable) { create :directory }
 
+    describe 'GET /directories/:directory_id/comments' do
+      subject! { get "/directories/#{commentable.id}/comments" }
+
+      it { expect(response).to have_http_status :redirect }
+    end
+
     describe 'GET /directories/:directory_id/comments/new' do
       subject! { get "/directories/#{commentable.id}/comments/new", as: :turbo_stream }
 
@@ -108,6 +133,19 @@ RSpec.describe 'Comments' do
     end
 
     TEST_LOCALES.each do |locale|
+      describe "GET /#{locale}/directories/:directory_id/comments" do
+        subject(:action) do
+          get "/#{locale}/directories/#{commentable.id}/comments"
+        end
+
+        before do
+          create_list :comment, 3, commentable: commentable
+          action
+        end
+
+        it { expect(response).to have_http_status :ok }
+      end
+
       describe "GET /#{locale}/directories/:directory_id/comments/new" do
         subject! do
           get "/#{locale}/directories/#{commentable.id}/comments/new", as: :turbo_stream

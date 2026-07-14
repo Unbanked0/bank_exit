@@ -2,8 +2,6 @@ class DirectoriesController < PublicController
   before_action :set_directory, only: :show
   before_action :set_faqs, only: %i[index new show]
 
-  include Commentable if -> { comments_enabled? }
-
   helper_method :around_me?
 
   add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
@@ -157,9 +155,5 @@ class DirectoriesController < PublicController
     @faqs = FAQ.all.select do |faq|
       'directory'.in?(faq.categories)
     end
-  end
-
-  def commentable
-    @directory
   end
 end

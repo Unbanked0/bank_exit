@@ -1,0 +1,61 @@
+<%= turbo_frame_tag :comments_wrapper do %>
+  <div class="space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h2 class="uppercase font-bold text-primary" id="comments_count">
+          <%= @commentable.comments_count %>
+          <%= Comment.model_name.human(count: @commentable.comments_count) %>
+        </h2>
+      </div>
+
+      <% if allowed_to?(:create?, Comment) %>
+        <%= add_link_to new_polymorphic_path([@commentable, Comment.new]),
+                        data: { turbo_stream: true },
+                        hotkey: 'c' do %>
+          <%= lucide_icon 'message-square', class: 'w-4 inline-flex' %>
+          <%= t('add') %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="alert alert-warning text-xs">
+      <%= lucide_icon 'triangle-alert', class: 'w-5' %>
+
+      <div>
+        <% if @commentable.is_a?(MerchantDecorator) %>
+          <p>
+            <% testimony_form_link = link_to(
+                new_merchant_report_path(@commentable),
+                title: t('merchants.show.report_a_fault.title'),
+                data: { turbo_stream: true },
+                class: 'font-bold underline decoration-dotted'
+            ) do %>
+              <%= t('.other_form') %>
+            <% end %>
+
+            <%= t('.comment_as_testimony_only_html', link: testimony_form_link) %>
+          </p>
+        <% end %>
+
+        <p class="mt-1"><%= t('.comments_no_moderation') %></p>
+      </div>
+    </div>
+
+    <div class="space-y-3 scroll-mt-20">
+      <div class="space-y-4" id="comments">
+        <%= render @comments %>
+      </div>
+
+      <%= render 'pagination',
+                 pagy: @pagy,
+                 scroll_top: true,
+                 use_turbo_stream: false %>
+    </div>
+
+    <% if @comments.empty? %>
+      <div class="alert alert-success alert-sm" id="empty_comments">
+        <p><%= t('.no_comment_yet') %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,20 +1,20 @@
-<%# locals: (pagy:, search_path: nil, add_page_to_url: true, keyboard_enabled: 'true', attrs: {}) %>
+<%# locals: (pagy:, pagination_path: nil, use_turbo_stream: true, add_page_to_url: true, scroll_top: true, keyboard_enabled: true, attrs: {}) %>
 
 <% if pagy.last > 1 %>
   <div
     class="flex items-center justify-center gap-2 p-2"
     data-controller="pagination"
     data-pagination-keyboard-enabled-value="<%= keyboard_enabled %>"
-    id="<%= ('pagy_top' if defined?(pagy_top) && pagy_top) %>"
+    data-pagination-scroll-top-value="<%= scroll_top %>"
   >
     <% if keyboard_enabled && pagy.previous %>
       <%= hotkey_label(['Ctrl', '◀︎'], size: 'xs') %>
     <% end %>
 
     <%== pagy.series_nav(
-        path: search_path,
+        path: pagination_path,
         anchor_string: [
-          'data-turbo-stream="true"',
+          ('data-turbo-stream="true"' if use_turbo_stream),
           ('data-action="click->pagination#addPageToURL"' if add_page_to_url)
         ]
        .join(' ')

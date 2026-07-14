@@ -1,8 +1,6 @@
 class MerchantsController < PublicController
   before_action :set_merchant, only: :show
 
-  include Commentable if -> { comments_enabled? }
-
   add_breadcrumb proc { I18n.t('application.header.home') }, :root_path
   add_breadcrumb proc { I18n.t('application.header.map') }, :map_referer_path
 
@@ -80,9 +78,5 @@ class MerchantsController < PublicController
 
   def debug_mode?
     params[:debug] == 'true'
-  end
-
-  def commentable
-    @merchant
   end
 end

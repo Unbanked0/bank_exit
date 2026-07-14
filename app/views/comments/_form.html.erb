@@ -1,0 +1,24 @@
+<div class="alert alert-info"><%= t('.introduction') %></div>
+
+<%= simple_form_for [commentable, comment], html: { class: 'space-y-2 px-1' } do |f| %>
+  <%= f.input :content %>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <%= f.input :rating,
+                collection: comment_rating_select_input,
+                prompt: false %>
+
+    <%= f.input :pseudonym %>
+    <%= f.input :nickname, as: :hidden, wrapper: false %>
+  </div>
+
+  <div>
+    <%= f.input :affidavit,
+                boolean_style: :inline,
+                include_hidden: false %>
+  </div>
+
+  <div class="text-right">
+    <%= f.button :submit, t('.submit'), class: 'btn btn-success' %>
+  </div>
+<% end %>

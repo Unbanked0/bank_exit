@@ -56,6 +56,6 @@ class ProfesionalDecorator < ApplicationDecorator
 
   def average_rating
     ratings = comments.pluck(:rating)
-    ratings.sum / ratings.size
+    ratings.sum.fdiv(ratings.size)
   end
 end
