@@ -145,9 +145,10 @@ article
               = weblink.title.presence || clean_url(weblink.url)
 
     - if allowed_to?(:index?, Comment)
-      = turbo_frame_tag :comments_wrapper, src: directory_comments_path(@directory), loading: :lazy do
-        .text-center
-          .loading.loading-spinner.loading-3xl.text-primary
+      div
+        = turbo_frame_tag :comments_wrapper, src: directory_comments_path(@directory), loading: :lazy do
+          .text-center
+            .loading.loading-spinner.loading-3xl.text-primary
 
     .italic
       p title=l(@directory.created_at)
