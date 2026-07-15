@@ -147,8 +147,7 @@ article
     - if allowed_to?(:index?, Comment)
       div
         = turbo_frame_tag :comments_wrapper, src: directory_comments_path(@directory), loading: :lazy do
-          .text-center
-            .loading.loading-spinner.loading-3xl.text-primary
+          = render "loader_noscript", message_noscript: "JavaScript is required to display comments"
 
     .italic
       p title=l(@directory.created_at)

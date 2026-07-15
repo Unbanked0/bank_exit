@@ -4,6 +4,8 @@
 %>
 
 <script nonce="<%= request.content_security_policy_nonce %>">
+  document.documentElement.classList.add("js")
+
   const theme = localStorage.getItem("theme")
 
   if (theme && theme !== "auto") {

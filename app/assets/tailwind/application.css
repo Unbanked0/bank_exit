@@ -54,6 +54,16 @@
     }
 }
 
+@layer utilities {
+    .js-only {
+        display: none;
+    }
+
+    .js .js-only {
+        display: initial;
+    }
+}
+
 @utility fieldset-legend {
     @apply cursor-pointer;
     padding-block: 0;

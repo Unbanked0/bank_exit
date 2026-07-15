@@ -51,15 +51,7 @@
                           research_target: :frame,
                            action: "turbo:frame-load->research#loaded"
                         } do %>
-      <div class="flex flex-col items-center justify-center gap-5 py-5">
-        <div class="loading loading-spinner loading-3xl text-primary"></div>
-
-        <noscript>
-          <p class="alert alert-error">
-            JavaScript is required to display results
-          </p>
-        </noscript>
-      </div>
+      <%= render "loader_noscript", message_noscript: "JavaScript is required to display results" %>
     <% end %>
 
     <footer class="mb-2 text-xs space-y-2">
@@ -68,7 +60,7 @@
       <p
         class="
           hide-on-touch max-sm:hidden md:flex items-center justify-end gap-2
-          px-2
+          px-2 js-only
         "
       >
         <span>

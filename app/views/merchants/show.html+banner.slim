@@ -67,8 +67,7 @@ article
     - if allowed_to?(:index?, Comment)
       div
         = turbo_frame_tag :comments_wrapper, src: merchant_comments_path(@merchant), loading: :lazy do
-          .text-center
-            .loading.loading-spinner.loading-3xl.text-primary
+          = render "loader_noscript", message_noscript: "JavaScript is required to display comments"
 
     - if params[:debug] == 'true'
       = render 'merchants/view_sections/debug', merchant: @merchant
