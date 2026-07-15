@@ -1,5 +1,4 @@
 class WelcomeController < PublicController
-  include Merchandable
   include Statisticable
 
   before_action :resume_session
