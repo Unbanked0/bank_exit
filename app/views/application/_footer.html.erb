@@ -1,11 +1,6 @@
-<footer class="<%= class_names(["bg-base-100 text-base-content p-5 lg:p-10 border-base-content/10 border-t print:hidden", 'snow-stack': themes_finder.christmas_time?]) %>">
+<footer class="<%= class_names(["container mx-auto bg-base-100 text-base-content p-5 lg:p-10 border-base-content/10 border-t print:hidden", 'snow-stack': themes_finder.christmas_time?]) %>">
   <% unless params[:controller] == 'risks' %>
-    <details
-      class="
-        collapse collapse-arrow bg-info text-info-content mx-auto mb-10
-        container max-w-xl
-      "
-    >
+    <details class="collapse collapse-arrow bg-info text-info-content mb-10">
       <summary class="collapse-title font-semibold text-center">
         <%= t('.warning_title') %>
       </summary>
@@ -16,7 +11,12 @@
     </details>
   <% end %>
 
-  <div class="container mx-auto footer lg:place-content-evenly lg:footer-horizontal">
+  <div
+    class="
+      footer grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:justify-items-center md:place-content-evenly
+      max-sm:footer-vertical
+    "
+  >
     <nav>
       <h2 class="footer-title">
         <%= t('application.header.collectif') %> <%= t('application.header.bank_exit') %>
