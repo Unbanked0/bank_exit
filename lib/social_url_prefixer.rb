@@ -66,7 +66,7 @@ class SocialUrlPrefixer
     return false if value.blank?
     return true if %r{^(https?:)?//}.match?(value)
 
-    known_domains.any? { |domain| value.downcase.include?(domain) }
+    known_domains.any? { value.downcase.include?(it) }
   end
 
   def self.known_domains
