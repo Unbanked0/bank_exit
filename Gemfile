@@ -93,6 +93,6 @@ end
 group :test do
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
-  gem 'simplecov', '1.0.0.rc5', require: false
+  gem 'simplecov', require: false
   gem 'webmock'
 end
