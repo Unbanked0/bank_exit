@@ -73,7 +73,11 @@
 
       <%= render 'theme_switcher' %>
 
-      <%= image_tag 'logo_by_mondetta.jpeg', class: 'w-32 mx-auto rounded-full mt-4', title: 'Logo by Mondetta', alt: 'Logo by Mondetta' %>
+      <%= image_tag 'logo_by_mondetta.jpeg',
+            class: 'w-32 mx-auto rounded-full mt-4',
+            title: 'Logo by Mondetta',
+            alt: 'Logo by Mondetta',
+            width: 128, height: 128 %>
     </nav>
 
     <nav>
@@ -142,7 +146,10 @@
         lg:text-left gap-4
       "
     >
-      <%= image_tag logo_by_locale, class: 'w-16 h-16 mx-auto object-cover rounded-full', alt: 'Logo Bank-Exit' %>
+      <%= image_tag logo_by_locale,
+            class: 'w-16 h-16 mx-auto object-cover rounded-full',
+            alt: 'Logo Bank-Exit',
+            width: 64, height: 64 %>
 
       <p>
         <%= t('.copyright_html', year: Date.current.year) %>

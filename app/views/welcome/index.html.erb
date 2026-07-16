@@ -3,7 +3,10 @@
 
   <div class="container mx-auto px-4 py-10 relative">
     <div class="space-y-8 mx-auto max-w-4xl text-center">
-      <%= image_tag logo_by_locale, class: "w-48 mx-auto hover:scale-110 motion-safe:transition-transform", alt: "Logo Bank-Exit" %>
+      <%= image_tag logo_by_locale,
+            class: "w-48 mx-auto hover:scale-110 motion-safe:transition-transform",
+            alt: "Logo Bank-Exit",
+            width: 192, height: 192 %>
 
       <div class="text-5xl md:text-6xl font-black tracking-tight">
         <span>
@@ -161,7 +164,10 @@
   <div class="container mx-auto px-4">
     <div class="xl:w-2/3 mx-auto flex max-md:flex-col items-start justify-center gap-6">
       <div class="flex-1 text-center space-y-6 md:order-1">
-        <%= image_tag logo_by_locale, class: 'w-48 mx-auto', alt: "Logo #{t('.title')}" %>
+        <%= image_tag logo_by_locale,
+              class: 'w-48 mx-auto',
+              alt: "Logo #{t('.title')}",
+              width: 192, height: 192 %>
 
         <h1 class="text-3xl font-bold">
           <%= t('.title') %>
@@ -290,7 +296,10 @@
     <div class="flex max-md:flex-col gap-3 justify-between">
       <%= render 'questions_form', profiles: @profiles, levels: @levels %>
 
-      <%= image_tag "banners/banner-btc-monero-farmer.jpeg", alt: "Banner farmer BTC/XMR", class: "max-md:hidden md:w-2/3 rounded-box object-cover border border-base-content/20 opacity-50" %>
+      <%= image_tag "banners/banner-btc-monero-farmer.jpeg",
+            alt: "Banner farmer BTC/XMR",
+            class: "max-md:hidden md:w-2/3 rounded-box object-cover border border-base-content/20 opacity-50",
+            width: 1002, height: 335 %>
     </div>
   </div>
 </section>

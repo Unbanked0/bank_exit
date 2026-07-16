@@ -27,7 +27,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
               controller: "hotkey",
               action: "keydown.shift+0@document->hotkey#click"
             } do %>
-        <%= image_tag logo_by_locale, class: 'w-12', alt: "Logo #{t('.title')}" %>
+        <%= image_tag logo_by_locale, class: 'w-12', alt: "Logo #{t('.bank_exit')}", width: 48, height: 48 %>
 
         <div>
           <div class="font-bold lg:text-lg">
@@ -360,6 +360,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
     <div class="navbar-end gap-1 md:gap-3">
       <div class="flex items-center gap-0.5">
         <button
+          aria-label="Search"
           class="btn btn-ghost btn-circle"
           data-controller="hotkey"
           data-action="keydown.ctrl+k@document->hotkey#click"
@@ -379,6 +380,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
       <% end %>
 
       <button
+        aria-label="Menu"
         class="btn btn-square btn-soft lg:hidden"
         popovertarget="main_menu"
       >
