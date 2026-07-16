@@ -59,7 +59,7 @@
         display: none;
     }
 
-    .js .js-only {
+    .js .js-only:not(.hide-on-touch) {
         display: initial;
     }
 }
