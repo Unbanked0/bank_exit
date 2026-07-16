@@ -10,7 +10,6 @@ gem 'lucide-rails'
 gem 'propshaft'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
-gem 'turbo_power'
 gem 'turbo-rails'
 
 # API

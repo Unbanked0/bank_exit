@@ -2,10 +2,6 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 
-import TurboPower from "turbo_power";
-
-TurboPower.initialize(Turbo.StreamActions);
-
 // @see https://gorails.com/episodes/custom-hotwire-turbo-confirm-modals
 Turbo.config.forms.confirm = (message, _element) => {
   let dialog = document.getElementById("turbo-confirm");
