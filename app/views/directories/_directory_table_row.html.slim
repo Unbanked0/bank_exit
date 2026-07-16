@@ -34,4 +34,4 @@ tr
   td
     = render 'contact_ways_list', directory: directory
 
-  td= show_link_to directory_path(directory)
+  td= show_link_to directory_path(directory, q: params[:query].presence)

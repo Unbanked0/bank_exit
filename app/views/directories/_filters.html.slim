@@ -73,14 +73,15 @@
     = f.input :city,
               required: false,
               label_html: { class: 'mb-2' },
-              wrapper_html: { class: 'auto-search-wrapper' },
               input_html: { \
                 value: params[:city],
+                list: "addresses",
                 data: { \
                   directories_target: 'city',
-                  action: 'keyup->directories#deliveryZoneChanged' \
+                  action: "input->directories#search change->directories#deliveryZoneChanged" \
                 } \
               }
+    datalist#addresses data-directories-target="datalist"
 
     = f.input :department,
               required: false,
