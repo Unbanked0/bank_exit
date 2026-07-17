@@ -50,7 +50,7 @@ article
         h2.text-primary.uppercase.mb-2= t('description')
 
         .space-y-3
-          = simple_format(@directory.description)
+          = simple_format(highlight(@directory.description, params[:q]))
 
     - if @directory.address
       div

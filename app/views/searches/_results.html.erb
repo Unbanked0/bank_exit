@@ -68,7 +68,7 @@
       <%== Directory.human_count(directories.count, pretty_count: number_with_delimiter(directories.count)) %>
     </div>
     <% directories.each do |directory| %>
-      <%= link_to directory_path(directory), class: list_item_class, data: { turbo_frame: :_top } do %>
+      <%= link_to directory_path(directory, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
         <%= render 'logo_or_initials', model: directory, mode: :medium %>
 
         <div>
