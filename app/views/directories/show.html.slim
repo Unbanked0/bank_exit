@@ -149,7 +149,7 @@ article
         = turbo_frame_tag :comments_wrapper, src: directory_comments_path(@directory), loading: :lazy do
           = render "loader_noscript", message_noscript: "JavaScript is required to display comments"
 
-    .italic
+    .text-right.text-sm.italic.text-base-content/50.space-y-1
       p title=l(@directory.created_at)
         = t('added_on', date: time_ago_in_words(@directory.created_at))
       - if @directory.updated_at.to_date != @directory.created_at.to_date

@@ -43,7 +43,7 @@ article data-controller="directories" data-directories-autocomplete-url-value= a
 
       = render 'filters', pagy: @pagy
 
-    #directories.space-y-3.p-3.lg:basis-3/4.scroll-mt-8
+    #directories.space-y-3.p-3.lg:basis-3/4.scroll-mt-8 class="@container"
       = render 'directories', directories: @directories, pagy: @pagy
 
 - if @faqs.any?

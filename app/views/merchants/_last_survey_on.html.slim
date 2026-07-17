@@ -1,4 +1,4 @@
-.text-right.text-xs.text-gray-600.italic.dark:text-gray-400.space-y-1
+.text-right.text-xs.italic.text-base-content/50.space-y-1
   p.flex.items-center.justify-end.gap-1 title=l(merchant.created_at)
     = lucide_icon 'clock', class: 'w-3 h-3'
     = t('.referenced_on', date: time_ago_in_words(merchant.created_at))

@@ -54,13 +54,15 @@
     }
 }
 
-@layer utilities {
-    .js-only {
+@utility js-only {
+    html:not(.js) & {
         display: none;
     }
+}
 
-    .js .js-only:not(.hide-on-touch) {
-        display: initial;
+@utility hide-on-touch {
+    @media (hover: none), (pointer: coarse) {
+        display: none;
     }
 }
 
@@ -132,7 +134,7 @@ a {
     @apply motion-safe:transition-colors;
 }
 
-a:not(.btn, .badge, .menu a):hover,
+a:not(.btn, .badge, .menu a, .card):hover,
 .alert-info a:not(.btn),
 .highlight-link a,
 #faq a {
@@ -253,38 +255,6 @@ forced to white to make texts readables */
         ins {
             @apply bg-success/20 text-success;
         }
-    }
-}
-
-.hide-on-touch {
-    @media (any-hover: none) {
-        display: none;
-    }
-}
-
-button:not(.btn),
-a:not(.btn):not(.main-menu a):not(ul.divide-y a),
-details:not(.collapse):not(.main-menu details) > summary,
-.card,
-.pretty-checkbox,
-input,
-textarea,
-select {
-    @apply focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-base-content focus-visible:outline-offset-2 focus-visible:transition-none;
-}
-
-:focus,
-:focus-visible {
-    --tw-ring-offset-shadow: none;
-    --tw-ring-shadow: none;
-    --tw-ring-color: transparent;
-}
-
-@layer components {
-    html:has(dialog:modal),
-    html:has(:popover-open) {
-        overflow: hidden;
-        scrollbar-gutter: stable;
     }
 }
 
