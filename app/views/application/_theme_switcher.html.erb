@@ -1,62 +1,64 @@
-<div
-  aria-label="Theme"
-  class="flex gap-2 justify-center items-center js-only"
-  data-action="keydown.t@document->theme#switchTheme"
-  role="radiogroup"
->
-  <%# Light %>
-  <label
-    class="btn btn-square has-checked:btn-primary"
-    title="<%= t('.switch_to_light') %>"
+<div class="js-only flex items-center gap-2">
+  <div
+    aria-label="Theme"
+    class="join"
+    data-action="keydown.t@document->theme#switchTheme"
+    role="radiogroup"
   >
-    <input
-      class="radio sr-only"
-      data-action="change->theme#setLight"
-      data-theme-target="lightButton"
-      name="theme"
-      type="radio"
-      value="light"
-      aria-label="<%= t('.switch_to_light') %>"
+    <%# Light %>
+    <label
+      class="join-item btn btn-square has-checked:btn-primary"
+      title="<%= t('.switch_to_light') %>"
     >
+      <input
+        class="radio sr-only"
+        data-action="change->theme#setLight"
+        data-theme-target="lightButton"
+        name="theme"
+        type="radio"
+        value="light"
+        aria-label="<%= t('.switch_to_light') %>"
+      >
 
-    <%= lucide_icon 'sun', class: 'h-5 w-5 fill-current' %>
-  </label>
+      <%= lucide_icon 'sun', class: 'h-5 w-5 fill-current' %>
+    </label>
 
-  <%# Dark %>
-  <label
-    class="btn btn-square has-checked:btn-primary"
-    title="<%= t('.switch_to_dark') %>"
-  >
-    <input
-      class="radio sr-only"
-      data-action="change->theme#setDark"
-      data-theme-target="darkButton"
-      name="theme"
-      type="radio"
-      value="dark"
-      aria-label="<%= t('.switch_to_dark') %>"
+    <%# Dark %>
+    <label
+      class="join-item btn btn-square has-checked:btn-primary"
+      title="<%= t('.switch_to_dark') %>"
     >
+      <input
+        class="radio sr-only"
+        data-action="change->theme#setDark"
+        data-theme-target="darkButton"
+        name="theme"
+        type="radio"
+        value="dark"
+        aria-label="<%= t('.switch_to_dark') %>"
+      >
 
-    <%= lucide_icon 'moon', class: 'h-5 w-5 fill-current' %>
-  </label>
+      <%= lucide_icon 'moon', class: 'h-5 w-5 fill-current' %>
+    </label>
 
-  <%# Auto %>
-  <label
-    class="btn btn-square has-checked:btn-primary"
-    title="<%= t('.switch_to_auto') %>"
-  >
-    <input
-      class="radio sr-only"
-      data-action="change->theme#setAuto"
-      data-theme-target="autoButton"
-      name="theme"
-      type="radio"
-      value="auto"
-      aria-label="<%= t('.switch_to_dark') %>"
+    <%# Auto %>
+    <label
+      class="join-item btn btn-square has-checked:btn-primary"
+      title="<%= t('.switch_to_auto') %>"
     >
+      <input
+        class="radio sr-only"
+        data-action="change->theme#setAuto"
+        data-theme-target="autoButton"
+        name="theme"
+        type="radio"
+        value="auto"
+        aria-label="<%= t('.switch_to_dark') %>"
+      >
 
-    <%= lucide_icon 'monitor', class: 'h-5 w-5 fill-current' %>
-  </label>
+      <%= lucide_icon 'monitor', class: 'h-5 w-5 fill-current' %>
+    </label>
+  </div>
 
   <%= hotkey_label('t') %>
 </div>

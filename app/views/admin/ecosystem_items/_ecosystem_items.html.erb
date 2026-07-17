@@ -1,0 +1,36 @@
+<section class="space-y-3">
+  <div class="table-wrapper">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th scope="col">
+            <%= EcosystemItem.human_attribute_name(:picture) %>
+          </th>
+
+          <th scope="col"><%= EcosystemItem.human_attribute_name(:name) %></th>
+          <th scope="col"><%= EcosystemItem.human_attribute_name(:url) %></th>
+
+          <th scope="col">
+            <%= EcosystemItem.human_attribute_name(:enabled) %>
+          </th>
+
+          <th scope="col"><%= t('actions') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render ecosystem_items %>
+
+        <% if ecosystem_items.blank? %>
+          <tr>
+            <td class="text-center italic" colspan="100%">
+              <%= t('.empty_results') %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= render 'pagination', pagy: pagy %>
+</section>

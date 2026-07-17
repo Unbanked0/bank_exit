@@ -240,20 +240,27 @@ fr:
         logged_in_as: Connexion en tant que
         logged_in_as_confirm_html: Voulez-vous vous connecter en tant que <strong>%{email}</strong> ?
 
-    sidebar:
-      title: Sortie de Banque
-      subtitle: Admin
+    shared:
+      sidebar:
+        title: Sortie de Banque
+        subtitle: Admin
 
+        general: Général
+        api: API
+        monitoring: Supervision
+        public: Public
+
+        back_to_home: Retour à l'accueil
+        back_to_map: Retour à la carte
+        back_to_directory: Retour à l'annuaire
+      navbar:
+        edit_my_profile: Modifier mon profil
+
+    sidebar:
       monero_ecosystem: Ecosystème Monero
 
       merchants_disabled: Commerçants désactivés
       comments_disabled: Commentaires signalés
-
-      back_to_home: Retour à l'accueil
-      back_to_map: Retour à la carte
-      back_to_directory: Retour à l'annuaire
-
-      edit_my_profile: Modifier mon profil
 
     nostr_events:
       create:

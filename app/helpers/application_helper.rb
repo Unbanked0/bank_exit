@@ -34,6 +34,7 @@ module ApplicationHelper
   end
 
   def pretty_country_html(country, show_label: true, show_flag: true)
+    country = 'gb' if country == 'en'
     c = ISO3166::Country[country]
 
     name = c.translations[I18n.locale.to_s] ||
@@ -124,5 +125,11 @@ module ApplicationHelper
     inner_html = safe_join(sources_html + tracks_html)
 
     content_tag(:video, inner_html, **)
+  end
+
+  def i18n_resource_name
+    model_class = controller_path.classify.demodulize.singularize.constantize
+
+    model_class.model_name.human(count: 2).capitalize
   end
 end

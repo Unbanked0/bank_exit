@@ -1,0 +1,173 @@
+<% today_i18n = l(@dashboard_presenter.today.to_date)
+on_date_i18n = t('statistics.statistics_numbers.on_date', date: today_i18n)
+dated_i18n = t('statistics.statistics_numbers.dated', date: today_i18n) %>
+
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<div class="flex flex-col @4xl:flex-row gap-4">
+  <div
+    class="
+      stats @4xl:stats-vertical shadow overflow-y-auto shrink-0 @4xl:basis-80
+      bg-base-200
+    "
+  >
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <div class="avatar">
+          <%= lucide_icon 'store', class: 'w-16 h-16 text-base-content' %>
+        </div>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(@merchants_statistics[:today].count) %>
+      </div>
+
+      <div class="stat-title">
+        <%= t('statistics.statistics_numbers.new_merchants_title') %>
+      </div>
+
+      <div class="stat-desc"><%= on_date_i18n %></div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <%= image_tag icon_by_coin('monero'), alt: "Monero" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(@countries_statistics[:monero_in_france].count) %>
+      </div>
+
+      <div class="stat-title">
+        <%= t('statistics.statistics_numbers.monero_france_title') %>
+      </div>
+
+      <div class="stat-desc"><%= dated_i18n %></div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <%= image_tag icon_by_coin('monero'), alt: "Monero" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(@coins_statistics[:monero_world].count) %>
+      </div>
+
+      <div class="stat-title">
+        <%= t('statistics.statistics_numbers.monero_world_title') %>
+      </div>
+
+      <div class="stat-desc"><%= dated_i18n %></div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <%= image_tag icon_by_coin('june'), alt: "June" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(@coins_statistics[:june_world].count) %>
+      </div>
+
+      <div class="stat-title">
+        <%= t('statistics.statistics_numbers.june_world_title') %>
+      </div>
+
+      <div class="stat-desc"><%= dated_i18n %></div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <%= lucide_icon "notebook", class: "w-16 h-16 text-base-content" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(@directories_statistics[:enabled].count) %>
+      </div>
+
+      <div class="stat-title">
+        <%= Directory.model_name.human.capitalize %>
+      </div>
+
+      <div class="stat-desc"><%= dated_i18n %></div>
+    </div>
+  </div>
+
+  <div class="min-w-0 flex-1">
+    <div
+      id="map"
+      class="w-full mx-auto z-0 relative rounded-lg h-[500px]"
+      data-controller="map"
+      data-map-fetch-markers-url-value="<%= daily_merchants_statistics_path(date: Date.today) %>"
+      data-map-fit-bounds-value="true"
+      data-map-track-geolocation-in-url-value="false"
+    >
+      <%= render 'maps/loader' %>
+    </div>
+
+    <figcaption class="text-center text-xs text-base-content italic mt-2">
+      <%= t('statistics.weekly_merchants_table.merchants_added_on_title', date: l(@dashboard_presenter.today.to_date)) %>
+    </figcaption>
+  </div>
+</div>
+
+<div class="grid xl:grid-cols-2 gap-3">
+  <figure class="chart">
+    <%= line_chart @merchants_statistics[:merchants_west_europe_and_days], title: t('statistics.show.new_merchants_west_europe_title') %>
+  </figure>
+
+  <figure class="chart">
+    <%= line_chart @merchants_statistics[:merchants_north_america_and_days], title: t('statistics.show.new_merchants_north_america_oceania_title') %>
+  </figure>
+
+  <figure class="chart">
+    <%= line_chart @merchants_statistics[:merchants_south_america_and_days], title: t('statistics.show.new_merchants_south_america_title') %>
+  </figure>
+
+  <figure class="chart">
+    <%= line_chart @merchants_statistics[:two_weeks_range], title: 'Nouveaux commerçants référencés' %>
+  </figure>
+
+  <figure class="chart">
+    <%= line_chart @countries_statistics[:monero_in_france_by_week], title: 'Commerçants Monero 🇫🇷 référencés par semaine' %>
+  </figure>
+
+  <figure class="chart">
+    <%= column_chart @countries_statistics[:monero_by_country], title: "Commerçants Monero par pays (minimum 3)" %>
+  </figure>
+
+  <figure class="chart">
+    <%= column_chart @countries_statistics[:june_by_country], title: "Commerçants June par pays" %>
+  </figure>
+
+  <figure class="chart">
+    <%= column_chart @countries_statistics[:by_countries], title: "Commerçants en Europe de l'Ouest" %>
+  </figure>
+
+  <figure class="chart">
+    <%= column_chart @categories_statistics[:by_main_categories], title: 'Commerçants par catégories essentielles' %>
+  </figure>
+
+  <figure class="chart">
+    <%= pie_chart @coins_statistics[:by_coins], title: 'Commerçants et monnaies acceptées' %>
+  </figure>
+</div>

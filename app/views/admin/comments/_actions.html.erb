@@ -1,0 +1,26 @@
+<% commentable = comment.commentable %>
+
+<%= content_for :dropdown_menu, flush: true do %>
+  <li>
+    <%= show_link_to polymorphic_path([commentable]), target: :_blank do %>
+      <%= t('.view_merchant_public_page') %>
+    <% end %>
+  </li>
+
+  <% if allowed_to?(:update?, comment) %>
+    <li>
+      <%= update_link_to admin_comment_path(comment),
+            label: t('reactivate'),
+            turbo_confirm: t('.reactivate_confirm') %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, comment) %>
+    <li>
+      <%= destroy_link_to admin_comment_path(comment),
+            turbo_confirm: t('.destroy_confirm') %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: comment.id %>

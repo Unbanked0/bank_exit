@@ -1,0 +1,15 @@
+<% content_for :page_title do %>
+  <%= t('admin.sidebar.monero_ecosystem') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:create?, EcosystemItem, namespace: Admin) %>
+    <li>
+      <%= add_link_to new_admin_ecosystem_item_path, hotkey: 'a' %>
+    </li>
+  <% end %>
+<% end %>
+
+<div id="ecosystem_items">
+  <%= render 'ecosystem_items', ecosystem_items: @ecosystem_items, pagy: @pagy %>
+</div>

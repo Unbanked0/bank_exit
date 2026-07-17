@@ -240,20 +240,27 @@ en:
         logged_in_as: Logged in as
         logged_in_as_confirm_html: Do you want to log in as <strong>%{email}</strong>?
 
-    sidebar:
-      title: Bank-Exit
-      subtitle: Admin
+    shared:
+      sidebar:
+        title: Bank-Exit
+        subtitle: Admin
 
+        general: General
+        api: API
+        monitoring: Monitoring
+        public: Public
+
+        back_to_home: Back to home
+        back_to_map: Back to map
+        back_to_directory: Back to directory
+      navbar:
+        edit_my_profile: Edit my profile
+
+    sidebar:
       monero_ecosystem: Monero ecosystem
 
       merchants_disabled: Disabled merchants
       comments_disabled: Disabled comments
-
-      back_to_home: Back to home
-      back_to_map: Back to map
-      back_to_directory: Back to directory
-
-      edit_my_profile: Edit my profile
 
     nostr_events:
       create:

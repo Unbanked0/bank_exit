@@ -4,6 +4,8 @@ module Admin
       show edit update destroy
     ]
 
+    add_breadcrumb :i18n_resource_name, :admin_api_tokens_path
+
     # @route GET /fr/admin/api_tokens {locale: "fr"} (admin_api_tokens_fr)
     # @route GET /es/admin/api_tokens {locale: "es"} (admin_api_tokens_es)
     # @route GET /de/admin/api_tokens {locale: "de"} (admin_api_tokens_de)
@@ -36,6 +38,8 @@ module Admin
       authorize!
 
       @api_token = APIToken.new
+
+      add_breadcrumb t('add'), :new_admin_api_token_path
     end
 
     # @route GET /fr/admin/api_tokens/:id/edit {locale: "fr"} (edit_admin_api_token_fr)
@@ -46,6 +50,8 @@ module Admin
     # @route GET /admin/api_tokens/:id/edit
     def edit
       authorize! @api_token
+
+      add_breadcrumb t('edit'), :edit_admin_api_token_path
     end
 
     # @route POST /fr/admin/api_tokens {locale: "fr"} (admin_api_tokens_fr)

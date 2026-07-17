@@ -215,17 +215,18 @@ es:
         logged_in_as: Conectado como
         logged_in_as_confirm_html: ¿Desea conectarse como <strong>%{email}</strong>?
 
-    sidebar:
-      title: Salida del Banco
-      subtitle: Admin
+    shared:
+      sidebar:
+        title: Salida del Banco
+        subtitle: Admin
+        back_to_home: Volver al inicio
+        back_to_map: Volver al mapa
+        back_to_directory: Volver al directorio
+      navbar:
+        edit_my_profile: Editar mi perfil
 
+    sidebar:
       monero_ecosystem: Ecosistema Monero
 
       merchants_disabled: Comerciantes deshabilitados
       comments_disabled: Comentarios reportados
-
-      back_to_home: Volver al inicio
-      back_to_map: Volver al mapa
-      back_to_directory: Volver al directorio
-
-      edit_my_profile: Editar mi perfil

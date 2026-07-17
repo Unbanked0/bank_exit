@@ -1,0 +1,37 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:index?, Directory, namespace: Admin) %>
+    <li><%= back_link_to admin_directories_path %></li>
+  <% end %>
+<% end %>
+
+<section>
+  <% unless @directory.enabled? %>
+    <div class="alert alert-error mb-3">
+      <p>
+        <%= lucide_icon 'triangle-alert', class: 'inline-flex w-4 mr-1' %>
+        <%= t('.entry_disabled') %>
+      </p>
+    </div>
+  <% end %>
+
+  <% if @directory.merchant %>
+    <div class="alert alert-warning mb-3">
+      <p>
+        <%= t('.entry_associated_to_merchant_html',
+              merchant_link: link_to(
+                @directory.merchant.name,
+                @directory.merchant,
+                target: :_blank,
+                class: 'btn btn-xs'
+              )
+        ) %>
+      </p>
+    </div>
+  <% end %>
+
+  <%= render 'form', directory: @directory %>
+</section>

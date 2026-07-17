@@ -1,0 +1,23 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<div class="card max-w-lg mx-auto bg-base-200 lg:my-10 rounded-box">
+  <div class="card-body space-y-5">
+    <h2 class="card-title lg:text-3xl text-primary justify-center">
+      <%= t('.title') %>
+    </h2>
+
+    <%= simple_form_for current_user,
+                        url: admin_profile_path,
+                        html: { class: 'space-y-3' } do |f| %>
+      <%= f.input :email_address, as: :string %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+
+      <div class="card-actions justify-end">
+        <%= f.button :submit, t('.submit') %>
+      </div>
+    <% end %>
+  </div>
+</div>

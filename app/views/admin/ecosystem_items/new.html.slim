@@ -1,9 +1,0 @@
-- content_for :page_title do
-  = MerchantSync.model_name.human
-
-- content_for :page_actions do
-  - if allowed_to?(:index?, EcosystemItem, namespace: Admin)
-    = back_link_to admin_ecosystem_items_path
-
-section
-  = render 'form', ecosystem_item: @ecosystem_item

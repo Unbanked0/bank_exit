@@ -1,0 +1,35 @@
+<section class="table-wrapper">
+  <table class="table table-zebra">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+
+        <% if allowed_to?(:update_position?, Directory) %>
+          <th scope="col"><%= Directory.human_attribute_name(:position) %></th>
+        <% end %>
+
+        <th scope="col"><%= Directory.human_attribute_name(:logo) %></th>
+        <th scope="col"><%= Directory.human_attribute_name(:name) %></th>
+        <th scope="col">Localisation</th>
+        <th scope="col"><%= Directory.human_attribute_name(:coins) %></th>
+        <th scope="col">Contact</th>
+        <th scope="col"><%= t('date_title') %></th>
+        <th scope="col"><%= t('actions') %></th>
+      </tr>
+    </thead>
+
+    <tbody
+      data-controller="<%= "admin--directories" if allowed_to?(:update_position?, Directory) %>"
+    >
+      <%= render directories %>
+
+      <% if directories.blank? %>
+        <tr>
+          <td class="text-center" colspan="100%">
+            L'annuaire est vide
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

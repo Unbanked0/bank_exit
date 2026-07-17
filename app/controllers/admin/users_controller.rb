@@ -4,6 +4,8 @@ module Admin
       edit update destroy impersonate
     ]
 
+    add_breadcrumb :i18n_resource_name, :admin_users_path
+
     # @route GET /fr/admin/users {locale: "fr"} (admin_users_fr)
     # @route GET /es/admin/users {locale: "es"} (admin_users_es)
     # @route GET /de/admin/users {locale: "de"} (admin_users_de)
@@ -26,6 +28,8 @@ module Admin
       authorize! User
 
       @user = User.new
+
+      add_breadcrumb t('add'), :new_admin_user_path
     end
 
     # @route GET /fr/admin/users/:id/edit {locale: "fr"} (edit_admin_user_fr)
@@ -36,6 +40,8 @@ module Admin
     # @route GET /admin/users/:id/edit
     def edit
       authorize! @user
+
+      add_breadcrumb @user.email_address, :edit_admin_user_path
     end
 
     # @route POST /fr/admin/users {locale: "fr"} (admin_users_fr)

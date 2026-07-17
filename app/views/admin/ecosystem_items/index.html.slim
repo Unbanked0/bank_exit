@@ -1,9 +1,0 @@
-- content_for :page_title do
-  = t('admin.sidebar.monero_ecosystem')
-
-- content_for :page_actions do
-  - if allowed_to?(:create?, EcosystemItem, namespace: Admin)
-    = add_link_to new_admin_ecosystem_item_path, hotkey: 'a'
-
-#ecosystem_items
-  = render 'ecosystem_items', ecosystem_items: @ecosystem_items, pagy: @pagy

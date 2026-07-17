@@ -3,6 +3,10 @@ nav#breadcrumb a {
 }
 
 .breadcrumbs {
+    padding: 0;
+}
+
+body:not(.admin) .breadcrumbs {
     display: inline-block;
     border-radius: var(--radius-box);
     border: var(--border) solid var(--color-base-300);

@@ -1,4 +1,5 @@
-.nested-fields.relative.card.bg-base-200 class=('opacity-50' unless f.object.enabled?)
+.nested-fields.relative.card.bg-base-200 class=('opacity-50' unless f.object.enabled?) data-controller="admin--address" data-admin--address-search-url-value=addresses_search_path
+
   .card-body
     = f.input :id, as: :hidden, wrapper: false
     = f.input :_destroy, as: :hidden, wrapper: false

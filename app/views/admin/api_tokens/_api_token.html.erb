@@ -1,0 +1,24 @@
+<tr class="<%= class_names('opacity-25': !api_token.live?) %>">
+  <th><%= api_token.name %></th>
+
+  <td><%= api_token.requests_count %></td>
+
+  <td>
+    <% if api_token.expired_at %>
+      <div class="flex items-center gap-2">
+        <%= render 'enabled_or_disabled', enabled: api_token.expired? %>
+        <%= I18n.l(api_token.expired_at) %>
+      </div>
+    <% else %>
+      --
+    <% end %>
+  </td>
+
+  <td>
+    <%= render 'enabled_or_disabled', enabled: api_token.enabled? %>
+  </td>
+
+  <td>
+    <%= render 'actions', api_token: api_token %>
+  </td>
+</tr>

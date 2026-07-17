@@ -84,12 +84,12 @@
     @apply py-12;
 }
 
-@utility dropdown-content {
-    @apply border border-base-content/20 bg-base-200 rounded-box shadow-sm;
-}
-
 @utility table-wrapper {
     @apply overflow-x-auto;
+}
+
+@utility table {
+    @apply w-full;
 }
 
 @utility collapse {
@@ -104,6 +104,11 @@
             @apply w-full h-full object-cover;
         }
     }
+}
+
+@utility dropdown {
+    @apply rounded-box bg-base-100 border
+    border-base-content/10;
 }
 
 @utility modal-box {
@@ -195,6 +200,12 @@ abbr[title] {
 
 #flashes {
     @apply space-y-2;
+}
+
+/* Patch broken DaisyUi component */
+.collapse-menu-title {
+    @apply font-semibold text-base-content/40;
+    @apply group-has-hover:menu-active group-has-hover:text-neutral-content;
 }
 
 /* Chartjs does not support dark mode. Background is

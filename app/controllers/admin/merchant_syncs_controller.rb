@@ -2,6 +2,9 @@ module Admin
   class MerchantSyncsController < BaseController
     before_action :set_merchant_sync, only: %i[show edit update destroy]
 
+    add_breadcrumb proc { Merchant.model_name.human(count: 2).capitalize }, :admin_merchants_path
+    add_breadcrumb :i18n_resource_name, :admin_merchant_syncs_path
+
     # @route GET /fr/admin/merchant_syncs {locale: "fr"} (admin_merchant_syncs_fr)
     # @route GET /es/admin/merchant_syncs {locale: "es"} (admin_merchant_syncs_es)
     # @route GET /de/admin/merchant_syncs {locale: "de"} (admin_merchant_syncs_de)
@@ -46,6 +49,8 @@ module Admin
     # @route GET /admin/merchant_syncs/:id/edit
     def edit
       authorize! @merchant_sync
+
+      add_breadcrumb t('edit'), :edit_admin_merchant_sync_path
     end
 
     # @route PATCH /fr/admin/merchant_syncs/:id {locale: "fr"} (admin_merchant_sync_fr)

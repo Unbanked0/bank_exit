@@ -1,0 +1,69 @@
+<% today_i18n = l(@dashboard_presenter.today.to_date)
+dated_i18n = t('statistics.statistics_numbers.dated', date: today_i18n) %>
+
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% unless comments_enabled? %>
+  <% content_for :page_title_extra do %>
+    <button
+      class="btn btn-circle btn-warning btn-md"
+      commandfor="comments_disabled_help"
+      command="show-modal"
+    >
+      <%= lucide_icon 'triangle-alert', class: 'w-6' %>
+    </button>
+
+    <%= render 'modal',
+          id: :comments_disabled_help,
+          modal_title: t('.comments_disabled'),
+          modal_body: t('.comments_disabled_body_html') %>
+  <% end %>
+<% end %>
+
+<section class="mb-3 space-y-2">
+  <% comment_deleted_count = Comment.flagged.count %>
+
+  <div class="stats shadow bg-base-200 mb-3 w-full lg:w-auto">
+    <div class="stat">
+      <div class="stat-figure">
+        <%= lucide_icon 'message-square', class: 'w-12 h-12' %>
+      </div>
+
+      <div class="stat-title">
+        <span class="status status-success status-lg"></span> <%= t('.comments_visibles') %>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(Comment.available.count) %>
+      </div>
+
+      <div class="stat-desc"><%= dated_i18n %></div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <%= lucide_icon 'message-square', class: 'w-12 h-12' %>
+      </div>
+
+      <div class="stat-title">
+        <span class="status status-error status-lg"></span> <%= t('.comments_reported') %>
+      </div>
+
+      <div class="stat-value">
+        <%= number_with_delimiter(comment_deleted_count) %>
+      </div>
+
+      <% if comment_deleted_count > 0 %>
+        <div class="stat-actions mt-1">
+          <%= link_to t('display'), admin_comments_path(show_flagged: true), class: 'btn btn-error btn-xs' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<div id="comments">
+  <%= render 'comments', comments: @comments, pagy: @pagy %>
+</div>

@@ -1,0 +1,71 @@
+<% content_for :page_title do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:create?, Directory, namespace: Admin) %>
+    <li>
+      <%= add_link_to new_admin_directory_path, hotkey: 'a' %>
+    </li>
+  <% end %>
+<% end %>
+
+<div class="stats shadow bg-base-200 mb-5 w-full lg:w-auto">
+  <div class="stat">
+    <div class="stat-figure">
+      <%= lucide_icon 'notebook', class: 'w-12 h-12' %>
+    </div>
+
+    <div class="stat-title">
+      <span class="status status-success status-lg"></span> <%= t('.directory_entries') %>
+    </div>
+
+    <div class="stat-value"><%= Directory.enabled.count %></div>
+
+    <div class="stat-desc">
+      <%= I18n.t('statistics.statistics_numbers.dated', date: l(Date.current)) %>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-figure">
+      <%= lucide_icon 'notebook', class: 'w-12 h-12' %>
+    </div>
+
+    <div class="stat-title">
+      <span class="status status-error status-lg"></span> <%= t('.directory_entries_disabled') %>
+    </div>
+
+    <div class="stat-value"><%= Directory.disabled.count %></div>
+  </div>
+</div>
+
+<section>
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-3 mb-3">
+    <%= simple_form_for '',
+                        url: '#',
+                        method: :get,
+                        html: { \
+                        class: 'w-full lg:w-1/2',
+                        } do |f| %>
+      <%= f.input :query,
+                  label: false,
+                  input_html: {
+                    value: params.dig(:query),
+                  },
+                  wrapper: false %>
+    <% end %>
+
+    <% if params[:query].present? %>
+      <p class="text-sm badge badge-primary">
+        <strong id="directories_count">
+          <%= I18n.t('x_results', count: @directories.count, formatted_count: number_with_delimiter(@directories.count)) %>
+        </strong>
+      </p>
+    <% end %>
+  </div>
+
+  <div id="directories">
+    <%= render 'directories', directories: @directories %>
+  </div>
+</section>

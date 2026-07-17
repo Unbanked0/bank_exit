@@ -8,6 +8,8 @@ module Admin
     # @route GET /admin/profile/edit
     def edit
       authorize! current_user, with: ProfilePolicy
+
+      add_breadcrumb t('.title'), nil
     end
 
     # @route PATCH /fr/admin/profile {locale: "fr"} (admin_profile_fr)

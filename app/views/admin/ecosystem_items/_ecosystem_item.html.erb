@@ -1,0 +1,49 @@
+<tr class="<%= class_names('opacity-25': !ecosystem_item.enabled?) %>">
+  <td class="text-center">
+    <% if ecosystem_item.picture.attached? %>
+      <%= image_tag url_for(ecosystem_item.picture.variant(:thumb)),
+            class: 'w-16 rounded-lg mx-auto',
+            alt: 'Picture' %>
+    <% else %>
+      -
+    <% end %>
+  </td>
+
+  <th><%= ecosystem_item.name %></th>
+
+  <td>
+    <% if ecosystem_item.url.present? %>
+      <%= link_to t('link'), ecosystem_item.url, target: :_blank %>
+    <% else %>
+      -
+    <% end %>
+  </td>
+
+  <td>
+    <% if ecosystem_item.enabled? %>
+      <div
+        aria-label="Status"
+        class="
+          status status-lg status-success flex items-center justify-center
+          w-5 h-5 rounded-full
+        "
+      >
+        <%= lucide_icon 'check', class: 'text-success-content' %>
+      </div>
+    <% else %>
+      <div
+        aria-label="Status"
+        class="
+          status status-lg status-error flex items-center justify-center w-5
+          h-5 rounded-full
+        "
+      >
+        <%= lucide_icon 'x', class: 'text-error-content' %>
+      </div>
+    <% end %>
+  </td>
+
+  <td>
+    <%= render 'actions', ecosystem_item: ecosystem_item %>
+  </td>
+</tr>
