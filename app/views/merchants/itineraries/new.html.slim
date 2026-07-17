@@ -29,13 +29,15 @@
             = f.input :my_address,
                       required: false,
                       label_html: { class: 'mb-2' },
-                      wrapper_html: { class: 'auto-search-wrapper' },
                       input_html: { \
                         class: 'mb-1',
+                        list: "addresses",
                         data: { \
                           address_target: :input,
+                          action: "input->address#search change->address#select" \
                         } \
                       }
+            datalist#addresses data-address-target="datalist"
 
             = f.input :use_my_ip, as: :boolean,
                       input_html: { \

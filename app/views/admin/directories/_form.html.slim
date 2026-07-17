@@ -56,18 +56,19 @@
       .btn.btn-ghost.btn-xs.btn-circle onclick="address_help.showModal()"
         = lucide_icon 'info', class: 'w-4'
 
-    div
+    div data-controller="admin--address" data-admin--address-search-url-value= addresses_search_path
       = f.simple_fields_for :address do |ff|
         = ff.input :label,
-                   label_html: { class: 'mb-2' },
-                   wrapper_html: { class: 'auto-search-wrapper mb-2' },
+                   wrapper_html: { class: 'mb-2' },
                    input_html: { \
+                     list: "addresses",
                      data: { \
-                       controller: 'admin--address',
-                       admin__address_search_url_value: addresses_search_path \
+                       admin__address_target: :input,
+                       action: "input->admin--address#search" \
                      } \
                    },
                    hint: false
+      datalist#addresses data-admin--address-target="datalist"
 
   section.space-y-3
     .flex.items-center.gap-1.mb-2.border-b-2.text-primary

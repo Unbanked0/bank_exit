@@ -1,135 +1,80 @@
-import { Controller } from "@hotwired/stimulus";
-import { useDebounce } from "stimulus-use";
-import { get } from "@rails/request.js";
-import Autocomplete from "autocomplete";
+import AutocompleteController from "controllers/autocomplete_controller";
 
-export default class extends Controller {
-  static targets = [
-    "form",
-    "city",
-    "department",
-    "region",
-    "country",
-    "continent",
-    "world",
-    "aroundMe",
-    "geocoderDetails",
-  ];
-  static values = {
-    autocompleteUrl: String,
-  };
+const LOCATION_FIELDS = [
+  "city",
+  "department",
+  "region",
+  "country",
+  "continent",
+  "world",
+  "aroundMe",
+];
 
-  static debounces = ["submit", "deliveryZoneChanged"];
+export default class extends AutocompleteController {
+  static targets = ["form", ...LOCATION_FIELDS, "geocoderDetails"];
 
-  connect() {
-    useDebounce(this, { wait: 400 });
+  static debounces = ["search", "submit", "deliveryZoneChanged"];
 
-    new Autocomplete(this.cityTarget.id, {
-      removeResultsWhenInputIsEmpty: true,
-      preventScrollUp: true,
-      howManyCharacters: 3,
-      clearButton: false,
-
-      onSearch: ({ currentValue }) => {
-        return new Promise(async (resolve, reject) => {
-          const response = await get(this.autocompleteUrlValue, {
-            responseKind: "json",
-            query: {
-              q: currentValue,
-            },
-          });
-
-          if (response.ok) {
-            const results = await response.json;
-
-            return resolve(results);
-          } else {
-            return reject("Error while fetching address");
-          }
-        });
-      },
-
-      onResults: ({ currentValue, matches, template }) => {
-        const regex = new RegExp(currentValue, "gi");
-
-        // if the result returns 0 we
-        // show the no results element
-        return matches === 0
-          ? template
-          : matches
-              .map((element) => {
-                return `
-                    <li>
-                      <p>
-                        ${element.value.replace(
-                          regex,
-                          (str) => `<b>${str}</b>`,
-                        )}
-                      </p>
-                    </li> `;
-              })
-              .join("");
-      },
-
-      onSubmit: (e) => {
-        this.submit(e);
-      },
-
-      noResults: ({ currentValue, template }) =>
-        template(`<li>No results found: "${currentValue}"</li>`),
-    });
+  get inputTarget() {
+    return this.cityTarget;
   }
 
-  deliveryZoneChanged(e) {
-    const field = e.target.dataset.directoriesTarget;
+  deliveryZoneChanged(event) {
+    const selectedField = event.target.dataset.directoriesTarget;
 
-    if (field != "city") {
-      this.cityTarget.value = "";
-    }
-    if (field != "department") {
-      this.departmentTarget.selectedIndex = 0;
-    }
-    if (field != "region") {
-      this.regionTarget.selectedIndex = 0;
-    }
-    if (field != "country") {
-      this.countryTarget.selectedIndex = 0;
-    }
-    if (field != "continent") {
-      this.continentTarget.selectedIndex = 0;
-    }
-    if (field != "world") {
-      this.worldTarget.checked = 0;
-    }
-    if (field != "aroundMe") {
-      this.aroundMeTarget.checked = 0;
-    }
-    if (
-      field != "aroundMe" ||
-      (field == "aroundMe" && !this.aroundMeTarget.checked)
-    ) {
-      this.geocoderDetailsTarget.innerText = "";
+    LOCATION_FIELDS.filter((field) => field !== selectedField).forEach(
+      (field) => this.resetField(field),
+    );
+
+    if (selectedField !== "aroundMe" || !this.aroundMeTarget.checked) {
+      this.clearGeocoder();
     }
 
-    this.submit(e);
+    this.submit(event);
   }
 
-  submit(e) {
-    if (e.target == this.cityTarget && e.target.value != "") {
-      return;
+  submit(event) {
+    if (event.target === this.cityTarget && this.cityTarget.value !== "") {
+      if (!this.isSelectedSuggestion()) return;
     }
 
-    const formData = new FormData(this.formTarget);
+    const params = new URLSearchParams(
+      [...new FormData(this.formTarget)].filter(([, value]) => value),
+    );
 
-    const data = Array.from(formData).filter(function ([_k, v]) {
-      return v;
-    });
+    const url = new URL(this.formTarget.action);
+    url.search = params.toString();
 
-    const params = new URLSearchParams(data);
-    const url = new URL(this.formTarget.action + "?" + params);
-
-    window.history.pushState({ path: url.href }, "", url.href);
+    window.history.pushState({}, "", url);
 
     this.formTarget.requestSubmit();
+  }
+
+  clearGeocoder() {
+    this.geocoderDetailsTarget.textContent = "";
+  }
+
+  resetField(field) {
+    const target = this[`${field}Target`];
+
+    switch (target.type) {
+      case "checkbox":
+        target.checked = false;
+        break;
+      case "select-one":
+        target.selectedIndex = 0;
+        break;
+
+      default:
+        target.value = "";
+    }
+
+    return;
+  }
+
+  isSelectedSuggestion() {
+    return [...this.datalistTarget.options].some(
+      (option) => option.value === this.cityTarget.value,
+    );
   }
 }
