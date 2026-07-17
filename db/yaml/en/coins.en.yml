@@ -36,6 +36,26 @@
     - https://bitcoin.org/bitcoin.pdf
     - https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/
 
+- identifier: bitcoin-lightning-network
+  name: Bitcoin Lightning Network
+  short_name: Bitcoin LN
+  ticker: LN
+  description:
+    - Bitcoin's second-layer payment network, the Lightning Network enables near-instant transactions with extremely low fees while relying on the security of the Bitcoin blockchain. It is particularly well suited for everyday payments and micropayments.
+    - Payments are routed through a decentralized network of payment channels without requiring every transaction to be immediately recorded on the blockchain. This approach significantly improves Bitcoin's ability to handle a high volume of transactions.
+  usage: Instant payments
+  links: []
+
+- identifier: bitcoin-lightning-network-contactless
+  name: Bitcoin Lightning Network (contactless)
+  short_name: Bitcoin LN (contactless)
+  ticker: LN
+  description:
+    - Contactless Lightning Network payments allow users to pay with Bitcoin simply by tapping a compatible smartphone or card on an NFC terminal. The user experience is comparable to contactless card payments while preserving the benefits of Lightning.
+    - This technology makes it easier to adopt Bitcoin at the point of sale by enabling fast, low-cost payments without banking intermediaries. It relies on the Lightning Network and NFC standards supported by compatible wallets and payment terminals.
+  usage: Contactless instant payments
+  links: []
+
 - identifier: gold
   name: Gold
   description:

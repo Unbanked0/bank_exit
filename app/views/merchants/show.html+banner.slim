@@ -15,12 +15,12 @@ article
               = merchant_icon_svg(@merchant.icon, width: 20, height: 20, naked: true)
               = @merchant.friendly_category
 
-          .flex.items-center.justify-center.gap-3
-            - @merchant.coins.each do |coin|
-              = image_tag icon_by_coin(coin), title: coin.capitalize, class: 'w-12 h-12 hover:scale-110 motion-safe:transition-transform'
+          .avatar-group.-space-x-3.justify-center
+            = render @merchant.pretty_coins, group: true
 
             - unless @merchant.ask_kyc.nil?
-              = merchant_kyc_no_kyc(@merchant.ask_kyc?, klass: 'w-12 h-12 text-xl')
+              .my-1
+                .avatar= merchant_kyc_no_kyc(@merchant.ask_kyc?, klass: 'w-16 h-16 text-xl')
 
   .article-body.max-w-5xl class="space-y-8!"
     = render 'breadcrumb'

@@ -5,6 +5,7 @@ class Coin
 
   attribute :identifier, :string
   attribute :name, :string
+  attribute :short_name, :string
   attribute :ticker, :string
   attribute :usage, :string
 

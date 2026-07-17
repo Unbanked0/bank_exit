@@ -36,6 +36,26 @@
     - https://bitcoin.org/files/bitcoin-paper/bitcoin_es.pdf
     - https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/
 
+- identifier: bitcoin-lightning-network
+  name: Bitcoin Lightning Network
+  short_name: Bitcoin LN
+  ticker: LN
+  description:
+    - La Lightning Network, la red de pagos de segunda capa de Bitcoin, permite realizar transacciones casi instantáneas con comisiones extremadamente bajas, apoyándose en la seguridad de la cadena de bloques de Bitcoin. Es especialmente adecuada para pagos cotidianos y micropagos.
+    - Los pagos se enrutan a través de una red descentralizada de canales de pago, sin necesidad de registrar inmediatamente cada transacción en la cadena de bloques. Este enfoque mejora considerablemente la capacidad de Bitcoin para gestionar un gran volumen de transacciones.
+  usage: Pagos instantáneos
+  links: []
+
+- identifier: bitcoin-lightning-network-contactless
+  name: Bitcoin Lightning Network (sin contacto)
+  short_name: Bitcoin LN (sin contacto)
+  ticker: LN
+  description:
+    - Lightning Network sin contacto permite pagar con Bitcoin simplemente acercando un teléfono inteligente o una tarjeta compatible a un terminal NFC. La experiencia de usuario es comparable a la de un pago bancario sin contacto, manteniendo las ventajas de Lightning.
+    - Esta tecnología facilita la adopción de Bitcoin en los puntos de venta gracias a pagos rápidos, de bajo coste y sin intermediarios bancarios. Se basa en Lightning Network y en estándares NFC compatibles con billeteras y terminales adecuados.
+  usage: Pagos instantáneos sin contacto
+  links: []
+
 - identifier: gold
   name: Oro
   description:

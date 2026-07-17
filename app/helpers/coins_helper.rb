@@ -5,7 +5,7 @@ module CoinsHelper
                       alt: "Logo for #{coin.name}",
                       loading: :lazy,
                       class: 'w-10 rounded-full inline-flex mr-2')
-    value += coin.name.capitalize
+    value += coin.name
 
     return value unless coin.ticker?
 

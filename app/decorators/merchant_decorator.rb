@@ -119,4 +119,15 @@ class MerchantDecorator < ProfesionalDecorator
       :hard # over 3 years
     end
   end
+
+  def pretty_coins
+    values = []
+    values << 'monero' if monero?
+    values << 'june' if june?
+    values << 'bitcoin' if bitcoin?
+    values << 'bitcoin-lightning-network' if lightning?
+    values << 'bitcoin-lightning-network-contactless' if contact_less?
+
+    Coin.where(values, decorate: true)
+  end
 end

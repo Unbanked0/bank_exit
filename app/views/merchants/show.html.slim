@@ -33,10 +33,12 @@
           .alert.alert-vertical.text-center
             == @merchant.full_address_with_country
 
-      .flex.items-center.justify-center.gap-3
-        == coins_list(@merchant.coins, with_logo: true, with_name: false, size: 'w-10 hover:scale-110 motion-safe:transition-transform', inline: true)
+      .avatar-group.-space-x-3.justify-center
+        = render @merchant.pretty_coins, group: true
+
         - unless @merchant.ask_kyc.nil?
-          = merchant_kyc_no_kyc(@merchant.ask_kyc?)
+          .my-1
+            .avatar= merchant_kyc_no_kyc(@merchant.ask_kyc?, klass: 'w-16 h-16 text-xl')
 
       - if @merchant.description?
         div

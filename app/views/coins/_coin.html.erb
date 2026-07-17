@@ -1,22 +1,44 @@
-<div class="flex flex-col items-center justify-center gap-3">
+<%# locals: (coin:, group: false) %>
+
+<% if group %>
   <%= link_to coin_path(id: coin.identifier),
-            class: 'avatar mx-auto',
-            data: { turbo_stream: true } do %>
-    <div
-      class="
-        ring-offset-transparent w-24 rounded-full ring-2 ring-offset-2
-        hover:ring-primary motion-safe:transition-colors
-      "
-    >
-      <%= image_tag coin.image,
-                title: coin.name,
-                alt: "Logo for #{coin.name}",
-                loading: :lazy %>
+                class: 'my-1',
+                data: { turbo_stream: true } do %>
+    <div class="avatar bg-white rounded-full">
+      <div class="w-16">
+        <%= image_tag coin.image,
+                    alt: "Logo for #{coin.name}",
+                    loading: :lazy %>
+      </div>
+    </div>
+
+    <div class="text-center mt-2">
+      <p class="opacity-60"><%= coin.ticker %></p>
     </div>
   <% end %>
+<% else %>
+  <div class="flex flex-col items-center justify-center gap-3">
+    <%= link_to coin_path(id: coin.identifier),
+                class: 'avatar mx-auto',
+                data: { turbo_stream: true } do %>
+      <div
+        class="
+          w-24 bg-white ring-offset-transparent rounded-full ring-1 ring-offset-1
+          hover:ring-primary motion-safe:transition-colors
+        "
+      >
+        <%= image_tag coin.image,
+                      alt: "Logo for #{coin.name}",
+                      loading: :lazy %>
+      </div>
+    <% end %>
 
-  <div class="text-center">
-    <h3 class="font-semibold text-lg"><%= coin.name %></h3>
-    <p class="opacity-60"><%= coin.usage %></p>
+    <div class="text-center">
+      <h3 class="font-semibold text-lg">
+        <%= coin.short_name.presence || coin.name %>
+      </h3>
+
+      <p class="opacity-60"><%= coin.usage %></p>
+    </div>
   </div>
-</div>
+<% end %>
