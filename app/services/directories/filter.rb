@@ -12,7 +12,7 @@ module Directories
 
       directories = Directories::AroundMeFilter.call(directories, geocoder_ip) if around_me? && geocoder_ip.present?
 
-      directories = directories.by_query(query) if query.present?
+      directories = directories.mobility_search(query) if query.present?
       directories = directories.by_category(category) if category.present?
       directories = directories.by_coins(coins) if coins.present?
 

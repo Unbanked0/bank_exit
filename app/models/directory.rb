@@ -2,7 +2,7 @@ class Directory < ApplicationRecord
   extend Mobility
   include WithCaptcha
   include WithLogoAndBanner
-  include MobilityQueryable
+  include MobilitySearchable
 
   attribute :requested_by_user, :boolean, default: false
   attribute :proposition_from, :string
@@ -25,7 +25,7 @@ class Directory < ApplicationRecord
 
   translates :name, type: :string
   translates :description, type: :text
-  queryable_by name: :string, description: :text
+  searchable_by name: :string, description: :text
 
   positioned
 

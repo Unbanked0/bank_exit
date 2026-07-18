@@ -21,8 +21,8 @@ RSpec.describe Directory do
     it { is_expected.not_to allow_value(nil).for(:category) }
   end
 
-  describe '.by_query' do
-    subject { described_class.by_query(query) }
+  describe '.mobility_search' do
+    subject { described_class.mobility_search(query) }
 
     before do
       create :directory, name_en: 'Jane Doe name'
