@@ -1,0 +1,29 @@
+<article>
+  <header class="hero bg-fixed bg-banner-tutorials">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold"><%= t('.title') %></h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl">
+    <%= render 'breadcrumb' %>
+
+    <section>
+      <ul class="list-disc list-inside space-y-2">
+        <% @blogs.each do |blog| %>
+          <li>
+            <%= link_to blog_path(blog.identifier) do %>
+              <h3 class="inline"><%= blog.title %></h3>
+            <% end %>
+
+            <time class="text-sm">( <%= l(blog.created_at) %> )</time>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</article>

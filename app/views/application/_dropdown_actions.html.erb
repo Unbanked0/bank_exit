@@ -1,4 +1,4 @@
-<%# locals: (item_id:, btn_style: '', details_html: {}, button_style: {}, aria: nil) %>
+<%# locals: (item_id:, btn_style: '', details_html: {}, button_style: {}, menu_html: '', aria: nil) %>
 
 <% button_attributes = button_style.deep_dup
 button_attributes[:aria] = aria if aria.present?
@@ -22,7 +22,7 @@ dropdown_attributes = details_html.deep_dup %>
 >
   <%= yield :dropdown_header %>
 
-  <ul class="menu menu-sm space-y-1">
+  <ul class="menu menu-sm space-y-1 <%= menu_html %>">
     <%= yield :dropdown_menu %>
   </ul>
 </div>

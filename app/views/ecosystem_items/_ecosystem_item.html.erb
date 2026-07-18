@@ -1,0 +1,33 @@
+<details class="collapse collapse-arrow bg-base-300">
+  <summary class="collapse-title font-semibold flex items-center gap-2">
+    <% if ecosystem_item.picture.attached? %>
+      <%= image_tag url_for(ecosystem_item.picture.variant(:thumb)),
+                    class: 'w-6',
+                    alt: "Logo #{ecosystem_item.name}" %>
+    <% end %>
+
+    <%= ecosystem_item.name %>
+  </summary>
+
+  <div class="collapse-content space-y-5">
+    <%= simple_format ecosystem_item.description %>
+
+    <% if ecosystem_item.picture.attached? %>
+      <p>
+        <%= image_tag url_for(ecosystem_item.picture.variant(:small)), class: 'max-w-32 mx-auto', alt: "Logo #{ecosystem_item.name}" %>
+      </p>
+    <% end %>
+
+    <footer class="flex items-center justify-end gap-2">
+      <% if authenticated? && allowed_to?(:update?, ecosystem_item, namespace: Admin) %>
+        <%= edit_link_to edit_admin_ecosystem_item_path(ecosystem_item) %>
+      <% end %>
+
+      <% if ecosystem_item.url.present? %>
+        <p class="text-right">
+          <%= show_link_to ecosystem_item.url, target: :_blank %>
+        </p>
+      <% end %>
+    </footer>
+  </div>
+</details>

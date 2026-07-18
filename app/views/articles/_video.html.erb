@@ -1,0 +1,15 @@
+<figure>
+  <iframe
+    src="<%= video.url %>"
+    class="rounded-box mx-auto w-full h-72 lg:w-3/4 lg:h-137.5"
+    title="Video iframe"
+  ></iframe>
+
+  <figcaption class="text-xs mt-2 text-center italic">
+    <p class="italic"><%= video.title %></p>
+
+    <% if video.created_at? %>
+      <p class="my-2">(<%= l(video.created_at) %>)</p>
+    <% end %>
+  </figcaption>
+</figure>

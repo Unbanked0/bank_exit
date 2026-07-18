@@ -1,0 +1,35 @@
+<%# locals: (offset: nil) %>
+
+<header class="hero bg-fixed bg-banner-map">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content <%= "hero-content-main" if offset %>">
+    <div class="text-center">
+      <div class="max-w-5xl">
+        <div class="space-y-5">
+          <div class="flex items-center justify-center gap-3">
+            <% %i[monero bitcoin june].each do |coin| %>
+              <%= image_tag icon_by_coin(coin),
+                            class: 'w-12 h-12 hover:scale-110 motion-safe:transition-transform',
+                            alt: coin %>
+            <% end %>
+          </div>
+
+          <div>
+            <h1 class="text-3xl font-bold mb-1">
+              <%= t('maps.index.title') %> *
+            </h1>
+
+            <p class="text-sm italic">
+              * <%= t('maps.index.free_open_data_html') %>
+            </p>
+          </div>
+
+          <blockquote class="text-lg">
+            <%= t('maps.index.headline_html') %>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

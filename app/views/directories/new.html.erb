@@ -1,0 +1,30 @@
+<article>
+  <header class="hero bg-fixed bg-banner-directories">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold"><%= t('.title') %></h1>
+        <p class="highlight-link"><%= t('.introduction_html') %></p>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl">
+    <%= render 'breadcrumb' %>
+
+    <div class="alert alert-info">
+      <p>
+        <%= t('.online_shop_notice_html',
+              link: link_to(t('.merchant_proposal_link'), new_merchant_proposal_path)
+        ) %>
+      </p>
+    </div>
+
+    <%= render 'form', directory: @directory %>
+  </div>
+</article>
+
+<% if @faqs.any? %>
+  <%= render template: 'faqs/show' %>
+<% end %>

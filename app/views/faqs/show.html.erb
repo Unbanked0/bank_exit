@@ -1,0 +1,26 @@
+<div class="hero bg-fixed bg-banner-open-source">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content <%= class_names("hero-content-main": controller_path == 'faqs') %>">
+    <div class="max-w-5xl space-y-8">
+      <header class="text-center space-y-5">
+        <h2 class="text-3xl font-bold"><%= t('.title') %></h2>
+        <p class="text-lg"><%= t('.headline') %></p>
+      </header>
+
+      <div class="mb-3 space-y-2" id="faq">
+        <%= render @faqs %>
+      </div>
+
+      <% if @minimal_faq %>
+        <p class="text-center lg:text-right">
+          <%= link_to t('.button_cta'), faq_path, class: 'btn btn-primary' %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+    <%== schema_dot_org_faq(@faqs) %>
+  </script>
+</div>

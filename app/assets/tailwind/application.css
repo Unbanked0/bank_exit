@@ -154,6 +154,7 @@ a:not(.btn, .badge, .menu a, .card):hover,
 
 footer a[target="_blank"],
 p a[target="_blank"],
+figcaption a[target="_blank"],
 .megamenu a[target="_blank"],
 .admin a[target="_blank"],
 .modal a[target="_blank"],
