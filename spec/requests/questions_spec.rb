@@ -45,6 +45,18 @@ RSpec.describe 'Questions' do
         it { expect(response).to redirect_to send("tutorial_#{locale}_path", 'bitcoin-nokyc') }
       end
 
+      context 'when :buy_btc' do
+        let(:service) { 'buy_btc' }
+
+        it { expect(response).to redirect_to send("tutorial_#{locale}_path", 'bitcoin-nokyc') }
+      end
+
+      context 'when :buy_xmr' do
+        let(:service) { 'buy_xmr' }
+
+        it { expect(response).to redirect_to send("tutorial_#{locale}_path", 'monero-nokyc') }
+      end
+
       context 'when :kitty' do
         let(:service) { 'kitty' }
 

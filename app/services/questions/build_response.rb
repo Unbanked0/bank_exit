@@ -20,8 +20,10 @@ module Questions
         { type: :redirect, to: :tutorial_path, id: 'session-messaging' }
       when :social_network
         { type: :redirect, to: :tutorial_path, id: 'nostr-social-network' }
-      when :buy_no_kyc
+      when :buy_no_kyc, :buy_btc
         { type: :redirect, to: :tutorial_path, id: 'bitcoin-nokyc' }
+      when :buy_xmr
+        { type: :redirect, to: :tutorial_path, id: 'monero-nokyc' }
       when :kitty
         { type: :redirect, to: :tutorial_path, id: 'funding-monero' }
       when :debank
