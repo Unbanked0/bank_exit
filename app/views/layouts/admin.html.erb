@@ -38,7 +38,7 @@
       <input id="admin-drawer" type="checkbox" class="drawer-toggle">
 
       <div class="drawer-content flex flex-col">
-        <%= render "admin/shared/navbar" %>
+        <%= render "admin/shared/navbar", bell_counter: @bell_counter %>
 
         <main class="@container flex-1 p-4 space-y-4">
           <% if defined?(breadcrumbs) && breadcrumbs.count > 1 %>

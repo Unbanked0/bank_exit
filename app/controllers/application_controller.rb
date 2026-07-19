@@ -39,4 +39,10 @@ class ApplicationController < ActionController::Base
   def main_url_helpers
     Rails.application.routes.url_helpers
   end
+
+  def full_page_request?
+    request.format.html? &&
+      !turbo_frame_request? &&
+      !request.format.turbo_stream?
+  end
 end

@@ -11,11 +11,9 @@
     <%= yield :page_title_extra %>
   </div>
 
-  <% bell_results = { deleted_merchants: Merchant.deleted.any?, flagged_comments: Comment.flagged.any? } %>
-
   <div class="indicator mr-3">
     <span class="indicator-item badge badge-secondary badge-xs top-2 right-2">
-      <%= bell_results.count %>
+      <%= bell_counter.values.compact_blank.count %>
     </span>
 
     <button
@@ -32,7 +30,7 @@
       id="popover-bell"
       style="position-anchor:--anchor-bell"
     >
-      <% if bell_results[:deleted_merchants] %>
+      <% if bell_counter[:deleted_merchants] == true %>
         <li>
           <%= link_to admin_merchants_path(show_deleted: true) do %>
             <%= t('admin.sidebar.merchants_disabled') %>
@@ -40,7 +38,7 @@
         </li>
       <% end %>
 
-      <% if bell_results[:flagged_comments] %>
+      <% if bell_counter[:flagged_comments] == true %>
         <li>
           <%= link_to admin_comments_path(show_flagged: true) do %>
             <%= t('admin.sidebar.comments_disabled') %>
