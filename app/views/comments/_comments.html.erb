@@ -1,0 +1,10 @@
+<div id="comments" class="space-y-3 scroll-mt-20">
+  <div class="space-y-4">
+    <%= render comments %>
+  </div>
+
+  <%= render 'pagination',
+             pagy: pagy,
+             scroll_top: true,
+             use_turbo_stream: true %>
+</div>

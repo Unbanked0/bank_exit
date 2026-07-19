@@ -2,7 +2,6 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static values = {
-    scrollTop: { type: Boolean, default: true },
     keyboardEnabled: { type: Boolean, default: false },
   };
 
@@ -55,10 +54,10 @@ export default class extends Controller {
 
     current.searchParams.set("page", number);
     window.history.pushState("id", "", current);
+  }
 
-    if (this.scrollTopValue) {
-      this.#scrollToTopResults();
-    }
+  scrollToTopResults() {
+    this.element.parentNode.scrollIntoView();
   }
 
   #prevPageHandler(_e) {
@@ -79,9 +78,5 @@ export default class extends Controller {
     }
 
     $nav.lastChild.click();
-  }
-
-  #scrollToTopResults() {
-    this.element.parentNode.scrollIntoView();
   }
 }

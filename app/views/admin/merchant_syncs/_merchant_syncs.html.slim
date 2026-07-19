@@ -21,4 +21,7 @@ section.space-y-3
             td.text-center.italic colspan="100%"
               = t('.empty_results')
 
-  = render 'pagination', pagy: pagy
+  = render 'pagination', pagy: pagy,
+                         use_turbo_stream: true,
+                         add_page_to_url: true,
+                         scroll_top: true

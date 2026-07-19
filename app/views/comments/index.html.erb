@@ -41,16 +41,7 @@
       </div>
     </div>
 
-    <div class="space-y-3 scroll-mt-20">
-      <div class="space-y-4" id="comments">
-        <%= render @comments %>
-      </div>
-
-      <%= render 'pagination',
-                 pagy: @pagy,
-                 scroll_top: true,
-                 use_turbo_stream: false %>
-    </div>
+    <%= render "comments/comments", comments: @comments, pagy: @pagy %>
 
     <% if @comments.empty? %>
       <div class="alert alert-success alert-sm" id="empty_comments">

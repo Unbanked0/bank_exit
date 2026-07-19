@@ -175,4 +175,6 @@
   <% end %>
 </nav>
 
-<%= render 'pagination', pagy: pagy, add_page_to_url: false, pagination_path: search_path %>
+<%= render 'pagination', pagy: pagy,
+                         use_turbo_stream: true,
+                         pagination_path: search_path %>

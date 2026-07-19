@@ -1,24 +1,27 @@
-<%# locals: (pagy:, pagination_path: nil, use_turbo_stream: true, add_page_to_url: true, scroll_top: true, keyboard_enabled: true, attrs: {}) %>
+<%# locals: (pagy:, pagination_path: nil, use_turbo_stream: false, add_page_to_url: false, scroll_top: false, keyboard_enabled: true, attrs: {}) %>
 
 <% if pagy.last > 1 %>
   <div
     class="flex items-center justify-center gap-2 p-2"
     data-controller="pagination"
     data-pagination-keyboard-enabled-value="<%= keyboard_enabled %>"
-    data-pagination-scroll-top-value="<%= scroll_top %>"
   >
     <% if keyboard_enabled && pagy.previous %>
       <%= hotkey_label(['Ctrl', '◀︎'], size: 'xs') %>
     <% end %>
 
+    <% actions = []
+    actions << "click->pagination#addPageToURL" if add_page_to_url
+    actions << "click->pagination#scrollToTopResults" if scroll_top
+
+    anchor_attrs = []
+    anchor_attrs << 'data-turbo-stream="true"' if use_turbo_stream
+    anchor_attrs << %(data-action="#{actions.join(' ')}") if actions.any?
+    anchor_attrs << attrs[:anchor_string] if attrs[:anchor_string].present? %>
+
     <%== pagy.series_nav(
         path: pagination_path,
-        anchor_string: [
-          ('data-turbo-stream="true"' if use_turbo_stream),
-          ('data-action="click->pagination#addPageToURL"' if add_page_to_url)
-        ]
-       .join(' ')
-       .concat(attrs[:anchor_string] || '')
+        anchor_string: anchor_attrs.join(' ')
     ) %>
 
     <% if keyboard_enabled && pagy.next %>

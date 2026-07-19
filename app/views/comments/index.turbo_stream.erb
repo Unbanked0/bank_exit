@@ -1,0 +1,3 @@
+<%= turbo_stream.replace :comments do %>
+  <%= render "comments/comments", comments: @comments, pagy: @pagy %>
+<% end %>
