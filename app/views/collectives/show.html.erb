@@ -1,0 +1,43 @@
+<article id="article">
+  <header class="hero bg-fixed bg-banner-farmer">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <figure>
+          <%= image_tag logo_by_locale,
+                        class: 'w-40 mx-auto hover:scale-110 transition-transform',
+                        alt: "Logo Bank-Exit" %>
+        </figure>
+
+        <h1 class="text-3xl font-bold"><%= t('.title') %></h1>
+
+        <h2 class="text-xl"><%= t('.subtitle') %></h2>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-3xl">
+    <%= t('.description_html',
+      local_groups_link: link_to(
+        t('.local_groups_label', count: @local_groups_count), local_groups_path
+      )
+    ) %>
+
+    <figure>
+      <%= image_tag 'collective/workshop_with_pierre_1.jpeg',
+                    class: 'rounded-lg',
+                    alt: "Workshop Bank-Exit" %>
+    </figure>
+
+    <figure>
+      <%= image_tag 'collective/workshop_with_pierre_2.jpeg',
+                    class: 'rounded-lg',
+                    alt: "Workshop Bank-Exit" %>
+
+      <figcaption class="text-center mt-2 text-sm italic">
+        <%= t('.workshop_caption') %>
+      </figcaption>
+    </figure>
+  </div>
+</article>

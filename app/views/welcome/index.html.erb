@@ -221,7 +221,10 @@
   <div class="max-xl:container mx-auto px-4">
     <div class="flex max-md:flex-col gap-3">
       <div class="w-full lg:w-1/2 xl:w-2/3">
-        <%= render 'maps/map', map_class: "rounded-box" %>
+        <%= render 'maps/map', latitude: @latitude,
+                               longitude: @longitude,
+                               zoom: @zoom,
+                               map_class: "rounded-box" %>
       </div>
 
       <div class="w-full lg:w-1/2 xl:w-1/3">

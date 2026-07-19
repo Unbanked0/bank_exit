@@ -1,0 +1,22 @@
+<div class="card max-w-lg mx-auto bg-base-200 lg:my-10 rounded-box">
+  <figure class="px-10 pt-10">
+    <%= image_tag logo_by_locale, class: 'w-32 mx-auto', alt: "Logo Bank-Exit" %>
+  </figure>
+
+  <div class="card-body space-y-5">
+    <h1 class="card-title lg:text-3xl text-primary justify-center">
+      <%= t('welcome.index.title') %>
+    </h1>
+
+    <%= simple_form_for :session,
+                        url: session_path,
+                        html: { class: 'space-y-4' } do |f| %>
+      <%= f.input :email_address %>
+      <%= f.input :password %>
+
+      <div class="card-actions justify-end">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<article>
+  <header class="hero bg-fixed bg-banner-projects">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main">
+      <div class="max-w-xl">
+        <div class="text-center space-y-5">
+          <h1 class="text-3xl font-bold"><%= t('.title') %></h1>
+          <div class="space-y-5"><%= t('.headline') %></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-3xl space-y-8 mx-auto py-10">
+    <p class="font-bold text-center text-lg">
+      <%= t('.try_another_request') %>
+    </p>
+
+    <%= render 'welcome/questions_form',
+               profiles: @profiles,
+               levels: @levels,
+               center: true %>
+  </div>
+</article>

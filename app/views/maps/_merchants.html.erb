@@ -1,0 +1,8 @@
+<div class="space-y-3 scroll-mt-20">
+  <%= render merchants %>
+
+  <%= render 'pagination', pagy: pagy,
+                           use_turbo_stream: true,
+                           add_page_to_url: true,
+                           scroll_top: true %>
+</div>

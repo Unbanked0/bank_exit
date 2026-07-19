@@ -1,0 +1,9 @@
+<%# locals: (merchant:, map_width: "w-full md:w-1/2 xl:w-2/3", map_height: "h-[500px]" ) %>
+
+<div
+  id="map"
+  class="<%= map_width %> <%= map_height %> <%= map_css_height %> z-0 print:w-full print:h-[500px]"
+  data-controller="map--item"
+  data-map--item-merchant-value="<%= merchant.to_osm_map.to_json %>"
+  data-map--item-attribution-html-value="<%= html_escape_once(map_attribution_html) %>"
+></div>

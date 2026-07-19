@@ -5,7 +5,7 @@ module Admin
 
     layout 'admin'
 
-    before_action :set_bell_counter, if: :full_page_request?
+    before_action :set_bell_counter
 
     add_breadcrumb proc { I18n.t('admin.dashboards.show.title') }, :admin_dashboard_path
 

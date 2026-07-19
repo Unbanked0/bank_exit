@@ -1,0 +1,27 @@
+<article id="article">
+  <header class="hero bg-fixed bg-banner-ecosystem">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-3">
+        <h1 class="text-3xl font-bold"><%= t('.title') %></h1>
+
+        <% if authenticated? && allowed_to?(:index?, EcosystemItem, namespace: Admin) %>
+          <%= edit_link_to admin_ecosystem_items_path, hotkey: true %>
+        <% end %>
+
+        <p><%= t('.description') %></p>
+
+        <%= image_tag icon_by_coin('monero'),
+                      alt: "Monero logo",
+                      class: 'w-20 mx-auto hover:scale-110 motion-safe:transition-transform' %>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-3xl">
+    <div class="mb-3 space-y-2" id="ecosystem">
+      <%= render @ecosystem_items %>
+    </div>
+  </div>
+</article>

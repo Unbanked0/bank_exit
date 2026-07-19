@@ -4,7 +4,10 @@
 
 <% unless from_pagination? %>
   <%= turbo_stream.replace :map do %>
-    <%= render 'maps/map' %>
+    <%= render 'maps/map', latitude: @latitude,
+                           longitude: @longitude,
+                           zoom: @zoom,
+                           map_class: "rounded-box" %>
   <% end %>
   <%= turbo_stream.update :merchants_count do %>
     <%= render 'maps/merchants_count', pagy: @pagy %>
