@@ -1,14 +1,14 @@
 <section class="hero bg-fixed overflow-hidden <%= random_bg_hero_banner %>">
   <div class="hero-overlay"></div>
 
-  <div class="container mx-auto px-4 py-10 relative">
-    <div class="space-y-8 mx-auto max-w-4xl text-center">
+  <div class="container mx-auto p-4 lg:py-12 relative">
+    <div class="space-y-6 lg:space-y-10 mx-auto max-w-4xl text-center">
       <%= image_tag logo_by_locale,
             class: "w-48 mx-auto hover:scale-110 motion-safe:transition-transform",
             alt: "Logo Bank-Exit",
             width: 192, height: 192 %>
 
-      <div class="text-5xl md:text-6xl font-black tracking-tight">
+      <div class="text-4xl md:text-6xl font-black tracking-tight">
         <span>
           <span><%= t('.headlines.part1') %></span>
 
@@ -65,7 +65,7 @@
       </p>
     </div>
 
-    <div class="mx-auto mt-12 max-w-3xl">
+    <div class="mx-auto mt-8 max-w-3xl">
       <%= simple_form_for '',
               url: maps_path,
               method: :get,
