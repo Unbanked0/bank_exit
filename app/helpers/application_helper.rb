@@ -3,23 +3,6 @@ module ApplicationHelper
     turbo_stream.prepend 'flashes', partial: 'flashes'
   end
 
-  def welcome_page?
-    params[:controller] == 'welcome'
-  end
-
-  def hero_header?
-    case params[:controller]
-    when 'sessions'
-      false
-    when 'merchants'
-      request.variant == [:banner]
-    when 'maps'
-      session[:merchants_display] != 'map'
-    else
-      true
-    end
-  end
-
   def random_bg_hero_banner
     "bg-banner-#{rand(1..5)}"
   end
