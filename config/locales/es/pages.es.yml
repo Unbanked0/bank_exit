@@ -49,13 +49,6 @@ es:
       title: Buscar a un contenido
       subtitle: Accede directamente al contenido adaptado a tu perfil y nivel
 
-    debt_clock:
-      title: Deuda pública de Francia 🇫🇷 en tiempo real
-      headline_html: La deuda pública aumenta en <strong>5.136&nbsp;€</strong> por segundo (<strong>443,7 millones&nbsp;€</strong> por día)
-      source_label: Fuente
-      source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
-      chart_debt_title: Deuda (en miles de millones)
-
     cbdc:
       title: €uro digital "Cash+"
       body:
@@ -98,6 +91,14 @@ es:
       subject: "[Bank-Exit] Blog %{title}"
       body: "Consulte este artículo de blog en el sitio web del colectivo Bank-Exit: %{link}"
 
+    france_debt:
+      show:
+        title: Deuda pública de Francia 🇫🇷 en tiempo real
+        headline_html: La deuda pública aumenta en <strong>5.136&nbsp;€</strong> por segundo (<strong>443,7 millones&nbsp;€</strong> por día)
+        source_label: Fuente
+        source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
+        chart_debt_title: Deuda (en miles de millones)
+
   tutorials:
     index:
       title: Los tutoriales
@@ -114,6 +115,44 @@ es:
 
       report_a_fault:
         title: Reportar una anomalía en el tutorial
+
+    documentation_embed_map:
+      show:
+        integration_description_html: Para integrar el mapa de Bitcoin, Monero, June en su sitio web, elija la versión %{url} o %{iframe}.
+        parameters_description: Puede utilizar los siguientes parámetros para ajustar la representación del mapa.
+        iframe: <iframe>
+        url_to_embed: Copiar URL de inserción
+        iframe_to_embed: Copiar el <iframe> de inserción
+        parameters: Parámetros
+        examples: Ejemplos
+
+        generator:
+          title: Generador automático
+          description: Utilice el formulario a continuación para crear su propia versión del mapa para incrustar.
+
+      table:
+        thead:
+          parameter: Parámetro
+          type: Tipo
+          allowed_values: Valores posibles
+          default_value: Valor predeterminado
+          description: Descripción
+        description:
+          theme: Tema del mapa
+          latitude: Latitud en la que centrar el mapa
+          longitude: Longitud en la que centrar el mapa
+          zoom: Nivel de zoom del mapa
+          country_html: Filtrar por país para mostrar solo resultados localizados (formato <strong>ISO 3166-1 alpha-2</strong>).
+          continent_html: Filtrar por continente para mostrar solo resultados localizados (formato <strong>CC</strong>).
+          country_info_html: Los países enumerados son aquellos con al menos un comerciante registrado.<br /> Cualquier país especificado en el formato correcto es válido.
+          continent_info_html: Este parámetro ignora a <b>country</b> si también se especifica
+          coins: Criptomonedas para filtrar y mostrar solo resultados coincidentes
+          gesture_handling: Evita que los usuarios se queden atascados en el mapa al desplazarse hacia abajo en una página larga
+          fit_bounds: Centra automáticamente el mapa para que todos los marcadores sean visibles en la pantalla
+          fit_bounds_warning: Ignora a los valores de latitud, longitud y zoom si están presentes
+          clusters: Agrupa los marcadores cercanos en clústeres para reducir la cantidad de elementos mostrados
+          clusters_warning: Puede ralentizar el navegador si hay muchos marcadores para mostrar
+          attribution: Muestra las menciones del Colectivo en la parte inferior derecha del mapa.
 
     reports:
       create:
@@ -202,44 +241,6 @@ es:
       refresh_confirm_html: ¿Quieres actualizar la lista de comerciantes? <br /> Por favor tenga paciencia, esto puede tardar unos minutos.
       refresh: Refrescar a los comerciantes
       view_in_admin: Ver en el admin
-
-    helps:
-      show:
-        integration_description_html: Para integrar el mapa de Bitcoin, Monero, June en su sitio web, elija la versión %{url} o %{iframe}.
-        parameters_description: Puede utilizar los siguientes parámetros para ajustar la representación del mapa.
-        iframe: <iframe>
-        url_to_embed: Copiar URL de inserción
-        iframe_to_embed: Copiar el <iframe> de inserción
-        parameters: Parámetros
-        examples: Ejemplos
-
-        generator:
-          title: Generador automático
-          description: Utilice el formulario a continuación para crear su propia versión del mapa para incrustar.
-
-      table:
-        thead:
-          parameter: Parámetro
-          type: Tipo
-          allowed_values: Valores posibles
-          default_value: Valor predeterminado
-          description: Descripción
-        description:
-          theme: Tema del mapa
-          latitude: Latitud en la que centrar el mapa
-          longitude: Longitud en la que centrar el mapa
-          zoom: Nivel de zoom del mapa
-          country_html: Filtrar por país para mostrar solo resultados localizados (formato <strong>ISO 3166-1 alpha-2</strong>).
-          continent_html: Filtrar por continente para mostrar solo resultados localizados (formato <strong>CC</strong>).
-          country_info_html: Los países enumerados son aquellos con al menos un comerciante registrado.<br /> Cualquier país especificado en el formato correcto es válido.
-          continent_info_html: Este parámetro ignora a <b>country</b> si también se especifica
-          coins: Criptomonedas para filtrar y mostrar solo resultados coincidentes
-          gesture_handling: Evita que los usuarios se queden atascados en el mapa al desplazarse hacia abajo en una página larga
-          fit_bounds: Centra automáticamente el mapa para que todos los marcadores sean visibles en la pantalla
-          fit_bounds_warning: Ignora a los valores de latitud, longitud y zoom si están presentes
-          clusters: Agrupa los marcadores cercanos en clústeres para reducir la cantidad de elementos mostrados
-          clusters_warning: Puede ralentizar el navegador si hay muchos marcadores para mostrar
-          attribution: Muestra las menciones del Colectivo en la parte inferior derecha del mapa.
 
     directory_friends:
       other_directories_to_spend_title: Otras formas de gastar

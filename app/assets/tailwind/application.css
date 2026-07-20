@@ -2,6 +2,8 @@
 @source not "./daisyui{,*}.mjs";
 @custom-variant dark (&:where([data-theme="dracula"], [data-theme="dracula"] *));
 
+@plugin "@tailwindcss/typography";
+
 @theme {
     --breakpoint-xs: 35rem;
     --map-road-color: #3388ff;
@@ -152,6 +154,8 @@ a:not(.btn, .badge, .menu a, .card):hover,
     color: var(--color-primary);
 }
 
+table a[target="_blank"],
+ul li a[target="_blank"],
 footer a[target="_blank"],
 p a[target="_blank"],
 figcaption a[target="_blank"],
@@ -280,4 +284,49 @@ forced to white to make texts readables */
     syntax: "<angle>";
     inherits: false;
     initial-value: 0deg;
+}
+
+/* Markdown prose admonition */
+.prose aside.admonition {
+    @apply alert alert-soft alert-vertical my-6 text-base;
+}
+
+.prose aside.admonition .admonition-title {
+    @apply font-semibold uppercase;
+}
+
+.prose aside.note {
+    @apply alert-info;
+}
+
+.prose aside.tip {
+    @apply alert-success;
+}
+
+.prose aside.warning {
+    @apply alert-warning;
+}
+
+.prose aside.caution {
+    @apply alert-error;
+}
+
+.prose aside.note .admonition-title::before {
+    content: "💡 ";
+}
+
+.prose aside.tip .admonition-title::before {
+    content: "✅ ";
+}
+
+.prose aside.warning .admonition-title::before {
+    content: "⚠️ ";
+}
+
+.prose aside.caution .admonition-title::before {
+    content: "🚨 ";
+}
+
+.prose aside.important .admonition-title::before {
+    content: "📌 ";
 }

@@ -49,13 +49,6 @@ en:
       title: Look for a content
       subtitle: Access content tailored to your profile and level
 
-    debt_clock:
-      title: 🇫🇷 France's public debt in real time
-      headline_html: Public debt increases by <strong>€5,136</strong> per second (<strong>€443.7 million</strong> per day)
-      source_label: Source
-      source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
-      chart_debt_title: Debt (in billions)
-
     cbdc:
       title: Digital €uro "Cash+"
       body:
@@ -98,6 +91,14 @@ en:
       subject: "[Bank-Exit] Blog %{title}"
       body: "Discover this blog article on the Bank-Exit collective webpage: %{link}"
 
+    france_debt:
+      show:
+        title: 🇫🇷 France's public debt in real time
+        headline_html: Public debt increases by <strong>€5,136</strong> per second (<strong>€443.7 million</strong> per day)
+        source_label: Source
+        source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
+        chart_debt_title: Debt (in billions)
+
   tutorials:
     index:
       title: Tutorials
@@ -114,6 +115,52 @@ en:
 
       report_a_fault:
         title: Report an anomaly on the tutorial
+
+    documentation_embed_map:
+      show:
+        integration_description_html: To embed the Bitcoin, Monero and June map on your website, choose the version %{url} or %{iframe}.
+        parameters_description: You can use the following settings to adjust the map rendering.
+        iframe: <iframe>
+        url_to_embed: Copy embed URL link
+        iframe_to_embed: Copy embed <iframe>
+        parameters: Parameters
+        examples: Examples
+
+        generator:
+          title: Automatic Generator
+          description: Use the form below to create your own version of the embeddable map.
+
+      table:
+        thead:
+          parameter: Parameter
+          type: Type
+          allowed_values: Allowed values
+          default_value: Default value
+          description: Description
+        description:
+          theme: Map theme
+          latitude: Latitude to center the map on
+          longitude: Longitude to center the map on
+          zoom: Map zoom level
+          country_html: Filter by country to display only localized results (<strong>ISO 3166-1 alpha-2</strong> format).
+          continent_html: Filter by continent to display only localized results (<strong>CC</strong> format).
+          country_info_html: The countries listed are those with at least one listed merchant.<br /> Any country specified in the correct format is valid.
+          continent_info_html: This parameter ignores <b>country</b> if it is also specified
+          coins: Cryptocurrencies to filter to display only matching results
+          gesture_handling: Prevents users from getting stuck on the map when scrolling a long page
+          fit_bounds: Automatically centers the map so that all markers are visible on the screen
+          fit_bounds_warning: Ignores latitude, longitude, and zoom values, if present
+          clusters: Groups nearby markers into clusters to reduce the number of displayed elements
+          clusters_warning: May slow down the browser if there are many markers to display
+          attribution: Displays the Collective's mentions at the bottom right of the map
+
+    cryptopayment_for_business:
+      show:
+        caption: Full setup of Monero and Bitcoin payments for your business
+    monero_node_easymonerod:
+      show:
+        image_caption: Node interface
+        video_caption: EasyMonerod video tutorial
 
     reports:
       create:
@@ -209,44 +256,6 @@ en:
       refresh_confirm_html: Are you sure you want to refresh merchants ? <br /> Please be patient, it could take several minutes.
       refresh: Refresh merchants data
       view_in_admin: View in admin
-
-    helps:
-      show:
-        integration_description_html: To embed the Bitcoin, Monero and June map on your website, choose the version %{url} or %{iframe}.
-        parameters_description: You can use the following settings to adjust the map rendering.
-        iframe: <iframe>
-        url_to_embed: Copy embed URL link
-        iframe_to_embed: Copy embed <iframe>
-        parameters: Parameters
-        examples: Examples
-
-        generator:
-          title: Automatic Generator
-          description: Use the form below to create your own version of the embeddable map.
-
-      table:
-        thead:
-          parameter: Parameter
-          type: Type
-          allowed_values: Allowed values
-          default_value: Default value
-          description: Description
-        description:
-          theme: Map theme
-          latitude: Latitude to center the map on
-          longitude: Longitude to center the map on
-          zoom: Map zoom level
-          country_html: Filter by country to display only localized results (<strong>ISO 3166-1 alpha-2</strong> format).
-          continent_html: Filter by continent to display only localized results (<strong>CC</strong> format).
-          country_info_html: The countries listed are those with at least one listed merchant.<br /> Any country specified in the correct format is valid.
-          continent_info_html: This parameter ignores <b>country</b> if it is also specified
-          coins: Cryptocurrencies to filter to display only matching results
-          gesture_handling: Prevents users from getting stuck on the map when scrolling a long page
-          fit_bounds: Automatically centers the map so that all markers are visible on the screen
-          fit_bounds_warning: Ignores latitude, longitude, and zoom values, if present
-          clusters: Groups nearby markers into clusters to reduce the number of displayed elements
-          clusters_warning: May slow down the browser if there are many markers to display
-          attribution: Displays the Collective's mentions at the bottom right of the map
 
     directory_friends:
       other_directories_to_spend_title: Other ways to spend

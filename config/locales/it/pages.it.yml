@@ -49,13 +49,6 @@ it:
       title: Cerca contenuti
       subtitle: Accedi direttamente ai contenuti adatti al tuo profilo e al tuo livello
 
-    debt_clock:
-      title: Debito pubblico della Francia 🇫🇷 in tempo reale
-      headline_html: Il debito pubblico aumenta di <strong>5.136&nbsp;€</strong> al secondo (<strong>443,7 milioni&nbsp;€</strong> al giorno)
-      source_label: Fonte
-      source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
-      chart_debt_title: Debito (in miliardi)
-
     cbdc:
       title: Euro digitale "Cash+"
       body:
@@ -98,6 +91,14 @@ it:
       subject: "[Collettivo Bank-Exit] Blog %{title}"
       body: "Scopri questo articolo sul blog del Collettivo Bank-Exit: %{link}"
 
+    france_debt:
+      show:
+        title: Debito pubblico della Francia 🇫🇷 in tempo reale
+        headline_html: Il debito pubblico aumenta di <strong>5.136&nbsp;€</strong> al secondo (<strong>443,7 milioni&nbsp;€</strong> al giorno)
+        source_label: Fonte
+        source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
+        chart_debt_title: Debito (in miliardi)
+
   tutorials:
     index:
       title: Tutorial
@@ -114,6 +115,44 @@ it:
 
       report_a_fault:
         title: Segnala un’anomalia nel tutorial
+
+    documentation_embed_map:
+      show:
+        integration_description_html: Per integrare la mappa di Bitcoin, Monero e June nel tuo sito web, scegli la versione %{url} o %{iframe}.
+        parameters_description: Puoi usare le seguenti impostazioni per regolare il rendering della mappa.
+        iframe: <iframe>
+        url_to_embed: Copia il link URL da integrare
+        iframe_to_embed: Copia il <iframe> da integrare
+        parameters: Parametri
+        examples: Esempi
+
+        generator:
+          title: Generatore automatico
+          description: Usa il modulo qui sotto per creare la tua versione personalizzata della mappa integrabile.
+
+      table:
+        thead:
+          parameter: Parametro
+          type: Tipo
+          allowed_values: Valori consentiti
+          default_value: Valore predefinito
+          description: Descrizione
+        description:
+          theme: Tema della mappa
+          latitude: Latitudine per centrare la mappa
+          longitude: Longitudine per centrare la mappa
+          zoom: Livello di zoom della mappa
+          country_html: Filtra per paese per mostrare solo risultati localizzati (<strong>ISO 3166-1 alpha-2</strong>).
+          continent_html: Filtra per continente per mostrare solo risultati localizzati (<strong>CC</strong>).
+          country_info_html: I paesi elencati sono quelli con almeno un commerciante registrato.<br /> Qualsiasi paese specificato nel formato corretto è valido.
+          continent_info_html: Questo parametro ignora <b>country</b> se è anch’esso specificato
+          coins: Criptovalute per filtrare e mostrare solo i risultati corrispondenti
+          gesture_handling: Impedisce agli utenti di rimanere bloccati sulla mappa durante lo scorrimento di una pagina lunga
+          fit_bounds: Centra automaticamente la mappa in modo che tutti i marker siano visibili sullo schermo
+          fit_bounds_warning: Ignora i valori di latitudine, longitudine e zoom, se presenti
+          clusters: Raggruppa i marker vicini in cluster per ridurre il numero di elementi visualizzati
+          clusters_warning: Potrebbe rallentare il browser se ci sono molti marker da mostrare
+          attribution: Mostra le menzioni del Collettivo in basso a destra sulla mappa
 
     reports:
       create:
@@ -201,44 +240,6 @@ it:
 
       refresh_confirm_html: Sei sicuro di voler aggiornare i commercianti? <br /> Attendi qualche minuto, potrebbe richiedere tempo.
       refresh: Aggiorna dati commercianti
-
-    helps:
-      show:
-        integration_description_html: Per integrare la mappa di Bitcoin, Monero e June nel tuo sito web, scegli la versione %{url} o %{iframe}.
-        parameters_description: Puoi usare le seguenti impostazioni per regolare il rendering della mappa.
-        iframe: <iframe>
-        url_to_embed: Copia il link URL da integrare
-        iframe_to_embed: Copia il <iframe> da integrare
-        parameters: Parametri
-        examples: Esempi
-
-        generator:
-          title: Generatore automatico
-          description: Usa il modulo qui sotto per creare la tua versione personalizzata della mappa integrabile.
-
-      table:
-        thead:
-          parameter: Parametro
-          type: Tipo
-          allowed_values: Valori consentiti
-          default_value: Valore predefinito
-          description: Descrizione
-        description:
-          theme: Tema della mappa
-          latitude: Latitudine per centrare la mappa
-          longitude: Longitudine per centrare la mappa
-          zoom: Livello di zoom della mappa
-          country_html: Filtra per paese per mostrare solo risultati localizzati (<strong>ISO 3166-1 alpha-2</strong>).
-          continent_html: Filtra per continente per mostrare solo risultati localizzati (<strong>CC</strong>).
-          country_info_html: I paesi elencati sono quelli con almeno un commerciante registrato.<br /> Qualsiasi paese specificato nel formato corretto è valido.
-          continent_info_html: Questo parametro ignora <b>country</b> se è anch’esso specificato
-          coins: Criptovalute per filtrare e mostrare solo i risultati corrispondenti
-          gesture_handling: Impedisce agli utenti di rimanere bloccati sulla mappa durante lo scorrimento di una pagina lunga
-          fit_bounds: Centra automaticamente la mappa in modo che tutti i marker siano visibili sullo schermo
-          fit_bounds_warning: Ignora i valori di latitudine, longitudine e zoom, se presenti
-          clusters: Raggruppa i marker vicini in cluster per ridurre il numero di elementi visualizzati
-          clusters_warning: Potrebbe rallentare il browser se ci sono molti marker da mostrare
-          attribution: Mostra le menzioni del Collettivo in basso a destra sulla mappa
 
     directory_friends:
       other_directories_to_spend_title: Altri modi per spendere

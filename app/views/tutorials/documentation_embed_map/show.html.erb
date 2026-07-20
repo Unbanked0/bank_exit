@@ -1,0 +1,217 @@
+<% default_map_iframe_html = html_escape_once("<iframe src=\"#{maps_embed_url}\" width=\"100%\" height=\"100%\"></iframe>") %>
+
+<div class="space-y-6">
+  <div>
+    <%= t('.integration_description_html',
+          url: content_tag(:span, class: 'badge badge-sm badge-info') { 'URL' },
+          iframe: content_tag(:span, class: 'badge badge-sm badge-info') { '<iframe>' }) %>
+  </div>
+
+  <div class="space-y-5" data-controller="map--embed-generator">
+    <header>
+      <h2 class="text-lg font-bold text-primary mb-1">
+        <%= t('.generator.title') %>
+      </h2>
+
+      <p>
+        <%= t('.generator.description') %>
+      </p>
+    </header>
+
+    <div class="mockup-browser border border-base-300 w-full">
+      <div class="mockup-browser-toolbar">
+        <%= render 'copy_to_clipboard',
+                   clipboard_value: maps_embed_url,
+                   clipboard_success_text_value: nil,
+                   attr_title: t('.url_to_embed'),
+                   extra_action: 'map--embed-generator:copyUrl@window->clipboard#setContent',
+                   extra_class: 'btn-xs! mr-2',
+                   copy_icon: lucide_icon('copy', class: 'w-3') %>
+
+        <div
+          class="
+            input text-primary text-sm px-2 py-1 scrollbar-hide select-all
+            scrollable-url
+          "
+        >
+          <span>
+            <%= maps_embed_url %>
+            <span data-map--embed-generator-target="queryRenderer"></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="grid relative h-125">
+        <div class="absolute inset-0 z-0">
+          <%= render 'maps/loader' %>
+        </div>
+
+        <iframe
+          src="<%= maps_embed_path %>"
+          class="w-full h-full z-1"
+          data-map--embed-generator-target="iframe"
+          title="Map iframe"
+        ></iframe>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-primary mb-1">
+        <%= t('.iframe') %>
+      </p>
+
+      <div class="relative">
+        <div class="alert overflow-x-auto w-full">
+          <div class="w-full select-all">
+            <%= html_escape_once('<iframe src="') %>
+            <%= maps_embed_url %>
+
+            <mark data-map--embed-generator-target="queryRenderer"></mark>
+            <%= html_escape_once('" width="100%" height="100%"></iframe>') %>
+          </div>
+        </div>
+
+        <div class="absolute top-1 right-1">
+          <%= render 'copy_to_clipboard',
+                     clipboard_value: default_map_iframe_html,
+                     clipboard_success_text_value: nil,
+                     attr_title: t('.iframe_to_embed'),
+                     extra_action: 'map--embed-generator:copyIframe@window->clipboard#setContent' %>
+        </div>
+      </div>
+    </div>
+
+    <%= simple_form_for '',
+                        url: '',
+                        method: :get,
+                        html: {
+                          class: 'flex flex-col lg:flex-row gap-6 space-y-3',
+                          data: {
+                            map__embed_generator_target: 'form',
+                            action: 'change->map--embed-generator#print keydown->map--embed-generator#print'
+                          }
+                        } do |f| %>
+      <div class="flex lg:flex-col items-center gap-3">
+        <% %i[bitcoin monero june].each do |coin| %>
+          <div class="w-1/3 lg:w-full">
+            <input
+              type="checkbox"
+              id="<%= coin %>-option"
+              value="<%= coin %>"
+              class="hidden peer"
+              name="coins[]"
+            >
+
+            <label
+              class="pretty-checkbox block text-center"
+              for="<%= coin %>-option"
+              tabindex="0"
+            >
+              <% if coin == :bitcoin %>
+                <div class="flex items-center justify-center mb-2">
+                  <%= image_tag icon_by_coin('lightning'),
+                                class: 'w-12 rounded-full translate-x-4',
+                                alt: 'Lightning Network' %>
+
+                  <%= image_tag icon_by_coin(coin),
+                                class: 'w-16 rounded-full z-50',
+                                alt: 'Bitcoin' %>
+
+                  <%= image_tag icon_by_coin('contact_less'),
+                                class: 'border dark:border-0 w-12 rounded-full -translate-x-4 bg-white p-2',
+                                alt: 'Lightning Network NFC' %>
+                </div>
+              <% else %>
+                <p class="mb-2">
+                  <%= image_tag icon_by_coin(coin),
+                                class: 'w-16 rounded-full mx-auto',
+                                alt: coin %>
+                </p>
+              <% end %>
+
+              <p>
+                <%= t(coin, scope: 'activerecord.attributes.merchant') %>
+              </p>
+            </label>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 w-full">
+        <%= f.input :latitude, as: :float, required: false %>
+        <%= f.input :longitude, as: :float, required: false %>
+
+        <%= f.input :zoom,
+                    include_blank: :translate,
+                    collection: (1..18).to_a,
+                    required: false %>
+
+        <%= f.input :theme,
+                    include_blank: :translate,
+                    collection: %w[light dark],
+                    required: false %>
+
+        <div class="fieldset">
+          <%= f.input :country,
+                      include_blank: :translate,
+                      format: :with_flag,
+                      required: false,
+                      wrapper: false,
+                      input_html: {
+                        autocomplete: false,
+                        class: 'select w-full'
+                      },
+                      label: Merchant.human_attribute_name(:country),
+                      label_html: { class: 'fieldset-legend' } %>
+        </div>
+
+        <div class="fieldset">
+          <%= f.input :continent,
+                      as: :select,
+                      include_blank: :translate,
+                      required: false,
+                      wrapper: false,
+                      collection: merchant_continents_select_helper %>
+        </div>
+
+        <%= f.input :fitBounds,
+                    as: :select,
+                    include_blank: :translate,
+                    required: false,
+                    collection: map_enabled_disabled_collection_values_for_select %>
+
+        <%= f.input :gestureHandling,
+                    as: :select,
+                    include_blank: :translate,
+                    required: false,
+                    collection: map_enabled_disabled_collection_values_for_select %>
+
+        <%= f.input :clusters,
+                    as: :select,
+                    include_blank: :translate,
+                    required: false,
+                    collection: map_enabled_disabled_collection_values_for_select %>
+
+        <%= f.input :attribution,
+                    as: :select,
+                    include_blank: :translate,
+                    required: false,
+                    collection: map_enabled_disabled_collection_values_for_select %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <h2 class="text-lg font-bold text-primary mb-2">
+      <%= t('.parameters') %>
+    </h2>
+
+    <div class="mb-5">
+      <%= t('.parameters_description') %>
+    </div>
+
+    <div class="table-wrapper">
+      <%= render 'tutorials/documentation_embed_map/table' %>
+    </div>
+  </div>
+</div>

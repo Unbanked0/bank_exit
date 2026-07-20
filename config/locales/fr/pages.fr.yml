@@ -50,13 +50,6 @@ fr:
       title: Rechercher un contenu
       subtitle: Accéder directement au contenu correspondant à votre profil et votre niveau
 
-    debt_clock:
-      title: Dette publique de la France 🇫🇷 en temps réel
-      headline_html: La dette publique augmente de <strong>5 136 €</strong> par seconde (<strong>443,7 millions €</strong> par jour)
-      source_label: Source
-      source_link: https://horloge-de-la-dette-publique.com
-      chart_debt_title: Dette (en milliards)
-
     cbdc:
       title: €uro numérique "Cash+"
       body:
@@ -99,6 +92,14 @@ fr:
       subject: "[Sortie de Banque] Blog %{title}"
       body: "Viens découvrir cet article de blog sur le site du collectif Sortie de Banque: %{link}"
 
+    france_debt:
+      show:
+        title: Dette publique de la France 🇫🇷 en temps réel
+        headline_html: La dette publique augmente de <strong>5 136 €</strong> par seconde (<strong>443,7 millions €</strong> par jour)
+        source_label: Source
+        source_link: https://horloge-de-la-dette-publique.com
+        chart_debt_title: Dette (en milliards)
+
   tutorials:
     index:
       title: Les tutoriels
@@ -115,6 +116,52 @@ fr:
 
       report_a_fault:
         title: Signaler une anomalie sur le tutoriel
+
+    documentation_embed_map:
+      show:
+        integration_description_html: Pour intégrer la carte Bitcoin, Monero, June sur votre site internet, choisissez la version %{url} ou %{iframe}.
+        parameters_description: Vous pouvez utiliser les paramètres suivants pour adapter le rendu de la carte.
+        iframe: <iframe>
+        url_to_embed: Copier l'URL d'intégration
+        iframe_to_embed: Copier l'<iframe> d'intégration
+        parameters: Paramètres
+        examples: Exemples
+
+        generator:
+          title: Générateur automatique
+          description: Utilisez le formulaire ci-dessous pour construire votre propre version de la carte à intégrer.
+
+      table:
+        thead:
+          parameter: Paramètre
+          type: Type
+          allowed_values: Valeurs possibles
+          default_value: Valeur par défaut
+          description: Description
+        description:
+          theme: Thème de la carte
+          latitude: Latitude sur laquelle centrer la carte
+          longitude: Longitude sur laquelle centrer la carte
+          zoom: Niveau de zoom de la carte
+          country_html: Filtre par pays pour n'afficher que les résultats localisés (format <strong>ISO 3166-1 alpha-2</strong>).
+          continent_html: Filtre par continent pour n'afficher que les résultats localisés (format <strong>CC</strong>).
+          country_info_html: Les pays listés sont ceux disposant d'au moins un commerçant référencé.<br /> N'importe quel pays spécifié dans le bon format est valide.
+          continent_info_html: Ce paramètre ignore <b>country</b> s'il est également spécifié
+          coins: Cryptommonnaies à filtrer pour n'afficher que les résultats correspondants
+          gesture_handling: Empêche les utilisateurs de rester coincés sur la carte lorsqu'ils font défiler une longue page
+          fit_bounds: Centre automatiquement la carte pour que tous les marqueurs soient visibles à l'écran.
+          fit_bounds_warning: Remplace les valeurs latitude, longitude et zoom si présentes
+          clusters: Regroupe les marqueurs proches en clusters pour réduire le nombre d'éléments affichés.
+          clusters_warning: Peut ralentir le navigateur si il y a beaucoup de marqueurs à afficher
+          attribution: Affiche les mentions du Collectif en bas à droite de la carte
+
+    cryptopayment_for_business:
+      show:
+        caption: Mise en place complète des paiements Monero et Bitcoin pour votre commerce
+    monero_node_easymonerod:
+      show:
+        image_caption: Interface du noeud
+        video_caption: Tutoriel vidéo EasyMonerod
 
     reports:
       create:
@@ -210,44 +257,6 @@ fr:
       refresh_confirm_html: Voulez-vous rafraîchir la liste des commerçants ? <br /> Soyez patient, cela peut prendre quelques minutes.
       refresh: Rafraîchir les commerçants
       view_in_admin: Voir dans l'admin
-
-    helps:
-      show:
-        integration_description_html: Pour intégrer la carte Bitcoin, Monero, June sur votre site internet, choisissez la version %{url} ou %{iframe}.
-        parameters_description: Vous pouvez utiliser les paramètres suivants pour adapter le rendu de la carte.
-        iframe: <iframe>
-        url_to_embed: Copier l'URL d'intégration
-        iframe_to_embed: Copier l'<iframe> d'intégration
-        parameters: Paramètres
-        examples: Exemples
-
-        generator:
-          title: Générateur automatique
-          description: Utilisez le formulaire ci-dessous pour construire votre propre version de la carte à intégrer.
-
-      table:
-        thead:
-          parameter: Paramètre
-          type: Type
-          allowed_values: Valeurs possibles
-          default_value: Valeur par défaut
-          description: Description
-        description:
-          theme: Thème de la carte
-          latitude: Latitude sur laquelle centrer la carte
-          longitude: Longitude sur laquelle centrer la carte
-          zoom: Niveau de zoom de la carte
-          country_html: Filtre par pays pour n'afficher que les résultats localisés (format <strong>ISO 3166-1 alpha-2</strong>).
-          continent_html: Filtre par continent pour n'afficher que les résultats localisés (format <strong>CC</strong>).
-          country_info_html: Les pays listés sont ceux disposant d'au moins un commerçant référencé.<br /> N'importe quel pays spécifié dans le bon format est valide.
-          continent_info_html: Ce paramètre ignore <b>country</b> s'il est également spécifié
-          coins: Cryptommonnaies à filtrer pour n'afficher que les résultats correspondants
-          gesture_handling: Empêche les utilisateurs de rester coincés sur la carte lorsqu'ils font défiler une longue page
-          fit_bounds: Centre automatiquement la carte pour que tous les marqueurs soient visibles à l'écran.
-          fit_bounds_warning: Remplace les valeurs latitude, longitude et zoom si présentes
-          clusters: Regroupe les marqueurs proches en clusters pour réduire le nombre d'éléments affichés.
-          clusters_warning: Peut ralentir le navigateur si il y a beaucoup de marqueurs à afficher
-          attribution: Affiche les mentions du Collectif en bas à droite de la carte
 
     directory_friends:
       other_directories_to_spend_title: Autres moyens de dépenser

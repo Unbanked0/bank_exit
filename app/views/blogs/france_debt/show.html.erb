@@ -1,5 +1,5 @@
 <div
-  class="alert alert-vertical flex flex-col justify-center px-5 py-12"
+  class="space-y-12"
   data-controller="debt-clock"
   data-debt-clock-d0-value="3425000000000"
   data-debt-clock-t0-value="<%= Time.new(2025, 9, 27).to_i %>"
@@ -30,7 +30,7 @@
     </figure>
   </div>
 
-  <div class="w-full lg:w-1/2 mx-auto space-y-8">
+  <div class="w-full">
     <%= area_chart france_debt_data_by_years, ytitle: t('.chart_debt_title') %>
 
     <% if I18n.locale == :fr %>
@@ -38,7 +38,7 @@
     <% else %>
       <% meme = "sdb_debt_clock_en.jpeg" %>
     <% end %>
-
-    <%= image_tag meme, class: 'rounded-lg lg:w-3/4 mx-auto', alt: 'Bank-Exit debt France Twitter/X post' %>
   </div>
+
+  <%= image_tag meme, class: 'rounded-lg lg:w-3/4 mx-auto', alt: 'Bank-Exit debt France Twitter/X post' %>
 </div>

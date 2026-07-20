@@ -23,15 +23,8 @@
 
 - content_for :coins do
   - if @coins.present?
-    div
-      h2.text-primary.uppercase.mb-5= t('coin')
-
-      .flex.items-center.justify-center.gap-6.mb-3
-        = render @coins
-
-- content_for :download do
-  - if @tutorial.identifier == 'session-messaging'
-    = render 'session_download'
+    .flex.items-center.justify-center.gap-6
+      = render @coins
 
 - content_for :footer_actions do
   script type="application/ld+json"
@@ -39,7 +32,4 @@
   script type="application/ld+json"
     == schema_dot_org_breadcrumb_tutorial(@tutorial)
 
-= render 'articles/wrapper', article: @tutorial do
-  - if @tutorial.contents.is_a?(Array) && @tutorial.contents.blank?
-    .alert
-      p= t('tutorials.show.pending_redaction')
+= render 'articles/wrapper', article: @tutorial

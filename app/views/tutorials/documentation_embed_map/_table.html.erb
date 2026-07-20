@@ -1,0 +1,297 @@
+<table class="table table-zebra">
+  <thead>
+    <tr>
+      <th><%= t('.thead.parameter') %></th>
+      <th><%= t('.thead.type') %></th>
+      <th><%= t('.thead.allowed_values') %></th>
+      <th><%= t('.thead.default_value') %></th>
+      <th><%= t('.thead.description') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">theme</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">String</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">light</span>
+        <%= t('or') %>
+        <span class="badge badge-info badge-sm">dark</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_THEME %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.theme') %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">latitude</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Float</span>
+      </td>
+
+      <td></td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_LATITUDE %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.latitude') %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">longitude</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Float</span>
+      </td>
+
+      <td></td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_LONGITUDE %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.longitude') %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">zoom</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Integer</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">1</span>
+        <%= t('to') %>
+        <span class="badge badge-info badge-sm">18</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_ZOOM %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.zoom') %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">country</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">String</span>
+      </td>
+
+      <td class="block w-max">
+        <div class="grid grid-cols-6 gap-2">
+          <% Merchant.available.pluck(:country).uniq.compact_blank.sort.each do |country| %>
+            <div
+              class="tooltip tooltip-bottom"
+              data-tip="<%= pretty_country_html(country.to_sym) %>"
+            >
+              <span class="badge badge-info badge-sm"><%= country %></span>
+            </div>
+          <% end %>
+        </div>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_COUNTRY %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.country_html') %></p>
+
+        <p class="alert alert-info mt-2">
+          <span><%= t('.description.country_info_html') %></span>
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">continent</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">String</span>
+      </td>
+
+      <td>
+        <ul class="space-y-1">
+          <% t('continents').each do |key, value| %>
+            <li>
+              <span class="badge badge-info badge-sm"><%= key %></span>
+              <span><%= value %></span>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_CONTINENT %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.continent_html') %></p>
+
+        <p class="alert alert-warning mt-2">
+          <span><%= t('.description.continent_info_html') %></span>
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">coins</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Array[String]</span>
+      </td>
+
+      <td>
+        <%= %w[bitcoin monero june].map { |coin|
+              content_tag(:span, coin, class: 'badge badge-info badge-sm')
+            }.join(', ').html_safe %>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_COINS %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.coins') %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">gestureHandling</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Boolean</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">true</span>
+        <%= t('or') %>
+        <span class="badge badge-info badge-sm">false</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_GESTURE_HANDLING %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.gesture_handling') %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">fitBounds</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Boolean</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">true</span>
+        <%= t('or') %>
+        <span class="badge badge-info badge-sm">false</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_FIT_BOUNDS %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.fit_bounds') %></p>
+
+        <p class="alert alert-warning mt-2">
+          <span><%= t('.description.fit_bounds_warning') %></span>
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">clusters</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Boolean</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">true</span>
+        <%= t('or') %>
+        <span class="badge badge-info badge-sm">false</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_CLUSTERS %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.clusters') %></p>
+
+        <p class="alert alert-warning mt-2">
+          <span><%= t('.description.clusters_warning') %></span>
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">attribution</th>
+
+      <td>
+        <span class="badge badge-info badge-sm">Boolean</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">true</span>
+        <%= t('or') %>
+        <span class="badge badge-info badge-sm">false</span>
+      </td>
+
+      <td>
+        <span class="badge badge-info badge-sm">
+          <%= Setting::MAP_DEFAULT_SHOW_ATTRIBUTION %>
+        </span>
+      </td>
+
+      <td>
+        <p><%= t('.description.attribution') %></p>
+      </td>
+    </tr>
+  </tbody>
+</table>

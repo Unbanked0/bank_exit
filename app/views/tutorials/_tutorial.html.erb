@@ -11,7 +11,7 @@
       <h3><%= tutorial.title %></h3>
     </div>
 
-    <div class="flex max-sm:flex-col items-center gap-2">
+    <div class="flex flex-col items-center gap-2">
       <p class="badge badge-sm <%= tutorial_class_by_level(tutorial.level) %>">
         <%= t(tutorial.level, scope: 'articles.wrapper') %>
       </p>
@@ -19,6 +19,12 @@
       <% if tutorial.time? %>
         <p class="badge badge-sm badge-neutral" title="<%= tutorial.time %>">
           <%= distance_of_time_in_words(tutorial.time.minutes) %>
+        </p>
+      <% end %>
+
+      <% if tutorial.created_at %>
+        <p class="badge badge-sm">
+          <%= l(tutorial.created_at) %>
         </p>
       <% end %>
     </div>

@@ -147,16 +147,13 @@ module SEOHelper
 
     json[:description] = blog.short_description if blog.short_description
 
-    json[:articleBody] = []
-    blog.all_body.each do |body|
-      json[:articleBody] << strip_tags(body)
-    end
+    json[:articleBody] = strip_tags(blog.render_template)
 
     if blog.video?
       json[:video] = {
         '@type': 'VideoObject',
-        name: blog.video.title,
-        embedUrl: blog.video.url
+        name: blog.video_title,
+        embedUrl: blog.video_url
       }
     end
 
@@ -172,16 +169,13 @@ module SEOHelper
       proficiencyLevel: tutorial.level
     }
 
-    json[:articleBody] = []
-    tutorial.all_body.each do |body|
-      json[:articleBody] << strip_tags(body)
-    end
+    json[:articleBody] = strip_tags(tutorial.render_template)
 
     if tutorial.video?
       json[:video] = {
         '@type': 'VideoObject',
-        name: tutorial.video.title,
-        embedUrl: tutorial.video.url
+        name: tutorial.video_title,
+        embedUrl: tutorial.video_url
       }
     end
 

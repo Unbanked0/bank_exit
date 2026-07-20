@@ -61,7 +61,10 @@ module Findable
     def self.by_query(query)
       regex = /#{Regexp.escape(query)}/i
 
-      all.select { it.title.downcase.match?(regex) || it.contents.map(&:body).join.match?(regex) }
+      all.select do |article|
+        article.title.match?(regex) ||
+          article.render_template.match?(regex)
+      end
     end
   end
 end

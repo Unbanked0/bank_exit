@@ -1,4 +1,4 @@
-<% list_item_class = "list-row hover:bg-primary! hover:text-neutral!" %>
+<% list_item_class = "list-row hover:bg-base-200! hover:text-base-content!" %>
 
 <nav class="list bg-base-100 max-h-[62svh] overflow-y-auto p-2">
   <% if tutorials.present? %>
@@ -26,8 +26,13 @@
 
           <% if tutorial.short_description.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
-              <%== highlight(tutorial.short_description,
-                  params[:query]).truncate(100) %>
+              <%== sanitize(
+                highlight(
+                  tutorial.short_description,
+                  params[:query]
+                ),
+                tags: %w[mark]
+              ) %>
             </p>
           <% end %>
         </div>
@@ -54,8 +59,13 @@
 
           <% if blog.short_description.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
-              <%== highlight(blog.short_description,
-                params[:query]).truncate(100) %>
+              <%== sanitize(
+                highlight(
+                  blog.short_description,
+                  params[:query]
+                ),
+                tags: %w[mark]
+              ) %>
             </p>
           <% end %>
         </div>
