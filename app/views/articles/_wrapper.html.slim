@@ -37,6 +37,6 @@ article
       = yield :coins
       = yield
 
-    = article.render_template
+    = highlight(article.render_template, params[:q], sanitize: false)
 
   = yield :footer_actions
