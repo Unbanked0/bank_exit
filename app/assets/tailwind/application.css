@@ -54,6 +54,34 @@
         --btn-color: #ff6600;
         --btn-fg: #ffffff !important;
     }
+
+    .badge.badge-bitcoin {
+        --badge-color: #f7931a;
+        --badge-fg: #ffffff !important;
+    }
+
+    .badge.badge-monero {
+        --badge-color: #ff6600;
+        --badge-fg: #ffffff !important;
+    }
+
+    .badge.badge-june {
+        --badge-color: #f8ed5a;
+    }
+}
+
+@layer utilities {
+    .bg-bitcoin {
+        background-color: #f7931a;
+    }
+
+    .bg-monero {
+        background-color: #ff6600;
+    }
+
+    .bg-june {
+        background-color: #f8ed5a;
+    }
 }
 
 @utility js-only {
