@@ -21,11 +21,11 @@
             <%= link_to @contact.secondary_link,
                         class: 'select-all text-center',
                         target: :_blank do %>
-              <%= highlight_address(@contact.public_key) %>
+              <%== highlight_address(@contact.public_key) %>
             <% end %>
           <% elsif @contact.session? %>
             <span class="select-all text-center">
-              <%= highlight_address(@contact.public_key) %>
+              <%== highlight_address(@contact.public_key) %>
             </span>
           <% end %>
         </div>
