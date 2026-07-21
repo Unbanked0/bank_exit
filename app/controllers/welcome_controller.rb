@@ -15,6 +15,8 @@ class WelcomeController < PublicController
     @profiles = Questions::BuildProfiles.call
     @levels = Questions::BuildLevels.call
 
+    @monero_tutorial = Tutorial.find('monero-nokyc')
+
     merchants_sample = Merchant.available.monero.in_france.no_kyc.includes(:logo_attachment, :banner_attachment).sample(4)
     @merchants_sample = MerchantDecorator.wrap(merchants_sample)
   end
