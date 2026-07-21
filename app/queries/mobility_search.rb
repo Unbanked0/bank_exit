@@ -45,22 +45,37 @@ class MobilitySearch
   def build_joins
     searchable_attributes.each do |attribute|
       table = translation_table(attribute)
+      current = current_alias(attribute)
+      fallback = fallback_alias(attribute)
 
-      @relation = relation.joins(
-        <<~SQL.squish
-          LEFT JOIN #{table} #{current_alias(attribute)}
-            ON #{current_alias(attribute)}.translatable_id = #{model.table_name}.id
-           AND #{current_alias(attribute)}.translatable_type = #{model.connection.quote(model.name)}
-           AND #{current_alias(attribute)}.key = #{model.connection.quote(attribute.to_s)}
-           AND #{current_alias(attribute)}.locale = #{model.connection.quote(current_locale)}
+      sql = <<~SQL.squish
+        LEFT JOIN #{table} #{current}
+          ON #{current}.translatable_id = #{model.table_name}.id
+         AND #{current}.translatable_type = ?
+         AND #{current}.key = ?
+         AND #{current}.locale = ?
 
-          LEFT JOIN #{table} #{fallback_alias(attribute)}
-            ON #{fallback_alias(attribute)}.translatable_id = #{model.table_name}.id
-           AND #{fallback_alias(attribute)}.translatable_type = #{model.connection.quote(model.name)}
-           AND #{fallback_alias(attribute)}.key = #{model.connection.quote(attribute.to_s)}
-           AND #{fallback_alias(attribute)}.locale = #{model.connection.quote(fallback_locale)}
-        SQL
+        LEFT JOIN #{table} #{fallback}
+          ON #{fallback}.translatable_id = #{model.table_name}.id
+         AND #{fallback}.translatable_type = ?
+         AND #{fallback}.key = ?
+         AND #{fallback}.locale = ?
+      SQL
+
+      sql = ActiveRecord::Base.send(
+        :sanitize_sql_array,
+        [
+          sql,
+          model.name,
+          attribute.to_s,
+          current_locale,
+          model.name,
+          attribute.to_s,
+          fallback_locale
+        ]
       )
+
+      @relation = relation.joins(sql)
     end
   end
 
