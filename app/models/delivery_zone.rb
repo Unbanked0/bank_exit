@@ -8,6 +8,7 @@ class DeliveryZone < ApplicationRecord
          continent: 4,
          world: 5
        },
+       default: :country,
        validate: true
 
   belongs_to :deliverable, polymorphic: true

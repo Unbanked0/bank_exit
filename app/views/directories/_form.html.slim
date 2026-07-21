@@ -28,18 +28,21 @@
   section.space-y-3
     h2.text-lg.font-bold.text-primary.mb-2.border-b-2= Address.model_name.human.capitalize
 
-    .alert
+    .alert data-controller="admin--address" data-admin--address-search-url-value= addresses_search_path
+
       = f.simple_fields_for :address do |ff|
         = ff.input :label,
                    label_html: { class: 'mb-2' },
                    hint_html: { class: 'mt-2' },
                    wrapper_html: { class: 'auto-search-wrapper' },
                    input_html: { \
+                     list: "addresses",
                      data: { \
-                       controller: 'admin--address',
-                       admin__address_search_url_value: addresses_search_path \
+                       admin__address_target: :input,
+                       action: "input->admin--address#search" \
                      } \
                    }
+      datalist data-admin--address-target="datalist" id="addresses"
 
   section.space-y-3
     h2.text-lg.font-bold.text-primary.mb-2.border-b-2= CoinWallet.model_name.human.capitalize
