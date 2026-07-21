@@ -1,0 +1,177 @@
+<%# locals: (merchant:, open: false) %>
+
+<details
+  class="
+    collapse collapse-arrow bg-base-200 relative hover:border-primary
+    transition-colors
+  "
+  <% if params[:search].present? || open %>
+    open
+  <% end %>
+>
+  <summary class="collapse-title space-y-1 @container">
+    <div class="flex items-center gap-1">
+      <% if merchant.country.present? %>
+        <span title="<%= merchant.country %>">
+          <%= emoji_by_locale(merchant.country) %>
+        </span>
+      <% end %>
+
+      <span class="font-bold">
+        <%= highlight(merchant.name, params[:search]) %>
+      </span>
+    </div>
+
+    <div class="flex items-center gap-3 @max-sm:flex-col">
+      <% if merchant.category.present? %>
+        <div class="badge badge-secondary badge-sm">
+          <%= merchant_icon_svg(merchant.icon, width: 12, height: 12, naked: true) %>
+          <%= merchant.friendly_category %>
+        </div>
+      <% end %>
+
+      <div class="flex items-center gap-3">
+        <%== coins_list(
+          merchant.coins,
+          with_logo: true,
+          with_name: false,
+          size: 'w-7',
+          inline: true
+        ) %>
+
+        <% unless merchant.ask_kyc.nil? %>
+          <div>
+            <%= merchant_kyc_no_kyc(
+              merchant.ask_kyc?,
+              klass: 'w-7 h-7 text-xs'
+            ) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </summary>
+
+  <div class="collapse-content relative">
+    <% if merchant.banner.attached? %>
+      <div class="absolute inset-0 bg-base-100/80 z-1"></div>
+      <div
+        class="absolute inset-0 z-0"
+        style="background-image: url(<%= url_for(merchant.banner.variant(:thumb)) %>)"
+      ></div>
+    <% end %>
+
+    <div
+      class="
+        <%= class_names(
+        'relative z-2 space-y-3 @container',
+        'pt-2': merchant.banner.attached?
+        ) %>
+      "
+    >
+      <div class="divider"></div>
+
+      <% if merchant.description.present? %>
+        <blockquote class="italic">
+          <%= highlight(
+            merchant.description.truncate(150),
+            params[:search]
+          ) %>
+        </blockquote>
+      <% end %>
+
+      <div class="flex justify-center @max-sm:flex-col @max-sm:items-center gap-3">
+        <% if merchant.address? %>
+          <div class="flex flex-col items-center gap-1 text-center">
+            <%= lucide_icon 'home', class: 'w-5' %>
+
+            <div>
+              <%== highlight(
+                merchant.full_address_with_country,
+                params[:search]
+              ) %>
+            </div>
+          </div>
+        <% end %>
+
+        <% if merchant.delivery.present? %>
+          <div class="flex flex-col items-center gap-1 text-center">
+            <%= lucide_icon 'truck', class: 'w-5' %>
+
+            <%= t('.home_delivery') %>
+
+            <% if merchant.delivery_zone %>
+              (
+              <%= merchant.delivery_zone %>
+              )
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <% if allowed_to?(:index?, Comment) %>
+        <div class="flex items-center justify-center gap-3">
+          <div
+            class="text-lg"
+            title="<%= merchant.comments_count %> <%= Comment.model_name.human(count: merchant.comments_count) %>"
+          >
+            <%= lucide_icon 'message-square',
+                            class: 'inline-flex mr-1 font-normal w-4' %>
+
+            <%= merchant.comments_count %>
+          </div>
+
+          <% if merchant.comments_count > 0 %>
+            <div class="flex items-center gap-1">
+              <div class="rating rating-md">
+                <div
+                  class="mask mask-star bg-primary"
+                  aria-label="<%= merchant.average_rating %> star"
+                  aria-current="true"
+                  title="<%= merchant.average_rating %>/5"
+                ></div>
+              </div>
+
+              <p class="text-lg">
+                <%= number_with_precision(
+                  merchant.average_rating,
+                  strip_insignificant_zeros: true,
+                  precision: 2
+                ) %>/5
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="divider"></div>
+
+      <div class="@container">
+        <div class="flex items-center justify-between gap-3 @max-sm:flex-col">
+          <div class="flex items-center gap-3">
+            <% main_contacts, extra_contacts = merchant.all_contacts.partition.with_index do |_contact, index|
+              index < 5
+            end %>
+
+            <% main_contacts.each do |contact, value| %>
+              <%= social_contact_icon(contact, title: value) %>
+            <% end %>
+
+            <% if extra_contacts.present? %>
+              <% text = extra_contacts.map { |contact, _value| social_contact_icon(contact) }.join(' ') %>
+              <%= render 'tooltip',
+                         position: :right,
+                         text: text,
+                         mode: 'info',
+                         lucide_ikon: 'ellipsis' %>
+            <% end %>
+          </div>
+
+          <%= link_to merchant_path(merchant),
+                      class: 'btn btn-sm btn-secondary' do %>
+            <%= t('see') %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</details>
