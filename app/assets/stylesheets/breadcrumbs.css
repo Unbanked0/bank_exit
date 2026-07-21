@@ -8,8 +8,8 @@ nav#breadcrumb a {
 
 body:not(.admin) .breadcrumbs {
     display: inline-block;
-    border-radius: var(--radius-box);
+    border-radius: var(--radius-field);
     border: var(--border) solid var(--color-base-300);
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     background-color: var(--color-base-200);
 }

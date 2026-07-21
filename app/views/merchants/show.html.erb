@@ -7,11 +7,8 @@
       ) %>
     "
   >
-    <div class="flex items-center justify-between print:hidden">
-      <%= back_link_to(
-        session[:map_referer_url].presence || maps_path,
-        label: t('.back_to_map')
-      ) %>
+    <div class="flex items-center justify-between print:hidden gap-3">
+      <%= render 'breadcrumb', size: 'text-sm' %>
 
       <%= render 'merchants/view_sections/dropdown_actions',
                  merchant: @merchant,
