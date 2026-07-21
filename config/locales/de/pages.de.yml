@@ -49,13 +49,6 @@ de:
       title: Suche nach einem Inhalt
       subtitle: Greife direkt auf Inhalte zu, die zu deinem Profil und deinem Niveau passen
 
-    debt_clock:
-      title: Staatsschulden Frankreichs 🇫🇷 in Echtzeit
-      headline_html: Die Staatsschulden steigen um <strong>5.136&nbsp;€</strong> pro Sekunde (<strong>443,7 Millionen&nbsp;€</strong> pro Tag)
-      source_label: Quelle
-      source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
-      chart_debt_title: Schulden (in Milliarden)
-
     cbdc:
       title: Digitaler €uro "Cash+"
       body:
@@ -98,6 +91,14 @@ de:
       subject: "[Bank-Exit] Blog %{title}"
       body: "Entdecke diesen Blogartikel auf der Bank-Exit Kollektiv-Webseite: %{link}"
 
+    france_debt:
+      show:
+        title: Staatsschulden Frankreichs 🇫🇷 in Echtzeit
+        headline_html: Die Staatsschulden steigen um <strong>5.136&nbsp;€</strong> pro Sekunde (<strong>443,7 Millionen&nbsp;€</strong> pro Tag)
+        source_label: Quelle
+        source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
+        chart_debt_title: Schulden (in Milliarden)
+
   tutorials:
     index:
       title: Tutorials
@@ -114,6 +115,44 @@ de:
 
       report_a_fault:
         title: Melde eine Anomalie im Tutorial
+
+    documentation_embed_map:
+      show:
+        integration_description_html: Um die Bitcoin-, Monero- und Juni-Karte in deine Webseite einzubetten, wähle die Version %{url} oder %{iframe}.
+        parameters_description: Du kannst die folgenden Parameter verwenden, um die Darstellung der Karte anzupassen.
+        iframe: <iframe>
+        url_to_embed: Einbettungs-URL kopieren
+        iframe_to_embed: <iframe> kopieren
+        parameters: Parameter
+        examples: Beispiele
+
+        generator:
+          title: Automatischer Generator
+          description: Nutze das Formular unten, um deine eigene eingebettete Karten-Version zu erstellen.
+
+      table:
+        thead:
+          parameter: Parameter
+          type: Typ
+          allowed_values: Zulässige Werte
+          default_value: Standardwert
+          description: Beschreibung
+        description:
+          theme: Kartenthema
+          latitude: Breitengrad zum Zentrieren der Karte
+          longitude: Längengrad zum Zentrieren der Karte
+          zoom: Zoomstufe der Karte
+          country_html: Nach Land filtern, um nur lokale Ergebnisse anzuzeigen (<strong>ISO 3166-1 alpha-2</strong>-Format).
+          continent_html: Nach Kontinent filtern, um nur lokale Ergebnisse anzuzeigen (<strong>CC</strong>-Format).
+          country_info_html: Angezeigt werden nur Länder mit mindestens einem registrierten Händler.<br /> Jedes korrekt formatierte Land ist jedoch gültig.
+          continent_info_html: Dieser Parameter ignoriert <b>country</b>, falls auch angegeben
+          coins: Kryptowährungen filtern, um nur passende Ergebnisse anzuzeigen
+          gesture_handling: Verhindert das Hängenbleiben beim Scrollen über die Karte
+          fit_bounds: Zentriert die Karte automatisch, sodass alle Marker sichtbar sind
+          fit_bounds_warning: Ignoriert latitude, longitude und zoom, falls vorhanden
+          clusters: Gruppiert nahegelegene Marker, um die Anzeige zu optimieren
+          clusters_warning: Kann den Browser verlangsamen, wenn viele Marker vorhanden sind
+          attribution: Zeigt das Kollektiv-Branding unten rechts auf der Karte an
 
     reports:
       create:
@@ -201,44 +240,6 @@ de:
 
       refresh_confirm_html: Bist du sicher, dass du die Händlerdaten aktualisieren möchtest?<br /> Bitte habe etwas Geduld, das kann einige Minuten dauern.
       refresh: Händlerdaten aktualisieren
-
-    helps:
-      show:
-        integration_description_html: Um die Bitcoin-, Monero- und Juni-Karte in deine Webseite einzubetten, wähle die Version %{url} oder %{iframe}.
-        parameters_description: Du kannst die folgenden Parameter verwenden, um die Darstellung der Karte anzupassen.
-        iframe: <iframe>
-        url_to_embed: Einbettungs-URL kopieren
-        iframe_to_embed: <iframe> kopieren
-        parameters: Parameter
-        examples: Beispiele
-
-        generator:
-          title: Automatischer Generator
-          description: Nutze das Formular unten, um deine eigene eingebettete Karten-Version zu erstellen.
-
-      table:
-        thead:
-          parameter: Parameter
-          type: Typ
-          allowed_values: Zulässige Werte
-          default_value: Standardwert
-          description: Beschreibung
-        description:
-          theme: Kartenthema
-          latitude: Breitengrad zum Zentrieren der Karte
-          longitude: Längengrad zum Zentrieren der Karte
-          zoom: Zoomstufe der Karte
-          country_html: Nach Land filtern, um nur lokale Ergebnisse anzuzeigen (<strong>ISO 3166-1 alpha-2</strong>-Format).
-          continent_html: Nach Kontinent filtern, um nur lokale Ergebnisse anzuzeigen (<strong>CC</strong>-Format).
-          country_info_html: Angezeigt werden nur Länder mit mindestens einem registrierten Händler.<br /> Jedes korrekt formatierte Land ist jedoch gültig.
-          continent_info_html: Dieser Parameter ignoriert <b>country</b>, falls auch angegeben
-          coins: Kryptowährungen filtern, um nur passende Ergebnisse anzuzeigen
-          gesture_handling: Verhindert das Hängenbleiben beim Scrollen über die Karte
-          fit_bounds: Zentriert die Karte automatisch, sodass alle Marker sichtbar sind
-          fit_bounds_warning: Ignoriert latitude, longitude und zoom, falls vorhanden
-          clusters: Gruppiert nahegelegene Marker, um die Anzeige zu optimieren
-          clusters_warning: Kann den Browser verlangsamen, wenn viele Marker vorhanden sind
-          attribution: Zeigt das Kollektiv-Branding unten rechts auf der Karte an
 
     directory_friends:
       other_directories_to_spend_title: Weitere Ausgabemöglichkeiten

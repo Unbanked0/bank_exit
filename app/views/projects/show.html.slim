@@ -39,7 +39,4 @@ article
           = t('.website_homepage')
 
     - if @project.video?
-      div
-        h2.text-primary.uppercase.mb-3= t('video_tutorial')
-
-        = render 'articles/video', video: @project.video
+      = video_embed(@project.video.as_json.symbolize_keys)

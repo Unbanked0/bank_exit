@@ -1,131 +1,29 @@
 ---
+- title: France debt in 2026
+  identifier: france-debt
+  created_at: "2026-01-01"
+
 - title: "Qubic vs Monero: Should We Worry About AI Mining?"
   identifier: qubic-vs-monero-08-2025
   created_at: "2025-08-21"
   banner: banner-hacker
   short_description: Qubic may be launching an attack on Monero via hybrid AI mining. Risk analysis, project inconsistencies, and tips to protect your XMR transactions.
-  content:
-    - body:
-        - "<em>On August 20, 2025, a voice discussion was held on X/Twitter about a topic currently stirring the crypto community: the Qubic project and its mining approach combining Monero and artificial intelligence (AI) computations.</em>"
-        - Here's a clear and factual summary to help you understand what's at stake.
-      mode: info
-
-    - title: "Qubic: How Does It Work?"
-      body:
-        - Qubic's software allows mining both Monero (XMR) and AI tasks, automatically alternating between them. Miners are then rewarded in $Qubic, the project’s native token.
-
-    - title: "Three Possible Scenarios Around Qubic"
-      body:
-        - "- uPoW (unified Proof of Work) is real: it could represent a long-term threat to Monero."
-        - "- It relies solely on the speculative rise of the Qubic token, in which case the effect will fade quickly."
-        - "- It's just a marketing stunt aimed at artificially inflating their computing power to attract miners."
-
-    - title: "Inconsistencies in Their Model"
-      body:
-        - "- Inconsistency 1: If AI is truly more profitable than Monero mining, why not use it 100%? This raises the question of a possible hidden agenda against Monero."
-        - "- Inconsistency 2: Why target Monero, a crypto that is barely profitable to mine (unless you have free electricity), and whose community is known to be resilient and incorruptible?"
-
-    - title: "Unconvincing Results"
-      body:
-        - Two weeks after their first mining attack (early August), Qubic failed to increase its influence on the network. A 1 GH/s anomaly was spotted on a pool, suggesting possible cheating to artificially inflate their hashrate — but still not reaching the 51% needed for true network control.
-        - Even with 60–70% of the hashrate, Qubic couldn’t perform a double spend, only cancel its own payments for a very short period (20–30 minutes max), which remains limited and unprofitable.
-
-    - title: "Qubic: Hostile or Just Vague?"
-      body:
-        - The project claims to be non-hostile, but its funders are anonymous, its leader has a controversial past (sold IOTA to his own community), and there are troubling elements in their communication (mystical references like the “Columns of Solomon”).
-
-    - title: "What to Make of All This?"
-      body:
-        - "The consensus among participants in the debate is clear: no major concern, and let Qubic and its token fizzle out."
-        - "A simple precaution: avoid large transactions when an attack is suspected."
-
-    - body:
-        - "The only real threat to watch out for would be an attempt to shift Monero to Proof of Stake (PoS), which would open the door to centralization—contrary to the project’s core principles. If you see such discourse emerging, be wary: it could come from malicious actors."
-
-  useful_links:
-    - url: https://x.com/SortieDeBanque/status/1958243439159751167
-      description: X/Twitter Space from 08/20/2025 (in french)
 
 - title: Bank-Exit Assembly 2025
   identifier: bank-exit-assembly-2025
   banner: banner-assembly
   created_at: "2025-08-01"
   short_description: First Bank-Exit 2025 assembly with volunteer workshops led by experts.
-  content:
-    - render:
-        iframe:
-          url: https://monero-map.org/ASDB.html
-          height: 2950px
 
 - title: Flyer Bank-Exit
   identifier: flyer
   created_at: "2025-04-10"
-  content:
-    - render:
-        pdf: /pdfs/Flyers_SDB_2025_V4_8_ENG.pdf
-        caption: Full version Bitcoin and Monero by <strong>Bank-Exit</strong> on <strong>Github</strong>
-      url: https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_EN_English/Flyers_SDB_2025_V4_8_ENG.pdf
-
-    - figure:
-        - image: projects/flyers/flyer_schmidt1024_poster_en.jpg
-          caption: Single Monero version by <strong>Schmidt1024</strong> on <strong>Gitea</strong>
-      url: https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/en/Monero%20for%20Merchants%20Booklet%20-%20english.pdf
-
-  useful_links:
-    - url: /pdfs/Flyers_SDB_2025_V4_9_accroche_pros.pdf
-      description: Hook for merchants and craftsmen in PDF (in french)
 
 - title: Bank-Exit Presentation
   identifier: presentation-bank-exit
   created_at: "2025-01-31"
-  content:
-    - body:
-        - This article presents an overview of the economic situation in France and the European Union, as well as concrete solutions to protect against the coming dystopia.
-
-    - render:
-        pdf: /pdfs/Prez_SortieDeBanque_2.8_janv25.pdf
-        caption: Presentation PDF v2.8
-
-  useful_links:
-    - url: https://github.com/Unbanked0/Sortie_De_Banque/blob/615d6ae934f9bd966d0501eeb3dea9ca821e5614/Prez_SortieDeBanque_2.8_janv25.pdf
-      description: PDF of the presentation on Github
 
 - title: Digital €uro "Cash+"
   identifier: cbdc-digital-euro
   banner: banner-cbdc
   created_at: "2025-04-15"
-  content:
-    - title: Introduction
-      body:
-        - The digital euro "Cash+" is a European Central Bank (ECB) project aimed at improving digital banking services and simplifying payments across Europe.
-        - This project aims to create a universal, secure, and easy-to-use system that will allow citizens to access their accounts and make financial transactions online, even without an internet connection or in rural areas.
-        - The idea is to make payments more seamless and less expensive for people, while ensuring the security and confidentiality of financial information.
-        - The preparation phase is scheduled to be completed by October 2025, with a planned launch before 2030.
-
-    - render:
-        partial: countdown
-
-    - title: Warnings ⚠️
-      body:
-        - "- <strong>Loss of Privacy</strong>: The widespread use of digital accounts and electronic payments could lead to increased surveillance and the collection of personal data by authorities and businesses."
-        - "- <strong>Power Imbalance</strong>: A single, universally accepted currency could give too much power to financial institutions and the government, potentially leading to restrictive political decisions that are contrary to the public interest."
-        - "- <strong>Access Issues</strong>: Populations without access to the internet or digital technologies could be excluded from digital currencies, leading to financial and social segregation."
-        - "- <strong>Cyber Risk and Vulnerability</strong>: The widespread use of a digital system could expose users to significant cybersecurity risks, such as phishing attacks, market volatility, or even extortion."
-        - "- <strong>Overreliance on technology</strong>: An economy that relies on a digital system could be vulnerable to technical disruptions and network outages."
-      mode: warning
-
-    - title: Roadmap Cash+ ECB
-      render:
-        partial: cbdc_timeline
-
-  useful_links:
-    - url: https://www.ecb.europa.eu/euro/digital_euro/html/index.fr.html#timeline
-      description: Digital €uro from ECB
-    - url: https://www.ecb.europa.eu/euro/digital_euro/progress/shared/pdf/241202-timeline-digital-euro-project.fr.pdf
-      description: Digital €uro ECB Roadmap (in PDF)
-
-  figure:
-    video:
-      url: https://youtube.com/embed/dXJBB60qZo0?start=116
-      title: Presentation of Cash+ by Grand Angle (in french)
-      created_at: "2023-07-02"

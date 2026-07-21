@@ -1,0 +1,13 @@
+<%# locals: (data: []) %>
+
+<section class="prose">
+  <h2>Liens utiles</h2>
+
+  <ul>
+    <% data.each do |row| %>
+      <li>
+        <%= link_to (row[:description].presence || row[:url]), row[:url], target: :_blank %>
+      </li>
+    <% end %>
+  </ul>
+</section>

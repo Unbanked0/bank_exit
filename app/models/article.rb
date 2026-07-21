@@ -1,10 +1,4 @@
-class Article
-  include ActiveModel::Model
-  include ActiveModel::Attributes
-  include Findable
-
-  CONTENT_KEYS = %i[title body mode render figure url].freeze
-
+class Article < StaticContent
   attribute :identifier, :string
   attribute :title, :string
   attribute :short_title, :string
@@ -13,59 +7,43 @@ class Article
   attribute :created_at, :date
   attribute :highlight, :boolean, default: false
 
-  attr_accessor :model
-  attr_writer :content, :figure, :useful_links, :url
-
   def self.human_count(count, pretty_count:)
     "<strong>#{pretty_count}</strong> #{model_name.human(count: count)}"
   end
 
-  def initialize(model)
-    super
-    @model = model.with_indifferent_access
-  end
-
-  def to_param
-    identifier
-  end
-
-  def persisted?
-    true
-  end
-
-  def contents
-    return [] unless model[:content]
-
-    model[:content].map do |content|
-      Article::Content.new(
-        **content.slice(*CONTENT_KEYS).symbolize_keys
-      )
-    end
-  end
-
-  def video
-    return unless video?
-
-    Article::Video.new(
-      **model.dig(:figure, :video).slice(:title, :url, :created_at).symbolize_keys
-    )
-  end
-
-  def video?
-    model.dig(:figure, :video).present?
-  end
-
-  def useful_links
-    model[:useful_links]&.map do |link|
-      UsefulLink.new(*link.values)
-    end
-  end
-
-  def useful_links?
-    model[:useful_links].present?
+  def short_description
+    super || render_template.truncate(250)
   end
 
   def highlight?
     highlight == true
+  end
+
+  def video?
+    video_figure.present?
+  end
+
+  def video_url
+    video_figure
+      &.at_css('iframe')
+      &.[]('src')
+  end
+
+  def video_title
+    text = video_figure&.at_css('figcaption span')&.text
+    text&.strip&.presence
+  end
+
+  private
+
+  def video_figure
+    @video_figure ||= begin
+      doc = Nokogiri::HTML.fragment(render_template)
+
+      doc.css('figure').find do |figure|
+        iframe = figure.at_css('iframe')
+        iframe && iframe['src']&.include?('youtube.com/embed')
+      end
+    end
   end
 end

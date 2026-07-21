@@ -21,7 +21,6 @@ class PublicController < ApplicationController
 
   def set_tutorials
     @bitcoin_tutorial = Tutorial.find('bitcoin-nokyc')
-    @monero_tutorial = Tutorial.find('monero-nokyc')
     @highlighted_tutorials = Tutorial.all.select(&:highlight?)
   end
 

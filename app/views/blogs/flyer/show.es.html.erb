@@ -1,0 +1,33 @@
+<figure>
+  <iframe
+    src="/pdfs/Flyers_SDB_2025_V4_7_ESP1.pdf"
+    class="w-full rounded-lg lg:h-200"
+    title="PDF content"
+  ></iframe>
+
+  <figcaption class="text-xs text-center italic mt-2">
+    <%= link_to "https://github.com/Unbanked0/Sortie_De_Banque/blob/main/flyers/Flyers_SDB_2025_V4_7_ESP1.pdf", target: :_blank do %>
+      Versión completa Bitcoin y Monero por <strong>Bank-Exit</strong> on
+      <strong>Github</strong>
+    <% end %>
+  </figcaption>
+</figure>
+
+<figure>
+  <%= image_tag "projects/flyers/flyer_schmidt1024_poster_es.jpg", alt: "Schmidt flyer" %>
+
+  <figcaption class="text-xs text-center italic mt-2">
+    <%= link_to "https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/es/Monero%20para%20Comerciantes.pdf", target: :_blank do %>
+      Versión simple de Monero por <strong>Schmidt1024</strong> on
+      <strong>Gitea</strong>
+    <% end %>
+  </figcaption>
+</figure>
+
+<%= render "articles/useful_links",
+      data: [
+        {
+          url: "/pdfs/Flyers_SDB_2025_V4_9_accroche_pros.pdf",
+          description: "Gancho de texto para comerciantes y artesanos en PDF (en francés)"
+        }
+      ] %>

@@ -206,25 +206,12 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                   </li>
 
                   <li>
-                    <%= link_to tutorials_path do %>
+                    <%= link_to tutorials_path,
+                          class: ('menu-active' if current_page?(tutorials_path)) do %>
                       <%= t('.tutorials') %>
                     <% end %>
 
                     <ul>
-                      <li>
-                        <%= link_to bitcoin_tutorial,
-                                class: ('menu-active' if current_page?(polymorphic_path(bitcoin_tutorial))) do %>
-                          <%= bitcoin_tutorial.title %>
-                        <% end %>
-                      </li>
-
-                      <li>
-                        <%= link_to monero_tutorial,
-                                class: ('menu-active' if current_page?(polymorphic_path(monero_tutorial))) do %>
-                          <%= monero_tutorial.title %>
-                        <% end %>
-                      </li>
-
                       <% highlighted_tutorials.each do |tutorial| %>
                         <li>
                           <%= link_to tutorial,
@@ -233,6 +220,13 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                           <% end %>
                         </li>
                       <% end %>
+
+                      <li>
+                        <%= link_to bitcoin_tutorial,
+                                class: ('menu-active' if current_page?(polymorphic_path(bitcoin_tutorial))) do %>
+                          <%= bitcoin_tutorial.title %>
+                        <% end %>
+                      </li>
                     </ul>
                   </li>
 

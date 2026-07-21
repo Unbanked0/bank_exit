@@ -115,4 +115,24 @@ module ApplicationHelper
 
     model_class.model_name.human(count: 2).capitalize
   end
+
+  def video_embed(video)
+    content_tag(:figure) do
+      iframe = tag.iframe(
+        nil,
+        src: video[:url],
+        class: 'rounded-box mx-auto w-full h-72 lg:w-3/4 lg:h-137.5',
+        title: 'Video iframe'
+      )
+
+      caption = content_tag(:figcaption, class: 'text-center') do
+        safe_join([
+          content_tag(:span, video[:title], class: 'italic'),
+          (content_tag(:span, l(video[:created_at].to_date), class: 'badge badge-primary badge-sm ml-1') if video[:created_at])
+        ].compact)
+      end
+
+      safe_join([iframe, caption])
+    end
+  end
 end
