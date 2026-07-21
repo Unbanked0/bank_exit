@@ -128,7 +128,9 @@ module ApplicationHelper
       caption = content_tag(:figcaption, class: 'text-center') do
         safe_join([
           content_tag(:span, video[:title], class: 'italic'),
-          (content_tag(:span, l(video[:created_at].to_date), class: 'badge badge-primary badge-sm ml-1') if video[:created_at])
+          (content_tag(:span, l(video[:created_at].to_date), class: 'badge badge-primary badge-sm ml-1') if video[:created_at]),
+          tag.br,
+          link_to(video[:url], video[:url], target: '_blank', rel: 'noopener', class: 'link link-primary')
         ].compact)
       end
 

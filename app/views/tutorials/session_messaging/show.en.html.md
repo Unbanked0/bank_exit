@@ -5,6 +5,12 @@ You can find a comparison of different messaging applications on [PrivacySpreads
 
 Session is an encrypted messaging application designed to protect your privacy and serves as an alternative to WhatsApp or Telegram.
 
+<%= video_embed(
+url: "https://youtube.com/embed/OHnuD3m45SY",
+title: "Messaging tutorial SESSION incensurable! - 12 min - stop Telegram censorship #paveldurov",
+created_at: "2024-08-28"
+) %>
+
 ## Install Session
 
 Download the application corresponding to your platform and install it.
@@ -64,9 +70,3 @@ To do this, go to the application settings.
 ## Useful Link
 
 - [Official Session website](https://getsession.org/)
-
-<%= video_embed(
-url: "https://youtube.com/embed/OHnuD3m45SY",
-title: "Messaging tutorial SESSION incensurable! - 12 min - stop Telegram censorship #paveldurov",
-created_at: "2024-08-28"
-) %>

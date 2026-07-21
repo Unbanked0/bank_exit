@@ -5,6 +5,12 @@ Dans ce tutoriel, nous allons utiliser le client **Snort**, mais le processus re
 
 Une fois votre compte créé avec Snort, vous pourrez changer d'application ou de site à tout moment en important votre compte à l'aide de la clé privée générée lors de la création.
 
+<%= video_embed(
+url: "https://youtube.com/embed/yHMxIHuUu1w",
+title: "Tuto NOSTR - le twitter décentralisé incensurable !",
+created_at: "2024-08-17"
+) %>
+
 ## Créer votre compte Nostr
 
 Rendez-vous sur https://snort.social et cliquez sur **S'inscrire**.
@@ -105,9 +111,3 @@ Félicitations 🎉 ! Votre premier message vient d'être publié sur le réseau
 - [Nostr Directory](https://nostr.directory) — Trouver des contacts Twitter ayant rejoint Nostr
 - [Amethyst](https://www.amethyst.social) — Application Android pour Nostr
 - [Damus](https://damus.io) — Application iOS pour Nostr
-
-<%= video_embed(
-url: "https://youtube.com/embed/yHMxIHuUu1w",
-title: "Tuto NOSTR - le twitter décentralisé incensurable !",
-created_at: "2024-08-17"
-) %>

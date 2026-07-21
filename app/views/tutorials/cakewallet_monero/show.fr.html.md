@@ -9,6 +9,12 @@ Vous allez apprendre à :
 - acheter du XMR avec des euros ;
 - utiliser vos cryptomonnaies chez des commerçants.
 
+<%= video_embed(
+url: "https://youtube.com/embed/e7dywiZIpWg",
+title: 'Tutoriel "Vivre sans banque !" en 15 Min - CakeWallet et Monero',
+created_at: "2024-05-12"
+) %>
+
 ## Les applications recommandées
 
 Voici les applications utilisées dans ce tutoriel :
@@ -201,9 +207,3 @@ En quelques étapes, vous disposez maintenant :
 - d'une solution pour utiliser vos fonds directement chez certains commerçants.
 
 La souveraineté financière commence par le contrôle de ses propres clés.
-
-<%= video_embed(
-url: "https://youtube.com/embed/e7dywiZIpWg",
-title: 'Tutoriel "Vivre sans banque !" en 15 Min - CakeWallet et Monero',
-created_at: "2024-05-12"
-) %>

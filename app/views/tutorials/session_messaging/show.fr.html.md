@@ -5,6 +5,12 @@ Vous pouvez trouver un comparatif des différentes applications de messagerie su
 
 Session est une messagerie chiffrée conçue pour protéger votre vie privée et constitue une alternative à WhatsApp ou Telegram.
 
+<%= video_embed(
+url: "https://youtube.com/embed/OHnuD3m45SY",
+title: "Tutoriel messagerie SESSION incensurable ! - 12 min - stop censure Telegram #paveldurov",
+created_at: "2024-08-28"
+) %>
+
 ## Installer Session
 
 Téléchargez l'application correspondant à votre plateforme puis installez-la.
@@ -63,9 +69,3 @@ Pour cela, rendez-vous dans les paramètres de l'application.
 ## Lien utile
 
 - [Site officiel de Session](https://getsession.org/)
-
-<%= video_embed(
-url: "https://youtube.com/embed/OHnuD3m45SY",
-title: "Tutoriel messagerie SESSION incensurable ! - 12 min - stop censure Telegram #paveldurov",
-created_at: "2024-08-28"
-) %>

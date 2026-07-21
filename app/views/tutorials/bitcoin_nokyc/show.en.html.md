@@ -4,6 +4,12 @@ Bitcoin purchasing solutions regularly evolve. Some applications that previously
 
 In this tutorial, we present a simple alternative: **Pocket Bitcoin**, combined with the use of a non-custodial Bitcoin wallet.
 
+<%= video_embed(
+url: "https://youtube.com/embed/rI96QNtNbaY",
+title: "How to BUY Bitcoin no-KYC in 9 min (the Euro€ is over!)",
+created_at: "2024-12-03"
+) %>
+
 > [!WARNING]
 > Cryptocurrencies are volatile assets. This tutorial only explains how the presented tools work and does not constitute financial advice.
 
@@ -173,9 +179,3 @@ Its network is decentralized: it does not depend on a single company and cannot 
 This tutorial presents a simple method for buying and storing Bitcoin with Pocket Bitcoin.
 
 A future tutorial may present **peer-to-peer (P2P)** purchasing solutions, allowing direct exchanges between individuals and further reducing dependence on intermediaries.
-
-<%= video_embed(
-url: "https://youtube.com/embed/rI96QNtNbaY",
-title: "How to BUY Bitcoin no-KYC in 9 min (the Euro€ is over!)",
-created_at: "2024-12-03"
-) %>

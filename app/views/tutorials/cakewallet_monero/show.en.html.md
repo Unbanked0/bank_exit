@@ -9,6 +9,12 @@ You will learn how to:
 - buy XMR with euros;
 - use your cryptocurrencies with merchants.
 
+<%= video_embed(
+url: "https://youtube.com/embed/e7dywiZIpWg",
+title: '15-minute "Living without a bank" tutorial - CakeWallet and Monero',
+created_at: "2024-05-12"
+) %>
+
 ## Recommended Applications
 
 The following applications are used in this tutorial:
@@ -201,9 +207,3 @@ In just a few steps, you now have:
 - a solution to use your funds directly with certain merchants.
 
 Financial sovereignty begins with controlling your own keys.
-
-<%= video_embed(
-url: "https://youtube.com/embed/e7dywiZIpWg",
-title: '15-minute "Living without a bank" tutorial - CakeWallet and Monero',
-created_at: "2024-05-12"
-) %>

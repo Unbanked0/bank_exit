@@ -2,6 +2,12 @@ This tutorial explains how to create a Monero fundraiser using **Kuno**, an open
 
 Monero is a cryptocurrency designed to provide strong transaction privacy. Unlike many traditional crowdfunding platforms, a Monero fundraiser allows you to receive funds without the risk of arbitrary blocking by a company or authority.
 
+<%= video_embed(
+url: "https://youtube.com/embed/76vxvYrFar4",
+title: "Create an INSTOPPABLE kitty in 10 minutes with Monero and KUNO!",
+created_at: "2024-08-07"
+) %>
+
 ## About Kuno
 
 [Kuno](https://kuno.anne.media) is an open source platform that allows users to create Monero fundraisers.
@@ -226,9 +232,3 @@ To keep your fundraiser secure:
 - provide verification methods for contributors.
 
 A Monero fundraiser allows you to regain control over crowdfunding by removing intermediaries and providing stronger resistance to censorship.
-
-<%= video_embed(
-url: "https://youtube.com/embed/76vxvYrFar4",
-title: "Create an INSTOPPABLE kitty in 10 minutes with Monero and KUNO!",
-created_at: "2024-08-07"
-) %>

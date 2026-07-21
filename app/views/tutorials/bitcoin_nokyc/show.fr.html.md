@@ -4,6 +4,12 @@ Les solutions d'achat de Bitcoin évoluent régulièrement. Certaines applicatio
 
 Dans ce tutoriel, nous présentons une alternative simple : **Pocket Bitcoin**, associée à l'utilisation d'un portefeuille Bitcoin non custodial.
 
+<%= video_embed(
+url: "https://youtube.com/embed/rI96QNtNbaY",
+title: "Comment ACHETER du Bitcoin no-KYC en 9 min (l'Euro€ c'est fini !)",
+created_at: "2024-12-03"
+) %>
+
 > [!WARNING]
 > Les cryptomonnaies sont des actifs volatils. Ce tutoriel présente uniquement le fonctionnement des outils utilisés et ne constitue pas un conseil financier.
 
@@ -173,9 +179,3 @@ Son réseau est décentralisé : il ne dépend pas d'une entreprise unique et ne
 Ce tutoriel présente une méthode simple pour acheter et conserver du Bitcoin avec Pocket Bitcoin.
 
 Un prochain tutoriel pourra présenter les solutions d'achat **pair à pair (P2P)** permettant d'échanger directement entre particuliers et de réduire davantage la dépendance aux intermédiaires.
-
-<%= video_embed(
-url: "https://youtube.com/embed/rI96QNtNbaY",
-title: "Comment ACHETER du Bitcoin no-KYC en 9 min (l'Euro€ c'est fini !)",
-created_at: "2024-12-03"
-) %>
