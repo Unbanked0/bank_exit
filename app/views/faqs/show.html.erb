@@ -21,6 +21,6 @@
   </div>
 
   <script type="application/ld+json">
-    <%== schema_dot_org_faq(@faqs) %>
+    <%= json_escape(schema_dot_org_faq(@faqs).to_json).html_safe %>
   </script>
 </div>

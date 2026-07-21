@@ -11,11 +11,11 @@
 
 <% content_for :footer_actions do %>
   <script type="application/ld+json">
-    <%== schema_dot_org_blog(@blog) %>
+    <%= json_escape(schema_dot_org_blog(@blog).to_json).html_safe %>
   </script>
 
   <script type="application/ld+json">
-    <%== schema_dot_org_breadcrumb_blog(@blog) %>
+    <%= json_escape(schema_dot_org_breadcrumb_blog(@blog).to_json).html_safe %>
   </script>
 <% end %>
 

@@ -42,7 +42,7 @@ module SEOHelper
   end
 
   def schema_dot_org_organization
-    JSON.pretty_generate(
+    {
       '@context': 'http://schema.org/',
       '@type': 'Organization',
       name: 'Collectif Sortie de Banque',
@@ -63,11 +63,11 @@ module SEOHelper
         'https://www.tiktok.com/@sortiedebanque',
         'https://facebook.com/sortiedebanque'
       ]
-    )
+    }
   end
 
   def schema_dot_org_breadcrumb_blog(blog)
-    json = {
+    {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -97,12 +97,10 @@ module SEOHelper
         }
       ]
     }
-
-    JSON.pretty_generate(json)
   end
 
   def schema_dot_org_breadcrumb_tutorial(tutorial)
-    json = {
+    {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -132,8 +130,6 @@ module SEOHelper
         }
       ]
     }
-
-    JSON.pretty_generate(json)
   end
 
   def schema_dot_org_blog(blog)
@@ -157,7 +153,7 @@ module SEOHelper
       }
     end
 
-    JSON.pretty_generate(json)
+    json
   end
 
   def schema_dot_org_tutorial(tutorial)
@@ -179,7 +175,7 @@ module SEOHelper
       }
     end
 
-    JSON.pretty_generate(json)
+    json
   end
 
   def schema_dot_org_merchant(merchant)
@@ -243,7 +239,7 @@ module SEOHelper
       end
     end
 
-    JSON.pretty_generate(json)
+    json
   end
 
   def schema_dot_org_directory(directory)
@@ -265,7 +261,7 @@ module SEOHelper
       end
     end
 
-    JSON.pretty_generate(json)
+    json
   end
 
   def schema_dot_org_faq(faqs)
@@ -297,7 +293,7 @@ module SEOHelper
       }
     end
 
-    JSON.pretty_generate(json)
+    json
   end
 
   private

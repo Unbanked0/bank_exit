@@ -152,7 +152,7 @@ article
           = t('updated_on', date: time_ago_in_words(@directory.updated_at))
 
   script type="application/ld+json"
-    == schema_dot_org_directory(@directory)
+    = json_escape(schema_dot_org_directory(@directory).to_json).html_safe
 
 - if @faqs.any?
   = render template: 'faqs/show'

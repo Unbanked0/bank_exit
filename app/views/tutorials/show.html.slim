@@ -28,8 +28,8 @@
 
 - content_for :footer_actions do
   script type="application/ld+json"
-    == schema_dot_org_tutorial(@tutorial)
+    = json_escape(schema_dot_org_tutorial(@tutorial).to_json).html_safe
   script type="application/ld+json"
-    == schema_dot_org_breadcrumb_tutorial(@tutorial)
+    = json_escape(schema_dot_org_breadcrumb_tutorial(@tutorial).to_json).html_safe
 
 = render 'articles/wrapper', article: @tutorial

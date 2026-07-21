@@ -37,7 +37,7 @@
     <%= debugbar_head if defined?(Debugbar) %>
 
     <script type="application/ld+json">
-      <%== schema_dot_org_organization %>
+      <%= json_escape(schema_dot_org_organization.to_json).html_safe %>
     </script>
   </head>
 

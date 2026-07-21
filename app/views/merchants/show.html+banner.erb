@@ -145,7 +145,7 @@
   </div>
 
   <script type="application/ld+json">
-    <%== schema_dot_org_merchant(@merchant) %>
+    <%= json_escape(schema_dot_org_merchant(@merchant).to_json).html_safe %>
   </script>
 </article>
 
