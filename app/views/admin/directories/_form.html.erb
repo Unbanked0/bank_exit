@@ -113,6 +113,34 @@
 
       <datalist data-admin--address-target="datalist" id="addresses"></datalist>
     </div>
+
+    <% if f.object.address.persisted? %>
+      <ul class="bg-base-200 list-disc list-inside p-5 rounded-box text-sm opacity-60">
+        <li>
+          Street: <%= f.object.address.street %>
+        </li>
+
+        <li>
+          Postal code: <%= f.object.address.postcode %>
+        </li>
+
+        <li>
+          City: <%= f.object.address.city %>
+        </li>
+
+        <li>
+          Country: <%= f.object.address.country %>
+        </li>
+
+        <li>
+          Latitude: <%= f.object.address.latitude %>
+        </li>
+
+        <li>
+          Latitude: <%= f.object.address.longitude %>
+        </li>
+      </ul>
+    <% end %>
   </section>
 
   <section class="space-y-3 mb-3">
