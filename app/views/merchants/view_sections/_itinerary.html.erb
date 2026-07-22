@@ -1,0 +1,18 @@
+<%# locals: (merchant:) %>
+
+<% if merchant.latitude %>
+  <div class="overflow-visible">
+    <h2 class="mb-2 uppercase font-bold text-primary">
+      <%= t('merchants.show.itinerary_title') %>
+    </h2>
+
+    <div class="alert flex items-center justify-between">
+      <%= raw_link_to new_merchant_itinerary_path(merchant),
+                      class: 'flex items-center gap-2',
+                      hotkey: 'v' do %>
+        <%= lucide_icon 'car', class: 'inline-flex' %>
+        <%= t('merchants.show.itinerary.calculate_my_itinerary') %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,89 @@
+<%# locals: (directory:) %>
+
+<% coin_wallets = directory.coin_wallets.enabled %>
+<% delivery_zones = directory.delivery_zones.enabled %>
+<% contact_ways = directory.contact_ways.enabled %>
+
+<%= link_to directory_path(directory, q: params[:query].presence),
+            class: class_names(
+              'card bg-base-200 shadow-sm hover:-translate-y-1 motion-safe:transition-transform hover:text-inherit!',
+              'border-l-2 border-success': delivery_zones.exists?
+            ) do %>
+  <% if directory.banner.attached? %>
+    <figure class="card-figure">
+      <%= image_tag url_for(directory.banner.variant(:thumb)),
+                    alt: "Directory's banner" %>
+    </figure>
+  <% end %>
+
+  <div class="absolute inset-0 bg-base-100/80 rounded-box"></div>
+
+  <div class="card-body space-y-4 justify-between z-10">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <%= render 'logo_or_initials', model: directory, mode: :small %>
+
+        <h2 class="card-title">
+          <span><%= highlight(directory.name, params[:query]) %></span>
+        </h2>
+      </div>
+
+      <%= render 'comments_and_rating_icons', model: directory %>
+    </div>
+
+    <% if directory.description.present? %>
+      <div>
+        <%= highlight(directory.description.truncate(150), params[:query]) %>
+      </div>
+    <% end %>
+
+    <% if directory.category.present? %>
+      <div class="badge mx-auto badge-secondary">
+        <%= t(directory.category, scope: :directories_categories) %>
+      </div>
+    <% end %>
+
+    <div class="flex items-center justify-center gap-3">
+      <% coin_wallets.each do |coin_wallet| %>
+        <%= image_tag icon_by_coin(coin_wallet.coin),
+                      title: coin_wallet.coin.capitalize,
+                      alt: "Logo #{coin_wallet.coin.capitalize}",
+                      class: 'w-10 h-10' %>
+      <% end %>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <% main_group = [] %>
+        <% extra_group = [] %>
+
+        <% contact_ways.each.with_index(1) do |contact_way, index| %>
+          <% if index > 5 %>
+            <% extra_group << contact_way %>
+          <% else %>
+            <% main_group << contact_way %>
+          <% end %>
+        <% end %>
+
+        <% main_group.each do |contact_way| %>
+          <%= social_contact_icon contact_way.role %>
+        <% end %>
+
+        <% if extra_group.present? %>
+          <% text = extra_group.map { social_contact_icon(it.role) }.join(' ') %>
+          <%= render 'tooltip',
+                     position: :bottom,
+                     text: text,
+                     mode: 'info',
+                     lucide_ikon: 'ellipsis' %>
+        <% end %>
+      </div>
+
+      <div class="card-actions justify-end">
+        <div class="btn btn-sm btn-primary">
+          <%= t('see') %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

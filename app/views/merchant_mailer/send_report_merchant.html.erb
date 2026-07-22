@@ -1,0 +1,42 @@
+<p>Bonjour,</p>
+
+<p>
+  Une anomalie a été remontée sur le commerçant
+  <strong><%= @merchant.name %></strong> (ID: #<%= @merchant.identifier %>).
+</p>
+
+<div style="background-color: #EEE; padding: 20px; border-radius: 10px">
+  <%= @description %>
+</div>
+
+<ul>
+  <li>
+    <%= link_to "Fiche du commerçant sur le site",
+                merchant_url(@merchant),
+                target: :_blank,
+                rel: "noopener" %>
+  </li>
+
+  <li>
+    <%= link_to "Fiche du commerçant sur OpenStreetMap",
+                @merchant.osm_link,
+                target: :_blank,
+                rel: "noopener" %>
+  </li>
+</ul>
+
+<p>
+  Voici les informations présentes dans le GeoJSON pour ce commerçant :
+</p>
+
+<div style="background-color: #EEE; padding: 20px; border-radius: 10px">
+  <pre class="mt-2"><%= JSON.pretty_generate(@merchant.raw_feature.to_h) %></pre>
+</div>
+
+<p>
+  Veuillez vérifier la pertinence de la demande et la traiter en conséquence.
+</p>
+
+<p style="font-size: 12px; font-style: italic">
+  Ce message a été auto-généré par Rails, merci de ne pas y répondre.
+</p>

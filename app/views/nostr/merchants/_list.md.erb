@@ -1,0 +1,44 @@
+<%# locals: (coins_list:, merchants_count:, merchants_by_country:) %>
+
+<%
+  list = Set.new
+
+  coins_list.each do |coin|
+    list << 'Bitcoin (₿)' if coin == 'bitcoin'
+    list << 'Bitcoin Lightning (⚡)' if %w[lightning lightning_contactless].include?(coin)
+    list << 'Monero (🔒)' if coin == 'monero'
+    list << 'June (🟡)' if coin == 'june'
+  end
+%>
+
+Discover **<%= merchants_count %>** newly listed <%= list.join(', ') %> <%= 'merchant'.pluralize(merchants_count) %> now featured on the [Bank-Exit](<%= maps_url %>) map.
+
+<% merchants_by_country.each do |country, merchants| %>
+
+### <%= pretty_country_html(country) %>
+
+<% merchants.each do |merchant| %>
+<%
+  category = if merchant.category.blank? || merchant.category == 'yes'
+               ''
+             else
+               " (#{merchant.friendly_category})"
+             end
+
+  merchant_coins = [
+    ('₿ Bitcoin' if merchant.bitcoin?),
+    ('🔒 Monero' if merchant.monero?),
+    ('🟡 June' if merchant.june?),
+    ('⚡ Lightning' if merchant.lightning? || merchant.contact_less?)
+  ].compact
+%>
+
+- **[<%= merchant.name %>](<%= merchant_url(merchant) %>)**<%= category %>
+  < <%= merchant_coins.join(', ') %>
+
+<% end %>
+<% end %>
+
+---
+
+_Merchants are based on free and open data from OpenStreetMap. Information may change over time and could differ from what is shown here, with some links potentially no longer existing._

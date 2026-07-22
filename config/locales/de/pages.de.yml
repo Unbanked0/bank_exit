@@ -99,6 +99,11 @@ de:
         source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
         chart_debt_title: Schulden (in Milliarden)
 
+    cbdc_digital_euro:
+      countdown:
+        label: bis zum Ende der Vorbereitungsphase
+        source_html: Quelle <abbr title="Europäische Zentralbank">EZB</abbr>
+
   tutorials:
     index:
       title: Tutorials

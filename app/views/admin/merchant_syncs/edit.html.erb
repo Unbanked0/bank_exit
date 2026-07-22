@@ -1,0 +1,21 @@
+<% content_for :page_title do %>
+  <%= t(".title") %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:index?, MerchantSync) %>
+    <li>
+      <%= back_link_to admin_merchant_syncs_path %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, @merchant_sync) %>
+    <li>
+      <%= destroy_link_to admin_merchant_sync_path(@merchant_sync), hotkey: "d" %>
+    </li>
+  <% end %>
+<% end %>
+
+<section>
+  <%= render "form", merchant_sync: @merchant_sync %>
+</section>

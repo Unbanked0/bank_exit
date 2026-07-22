@@ -1,0 +1,24 @@
+<% url = edit_admin_directory_url(@directory_id) %>
+
+<p>
+  Bonjour,
+</p>
+
+<p>
+  Une nouvelle entrée d'annuaire vient d'être proposée depuis le site. Vous
+  pouvez la consulter en accédant à l'administration du site ou en cliquant sur
+  ce lien :
+</p>
+
+<p>
+  <%= link_to url, url %>
+</p>
+
+<p style="font-size: 12px; font-style: italic">
+  <% if @proposition_from.present? %>
+    Pour informer l'utilisateur du traitement de sa demande, vous pouvez cliquer
+    sur "Répondre" dans votre client mail.
+  <% else %>
+    Ce message a été auto-généré par Rails, merci de ne pas y répondre.
+  <% end %>
+</p>

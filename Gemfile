@@ -51,7 +51,6 @@ gem 'route_translator'
 gem 'rqrcode'
 gem 'simple_form'
 gem 'sitemap_generator'
-gem 'slim-rails'
 
 # Deployment and drivers
 gem 'bootsnap', require: false

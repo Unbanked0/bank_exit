@@ -1,0 +1,55 @@
+<%# locals: (merchant:) %>
+
+<% content_for :dropdown_menu, flush: true do %>
+  <li>
+    <%= link_to admin_merchant_path(merchant) do %>
+      <%= t('.merchant_admin_page') %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to merchant_path(merchant, debug: merchant.deleted? ? 'true' : nil),
+                target: :_blank do %>
+      <%= t('.merchant_public_page') %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to merchant.osm_link, target: :_blank do %>
+      <%= t('.merchant_on_osm') %>
+    <% end %>
+  </li>
+
+  <% if allowed_to?(:update?, merchant) %>
+    <li>
+      <%= edit_link_to edit_admin_merchant_path(merchant) %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:create?, merchant, with: Admin::Merchants::DirectoryConverterPolicy) %>
+    <li>
+      <%= create_link_to admin_directory_converters_path(merchant),
+                         turbo_confirm: t('.convert_to_directory_confirm_html') do %>
+        <%= t('.convert_to_directory') %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:reactivate?, merchant) %>
+    <li>
+      <%= create_link_to admin_merchant_reactivate_path(merchant),
+                         turbo_confirm: t('.reactivate_confirm') do %>
+        <%= t('reactivate') %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, merchant) %>
+    <li>
+      <%= destroy_link_to admin_merchant_path(merchant),
+                          turbo_confirm: t('.destroy_confirm_html') %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'dropdown_actions', item_id: merchant.id %>

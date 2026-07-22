@@ -1,0 +1,24 @@
+<%# locals: (delivery_zone:) %>
+
+<% if delivery_zone.world? %>
+  <div class="flex items-center gap-1">
+    <%= lucide_icon 'earth' %>
+    <%= DeliveryZone.human_enum_name(:modes, :world) %>
+  </div>
+<% elsif delivery_zone.country? %>
+  <%= pretty_country_html(delivery_zone.country_code) %>
+<% elsif delivery_zone.continent? %>
+  <span><%= t(delivery_zone.continent_code, scope: 'continents') %></span>
+<% else %>
+  <span>
+    <span>
+      <%= delivery_zone.city_name if delivery_zone.city? %>
+      <%= t(delivery_zone.department_code, scope: 'departments') if delivery_zone.department? %>
+      <%= t(delivery_zone.region_code, scope: 'regions') if delivery_zone.region? %>
+    </span>
+
+    <span class="text-base-content/70 text-sm ml-1">
+      (<%= pretty_country_html(delivery_zone.country_code) %>)
+    </span>
+  </span>
+<% end %>

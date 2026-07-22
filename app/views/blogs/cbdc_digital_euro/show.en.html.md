@@ -6,7 +6,7 @@ The goal is to make payments smoother and less expensive for users while ensurin
 
 The preparation phase is expected to end in October 2025, with a launch planned before 2030.
 
-<%#= render partial: "blogs/cbdc_digital_euro/countdown" %>
+<%= render "blogs/cbdc_digital_euro/countdown" %>
 
 ## The Risks ⚠️
 
@@ -24,7 +24,7 @@ Central Bank Digital Currencies (CBDCs) raise several questions regarding privac
 
 ## ECB Cash+ Roadmap
 
-<%= render partial: "blogs/cbdc_digital_euro/cbdc_timeline" %>
+<%= render "blogs/cbdc_digital_euro/cbdc_timeline" %>
 
 ## Useful Links
 

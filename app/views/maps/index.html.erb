@@ -2,42 +2,7 @@
 
 <div class="flex flex-col md:flex-row items-start">
   <%= render 'sidebar', merchant_sync: @merchant_sync, pagy: @pagy, h_screen: false do %>
-    <% if @directory_friends.present? %>
-      <details class="collapse collapse-arrow bg-base-200" open>
-        <summary
-          id="directory-friends"
-          class="collapse-title text-center font-bold text-primary"
-        >
-          <%= t('maps.directory_friends.other_directories_to_spend_title') %>
-        </summary>
-
-        <div class="collapse-content grid grid-cols-4 gap-5">
-          <% @directory_friends.each do |directory_friend| %>
-            <%= link_to directory_friend.link, target: :_blank, class: 'card pt-1 space-y-3' do %>
-              <figure>
-                <% image_size = 'w-6 h-6 lg:w-10 lg:h-10 mx-auto' %>
-
-                <% if directory_friend.icon? %>
-                  <%= lucide_icon directory_friend.icon, class: image_size, alt: "Logo #{directory_friend.name}" %>
-                <% end %>
-
-                <% if directory_friend.image? %>
-                  <%= image_tag "directory_friends/#{directory_friend.image}", class: "rounded-lg #{image_size} object-cover", alt: "Logo #{directory_friend.name}" %>
-                <% elsif directory_friend.svg_image? %>
-                  <%= inline_svg_tag "directory_friends/#{directory_friend.svg_image}", class: "#{image_size} rounded-lg object-cover", alt: "Logo #{directory_friend.name}" %>
-                <% end %>
-              </figure>
-
-              <div class="card-body items-center text-center p-0">
-                <p class="card-title text-sm">
-                  <%= directory_friend.name %>
-                </p>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </details>
-    <% end %>
+    <%= render "maps/directory_friends", directory_friends: @directory_friends %>
   <% end %>
 
   <%= render 'maps/merchants_table_or_grid', merchants: @merchants, pagy: @pagy %>

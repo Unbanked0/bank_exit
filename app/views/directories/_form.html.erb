@@ -1,0 +1,230 @@
+<%# locals: (directory:) %>
+
+<%= simple_form_for directory,
+                    html: { class: 'space-y-5' } do |f| %>
+  <% if directory.errors.any? %>
+    <div class="alert alert-error">
+      <ul class="list-disc list-inside">
+        <% directory.errors.each do |error| %>
+          <li>
+            <%= error.full_message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <%= f.input :name_en,
+                label: Directory.human_attribute_name(:name) %>
+
+    <%= f.input :category,
+                required: true,
+                prompt: :translate,
+                collection: directories_categories_select_helper %>
+  </div>
+
+  <%= render 'description_with_counter',
+             f: f,
+             input_name: :description_en %>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <%= f.input :logo,
+                as: :file,
+                input_html: {
+                  accept: Directory::ACCEPTED_CONTENT_TYPES.join(',')
+                } %>
+
+    <%= f.input :banner,
+                as: :file,
+                input_html: {
+                  accept: Directory::ACCEPTED_CONTENT_TYPES.join(',')
+                } %>
+  </div>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-bold text-primary mb-2 border-b-2">
+      <%= Address.model_name.human.capitalize %>
+    </h2>
+
+    <div
+      class="alert"
+      data-controller="admin--address"
+      data-admin--address-search-url-value="<%= addresses_search_path %>"
+    >
+      <%= f.simple_fields_for :address do |ff| %>
+        <%= ff.input :label,
+                     label_html: { class: 'mb-2' },
+                     hint_html: { class: 'mt-2' },
+                     wrapper_html: { class: 'auto-search-wrapper' },
+                     input_html: {
+                       list: 'addresses',
+                       data: {
+                         admin__address_target: :input,
+                         action: 'input->admin--address#search'
+                       }
+                     } %>
+      <% end %>
+
+      <datalist id="addresses" data-admin--address-target="datalist"></datalist>
+    </div>
+  </section>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-bold text-primary mb-2 border-b-2">
+      <%= CoinWallet.model_name.human.capitalize %>
+    </h2>
+
+    <p>
+      <%= t('.coin_wallet_description') %>
+    </p>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-3"
+      data-controller="nested-form"
+    >
+      <%= f.simple_fields_for :coin_wallets,
+                              directory.coin_wallets,
+                              wrapper: false,
+                              include_id: false do |ff| %>
+        <%= render 'coin_wallets_fields', f: ff %>
+      <% end %>
+
+      <template data-nested-form-target="template">
+        <%= f.simple_fields_for :coin_wallets,
+                                directory.coin_wallets.new,
+                                child_index: 'TEMPLATE_RECORD' do |ff| %>
+          <%= render 'coin_wallets_fields', f: ff %>
+        <% end %>
+      </template>
+
+      <%= button_tag t('.new_coin_wallet'),
+                     class: 'btn btn-success col-span-2 col-start-1 col-end-1',
+                     data: {
+                       nested_form_target: 'addItem',
+                       action: "click->nested-form#addAssociation"
+                     } %>
+    </div>
+  </section>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-bold text-primary mb-2 border-b-2">
+      <%= DeliveryZone.model_name.human.capitalize %>
+    </h2>
+
+    <p>
+      <%= t('.delivery_zone_description') %>
+    </p>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-3"
+      data-controller="nested-form"
+    >
+      <%= f.simple_fields_for :delivery_zones,
+                              directory.delivery_zones,
+                              wrapper: false,
+                              include_id: false do |ff| %>
+        <%= render 'delivery_zones_fields', f: ff %>
+      <% end %>
+
+      <template data-nested-form-target="template">
+        <%= f.simple_fields_for :delivery_zones,
+                                directory.delivery_zones.new,
+                                child_index: 'TEMPLATE_RECORD' do |ff| %>
+          <%= render 'delivery_zones_fields', f: ff %>
+        <% end %>
+      </template>
+
+      <%= button_tag t('.new_delivery_zone'),
+                     class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                     data: {
+                       nested_form_target: 'addItem',
+                       action: "click->nested-form#addAssociation"
+                     } %>
+    </div>
+  </section>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-bold text-primary mb-2 border-b-2">
+      <%= ContactWay.model_name.human.capitalize %>
+    </h2>
+
+    <p>
+      <%= t('.contact_way_description') %>
+    </p>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-3"
+      data-controller="nested-form"
+    >
+      <%= f.simple_fields_for :contact_ways,
+                              directory.contact_ways,
+                              wrapper: false,
+                              include_id: false do |ff| %>
+        <%= render 'contact_ways_fields', f: ff %>
+      <% end %>
+
+      <template data-nested-form-target="template">
+        <%= f.simple_fields_for :contact_ways,
+                                directory.contact_ways.new,
+                                child_index: 'TEMPLATE_RECORD' do |ff| %>
+          <%= render 'contact_ways_fields', f: ff %>
+        <% end %>
+      </template>
+
+      <%= button_tag t('.new_contact_way'),
+                     class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                     data: {
+                       nested_form_target: 'addItem',
+                       action: "click->nested-form#addAssociation"
+                     } %>
+    </div>
+  </section>
+
+  <section class="space-y-3">
+    <h2 class="text-lg font-bold text-primary mb-2 border-b-2">
+      <%= Weblink.model_name.human.capitalize %>
+    </h2>
+
+    <p>
+      <%= t('.weblink_description') %>
+    </p>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-3"
+      data-controller="nested-form"
+    >
+      <%= f.simple_fields_for :weblinks,
+                              directory.weblinks,
+                              wrapper: false,
+                              include_id: false do |ff| %>
+        <%= render 'weblinks_fields', f: ff %>
+      <% end %>
+
+      <template data-nested-form-target="template">
+        <%= f.simple_fields_for :weblinks,
+                                directory.weblinks.new,
+                                child_index: 'TEMPLATE_RECORD' do |ff| %>
+          <%= render 'weblinks_fields', f: ff %>
+        <% end %>
+      </template>
+
+      <%= button_tag t('.new_weblink'),
+                     class: 'btn btn-success col-span-3 col-start-1 col-end-1',
+                     data: {
+                       nested_form_target: 'addItem',
+                       action: "click->nested-form#addAssociation"
+                     } %>
+    </div>
+  </section>
+
+  <div>
+    <%= f.input :proposition_from, as: :email %>
+
+    <%# Captcha to trick bots, must remain empty to be valid %>
+    <%= f.input :nickname,
+                wrapper_html: { class: 'hidden' } %>
+  </div>
+
+  <%= f.button :submit, t('helpers.submit.directory.suggest') %>
+<% end %>

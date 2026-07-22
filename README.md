@@ -50,7 +50,6 @@ A voluntary, non-partisan collective whose aim is to offer legal, peaceful and s
   - [**Turbo**](https://turbo.hotwired.dev/) — Speeds up navigation and updates without full page reloads.
   - [**Stimulus**](https://stimulus.hotwired.dev/) — Lightweight JavaScript framework to enhance HTML behavior.
 - [**Importmap**](https://github.com/rails/importmap-rails) — Load JavaScript modules directly in the browser, no bundler required.
-- [**Slim**](https://slim-template.github.io/) — Lightweight templating engine with clean syntax.
 - [**DaisyUI**](https://daisyui.com/) — Tailwind CSS component library for building UI elements quickly.
 
 ### 🚀 Deployment
@@ -125,7 +124,7 @@ Adresses autocomplete are fetched from the Nominatim API through the [geocoder g
 
 ## 🌐 Internationalization
 
-Refer to the [Wiki article](https://github.com/Bank-Exit/bank_exit/wiki/Internationalization-(i18n)) to add or update a new locale.
+Refer to the [Wiki article](<https://github.com/Bank-Exit/bank_exit/wiki/Internationalization-(i18n)>) to add or update a new locale.
 
 ## 🎓 Tutorials
 

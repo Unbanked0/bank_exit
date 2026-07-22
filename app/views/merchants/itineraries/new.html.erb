@@ -1,0 +1,120 @@
+<div class="flex max-md:flex-col">
+  <div class="<%= map_css_height %> w-full md:w-1/2 xl:w-1/3 overflow-y-auto space-y-4 p-3">
+    <div class="flex items-center justify-between print:hidden">
+      <p class="flex items-center uppercase font-bold gap-2">
+        <%= t('.title') %>
+        <%= lucide_icon 'car', class: 'inline-flex' %>
+      </p>
+
+      <%= back_link_to merchant_path(@merchant),
+                       title: t('.back_to_merchant') do %>
+        <%= lucide_icon 'x' %>
+      <% end %>
+    </div>
+
+    <article class="space-y-4">
+      <%= simple_form_for :itinerary,
+                          url: merchant_itinerary_path(@merchant, debug: params[:debug] == 'true'),
+                          html: {
+                            class: 'flex flex-col gap-3 justify-between',
+                            data: {
+                              controller: :address,
+                              address_search_url_value: addresses_search_path,
+                              action: 'turbo:submit-start->address#disableInputs turbo:submit-end->address#enableInputs'
+                            }
+                          } do |f| %>
+        <details
+          class="
+            collapse collapse-arrow bg-base-200 border
+            border-base-content/20
+          "
+          open
+        >
+          <summary class="collapse-title font-semibold text-primary">
+            <%= t('.start_address') %>
+          </summary>
+
+          <div class="collapse-content space-y-3">
+            <%= f.input :my_address,
+                        required: false,
+                        label_html: { class: 'mb-2' },
+                        input_html: {
+                          class: 'mb-1',
+                          list: 'addresses',
+                          data: {
+                            address_target: :input,
+                            action: 'input->address#search change->address#select'
+                          }
+                        } %>
+
+            <datalist id="addresses" data-address-target="datalist"></datalist>
+
+            <%= f.input :use_my_ip,
+                        as: :boolean,
+                        input_html: {
+                          data: {
+                            address_target: :ip,
+                            action: 'change->address#toggleInputAddress'
+                          }
+                        } %>
+
+            <%= f.input :detailed_steps,
+                        as: :boolean,
+                        input_html: {
+                          data: {
+                            address_target: 'detailedSteps',
+                            action: 'change->address#rememberDetailedStepsChoice'
+                          }
+                        } %>
+          </div>
+        </details>
+
+        <%= lucide_icon 'move-left',
+                        class: 'mx-auto w-12 h-12 -rotate-90 bg-primary text-primary-content rounded-full p-1' %>
+
+        <details
+          class="
+            collapse collapse-arrow bg-base-200 border
+            border-base-content/20
+          "
+          open
+        >
+          <summary class="collapse-title">
+            <p class="mb-2 font-semibold text-primary">
+              <%= t('.end_address') %>
+            </p>
+
+            <div class="flex items-center gap-2">
+              <%= render 'logo_or_initials', model: @merchant %>
+
+              <div>
+                <p class="font-bold">
+                  <%= @merchant.name %>
+                </p>
+
+                <% if @merchant.full_address.present? %>
+                  <p><%= @merchant.full_address %></p>
+                  <p class="badge badge-secondary">
+                    <%= @merchant.friendly_category %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+          </summary>
+
+          <div id="map_details" class="collapse-content space-y-3"></div>
+        </details>
+
+        <%= f.button :submit,
+                     t('search'),
+                     class: 'btn btn-success',
+                     data: {
+                       address_target: :submit,
+                       turbo_submits_with: '...'
+                     } %>
+      <% end %>
+    </article>
+  </div>
+
+  <%= render 'merchants/map', merchant: @merchant %>
+</div>

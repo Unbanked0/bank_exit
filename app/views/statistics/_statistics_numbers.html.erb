@@ -1,0 +1,164 @@
+<%# locals: (categories_statistics:, merchants_statistics:, coins_statistics:, countries_statistics:, directories_statistics:) %>
+
+<% today_i18n = l(Date.current)
+  on_date_i18n = t('.on_date', date: today_i18n)
+  dated_i18n = t('.dated', date: today_i18n) %>
+
+<% cache [I18n.locale, 'statistics', "with-atms=#{session[:include_atms].present?}"] do %>
+  <%= render 'statistics/categories_podium',
+             podium: categories_statistics[:podium_categories] %>
+
+  <div class="overflow-x-auto">
+    <div
+      class="
+        flex gap-3 sm:grid sm:grid-cols-3 lg:grid-cols-3 max-w-xs
+        sm:max-w-max sm:mx-auto
+      "
+    >
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= lucide_icon 'store', class: 'w-12 h-12' %>
+        </div>
+
+        <div class="stat-title">
+          <%= t('.new_merchants_title') %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(merchants_statistics[:today].count) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= on_date_i18n %>
+        </div>
+      </div>
+
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= lucide_icon 'store', class: 'w-12 h-12' %>
+        </div>
+
+        <div class="stat-title">
+          <%= t('.all_merchants_enabled_title') %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(merchants_statistics[:enabled]) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= dated_i18n %>
+        </div>
+      </div>
+
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= lucide_icon 'notebook', class: 'w-12 h-12' %>
+        </div>
+
+        <div class="stat-title">
+          <%= Directory.model_name.human.capitalize %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(directories_statistics[:enabled].count) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= dated_i18n %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto">
+    <div
+      class="
+        flex gap-3 sm:grid sm:grid-cols-3 lg:grid-cols-4 max-w-xs
+        sm:max-w-max sm:mx-auto
+      "
+    >
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= image_tag icon_by_coin('bitcoin'),
+                        class: 'w-12 h-12',
+                        alt: 'Logo Bitcoin' %>
+        </div>
+
+        <div class="stat-title">
+          <%= t('.bitcoin_world_title') %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(coins_statistics[:bitcoin_world].count) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= dated_i18n %>
+        </div>
+      </div>
+
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= image_tag icon_by_coin('monero'),
+                        class: 'w-12 h-12',
+                        alt: 'Logo Monero' %>
+        </div>
+
+        <div class="stat-title">
+          <%= t('.monero_world_title') %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(coins_statistics[:monero_world].count) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= dated_i18n %>
+        </div>
+      </div>
+
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= image_tag icon_by_coin('monero'),
+                        class: 'w-12 h-12',
+                        alt: 'Logo Monero' %>
+        </div>
+
+        <div class="stat-title">
+          <%= t('.monero_france_title') %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(countries_statistics[:monero_in_france].count) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= dated_i18n %>
+        </div>
+      </div>
+
+      <div class="stat bg-base-100 shadow rounded-lg">
+        <div class="stat-figure">
+          <%= image_tag icon_by_coin('june'),
+                        class: 'w-12 h-12 object-cover',
+                        alt: 'Logo June' %>
+        </div>
+
+        <div class="stat-title">
+          <%= t('.june_world_title') %>
+        </div>
+
+        <div class="stat-value">
+          <%= number_with_delimiter(coins_statistics[:june_world].count) %>
+        </div>
+
+        <div class="stat-desc">
+          <%= dated_i18n %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'statistics/include_atms_input', center: true %>
+<% end %>

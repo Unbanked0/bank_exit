@@ -1,0 +1,13 @@
+Bonjour,
+
+Un nouveau commerçant vient d'être proposé depuis le site. Voici les informations renseignées :
+
+===============================
+<%= @data %>
+===============================
+
+<% if @proposition_from.present? %>
+Pour informer l'utilisateur du traitement de sa demande, vous pouvez cliquer sur "Répondre" dans votre client mail.
+<% else %>
+Ce message a été auto-généré par Rails, merci de ne pas y répondre.
+<% end %>

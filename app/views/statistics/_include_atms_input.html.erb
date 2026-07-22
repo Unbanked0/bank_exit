@@ -1,0 +1,19 @@
+<%# locals: (center: false) %>
+
+<form>
+  <label class="<%= class_names("label", "text-sm", "flex justify-center": center) %>">
+    <input
+      id="atm_input"
+      class="toggle toggle-sm toggle-primary"
+      type="checkbox"
+      <% if session[:include_atms] %>
+        checked
+      <% end %>
+      data-controller="statistics"
+      data-action="click->statistics#switch"
+      data-statistics-toggle-url-value="<%= statistics_toggle_atms_path %>"
+    >
+
+    <span><%== t('simple_form.labels.map.with_atms') %></span>
+  </label>
+</form>

@@ -1,15 +1,16 @@
-<% box_class = "bg-neutral rounded-box text-neutral-content flex flex-col p-2 items-center"
-end_time = Time.zone.parse("2027-10-01")
+<% end_time = Time.zone.parse("2027-10-01")
 initial_counter = countdown_to(end_time) %>
 
-<figure class="text-center">
+<% box_class = "w-24 sm:w-28 bg-neutral rounded-box text-neutral-content flex flex-col items-center justify-center p-4" %>
+
+<figure class="text-center not-prose">
   <div
-    class="flex flex-wrap justify-center gap-8 lg:gap-5"
+    class="grid auto-cols-max grid-flow-col gap-5 text-center justify-center"
     data-controller="countdown"
     data-countdown-end-time-value="<%= end_time.to_s %>"
   >
     <div class="<%= box_class %>">
-      <span class="countdown font-mono text-5xl">
+      <span class="countdown font-mono text-5xl tabular-nums">
         <span
           aria-live="polite"
           aria-label="<%= initial_counter[:months] %>"
@@ -24,7 +25,7 @@ initial_counter = countdown_to(end_time) %>
     </div>
 
     <div class="<%= box_class %>">
-      <span class="countdown font-mono text-5xl">
+      <span class="countdown font-mono text-5xl tabular-nums">
         <span
           aria-live="polite"
           aria-label="<%= initial_counter[:days] %>"
@@ -39,7 +40,7 @@ initial_counter = countdown_to(end_time) %>
     </div>
 
     <div class="<%= box_class %>">
-      <span class="countdown font-mono text-5xl">
+      <span class="countdown font-mono text-5xl tabular-nums">
         <span
           aria-live="polite"
           aria-label="<%= initial_counter[:hours] %>"
@@ -54,7 +55,7 @@ initial_counter = countdown_to(end_time) %>
     </div>
 
     <div class="<%= box_class %>">
-      <span class="countdown font-mono text-5xl">
+      <span class="countdown font-mono text-5xl tabular-nums">
         <span
           aria-live="polite"
           aria-label="<%= initial_counter[:minutes] %>"
@@ -69,7 +70,7 @@ initial_counter = countdown_to(end_time) %>
     </div>
 
     <div class="<%= box_class %>">
-      <span class="countdown font-mono text-5xl">
+      <span class="countdown font-mono text-5xl tabular-nums">
         <span
           aria-live="polite"
           aria-label="<%= initial_counter[:seconds] %>"

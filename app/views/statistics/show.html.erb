@@ -1,0 +1,117 @@
+<article>
+  <header class="hero bg-fixed bg-banner-statistics bg-bottom">
+    <div class="hero-overlay"></div>
+
+    <div
+      class="
+        <%= class_names(
+        'hero-content w-full lg:w-auto',
+        'hero-content-main': params[:controller] == 'statistics'
+        ) %>
+      "
+    >
+      <div class="w-full max-w-5xl">
+        <div class="text-center space-y-5">
+          <h1 class="text-3xl font-bold">
+            <%= t('.title') %>
+          </h1>
+
+          <%= render 'statistics_numbers',
+                     merchants_statistics: @merchants_statistics,
+                     countries_statistics: @countries_statistics,
+                     coins_statistics: @coins_statistics,
+                     categories_statistics: @categories_statistics,
+                     directories_statistics: @directories_statistics %>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-full px-5!">
+    <div class="space-y-5">
+      <div class="flex flex-col lg:flex-row items-center gap-5">
+        <figure class="w-full chart">
+          <%= line_chart @merchants_statistics[:merchants_west_europe_and_days],
+                         title: t('.new_merchants_west_europe_title') %>
+        </figure>
+
+        <figure class="w-full chart">
+          <%= line_chart @merchants_statistics[:merchants_north_america_and_days],
+                         title: t('.new_merchants_north_america_oceania_title') %>
+        </figure>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-5">
+        <figure class="w-full chart">
+          <%= line_chart @merchants_statistics[:merchants_south_america_and_days],
+                         title: t('.new_merchants_south_america_title') %>
+        </figure>
+
+        <figure class="w-full chart">
+          <%= line_chart @merchants_statistics[:merchants_africa_and_days],
+                         title: t('.new_merchants_africa_title') %>
+        </figure>
+      </div>
+
+      <figure class="w-full chart">
+        <%= column_chart @countries_statistics[:monero_by_country],
+                         title: t('.monero_by_country_title') %>
+      </figure>
+
+      <div class="flex flex-col lg:flex-row items-center gap-5">
+        <figure class="w-full flex-1 chart">
+          <%= line_chart @countries_statistics[:monero_in_france_by_week],
+                         title: t('.monero_france_by_week_title') %>
+        </figure>
+
+        <figure class="w-full flex-1 chart">
+          <%= column_chart @countries_statistics[:june_by_country],
+                           title: t('.june_by_country_title') %>
+        </figure>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-5">
+        <figure class="w-full chart">
+          <%= column_chart @countries_statistics[:by_countries],
+                           title: t('.merchants_west_european_title') %>
+        </figure>
+
+        <figure class="w-full chart">
+          <%= line_chart @directories_statistics[:by_day],
+                         title: t('.new_directories_title') %>
+        </figure>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-5">
+        <figure class="w-full flex-1 chart">
+          <%= column_chart @categories_statistics[:by_main_categories],
+                           title: t('.merchants_by_categories_title') %>
+        </figure>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-5">
+        <figure class="w-full flex-1 chart">
+          <%= pie_chart @coins_statistics[:by_coins],
+                        title: t('.merchants_and_coins_title') %>
+        </figure>
+
+        <figure class="w-full flex-1 chart">
+          <%= pie_chart @coins_statistics[:france_coins],
+                        title: t('.merchants_and_coins_in_france_title') %>
+        </figure>
+      </div>
+    </div>
+
+    <div class="divider divider-primary w-sm mx-auto"></div>
+
+    <div class="max-w-6xl mx-auto">
+      <%= turbo_frame_tag :weekly_merchants,
+                          src: daily_merchants_statistics_path(date: @created_on),
+                          loading: :lazy do %>
+        <div class="text-center">
+          <span class="loading loading-dots loading-xl"></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</article>

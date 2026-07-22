@@ -129,7 +129,7 @@ class MerchantSync < ApplicationRecord
 
   def broadcast_admin_replace_table_row
     broadcast_replace_to(
-      [:admin, :merchant_syncs, I18n.locale],
+      stream_name,
       partial: 'admin/merchant_syncs/merchant_sync'
     )
   end

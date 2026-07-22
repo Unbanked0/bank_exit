@@ -30,10 +30,6 @@ en:
       switch_to_dark: Switch to dark mode
       switch_to_auto: Switch to system theme
 
-    countdown:
-      label: before the end of the preparation phase
-      source_html: source <abbr title="European Central Bank">ECB</abbr>
-
     contacts:
       title: Networks and contacts
 

@@ -1,14 +1,6 @@
 <footer class="<%= class_names(["container mx-auto bg-base-100 text-base-content p-5 lg:p-10 border-base-content/10 border-t print:hidden", 'snow-stack': themes_finder.christmas_time?]) %>">
   <% unless params[:controller] == 'risks' %>
-    <details class="collapse collapse-arrow bg-info text-info-content mb-10">
-      <summary class="collapse-title font-semibold text-center">
-        <%= t('.warning_title') %>
-      </summary>
-
-      <div class="collapse-content space-y-2">
-        <%= t('risks.index.body_html') %>
-      </div>
-    </details>
+    <%= render "risks/risks" %>
   <% end %>
 
   <div

@@ -1,0 +1,61 @@
+<div class="flex items-center gap-2">
+  <% if allowed_to?(:update?, with: Admin::Merchants::BatchActionPolicy) %>
+    <%= simple_form_for :batch_actions,
+                        url: admin_merchants_batch_actions_path,
+                        method: :patch,
+                        html: {
+                          data: {
+                            turbo_confirm: t('.reactivate_confirm')
+                          }
+                        } do |f| %>
+      <%= f.input :directory_ids,
+                  as: :hidden,
+                  wrapper: false,
+                  input_html: {
+                    value: '',
+                    data: {
+                      admin__table_target: 'batchIdsInput'
+                    }
+                  } %>
+
+      <%= button_tag class: 'btn btn-success btn-square',
+                     title: t('.reactivate_title'),
+                     data: {
+                       admin__table_target: 'batchEnableSubmit'
+                     },
+                     disabled: true do %>
+        <%= lucide_icon('check-check') %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if allowed_to?(:destroy?, with: Admin::Merchants::BatchActionPolicy) %>
+    <%= simple_form_for :batch_actions,
+                        url: admin_merchants_batch_actions_path,
+                        method: :delete,
+                        html: {
+                          data: {
+                            turbo_confirm: t('.destroy_confirm')
+                          }
+                        } do |f| %>
+      <%= f.input :directory_ids,
+                  as: :hidden,
+                  wrapper: false,
+                  input_html: {
+                    value: '',
+                    data: {
+                      admin__table_target: 'batchIdsInput'
+                    }
+                  } %>
+
+      <%= button_tag class: 'btn btn-error btn-square',
+                     title: t('.destroy_title'),
+                     data: {
+                       admin__table_target: 'batchDestroySubmit'
+                     },
+                     disabled: true do %>
+        <%= lucide_icon('trash-2') %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

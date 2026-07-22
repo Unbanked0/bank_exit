@@ -1,0 +1,49 @@
+<%# locals: (merchant:) %>
+
+<% if merchant.opening_hours.present? || merchant.delivery? %>
+  <div>
+    <h2 class="mb-2 uppercase font-bold text-primary">
+      <%= t('other') %>
+    </h2>
+
+    <div class="alert alert-vertical gap-1">
+      <% if merchant.opening_hours.present? %>
+        <% multi_hours = merchant.opening_hours_sentences.count > 1 %>
+        <div class="flex items-center <%= multi_hours ? 'gap-6' : 'gap-2' %>">
+          <div class="shrink-0">
+            <%= lucide_icon 'clock',
+                            class: 'w-4',
+                            title: Merchant.human_attribute_name(:opening_hours) %>
+          </div>
+
+          <% if multi_hours %>
+            <ul class="list-disc">
+              <% merchant.opening_hours_sentences.each do |sentence| %>
+                <li>
+                  <%= sentence %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <%= merchant.opening_hours_sentences.first %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if merchant.delivery? %>
+        <p title="<%= t('merchants.show.home_delivery') %>">
+          <%= lucide_icon 'truck',
+                          class: 'inline-flex w-4 me-1' %>
+
+          <%= t('merchants.show.home_delivery') %>
+
+          <% if merchant.delivery_zone %>
+            (
+            <%= merchant.delivery_zone %>
+            )
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+<% end %>

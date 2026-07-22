@@ -6,7 +6,7 @@ El objetivo es hacer que los pagos sean más fluidos y menos costosos para los u
 
 La fase de preparación debe finalizar en octubre de 2025, con un lanzamiento previsto antes de 2030.
 
-<%#= render partial: "blogs/cbdc_digital_euro/countdown" %>
+<%= render "blogs/cbdc_digital_euro/countdown" %>
 
 ## Los riesgos ⚠️
 
@@ -24,7 +24,7 @@ Las Monedas Digitales de Banco Central (MDBC) plantean varias cuestiones relacio
 
 ## Hoja de ruta Cash+ del BCE
 
-<%= render partial: "blogs/cbdc_digital_euro/cbdc_timeline" %>
+<%= render "blogs/cbdc_digital_euro/cbdc_timeline" %>
 
 ## Fuentes útiles
 

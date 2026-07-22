@@ -1,3 +1,5 @@
+<%# locals: (merchant_sync:, dashboard_presenter:) %>
+
 <% today_i18n = l(dashboard_presenter.today.to_date)
 dated_i18n = t('statistics.statistics_numbers.dated', date: today_i18n)
 merchant_deleted_count = Merchant.deleted.count %>

@@ -1,0 +1,34 @@
+<div id="display_modes" class="grid items-center gap-2 w-full @sm:grid-cols-3">
+  <% req_params = request.query_parameters.compact_blank %>
+  <% req_params.delete(:pagy) %>
+
+  <%= raw_link_to url_for(params: req_params.merge(display: :map)),
+        class: class_names("btn", "btn-sm", "gap-2", "flex-1", "btn-info": merchants_as_map?),
+        title: t("display_map"),
+        hotkey: "shift+m",
+        size: "xs" do %>
+    <%= lucide_icon "map" %>
+
+    <span class="lg:hidden"><%= t("display_map") %></span>
+  <% end %>
+
+  <%= raw_link_to url_for(params: req_params.merge(display: :table)),
+        class: class_names("btn", "btn-sm", "gap-2", "flex-1", "btn-info": merchants_as_table?),
+        title: t("display_table"),
+        hotkey: "shift+t",
+        size: "xs" do %>
+    <%= lucide_icon "rows-3" %>
+
+    <span class="lg:hidden"><%= t("display_table") %></span>
+  <% end %>
+
+  <%= raw_link_to url_for(params: req_params.merge(display: :grid)),
+        class: class_names("btn", "btn-sm", "gap-2", "flex-1", "btn-info": merchants_as_grid?),
+        title: t("display_grid"),
+        hotkey: "shift+g",
+        size: "xs" do %>
+    <%= lucide_icon "grid-3x3" %>
+
+    <span class="lg:hidden"><%= t("display_grid") %></span>
+  <% end %>
+</div>

@@ -99,6 +99,11 @@ es:
         source_link: https://horloge-de-la-dette-publique.com/en/debt-clock-france-national-debt-real-time
         chart_debt_title: Deuda (en miles de millones)
 
+    cbdc_digital_euro:
+      countdown:
+        label: antes del final de la fase de preparación
+        source_html: fuente <abbr title="Banco Central Europeo">BCE</abbr>
+
   tutorials:
     index:
       title: Los tutoriales

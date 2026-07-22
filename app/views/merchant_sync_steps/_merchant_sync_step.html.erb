@@ -1,0 +1,33 @@
+<%# locals: (merchant_sync_step:) %>
+
+<%# Warning: keep file non indented to preserve <pre> and <code> rendering without extra spaces %>
+
+<%= tag.pre id: dom_id(merchant_sync_step), data: { prefix: ">" } do -%><%= tag.code do -%><%= safe_join([
+      tag.span(
+        "[#{l(merchant_sync_step.created_at, format: :hms)}]",
+        class: "italic text-xs opacity-50"
+      ),
+      merchant_sync_step.message_for_step,
+      (
+        tag.span(class: "loading loading-spinner loading-xs") if merchant_sync_step.pending?
+      ),
+      (
+        tag.span(class: "tooltip tooltip-error") do
+          safe_join([
+            tag.span(
+              merchant_sync_step.payload_error["message"],
+              class: "tooltip-content"
+            ),
+            lucide_icon(
+              "x",
+              class: "inline-flex w-4 text-error cursor-help"
+            )
+          ])
+        end if merchant_sync_step.error?
+      ),
+      (
+        lucide_icon(
+          "check",
+          class: "inline-flex w-4 text-success"
+        ) unless merchant_sync_step.pending? || merchant_sync_step.error?)
+    ].compact, " ") %><%- end -%><%- end -%>

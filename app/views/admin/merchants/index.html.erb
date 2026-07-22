@@ -1,0 +1,140 @@
+<%= turbo_stream_from [:admin, :merchant_syncs, I18n.locale] %>
+
+<% content_for :page_title do %>
+  <%= params[:show_deleted] == 'true' ? t('.title_for_disabled') : t('.title') %>
+<% end %>
+
+<% if allowed_to?(:index?, with: Admin::MerchantSyncPolicy) %>
+  <% content_for :page_actions do %>
+    <li>
+      <%= raw_link_to admin_merchant_syncs_path, hotkey: 'h' do %>
+        <%= lucide_icon 'table', class: 'w-5 h-5' %>
+        <span class="truncate"><%= t('.history') %></span>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'stats',
+           merchant_sync: @merchant_sync,
+           dashboard_presenter: @dashboard_presenter %>
+
+<section>
+  <div class="mb-3 max-w-5xl mx-auto">
+    <div class="badge badge-secondary badge-sm text-center my-2">
+      <p>
+        <strong id="merchants_count">
+          <%= t('x_results',
+                count: @pagy.count,
+                formatted_count: number_with_delimiter(@pagy.count)) %>
+        </strong>
+      </p>
+    </div>
+
+    <%= simple_form_for '',
+                        url: admin_merchants_path,
+                        method: :get,
+                        html: {
+                          class: 'w-full space-y-1',
+                          data: {
+                            controller: 'admin--search',
+                            turbo_stream: true,
+                            action: 'keyup->admin--search#submit change->admin--search#submit'
+                          }
+                        } do |f| %>
+      <div class="flex flex-col lg:flex-row items-center gap-2">
+        <%= f.input :query,
+                    label: false,
+                    wrapper: false,
+                    input_html: {
+                      value: params[:query],
+                      placeholder: t('simple_form.placeholders.map.search'),
+                      data: {
+                        admin__search_target: :query
+                      }
+                    } %>
+
+        <%= f.input :category,
+                    collection: merchant_categories_select_helper,
+                    label: false,
+                    include_blank: :translate,
+                    selected: params[:category],
+                    input_html: {
+                      data: {
+                        admin__search_target: :category
+                      }
+                    } %>
+
+        <%= f.input :country,
+                    format: :with_flag,
+                    wrapper: false,
+                    label: false,
+                    include_blank: :translate,
+                    only: Merchant.distinct.pluck(:country),
+                    selected: params[:country],
+                    input_html: {
+                      autocomplete: false,
+                      class: 'select w-full',
+                      data: {
+                        admin__search_target: :country
+                      }
+                    } %>
+      </div>
+
+      <div class="flex flex-col lg:flex-row justify-between gap-2">
+        <%= f.input :with_comments,
+                    as: :boolean,
+                    include_hidden: false,
+                    input_html: {
+                      checked: params[:with_comments] == '1'
+                    } %>
+
+        <ul class="flex gap-1">
+          <% [:monero, :bitcoin, :june].each do |coin| %>
+            <li>
+              <div class="w-full">
+                <input
+                  id="<%= "#{coin}-option" %>"
+                  class="hidden peer"
+                  type="checkbox"
+                  name="coins[]"
+                  value="<%= coin %>"
+                  <% if params[:coins]&.include?(coin.to_s) %>
+                    checked
+                  <% end %>
+                  data-action="input->admin--search#submit"
+                >
+
+                <label
+                  class="pretty-checkbox inline-flex items-center justify-between"
+                  for="<%= "#{coin}-option" %>"
+                  tabindex="0"
+                >
+                  <div class="avatar-group -space-x-3">
+                    <% if coin == :bitcoin %>
+                      <div class="avatar">
+                        <div class="w-6">
+                          <%= image_tag 'coins/logo-lightning.svg', alt: "Lightning" %>
+                        </div>
+                      </div>
+                    <% end %>
+
+                    <div class="avatar">
+                      <div class="w-6">
+                        <%= image_tag "coins/logo-#{coin}.svg", alt: coin %>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="merchants">
+    <%= render 'merchants', merchants: @merchants, pagy: @pagy %>
+  </div>
+</section>

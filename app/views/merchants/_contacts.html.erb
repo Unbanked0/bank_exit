@@ -1,0 +1,36 @@
+<%# locals: (merchant:) %>
+
+<div class="alert alert-vertical overflow-y-auto gap-2">
+  <% merchant.all_contacts.each do |key, value| %>
+    <div class="flex items-center gap-1">
+      <%= social_contact_icon(key) %>
+
+      <% case key %>
+      <% when :email %>
+        <%= mail_to value, value %>
+      <% when :phone %>
+        <%= phone_to value, value %>
+      <% when :session %>
+        <%= value %>
+      <% when :signal %>
+        <% if value.start_with?("http") %>
+          <%= link_to(
+                clean_url(CGI.unescape(value)).truncate(50),
+                value,
+                target: :_blank,
+                rel: "noopener"
+              ) %>
+        <% else %>
+          <%= value %>
+        <% end %>
+      <% else %>
+        <%= link_to(
+              clean_url(CGI.unescape(value)).truncate(50),
+              value,
+              target: :_blank,
+              rel: "noopener"
+            ) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

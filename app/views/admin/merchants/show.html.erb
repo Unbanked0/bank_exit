@@ -1,0 +1,45 @@
+<% content_for :page_title do %>
+  <%= render 'logo_or_initials', model: @merchant %>
+  <%= @merchant.name %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:update?, @merchant) %>
+    <li>
+      <%= edit_link_to edit_admin_merchant_path(@merchant), hotkey: true %>
+    </li>
+  <% end %>
+
+  <li>
+    <%= back_link_to(session[:admin_merchant_referer_url] || admin_merchants_path) %>
+  </li>
+<% end %>
+
+<% if @merchant.banner.attached? %>
+  <section class="flex flex-col gap-3 mb-3">
+    <%= image_tag url_for(@merchant.banner),
+                  class: 'lg:w-1/2 rounded-lg',
+                  alt: 'Banner' %>
+  </section>
+<% end %>
+
+<section>
+  <pre
+    class="
+      border border-base-content/20 rounded-box p-2 overflow-x-auto
+      json-colorized
+    "
+  ><%= auto_link(json_highlight(@merchant.as_json), html: { target: :_blank }) %></pre>
+</section>
+
+<% if @merchant.comments_count.positive? %>
+  <section class="mt-8">
+    <h2 class="text-xl font-bold mb-3">
+      <%= Comment.model_name.human(count: 2) %>
+    </h2>
+
+    <%= render 'admin/comments/comments',
+               comments: @comments,
+               pagy: @pagy %>
+  </section>
+<% end %>

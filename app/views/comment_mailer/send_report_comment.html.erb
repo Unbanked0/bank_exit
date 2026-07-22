@@ -1,0 +1,54 @@
+<p>Bonjour,</p>
+
+<p>
+  Un commentaire a été signalé sur le commerçant
+  <strong><%= @merchant.name %></strong> (ID: #<%= @merchant.identifier %>).
+</p>
+
+<p>
+  Commentaire d'origine (ID: #<%= @comment.id %>):
+</p>
+
+<div
+  style="background-color: #CCC; padding: 5px; border-radius: 10px; margin-bottom: 20px"
+>
+  <p>
+    <%= @comment.content %>
+  </p>
+</div>
+
+<p>
+  Explications du signalement :
+</p>
+
+<div style="background-color: #EEE; padding: 5px; border-radius: 10px">
+  <p>
+    Raison: <%= Comment.human_enum_name(:flag_reason, @comment.flag_reason) %>
+  </p>
+
+  <%= simple_format(@description) %>
+</div>
+
+<ul>
+  <li>
+    <%= link_to "Fiche du commerçant sur le site",
+          merchant_url(@merchant),
+          target: :_blank,
+          rel: "noopener" %>
+  </li>
+
+  <li>
+    <%= link_to "Fiche du commerçant sur OpenStreetMap",
+          @merchant.osm_link,
+          target: :_blank,
+          rel: "noopener" %>
+  </li>
+</ul>
+
+<p>
+  Veuillez vérifier la pertinence de la demande et la traiter en conséquence.
+</p>
+
+<p style="font-size: 12px; font-style: italic">
+  Ce message a été auto-généré par Rails, merci de ne pas y répondre.
+</p>

@@ -1,0 +1,77 @@
+<article>
+  <header class="hero bg-fixed bg-banner-open-source">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold"><%= @project.title %></h1>
+
+        <p><%= @project.description %></p>
+
+        <div class="card bg-base-100 text-base-content">
+          <div class="card-body">
+            <% if @project.iframe_url? %>
+              <p>
+                <%= link_to @project.iframe_url,
+                      target: :_blank,
+                      rel: "noopener" do %>
+                  <%= lucide_icon "link", class: "inline-flex w-5", title: "Website" %>
+                  <%= @project.iframe_url %>
+                <% end %>
+              </p>
+            <% end %>
+
+            <% if @project.github_url? %>
+              <p>
+                <%= link_to @project.github_url,
+                      target: :_blank,
+                      rel: "noopener",
+                      title: "Github repository" do %>
+                  <%= lucide_icon "github", class: "w-5 inline-flex" %>
+                  <%= @project.github_url %>
+                <% end %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="article-body max-w-3xl">
+    <%#
+      TODO: Find a way to load the website by iframe when domain
+      name conflict with Rails router will be fixed
+    %>
+
+    <% if @project.website_screenshot? %>
+      <figure class="mb-6">
+        <% image = capture do %>
+          <%= image_tag(
+                  "projects/#{@project.website_screenshot}",
+                  alt: @project.title,
+                  class: "mx-auto object-cover rounded-box border-2 border-base-300/80"
+                ) %>
+        <% end %>
+
+        <% if @project.iframe_url? %>
+          <%= link_to @project.iframe_url,
+                target: :_blank,
+                rel: "noopener" do %>
+            <%= image %>
+          <% end %>
+        <% else %>
+          <%= image %>
+        <% end %>
+
+        <figcaption class="text-xs text-center italic mt-2">
+          <%= t(".website_homepage") %>
+        </figcaption>
+      </figure>
+    <% end %>
+
+    <% if @project.video? %>
+      <%= video_embed(@project.video.as_json.symbolize_keys) %>
+    <% end %>
+  </section>
+</article>

@@ -1,0 +1,52 @@
+<% content_for :header_actions do %>
+  <div class="flex items-center justify-center gap-5 print:hidden">
+    <%= render 'share_by_email',
+               subject: t('.subject', title: @tutorial.title),
+               body: t('.body', link: tutorial_url(@tutorial.identifier)),
+               icon_klass: 'w-8 h-8' %>
+
+    <%= render 'print_me',
+               icon_klass: 'w-8 h-8' %>
+
+    <%= raw_link_to new_tutorial_report_path(@tutorial.identifier),
+                    title: t('.report_a_fault.title'),
+                    class: 'flex items-center gap-2',
+                    data: {
+                      turbo_stream: true
+                    },
+                    hotkey: 'w',
+                    size: 'xs' do %>
+      <%= lucide_icon 'bug', class: 'w-8 h-8' %>
+    <% end %>
+  </div>
+<% end %>
+
+<% content_for :outdated_content do %>
+  <% if @tutorial.might_be_outdated? %>
+    <div class="alert alert-warning lg:w-2/3 mx-auto">
+      <p>
+        <%= t('.tutorial_might_be_outdated') %>
+      </p>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :coins do %>
+  <% if @coins.present? %>
+    <div class="flex items-center justify-center gap-6">
+      <%= render @coins %>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :footer_actions do %>
+  <script type="application/ld+json">
+    <%= json_escape(schema_dot_org_tutorial(@tutorial).to_json).html_safe %>
+  </script>
+
+  <script type="application/ld+json">
+    <%= json_escape(schema_dot_org_breadcrumb_tutorial(@tutorial).to_json).html_safe %>
+  </script>
+<% end %>
+
+<%= render 'articles/wrapper', article: @tutorial %>

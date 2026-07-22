@@ -1,0 +1,207 @@
+<%# locals: (my_geocoder:, pagy:) %>
+
+<%= simple_form_for '',
+                    url: directories_path,
+                    method: :get,
+                    html: { class: 'flex flex-col gap-2' },
+                    data: {
+                      turbo_stream: true,
+                      directories_target: 'form',
+                      action: 'change->directories#submit keyup->directories#submit'
+                    } do |f| %>
+  <div id="directories_count">
+    <%= render 'maps/merchants_count', pagy: pagy %>
+  </div>
+
+  <%= f.input :category,
+              collection: directories_categories_select_helper,
+              selected: params[:category],
+              include_blank: :translate,
+              required: false %>
+
+  <%= f.input :query,
+              required: false,
+              input_html: {
+                value: params[:query]
+              } %>
+
+  <div class="space-y-1">
+    <div class="flex items-center justify-between">
+      <%= f.input :around_me,
+                  as: :boolean,
+                  include_hidden: false,
+                  input_html: {
+                    data: {
+                      directories_target: 'aroundMe',
+                      action: 'change->directories#deliveryZoneChanged'
+                    },
+                    checked: around_me?
+                  } %>
+
+      <p>
+        <%= render 'tooltip',
+                   text: t('.tooltip_geocoder_ip_html').join('<br />'),
+                   position: :left %>
+      </p>
+    </div>
+
+    <div id="geocoder_details" data-directories-target="geocoderDetails">
+      <% if around_me? %>
+        <%= render 'delivery_zones/formatted_geocoder_details',
+                   geocoder: my_geocoder %>
+      <% end %>
+    </div>
+  </div>
+
+  <fieldset class="fieldset w-full">
+    <legend class="fieldset-legend">
+      <%= Directory.human_attribute_name(:coins).capitalize %>
+    </legend>
+
+    <ul class="grid w-full gap-2 grid-cols-3">
+      <% [:monero, :bitcoin, :june].each do |coin| %>
+        <li class="flex flex-col items-center justify-start gap-2">
+          <div class="w-full">
+            <%= check_box_tag 'coins[]',
+                              coin,
+                              params[:coins]&.include?(coin.to_s),
+                              id: "#{coin}-option",
+                              class: 'hidden peer' %>
+
+            <label
+              class="
+                pretty-checkbox inline-flex items-center justify-center
+                bg-base-100
+              "
+              for="<%= "#{coin}-option" %>"
+              tabindex="0"
+            >
+              <div class="flex flex-col items-center justify-center gap-2">
+                <% if coin == :bitcoin %>
+                  <div class="avatar-group -space-x-4">
+                    <div class="avatar">
+                      <div class="w-8">
+                        <%= image_tag 'coins/logo-lightning.svg',
+                                      alt: 'Logo Lightning' %>
+                      </div>
+                    </div>
+
+                    <div class="avatar">
+                      <div class="w-8">
+                        <%= image_tag "coins/logo-#{coin}.svg",
+                                      alt: "Logo #{coin}" %>
+                      </div>
+                    </div>
+                  </div>
+                <% else %>
+                  <%= image_tag "coins/logo-#{coin}.svg",
+                                class: class_names('w-10'),
+                                alt: "Logo #{coin}" %>
+                <% end %>
+
+                <div class="text-xs">
+                  <%= coin.capitalize %>
+                </div>
+              </div>
+            </label>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </fieldset>
+
+  <section class="space-y-2 mt-2 w-full">
+    <div class="badge badge-secondary justify-center">
+      <%= DeliveryZone.model_name.human.capitalize %>
+    </div>
+
+    <%= f.input :city,
+                required: false,
+                label_html: { class: class_names('mb-2') },
+                input_html: {
+                  value: params[:city],
+                  list: 'addresses',
+                  data: {
+                    directories_target: 'city',
+                    action: 'input->directories#search change->directories#deliveryZoneChanged'
+                  }
+                } %>
+
+    <datalist id="addresses" data-directories-target="datalist"></datalist>
+
+    <%= f.input :department,
+                required: false,
+                collection: french_departments_select_helper,
+                include_blank: :translate,
+                selected: params[:department],
+                input_html: {
+                  data: {
+                    directories_target: 'department',
+                    action: 'change->directories#deliveryZoneChanged'
+                  }
+                } %>
+
+    <%= f.input :region,
+                required: false,
+                collection: french_regions_select_helper,
+                include_blank: :translate,
+                selected: params[:region],
+                input_html: {
+                  autocomplete: false,
+                  data: {
+                    directories_target: 'region',
+                    action: 'change->directories#deliveryZoneChanged'
+                  }
+                } %>
+
+    <div class="fieldset">
+      <%= f.input :country,
+                  required: false,
+                  include_blank: :translate,
+                  format: :with_flag,
+                  wrapper: false,
+                  selected: params[:country],
+                  input_html: {
+                    autocomplete: false,
+                    class: class_names('select w-full'),
+                    data: {
+                      directories_target: 'country',
+                      action: 'change->directories#deliveryZoneChanged'
+                    }
+                  },
+                  label_html: {
+                    class: class_names('fieldset-legend')
+                  } %>
+    </div>
+
+    <%= f.input :continent,
+                required: false,
+                collection: continents_select_helper,
+                include_blank: :translate,
+                selected: params[:continent],
+                input_html: {
+                  data: {
+                    directories_target: 'continent',
+                    action: 'change->directories#deliveryZoneChanged'
+                  }
+                } %>
+
+    <%= f.input :world,
+                as: :boolean,
+                boolean_style: :inline,
+                include_hidden: false,
+                input_html: {
+                  checked: params[:world] == '1',
+                  data: {
+                    directories_target: 'world',
+                    action: 'change->directories#deliveryZoneChanged'
+                  }
+                } %>
+  </section>
+
+  <p class="self-center">
+    <%= link_to t('reset_search'),
+                directories_path,
+                class: class_names('btn btn-link btn-sm') %>
+  </p>
+<% end %>

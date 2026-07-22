@@ -1,0 +1,104 @@
+<%# locals: (merchants:, date:) %>
+
+<div class="space-y-5">
+  <ul class="menu menu-horizontal menu-sm gap-2 w-full justify-center">
+    <% (1.week.ago.to_date..Date.current).each do |day| %>
+      <li>
+        <%= link_to I18n.l(day),
+                    daily_merchants_statistics_path(date: day),
+                    class: class_names('menu-active' => day == date) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="overflow-x-auto">
+    <table class="table table-zebra table-pin-rows">
+      <thead>
+        <tr>
+          <td></td>
+          <td scope="col"><%= Merchant.human_attribute_name(:name) %></td>
+          <td><%= Merchant.human_attribute_name(:country) %></td>
+          <td><%= Merchant.human_attribute_name(:category) %></td>
+          <td><%= Merchant.human_attribute_name(:coins) %></td>
+          <td><%= Merchant.human_attribute_name(:created_at) %></td>
+          <td><%= t('actions') %></td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% merchants_count = merchants.count %>
+
+        <% merchants.each_with_index do |row, index| %>
+          <% count = merchants_count - index %>
+
+          <tr class="<%= class_names('opacity-30' => row.atm? && !session[:include_atms]) %>">
+            <td>
+              #<%= count %>
+            </td>
+
+            <th scope="row">
+              <%= link_to row.name,
+                          merchant_path(row),
+                          data: { turbo_frame: :_top } %>
+            </th>
+
+            <td>
+              <%= row.pretty_country %>
+            </td>
+
+            <td>
+              <%= t("categories.#{row.category}") if row.category %>
+            </td>
+
+            <td>
+              <%= coins_list(row.coins,
+                             with_logo: true,
+                             with_name: false,
+                             size: 'w-6',
+                             inline: true) %>
+            </td>
+
+            <td>
+              <%= I18n.l(row.created_at, format: '%Hh%M') %>
+            </td>
+
+            <td>
+              <% content_for :dropdown_menu, flush: true do %>
+                <li>
+                  <%= link_to row.osm_link,
+                              target: :_blank,
+                              data: { turbo_frame: :_top } do %>
+                    <%= t('admin.merchants.actions.merchant_on_osm') %>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to merchant_path(row),
+                              data: { turbo_frame: :_top } do %>
+                    <%= t('details') %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <%= render 'dropdown_actions', item_id: row.id %>
+            </td>
+          </tr>
+        <% end %>
+
+        <% if merchants.empty? %>
+          <tr>
+            <td colspan="100%">
+              <p class="text-center">
+                <%= t('empty_results') %>
+              </p>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-xs text-center font-semibold italic">
+    <%= t('.merchants_added_on_title', date: l(date)) %>
+  </div>
+</div>

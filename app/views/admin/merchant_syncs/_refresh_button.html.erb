@@ -1,0 +1,14 @@
+<%# locals: (disabled:) %>
+
+<%= button_to refresh_merchants_path,
+              class: 'btn btn-success btn-xs',
+              disabled: disabled,
+              data: {
+                controller: 'hotkey',
+                action: 'keydown.r@document->hotkey#click',
+                turbo_confirm: t('maps.dropdown_map_actions.refresh_confirm_html')
+              } do %>
+  <%= lucide_icon 'refresh-cw', class: 'w-3 h-3' %>
+  <%= t('refresh') %>
+  <%= hotkey_label('r', size: 'xs') %>
+<% end %>

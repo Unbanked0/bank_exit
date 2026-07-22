@@ -1,0 +1,51 @@
+<%# locals: (podium:) %>
+
+<section class="flex justify-center items-end gap-3">
+  <% [2, 0, 1].each do |i| %>
+    <% key, category, count = podium[i] %>
+    <% next unless category %>
+
+    <% place = case i
+               when 0 then '🥇'
+               when 1 then '🥈'
+               when 2 then '🥉'
+             end
+
+      bg_class = case i
+                 when 0, 1, 2 then 'bg-base-100'
+                 end
+
+      height_class = case i
+                     when 0 then 'h-48'
+                     when 1 then 'h-40'
+                     when 2 then 'h-32'
+                     end %>
+
+    <div
+      class="
+        flex flex-col items-center hover:scale-105
+        motion-safe:transition-transform
+      "
+    >
+      <div class="mb-2">
+        <%= merchant_icon_svg icon_for_category(key),
+                              width: 60,
+                              height: 60 %>
+      </div>
+
+      <div class="text-base-content rounded-box w-24 flex flex-col items-center justify-center text-center <%= bg_class %> <%= height_class %>">
+        <p class="text-3xl mb-2">
+          <%= place %>
+        </p>
+
+        <p class="font-semibold text-xs mb-1">
+          <%= category %>
+        </p>
+
+        <p class="text-primary font-bold text-sm">
+          <%= number_with_delimiter(count) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</section>

@@ -1,0 +1,34 @@
+<%# locals: (tutorial:, tutorial_report:) %>
+
+<% i18n_scope = 'tutorials.reports.modal' %>
+
+<% content_for(:modal_title) do %>
+  <%= tutorial.title %>
+<% end %>
+
+<%= render_modal auto_open: true do %>
+  <%= simple_form_for tutorial_report,
+                      url: tutorial_report_path(tutorial.identifier),
+                      method: :post,
+                      html: { class: 'space-y-2 px-1' } do |f| %>
+    <div class="alert alert-info alert-soft">
+      <p>
+        <%= t('introduction', scope: i18n_scope) %>
+      </p>
+    </div>
+
+    <%= f.input :title %>
+    <%= f.input :description, as: :text %>
+
+    <%= f.input :nickname,
+                wrapper_html: {
+                  class: 'hidden'
+                } %>
+
+    <div class="flex justify-end">
+      <%= f.button :submit,
+                   t('submit', scope: i18n_scope),
+                   class: 'btn btn-success' %>
+    </div>
+  <% end %>
+<% end %>

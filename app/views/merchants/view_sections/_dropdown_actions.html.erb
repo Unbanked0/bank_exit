@@ -1,0 +1,99 @@
+<%# locals: (merchant:, btn_klass: nil) %>
+
+<button
+  class="btn btn-square <%= btn_klass || 'btn-lg' %>"
+  role="button"
+  tabindex="0"
+  aria-label="Menu for merchant"
+  popovertarget="popover-merchant"
+  style="anchor-name:--anchor-merchant"
+>
+  <%= lucide_icon 'ellipsis-vertical', class: 'w-6' %>
+</button>
+
+<ul
+  class="
+    dropdown dropdown-end menu bg-base-100 rounded-box z-1 w-max p-2
+    shadow-sm border border-base-content/20 space-y-2
+  "
+  tabindex="-1"
+  popover=""
+  id="popover-merchant"
+  style="position-anchor:--anchor-merchant"
+>
+  <li>
+    <%= content_tag :button,
+                    data: {
+                      controller: 'clipboard',
+                      action: 'click->clipboard#copy:prevent',
+                      clipboard_content_value: merchant_url(merchant),
+                      clipboard_success_icon_value: html_escape_once(lucide_icon('check-check', class: 'inline-flex w-5')),
+                      clipboard_success_text_value: t('copied'),
+                      clipboard_success_class: 'text-success'
+                    } do %>
+      <%= lucide_icon 'copy', class: 'w-5' %>
+      <%= t('copy_url_to_clipboard') %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= render 'share_by_email',
+               subject: t('merchants.show.share_by_email.subject', name: merchant.name),
+               body: t('merchants.show.share_by_email.body', link: merchant_url(merchant)) do %>
+      <%= t('share_by_email') %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= render 'print_me' do %>
+      <%= t('print') %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to merchant.osm_link,
+                class: 'flex items-center gap-2',
+                target: :_blank do %>
+      <%= lucide_icon 'map-pin' %>
+      <%= t('merchants.show.view_on_osm') %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= raw_link_to new_merchant_report_path(merchant),
+                    class: 'flex items-center gap-2',
+                    title: t('merchants.show.report_a_fault.title'),
+                    data: {
+                      turbo_stream: true
+                    },
+                    hotkey: 'w',
+                    size: 'xs' do %>
+      <%= lucide_icon 'bug' %>
+      <%= t('merchants.show.report_a_fault.title') %>
+    <% end %>
+  </li>
+
+  <% if authenticated? %>
+    <% if allowed_to?(:update?, merchant, namespace: Admin) %>
+      <li>
+        <%= edit_link_to edit_admin_merchant_path(merchant), hotkey: true %>
+      </li>
+    <% end %>
+    <% if allowed_to?(:reactivate?, merchant, namespace: Admin) %>
+      <li>
+        <%= create_link_to admin_merchant_reactivate_path(merchant),
+                           turbo_confirm: t('admin.merchants.actions.reactivate_confirm'),
+                           hotkey: 'r' do %>
+          <%= t('reactivate') %>
+        <% end %>
+      </li>
+    <% end %>
+    <% if allowed_to?(:destroy?, merchant, namespace: Admin) %>
+      <li>
+        <%= destroy_link_to admin_merchant_path(merchant),
+                            turbo_confirm: t('admin.merchants.actions.destroy_confirm_html'),
+                            hotkey: 'd' %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

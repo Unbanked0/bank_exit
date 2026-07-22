@@ -6,7 +6,7 @@ L'objectif est de rendre les paiements plus fluides et moins coûteux pour les u
 
 La phase de préparation doit se terminer en octobre 2025, pour un lancement prévu avant 2030.
 
-<%#= render partial: "blogs/cbdc_digital_euro/countdown" %>
+<%= render partial: "blogs/cbdc_digital_euro/countdown" %>
 
 ## Les dangers ⚠️
 
@@ -24,7 +24,7 @@ Les Monnaies Numériques de Banque Centrale (MNBC) soulèvent plusieurs question
 
 ## Feuille de route Cash+ de la BCE
 
-<%= render partial: "blogs/cbdc_digital_euro/cbdc_timeline" %>
+<%= render "blogs/cbdc_digital_euro/cbdc_timeline" %>
 
 ## Sources utiles
 

@@ -1,0 +1,63 @@
+<article>
+  <header class="hero bg-fixed bg-banner-library">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main">
+      <div class="max-w-5xl">
+        <div class="text-center space-y-6">
+          <h1 class="text-3xl font-bold"><%= t(".title") %></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl space-y-10!">
+    <nav class="text-center space-x-2">
+      <% @glossaries.keys.each do |letter| %>
+        <%= link_to letter, url_for(anchor: letter),
+                    class: "badge badge-soft badge-primary hover:badge-secondary badge-xl",
+                    data: { turbo: false } %>
+      <% end %>
+    </nav>
+
+    <% @glossaries.each do |letter, glossaries| %>
+      <section
+        id="<%= letter %>"
+        class="space-y-3 before:block before:h-24 before:-mt-24"
+      >
+        <%= link_to letter, url_for(anchor: letter),
+                    class: "badge badge-soft badge-primary hover:badge-secondary badge-xl",
+                    data: { turbo: false } %>
+
+        <div class="space-y-3">
+          <% glossaries.each do |glossary| %>
+            <article id="<%= glossary.acronym %>" class="alert alert-vertical">
+              <header class="border-b border-dotted pb-2">
+                <h3 class="text-lg font-bold">
+                  <%= link_to "##{glossary.acronym}" do %>
+                    <%= glossary.acronym %>
+
+                    <% if glossary.original_full_title %>
+                      -
+                      <%= glossary.original_full_title %>
+                    <% end %>
+                  <% end %>
+                </h3>
+
+                <% if glossary.translated_full_title %>
+                  <h4 class="font-semibold italic">
+                    [<%= glossary.translated_full_title %>]
+                  </h4>
+                <% end %>
+              </header>
+
+              <div>
+                <%= simple_format(glossary.description.join("\n")) %>
+              </div>
+            </article>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+  </div>
+</article>

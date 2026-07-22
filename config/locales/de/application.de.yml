@@ -27,10 +27,6 @@ de:
       switch_to_dark: In den dunklen Modus wechseln
       switch_to_auto: Zum Systemdesign wechseln
 
-    countdown:
-      label: bis zum Ende der Vorbereitungsphase
-      source_html: Quelle <abbr title="Europäische Zentralbank">EZB</abbr>
-
     contacts:
       title: Netzwerke und Kontakte
 

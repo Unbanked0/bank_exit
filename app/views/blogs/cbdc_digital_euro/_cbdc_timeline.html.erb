@@ -1,0 +1,53 @@
+<%# TODO: Find a way to extract queries part to the controller %>
+<% cbdc_timeline = CBDCTimeline.all %>
+<% now = Date.current %>
+
+<ul class="timeline timeline-vertical max-md:timeline-compact not-prose">
+  <% cbdc_timeline.reverse.each_with_index do |item, index| %>
+    <% first_item = index == 0 %>
+    <% last_item = index == cbdc_timeline.count - 1 %>
+    <% started = item.started_on <= now %>
+
+    <li>
+      <% unless first_item %>
+        <hr class="<%= class_names('bg-primary': started) %>">
+      <% end %>
+
+      <div class="timeline-middle">
+        <%= lucide_icon(
+          'circle-check',
+          class: class_names(
+            'w-6 h-6 rounded-full border-0',
+            'bg-primary stroke-base-200': started,
+            'bg-base-200/50 dark:bg-warning dark:stroke-base-200': !started
+          )
+        ) %>
+      </div>
+
+      <div
+        class="
+          <%= class_names(
+          'mb-5 md:text-end timeline-box max-w-lg',
+          cycle('timeline-start', 'timeline-end text-left!'),
+          'bg-primary text-primary-content': item.started_on < now,
+          'bg-base-200': item.started_on >= now
+          ) %>
+        "
+      >
+        <div class="text-lg font-black mb-3">
+          <%= item.title %>
+        </div>
+
+        <ul class="list-disc list-inside">
+          <% item.description.each do |list_item| %>
+            <li><%= list_item %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <% unless last_item %>
+        <hr class="<%= class_names('bg-primary': started) %>">
+      <% end %>
+    </li>
+  <% end %>
+</ul>

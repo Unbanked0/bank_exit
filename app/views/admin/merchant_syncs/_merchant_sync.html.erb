@@ -1,0 +1,117 @@
+<%# locals: (merchant_sync:) %>
+
+<tr id="<%= dom_id(merchant_sync) %>">
+  <td>
+    <span class="font-bold">#<%= merchant_sync.id %></span>
+  </td>
+
+  <td>
+    <div class="<%= class_names('badge badge-outline', 'badge-success': merchant_sync.task?, 'badge-info': !merchant_sync.task?) %>">
+      <%= MerchantSync.human_enum_name(:instigator, merchant_sync.instigator) %>
+    </div>
+  </td>
+
+  <td>
+    <div class="<%= class_names('badge badge-outline', 'badge-success': merchant_sync.sync?, 'badge-warning': !merchant_sync.sync?) %>">
+      <%= MerchantSync.human_enum_name(:mode, merchant_sync.mode) %>
+    </div>
+  </td>
+
+  <td>
+    <%= l(merchant_sync.started_at) %>
+  </td>
+
+  <td>
+    <% if merchant_sync.ended_at %>
+      <%= l(merchant_sync.ended_at) %>
+    <% else %>
+      <div class="skeleton h-5 w-full"></div>
+    <% end %>
+  </td>
+
+  <td>
+    <% if merchant_sync.clear? %>
+      --
+    <% elsif merchant_sync.pending? %>
+      <div class="skeleton h-5 w-full"></div>
+    <% else %>
+      <div class="<%= class_names('badge badge-success', 'opacity-25': !merchant_sync.added_merchants_count.positive?) %>">
+        <%= merchant_sync.added_merchants_count %>
+      </div>
+    <% end %>
+  </td>
+
+  <td>
+    <% if merchant_sync.clear? %>
+      --
+    <% elsif merchant_sync.pending? %>
+      <div class="skeleton h-5 w-full"></div>
+    <% else %>
+      <div class="<%= class_names('badge badge-warning', 'opacity-25': !merchant_sync.updated_merchants_count.positive?) %>">
+        <%= merchant_sync.updated_merchants_count %>
+      </div>
+    <% end %>
+  </td>
+
+  <td>
+    <% if merchant_sync.pending? %>
+      <div class="skeleton h-5 w-full"></div>
+    <% else %>
+      <div class="<%= class_names('badge badge-error', 'opacity-25': !merchant_sync.soft_deleted_merchants_count.positive?) %>">
+        <%= merchant_sync.soft_deleted_merchants_count %>
+      </div>
+    <% end %>
+  </td>
+
+  <td>
+    <% label = MerchantSync.human_enum_name(:status, merchant_sync.status) %>
+
+    <div class="flex items-center gap-2">
+      <% if merchant_sync.success? %>
+        <div class="badge badge-success">
+          <%= label %>
+        </div>
+      <% elsif merchant_sync.error? %>
+        <div class="badge badge-error">
+          <%= label %>
+        </div>
+      <% elsif merchant_sync.success_with_error? %>
+        <div class="badge badge-warning">
+          <%= label %>
+        </div>
+      <% else %>
+        <div class="badge badge-soft animate-pulse">
+          <%= label %>
+        </div>
+      <% end %>
+
+      <% if merchant_sync.notes.present? %>
+        <%= render 'tooltip',
+                   position: :top,
+                   text: simple_format(merchant_sync.notes),
+                   mode: :info %>
+      <% end %>
+    </div>
+  </td>
+
+  <td>
+    <% if merchant_sync.pending? %>
+      <div class="skeleton h-5 w-full"></div>
+    <% else %>
+      <%= render 'admin/merchant_syncs/actions',
+                 merchant_sync: merchant_sync %>
+    <% end %>
+  </td>
+</tr>
+
+<% if merchant_sync.pending? %>
+  <tr class="bg-transparent">
+    <td
+      class="mockup-code"
+      colspan="100%"
+      id="<%= dom_id(merchant_sync, 'steps_for') %>"
+    >
+      <%= render merchant_sync.merchant_sync_steps %>
+    </td>
+  </tr>
+<% end %>

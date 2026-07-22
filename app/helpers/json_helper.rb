@@ -1,6 +1,6 @@
 module JSONHelper
   def json_highlight(json)
-    JSONHighlighter.new(json).colorize
+    sanitize(JSONHighlighter.new(json).colorize)
   end
 
   def diffy_json(before_json, after_json, highlight: true)

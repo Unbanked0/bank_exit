@@ -1,0 +1,76 @@
+<%# locals: (f:, mode:, data:, name: nil) %>
+
+<% if %w[region department continent].include?(mode) %>
+  <% options = {
+    collection: data,
+    include_blank: false,
+    wrapper_html: {
+      data: {
+        delivery_zones_target: "select"
+      }
+    }
+  } %>
+  <% if name.present? %>
+    <% options[:input_html] = { name: name } %>
+  <% end %>
+  <%= f.input :value, **options %>
+<% elsif mode == 'world' %>
+  <% options = {
+    as: :hidden,
+    wrapper: false
+  } %>
+  <% if name.present? %>
+    <% options[:input_html] = { name: name } %>
+  <% end %>
+  <div data-delivery-zones-target="select">
+    <%= f.input :value, **options %>
+  </div>
+<% elsif mode == 'country' %>
+  <% options = {
+    as: :country,
+    format: :with_flag,
+    include_blank: false,
+    wrapper: false,
+    input_html: {
+      class: 'select w-full'
+    },
+    label_html: {
+      class: 'fieldset-legend'
+    }
+  } %>
+  <% if name.present? %>
+    <% options[:input_html][:name] = name %>
+  <% end %>
+  <div class="fieldset w-full" data-delivery-zones-target="select">
+    <%= f.input :value, **options %>
+  </div>
+<% else %>
+  <% list_id = SecureRandom.uuid %>
+  <% options = {
+    wrapper_html: {
+      class: 'auto-search-wrapper',
+      data: {
+        delivery_zones_target: "select"
+      }
+    },
+    label_html: {
+      class: 'mb-2'
+    },
+    input_html: {
+      list: "delivery-zone-address-#{list_id}",
+      data: {
+        admin__address_target: :input,
+        action: "input->admin--address#search"
+      }
+    },
+    required: true
+  } %>
+  <% if name.present? %>
+    <% options[:input_html][:name] = name %>
+  <% end %>
+  <%= f.input :value, **options %>
+  <datalist
+    id="delivery-zone-address-<%= list_id %>"
+    data-admin--address-target="datalist"
+  ></datalist>
+<% end %>

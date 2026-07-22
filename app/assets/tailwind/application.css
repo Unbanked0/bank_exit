@@ -111,7 +111,7 @@
 }
 
 @utility hero-content-main {
-    @apply py-12;
+    @apply py-20;
 }
 
 @utility table-wrapper {
@@ -182,27 +182,22 @@ a:not(.btn, .badge, .menu a, .card):hover,
     color: var(--color-primary);
 }
 
-table a[target="_blank"],
-ul li a[target="_blank"],
-footer a[target="_blank"],
-p a[target="_blank"],
-figcaption a[target="_blank"],
-.megamenu a[target="_blank"],
-.admin a[target="_blank"],
-.modal a[target="_blank"],
-.alert a[target="_blank"],
-.dropdown a[target="_blank"],
-#faq a[target="_blank"] {
+a[target="_blank"]:not(.no-blank-icon, .anchor):not(:has(img)) {
     &:after {
         content: " ";
         display: inline-block;
+
+        width: 1em;
+        height: 1em;
+
+        margin-left: 0.2em;
+        vertical-align: -0.15em;
+
         background-color: currentColor;
         mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNxdWFyZS1hcnJvdy1vdXQtdXAtcmlnaHQtaWNvbiBsdWNpZGUtc3F1YXJlLWFycm93LW91dC11cC1yaWdodCI+PHBhdGggZD0iTTIxIDEzdjZhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yaDYiLz48cGF0aCBkPSJtMjEgMy05IDkiLz48cGF0aCBkPSJNMTUgM2g2djYiLz48L3N2Zz4=);
-        background-size: contain;
-        width: 24px;
-        height: 24px;
-        vertical-align: middle;
-        @apply scale-50 motion-safe:transition-colors;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 80% 80%;
     }
 
     &:hover:after {

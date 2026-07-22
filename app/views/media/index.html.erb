@@ -1,0 +1,77 @@
+<article>
+  <section>
+    <header class="hero bg-fixed bg-banner-interviews">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content hero-content-main text-center">
+        <div class="max-w-xl space-y-5">
+          <h1 class="text-3xl font-bold">
+            <%= t(".interviews_title") %>
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-body max-w-5xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <% @interviews.each do |interview| %>
+          <figure class="card bg-base-300">
+            <iframe
+              src="<%= interview.url %>"
+              class="rounded-t-lg"
+              width="100%"
+              height="315"
+              title="Iframe interview video"
+            ></iframe>
+
+            <div class="card-body">
+              <figcaption>
+                <p class="card-title">
+                  <%= interview.title %>
+                </p>
+
+                <p>
+                  <%= l(interview.created_at) %>
+                </p>
+              </figcaption>
+            </div>
+          </figure>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <header class="hero bg-fixed bg-banner-media">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content text-center">
+        <div class="max-xl space-y-5">
+          <h2 class="text-3xl font-bold">
+            <%= t(".newspapers_title") %>
+          </h2>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-body max-w-5xl">
+      <ul>
+        <% @newspapers.each do |newspaper| %>
+          <li class="alert alert-vertical">
+            <div class="flex items-center gap-1">
+              <h4 class="font-bold">
+                <%= newspaper.brand %>
+              </h4>
+
+              <span class="text-sm"><%= l(newspaper.created_at) %></span>
+            </div>
+
+            <%= link_to newspaper.url, target: :_blank, rel: "noopener" do %>
+              <%= newspaper.title %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,19 @@
+<p>Bonjour,</p>
+
+<p>
+  Un nouveau commerçant vient d'être proposé depuis le site. Voici les
+  informations renseignées :
+</p>
+
+<div style="background-color: #EEE; padding: 20px; border-radius: 10px">
+  <pre><%= @data %></pre>
+</div>
+
+<p style="font-size: 12px; font-style: italic">
+  <% if @proposition_from.present? %>
+    Pour informer l'utilisateur du traitement de sa demande, vous pouvez cliquer
+    sur "Répondre" dans votre client mail.
+  <% else %>
+    Ce message a été auto-généré par Rails, merci de ne pas y répondre.
+  <% end %>
+</p>

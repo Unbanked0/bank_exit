@@ -1,0 +1,155 @@
+<article>
+  <header class="hero bg-fixed bg-banner-local-groups">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold"><%= t(".title") %></h1>
+        <p><%= t(".headline") %></p>
+
+        <figure>
+          <%= inline_svg_tag(
+                "contacts/telegram.svg",
+                class: "w-20 mx-auto rounded-full bg-white text-[#27A7E7] hover:scale-110 motion-safe:transition-transform",
+                title: "Telegram",
+                alt: "Logo Telegram"
+              ) %>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl">
+    <div>
+      <div class="alert alert-info mb-3">
+        <%= lucide_icon "info" %>
+
+        <p>
+          Cliquez sur un marker de la carte pour afficher le lien du groupe
+          Telegram à jour.
+        </p>
+      </div>
+
+      <iframe
+        class="rounded-lg mb-1 h-96 lg:h-150"
+        width="100%"
+        frameborder="0"
+        allowfullscreen
+        allow="geolocation"
+        src="//umap.openstreetmap.fr/fr/map/groupes-locaux-sortie-de-banque_1158100?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"
+        title="OpenstreetMap Telegram groups"
+      ></iframe>
+
+      <p class="text-center text-sm">
+        <a
+          href="//umap.openstreetmap.fr/fr/map/groupes-locaux-sortie-de-banque_1158100?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"
+          target="_blank"
+          rel="noopener"
+        >
+          Voir en plein écran
+        </a>
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      <% @local_groups.each do |zone| %>
+        <div class="space-y-3">
+          <header
+            class="
+              alert alert-vertical items-center md:alert-horizontal
+              alert-success
+            "
+          >
+            <h2 class="text-xl font-bold"><%= zone.name %></h2>
+
+            <% if zone.link.present? && zone.link != "#" %>
+              <%= link_to zone.link, zone.link, class: "justify-self-end", target: :_blank, rel: "noopener" %>
+            <% end %>
+          </header>
+
+          <% zone.countries.each do |country| %>
+            <% has_link = country["link"].present? && country["link"] != "#" %>
+            <% groups_count = country["regions"]&.count || 0 %>
+            <% c = ISO3166::Country[country["alpha2"].to_sym] %>
+
+            <% if groups_count.zero? %>
+              <header class="alert alert-vertical items-center md:alert-horizontal alert-soft <%= "justify-between" if has_link %>">
+                <h3 class="text-lg font-bold">
+                  <%= c.emoji_flag %>
+
+                  <span class="mx-1">
+                    <%= c.translations[I18n.locale.to_s] %>
+                  </span>
+                </h3>
+
+                <% if has_link %>
+                  <%= link_to country["link"], country["link"], class: "justify-self-end", target: :_blank, rel: "noopener" %>
+                <% end %>
+              </header>
+            <% else %>
+              <details
+                <% if country["alpha2"].downcase == I18n.locale.to_s %>
+                  open
+                <% end %>
+                class="open:space-y-3"
+              >
+                <summary class="alert alert-vertical items-center md:alert-horizontal alert-soft cursor-pointer <%= "justify-between" if has_link %>">
+                  <h3 class="text-lg font-bold">
+                    <%= c.emoji_flag %>
+                    <span class="mx-1"><%= c.translations[I18n.locale.to_s] %></span>
+                    (<%= groups_count %>)
+                  </h3>
+
+                  <% if has_link %>
+                    <%= link_to country["link"], country["link"], class: "justify-self-end", target: :_blank, rel: "noopener" %>
+                  <% end %>
+                </summary>
+
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-3">
+                  <% country["regions"]&.each do |region| %>
+                    <% if region["link"].present? && region["link"] != "#" %>
+                      <%= link_to(
+                            region["link"],
+                            target: :_blank,
+                            rel: "noopener",
+                            class: "card break-inside-avoid mb-3 bg-base-200 border border-base-content/20 hover:border-primary transition-colors"
+                          ) do %>
+                        <div class="card-body">
+                          <h4 class="card-title"><%= region["name"] %></h4>
+
+                          <p>
+                            <%= inline_svg_tag(
+                                  "contacts/telegram.svg",
+                                  class: "w-4 inline-flex mr-1",
+                                  title: "Telegram",
+                                  alt: "Logo Telegram"
+                                ) %>
+
+                            <%= region["link"] %>
+
+                            <%= lucide_icon(
+                                  "square-arrow-out-up-right",
+                                  class: "inline-flex ml-1 w-4"
+                                ) %>
+                          </p>
+                        </div>
+                      <% end %>
+                    <% else %>
+                      <div class="card bg-base-200 opacity-50 cursor-not-allowed">
+                        <div class="card-body">
+                          <h4 class="card-title"><%= region["name"] %></h4>
+
+                          <p><%= t(".no_link_yet") %></p>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </details>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</article>

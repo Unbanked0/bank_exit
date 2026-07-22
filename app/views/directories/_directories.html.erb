@@ -1,0 +1,97 @@
+<%# locals: (directories:, pagy:) %>
+
+<div class="flex items-center justify-end gap-2">
+  <% req_params = request.query_parameters.compact_blank %>
+
+  <%= raw_link_to url_for(params: req_params.merge(display: :grid)),
+                  data: { turbo_stream: true },
+                  class: class_names(
+                    'btn btn-sm gap-2',
+                    'btn-info': directories_as_grid?
+                  ),
+                  title: t('display_grid'),
+                  hotkey: 'shift+g',
+                  size: 'xs' do %>
+    <%= lucide_icon 'grid-3x3' %>
+
+    <span class="lg:hidden"><%= t('display_grid') %></span>
+  <% end %>
+
+  <%= raw_link_to url_for(params: req_params.merge(display: :table)),
+                  data: { turbo_stream: true },
+                  class: class_names(
+                    'btn btn-sm gap-2',
+                    'btn-info': !directories_as_grid?
+                  ),
+                  title: t('display_table'),
+                  hotkey: 'shift+t',
+                  size: 'xs' do %>
+    <%= lucide_icon 'rows-3' %>
+
+    <span class="lg:hidden"><%= t('display_table') %></span>
+  <% end %>
+</div>
+
+<% if directories.any? %>
+  <% if directories_as_grid? %>
+    <div class="grid gap-2 lg:gap-3 @md:grid-cols-2 @3xl:grid-cols-3 @6xl:grid-cols-4">
+      <%= render directories %>
+    </div>
+  <% else %>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra lg:table-fixed">
+        <thead>
+          <tr>
+            <td class="w-75">
+              <%= Directory.human_attribute_name(:name) %>
+            </td>
+
+            <td>
+              <%= CoinWallet.model_name.human.capitalize %>
+            </td>
+
+            <td>
+              <%= DeliveryZone.model_name.human.capitalize %>
+            </td>
+
+            <td>
+              <%= Comment.model_name.human.capitalize %>
+            </td>
+
+            <td>
+              <%= ContactWay.model_name.human.capitalize %>
+            </td>
+
+            <td>
+              <%= t('link') %>
+            </td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% directories.each do |directory| %>
+            <%= render 'directory_table_row', directory: directory %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+  <%= render 'pagination',
+             pagy: pagy,
+             use_turbo_stream: true,
+             add_page_to_url: true,
+             scroll_top: true %>
+<% else %>
+  <div
+    class="
+      flex flex-col items-center justify-center gap-3 text-base-content/60
+      py-10
+    "
+  >
+    <%= lucide_icon 'notebook', class: 'w-40 h-auto' %>
+
+    <p class="text-lg">
+      <%= t('empty_results') %>
+    </p>
+  </div>
+<% end %>

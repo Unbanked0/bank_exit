@@ -1,0 +1,16 @@
+<% content_for :page_title do %>
+  <%= render "logo_or_initials", model: @merchant %>
+  <%= t(".title") %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if allowed_to?(:index?, @merchant) %>
+    <li>
+      <%= back_link_to admin_merchant_path(@merchant) %>
+    </li>
+  <% end %>
+<% end %>
+
+<section>
+  <%= render "form", merchant: @merchant %>
+</section>

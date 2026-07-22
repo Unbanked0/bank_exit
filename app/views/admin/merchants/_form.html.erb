@@ -1,0 +1,59 @@
+<%# locals: (merchant:) %>
+
+<%= simple_form_for [:admin, merchant],
+                    html: {
+                      class: 'space-y-8'
+                    } do |f| %>
+  <% if merchant.errors.any? %>
+    <div class="alert alert-error">
+      <ul class="list-disc list-inside">
+        <% merchant.errors.each do |error| %>
+          <li>
+            <%= error.full_message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <%= f.input :identifier, disabled: true %>
+    <%= f.input :name, disabled: true %>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-3">
+    <div class="space-y-2 lg:w-1/2">
+      <%= f.input :logo,
+                  as: :file,
+                  input_html: {
+                    accept: Merchant::ACCEPTED_CONTENT_TYPES.join(',')
+                  } %>
+
+      <% if f.object.logo.attached? %>
+        <%= f.input :remove_logo, as: :boolean %>
+        <div class="avatar">
+          <div class="w-40 rounded-full">
+            <%= image_tag url_for(f.object.logo), alt: 'Logo' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="space-y-2 lg:w-1/2">
+      <%= f.input :banner,
+                  as: :file,
+                  input_html: {
+                    accept: Merchant::ACCEPTED_CONTENT_TYPES.join(',')
+                  } %>
+
+      <% if f.object.banner.attached? %>
+        <%= f.input :remove_banner, as: :boolean %>
+        <p>
+          <%= image_tag url_for(f.object.banner), alt: 'Banner' %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.button :submit %>
+<% end %>

@@ -11,7 +11,9 @@
                            zoom: @zoom %>
 
     <% if @directory_friends.present? %>
-      <%= render 'directory_friends', directory_friends: @directory_friends %>
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-500">
+        <%= render 'directory_friends', directory_friends: @directory_friends %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,94 @@
+<article
+  data-controller="directories"
+  data-directories-search-url-value="<%= addresses_search_path %>"
+>
+  <header class="hero bg-fixed bg-banner-directories">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-3xl space-y-6">
+        <section class="space-y-3">
+          <h1 class="text-3xl font-bold">
+            <%= t("application.header.directories") %>
+          </h1>
+
+          <% if authenticated? && allowed_to?(:index?, Directory, namespace: Admin) %>
+            <%= edit_link_to admin_directories_path, hotkey: true %>
+          <% end %>
+
+          <div>
+            <p class="italic">
+              <%= t(".headline_directory_explanation") %>
+            </p>
+
+            <p class="italic">
+              <% link = raw_link_to maps_path,
+                                    class: "btn btn-secondary btn-xs",
+                                    hotkey: "m",
+                                    size: "xs" do %>
+                <%= lucide_icon "map", class: "w-4" %>
+                <%= t(".physical_merchants") %>
+              <% end %>
+
+              <%= t(".headline_directory_physical_merchants_html", link: link) %>
+            </p>
+          </div>
+        </section>
+
+        <% if @directories_spotlight.any? %>
+          <div class="divider w-1/2 mx-auto"></div>
+          <section class="space-y-3">
+            <p class="font-bold">
+              <%= t("spotlight") %>
+
+              <%= lucide_icon(
+                    "star",
+                    class: "inline-flex ml-2 stroke-yellow-500 fill-yellow-500"
+                  ) %>
+            </p>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <% @directories_spotlight.each do |spotlight| %>
+                <%= link_to directory_path(spotlight), class: "btn btn-primary" do %>
+                  <% if spotlight.logo.attached? %>
+                    <%= image_tag url_for(spotlight.logo),
+                                  class: "bg-white w-8 h-8 rounded-full object-cover",
+                                  alt: "Logo #{spotlight.name}" %>
+                  <% end %>
+
+                  <span class="truncate"><%= spotlight.name %></span>
+                <% end %>
+              <% end %>
+            </div>
+          </section>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex flex-col lg:flex-row gap-2 lg:gap-3 justify-center">
+    <div class="space-y-3 p-3 lg:basis-1/4">
+      <%= raw_link_to new_directory_path,
+                      hotkey: "a",
+                      class: "btn btn-success w-full" do %>
+        <%= lucide_icon "notebook", class: "w-5" %>
+        <%= t(".new_entry_title") %>
+      <% end %>
+
+      <%= render "filters", pagy: @pagy, my_geocoder: @my_geocoder %>
+    </div>
+
+    <div
+      id="directories"
+      class="space-y-3 p-3 lg:basis-3/4 scroll-mt-8 @container"
+    >
+      <%= render "directories",
+                 directories: @directories,
+                 pagy: @pagy %>
+    </div>
+  </div>
+</article>
+
+<% if @faqs.any? %>
+  <%= render template: "faqs/show" %>
+<% end %>

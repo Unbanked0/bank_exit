@@ -1,0 +1,60 @@
+<%# locals: (announcement:, remember_hide_after_close: true) %>
+
+<div
+  role="alert"
+  class="alert alert-vertical <%= announcement_alert_type(announcement.mode) %> alert-soft flex flex-col mx-auto"
+  data-controller="announcement"
+  data-announcement-model-id-value="<%= announcement.id %>"
+  data-announcement-remember-hide-after-close-value="<%= remember_hide_after_close.to_s %>"
+>
+  <div class="flex items-center justify-between gap-3 w-full">
+    <h3 class="font-bold text-lg"><%= announcement.title %></h3>
+
+    <button
+      type="button"
+      class="btn btn-sm btn-square btn-ghost"
+      aria-label="Close"
+      data-action="click->announcement#hide"
+    >
+      <%= lucide_icon "x" %>
+    </button>
+  </div>
+
+  <div class="space-y-3 w-full">
+    <% if announcement.picture.attached? %>
+      <div class="flex flex-col lg:flex-row gap-3 items-center">
+        <%= image_tag(
+              url_for(announcement.picture.variant(:thumb)),
+              class: "w-24 rounded-lg object-cover",
+              alt: 'Announcement picture'
+            ) %>
+
+        <div class="space-y-2">
+          <%= simple_format(announcement.description) %>
+        </div>
+      </div>
+    <% else %>
+      <div class="space-y-3">
+        <%= simple_format(announcement.description) %>
+      </div>
+    <% end %>
+
+    <% if announcement.link_to_visit.present? %>
+      <%# TODO: extract into a helper %>
+      <% is_external = announcement.link_to_visit.match?(/\Ahttps?:\/\//i) &&
+                       !announcement.link_to_visit.match?(/\Ahttps?:\/\/bank-exit\.org\//i) %>
+      <div class="text-right">
+        <%= link_to(
+              is_external ? announcement.link_to_visit : t("see"),
+              announcement.link_to_visit,
+              class: "btn btn-secondary btn-sm w-full lg:w-auto",
+              data: {
+                action: "click->announcement#openLink:prevent",
+                turbo_frame: :_top
+              },
+              target: (:_blank if is_external)
+            ) %>
+      </div>
+    <% end %>
+  </div>
+</div>

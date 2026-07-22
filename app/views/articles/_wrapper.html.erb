@@ -1,0 +1,77 @@
+<%# locals: (article:) %>
+
+<article>
+  <header
+    class="
+      <%= class_names(
+      "hero",
+      "bg-fixed",
+      "bg-#{article.banner}": article.banner,
+      "bg-banner-default": !article.banner
+      ) %>
+    "
+  >
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-5xl space-y-8">
+        <h1 class="text-3xl font-bold">
+          <%= article.title %>
+        </h1>
+
+        <% if article.author? %>
+          <p class="badge badge-secondary">
+            <%= t("by") %>
+            <span class="font-bold"><%= article.author %></span>
+          </p>
+        <% end %>
+
+        <% if article.created_at.present? %>
+          <time class="block" datetime="<%= article.created_at.iso8601 %>">
+            <%= l(article.created_at) %>
+          </time>
+        <% end %>
+
+        <%= yield :header_actions %>
+
+        <p>
+          <% if article.level? %>
+            <span class="badge inline-block <%= tutorial_class_by_level(article.level) %>">
+              <%= t(".#{article.level}") %>
+            </span>
+          <% end %>
+
+          <% if article.time? %>
+            <span
+              class="inline-block badge badge-neutral ml-2"
+              title="<%= article.time %>'"
+            >
+              <%= distance_of_time_in_words(article.time.minutes) %>
+            </span>
+          <% end %>
+        </p>
+
+        <%= yield :outdated_content %>
+
+        <% if article.missing_content_for_locale? %>
+          <p class="alert alert-warning">
+            <%= t("missing_content_for_locale") %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-5xl mx-auto p-5 space-y-8">
+    <div class="space-y-6">
+      <%= render "breadcrumb" %>
+
+      <%= yield :coins %>
+      <%= yield %>
+    </div>
+
+    <%= highlight(article.render_template, params[:q], sanitize: false) %>
+  </section>
+
+  <%= yield :footer_actions %>
+</article>

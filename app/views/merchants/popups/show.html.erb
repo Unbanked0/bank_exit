@@ -1,0 +1,174 @@
+<div id="map_popup" class="card space-y-3" data-controller="map--popup">
+  <header class="space-y-2">
+    <h3>
+      <%= link_to merchant_path(@merchant),
+            class: "merchant-name",
+            data: { map__popup_target: "merchantLink" } do %>
+        <%= render "logo_or_initials", model: @merchant, mode: :small %>
+        <%= @merchant.name %>
+      <% end %>
+    </h3>
+
+    <% if @merchant.category.present? %>
+      <div class="badge badge-secondary badge-sm flex mx-auto">
+        <svg
+          width="15"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+          class="print:text-black"
+        >
+          <use href="/map/spritesheet.svg#<%= @merchant.icon %>"></use>
+        </svg>
+
+        <%= @merchant.friendly_category %>
+      </div>
+    <% end %>
+  </header>
+
+  <% if @merchant.address? || @merchant.opening_hours.present? || @merchant.delivery.present? %>
+    <div class="alert alert-vertical">
+      <% if @merchant.address? %>
+        <div class="flex items-center gap-2">
+          <div class="shrink-0">
+            <%= lucide_icon "home", class: "w-4" %>
+          </div>
+
+          <%== @merchant.full_address_with_country %>
+        </div>
+      <% end %>
+
+      <% if @merchant.opening_hours.present? %>
+        <% multi_hours = @merchant.opening_hours_sentences.count > 1 %>
+        <div class="flex items-center <%= multi_hours ? "gap-5" : "gap-2" %>">
+          <div class="shrink-0">
+            <%= lucide_icon "clock", class: "w-4" %>
+          </div>
+
+          <% if multi_hours %>
+            <ul class="list-disc">
+              <% @merchant.opening_hours_sentences.each do |sentence| %>
+                <li><%= sentence %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <%= @merchant.opening_hours_sentences.first %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if @merchant.delivery.present? %>
+        <div class="flex items-center gap-2">
+          <div class="shrink-0">
+            <%= lucide_icon "truck", class: "w-4" %>
+          </div>
+
+          <%= t(".home_delivery") %>
+
+          <% if @merchant.delivery_zone %>
+            (
+            <%= @merchant.delivery_zone %>
+            )
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <div class="text-xs mb-1 text-base-content">
+      <%= t(".payment_methods") %>
+    </div>
+
+    <div class="method-icons">
+      <%= image_tag(
+            "coins/logo-monero.svg",
+            alt: "monero",
+            title: t(@merchant.monero? ? ".monero_accepted" : ".monero_not_accepted"),
+            class: class_names("opacity-20": !@merchant.monero?)
+          ) %>
+
+      <%= image_tag(
+            "coins/logo-bitcoin.svg",
+            alt: "bitcoin",
+            title: t(@merchant.bitcoin? ? ".bitcoin_accepted" : ".bitcoin_not_accepted"),
+            class: class_names("opacity-20":  !@merchant.bitcoin?)
+          ) %>
+
+      <%= image_tag(
+            "coins/logo-june.svg",
+            alt: "june",
+            title: t(@merchant.june? ? ".june_accepted" : ".june_not_accepted"),
+            class: class_names("opacity-20": !@merchant.june?)
+          ) %>
+
+      <%= image_tag(
+            "coins/logo-lightning.svg",
+            alt: "lightning",
+            title: t(@merchant.lightning? ? ".lightning_accepted" : ".lightning_not_accepted"),
+            class: class_names("opacity-20": !@merchant.lightning?)
+          ) %>
+
+      <%= image_tag(
+            "coins/nfc-highlight.svg",
+            alt: "nfc",
+            title: t(@merchant.contact_less? ? ".contact_less_accepted" : ".contact_less_not_accepted"),
+            class: class_names("dark:bg-white", "rounded-full", "dark:p-0.5", "dark:border", "opacity-20": !@merchant.contact_less?)
+          ) %>
+
+      <% unless @merchant.ask_kyc.nil? %>
+        <%= merchant_kyc_no_kyc(@merchant.ask_kyc?, klass: "w-6 h-6 text-[10px]") %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @merchant.comments_count > 0 %>
+    <div class="text-base-content">
+      <div class="text-xs mb-1">
+        <%= t(".notes_and_comments") %>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1">
+          <div class="rating rating-xs">
+            <div
+              class="mask mask-star bg-primary"
+              aria-label="<%= @merchant.average_rating %> star"
+              aria-current="true"
+              title="<%= @merchant.average_rating %>/5"
+            ></div>
+          </div>
+
+          <p class="text-xs">
+            <%= number_with_precision(
+                  @merchant.average_rating,
+                  strip_insignificant_zeros: true,
+                  precision: 1
+                ) %>/5
+          </p>
+        </div>
+
+        <div
+          class="text-xs ml-1"
+          title="<%= @merchant.comments_count %> <%= Comment.model_name.human(count: @merchant.comments_count) %>"
+        >
+          <%= lucide_icon "message-square", class: "inline-flex mr-0.5 font-normal w-3.5" %>
+          <%= @merchant.comments_count %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <footer class="border-t border-base-content/20 text-xs pt-2 space-y-1">
+    <% if @merchant.latitude %>
+      <%= link_to new_merchant_itinerary_path(@merchant),
+            class: "flex items-center gap-1" do %>
+        <%= t("merchants.show.itinerary.calculate_my_itinerary") %>
+        <%= lucide_icon "car", class: "w-4" %>
+      <% end %>
+    <% end %>
+
+    <div class="text-right">
+      <%= render "merchants/last_survey_on", merchant: @merchant %>
+    </div>
+  </footer>
+</div>

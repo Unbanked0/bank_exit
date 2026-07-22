@@ -1,0 +1,62 @@
+<article>
+  <header class="hero bg-fixed bg-banner-tutorials">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold">
+          <%= t('.title') %>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl space-y-8!">
+    <%= render 'breadcrumb' %>
+
+    <% if @highlighted_tutorials.present? %>
+      <section>
+        <h2 class="text-primary uppercase mb-3">
+          <%= t('.features_tutorials_title') %>
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 content-center align-center">
+          <%= render @highlighted_tutorials %>
+        </div>
+      </section>
+    <% end %>
+
+    <section>
+      <h2 class="text-primary uppercase mb-3">
+        <%= t('.other_tutorials_title') %>
+      </h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <% @other_tutorials.each do |tutorial| %>
+          <li>
+            <%= link_to tutorial_path(tutorial.identifier) do %>
+              <h3 class="inline">
+                <%= tutorial.title %>
+              </h3>
+            <% end %>
+
+            <% if tutorial.level? %>
+              <span class="badge badge-sm ml-3 <%= tutorial_class_by_level(tutorial.level) %>">
+                <%= t(tutorial.level, scope: 'articles.wrapper') %>
+              </span>
+            <% end %>
+
+            <% if tutorial.time? %>
+              <span
+                class="badge badge-sm badge-neutral ml-3"
+                title="<%= tutorial.time %>'"
+              >
+                <%= distance_of_time_in_words(tutorial.time.minutes) %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+</article>

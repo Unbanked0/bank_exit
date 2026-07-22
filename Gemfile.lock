@@ -528,13 +528,6 @@ GEM
     simplecov (1.0.1)
     sitemap_generator (7.1.0)
       builder (~> 3.0)
-    slim (5.2.1)
-      temple (~> 0.10.0)
-      tilt (>= 2.1.0)
-    slim-rails (4.0.0)
-      actionpack (>= 3.1)
-      railties (>= 3.1)
-      slim (>= 3.0, < 6.0, != 5.0.0)
     solid_cable (4.0.0)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -580,14 +573,12 @@ GEM
     tailwindcss-ruby (4.3.2-x86_64-darwin)
     tailwindcss-ruby (4.3.2-x86_64-linux-gnu)
     tailwindcss-ruby (4.3.2-x86_64-linux-musl)
-    temple (0.10.4)
     thor (1.5.0)
     thruster (0.1.23)
     thruster (0.1.23-aarch64-linux)
     thruster (0.1.23-arm64-darwin)
     thruster (0.1.23-x86_64-darwin)
     thruster (0.1.23-x86_64-linux)
-    tilt (2.8.0)
     timeout (0.6.1)
     tsort (0.2.0)
     turbo-rails (2.0.23)
@@ -699,7 +690,6 @@ DEPENDENCIES
   simple_form
   simplecov
   sitemap_generator
-  slim-rails
   solid_cable
   solid_cache
   solid_queue

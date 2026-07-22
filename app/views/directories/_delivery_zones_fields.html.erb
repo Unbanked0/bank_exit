@@ -1,0 +1,58 @@
+<%# locals: (f:) %>
+
+<div
+  class="<%= class_names('nested-fields relative card bg-base-200', 'opacity-50': !f.object.enabled?) %>"
+  data-controller="admin--address"
+  data-admin--address-search-url-value="<%= addresses_search_path %>"
+>
+  <div class="card-body">
+    <%= f.input :id,
+                as: :hidden,
+                wrapper: false %>
+
+    <%= f.input :_destroy,
+                as: :hidden,
+                wrapper: false %>
+
+    <div
+      class="flex flex-col items-center gap-3"
+      data-controller="delivery-zones"
+      data-delivery-zones-url-value="<%= mode_values_delivery_zones_path %>"
+      data-delivery-zones-param-value="mode"
+    >
+      <%= f.input :mode,
+                  collection: select_options_for(DeliveryZone, :modes),
+                  include_blank: false,
+                  input_html: {
+                    data: {
+                      action: 'change->delivery-zones#change'
+                    }
+                  } %>
+
+      <% data = case f.object.mode
+                when 'region'
+                  french_regions_select_helper
+                when 'department'
+                  french_departments_select_helper
+                when 'continent'
+                  continents_select_helper
+                end %>
+
+      <%= render 'delivery_zones/input_value',
+                 f: f,
+                 mode: f.object.mode,
+                 data: data %>
+
+      <%= f.input :enabled,
+                  as: :boolean unless f.object.deliverable.requested_by_user? %>
+    </div>
+  </div>
+
+  <div class="remove-link-wrapper absolute top-2 right-2">
+    <%= button_tag lucide_icon('x'),
+                    class: 'btn btn-square btn-xs btn-error',
+                    data: {
+                    action: "click->nested-form#removeAssociation"
+                    } %>
+  </div>
+</div>

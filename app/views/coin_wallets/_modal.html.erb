@@ -1,0 +1,23 @@
+<%# locals: (coin_wallet:) %>
+
+<% content_for(:modal_title) do %>
+  <%= coin_wallet.walletable.name %>
+<% end %>
+
+<%= render_modal auto_open: true do %>
+  <figure class="text-center">
+    <%= qr_code_for_coin_wallet(coin_wallet, show_logo: true) %>
+
+    <figcaption class="mt-2">
+      <div class="<%= class_names('alert mb-1 tracking-wider break-all inline-block text-center') %>">
+        <%== highlight_address(coin_wallet.public_address) %>
+      </div>
+
+      <p>
+        <%= render 'copy_to_clipboard',
+                   clipboard_value: coin_wallet.public_address,
+                   clipboard_success_text_value: nil %>
+      </p>
+    </figcaption>
+  </figure>
+<% end %>

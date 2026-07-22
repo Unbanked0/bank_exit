@@ -39,6 +39,17 @@ module ActionView
               #{erb_source}
             end
 
+            # Remove leading indentation from rendered HTML before passing it to CommonMarker.
+            #
+            # CommonMark interprets lines indented by 4 or more spaces as indented code blocks.
+            # Since ERB partials are typically formatted with indentation for readability,
+            # embedded HTML (e.g. <li>, <div>, ...) may be incorrectly rendered as <pre><code>.
+            # Stripping the common leading indentation preserves the intended HTML structure
+            # while keeping the Markdown source readable.
+            markdown = markdown.to_s.lines.map { |line|
+              line.sub(/^ {2,}/, "")
+            }.join
+
             html = Commonmarker.to_html(
               markdown.to_s,
               options: #{OPTIONS.inspect}
@@ -69,4 +80,9 @@ module ActionView
   end
 end
 
-ActionView::Template.register_template_handler(:md, ActionView::Template::Handlers::Markdown)
+[:md].each do |extension|
+  ActionView::Template.register_template_handler(
+    extension,
+    ActionView::Template::Handlers::Markdown
+  )
+end

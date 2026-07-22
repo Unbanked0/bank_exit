@@ -1,0 +1,270 @@
+<article>
+  <header class="hero bg-fixed bg-banner-default">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold"><%= t('.title') %></h1>
+
+        <p class="highlight-link"><%= t('.introduction_html') %></p>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl">
+    <%= render 'breadcrumb' %>
+
+    <div class="alert alert-info alert-soft">
+      <p>
+        <%= t('.physical_store_notice_html', link: link_to(t('.directory_proposal_link'), new_directory_path)) %>
+      </p>
+    </div>
+
+    <% if @merchant_proposal.errors.any? %>
+      <div class="alert alert-error mt-3">
+        <ul class="list-disc list-inside">
+          <% @merchant_proposal.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= simple_form_for @merchant_proposal,
+                        html: {
+                          class: 'space-y-10',
+                          data: {
+                            turbo: false,
+                            controller: 'new-merchant'
+                          }
+                        } do |f| %>
+      <section>
+        <p class="uppercase text-primary mb-3">
+          <%= t('.form.general_info') %>
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6 mb-3 lg:mb-6">
+          <%= f.input :name %>
+
+          <%= f.input :category,
+                      collection: merchant_categories_select_helper,
+                      prompt: :translate,
+                      input_html: {
+                        data: {
+                          action: 'change->new-merchant#displayOrHideOtherCategory'
+                        }
+                      } %>
+
+          <%= f.input :other_category,
+                      as: :string,
+                      wrapper_html: {
+                        class: ('hidden' unless @merchant_proposal.category.in?(['other'])),
+                        data: {
+                          new_merchant_target: :otherCategoryWrapper
+                        }
+                      },
+                      input_html: {
+                        data: {
+                          new_merchant_target: :otherCategoryInput
+                        }
+                      } %>
+
+          <fieldset
+            class="
+              fieldset bg-base-200 border-base-300 rounded-box border p-4
+              lg:col-span-2
+            "
+          >
+            <legend class="fieldset-legend">Adresse</legend>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6 mb-3 lg:mb-6">
+              <%= f.input :street %>
+              <%= f.input :postcode %>
+
+              <%= f.input :city %>
+
+              <div class="fieldset w-full">
+                <%= f.input :country,
+                            prompt: :translate,
+                            format: :with_flag,
+                            wrapper: false,
+                            input_html: {
+                              autocomplete: false,
+                              class: 'select w-full'
+                            },
+                            label_html: {
+                              class: 'fieldset-legend'
+                            } %>
+              </div>
+
+              <%= f.input :latitude, as: :float %>
+              <%= f.input :longitude, as: :float %>
+            </div>
+          </fieldset>
+
+          <%= f.input :phone %>
+          <%= f.input :email %>
+
+          <%= f.input :website %>
+          <%= f.input :opening_hours %>
+        </div>
+
+        <%= render 'description_with_counter', f: f %>
+      </section>
+
+      <section>
+        <p class="uppercase text-primary mb-3">
+          <%= t('.form.coins') %>
+        </p>
+
+        <div class="mb-6">
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+            <% MerchantProposal::ALLOWED_COINS.each do |coin| %>
+              <div class="hover:scale-110 motion-safe:transition-transform">
+                <input
+                  type="checkbox"
+                  id="<%= coin %>-option"
+                  value="<%= coin %>"
+                  class="hidden peer"
+                  name="merchant_proposal[coins][]"
+                  <% if params.dig(:merchant_proposal, :coins)&.include?(coin.to_s) %>
+                    checked
+                  <% end %>
+                >
+
+                <label
+                  class="pretty-checkbox block text-center"
+                  for="<%= coin %>-option"
+                  tabindex="0"
+                >
+                  <p class="mb-2">
+                    <%= image_tag icon_by_coin(coin), class: 'w-16 rounded-full mx-auto', alt: coin %>
+                  </p>
+
+                  <p>
+                    <%= MerchantProposal.human_attribute_name(coin) %>
+                  </p>
+                </label>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-center gap-2">
+            <% { false => 'false', nil => '', true => 'true' }.each do |label_val, val| %>
+              <% input_id = "ask_kyc_option_#{val.presence || 'nil'}" %>
+
+              <div>
+                <input
+                  type="radio"
+                  id="<%= input_id %>"
+                  name="merchant_proposal[ask_kyc]"
+                  value="<%= val %>"
+                  class="hidden peer"
+                  <% if params.dig(:merchant_proposal, :ask_kyc).to_s == val %>
+                    checked
+                  <% end %>
+                >
+
+                <label
+                  class="pretty-checkbox block text-center"
+                  for="<%= input_id %>"
+                  tabindex="0"
+                >
+                  <% case val %>
+                  <% when 'true' %>
+                    <%= merchant_kyc_no_kyc(true, klass: 'w-32 h-32 mx-auto') %>
+                  <% when 'false' %>
+                    <%= merchant_kyc_no_kyc(false, klass: 'w-32 h-32 mx-auto') %>
+                  <% else %>
+                    <%= merchant_kyc_no_kyc(nil, klass: 'w-32 h-32 mx-auto') %>
+                  <% end %>
+                </label>
+              </div>
+            <% end %>
+          </div>
+
+          <p class="text-base-content/60 text-sm mt-2 text-center italic">
+            <%= t('simple_form.hints.merchant_proposal.ask_kyc') %>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <p class="uppercase text-primary mb-3">
+          <%= t('.form.contact') %>
+        </p>
+
+        <div class="grid lg:grid-cols-2 gap-3 lg:gap-6">
+          <%= f.input :contact_facebook %>
+          <%= f.input :contact_twitter %>
+          <%= f.input :contact_telegram %>
+          <%= f.input :contact_signal %>
+          <%= f.input :contact_session %>
+          <%= f.input :contact_odysee %>
+          <%= f.input :contact_crowdbunker %>
+          <%= f.input :contact_francelibretv %>
+        </div>
+
+        <details class="mt-6">
+          <summary class="cursor-pointer">
+            <%= t('.form.other_contact') %>
+          </summary>
+
+          <div class="grid lg:grid-cols-2 gap-3 lg:gap-6 mt-3">
+            <%= f.input :contact_tripadvisor %>
+            <%= f.input :contact_matrix %>
+            <%= f.input :contact_jabber %>
+            <%= f.input :contact_youtube %>
+            <%= f.input :contact_linkedin %>
+            <%= f.input :contact_instagram %>
+            <%= f.input :contact_tiktok %>
+          </div>
+        </details>
+      </section>
+
+      <section class="space-y-3">
+        <p class="uppercase text-primary mb-3">
+          <%= t('.form.additional_info') %>
+        </p>
+
+        <div class="space-y-6">
+          <%= f.input :delivery,
+                      as: :boolean,
+                      boolean_style: :inline,
+                      input_html: {
+                        data: {
+                          new_merchant_target: :delivery,
+                          action: 'click->new-merchant#toggleDeliveryZone'
+                        }
+                      } %>
+
+          <%= f.input :delivery_zone,
+                      wrapper_html: {
+                        class: 'hidden',
+                        data: {
+                          new_merchant_target: :deliveryZone
+                        }
+                      } %>
+
+          <div class="flex flex-col lg:flex-row justify-center gap-6">
+            <%= f.input :last_survey_on, as: :date, html5: true %>
+            <%= f.input :proposition_from, as: :email %>
+          </div>
+        </div>
+      </section>
+
+      <%# Captcha to trick bots, should remain empty %>
+      <%= f.input :nickname, wrapper_html: { class: 'hidden' } %>
+
+      <div class="text-center lg:text-right">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</article>
+
+<% if @faqs.any? %>
+  <%= render template: 'faqs/show' %>
+<% end %>

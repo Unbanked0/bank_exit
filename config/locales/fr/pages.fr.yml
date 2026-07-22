@@ -100,6 +100,11 @@ fr:
         source_link: https://horloge-de-la-dette-publique.com
         chart_debt_title: Dette (en milliards)
 
+    cbdc_digital_euro:
+      countdown:
+        label: avant la fin de la phase de préparation de l'€uro numérique
+        source_html: source <abbr title="Banque Centrale Européenne">BCE</abbr>
+
   tutorials:
     index:
       title: Les tutoriels

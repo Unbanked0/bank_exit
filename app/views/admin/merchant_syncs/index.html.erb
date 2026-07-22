@@ -1,0 +1,47 @@
+<%= turbo_stream_from [:admin, :merchant_syncs] %>
+<%= turbo_stream_from [:admin, :merchant_syncs, I18n.locale] %>
+
+<% content_for :page_title do %>
+  <%= MerchantSync.model_name.human %>
+<% end %>
+
+<% if allowed_to?(:index?, with: Admin::MerchantPolicy) %>
+  <% content_for :page_actions do %>
+    <li>
+      <%= back_link_to admin_merchants_path %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render 'admin/merchants/stats',
+           merchant_sync: @merchant_sync,
+           dashboard_presenter: @dashboard_presenter %>
+
+<%= simple_form_for '',
+                    url: admin_merchant_syncs_path(turbo_stream: true),
+                    method: :get,
+                    html: {
+                      class: 'w-full lg:w-1/2 mx-auto mb-6',
+                      data: {
+                        turbo_stream: true,
+                        controller: 'admin--search',
+                        action: 'keyup->admin--search#submit'
+                      }
+                    } do |f| %>
+  <%= f.input :query,
+              label: false,
+              placeholder: t('simple_form.placeholders.merchant_sync.query'),
+              input_html: {
+                value: params.dig(:query),
+                data: {
+                  admin__search_target: :query
+                }
+              },
+              wrapper: false %>
+<% end %>
+
+<div id="merchant_syncs_container">
+  <%= render 'merchant_syncs',
+             merchant_syncs: @merchant_syncs,
+             pagy: @pagy %>
+</div>

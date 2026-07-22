@@ -27,10 +27,6 @@ es:
       switch_to_dark: Cambiar al tema oscuro
       switch_to_auto: Cambiar al tema del sistema
 
-    countdown:
-      label: antes del final de la fase de preparación
-      source_html: fuente <abbr title="Banco Central Europeo">BCE</abbr>
-
     contacts:
       title: Redes y contactos
 

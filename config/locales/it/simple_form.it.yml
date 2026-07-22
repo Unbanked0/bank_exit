@@ -36,7 +36,7 @@ it:
       map:
         onchain_only: Solo on-chain (senza ⚡)
         delivery: Con consegna a domicilio
-        no_kyc: <span>Non richiedere <abbr title="Know Your Customer">KYC</abbr></span>
+        no_kyc_html: <span>Non richiedere <abbr title="Know Your Customer">KYC</abbr></span>
         with_atms: Includi <abbr title="Automated Teller Machine">ATM (bancomat)</abbr> ?
         category:
           all: Tutte le categorie

@@ -1,0 +1,268 @@
+<% coin_wallets = @directory.coin_wallets.enabled %>
+<% contact_ways = ContactWayDecorator.wrap(@directory.contact_ways.enabled) %>
+<% delivery_zones = @directory.delivery_zones.enabled %>
+<% weblinks = WeblinkDecorator.wrap(@directory.weblinks.enabled) %>
+
+<article>
+  <div
+    class="hero bg-fixed bg-no-repeat bg-top relative <%= @directory.banner.attached? ? 'bg-cover lg:bg-contain' : 'bg-banner-default' %>"
+    <% if @directory.banner.attached? %>
+      style="background-image: url(<%= rails_blob_path(@directory.banner.variant(:thumb)) %>)"
+    <% end %>
+  >
+    <div class="absolute top-3 right-3">
+      <% if authenticated? %>
+        <button
+          class="btn btn-square"
+          role="button"
+          tabindex="0"
+          aria-label="Menu for directory"
+          popovertarget="popover-directory"
+          style="anchor-name:--anchor-directory"
+        >
+          <%= lucide_icon "ellipsis-vertical", class: "w-6" %>
+        </button>
+        <ul
+          class="
+            dropdown dropdown-end menu bg-base-100 rounded-box z-1 w-max p-2
+            shadow-sm border border-base-content/20 space-y-2
+          "
+          tabindex="0"
+          popover=""
+          id="popover-directory"
+          style="position-anchor:--anchor-directory"
+        >
+          <% if allowed_to?(:update?, @directory, namespace: Admin) %>
+            <li>
+              <%= edit_link_to edit_admin_directory_path(@directory), hotkey: true %>
+            </li>
+          <% end %>
+
+          <% if allowed_to?(:destroy?, @directory, namespace: Admin) %>
+            <li>
+              <%= destroy_link_to admin_directory_path(@directory),
+                                  turbo_confirm: t("admin.directories.actions.destroy_confirm") %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main">
+      <header class="max-w-xl">
+        <div class="text-center space-y-6">
+          <%= render "logo_or_initials", model: @directory, mode: :extra_large %>
+
+          <h1 class="text-3xl font-bold">
+            <%= @directory.name %>
+          </h1>
+
+          <% if @directory.category.present? %>
+            <div class="badge mx-auto badge-secondary">
+              <%= @directory.friendly_category %>
+            </div>
+          <% end %>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="article-body max-w-5xl space-y-8!">
+    <%= render "breadcrumb" %>
+
+    <% if @directory.description? %>
+      <div>
+        <h2 class="text-primary uppercase mb-2">
+          <%= t("description") %>
+        </h2>
+
+        <div class="space-y-3">
+          <%= simple_format(highlight(@directory.description, params[:q])) %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @directory.address %>
+      <div>
+        <h2 class="text-primary uppercase mb-2">
+          <%= t("address") %>
+        </h2>
+
+        <%= @directory.address.label %>
+      </div>
+    <% end %>
+
+    <% if coin_wallets.any? %>
+      <div>
+        <h2 class="text-primary uppercase mb-2">
+          <%= Directory.human_attribute_name(:coins) %>
+        </h2>
+
+        <div class="flex flex-col lg:flex-row items-center gap-3">
+          <% coin_wallets.each do |coin_wallet| %>
+            <div class="card bg-base-200">
+              <div class="card-body space-y-4 justify-between">
+                <%= image_tag icon_by_coin(coin_wallet.coin),
+                      class: "w-20 h-20 mx-auto hover:scale-110 motion-safe:transition-transform",
+                      title: coin_wallet.coin.capitalize,
+                      alt: coin_wallet.coin.capitalize %>
+
+                <div class="card-title justify-center text-base">
+                  <%= coin_wallet.coin.capitalize %>
+                </div>
+
+                <% if coin_wallet.qrcodable? %>
+                  <%= link_to coin_link_address_with_protocol(coin_wallet.coin, coin_wallet.public_address) do %>
+                    <div
+                      class="badge badge-primary"
+                      title="<%= coin_wallet.public_address %>"
+                    >
+                      <%= coin_wallet.public_address_reduced %>
+                    </div>
+                  <% end %>
+                  <div class="flex items-center justify-center gap-5">
+                    <%= render "copy_to_clipboard",
+                               clipboard_value: coin_wallet.public_address,
+                               clipboard_success_text_value: nil,
+                               attr_title: nil %>
+
+                    <%= link_to coin_wallet,
+                                data: { turbo_stream: true },
+                                title: "QRcode" do %>
+                      <%= lucide_icon "qr-code" %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if delivery_zones.any? %>
+      <div>
+        <h2 class="text-primary uppercase mb-2">
+          <%= DeliveryZone.model_name.human.capitalize %>
+          <%= lucide_icon "truck", class: "inline-flex w-5" %>
+        </h2>
+
+        <div class="alert alert-vertical overflow-y-auto space-y-3">
+          <% delivery_zones.group_by(&:mode).each do |mode, rows| %>
+            <div>
+              <h3 class="text-primary font-semibold mb-1">
+                <%= DeliveryZone.human_enum_name(:mode, mode) %>
+              </h3>
+
+              <% if rows.count > 1 %>
+                <ul class="list-disc list-inside">
+                  <% rows.each do |row| %>
+                    <li>
+                      <%= render "delivery_zones/formatted_zone_by_mode",
+                            delivery_zone: row %>
+                    </li>
+                  <% end %>
+                </ul>
+              <% elsif rows.any? %>
+                <%= render "delivery_zones/formatted_zone_by_mode",
+                      delivery_zone: rows.first %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if contact_ways.any? %>
+      <div>
+        <h2 class="text-primary uppercase mb-2">
+          <%= t("contact") %>
+        </h2>
+
+        <div class="alert alert-vertical overflow-y-auto">
+          <% contact_ways.each do |contact_way| %>
+            <div class="flex items-center gap-2">
+              <%= social_contact_icon(contact_way.role) %>
+
+              <% if contact_way.email? %>
+                <%= mail_to contact_way.value, contact_way.value %>
+              <% elsif contact_way.phone? %>
+                <%= phone_to contact_way.value, contact_way.value %>
+              <% elsif contact_way.session? || contact_way.signal? %>
+                <%= contact_way.value %>
+              <% else %>
+                <%= link_to clean_url(contact_way.value).truncate(50),
+                            contact_way.value,
+                            target: :_blank,
+                            rel: "noopener" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if weblinks.any? %>
+      <div>
+        <h2 class="text-primary uppercase mb-2">
+          <%= Weblink.model_name.human %>
+        </h2>
+
+        <div class="alert overflow-y-auto">
+          <% if weblinks.count > 1 %>
+            <ul class="list-disc list-inside">
+              <% weblinks.each do |weblink| %>
+                <li>
+                  <%= link_to weblink.url,
+                              target: :_blank,
+                              rel: "noopener" do %>
+                    <%= weblink.title.presence || clean_url(weblink.url) %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <%= link_to weblinks.first.url,
+                  target: :_blank,
+                  rel: "noopener" do %>
+              <%= weblinks.first.title.presence || clean_url(weblinks.first.url) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if allowed_to?(:index?, Comment) %>
+      <div>
+        <%= turbo_frame_tag :comments_wrapper,
+              src: directory_comments_path(@directory),
+              loading: :lazy do %>
+          <%= render "loader_noscript",
+                message_noscript: "JavaScript is required to display comments" %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="text-right text-sm italic text-base-content/50 space-y-1">
+      <p title="<%= l(@directory.created_at) %>">
+        <%= t("added_on", date: time_ago_in_words(@directory.created_at)) %>
+      </p>
+
+      <% if @directory.updated_at.to_date != @directory.created_at.to_date %>
+        <p title="<%= l(@directory.updated_at) %>">
+          <%= t("updated_on", date: time_ago_in_words(@directory.updated_at)) %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+    <%= json_escape(schema_dot_org_directory(@directory).to_json).html_safe %>
+  </script>
+</article>
+
+<% if @faqs.any? %>
+  <%= render template: "faqs/show" %>
+<% end %>
