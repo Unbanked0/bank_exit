@@ -5,7 +5,7 @@
 
 El folleto **Salida del Banco** ha sido diseñado como una guía práctica para dar los primeros pasos. En pocas páginas encontrarás las herramientas, las buenas prácticas y los recursos esenciales para comenzar, tanto si eres **particular**, **comerciante**, **autónomo**, **empresario** o simplemente tienes curiosidad por los pagos descentralizados.
 
-<figure>
+<figure class="print:hidden">
   <iframe
     src="/pdfs/Flyers_SDB_2025_V4_7_ESP1.pdf"
     class="w-full rounded-lg lg:h-200"

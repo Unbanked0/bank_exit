@@ -16,7 +16,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
 <header
   class="
     sticky top-0 bg-base-100/90 z-50 border-b border-base-content/10
-    backdrop-blur
+    backdrop-blur print:hidden
   "
 >
   <div class="navbar shadow-sm">
@@ -43,7 +43,10 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
 
     <div class="navbar-center text-base-content">
       <div
-        class="megamenu max-lg:megamenu-vertical megamenu-full text-base-content"
+        class="
+          megamenu max-lg:megamenu-vertical megamenu-full text-base-content
+          gap-2
+        "
         id="main_menu"
         popover
       >

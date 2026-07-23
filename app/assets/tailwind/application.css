@@ -112,7 +112,7 @@
 }
 
 @utility hero-content-main {
-    @apply py-20;
+    @apply py-20 print:py-3!;
 }
 
 @utility table-wrapper {
@@ -213,6 +213,11 @@ mark {
 @media print {
     #map {
         page-break-before: always;
+    }
+
+    a[target="_blank"]::after {
+        display: none !important;
+        content: none !important;
     }
 }
 

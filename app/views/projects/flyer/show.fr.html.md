@@ -5,7 +5,7 @@ Vous souhaitez découvrir les paiements en cryptomonnaies sans passer des heures
 
 Le flyer **Sortie de Banque** a été conçu comme une fiche pratique. En quelques pages, il rassemble les outils, les bonnes pratiques et les liens utiles pour débuter, que vous soyez **particulier**, **commerçant**, **artisan**, **profession libérale** ou simplement curieux.
 
-<figure>
+<figure class="print:hidden">
   <iframe
     src="/pdfs/Flyers_SDB_2026_V5_1.pdf"
     class="w-full rounded-lg lg:h-200"

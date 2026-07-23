@@ -121,7 +121,7 @@ module ApplicationHelper
       iframe = tag.iframe(
         nil,
         src: video[:url],
-        class: 'rounded-box mx-auto w-full h-72 lg:w-3/4 lg:h-137.5',
+        class: 'rounded-box mx-auto w-full h-72 lg:w-3/4 lg:h-137.5 print:hidden',
         title: 'Video iframe'
       )
 
