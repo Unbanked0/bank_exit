@@ -167,8 +167,9 @@ it:
         introduction: Segnala eventuali bug individuati nel tutorial. Sarà creato automaticamente un issue su Github così gli sviluppatori potranno analizzarlo e correggerlo.
         submit: Segnala l’anomalia
 
-    accounting_download:
-      download_document: Scarica il documento
+    accounting:
+      accounting_download:
+        download_document: Scarica il documento
 
   faqs:
     show:

@@ -40,15 +40,3 @@
   description: Democracia directa, libre y accesible para todos
   image: voxpopuli.jpg
   banner: banner-projects
-
-- identifier: local_groups
-  title: Los grupos locales
-  description: Encuentre los diferentes grupos de Banque Sortie en Francia (París, Rennes, Lille, Lyon, etc.)
-  image: local_groups.jpg
-  banner: banner-projects
-
-- identifier: accounting
-  title: Contabilidad empresarial
-  description: Gestione fácilmente la contabilidad de su empresa con un archivo Excel que automatiza sus cálculos de ingresos de Monero y Bitcoin.
-  image: accounting.jpg
-  banner: banner-projects

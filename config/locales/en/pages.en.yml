@@ -175,8 +175,9 @@ en:
         introduction: Please report any bugs you identified in the tutorial. An issue will be automatically created on Github so developers can analyze and fix the bug.
         submit: Report the anomaly
 
-    accounting_download:
-      download_document: Download document
+    accounting:
+      accounting_download:
+        download_document: Download document
 
   faqs:
     show:

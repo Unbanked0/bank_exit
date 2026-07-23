@@ -167,8 +167,9 @@ es:
         introduction: Por favor indique las anomalías que identificó en el tutorial. Se creará automáticamente un problema en Github para que los desarrolladores analicen y solucionen el error.
         submit: Reportar la anomalía
 
-    accounting_download:
-      download_document: Descargar el documento
+    accounting:
+      accounting_download:
+        download_document: Descargar el documento
 
   faqs:
     show:

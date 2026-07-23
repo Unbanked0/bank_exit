@@ -20,8 +20,9 @@ class PublicController < ApplicationController
   end
 
   def set_tutorials
-    @bitcoin_tutorial = Tutorial.find('bitcoin-nokyc')
-    @highlighted_tutorials = Tutorial.all.select(&:highlight?)
+    @tutorials = Tutorial.all(decorate: true)
+    @bitcoin_tutorial = @tutorials.find(&:bitcoin_nokyc?)
+    @highlighted_tutorials = @tutorials.select(&:highlight?)
   end
 
   # Remove empty GET params from URL

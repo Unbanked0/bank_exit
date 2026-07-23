@@ -167,8 +167,9 @@ de:
         introduction: Bitte melde alle Fehler, die du im Tutorial gefunden hast. Ein Problem wird automatisch auf Github erstellt, damit Entwickler den Fehler analysieren und beheben können.
         submit: Fehler melden
 
-    accounting_download:
-      download_document: Dokument herunterladen
+    accounting:
+      accounting_download:
+        download_document: Dokument herunterladen
 
   faqs:
     show:

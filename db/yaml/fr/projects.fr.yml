@@ -40,15 +40,3 @@
   description: La démocratie directe, libre et accessible à tous
   image: voxpopuli.jpg
   banner: banner-projects
-
-- identifier: local_groups
-  title: Les groupes locaux
-  description: Retrouver les différents groupes Sortie de Banque en Europe
-  image: local_groups.jpg
-  banner: banner-projects
-
-- identifier: accounting
-  title: Comptabilité d'entreprise
-  description: Gérer votre comptabilité d'entreprise facilement grâce à un ficher Excel qui automatise votre calcul de revenus Monero et Bitcoin
-  image: accounting.jpg
-  banner: banner-projects

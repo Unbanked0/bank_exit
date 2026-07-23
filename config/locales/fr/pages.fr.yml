@@ -176,8 +176,9 @@ fr:
         introduction: Veuillez indiquer les anomalies que vous avez identifiées sur le tutoriel. Une issue sera automatiquement créée sur Github pour que les développeurs puissent analyser et corriger l'anomalie.
         submit: Signaler l'anomalie
 
-    accounting_download:
-      download_document: Télécharger le document
+    accounting:
+      accounting_download:
+        download_document: Télécharger le document
 
   faqs:
     show:

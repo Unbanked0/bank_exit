@@ -40,15 +40,3 @@
   description: Direct democracy, free and accessible to all
   image: voxpopuli.jpg
   banner: banner-projects
-
-- identifier: local_groups
-  title: Local groups
-  description: Find the different Bank-Exit groups in France (Paris, Rennes, Lille, Lyon, ...)
-  image: local_groups.jpg
-  banner: banner-projects
-
-- identifier: accounting
-  title: Company accountings
-  description: Manage your business accounting easily with an Excel file that automates your Monero and Bitcoin income calculations
-  image: accounting.jpg
-  banner: banner-projects

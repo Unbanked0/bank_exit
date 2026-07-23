@@ -1,7 +1,8 @@
+<%# locals: (projects:, tutorials:, highlighted_tutorials:, bitcoin_tutorial:, monero_tutorial:) %>
+
 <% grocery = projects.find(&:grocery?)
-local_groups = projects.find(&:local_groups?)
-business_guide_tutorial = Tutorial.find('cryptopayment-for-business')
-accounting_project = projects.find(&:accounting?)
+business_guide_tutorial = tutorials.find(&:cryptopayment_for_business?)
+accounting_tutorial = tutorials.find(&:accounting?)
 
 active_map = controller_path.in?(%w[maps merchants merchants/itineraries])
 active_directories = controller_name == "directories"
@@ -45,7 +46,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
       <div
         class="
           megamenu max-lg:megamenu-vertical megamenu-full text-base-content
-          gap-2
+          lg:gap-2
         "
         id="main_menu"
         popover
@@ -244,9 +245,9 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                   </li>
 
                   <li>
-                    <%= link_to project_path('accounting'),
-                          class: class_names('menu-active': current_page?(project_path('accounting'))) do %>
-                      <%= accounting_project.title %>
+                    <%= link_to tutorial_path('accounting'),
+                          class: class_names('menu-active': current_page?(tutorial_path('accounting'))) do %>
+                      <%= accounting_tutorial.title %>
                     <% end %>
                   </li>
                 </ul>
@@ -301,7 +302,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                   <li>
                     <%= link_to local_groups_path,
                           class: class_names('menu-active': controller_name == "local_groups") do %>
-                      <%= local_groups.title %>
+                      <%= t("local_groups.index.title") %>
                       <%= inline_svg_tag "contacts/telegram.svg", class: 'inline-flex bg-white text-[#27A7E7] w-5 rounded-full', title: 'Telegram', alt: 'Logo Telegram' %>
                     <% end %>
                   </li>
