@@ -317,7 +317,7 @@ forced to white to make texts readables */
 
 /* Markdown prose admonition */
 .prose aside.admonition {
-    @apply alert alert-soft alert-vertical my-6 text-base;
+    @apply alert alert-soft alert-vertical mb-6 text-base;
 }
 
 .prose aside.admonition .admonition-title {
