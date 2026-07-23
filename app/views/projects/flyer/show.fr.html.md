@@ -72,7 +72,7 @@ Le flyer constitue une excellente introduction, mais il ne remplace pas une docu
 Si vous souhaitez approfondir l'utilisation de **Monero** dans un contexte professionnel, nous vous recommandons également ce guide illustré.
 
 <figure>
-  <%= image_tag "projects/flyers/flyer_schmidt1024_poster_fr.jpg", alt: "Guide Monero pour les commerçants" %>
+  <%= image_tag "projects/flyer/flyer_schmidt1024_poster_fr.jpg", alt: "Guide Monero pour les commerçants" %>
 
   <figcaption class="text-xs text-center italic mt-2">
     <%= link_to "https://gitea.pro/schmidt1024/monero-for-merchants-booklet/src/branch/main/translations/fr/Monero%20pour%20les%20Commer%C3%A7ants.pdf", target: :_blank do %>

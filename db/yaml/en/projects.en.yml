@@ -2,41 +2,34 @@
 - identifier: map
   title: Map
   description: View and filter Bitcoin and Monero businesses worldwide
-  image: map_monero.jpg
   banner: banner-projects
 
 - identifier: flyer
   title: Flyer
   description: Monero and Bitcoin for individuals and profesionals
-  image: flyer.jpg
   banner: banner-projects
 
 - identifier: grocery
   title: Freedom Grocers
   description: Buy quality Monero products
-  image: epicerie_monero.png
   banner: banner-projects
 
 - identifier: cheque
   title: Cheques
   description: Generate printable checks to pay in Bitcoin and Monero
-  image: cheque_monero.png
   banner: banner-projects
 
 - identifier: sticker
   title: Stickers
   description: Generate Bitcoin and Monero donation or payment banners
-  image: sticker_monero.png
   banner: banner-projects
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
   description: Measure the real adoption of cryptocurrencies based on the number of merchants accepting them worldwide.
-  image: coinadoptionscore.jpg
   banner: banner-projects
 
 - identifier: voxpopuli
   title: VoxPopuli
   description: Direct democracy, free and accessible to all
-  image: voxpopuli.jpg
   banner: banner-projects

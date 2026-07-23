@@ -7,7 +7,7 @@ Pour de nombreux projets, associations, créateurs ou indépendants, accepter de
 
 L'objectif est de permettre des échanges directs entre contributeurs et bénéficiaires, sans dépendre d'une plateforme de paiement centralisée.
 
-[![Illustration CryptoBox](<%= image_path('projects/sticker_monero.png') %>)](https://monero-map.org/crypto_box)
+[![Illustration CryptoBox](<%= image_path('projects/sticker/cover.jpg') %>)](https://monero-map.org/crypto_box)
 
 ## Qu'est-ce que CryptoBox ?
 

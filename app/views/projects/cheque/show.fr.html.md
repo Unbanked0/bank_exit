@@ -3,7 +3,7 @@
 
 Comment offrir des cryptomonnaies à quelqu'un qui ne les utilise pas encore ? Comment transmettre une petite somme de Bitcoin, de Monero ou de June de manière simple, comme on offrirait un billet ou un chèque cadeau ? Le projet de [chèque numérique](https://monero-map.org/cheque) apporte une réponse concrète à ces questions en utilisant un format que tout le monde connaît : un document papier contenant une valeur numérique récupérable par son bénéficiaire.
 
-[![Illustration du chèque](<%= image_path('projects/cheque_monero.png') %>)](https://monero-map.org/cheque)
+[![Illustration du chèque](<%= image_path('projects/cheque/cover.jpg') %>)](https://monero-map.org/cheque)
 
 ## Pourquoi créer un chèque en cryptomonnaie ?
 

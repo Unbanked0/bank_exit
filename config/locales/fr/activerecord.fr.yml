@@ -61,6 +61,9 @@ fr:
       tutorial:
         one: tutoriel
         other: tutoriels
+      project:
+        one: projet
+        other: projets
 
     attributes:
       merchant_proposal:

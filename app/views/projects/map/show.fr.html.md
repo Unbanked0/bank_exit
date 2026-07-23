@@ -5,7 +5,7 @@ Vous cherchez un restaurant, un artisan, un thérapeute, un hébergement ou un c
 
 [La carte](<%= maps_path %>) du Collectif a été conçue pour faciliter la rencontre entre les utilisateurs de monnaies numériques et les commerçants qui les acceptent. Son objectif est simple : rendre les paiements en Bitcoin et Monero plus accessibles au quotidien.
 
-[![La carte](<%= image_path('projects/map_monero.jpg') %>)](<%= maps_path %>)
+[![La carte](<%= image_path('projects/map/cover.jpg') %>)](<%= maps_path %>)
 
 ## Que permet la carte ?
 

@@ -9,10 +9,13 @@ class SearchesController < PublicController
     if params[:page].nil? || params.expect(:page).to_i == 1
       if query.present?
         tutorials = Tutorial.by_query(query)
-        @tutorials = TutorialDecorator.wrap(tutorials)
+        @query_tutorials = TutorialDecorator.wrap(tutorials)
 
         blogs = Blog.by_query(query)
-        @blogs = BlogDecorator.wrap(blogs)
+        @query_blogs = BlogDecorator.wrap(blogs)
+
+        projects = Project.by_query(query)
+        @query_projects = BlogDecorator.wrap(projects)
       end
 
       directories_filter = Directories::Filter.call(query: query)

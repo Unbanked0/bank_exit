@@ -5,6 +5,10 @@ class StaticContent
 
   attr_accessor :model
 
+  def self.human_count(count, pretty_count:)
+    "<strong>#{pretty_count}</strong> #{model_name.human(count: count)}"
+  end
+
   def initialize(model)
     super
     @model = model.with_indifferent_access

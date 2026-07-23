@@ -7,10 +7,6 @@ class Article < StaticContent
   attribute :created_at, :date
   attribute :highlight, :boolean, default: false
 
-  def self.human_count(count, pretty_count:)
-    "<strong>#{pretty_count}</strong> #{model_name.human(count: count)}"
-  end
-
   def short_description
     super || render_template.truncate(250)
   end

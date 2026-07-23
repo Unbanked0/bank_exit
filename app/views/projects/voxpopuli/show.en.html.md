@@ -5,7 +5,7 @@ In a community-driven project, users are not only consumers: they can also parti
 
 This is the purpose of [VoxPopuli](https://vote.libre-market.com): to provide a simple space where everyone can take part in collective decision-making.
 
-[![VoxPopuli illustration](<%= image_path('projects/voxpopuli.jpg') %>)](https://vote.libre-market.com)
+[![VoxPopuli illustration](<%= image_path('projects/voxpopuli/cover.jpg') %>)](https://vote.libre-market.com)
 
 ## Why a voting tool?
 

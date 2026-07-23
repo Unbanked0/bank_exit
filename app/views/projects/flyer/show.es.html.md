@@ -70,7 +70,7 @@ Según las necesidades de cada usuario, Bitcoin y Monero pueden complementar los
 Este folleto está pensado como una introducción. Si deseas profundizar en el uso de Monero para actividades comerciales, también te recomendamos esta guía ilustrada.
 
 <figure>
-  <%= image_tag "projects/flyers/flyer_schmidt1024_poster_es.jpg", alt: "Guía Monero para comerciantes" %>
+  <%= image_tag "projects/flyer/flyer_schmidt1024_poster_es.jpg", alt: "Guía Monero para comerciantes" %>
 
   <figcaption class="text-xs text-center italic mt-2">
     <%= link_to "https://gitea.pro/schmidt1024/monero-for-merchants-booklet", target: :_blank do %>

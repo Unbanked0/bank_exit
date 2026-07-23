@@ -56,6 +56,9 @@ de:
       tutorial:
         one: Tutorial
         other: Tutorials
+      project:
+        one: Projekt
+        other: Projekte
 
     attributes:
       merchant_proposal:

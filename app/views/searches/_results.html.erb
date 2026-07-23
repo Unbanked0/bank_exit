@@ -1,6 +1,41 @@
+<%# locals: (merchants:, directories:, projects:, tutorials:, blogs:, pagy:) %>
+
 <% list_item_class = "list-row hover:bg-base-200! hover:text-base-content!" %>
 
 <nav class="list bg-base-100 max-h-[62svh] overflow-y-auto p-2">
+  <% if projects.present? %>
+    <div class="p-2 text-xs opacity-60 tracking-wide">
+      <%== Project.human_count(projects.count, pretty_count: number_with_delimiter(projects.count)) %>
+    </div>
+    <% projects.each do |project| %>
+      <%= link_to project_path(project, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
+        <% if project.cover? %>
+          <%= image_tag project.cover, alt: project.title, class: "object-cover w-10 h-10" %>
+        <% else %>
+          <div></div>
+        <% end %>
+
+        <div>
+          <div class="font-semibold text-md">
+            <%== highlight(project.title, params[:query]) %>
+          </div>
+
+          <% if project.short_description.present? %>
+            <p class="list-col-wrap text-xs opacity-70 mt-2">
+              <%== sanitize(
+                  highlight(
+                    project.short_description,
+                    params[:query]
+                  ),
+                  tags: %w[mark]
+                ).delete_prefix("\nImportant\n") %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <% if tutorials.present? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
       <%== Tutorial.human_count(tutorials.count, pretty_count: number_with_delimiter(tutorials.count)) %>
@@ -32,7 +67,7 @@
                   params[:query]
                 ),
                 tags: %w[mark]
-              ) %>
+              ).delete_prefix("\nImportant\n") %>
             </p>
           <% end %>
         </div>
@@ -65,7 +100,7 @@
                   params[:query]
                 ),
                 tags: %w[mark]
-              ) %>
+              ).delete_prefix("\nImportant\n") %>
             </p>
           <% end %>
         </div>
@@ -169,7 +204,7 @@
     <% end %>
   <% end %>
 
-  <% if blogs.blank? && tutorials.blank? && directories.blank? && merchants.blank? %>
+  <% if projects.blank? && blogs.blank? && tutorials.blank? && directories.blank? && merchants.blank? %>
     <li>
       <div
         class="

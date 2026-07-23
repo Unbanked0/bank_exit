@@ -7,7 +7,7 @@ How can you send a small amount of Bitcoin, Monero or June in the same simple wa
 
 The [digital cheque](https://monero-map.org/cheque) project provides a practical answer to these questions by using a format everyone understands: a paper document containing a digital value that can be claimed by its recipient.
 
-[![Cheque illustration](<%= image_path('projects/cheque_monero.png') %>)](https://monero-map.org/cheque)
+[![Cheque illustration](<%= image_path('projects/cheque/cover.jpg') %>)](https://monero-map.org/cheque)
 
 ## Why create a cryptocurrency cheque?
 

@@ -2,53 +2,44 @@
 - identifier: map
   title: Karte
   description: Weltweite Bitcoin- und Monero-Geschäfte anzeigen und filtern
-  image: map_monero.jpg
   banner: banner-projects
 
 - identifier: flyer
   title: Flyer
   description: Monero und Bitcoin für Privatpersonen und Unternehmen
-  image: flyer.jpg
   banner: banner-projects
 
 - identifier: grocery
   title: Freiheits-Lebensmittel
   description: Qualitativ hochwertige Monero-Produkte kaufen
-  image: epicerie_monero.png
   banner: banner-projects
 
 - identifier: cheque
   title: Schecks
   description: Druckbare Schecks für Zahlungen mit Bitcoin und Monero erstellen
-  image: cheque_monero.png
   banner: banner-projects
 
 - identifier: sticker
   title: Sticker
   description: Bitcoin- und Monero-Spenden- oder Zahlungsbanner generieren
-  image: sticker_monero.png
   banner: banner-projects
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
   description: Die tatsächliche Verbreitung von Kryptowährungen anhand der Anzahl der Händler messen, die sie weltweit akzeptieren.
-  image: coinadoptionscore.jpg
   banner: banner-projects
 
 - identifier: voxpopuli
   title: VoxPopuli
   description: Direkte Demokratie, frei und für alle zugänglich
-  image: voxpopuli.jpg
   banner: banner-projects
 
 - identifier: local_groups
   title: Lokale Gruppen
   description: Finde die verschiedenen Bank-Exit-Gruppen in Frankreich (Paris, Rennes, Lille, Lyon usw.)
-  image: local_groups.jpg
   banner: banner-projects
 
 - identifier: accounting
   title: Buchhaltung für Unternehmen
   description: Verwalte die Buchhaltung deines Unternehmens ganz einfach mit einer Excel-Datei, die deine Bitcoin- und Monero-Einnahmen automatisch berechnet
-  image: accounting.jpg
   banner: banner-projects

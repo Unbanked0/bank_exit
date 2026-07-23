@@ -70,7 +70,7 @@ Depending on your needs, Bitcoin and Monero can complement traditional payment s
 This flyer is designed as an introduction. If you would like to explore the merchant use case in greater depth, we also recommend the following illustrated guide dedicated to Monero.
 
 <figure>
-  <%= image_tag "projects/flyers/flyer_schmidt1024_poster_en.jpg", alt: "Monero for Merchants guide" %>
+  <%= image_tag "projects/flyer/flyer_schmidt1024_poster_en.jpg", alt: "Monero for Merchants guide" %>
 
   <figcaption class="text-xs text-center italic mt-2">
     <%= link_to "https://gitea.pro/schmidt1024/monero-for-merchants-booklet", target: :_blank do %>

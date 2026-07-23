@@ -180,7 +180,7 @@ class MapsController < PublicController
   end
 
   def set_seo
-    image = view_context.image_url('projects/map_monero.jpg')
+    image = view_context.image_url('projects/map/cover.jpg')
 
     set_meta_tags og: { image: image },
                   twitter: { image: image }
