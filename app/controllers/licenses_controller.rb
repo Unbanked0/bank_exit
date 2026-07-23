@@ -1,8 +1,8 @@
 class LicensesController < ApplicationController
   allow_unauthenticated_access
 
+  layout false
+
   # @route GET /license (license)
-  def show
-    render file: 'public/license_for_project.html', layout: false
-  end
+  def show; end
 end

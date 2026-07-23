@@ -164,4 +164,6 @@ SitemapGenerator::Sitemap.create(**options) do
       end
     end
   end
+
+  add license_url
 end
