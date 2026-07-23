@@ -67,6 +67,7 @@
 
     .badge.badge-june {
         --badge-color: #f8ed5a;
+        --badge-fg: #333333 !important;
     }
 }
 
