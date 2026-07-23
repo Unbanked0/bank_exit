@@ -106,15 +106,11 @@
       <h2 class="footer-title"><%= t('.projects') %></h2>
 
       <% projects.each do |project| %>
-        <%= link_to project.link, target: (:_blank if project.external?) do %>
+        <%= link_to project_path(project) do %>
           <%= project.title %>
 
           <% if project.identifier == 'local_groups' %>
             <%= inline_svg_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white rounded-full text-[#27A7E7] w-5', title: 'Telegram', alt: 'Logo Telegram' %>
-          <% end %>
-
-          <% if project.external? %>
-            <%= lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1' %>
           <% end %>
         <% end %>
       <% end %>

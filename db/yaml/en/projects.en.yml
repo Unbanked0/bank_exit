@@ -1,71 +1,54 @@
 ---
-- route: maps#index
-  image: map_monero.jpg
+- identifier: map
   title: Map
   description: View and filter Bitcoin and Monero businesses worldwide
-  external: false
-  identifier: map
+  image: map_monero.jpg
+  banner: banner-projects
 
-- route: blogs#show
-  identifier: flyer
-  image: flyer.jpg
+- identifier: flyer
   title: Flyer
   description: Monero and Bitcoin for individuals and profesionals
+  image: flyer.jpg
+  banner: banner-projects
 
-- route: projects#show
-  image: epicerie_monero.png
-  website_screenshot: not_iframe/grocery.jpg
+- identifier: grocery
   title: Freedom Grocers
   description: Buy quality Monero products
-  external: false
-  iframe_url: https://libre-market.com/m/epicerie
-  github_url: https://github.com/Unbanked0/Freedom_Grocers
-  identifier: grocery
+  image: epicerie_monero.png
+  banner: banner-projects
 
-- route: projects#show
-  image: cheque_monero.png
-  website_screenshot: not_iframe/cheque.jpg
+- identifier: cheque
   title: Cheques
   description: Generate printable checks to pay in Bitcoin and Monero
-  external: false
-  iframe_url: https://monero-map.org/cheque
-  github_url: https://github.com/Unbanked0/Monero_Cheque
-  identifier: cheque
-  figure:
-    video:
-      url: https://youtube.com/embed/mK3AaPkwxSk
-      title: "MONERO CRYPTO CHEQUE - Accelerating adoption, tangible, phone-free #MoneroCheque"
-      created_at: "2024-10-26"
+  image: cheque_monero.png
+  banner: banner-projects
 
-- route: projects#show
-  image: sticker_monero.png
-  website_screenshot: not_iframe/sticker.jpg
+- identifier: sticker
   title: Stickers
   description: Generate Bitcoin and Monero donation or payment banners
-  external: false
-  iframe_url: https://monero-map.org/crypto_box
-  github_url: https://github.com/Bank-Exit/Crypto_Box_sticker
-  identifier: sticker
+  image: sticker_monero.png
+  banner: banner-projects
 
-- route: projects#show
-  image: voxpopuli.jpg
-  website_screenshot: voxpopuli.jpg
+- identifier: coinadoptionscore
+  title: CoinAdoptionScore®
+  description: Measure the real adoption of cryptocurrencies based on the number of merchants accepting them worldwide.
+  image: coinadoptionscore.jpg
+  banner: banner-projects
+
+- identifier: voxpopuli
   title: VoxPopuli
   description: Direct democracy, free and accessible to all
-  external: false
-  iframe_url: https://vote.libre-market.com
-  identifier: voxpopuli
+  image: voxpopuli.jpg
+  banner: banner-projects
 
-- route: local_groups#index
-  image: local_groups.jpg
+- identifier: local_groups
   title: Local groups
   description: Find the different Bank-Exit groups in France (Paris, Rennes, Lille, Lyon, ...)
-  external: false
-  identifier: local_groups
+  image: local_groups.jpg
+  banner: banner-projects
 
-- route: tutorials#show
-  image: accounting.jpg
+- identifier: accounting
   title: Company accountings
   description: Manage your business accounting easily with an Excel file that automates your Monero and Bitcoin income calculations
-  external: false
-  identifier: accounting
+  image: accounting.jpg
+  banner: banner-projects

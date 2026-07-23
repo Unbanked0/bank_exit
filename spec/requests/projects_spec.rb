@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def project_ids
-  %w[grocery cheque sticker]
+  %w[map flyer grocery cheque sticker coinadoptionscore voxpopuli local_groups accounting]
 end
 
 RSpec.describe 'Projects' do
@@ -13,18 +13,6 @@ RSpec.describe 'Projects' do
         subject! { get "/projects/#{project_id}" }
 
         it { expect(response).to redirect_to project_en_path(project_id) }
-      end
-    end
-
-    context 'when flyer project' do
-      subject! { get '/projects/flyer' }
-
-      it 'follows redirects', :aggregate_failures do
-        expect(response).to redirect_to project_en_path('flyer')
-
-        follow_redirect!
-
-        expect(response).to redirect_to blog_en_path('flyer')
       end
     end
 
@@ -43,12 +31,6 @@ RSpec.describe 'Projects' do
 
           it { expect(response).to have_http_status :ok }
         end
-      end
-
-      context 'when flyer project' do
-        subject! { get "/#{locale}/projects/flyer" }
-
-        it { expect(response).to redirect_to send("blog_#{locale}_path", 'flyer') }
       end
 
       context 'when project does not exist' do

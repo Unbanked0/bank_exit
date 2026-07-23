@@ -1,0 +1,21 @@
+<article>
+  <header class="hero bg-fixed bg-banner-projects">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content hero-content-main text-center">
+      <div class="max-w-xl space-y-5">
+        <h1 class="text-3xl font-bold">
+          <%= t('application.header.projects') %>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-body max-w-5xl">
+    <%= render 'breadcrumb' %>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <%= render @projects %>
+    </div>
+  </div>
+</article>

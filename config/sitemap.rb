@@ -116,6 +116,13 @@ SitemapGenerator::Sitemap.create(**options) do
           end)
         end
 
+        add projects_path, priority: 1, alternates: (I18n.available_locales.map do |locale|
+          {
+            href: projects_url(locale: locale.to_s, host: options[:default_host]),
+            lang: locale.to_s
+          }
+        end)
+
         projects = Project.all
         projects.each do |project|
           next if project.identifier == 'map'

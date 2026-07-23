@@ -11,7 +11,7 @@
 - question: ¿Cómo convencer a un comerciante?
   content:
     - answer:
-        - Imprime (o encarga que se impriman) algunos folletos (artículo en {{blogs#show->flyer}}).
+        - Imprime (o encarga que se impriman) algunos folletos (artículo en {{projects#show->flyer}}).
         - Ayúdalos a crear una billetera Monero con CakeWallet (tutorial en {{tutorials#show->cakewallet-monero}}).
         - Una vez al año, registra sus ventas de Monero en el archivo Excel predefinido (tutorial en {{tutorials#show->accounting}}).
         - Una vez hecho esto, agrégalos al mapa usando el botón verde <span class="badge badge-success">Sugerir un comerciante</span> en {{maps#index}} o directamente en el formulario {{merchant_proposals#new}}.

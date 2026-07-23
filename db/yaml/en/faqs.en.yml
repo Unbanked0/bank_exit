@@ -11,7 +11,7 @@
 - question: How to convince a merchant?
   content:
     - answer:
-        - Print (or have printed) a few flyers (article on {{blogs#show->flyer}}).
+        - Print (or have printed) a few flyers (article on {{projects#show->flyer}}).
         - Help them create a Monero wallet with CakeWallet (tutorial on {{tutorials#show->cakewallet-monero}}).
         - Once a year, enter their Monero sales into the ready-made Excel file (tutorial on {{tutorials#show->accounting}}).
         - Once done, add them to the map using the green <span class="badge badge-success">Suggest a merchant</span> button on {{maps#index}} or directly on the {{merchant_proposals#new}} form!

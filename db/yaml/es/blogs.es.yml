@@ -1,8 +1,4 @@
 ---
-- title: El folleto Bank-Exit
-  identifier: flyer
-  created_at: "2025-04-10"
-
 - title: El €uro digital "Cash+"
   identifier: cbdc-digital-euro
   banner: banner-cbdc

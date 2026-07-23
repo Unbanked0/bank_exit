@@ -15,10 +15,6 @@
   created_at: "2025-08-01"
   short_description: Première assemblée Sortie de Banque 2025 avec des ateliers bénévoles encadrés par des experts.
 
-- title: Prospectus Sortie de Banque
-  identifier: flyer
-  created_at: "2025-04-10"
-
 - title: Présentation Sortie de Banque
   identifier: presentation-bank-exit
   created_at: "2025-01-31"

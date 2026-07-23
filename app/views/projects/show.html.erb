@@ -1,77 +1,18 @@
-<article>
-  <header class="hero bg-fixed bg-banner-open-source">
-    <div class="hero-overlay"></div>
+<% content_for :header_actions do %>
+  <div class="flex items-center justify-center gap-5 print:hidden">
+    <%= render 'share_by_email',
+               subject: t('blogs.show.subject', title: @project.title),
+               body: t('blogs.show.body', link: tutorial_url(@project.identifier)),
+               icon_klass: 'w-8 h-8' %>
 
-    <div class="hero-content hero-content-main text-center">
-      <div class="max-w-xl space-y-5">
-        <h1 class="text-3xl font-bold"><%= @project.title %></h1>
+    <%= render 'print_me', icon_klass: 'w-8 h-8' %>
+  </div>
+<% end %>
 
-        <p><%= @project.description %></p>
+<% content_for :footer_actions do %>
+  <script type="application/ld+json">
+    <%= json_escape(schema_dot_org_project(@project).to_json).html_safe %>
+  </script>
+<% end %>
 
-        <div class="card bg-base-100 text-base-content">
-          <div class="card-body">
-            <% if @project.iframe_url? %>
-              <p>
-                <%= link_to @project.iframe_url,
-                      target: :_blank,
-                      rel: "noopener" do %>
-                  <%= lucide_icon "link", class: "inline-flex w-5", title: "Website" %>
-                  <%= @project.iframe_url %>
-                <% end %>
-              </p>
-            <% end %>
-
-            <% if @project.github_url? %>
-              <p>
-                <%= link_to @project.github_url,
-                      target: :_blank,
-                      rel: "noopener",
-                      title: "Github repository" do %>
-                  <%= lucide_icon "github", class: "w-5 inline-flex" %>
-                  <%= @project.github_url %>
-                <% end %>
-              </p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section class="article-body max-w-3xl">
-    <%#
-      TODO: Find a way to load the website by iframe when domain
-      name conflict with Rails router will be fixed
-    %>
-
-    <% if @project.website_screenshot? %>
-      <figure class="mb-6">
-        <% image = capture do %>
-          <%= image_tag(
-                  "projects/#{@project.website_screenshot}",
-                  alt: @project.title,
-                  class: "mx-auto object-cover rounded-box border-2 border-base-300/80"
-                ) %>
-        <% end %>
-
-        <% if @project.iframe_url? %>
-          <%= link_to @project.iframe_url,
-                target: :_blank,
-                rel: "noopener" do %>
-            <%= image %>
-          <% end %>
-        <% else %>
-          <%= image %>
-        <% end %>
-
-        <figcaption class="text-xs text-center italic mt-2">
-          <%= t(".website_homepage") %>
-        </figcaption>
-      </figure>
-    <% end %>
-
-    <% if @project.video? %>
-      <%= video_embed(@project.video.as_json.symbolize_keys) %>
-    <% end %>
-  </section>
-</article>
+<%= render 'articles/wrapper', article: @project %>

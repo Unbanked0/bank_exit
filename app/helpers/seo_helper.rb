@@ -178,6 +178,27 @@ module SEOHelper
     json
   end
 
+  def schema_dot_org_project(project)
+    json = {
+      '@context': 'http://schema.org/',
+      '@type': 'TechArticle',
+      name: project.title,
+      license: license_url
+    }
+
+    json[:articleBody] = strip_tags(project.render_template)
+
+    if project.video?
+      json[:video] = {
+        '@type': 'VideoObject',
+        name: project.video_title,
+        embedUrl: project.video_url
+      }
+    end
+
+    json
+  end
+
   def schema_dot_org_merchant(merchant)
     json = {
       '@context': 'http://schema.org/',

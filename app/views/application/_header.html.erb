@@ -146,37 +146,24 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
           <div class="<%= megamenu_popover_class %>">
             <ul class="menu">
               <li>
-                <span class="text-base-content/50 uppercase">
-                  <%= t('.projects') %>
-                </span>
+                <%= link_to t('.projects'), projects_path %>
 
                 <ul>
                   <% projects.each do |project| %>
                     <% next if project.identifier.in?(%w[map local_groups accounting]) %>
 
                     <li>
-                      <%= link_to project.link,
-                                class: ('menu-active' if current_page?(id: project.identifier)),
-                                target: (:_blank if project.external?) do %>
+                      <%= link_to project_path(project),
+                                class: ('menu-active' if current_page?(project_path(project))) do %>
                         <%= project.title %>
-
-                        <% if project.external? %>
-                          <%= lucide_icon 'square-arrow-out-up-right', class: 'w-4 inline-flex ml-1' %>
-                        <% end %>
                       <% end %>
                     </li>
                   <% end %>
-
-                  <li>
-                    <%= link_to "https://coinadoptionscore.com", target: :_blank do %>
-                      CoinAdoptionScore
-                    <% end %>
-                  </li>
                 </ul>
               </li>
             </ul>
 
-            <%= link_to grocery.link, class: "md:max-w-sm max-lg:hidden" do %>
+            <%= link_to project_path(grocery), class: "md:max-w-sm max-lg:hidden" do %>
               <%= image_tag "projects/epicerie_monero.png", class: "rounded-lg", alt: "Epicerie Libre Monero", loading: :lazy %>
             <% end %>
           </div>
@@ -254,8 +241,8 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                   </li>
 
                   <li>
-                    <%= link_to accounting_project.link,
-                          class: class_names('menu-active': current_page?(id: 'accounting')) do %>
+                    <%= link_to project_path('accounting'),
+                          class: class_names('menu-active': current_page?(project_path('accounting'))) do %>
                       <%= accounting_project.title %>
                     <% end %>
                   </li>

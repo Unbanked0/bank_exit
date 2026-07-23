@@ -1,71 +1,54 @@
 ---
-- route: maps#index
-  image: map_monero.jpg
+- identifier: map
   title: El mapa
   description: Ver y filtrar negocios de Bitcoin y Monero en todo el mundo
-  external: false
-  identifier: map
+  image: map_monero.jpg
+  banner: banner-projects
 
-- route: blogs#show
-  identifier: flyer
-  image: flyer.jpg
+- identifier: flyer
   title: El folleto
   description: Integración de Monero y Bitcoin para particulares y empresas
+  image: flyer.jpg
+  banner: banner-projects
 
-- route: projects#show
-  image: epicerie_monero.png
-  website_screenshot: not_iframe/grocery.jpg
+- identifier: grocery
   title: La Tienda Libre
   description: Comprar productos de calidad en Monero
-  external: false
-  iframe_url: https://libre-market.com/m/epicerie
-  github_url: https://github.com/Unbanked0/Freedom_Grocers
-  identifier: grocery
+  image: epicerie_monero.png
+  banner: banner-projects
 
-- route: projects#show
-  image: cheque_monero.png
-  website_screenshot: not_iframe/cheque.jpg
+- identifier: cheque
   title: Los cheques
   description: Imprimir cheques para pagar en Bitcoin y Monero
-  external: false
-  iframe_url: https://monero-map.org/cheque
-  github_url: https://github.com/Unbanked0/Monero_Cheque
-  identifier: cheque
-  figure:
-    video:
-      url: https://youtube.com/embed/mK3AaPkwxSk
-      title: "MONERO CRYPTO CHEQUE - Acelerando la adopción, tangible, sin necesidad de teléfono #MoneroCheque"
-      created_at: "2024-10-26"
+  image: cheque_monero.png
+  banner: banner-projects
 
-- route: projects#show
-  image: sticker_monero.png
-  website_screenshot: not_iframe/sticker.jpg
+- identifier: sticker
   title: Los stickers
   description: Generar banners de donación o pago en Bitcoin y Monero
-  external: false
-  iframe_url: https://monero-map.org/crypto_box
-  github_url: https://github.com/Bank-Exit/Crypto_Box_sticker
-  identifier: sticker
+  image: sticker_monero.png
+  banner: banner-projects
 
-- route: projects#show
-  image: voxpopuli.jpg
-  website_screenshot: voxpopuli.jpg
+- identifier: coinadoptionscore
+  title: CoinAdoptionScore®
+  description: Medir la adopción real de las criptomonedas a partir del número de comercios que las aceptan en todo el mundo.
+  image: coinadoptionscore.jpg
+  banner: banner-projects
+
+- identifier: voxpopuli
   title: VoxPopuli
   description: Democracia directa, libre y accesible para todos
-  external: false
-  iframe_url: https://vote.libre-market.com
-  identifier: voxpopuli
+  image: voxpopuli.jpg
+  banner: banner-projects
 
-- route: local_groups#index
-  image: local_groups.jpg
+- identifier: local_groups
   title: Los grupos locales
   description: Encuentre los diferentes grupos de Banque Sortie en Francia (París, Rennes, Lille, Lyon, etc.)
-  external: false
-  identifier: local_groups
+  image: local_groups.jpg
+  banner: banner-projects
 
-- route: tutorials#show
-  image: accounting.jpg
+- identifier: accounting
   title: Contabilidad empresarial
   description: Gestione fácilmente la contabilidad de su empresa con un archivo Excel que automatiza sus cálculos de ingresos de Monero y Bitcoin.
-  external: false
-  identifier: accounting
+  image: accounting.jpg
+  banner: banner-projects

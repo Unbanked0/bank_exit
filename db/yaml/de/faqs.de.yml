@@ -11,7 +11,7 @@
 - question: Wie überzeugt man einen Händler?
   content:
     - answer:
-        - Drucke (oder lasse drucken) ein paar Flyer aus (Artikel unter {{blogs#show->flyer}}).
+        - Drucke (oder lasse drucken) ein paar Flyer aus (Artikel unter {{projects#show->flyer}}).
         - Hilf dem Händler, ein Monero-Wallet mit CakeWallet zu erstellen (Anleitung unter {{tutorials#show->cakewallet-monero}}).
         - "Einmal jährlich: Trage die Monero-Verkäufe in die vorbereitete Excel-Datei ein (Anleitung unter {{tutorials#show->accounting}})."
         - Danach kannst du den Händler auf der Karte hinzufügen, über den grünen Button <span class="badge badge-success">Händler vorschlagen</span> auf {{maps#index}} oder direkt über das Formular {{merchant_proposals#new}}!
