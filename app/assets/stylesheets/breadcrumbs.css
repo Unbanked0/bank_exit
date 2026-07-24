@@ -5,3 +5,7 @@ nav#breadcrumb a {
 .breadcrumbs {
     padding: 0;
 }
+
+body:not(.admin) .breadcrumbs {
+    padding: 0.25rem 0.2rem;
+}

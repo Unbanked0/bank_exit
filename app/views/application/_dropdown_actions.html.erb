@@ -5,7 +5,7 @@ button_attributes[:aria] = aria if aria.present?
 dropdown_attributes = details_html.deep_dup %>
 
 <button
-  class="btn btn-square <%= btn_style %>"
+  class="btn btn-square <%= btn_style %> print:hidden"
   popovertarget="popover-<%= item_id %>"
   style="anchor-name:--anchor-<%= item_id %>"
   <%= tag.attributes(button_attributes) %>
@@ -14,7 +14,7 @@ dropdown_attributes = details_html.deep_dup %>
 </button>
 
 <div
-  class="dropdown dropdown-end"
+  class="dropdown dropdown-end print:hidden"
   popover
   id="popover-<%= item_id %>"
   style="position-anchor:--anchor-<%= item_id %>"

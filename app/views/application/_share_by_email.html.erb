@@ -1,15 +1,33 @@
-<%= mail_to "",
-            subject: subject,
-            body: body,
-            class: 'flex items-center gap-2',
-            title: t('share_by_email'),
-            data: { \
-              controller: 'hotkey', \
-              action: "keydown.s@document->hotkey#click" \
-            } do %>
-  <%= lucide_icon 'mail', class: (icon_klass if defined?(icon_klass)) %>
+<%# locals: (in_menu: false, label: nil, subject:, body:, icon_klass: nil) %>
 
-  <%= yield %>
+<% if in_menu %>
+  <%= mail_to "",
+              subject: subject,
+              body: body,
+              class: 'flex items-center gap-2',
+              data: { \
+                controller: 'hotkey', \
+                action: "keydown.s@document->hotkey#click" \
+              } do %>
+    <%= lucide_icon 'mail', class: icon_klass %>
+    <%= label if label %>
+    <%= hotkey_label('s', size: 'xs') %>
+  <% end %>
+<% else %>
+  <div class="flex items-center gap-2">
+    <%= mail_to "",
+                subject: subject,
+                body: body,
+                class: 'btn btn-circle',
+                title: t('share_by_email'),
+                data: { \
+                  controller: 'hotkey', \
+                  action: "keydown.s@document->hotkey#click" \
+                } do %>
+      <%= lucide_icon 'mail', class: icon_klass %>
+      <%= label if label %>
+    <% end %>
 
-  <%= hotkey_label('s', size: 'xs') %>
+    <%= hotkey_label('s', size: 'xs') %>
+  </div>
 <% end %>

@@ -1,13 +1,29 @@
-<%= button_tag type: :button,
-               class: 'flex items-center gap-2 cursor-pointer',
+<%# locals: (in_menu: false, label: nil, icon_klass: nil) %>
+
+<% if in_menu %>
+  <%= button_tag type: :button,
+                 class: 'flex items-center gap-2 cursor-pointer',
+                 data: {
+                   controller: 'printer',
+                   action: 'click->printer#print'
+                 } do %>
+    <%= lucide_icon 'printer', class: icon_klass %>
+    <%= label if label %>
+    <%= hotkey_label(['ctrl', 'p'], size: 'xs') %>
+  <% end %>
+<% else %>
+  <div class="flex items-center gap-2">
+    <%= button_tag type: :button,
+               class: 'btn btn-circle',
                title: t('print'),
                data: {
                  controller: 'printer',
                  action: 'click->printer#print'
                } do %>
-  <%= lucide_icon 'printer', class: (icon_klass if local_assigns.key?(:icon_klass)) %>
+      <%= lucide_icon 'printer', class: icon_klass %>
+      <%= label if label %>
+    <% end %>
 
-  <%= yield %>
-
-  <%= hotkey_label(['ctrl', 'p'], size: 'xs') %>
+    <%= hotkey_label(['ctrl', 'p'], size: 'xs') %>
+  </div>
 <% end %>
