@@ -183,7 +183,7 @@ a:not(.btn, .badge, .menu a, .card):hover,
     color: var(--color-primary);
 }
 
-a[target="_blank"]:not(.no-blank-icon, .anchor):not(:has(img)) {
+a[target="_blank"]:not(.no-blank-icon, .anchor, .card):not(:has(img)) {
     &:after {
         content: " ";
         display: inline-block;

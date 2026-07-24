@@ -78,17 +78,25 @@
       </h2>
 
       <%= link_to t('application.header.home'), root_path %>
+      <%= link_to t('collectives.show.title'), collective_path %>
 
-      <%= link_to collective_path do %>
-        <%= t('collectives.show.title') %>
+      <span>
+        <%= link_to t('application.header.map'), maps_path %>
+        <span class="opacity-60 mx-1"> &bull; </span>
+        <%= link_to t('application.header.directories'), directories_path %>
+      </span>
+
+      <span>
+        <%= link_to t('application.header.blogs'), blogs_path %>
+        <span class="opacity-60 mx-1"> &bull; </span>
+        <%= link_to t('application.header.tutorials'), tutorials_path %>
+      </span>
+
+      <%= link_to local_groups_path do %>
+        <%= t('local_groups.index.title') %>
+        <%= inline_svg_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white rounded-full text-[#27A7E7] w-5', title: 'Telegram', alt: 'Logo Telegram' %>
       <% end %>
 
-      <%= link_to directories_path do %>
-        <%= Directory.model_name.human.capitalize %>
-      <% end %>
-
-      <%= link_to t('application.header.blogs'), blogs_path %>
-      <%= link_to t('application.header.tutorials'), tutorials_path %>
       <%= link_to t('media.index.title'), media_path %>
       <%= link_to t('application.header.faq'), faq_path %>
       <%= link_to t('glossaries.show.title'), glossaries_path %>
@@ -108,10 +116,6 @@
       <% projects.each do |project| %>
         <%= link_to project_path(project) do %>
           <%= project.title %>
-
-          <% if project.identifier == 'local_groups' %>
-            <%= inline_svg_tag "contacts/telegram.svg", class: 'inline-flex ml-2 bg-white rounded-full text-[#27A7E7] w-5', title: 'Telegram', alt: 'Logo Telegram' %>
-          <% end %>
         <% end %>
       <% end %>
     </nav>

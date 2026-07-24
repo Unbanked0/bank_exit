@@ -154,8 +154,6 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
 
                 <ul>
                   <% projects.each do |project| %>
-                    <% next if project.identifier.in?(%w[map local_groups accounting]) %>
-
                     <li>
                       <%= link_to project_path(project),
                                 class: ('menu-active' if current_page?(project_path(project))) do %>
