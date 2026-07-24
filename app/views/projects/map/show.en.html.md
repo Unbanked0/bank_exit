@@ -24,7 +24,7 @@ You can:
 Getting started is easy:
 
 1. Open the interactive map.
-2. Allow geolocation or search for a city.
+2. Search by name, address, or keywords.
 3. Apply the filters that match your needs.
 4. Click on a business to view its details and accepted payment methods.
 

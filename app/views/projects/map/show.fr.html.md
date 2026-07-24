@@ -24,7 +24,7 @@ Vous pouvez notamment :
 Utiliser la carte est très simple :
 
 1. Ouvrez la carte interactive.
-2. Autorisez la géolocalisation ou recherchez une ville.
+2. Recherchez par nom, adresse ou mots-clés.
 3. Appliquez les filtres correspondant à vos besoins.
 4. Cliquez sur un commerçant pour consulter sa fiche et les moyens de paiement acceptés.
 

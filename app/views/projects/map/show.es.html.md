@@ -24,7 +24,7 @@ Puedes:
 Empezar es muy sencillo:
 
 1. Abre el mapa interactivo.
-2. Activa la geolocalización o busca una ciudad.
+2. Busca por nombre, dirección o palabras clave.
 3. Aplica los filtros que mejor se adapten a tus necesidades.
 4. Haz clic en un comercio para consultar su ficha y los métodos de pago que acepta.
 
