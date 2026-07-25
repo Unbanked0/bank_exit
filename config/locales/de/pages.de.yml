@@ -59,11 +59,7 @@ de:
 
     coins:
       title: Geld und Münzen
-      headline: Das Kollektiv empfiehlt die folgenden Zahlungsmittel aufgrund ihrer Dezentralisierung und Unverfolgbarkeit, wenn möglich (wie Bargeld).
-
-    projects:
-      title: Projekte
-      headline: Das Kollektiv arbeitet an verschiedenen Werkzeugen, die darauf abzielen, die alltägliche, souveräne Erfahrung mit Bitcoin und Monero zu verbessern.
+      headline: Das Kollektiv stellt die folgenden Tauschmittel vor, deren gemeinsame Eigenschaften ein gewisses Maß an Dezentralisierung und – je nach ihrer Beschaffenheit – an Nichtnachverfolgbarkeit umfassen.
 
     tutorials:
       title: Wichtige Tutorials
@@ -215,6 +211,9 @@ de:
          <p><strong>Das Kollektiv schließt jede Haftung</strong> im Zusammenhang mit persönlichen Handlungen und Konsequenzen aus, die du möglicherweise aufgrund der Informationen in dieser Präsentation oder unserer Medien-/Social-Media-Inhalte, die anderweitig öffentlich verfügbar sind, vorgenommen hast.</p>
 
   projects:
+    index:
+      title: Die Projekte
+      headline: Das Kollektiv stellt verschiedene Projekte im Zusammenhang mit der alltäglichen und souveränen Nutzung von Bitcoin und Monero vor.
     show:
       website_homepage: Webseite-Startseite
 

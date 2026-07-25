@@ -59,11 +59,7 @@ en:
 
     coins:
       title: Money and coins
-      headline: The collective recommends the following means of exchange for their decentralisation and untraceability if possible (like cash).
-
-    projects:
-      title: Projects
-      headline: The Collective is making progress on various tools aimed at improving the everyday, sovereign experience of Bitcoin and Monero.
+      headline: The collective presents the following means of exchange, whose shared characteristics include a certain degree of decentralization and, depending on their nature, trace resistance.
 
     tutorials:
       title: Important tutorials
@@ -223,6 +219,9 @@ en:
          <p><strong>The collective disclaims all liability</strong> related to any personal actions and consequences you may have performed pretexting the information in this presentation or our media/social content, otherwise publicly available.</p>
 
   projects:
+    index:
+      title: Projects
+      headline: The Collective presents various projects related to the everyday and sovereign use of Bitcoin and Monero.
     show:
       website_homepage: Website homepage
 

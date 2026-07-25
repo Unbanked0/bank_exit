@@ -1,45 +1,36 @@
 ---
 - identifier: map
   title: Mappa
-  description: Visualizza e filtra le attività commerciali Bitcoin e Monero in tutto il mondo
-  banner: banner-projects
+  description: Consulta una mappa delle attività commerciali che accettano Bitcoin e Monero.
 
 - identifier: flyer
   title: Volantino
-  description: Monero e Bitcoin per privati e professionisti
-  banner: banner-projects
+  description: Scopri una presentazione di Bitcoin e Monero per privati e aziende.
 
 - identifier: grocery
   title: Alimentari Libero
-  description: Acquista prodotti di qualità in Monero
-  banner: banner-projects
+  description: Acquista prodotti utilizzando Monero come metodo di pagamento.
 
 - identifier: cheque
   title: Assegni
-  description: Genera assegni stampabili per pagare in Bitcoin e Monero
-  banner: banner-projects
+  description: Genera assegni stampabili per effettuare pagamenti in Bitcoin o Monero.
 
 - identifier: sticker
   title: Adesivi
-  description: Genera banner per donazioni o pagamenti in Bitcoin e Monero
-  banner: banner-projects
+  description: Genera banner per mostrare un indirizzo di pagamento o di donazione in Bitcoin e Monero.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  description: Misurare l'adozione reale delle criptovalute in base al numero di commercianti che le accettano nel mondo.
-  banner: banner-projects
+  description: Consulta un indicatore dell'adozione delle criptovalute basato sulla loro accettazione da parte degli esercenti.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  description: Democrazia diretta, libera e accessibile a tutti
-  banner: banner-projects
+  description: Scopri una piattaforma di democrazia diretta aperta a tutti.
 
 - identifier: local_groups
   title: Gruppi locali
-  description: Trova i diversi gruppi Bank-Exit in Francia (Parigi, Rennes, Lille, Lione, ...)
-  banner: banner-projects
+  description: Trova i gruppi locali Bank-Exit.
 
 - identifier: accounting
   title: Contabilità aziendale
-  description: Gestisci facilmente la contabilità della tua attività con un file Excel che automatizza il calcolo dei tuoi incassi in Monero e Bitcoin
-  banner: banner-projects
+  description: Gestisci la contabilità della tua attività con un foglio di calcolo dedicato ai pagamenti in Monero e Bitcoin.

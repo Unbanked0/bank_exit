@@ -59,11 +59,7 @@ es:
 
     coins:
       title: Las monedas
-      headline: El colectivo recomienda los siguientes medios de intercambio porque son descentralizados y, a ser posible, imposibles de rastrear (como el dinero en efectivo).
-
-    projects:
-      title: Los proyectos
-      headline: El Colectivo está trabajando en varias herramientas para mejorar la experiencia cotidiana y soberana de Bitcoin y Monero.
+      headline: El colectivo presenta los siguientes medios de intercambio, cuyas características comunes incluyen un cierto grado de descentralización y, según su naturaleza, de intrazabilidad.
 
     tutorials:
       title: Los tutoriales importantes
@@ -215,6 +211,9 @@ es:
       info_markers: Haz clic en un marcador del mapa para mostrar el enlace actualizado del grupo de Telegram.
 
   projects:
+    index:
+      title: Los proyectos
+      headline: El Colectivo presenta diversos proyectos relacionados con los usos cotidianos y soberanos de Bitcoin y Monero.
     show:
       website_homepage: Página de inicio
 

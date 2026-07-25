@@ -60,11 +60,7 @@ fr:
 
     coins:
       title: Les monnaies
-      headline: Le collectif recommande les moyens d'échange suivants pour leur décentralisation et leur intraçabilité si possible (comme les espèces).
-
-    projects:
-      title: Les projets
-      headline: Le Collectif avance sur différents outils visant à améliorer l'expérience quotidienne et souveraine de Bitcoin et Monero.
+      headline: Le Collectif présente les moyens d'échange suivants, dont les propriétés communes incluent un certain degré de décentralisation et, selon leur nature, d'intraçabilité.
 
     tutorials:
       title: Les tutoriels importants
@@ -90,7 +86,7 @@ fr:
       title: Le blog
     show:
       subject: "[Sortie de Banque] Blog %{title}"
-      body: "Viens découvrir cet article de blog sur le site du collectif Sortie de Banque: %{link}"
+      body: "Viens découvrir cet article de blog sur le site du Collectif Sortie de Banque: %{link}"
 
     france_debt:
       show:
@@ -115,7 +111,7 @@ fr:
 
     show:
       subject: "[Sortie de Banque] Tutoriel %{title}"
-      body: "Viens découvrir ce tutoriel sur le site du collectif Sortie de Banque: %{link}"
+      body: "Viens découvrir ce tutoriel sur le site du Collectif Sortie de Banque: %{link}"
       pending_redaction: Tutoriel en cours de rédaction
       tutorial_might_be_outdated: Cet tutoriel a été écrit il y a maintenant plus de deux ans. Le monde de la technologie évoluant vite, certaines informations peuvent ne plus être identiques aux nouvelles versions des logiciels ou applications présentées.
 
@@ -210,11 +206,11 @@ fr:
 
         <p>Il est impératif que vous fassiez vos propres recherches avant toute décision d'investissement, ou rapprochez-vous d'un professionnel du secteur financier pour avoir un avis éclairé sur l’adéquation de ces investissements à votre situation personnelle.</p>
 
-        <p></strong>Le collectif n'a pas l'intention et n'est pas abilité à faire des conseils d'investissement</strong>.</p>
+        <p></strong>Le Collectif n'a pas l'intention et n'est pas abilité à faire des conseils d'investissement</strong>.</p>
 
-        <p><strong>Le collectif décline toute responsabilité</strong> quant au contenu de cette présentation et des informations qu'elle comporte.</p>
+        <p><strong>Le Collectif décline toute responsabilité</strong> quant au contenu de cette présentation et des informations qu'elle comporte.</p>
 
-        <p><strong>Le collectif décline toute responsabilité</strong> liée aux actes et conséquences personnels que vous aurez réalisés prétextant les informations de cette présentation ou de nos contenus médias/sociaux, par ailleurs disponibles publiquement.</p>
+        <p><strong>Le Collectif décline toute responsabilité</strong> liée aux actes et conséquences personnels que vous aurez réalisés prétextant les informations de cette présentation ou de nos contenus médias/sociaux, par ailleurs disponibles publiquement.</p>
 
   local_groups:
     index:
@@ -224,6 +220,9 @@ fr:
       info_markers: Cliquez sur un marker de la carte pour afficher le lien du groupe Telegram à jour.
 
   projects:
+    index:
+      title: Les projets
+      headline: Le Collectif présente différents projets liés aux usages quotidiens et souverains de Bitcoin et Monero.
     show:
       website_homepage: Page d'accueil du site
 
@@ -306,7 +305,7 @@ fr:
 
       share_by_email:
         subject: "[Sortie de Banque] Commerçant %{name}"
-        body: "Viens découvrir ce commerçant sur le site du collectif Sortie de Banque: %{link}"
+        body: "Viens découvrir ce commerçant sur le site du Collectif Sortie de Banque: %{link}"
 
       comments:
         title: Publier un commentaire
@@ -389,7 +388,7 @@ fr:
       description_html: |
         <p>Nous sommes un groupe de citoyens résilients qui s'est formé vers mai 2022, nous sommes amoureux de la liberté et également experts sur le sujet des cryptos libres et résilientes (seulement 0,1% des 'cryptos').</p>
 
-        <p>Nous sommes répartis en %{local_groups_link} et informels en France, où tout le monde peut se voir et s'entraider sur les sujets de résilience et plus particulièrement <strong>Monero</strong> (XMR), <strong>Bitcoin</strong> (XBT/BTC) et la <strong>June</strong> (G1). A date, la moitié des personnes du collectif ont plus de 50 ans. </p>
+        <p>Nous sommes répartis en %{local_groups_link} et informels en France, où tout le monde peut se voir et s'entraider sur les sujets de résilience et plus particulièrement <strong>Monero</strong> (XMR), <strong>Bitcoin</strong> (XBT/BTC) et la <strong>June</strong> (G1). A date, la moitié des personnes du Collectif ont plus de 50 ans. </p>
 
         <p>Notre objectif est de proposer une alternative à l'€uro numérique et protéger notre argent ainsi que celui d'un maximum de français. La priorité est donc de <strong>préserver</strong> nos actifs des différents risques (bankruns, crises financières comme en 2008, saisies autoritaires, MNBC, ...), tout en <strong>conservant</strong> notre pouvoir d'achat.</p>
 

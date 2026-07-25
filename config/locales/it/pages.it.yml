@@ -59,11 +59,7 @@ it:
 
     coins:
       title: Denaro e monete
-      headline: Il collettivo raccomanda i seguenti mezzi di scambio per la loro decentralizzazione e non tracciabilità, se possibile (come il contante).
-
-    projects:
-      title: Progetti
-      headline: Il Collettivo sta lavorando su vari strumenti volti a migliorare l’esperienza quotidiana e sovrana di Bitcoin e Monero.
+      headline: Il collettivo presenta i seguenti mezzi di scambio, le cui caratteristiche comuni includono un certo grado di decentralizzazione e, a seconda della loro natura, di non tracciabilità.
 
     tutorials:
       title: Tutorial importanti
@@ -215,6 +211,9 @@ it:
          <p><strong>Il collettivo declina ogni responsabilità</strong> per azioni personali e conseguenze che potresti aver intrapreso basandoti sulle informazioni contenute in questa presentazione o nei nostri contenuti media/social, altrimenti disponibili pubblicamente.</p>
 
   projects:
+    index:
+      title: I progetti
+      headline: Il Collettivo presenta diversi progetti legati agli usi quotidiani e sovrani di Bitcoin e Monero.
     show:
       website_homepage: Homepage del sito web
 

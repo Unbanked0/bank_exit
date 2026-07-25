@@ -1,45 +1,36 @@
 ---
 - identifier: map
   title: Karte
-  description: Weltweite Bitcoin- und Monero-Geschäfte anzeigen und filtern
-  banner: banner-projects
+  description: Eine Karte von Geschäften anzeigen, die Bitcoin und Monero akzeptieren.
 
 - identifier: flyer
   title: Flyer
-  description: Monero und Bitcoin für Privatpersonen und Unternehmen
-  banner: banner-projects
+  description: Eine Einführung in Bitcoin und Monero für Privatpersonen und Unternehmen.
 
 - identifier: grocery
   title: Freiheits-Lebensmittel
-  description: Qualitativ hochwertige Monero-Produkte kaufen
-  banner: banner-projects
+  description: Produkte mit Monero als Zahlungsmittel kaufen.
 
 - identifier: cheque
   title: Schecks
-  description: Druckbare Schecks für Zahlungen mit Bitcoin und Monero erstellen
-  banner: banner-projects
+  description: Druckbare Schecks für Zahlungen mit Bitcoin oder Monero erstellen.
 
 - identifier: sticker
   title: Sticker
-  description: Bitcoin- und Monero-Spenden- oder Zahlungsbanner generieren
-  banner: banner-projects
+  description: Banner mit einer Bitcoin- oder Monero-Zahlungs- oder Spendenadresse erstellen.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  description: Die tatsächliche Verbreitung von Kryptowährungen anhand der Anzahl der Händler messen, die sie weltweit akzeptieren.
-  banner: banner-projects
+  description: Einen Indikator für die Verbreitung von Kryptowährungen auf Grundlage ihrer Akzeptanz durch Händler anzeigen.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  description: Direkte Demokratie, frei und für alle zugänglich
-  banner: banner-projects
+  description: Eine Plattform für direkte Demokratie entdecken, die allen offensteht.
 
 - identifier: local_groups
   title: Lokale Gruppen
-  description: Finde die verschiedenen Bank-Exit-Gruppen in Frankreich (Paris, Rennes, Lille, Lyon usw.)
-  banner: banner-projects
+  description: Lokale Bank-Exit-Gruppen finden.
 
 - identifier: accounting
-  title: Buchhaltung für Unternehmen
-  description: Verwalte die Buchhaltung deines Unternehmens ganz einfach mit einer Excel-Datei, die deine Bitcoin- und Monero-Einnahmen automatisch berechnet
-  banner: banner-projects
+  title: Unternehmensbuchhaltung
+  description: Die Buchhaltung Ihres Unternehmens mit einer Tabellenkalkulation für Bitcoin- und Monero-Zahlungen verwalten.
