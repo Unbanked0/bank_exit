@@ -36,7 +36,7 @@ en:
     footer:
       navigation: Navigation
       projects: Projects
-      warning_title: ⚠️ Disclaimer of liability (to read) ⚠️
+      warning_title: ⚠️ Disclaimer of liability ⚠️
       license: User license
       copyright_html: Copyright &copy; Bank-Exit 2022 - %{year} &bullet; All rights reserved
       developed_by_html: Developed with %{heart} by the Bank-Exit Collective

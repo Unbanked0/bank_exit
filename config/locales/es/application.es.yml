@@ -33,7 +33,7 @@ es:
     footer:
       navigation: Navegación
       projects: Los proyectos
-      warning_title: ⚠️ Descargo de responsabilidad (por leer) ⚠️
+      warning_title: ⚠️ Descargo de responsabilidad ⚠️
       license: Licencia de utilización
       copyright_html: Copyright &copy; Bank-Exit 2022 - %{year} &bullet; Todos derechos reservados
       developed_by_html: Desarrollado con %{heart} por el Colectivo Bank-Exit

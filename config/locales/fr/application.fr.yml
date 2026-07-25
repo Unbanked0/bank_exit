@@ -37,7 +37,7 @@ fr:
     footer:
       navigation: Navigation
       projects: Les projets
-      warning_title: ⚠️ Clause de non-responsabilité (à lire) ⚠️
+      warning_title: ⚠️ Clause de non-responsabilité ⚠️
       license: License d'utilisation
       copyright_html: Copyright &copy; Sortie de Banque 2022 - %{year} &bullet; Tous droits réservés
       developed_by_html: Développé avec %{heart} par le Collectif Sortie de Banque

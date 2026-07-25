@@ -1,11 +1,19 @@
-<%# locals: (force_open: false) %>
+<%# locals: (force_open: true) %>
 
-<details class="collapse collapse-arrow bg-info text-info-content mb-10" <% if force_open %> open <% end %>>
-  <summary class="collapse-title font-semibold text-center">
+<details
+  class="
+    alert alert-soft alert-vertical collapse collapse-arrow mb-10
+    justify-center gap-0 max-w-3xl mx-auto
+  "
+  <% if force_open %>
+    open
+  <% end %>
+>
+  <summary class="collapse-title font-semibold text-center text-lg">
     <%= t("application.footer.warning_title") %>
   </summary>
 
-  <div class="collapse-content space-y-2 text-info-content">
+  <div class="collapse-content space-y-2">
     <%= t("risks.index.body_html") %>
   </div>
 </details>
