@@ -3,20 +3,20 @@
     <%= render 'share_by_email',
                subject: t('.subject', title: @tutorial.title),
                body: t('.body', link: tutorial_url(@tutorial.identifier)),
-               icon_klass: 'w-8 h-8 p-1' %>
+               icon_klass: 'w-6 h-6' %>
 
-    <%= render 'print_me', icon_klass: 'w-8 h-8 p-1' %>
+    <%= render 'print_me', icon_klass: 'w-6 h-6' %>
 
     <div class="flex items-center gap-2">
       <%= link_to new_tutorial_report_path(@tutorial.identifier),
                   title: t('.report_a_fault.title'),
-                  class: 'btn btn-circle',
+                  class: 'btn btn-circle btn-error',
                   data: {
                     turbo_stream: true,
                     controller: 'hotkey',
                     action: 'keydown.w@document->hotkey#click',
                   } do %>
-        <%= lucide_icon 'bug', class: 'w-8 h-8 p-1' %>
+        <%= lucide_icon 'bug', class: 'w-6 h-6' %>
       <% end %>
 
       <%= hotkey_label('w', size: 'xs') %>
