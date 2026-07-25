@@ -1,10 +1,7 @@
 require 'rails_helper'
 
 def blog_ids
-  %w[
-    france-debt presentation-bank-exit cbdc-digital-euro
-    bank-exit-assembly-2025 qubic-vs-monero-08-2025
-  ]
+  Blog.all.map(&:identifier)
 end
 
 RSpec.describe 'Blogs' do

@@ -34,22 +34,24 @@
 
         <%= yield :header_actions %>
 
-        <p>
-          <% if article.level? %>
-            <span class="badge inline-block <%= tutorial_class_by_level(article.level) %>">
-              <%= t(".#{article.level}") %>
-            </span>
-          <% end %>
+        <% if article.level? || article.time? %>
+          <p>
+            <% if article.level? %>
+              <span class="badge inline-block <%= tutorial_class_by_level(article.level) %>">
+                <%= t(".#{article.level}") %>
+              </span>
+            <% end %>
 
-          <% if article.time? %>
-            <span
-              class="inline-block badge badge-neutral ml-2"
-              title="<%= article.time %>'"
-            >
-              <%= distance_of_time_in_words(article.time.minutes) %>
-            </span>
-          <% end %>
-        </p>
+            <% if article.time? %>
+              <span
+                class="inline-block badge badge-neutral ml-2"
+                title="<%= article.time %>'"
+              >
+                <%= distance_of_time_in_words(article.time.minutes) %>
+              </span>
+            <% end %>
+          </p>
+        <% end %>
 
         <%= yield :outdated_content %>
 

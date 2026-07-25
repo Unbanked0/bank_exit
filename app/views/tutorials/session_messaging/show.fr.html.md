@@ -21,6 +21,8 @@ Dans cet exemple, nous utilisons Windows, mais le processus reste similaire sur 
 
 Une fois l'application installée, cliquez sur **Créer un compte**.
 
+Un identifiant public vous est attribué : une longue chaîne de caractères commençant par `0` (ex. : `0057`…). C’est l’équivalent d’un long numéro de téléphone.
+
 ![Créer un compte](<%= image_path("tutorials/messaging/1_create_account.jpg") %>)
 
 ## Choisir un pseudonyme
@@ -55,16 +57,15 @@ Vous pouvez maintenant envoyer un premier message texte à votre destinataire ou
 
 ## Sauvegarder votre clé privée
 
-N'oubliez pas de noter votre propre clé privée sur papier.
-
-Pour cela, rendez-vous dans les paramètres de l'application.
-
-> [!CAUTION]
-> Il est très important de noter ces mots: si vous les perdez, vous ne pourrez pas retrouver votre compte ni vos précédentes conversations.
->
-> Ne partagez jamais cette clé avec qui que ce soit.
+N'oubliez pas de noter votre propre clé privée sur papier. Pour cela, rendez-vous dans les paramètres de l'application.
 
 ![Sauvegarde de la clé privée](<%= image_path("tutorials/messaging/7_backup_seed.jpg") %>)
+
+> [!CAUTION]
+> Ne faites **jamais** de capture d'écran de votre clé privée, et ne le stockez pas sur votre téléphone ou ordinateur. Écrivez-le à la main ou conservez-le dans un gestionnaire de mots de passe sécurisé. Sans lui, impossible de récupérer vos conversations en cas de perte d'appareil.
+
+> [!TIP]
+> Le mot de passe de récupération permet de synchroniser vos conversations entre plusieurs appareils (téléphone, ordinateurs) et de récupérer l'accès si vous perdez un appareil. Téléchargez simplement Session sur un nouvel appareil et saisissez votre clé privée.
 
 ## Lien utile
 
