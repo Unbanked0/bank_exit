@@ -5,22 +5,22 @@
   data-controller="directory-friends"
   class="
     collapse collapse-arrow rounded-box border border-base-300
-    bg-base-200/90 max-w-md lg:max-w-xl
+    bg-base-200/90
   "
 >
   <summary
     id="directory-friends"
-    class="collapse-title py-2 text-center text-sm font-semibold text-primary"
+    class="collapse-title py-4 text-center text-sm font-semibold text-primary"
   >
     <%= t(".other_directories_to_spend_title") %>
   </summary>
 
-  <div class="collapse-content px-3 pb-3">
-    <ul class="flex flex-wrap justify-center gap-3">
+  <div class="collapse-content px-3 pb-3 overflow-x-auto scrollbar-thin">
+    <ul class="flex flex-nowrap justify-start gap-2">
       <% directory_friends.each do |directory_friend| %>
         <% image_size = "size-10 lg:size-12 bg-transparent" %>
 
-        <li>
+        <li class="shrink-0">
           <%= link_to directory_friend.link,
                   target: :_blank,
                   rel: "noopener",
