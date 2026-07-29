@@ -37,7 +37,7 @@
   </li>
 
   <li>
-    <%= render 'share_by_email',
+    <%= render 'application/actions/share_by_email',
                subject: t('merchants.show.share_by_email.subject', name: merchant.name),
                body: t('merchants.show.share_by_email.body', link: merchant_url(merchant)),
                label: t('share_by_email'),
@@ -45,7 +45,7 @@
   </li>
 
   <li>
-    <%= render 'print_me', label: t('print'), in_menu: true %>
+    <%= render 'application/actions/print_me', label: t('print'), in_menu: true %>
   </li>
 
   <li>

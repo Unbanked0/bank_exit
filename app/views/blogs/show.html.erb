@@ -1,11 +1,10 @@
 <% content_for :header_actions do %>
   <div class="flex items-center justify-center gap-5 print:hidden">
-    <%= render 'share_by_email',
+    <%= render 'application/actions/share_by_email',
                subject: t('blogs.show.subject', title: @blog.title),
-               body: t('blogs.show.body', link: tutorial_url(@blog.identifier)),
-               icon_klass: 'w-6 h-6' %>
+               body: t('blogs.show.body', link: tutorial_url(@blog.identifier)) %>
 
-    <%= render 'print_me', icon_klass: 'w-6 h-6' %>
+    <%= render 'application/actions/print_me' %>
   </div>
 <% end %>
 
