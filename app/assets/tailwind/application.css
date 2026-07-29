@@ -4,6 +4,8 @@
 
 @plugin "@tailwindcss/typography";
 
+@import "./components/markdown.css";
+
 @theme {
     --breakpoint-xs: 35rem;
     --map-road-color: #3388ff;
@@ -313,57 +315,4 @@ forced to white to make texts readables */
     syntax: "<angle>";
     inherits: false;
     initial-value: 0deg;
-}
-
-/* Markdown prose admonition */
-.prose a {
-    @apply font-semibold;
-}
-
-.prose aside.admonition {
-    @apply alert alert-soft alert-vertical mb-6 text-base;
-
-    a {
-        text-decoration: underline;
-    }
-}
-
-.prose aside.admonition .admonition-title {
-    @apply font-semibold uppercase;
-}
-
-.prose aside.note {
-    @apply alert-info;
-}
-
-.prose aside.tip {
-    @apply alert-success;
-}
-
-.prose aside.warning {
-    @apply alert-warning;
-}
-
-.prose aside.caution {
-    @apply alert-error;
-}
-
-.prose aside.note .admonition-title::before {
-    content: "💡 ";
-}
-
-.prose aside.tip .admonition-title::before {
-    content: "✅ ";
-}
-
-.prose aside.warning .admonition-title::before {
-    content: "⚠️ ";
-}
-
-.prose aside.caution .admonition-title::before {
-    content: "🚨 ";
-}
-
-.prose aside.important .admonition-title::before {
-    content: "📌 ";
 }

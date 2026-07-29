@@ -1,0 +1,66 @@
+@layer components {
+    .prose a {
+        @apply font-semibold;
+    }
+
+    .prose :where(h2, h3, h4, h5, h6) {
+        @apply scroll-mt-20;
+    }
+
+    .prose :where(h2, h3, h4, h5, h6) .anchor {
+        @apply inline-flex items-center gap-2 rounded no-underline! outline-none;
+    }
+
+    .prose .anchor-icon {
+        @apply inline-flex opacity-0 transition-opacity;
+    }
+
+    .prose :where(h2, h3, h4, h5, h6):hover .anchor-icon,
+    .prose .anchor:focus-visible .anchor-icon {
+        @apply opacity-100;
+    }
+
+    .prose .anchor:focus-visible {
+        @apply ring-2 ring-primary ring-offset-2 ring-offset-base-100;
+    }
+
+    .prose aside.admonition {
+        @apply alert alert-soft alert-vertical mb-6 text-base;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .prose .admonition-title {
+        @apply font-semibold uppercase;
+    }
+
+    .prose aside.note {
+        @apply alert-info;
+        --admonition-icon: "💡 ";
+    }
+
+    .prose aside.tip {
+        @apply alert-success;
+        --admonition-icon: "✅ ";
+    }
+
+    .prose aside.warning {
+        @apply alert-warning;
+        --admonition-icon: "⚠️ ";
+    }
+
+    .prose aside.caution {
+        @apply alert-error;
+        --admonition-icon: "🚨 ";
+    }
+
+    .prose aside.important {
+        --admonition-icon: "📌 ";
+    }
+
+    .prose .admonition-title::before {
+        content: var(--admonition-icon, "");
+    }
+}
