@@ -1,36 +1,36 @@
 ---
 - identifier: map
   title: Mappa
-  description: Consulta una mappa delle attività commerciali che accettano Bitcoin e Monero.
+  short_description: Consulta una mappa delle attività commerciali che accettano Bitcoin e Monero.
 
 - identifier: flyer
   title: Volantino
-  description: Scopri una presentazione di Bitcoin e Monero per privati e aziende.
+  short_description: Scopri una presentazione di Bitcoin e Monero per privati e aziende.
 
 - identifier: grocery
   title: Alimentari Libero
-  description: Acquista prodotti utilizzando Monero come metodo di pagamento.
+  short_description: Acquista prodotti utilizzando Monero come metodo di pagamento.
 
 - identifier: cheque
   title: Assegni
-  description: Genera assegni stampabili per effettuare pagamenti in Bitcoin o Monero.
+  short_description: Genera assegni stampabili per effettuare pagamenti in Bitcoin o Monero.
 
 - identifier: sticker
   title: Adesivi
-  description: Genera banner per mostrare un indirizzo di pagamento o di donazione in Bitcoin e Monero.
+  short_description: Genera banner per mostrare un indirizzo di pagamento o di donazione in Bitcoin e Monero.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  description: Consulta un indicatore dell'adozione delle criptovalute basato sulla loro accettazione da parte degli esercenti.
+  short_description: Consulta un indicatore dell'adozione delle criptovalute basato sulla loro accettazione da parte degli esercenti.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  description: Scopri una piattaforma di democrazia diretta aperta a tutti.
+  short_description: Scopri una piattaforma di democrazia diretta aperta a tutti.
 
 - identifier: local_groups
   title: Gruppi locali
-  description: Trova i gruppi locali Bank-Exit.
+  short_description: Trova i gruppi locali Bank-Exit.
 
 - identifier: accounting
   title: Contabilità aziendale
-  description: Gestisci la contabilità della tua attività con un foglio di calcolo dedicato ai pagamenti in Monero e Bitcoin.
+  short_description: Gestisci la contabilità della tua attività con un foglio di calcolo dedicato ai pagamenti in Monero e Bitcoin.

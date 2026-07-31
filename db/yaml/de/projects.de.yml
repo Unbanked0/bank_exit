@@ -1,36 +1,36 @@
 ---
 - identifier: map
   title: Karte
-  description: Eine Karte von Geschäften anzeigen, die Bitcoin und Monero akzeptieren.
+  short_description: Eine Karte von Geschäften anzeigen, die Bitcoin und Monero akzeptieren.
 
 - identifier: flyer
   title: Flyer
-  description: Eine Einführung in Bitcoin und Monero für Privatpersonen und Unternehmen.
+  short_description: Eine Einführung in Bitcoin und Monero für Privatpersonen und Unternehmen.
 
 - identifier: grocery
   title: Freiheits-Lebensmittel
-  description: Produkte mit Monero als Zahlungsmittel kaufen.
+  short_description: Produkte mit Monero als Zahlungsmittel kaufen.
 
 - identifier: cheque
   title: Schecks
-  description: Druckbare Schecks für Zahlungen mit Bitcoin oder Monero erstellen.
+  short_description: Druckbare Schecks für Zahlungen mit Bitcoin oder Monero erstellen.
 
 - identifier: sticker
   title: Sticker
-  description: Banner mit einer Bitcoin- oder Monero-Zahlungs- oder Spendenadresse erstellen.
+  short_description: Banner mit einer Bitcoin- oder Monero-Zahlungs- oder Spendenadresse erstellen.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  description: Einen Indikator für die Verbreitung von Kryptowährungen auf Grundlage ihrer Akzeptanz durch Händler anzeigen.
+  short_description: Einen Indikator für die Verbreitung von Kryptowährungen auf Grundlage ihrer Akzeptanz durch Händler anzeigen.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  description: Eine Plattform für direkte Demokratie entdecken, die allen offensteht.
+  short_description: Eine Plattform für direkte Demokratie entdecken, die allen offensteht.
 
 - identifier: local_groups
   title: Lokale Gruppen
-  description: Lokale Bank-Exit-Gruppen finden.
+  short_description: Lokale Bank-Exit-Gruppen finden.
 
 - identifier: accounting
   title: Unternehmensbuchhaltung
-  description: Die Buchhaltung Ihres Unternehmens mit einer Tabellenkalkulation für Bitcoin- und Monero-Zahlungen verwalten.
+  short_description: Die Buchhaltung Ihres Unternehmens mit einer Tabellenkalkulation für Bitcoin- und Monero-Zahlungen verwalten.

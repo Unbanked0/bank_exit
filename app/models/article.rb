@@ -7,6 +7,10 @@ class Article < StaticContent
   attribute :created_at, :date
   attribute :highlight, :boolean, default: false
 
+  def overview
+    nil
+  end
+
   def short_description
     super || render_template.truncate(250)
   end

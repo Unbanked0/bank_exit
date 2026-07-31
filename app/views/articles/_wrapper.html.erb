@@ -19,6 +19,10 @@
           <%= article.title %>
         </h1>
 
+        <% if article.overview.present? %>
+          <p><%= article.overview %></p>
+        <% end %>
+
         <% if article.author? %>
           <p class="badge badge-secondary">
             <%= t("by") %>

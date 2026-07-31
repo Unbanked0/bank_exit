@@ -1,28 +1,28 @@
 ---
 - identifier: map
   title: La carte
-  description: Consulter une carte des commerces acceptant Bitcoin et Monero.
+  short_description: Consulter une carte des commerces acceptant Bitcoin et Monero.
 
 - identifier: flyer
   title: Le prospectus
-  description: Découvrir une présentation de Bitcoin et Monero à destination des particuliers et des professionnels.
+  short_description: Découvrir une présentation de Bitcoin et Monero à destination des particuliers et des professionnels.
 
 - identifier: grocery
   title: L'Epicerie Libre
-  description: Acheter des produits en utilisant Monero comme moyen de paiement.
+  short_description: Acheter des produits en utilisant Monero comme moyen de paiement.
 
 - identifier: cheque
   title: Les chèques
-  description: Générer des chèques imprimables pour effectuer un paiement en Bitcoin ou en Monero.
+  short_description: Générer des chèques imprimables pour effectuer un paiement en Bitcoin ou en Monero.
 
 - identifier: sticker
   title: Les stickers
-  description: Générer des bannières pour afficher une adresse de paiement ou de don en Bitcoin et Monero.
+  short_description: Générer des bannières pour afficher une adresse de paiement ou de don en Bitcoin et Monero.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  description: Consulter un indicateur de l'adoption des cryptomonnaies fondé sur leur acceptation par les commerçants.
+  short_description: Consulter un indicateur de l'adoption des cryptomonnaies fondé sur leur acceptation par les commerçants.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  description: Découvrir une plateforme de démocratie directe ouverte à tous.
+  short_description: Découvrir une plateforme de démocratie directe ouverte à tous.
