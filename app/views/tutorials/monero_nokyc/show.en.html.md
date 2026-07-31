@@ -1,12 +1,10 @@
-This tutorial explains how to buy Monero (XMR) using [**BIM Exchange**](http://exchange.bim.finance), taking into account recent changes in exchange services and current regulations.
+> [!IMPORTANT]
+> This tutorial explains how to buy Monero (XMR) using [**BIM Exchange**](http://exchange.bim.finance), taking into account recent changes in exchange services and current regulations.
+>
+> Before getting started, keep in mind that cryptocurrencies are volatile assets. This tutorial only explains how the platform works and does not constitute investment advice.
 
-Before getting started, keep in mind that cryptocurrencies are volatile assets. This tutorial only explains how the platform works and does not constitute investment advice.
-
-<%= video_embed(
-url: "https://youtube.com/embed/q61XhYwMrK0",
-title: "Buy/sell Monero in 2026 - No KYC (BIM - P2P)",
-created_at: "2026-01-13"
-) %>
+> [!WARNING]
+> The collective does not receive any payment for selecting these projects or featuring them in its strategy or on this website. All of these recommendations are made on a voluntary basis.
 
 ## Available solutions to buy Monero
 
@@ -17,6 +15,12 @@ There are several ways to acquire Monero:
 - More advanced decentralized solutions, such as **RetoSwap**, designed for experienced users who want to perform exchanges in a decentralized way.
 
 In this guide, we focus on using **BIM Exchange**.
+
+<%= video_embed(
+url: "https://youtube.com/embed/q61XhYwMrK0",
+title: "Buy/sell Monero in 2026 - No KYC (BIM - P2P)",
+created_at: "2026-01-13"
+) %>
 
 ## Step 1 – Access BIM Exchange
 
