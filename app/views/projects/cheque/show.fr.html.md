@@ -1,6 +1,11 @@
 > [!IMPORTANT]
 > Le **chèque Bitcoin, Monero et June** est un projet du **Collectif Sortie de Banque** visant à rendre les monnaies numériques plus accessibles au grand public grâce à un support simple et familier : le chèque papier. Il permet d'offrir ou de transmettre une valeur numérique tout en conservant l'expérience d'un échange physique traditionnel.
 
+> [!WARNING]
+> Ce projet ne constitue en aucun cas une création de monnaie ou de billets de banque. Il s'agit d'une initiative à vocation éducative et ludique visant à proposer une autre manière d'utiliser la cryptomonnaie Monero comme moyen d'échange. Monero est une cryptomonnaie dont l'utilisation est légale en France.
+>
+> Cette approche n'est pas une invention originale : elle s'inspire directement des excellents travaux réalisés par la communauté de la June Ğ1 autour des G-chèques papier intégrant des codes QR. Ce projet en propose simplement une adaptation à l'écosystème Monero.
+
 Comment offrir des cryptomonnaies à quelqu'un qui ne les utilise pas encore ? Comment transmettre une petite somme de Bitcoin, de Monero ou de June de manière simple, comme on offrirait un billet ou un chèque cadeau ? Le projet de [chèque numérique](https://monero-map.org/cheque) apporte une réponse concrète à ces questions en utilisant un format que tout le monde connaît : un document papier contenant une valeur numérique récupérable par son bénéficiaire.
 
 [![Illustration du chèque](<%= image_path('projects/cheque/cover.jpg') %>)](https://monero-map.org/cheque)

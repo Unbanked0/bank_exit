@@ -1,6 +1,11 @@
 > [!IMPORTANT]
 > The **Bitcoin, Monero and June cheque** is a project of the **Bank-Exit collective** designed to make digital currencies more accessible to the general public through a simple and familiar format: a paper cheque. It allows people to gift or transfer digital value while preserving the experience of a traditional physical exchange.
 
+> [!WARNING]
+> This project does not create a new currency or banknotes in any way. It is an educational and recreational initiative that explores an alternative way of using the Monero cryptocurrency as a medium of exchange. Monero is a cryptocurrency whose use is legal in France.
+>
+> This concept is not an original invention. It is directly inspired by the excellent work of the June Ğ1 community and their paper G-checks featuring QR codes. This project is simply an adaptation of that concept for the Monero ecosystem.
+
 How can you introduce cryptocurrencies to someone who does not use them yet?
 
 How can you send a small amount of Bitcoin, Monero or June in the same simple way you would give cash or a gift voucher?
