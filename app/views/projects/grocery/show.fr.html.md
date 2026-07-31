@@ -5,7 +5,7 @@ Vous souhaitez acheter des produits locaux, soutenir des producteurs indépendan
 
 [L'Épicerie Libre](https://libre-market.com/m/epicerie) est une place de marché en ligne qui permet de commander directement auprès de vendeurs répartis partout en France. Vous y trouverez des produits alimentaires, des créations artisanales, des biens numériques et bien d'autres articles proposés par des particuliers et des professionnels.
 
-[![Illustration de L'Épicerie Libre](<%= image_path('projects/grocery/cover.jpg') %>)](https://libre-market.com/m/epicerie)
+[![Illustration de L'Épicerie Libre](<%= image_path(@record.cover) %>)](https://libre-market.com/m/epicerie)
 
 ## Que peut-on acheter ?
 

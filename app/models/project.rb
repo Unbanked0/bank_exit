@@ -11,6 +11,14 @@ class Project < Article
   end
 
   def cover
+    return "projects/#{identifier}/cover.png" if crypto_box?
+
     "projects/#{identifier}/cover.jpg"
+  end
+
+  private
+
+  def crypto_box?
+    identifier == 'sticker'
   end
 end

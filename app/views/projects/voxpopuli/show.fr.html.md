@@ -5,7 +5,7 @@ Dans un projet communautaire, les utilisateurs ne sont pas seulement des consomm
 
 C'est l'objectif de [VoxPopuli](https://vote.libre-market.com) : proposer un espace simple permettant à chacun de prendre part aux choix collectifs.
 
-[![Mapa imagen](<%= image_path('projects/voxpopuli/cover.jpg') %>)](https://vote.libre-market.com)
+[![Mapa imagen](<%= image_path(@record.cover) %>)](https://vote.libre-market.com)
 
 ## Pourquoi un outil de vote ?
 

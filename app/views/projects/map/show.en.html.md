@@ -5,7 +5,7 @@ Looking for a restaurant, craftsman, therapist, accommodation, or local business
 
 The Collective's [merchant map](<%= maps_path %>) was created to connect cryptocurrency users with businesses that accept digital currencies. Its goal is simple: to make everyday Bitcoin and Monero payments easier and more accessible.
 
-[![Map illustration](<%= image_path('projects/map/cover.jpg') %>)](<%= maps_path %>)
+[![Map illustration](<%= image_path(@record.cover) %>)](<%= maps_path %>)
 
 ## What can you do with the map?
 
