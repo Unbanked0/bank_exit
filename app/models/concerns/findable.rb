@@ -1,6 +1,8 @@
 module Findable
   extend ActiveSupport::Concern
 
+  SANITIZER = Rails::HTML5::SafeListSanitizer.new
+
   included do
     attribute :missing_content_for_locale, :boolean, default: false
 
@@ -60,10 +62,11 @@ module Findable
 
     def self.by_query(query)
       regex = /#{Regexp.escape(query)}/i
+      helpers = ActionController::Base.helpers
 
       all.select do |article|
         article.title.match?(regex) ||
-          article.render_template.match?(regex)
+          helpers.sanitize(article.render_template, tags: []).match?(regex)
       end
     end
   end
