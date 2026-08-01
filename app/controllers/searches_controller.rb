@@ -15,7 +15,7 @@ class SearchesController < PublicController
         @query_blogs = BlogDecorator.wrap(blogs)
 
         projects = Project.by_query(query)
-        @query_projects = BlogDecorator.wrap(projects)
+        @query_projects = ProjectDecorator.wrap(projects)
       end
 
       directories_filter = Directories::Filter.call(query: query)

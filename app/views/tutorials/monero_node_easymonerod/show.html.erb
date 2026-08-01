@@ -1,20 +1,22 @@
-<figure>
-  <%= image_tag "tutorials/monero-node-easymonerod/interface.png",
-                class: "mx-auto",
-                alt: "EasyMonerod interface" %>
+<div class="prose max-w-none">
+  <figure>
+    <%= image_tag "tutorials/monero-node-easymonerod/interface.png",
+                  class: "mx-auto",
+                  alt: "EasyMonerod interface" %>
 
-  <figcaption class="text-xs text-center italic mt-2">
-    <%= t('.image_caption') %>
-  </figcaption>
-</figure>
+    <figcaption class="text-xs text-center italic mt-2">
+      <%= t('.image_caption') %>
+    </figcaption>
+  </figure>
 
-<%= video_embed(
-      url: "https://youtube.com/embed/Gnd9PR2fF8g",
-      title: t('.video_caption'),
-      created_at: "2025-02-24"
+  <%= video_embed(
+        url: "https://youtube.com/embed/Gnd9PR2fF8g",
+        title: t('.video_caption'),
+        created_at: "2025-02-24"
 ) %>
 
-<%= render "articles/useful_links",
-      data: [
-        { url: "https://github.com/kerlannXmr/EasyMonerod" }
-      ] %>
+  <%= render "articles/useful_links",
+        data: [
+          { url: "https://github.com/kerlannXmr/EasyMonerod" }
+        ] %>
+</div>

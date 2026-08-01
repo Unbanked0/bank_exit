@@ -36,8 +36,6 @@
           </time>
         <% end %>
 
-        <%= yield :header_actions %>
-
         <% if article.level? || article.time? %>
           <p>
             <% if article.level? %>
@@ -57,6 +55,7 @@
           </p>
         <% end %>
 
+        <%= yield :header_actions %>
         <%= yield :outdated_content %>
 
         <% if article.missing_content_for_locale? %>
@@ -68,7 +67,7 @@
     </div>
   </header>
 
-  <section class="max-w-5xl mx-auto p-5 space-y-8">
+  <section class="max-w-5xl mx-auto p-5 pb-10 space-y-8">
     <%= render "breadcrumb" %>
     <%= yield :coins %>
 
