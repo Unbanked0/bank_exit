@@ -47,7 +47,13 @@ module ActionView
             # Stripping the common leading indentation preserves the intended HTML structure
             # while keeping the Markdown source readable.
             markdown = markdown.to_s.lines.map { |line|
-              line.sub(/^ {2,}/, "")
+              if line.match?(/^\s*(?:[-*+]\s|\d+.\s|```)/)
+                line
+              elsif line.match?(/^\s*</)
+                line.sub(/^ {2,}/, "")
+              else
+                line
+              end
             }.join
 
             html = Commonmarker.to_html(

@@ -3,6 +3,10 @@
         @apply font-semibold;
     }
 
+    .prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+        font-weight: inherit !important;
+    }
+
     .prose :where(h2, h3, h4, h5, h6) {
         @apply scroll-mt-20;
     }
