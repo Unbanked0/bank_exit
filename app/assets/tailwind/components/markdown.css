@@ -12,11 +12,11 @@
     }
 
     .prose :where(h2, h3, h4, h5, h6) .anchor {
-        @apply inline-flex items-center gap-2 rounded no-underline! outline-none;
+        @apply items-center rounded no-underline! outline-none;
     }
 
-    .prose .anchor-icon {
-        @apply inline-flex opacity-0 transition-opacity;
+    .prose .anchor .anchor-icon {
+        @apply inline-flex ml-2 opacity-0 transition-opacity;
     }
 
     .prose :where(h2, h3, h4, h5, h6):hover .anchor-icon,
