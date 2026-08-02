@@ -17,7 +17,7 @@ pin 'leaflet', to: 'https://ga.jspm.io/npm:leaflet@2.0.0-alpha.1/dist/leaflet.js
 pin 'leaflet-v1-polyfill'
 pin 'leaflet-gesture-handling', to: 'https://ga.jspm.io/npm:leaflet-gesture-handling@1.2.2/dist/leaflet-gesture-handling.min.js'
 pin 'leaflet.markercluster', to: 'https://ga.jspm.io/npm:@kristjan.esperanto/leaflet.markercluster@3.0.0/dist/leaflet.markercluster.js'
-pin 'leaflet.fullscreen', to: 'https://ga.jspm.io/npm:leaflet.fullscreen@5.3.3/dist/Control.FullScreen.js'
+pin 'leaflet.fullscreen', to: 'https://ga.jspm.io/npm:leaflet.fullscreen@5.3.1/dist/Control.FullScreen.js'
 pin 'polyline-encoded', to: 'https://ga.jspm.io/npm:polyline-encoded@0.0.9/Polyline.encoded.js', preload: :application
 
 pin 'chartkick', to: 'chartkick.js', preload: :application
