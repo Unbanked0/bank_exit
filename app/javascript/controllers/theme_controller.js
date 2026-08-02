@@ -55,17 +55,15 @@ export default class extends Controller {
   set #theme(theme) {
     localStorage.setItem("theme", theme);
 
-    const applyTheme = () => {
-      if (theme === "auto") {
-        document.documentElement.removeAttribute("data-theme");
-      } else {
-        document.documentElement.setAttribute("data-theme", theme);
-      }
+    if (theme === "auto") {
+      document.documentElement.removeAttribute("data-theme");
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
 
-      this.#updateButtons();
-    };
+    this.#updateButtons();
 
-    applyTheme();
+    document.dispatchEvent(new CustomEvent("theme:changed"));
   }
 
   #applyStoredTheme() {

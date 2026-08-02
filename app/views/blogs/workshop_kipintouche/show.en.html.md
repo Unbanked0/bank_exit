@@ -120,7 +120,7 @@ Nostr (Notes and Other Stuff Transmitted by Relays) is a decentralized social ne
 
 **Getting started:**
 
-See the complete [Nostr tutorial](<%= tutorial_path("nostr-social-network") %>) on Sortie de Banque.
+See the [Nostr protocol presentation](<%= blog_path("nostr-protocol") %>) and the complete [Snort tutorial](<%= tutorial_path("nostr-social-network") %>) on Bank-Exit.
 
 **Notable features:**
 

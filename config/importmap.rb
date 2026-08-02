@@ -23,4 +23,5 @@ pin 'polyline-encoded', to: 'https://ga.jspm.io/npm:polyline-encoded@0.0.9/Polyl
 pin 'chartkick', to: 'chartkick.js', preload: :application
 pin 'Chart.bundle', to: 'Chart.bundle.js', preload: :application
 
-pin 'sortablejs', to: 'https://ga.jspm.io/npm:sortablejs@1.15.7/modular/sortable.core.esm.js'
+pin 'sortablejs', to: 'https://ga.jspm.io/npm:sortablejs@1.15.7/modular/sortable.core.esm.js', preload: :application
+pin 'mermaid', to: 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs', preload: :application

@@ -5,6 +5,7 @@
 @plugin "@tailwindcss/typography";
 
 @import "./components/markdown.css";
+@import "./components/mermaid.css";
 
 @theme {
     --breakpoint-xs: 35rem;

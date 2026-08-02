@@ -23,11 +23,67 @@ L’objectif est de permettre à chacun de :
 
 Les réseaux sociaux traditionnels fonctionnent généralement avec une architecture centralisée :
 
+```mermaid
+flowchart LR
+    You["👤 Vous"]
+    Alice["👩 Alice"]
+    Bob["👨 Bob"]
+
+    subgraph PLATFORM["🏢 Réseau social"]
+    direction TB
+
+    P(("Serveur central"))
+
+    DATA["💾 Données"]
+    ALGO["🤖 Algorithmes"]
+
+    P --> DATA
+    P --> ALGO
+    end
+
+    You --> P
+    Alice --> P
+    Bob --> P
+```
+
 Cette architecture offre une expérience simple, mais elle crée une dépendance envers une plateforme unique.
 
 Une entreprise peut modifier ses règles, limiter l’accès à un compte ou changer la manière dont les contenus sont distribués.
 
 Nostr propose une architecture différente :
+
+```mermaid
+flowchart TB
+    You["👤 Vous"]
+    Alice["👩 Alice"]
+    Bob["👨 Bob"]
+
+    AppYou["🤖 Application Android <br> (Amethyst)"]
+    AppAlice["🍎 Application iOS <br> (Damus)"]
+    AppBob["🕸️ Application web <br> (Snort)"]
+
+    You --> AppYou
+    Alice --> AppAlice
+    Bob --> AppBob
+
+    subgraph NOSTR["🌐 Réseau Nostr"]
+    direction LR
+        R1["Relais A"]
+        R2["Relais B"]
+        R3["Relais C"]
+    end
+
+    AppYou --> R1
+    AppYou --> R2
+
+    AppAlice --> R2
+
+    AppBob --> R2
+    AppBob --> R3
+
+    R1 --- R2
+    R2 --- R3
+```
 
 Dans ce modèle, les utilisateurs communiquent grâce à plusieurs relais indépendants.
 
@@ -52,6 +108,22 @@ Votre identité est représentée par une **paire de clés cryptographiques** :
 - **la clé publique** est votre identifiant. Vous pouvez la partager librement afin que les autres puissent retrouver votre profil et vérifier que vos publications proviennent bien de vous.
 
 Les relais ne connaissent jamais votre clé privée. Ils stockent et transmettent simplement les messages signés. Chaque application peut ensuite vérifier la signature à l'aide de votre clé publique afin de garantir l'authenticité des publications.
+
+```mermaid
+sequenceDiagram
+    participant You as 👤 Vous
+    participant YourApp as 📱 Votre application
+    participant Relay as 🌐 Relais
+    participant AliceApp as 📱 Application d'Alice
+    participant Alice as 👩 Alice
+
+    You->>YourApp: Écriture d'un message
+    Note over YourApp: 🔐 Clé privée<br/>Conservée uniquement sur votre appareil
+    YourApp->>YourApp: Signature du message
+    YourApp->>Relay: Publication du message signé
+    Relay-->>AliceApp: Transmission du message
+    AliceApp-->>Alice: Affichage du message
+```
 
 ## Les événements
 
@@ -179,5 +251,5 @@ Une fois ces bases acquises, vous pourrez explorer les différentes applications
 - Spécifications du protocole Nostr (NIPs) : https://github.com/nostr-protocol/nips
 - Ressources Nostr : https://nostr.net/
 - Client web Nostr Primal : https://primal.net/
-- Client Android Nostr Amethyst : https://github.com/vitorpamplona/amethyst
+- Client Android Nostr Amethyst : https://amethyst.social/
 - Client iOS Nostr Damus : https://damus.io/

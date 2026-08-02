@@ -120,7 +120,7 @@ Nostr (Notes and Other Stuff Transmitted by Relays) est un protocole de réseau 
 
 **Comment démarrer :**
 
-Voir le [tutoriel Nostr](<%= tutorial_path("nostr-social-network") %>) complet sur Sortie de Banque.
+Voir la [présentation du protocole Nostr](<%= blog_path("nostr-protocol") %>) et le [tutoriel Snort](<%= tutorial_path("nostr-social-network") %>) complet sur Sortie de Banque.
 
 **Fonctionnalités notables :**
 

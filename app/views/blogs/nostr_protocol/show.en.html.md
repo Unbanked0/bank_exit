@@ -21,11 +21,67 @@ Its goal is to allow everyone to:
 
 Traditional social networks generally rely on a centralized architecture:
 
+```mermaid
+flowchart LR
+    You["👤 You"]
+    Alice["👩 Alice"]
+    Bob["👨 Bob"]
+
+    subgraph PLATFORM["🏢 Social network"]
+    direction TB
+
+    P(("Central server"))
+
+    DATA["💾 Data"]
+    ALGO["🤖 Algorithms"]
+
+    P --> DATA
+    P --> ALGO
+    end
+
+    You --> P
+    Alice --> P
+    Bob --> P
+```
+
 This architecture provides a simple user experience, but it also creates a dependency on a single platform.
 
 A company can change its rules, restrict access to an account, or alter how content is distributed.
 
 Nostr offers a different architecture:
+
+```mermaid
+flowchart TB
+    You["👤 You"]
+    Alice["👩 Alice"]
+    Bob["👨 Bob"]
+
+    AppYou["🤖 Android app <br> (Amethyst)"]
+    AppAlice["🍎 iOS app <br> (Damus)"]
+    AppBob["🕸️ Web app <br> (Snort)"]
+
+    You --> AppYou
+    Alice --> AppAlice
+    Bob --> AppBob
+
+    subgraph NOSTR["🌐 Nostr network"]
+    direction LR
+        R1["Relay A"]
+        R2["Relay B"]
+        R3["Relay C"]
+    end
+
+    AppYou --> R1
+    AppYou --> R2
+
+    AppAlice --> R2
+
+    AppBob --> R2
+    AppBob --> R3
+
+    R1 --- R2
+    R2 --- R3
+```
 
 In this model, users communicate through multiple independent relays.
 
@@ -45,6 +101,22 @@ Instead of a traditional account tied to an email address and password, Nostr us
 - a public key, used as your identifier.
 
 The private key is used to sign messages and prove their authenticity.
+
+```mermaid
+sequenceDiagram
+    participant You as 👤 You
+    participant YourApp as 📱 Your app
+    participant Relay as 🌐 Relay
+    participant AliceApp as 📱 Alice's app
+    participant Alice as 👩 Alice
+
+    You->>YourApp: Write a message
+    Note over YourApp: 🔐 Private key<br/>Stored only on your device
+    YourApp->>YourApp: Sign the message
+    YourApp->>Relay: Publish the signed message
+    Relay-->>AliceApp: Forward the message
+    AliceApp-->>Alice: Display the message
+```
 
 ## Events
 
@@ -172,5 +244,5 @@ Once you've mastered the basics, you'll be ready to explore the many application
 - Nostr protocol specifications (NIPs): https://github.com/nostr-protocol/nips
 - Nostr resources: https://nostr.net/
 - Primal web client: https://primal.net/
-- Amethyst Android client: https://github.com/vitorpamplona/amethyst
+- Amethyst Android client: https://amethyst.social/
 - Damus iOS client: https://damus.io/
