@@ -97,6 +97,7 @@ Rails.application.configure do
     Bullet.add_footer = false
   end
 
+  config.hotwire.spark.html_extensions += %w[md]
   config.hosts << %w[bank-exit.localhost bank-exit.local]
 end
 
