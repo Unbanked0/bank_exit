@@ -105,9 +105,8 @@ Félicitations 🎉 ! Votre premier message vient d'être publié sur le réseau
 
 ![Message diffusé](<%= image_path("tutorials/nostr-social-network/14_message_broadcasted.jpg") %>)
 
-## Liens utiles
+## Aller plus loin
 
-- [Nostr](https://nostr.com)
-- [Nostr Directory](https://nostr.directory) — Trouver des contacts Twitter ayant rejoint Nostr
-- [Amethyst](https://www.amethyst.social) — Application Android pour Nostr
-- [Damus](https://damus.io) — Application iOS pour Nostr
+Si vous souhaitez découvrir Nostr de manière théorique, un [article de blog dédié](<%= blog_path("nostr-protocol") %>) est déjà disponible sur ce site pour vous accompagner.
+
+Une fois ces bases acquises, vous pourrez explorer les différentes applications compatibles avec Nostr et découvrir un écosystème en constante évolution.

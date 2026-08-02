@@ -1,7 +1,12 @@
 ---
 - title: "Anti-censorship Workshop #KipInTouche - Session Matrix Nostr Mastodon"
   identifier: workshop-kipintouche
-  created_at: "2027-07-25"
+  created_at: "2026-07-25"
+
+- title: "Discover Nostr: A new protocol for sharing information on the Internet"
+  identifier: nostr-protocol
+  created_at: "2026-07-17"
+  banner: banner-social-network
 
 - title: France debt in 2026
   identifier: france-debt
