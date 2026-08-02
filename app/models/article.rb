@@ -19,6 +19,10 @@ class Article < StaticContent
     highlight == true
   end
 
+  def logo?
+    Rails.root.join("app/assets/images/#{logo}").exist?
+  end
+
   def video?
     video_figure.present?
   end

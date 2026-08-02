@@ -1,9 +1,5 @@
 class Blog < Article
-  def cover?
-    Rails.root.join("app/assets/images/banners/#{banner}.jpg").exist?
-  end
-
-  def cover
-    "banners/#{banner}.jpg"
+  def logo
+    "blogs/#{identifier}/logo.png"
   end
 end

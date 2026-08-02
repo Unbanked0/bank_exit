@@ -1,5 +1,3 @@
-# This class acts as a model (not related to the database)
-# to interact more elegantly with {Tutorial tutorials} resources.
 class Tutorial < Article
   LEVELS = %i[beginner intermediate expert].freeze
 
@@ -11,11 +9,7 @@ class Tutorial < Article
     LEVELS[model[:level]]
   end
 
-  def cover?
-    Rails.root.join("app/assets/images/tutorials/#{identifier}/logo.png").exist?
-  end
-
-  def cover
+  def logo
     "tutorials/#{identifier}/logo.png"
   end
 end
