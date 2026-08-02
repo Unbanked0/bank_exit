@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'rake sitemap:refresh:no_ping', type: :task do
   before do
-    Rake::FileUtilsExt.verbose(false)
+    SitemapGenerator::Sitemap.verbose = false
   end
 
   after do
