@@ -11,8 +11,6 @@
       <%= link_to project_path(project, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
         <% if project.cover? %>
           <%= image_tag project.cover, alt: project.title, class: "object-cover w-10 h-10" %>
-        <% else %>
-          <div></div>
         <% end %>
 
         <div>
@@ -44,8 +42,6 @@
       <%= link_to tutorial_path(tutorial, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
         <% if tutorial.logo? %>
           <%= image_tag tutorial.logo, alt: tutorial.title, class: "object-cover w-10 h-10" %>
-        <% else %>
-          <div></div>
         <% end %>
 
         <div>
@@ -83,8 +79,6 @@
       <%= link_to blog_path(blog, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
         <% if blog.logo? %>
           <%= image_tag blog.logo, alt: blog.title, class: "object-cover w-10 h-10" %>
-        <% else %>
-          <div></div>
         <% end %>
 
         <div>
