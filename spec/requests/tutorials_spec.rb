@@ -1,12 +1,7 @@
 require 'rails_helper'
 
 def tutorial_ids
-  %w[
-    cakewallet-monero crash-course session-messaging
-    nostr-social-network bitcoin-nokyc funding-monero
-    monero-node-easymonerod documentation-embed-map accounting
-    cryptopayment-for-business
-  ]
+  Tutorial.all.map(&:identifier)
 end
 
 RSpec.describe 'Tutorials' do

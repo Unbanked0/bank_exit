@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def project_ids
-  %w[map flyer grocery cheque sticker coinadoptionscore voxpopuli]
+  Project.all.map(&:identifier)
 end
 
 RSpec.describe 'Projects' do
