@@ -1,13 +1,8 @@
 class Project < Article
-  attribute :short_description, :string
   attribute :image, :string
 
   def banner
     super || 'banner-projects'
-  end
-
-  def overview
-    short_description
   end
 
   def cover?

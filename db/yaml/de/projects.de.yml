@@ -1,36 +1,36 @@
 ---
 - identifier: map
   title: Karte
-  short_description: Eine Karte von Geschäften anzeigen, die Bitcoin und Monero akzeptieren.
+  overview: Eine Karte von Geschäften anzeigen, die Bitcoin und Monero akzeptieren.
 
 - identifier: flyer
   title: Flyer
-  short_description: Eine Einführung in Bitcoin und Monero für Privatpersonen und Unternehmen.
+  overview: Eine Einführung in Bitcoin und Monero für Privatpersonen und Unternehmen.
 
 - identifier: grocery
   title: Freiheits-Lebensmittel
-  short_description: Produkte mit Monero als Zahlungsmittel kaufen.
+  overview: Produkte mit Monero als Zahlungsmittel kaufen.
 
 - identifier: cheque
   title: Schecks
-  short_description: Druckbare Schecks für Zahlungen mit Bitcoin oder Monero erstellen.
+  overview: Druckbare Schecks für Zahlungen mit Bitcoin oder Monero erstellen.
 
 - identifier: sticker
   title: Sticker
-  short_description: Banner mit einer Bitcoin- oder Monero-Zahlungs- oder Spendenadresse erstellen.
+  overview: Banner mit einer Bitcoin- oder Monero-Zahlungs- oder Spendenadresse erstellen.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  short_description: Einen Indikator für die Verbreitung von Kryptowährungen auf Grundlage ihrer Akzeptanz durch Händler anzeigen.
+  overview: Einen Indikator für die Verbreitung von Kryptowährungen auf Grundlage ihrer Akzeptanz durch Händler anzeigen.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  short_description: Eine Plattform für direkte Demokratie entdecken, die allen offensteht.
+  overview: Eine Plattform für direkte Demokratie entdecken, die allen offensteht.
 
 - identifier: local_groups
   title: Lokale Gruppen
-  short_description: Lokale Bank-Exit-Gruppen finden.
+  overview: Lokale Bank-Exit-Gruppen finden.
 
 - identifier: accounting
   title: Unternehmensbuchhaltung
-  short_description: Die Buchhaltung Ihres Unternehmens mit einer Tabellenkalkulation für Bitcoin- und Monero-Zahlungen verwalten.
+  overview: Die Buchhaltung Ihres Unternehmens mit einer Tabellenkalkulation für Bitcoin- und Monero-Zahlungen verwalten.

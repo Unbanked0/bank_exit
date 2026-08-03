@@ -1,28 +1,28 @@
 ---
 - identifier: map
   title: Map
-  short_description: Browse a map of businesses that accept Bitcoin and Monero.
+  overview: Browse a map of businesses that accept Bitcoin and Monero.
 
 - identifier: flyer
   title: Flyer
-  short_description: Discover an introduction to Bitcoin and Monero for individuals and businesses.
+  overview: Discover an introduction to Bitcoin and Monero for individuals and businesses.
 
 - identifier: grocery
   title: Freedom Grocers
-  short_description: Purchase products using Monero as a payment method.
+  overview: Purchase products using Monero as a payment method.
 
 - identifier: cheque
   title: Cheques
-  short_description: Generate printable cheques for payments in Bitcoin or Monero.
+  overview: Generate printable cheques for payments in Bitcoin or Monero.
 
 - identifier: sticker
   title: Stickers
-  short_description: Generate banners displaying a Bitcoin or Monero payment or donation address.
+  overview: Generate banners displaying a Bitcoin or Monero payment or donation address.
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
-  short_description: View an indicator of cryptocurrency adoption based on merchant acceptance.
+  overview: View an indicator of cryptocurrency adoption based on merchant acceptance.
 
 - identifier: voxpopuli
   title: VoxPopuli
-  short_description: Discover a platform for direct democracy open to everyone.
+  overview: Discover a platform for direct democracy open to everyone.

@@ -2,11 +2,15 @@
 - title: "Anti-censorship Workshop #KipInTouche - Session Matrix Nostr Mastodon"
   identifier: workshop-kipintouche
   created_at: "2026-07-25"
+  level: 0
+  overview: "A recap of the #KipInTouche workshop dedicated to free and censorship-resistant communication tools."
 
 - title: "Discover Nostr: A new protocol for sharing information on the Internet"
   identifier: nostr-protocol
   created_at: "2026-07-17"
+  level: 1
   banner: banner-social-network
+  overview: Discover Nostr, an open and decentralized protocol for publishing and sharing information without a central platform.
 
 - title: France debt in 2026
   identifier: france-debt
@@ -16,19 +20,21 @@
   identifier: qubic-vs-monero-08-2025
   created_at: "2025-08-21"
   banner: banner-hacker
-  short_description: Qubic may be launching an attack on Monero via hybrid AI mining. Risk analysis, project inconsistencies, and tips to protect your XMR transactions.
+  overview: Qubic may be launching an attack on Monero via hybrid AI mining. Risk analysis, project inconsistencies, and tips to protect your XMR transactions.
 
 - title: Bank-Exit Assembly 2025
   identifier: bank-exit-assembly-2025
   banner: banner-assembly
   created_at: "2025-08-01"
-  short_description: First Bank-Exit 2025 assembly with volunteer workshops led by experts.
+  overview: The first Bank-Exit Assembly in 2025, featuring volunteer-led workshops hosted by experts.
 
 - title: Bank-Exit Presentation
   identifier: presentation-bank-exit
   created_at: "2025-01-31"
+  overview: Discover the Bank-Exit collective, its mission, its initiatives, and the solutions it offers to help people regain financial independence.
 
 - title: Digital €uro "Cash+"
   identifier: cbdc-digital-euro
   banner: banner-cbdc
   created_at: "2025-04-15"
+  overview: An overview of the European Central Bank's digital euro project and the risks associated with this technology.

@@ -18,11 +18,11 @@
             <%== highlight(project.title, params[:query]) %>
           </div>
 
-          <% if project.short_description.present? %>
+          <% if project.overview.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
               <%== sanitize(
                   highlight(
-                    project.short_description,
+                    project.overview,
                     params[:query]
                   ),
                   tags: %w[mark]
@@ -55,11 +55,11 @@
             </span>
           <% end %>
 
-          <% if tutorial.short_description.present? %>
+          <% if tutorial.overview.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
               <%== sanitize(
                 highlight(
-                  tutorial.short_description,
+                  tutorial.overview,
                   params[:query]
                 ),
                 tags: %w[mark]
@@ -86,11 +86,11 @@
             <%== highlight(blog.title, params[:query]) %>
           </div>
 
-          <% if blog.short_description.present? %>
+          <% if blog.overview.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
               <%== sanitize(
                 highlight(
-                  blog.short_description,
+                  blog.overview,
                   params[:query]
                 ),
                 tags: %w[mark]

@@ -1,18 +1,21 @@
 class Article < StaticContent
+  LEVELS = %i[beginner intermediate expert].freeze
+
   attribute :identifier, :string
   attribute :title, :string
   attribute :short_title, :string
+  attribute :author, :string
   attribute :banner, :string
-  attribute :short_description, :string
+  attribute :overview, :string
   attribute :created_at, :date
   attribute :highlight, :boolean, default: false
+  attribute :time, :integer
+  attr_writer :level
 
-  def overview
-    nil
-  end
+  def level
+    return nil unless model[:level]
 
-  def short_description
-    super || render_template.truncate(250)
+    LEVELS[model[:level]]
   end
 
   def highlight?

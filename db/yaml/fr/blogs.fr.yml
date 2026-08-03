@@ -2,11 +2,15 @@
 - title: "Atelier anti-censure #KipInTouche — Session, Matrix, Nostr & Mastodon"
   identifier: workshop-kipintouche
   created_at: "2026-07-25"
+  level: 0
+  overview: "Retour sur l'atelier #KipInTouche consacré aux outils de communication libres et résistants à la censure."
 
 - title: "Découvrir Nostr : un nouveau protocole pour partager de l’information sur Internet"
   identifier: nostr-protocol
   created_at: "2026-07-17"
+  level: 1
   banner: banner-social-network
+  overview: Découvrez Nostr, un protocole ouvert et décentralisé pour publier et partager de l'information sans plateforme centrale.
 
 - title: La dette de la France en 2026
   identifier: france-debt
@@ -16,20 +20,21 @@
   identifier: qubic-vs-monero-08-2025
   created_at: "2025-08-21"
   banner: banner-hacker
-  short_description: Qubic mène une possible attaque contre Monero via un minage hybride IA. Analyse des risques, incohérences du projet et conseils pour protéger vos transactions XMR.
+  overview: Qubic mène une possible attaque contre Monero via un minage hybride IA. Analyse des risques, incohérences du projet et conseils pour protéger vos transactions XMR.
 
 - title: Assemblée Sortie de Banque 2025
   identifier: bank-exit-assembly-2025
   banner: banner-assembly
   created_at: "2025-08-01"
-  short_description: Première assemblée Sortie de Banque 2025 avec des ateliers bénévoles encadrés par des experts.
+  overview: Première assemblée Sortie de Banque 2025 avec des ateliers bénévoles encadrés par des experts.
 
 - title: Présentation Sortie de Banque
   identifier: presentation-bank-exit
   created_at: "2025-01-31"
+  overview: Découvrez le collectif Sortie de Banque, ses objectifs, ses actions et les solutions qu'il propose pour retrouver son autonomie financière.
 
 - title: L'€uro numérique "Cash+"
   identifier: cbdc-digital-euro
   banner: banner-cbdc
   created_at: "2025-04-15"
-  short_description: Page de présentation de l'€uro numérique par la BCE et les dangers encourus avec cette technologie
+  overview: Page de présentation de l'€uro numérique par la BCE et les dangers encourus avec cette technologie

@@ -106,7 +106,7 @@
 }
 
 @utility hero-overlay {
-    @apply bg-base-100/50;
+    @apply bg-base-100/70;
 }
 
 @utility hero-content {

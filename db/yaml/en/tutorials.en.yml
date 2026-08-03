@@ -5,6 +5,7 @@
   time: 10
   created_at: "2025-08-24"
   banner: banner-offline
+  overview: Easily import merchants into CoMaps from an existing file.
 
 - title: CakeWallet and Monero
   identifier: cakewallet-monero
@@ -14,6 +15,7 @@
   highlight: true
   banner: banner-library
   coins: ["monero"]
+  overview: Learn how to install, configure, and use Cake Wallet with Monero.
 
 - title: Complete Bank-Exit formation
   identifier: crash-course
@@ -21,7 +23,7 @@
   time: 90
   created_at: "2024-01-30"
   banner: banner-library
-  short_description: Bitcoin Monero training workshop - Bank-Exit Collectif
+  overview: Watch the complete Bitcoin and Monero training course from the Sortie de Banque collective.
   coins: ["bitcoin", "monero"]
 
 - title: Nostr social network
@@ -30,6 +32,7 @@
   time: 10
   created_at: "2024-08-17"
   banner: banner-social-network
+  overview: Discover Nostr, a decentralized, censorship-resistant social network.
 
 - title: Buy Bitcoin no KYC
   identifier: bitcoin-nokyc
@@ -37,6 +40,7 @@
   time: 10
   created_at: "2024-08-07"
   banner: banner-library
+  overview: Learn how to buy Bitcoin without KYC while protecting your privacy.
   coins: ["bitcoin"]
 
 - title: Buy Monero no KYC
@@ -46,6 +50,7 @@
   created_at: "2026-07-11"
   highlight: true
   banner: banner-library
+  overview: Discover the best ways to buy Monero without KYC.
   coins: ["monero"]
 
 - title: Private Session messaging
@@ -55,6 +60,7 @@
   created_at: "2024-08-28"
   highlight: true
   banner: banner-messaging
+  overview: Install and use Session to communicate without a phone number.
 
 - title: Create an incensurable Monero kitty
   identifier: funding-monero
@@ -62,6 +68,7 @@
   time: 10
   created_at: "2024-08-07"
   banner: banner-library
+  overview: Create a Monero fundraising page and receive donations privately.
   coins: ["monero"]
 
 - title: Running an EasyMonerod Node
@@ -73,24 +80,27 @@
   created_at: "2025-02-24"
   banner: banner-blockchain
   coins: ["monero"]
-  short_description: EasyNode simplifies the installation of a MONERO node, allowing you to configure your blockchain in just a few clicks. A complete setup in less than 10 minutes!
+  overview: Install and configure a full Monero node with EasyMonerod in just a few minutes.
 
 - title: Embed map on your website
   identifier: documentation-embed-map
   level: 0
+  created_at: "2026-02-15"
   banner: banner-map
-  short_description: Guide to integrating the custom merchant map into your website
+  overview: Easily embed the customized merchant map into your website.
 
 - title: Company accountings
   identifier: accounting
   level: 0
+  created_at: "2025-12-06"
   banner: banner-accountings
-  short_description: Manage your business accounting easily with an Excel file that automates your Monero and Bitcoin income calculations
+  overview: Manage your Bitcoin and Monero accounting with an automated spreadsheet.
 
 - title: Full Setup of Monero and Bitcoin Payments for Your Business
   short_title: Complete Guide for Your Business
   identifier: cryptopayment-for-business
   level: 0
+  created_at: "2025-12-06"
   banner: banner-accountings
   coins: ["bitcoin", "monero"]
-  short_description: Full setup of Monero and Bitcoin payments for your business
+  overview: Set up Bitcoin and Monero payments for your business from start to finish.

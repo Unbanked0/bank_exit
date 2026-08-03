@@ -24,7 +24,7 @@ class ProjectsController < PublicController
     add_breadcrumb @project.title, project_path(@project)
 
     set_meta_tags title: @project.title,
-                  description: @project.short_description
+                  description: @project.overview
   end
 
   private

@@ -141,7 +141,7 @@ module SEOHelper
       url: blog_url(blog)
     }
 
-    json[:description] = blog.short_description if blog.short_description
+    json[:description] = blog.overview if blog.overview
 
     json[:articleBody] = strip_tags(blog.render_template)
 

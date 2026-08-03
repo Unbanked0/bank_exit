@@ -24,7 +24,7 @@ class BlogsController < PublicController
     add_breadcrumb @blog.title, blog_path(@blog)
 
     set_meta_tags title: @blog.title,
-                  description: @blog.short_description
+                  description: @blog.overview
   end
 
   private

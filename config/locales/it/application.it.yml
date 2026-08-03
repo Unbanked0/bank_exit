@@ -1,8 +1,8 @@
 it:
   application:
     header:
-      collectif: Bank-Exit
-      bank_exit: Collettivo
+      collectif: Collettivo
+      bank_exit: Bank-Exit
       subtitle: Strategie di debancarizzazione
       home: Home
       map: Mappa

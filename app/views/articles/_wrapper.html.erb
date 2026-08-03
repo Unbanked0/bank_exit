@@ -15,51 +15,72 @@
 
     <div class="hero-content hero-content-main text-center">
       <div class="max-w-5xl space-y-8">
-        <h1 class="text-3xl font-bold">
-          <%= article.title %>
-        </h1>
+        <div class="space-y-4">
+          <h1 class="text-3xl font-bold lg:text-4xl">
+            <%= article.title %>
+          </h1>
 
-        <% if article.overview.present? %>
-          <p><%= article.overview %></p>
-        <% end %>
+          <% if article.overview.present? %>
+            <p class="text-lg opacity-90">
+              <%= article.overview %>
+            </p>
+          <% end %>
+        </div>
 
-        <% if article.author? %>
-          <p class="badge badge-secondary">
-            <%= t("by") %>
-            <span class="font-bold"><%= article.author %></span>
-          </p>
-        <% end %>
+        <div class="flex flex-wrap justify-center gap-2">
+          <div class="badge badge-md gap-2">
+            <% if article.author %>
+              <%= lucide_icon "user" %>
+              <%= t('by') %>
+              <%= article.author %>
+            <% else %>
+              <div class="avatar flex items-center gap-2">
+                <div class="w-12 rounded">
+                  <%= image_tag logo_by_locale,
+                          alt: "Logo Bank-Exit",
+                          width: 48, height: 48 %>
+                </div>
 
-        <% if article.created_at.present? %>
-          <time class="block" datetime="<%= article.created_at.iso8601 %>">
-            <%= l(article.created_at) %>
-          </time>
-        <% end %>
-
-        <% if article.level? || article.time? %>
-          <p>
-            <% if article.level? %>
-              <span class="badge inline-block <%= tutorial_class_by_level(article.level) %>">
-                <%= t(".#{article.level}") %>
-              </span>
+                <span>
+                  <%= t('by') %> <%= t('application.header.bank_exit') %>
+                </span>
+              </div>
             <% end %>
+          </div>
 
-            <% if article.time? %>
-              <span
-                class="inline-block badge badge-neutral ml-2"
-                title="<%= article.time %>'"
-              >
-                <%= distance_of_time_in_words(article.time.minutes) %>
-              </span>
-            <% end %>
-          </p>
-        <% end %>
+          <% if article.created_at? %>
+            <span class="badge badge-md gap-2">
+              <%= lucide_icon "calendar-days" %>
+
+              <time datetime="<%= article.created_at.iso8601 %>">
+                <%= l(article.created_at, format: :long) %>
+              </time>
+            </span>
+          <% end %>
+
+          <% if article.level? %>
+            <span class="badge badge-md gap-2 <%= tutorial_class_by_level(article.level) %>">
+              <%= lucide_icon "signal" %>
+              <%= t(".#{article.level}") %>
+            </span>
+          <% end %>
+
+          <% if article.time? %>
+            <span
+              class="badge badge-neutral badge-md gap-2"
+              title="<%= article.time %> min"
+            >
+              <%= lucide_icon "clock" %>
+              <%= distance_of_time_in_words(article.time.minutes) %>
+            </span>
+          <% end %>
+        </div>
 
         <%= yield :header_actions %>
         <%= yield :outdated_content %>
 
         <% if article.missing_content_for_locale? %>
-          <p class="alert alert-warning">
+          <p class="alert alert-warning lg:w-2/3 mx-auto">
             <%= t("missing_content_for_locale") %>
           </p>
         <% end %>

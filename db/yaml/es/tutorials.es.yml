@@ -2,10 +2,13 @@
 - title: Integración del mapa en su sitio
   identifier: documentation-embed-map
   level: 0
+  created_at: "2026-02-15"
   banner: banner-map
+  overview: Integra fácilmente el mapa personalizado de comercios en tu sitio web.
 
 - title: Contabilidad empresarial
   identifier: accounting
   level: 0
+  created_at: "2025-12-06"
   banner: banner-accountings
-  short_description: Gestione fácilmente la contabilidad de su empresa con un archivo Excel que automatiza sus cálculos de ingresos de Monero y Bitcoin.
+  overview: Gestiona la contabilidad de Bitcoin y Monero con una hoja de cálculo automatizada.

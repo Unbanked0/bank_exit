@@ -28,7 +28,7 @@ class TutorialsController < PublicController
     add_breadcrumb @tutorial.title, tutorial_path(@tutorial)
 
     set_meta_tags title: @tutorial.title,
-                  description: @tutorial.short_description
+                  description: @tutorial.overview
   end
 
   private
