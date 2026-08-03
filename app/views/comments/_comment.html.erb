@@ -30,7 +30,9 @@
     <% end %>
   </div>
 
-  <div class="chat-bubble"><%= simple_format(comment.content) %></div>
+  <div class="chat-bubble overflow-x-auto">
+    <%= simple_format(comment.content) %>
+  </div>
 
   <div class="chat-footer items-center mt-1">
     <div class="rating rating-xs">
