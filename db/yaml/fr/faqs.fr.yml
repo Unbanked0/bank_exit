@@ -12,7 +12,7 @@
   content:
     - answer:
         - Imprimer (ou faire imprimer) quelques flyers (article sur {{projects#show->flyer}}).
-        - L'aider à faire un portefeuille Monero avec CakeWallet (tutoriel sur {{tutorials#show->cakewallet-monero}}).
+        - L'aider à faire un portefeuille Monero avec Cake Wallet (tutoriel sur {{tutorials#show->cakewallet-monero}}).
         - Une fois par an, reporter ses quelques ventes Monero sur le fichier Excel tout prêt (tutoriel sur {{tutorials#show->accounting}}).
         - Une fois effectué, le rajouter sur la carte avec le bouton vert <span class="badge badge-success">Proposer un commerçant</span> sur {{maps#index}} ou directement sur le formulaire {{merchant_proposals#new}} !
   categories:

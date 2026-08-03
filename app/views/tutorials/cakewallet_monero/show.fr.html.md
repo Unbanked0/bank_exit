@@ -11,7 +11,7 @@ Vous allez apprendre à :
 
 <%= video_embed(
 url: "https://youtube.com/embed/e7dywiZIpWg",
-title: 'Tutoriel "Vivre sans banque !" en 15 Min - CakeWallet et Monero',
+title: 'Tutoriel "Vivre sans banque !" en 15 Min - Cake Wallet et Monero',
 created_at: "2024-05-12"
 ) %>
 

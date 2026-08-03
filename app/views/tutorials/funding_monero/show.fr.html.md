@@ -120,7 +120,7 @@ Une première réussite permet :
 
 ### Créer un portefeuille Monero avec Cake Wallet
 
-[Voir le tutoriel CakeWallet](<%= url_for tutorial_path("cakewallet-monero") %>)
+[Voir le tutoriel Cake Wallet](<%= url_for tutorial_path("cakewallet-monero") %>)
 
 ### Récupérer l'adresse Monero
 

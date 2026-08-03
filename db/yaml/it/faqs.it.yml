@@ -12,7 +12,7 @@
   content:
     - answer:
         - Stampa (o fai stampare) qualche volantino (articolo su {{projects#show->flyer}}).
-        - Aiutali a creare un portafoglio Monero con CakeWallet (tutorial su {{tutorials#show->cakewallet-monero}}).
+        - Aiutali a creare un portafoglio Monero con Cake Wallet (tutorial su {{tutorials#show->cakewallet-monero}}).
         - Una volta all’anno, inserisci le loro vendite in Monero nel file Excel già pronto (tutorial su {{tutorials#show->accounting}}).
         - Una volta fatto, aggiungili alla mappa usando il pulsante verde <span class="badge badge-success">Suggest a merchant</span> su {{maps#index}} o direttamente sul modulo {{merchant_proposals#new}}!
   categories:

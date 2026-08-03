@@ -11,7 +11,7 @@ You will learn how to:
 
 <%= video_embed(
 url: "https://youtube.com/embed/e7dywiZIpWg",
-title: '15-minute "Living without a bank" tutorial - CakeWallet and Monero',
+title: '15-minute "Living without a bank" tutorial - Cake Wallet and Monero',
 created_at: "2024-05-12"
 ) %>
 
