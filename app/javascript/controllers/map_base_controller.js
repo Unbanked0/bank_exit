@@ -22,11 +22,7 @@ export default class MapBaseController extends Controller {
       zoomControl: false,
       gestureHandling: true,
       minZoom: 2,
-      maxBounds: [
-        [-85, -180], // Sud-Ouest
-        [85, 180], // Nord-Est
-      ],
-      maxBoundsViscosity: 1.0,
+      worldCopyJump: true,
     };
     this.markers = [];
     this.popup = new Popup({ offset: [0, -43] });
