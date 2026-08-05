@@ -100,8 +100,11 @@ RSpec.describe NostrPublisher do
                started_at: Time.current
       end
 
+      let!(:bitcoin_bakery) do
+        create :merchant, :bitcoin, original_identifier: 'node/123', name: 'Bitcoin Coffee', category: 'bakery'
+      end
+
       before do
-        create :merchant, :bitcoin, original_identifier: 'node/123', name: 'Bitcoin Coffee'
         create :merchant, :bitcoin, original_identifier: 'node/456', name: 'MM salon de thé, pâtisserie, chocolaterie'
         create :merchant, :bitcoin, original_identifier: 'way/789', name: 'Feel SO light'
         create :merchant, :deleted, original_identifier: 'node/111', name: 'Deleted merchant'
@@ -150,7 +153,7 @@ RSpec.describe NostrPublisher do
           content = published_event.event.content
 
           expect(content).to include('Discover **3** newly listed Bitcoin (₿) merchants now featured on the ')
-          expect(content).to include('Bitcoin Coffee')
+          expect(content).to include("**[Bitcoin Coffee](http://example.test/en/merchants/#{bitcoin_bakery.identifier}-bitcoin-coffee)** (Bakery) ₿ Bitcoin")
           expect(content).to include('MM salon de thé, pâtisserie, chocolaterie')
           expect(content).to include('Feel SO light')
           expect(content).to match(/_Merchants are based on free and open data from OpenStreetMap. Information may change over time and could differ from what is shown here, with some links potentially no longer existing._/)

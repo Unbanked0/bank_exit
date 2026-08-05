@@ -33,8 +33,7 @@ Discover **<%= merchants_count %>** newly listed <%= list.join(', ') %> <%= 'mer
   ].compact
 %>
 
-- **[<%= merchant.name %>](<%= merchant_url(merchant) %>)**<%= category %>
-  < <%= merchant_coins.join(', ') %>
+- **[<%= merchant.name %>](<%= merchant_url(merchant) %>)**<%= category %> <%= merchant_coins.join(', ') %>
 
 <% end %>
 <% end %>
