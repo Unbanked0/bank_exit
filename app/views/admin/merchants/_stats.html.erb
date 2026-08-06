@@ -45,7 +45,8 @@ merchant_deleted_count = Merchant.deleted.count %>
 
           <button
             class="btn btn-square btn-ghost btn-xs ml-1"
-            onclick="merchants_deleted_help.showModal()"
+            commandfor="merchants_deleted_help"
+            command="show-modal"
           >
             <%= lucide_icon 'circle-question-mark', class: 'w-4' %>
           </button>
