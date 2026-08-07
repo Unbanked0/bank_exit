@@ -80,6 +80,11 @@ es:
       intermediate: Intermedio
       expert: Avanzado
 
+      human: "Este artículo ha sido redactado íntegramente por el Colectivo."
+      transcript: "Este artículo es una transcripción fiel de un contenido de audio o vídeo."
+      ai_assisted: "Este artículo ha sido generado con la ayuda de una IA a partir de un esquema o un guion elaborado por el Colectivo, y posteriormente revisado antes de su publicación."
+      ai_generated: "Este artículo ha sido generado parcialmente por una IA, y posteriormente revisado antes de su publicación."
+
   blogs:
     index:
       title: El blog

@@ -16,6 +16,7 @@
   banner: banner-library
   coins: ["monero"]
   overview: Learn how to install, configure, and use Cake Wallet with Monero.
+  content_origin: transcript
 
 - title: Complete Bank-Exit formation
   identifier: crash-course
@@ -25,6 +26,7 @@
   banner: banner-library
   overview: Watch the complete Bitcoin and Monero training course from the Sortie de Banque collective.
   coins: ["bitcoin", "monero"]
+  content_origin: transcript
 
 - title: Nostr social network
   identifier: nostr-social-network
@@ -33,6 +35,7 @@
   created_at: "2024-08-17"
   banner: banner-social-network
   overview: Discover Nostr, a decentralized, censorship-resistant social network.
+  content_origin: ai_assisted
 
 - title: Buy Bitcoin no KYC
   identifier: bitcoin-nokyc
@@ -42,6 +45,7 @@
   banner: banner-library
   overview: Learn how to buy Bitcoin without KYC while protecting your privacy.
   coins: ["bitcoin"]
+  content_origin: transcript
 
 - title: Buy Monero no KYC
   identifier: monero-nokyc
@@ -52,6 +56,7 @@
   banner: banner-library
   overview: Discover the best ways to buy Monero without KYC.
   coins: ["monero"]
+  content_origin: transcript
 
 - title: Private Session messaging
   identifier: session-messaging
@@ -61,6 +66,7 @@
   highlight: true
   banner: banner-messaging
   overview: Install and use Session to communicate without a phone number.
+  content_origin: transcript
 
 - title: Create an incensurable Monero kitty
   identifier: funding-monero
@@ -70,6 +76,7 @@
   banner: banner-library
   overview: Create a Monero fundraising page and receive donations privately.
   coins: ["monero"]
+  content_origin: transcript
 
 - title: Running an EasyMonerod Node
   identifier: monero-node-easymonerod

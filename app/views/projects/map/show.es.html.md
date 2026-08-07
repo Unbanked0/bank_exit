@@ -34,7 +34,7 @@ Así podrás preparar tus compras o descubrir comercios cercanos que ya aceptan 
 
 El mapa es un proyecto colaborativo.
 
-Si conoces un establecimiento que ya acepta estos medios de pago, o has ayudado recientemente a un comerciante a implementarlos, puedes proponer su incorporación mediante el botón **Sugerir un comercio**.
+Si conoces un establecimiento que ya acepta estos medios de pago, o has ayudado recientemente a un comerciante a implementarlos, puedes proponer su incorporación mediante el botón <%= link_to "Sugerir un comerciante", new_merchant_proposal_path %>.
 
 Una vez verificada, la información se incorpora a OpenStreetMap y se sincroniza automáticamente con el mapa del Colectivo.
 

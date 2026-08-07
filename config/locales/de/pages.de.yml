@@ -80,6 +80,11 @@ de:
       intermediate: Fortgeschritten
       expert: Experte
 
+      human: "Dieser Artikel wurde vollständig vom Kollektiv verfasst."
+      transcript: "Dieser Artikel ist eine originalgetreue Transkription eines Audio- oder Videoinhalts."
+      ai_assisted: "Dieser Artikel wurde mithilfe einer KI auf Grundlage einer vom Kollektiv erstellten Gliederung oder eines Skripts erstellt und vor der Veröffentlichung überprüft."
+      ai_generated: "Dieser Artikel wurde größtenteils von einer KI erstellt und vor der Veröffentlichung überprüft."
+
   blogs:
     index:
       title: Blog

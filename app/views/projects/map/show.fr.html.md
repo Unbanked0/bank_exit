@@ -34,7 +34,7 @@ Vous pouvez ainsi préparer vos achats ou découvrir les commerces proches de ch
 
 La carte est collaborative.
 
-Si vous connaissez un professionnel qui accepte déjà ces moyens de paiement — ou si vous venez d'accompagner un commerçant dans leur mise en place — vous pouvez proposer son ajout directement depuis le bouton **Proposer un commerçant**.
+Si vous connaissez un professionnel qui accepte déjà ces moyens de paiement — ou si vous venez d'accompagner un commerçant dans leur mise en place — vous pouvez proposer son ajout directement depuis le bouton <%= link_to "Proposer un commerçant", new_merchant_proposal_path %>.
 
 Après vérification, les informations sont intégrées à OpenStreetMap puis synchronisées automatiquement avec la carte du Collectif.
 

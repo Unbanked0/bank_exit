@@ -81,6 +81,11 @@ fr:
       intermediate: Intermédiaire
       expert: Avancé
 
+      human: "Cet article a été entièrement rédigé par le Collectif."
+      transcript: "Cet article est une retranscription fidèle d'un contenu audio ou vidéo."
+      ai_assisted: "Cet article a été généré avec l'aide d'une IA à partir d'un plan ou d'un script établi par le Collectif, puis relu avant publication."
+      ai_generated: "Cet article a été généré en grande partie par une IA, puis relu avant publication."
+
   blogs:
     index:
       title: Le blog

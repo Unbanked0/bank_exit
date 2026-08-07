@@ -34,7 +34,7 @@ Whether you're planning a trip or simply exploring your local area, the map make
 
 The map is community-driven.
 
-If you know a business that already accepts these payment methods—or you've recently helped a merchant start accepting them—you can submit it directly using the **Suggest a Merchant** button.
+If you know a business that already accepts these payment methods—or you've recently helped a merchant start accepting them—you can submit it directly using the <%= link_to "Suggest a merchant", new_merchant_proposal_path %> button.
 
 Once verified, the information is added to OpenStreetMap and automatically synchronized with the Collective's map.
 

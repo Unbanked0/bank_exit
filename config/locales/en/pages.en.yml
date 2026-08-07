@@ -80,6 +80,11 @@ en:
       intermediate: Intermediate
       expert: Advanced
 
+      human: "This article was written entirely by the Collective."
+      transcript: "This article is a faithful transcript of audio or video content."
+      ai_assisted: "This article was generated with AI assistance from the Collective created plan or script, then reviewed before publication."
+      ai_generated: "This article was generated entirely or largely by AI, then reviewed before publication."
+
   blogs:
     index:
       title: Blog

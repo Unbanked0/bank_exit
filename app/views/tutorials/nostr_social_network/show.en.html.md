@@ -105,7 +105,7 @@ Congratulations 🎉! Your first message has just been published on the Nostr ne
 
 ![Message broadcasted](<%= image_path("tutorials/nostr-social-network/14_message_broadcasted.jpg") %>)
 
-Learn More
+## Learn More
 
 If you'd like to gain a better theoretical understanding of Nostr, a [dedicated blog post](<%= blog_path("nostr-protocol") %>) is already available on this site to guide you through the fundamentals.
 

@@ -2,27 +2,34 @@
 - identifier: map
   title: Karte
   overview: Eine Karte von Geschäften anzeigen, die Bitcoin und Monero akzeptieren.
+  content_origin: ai_assisted
 
 - identifier: flyer
   title: Flyer
   overview: Eine Einführung in Bitcoin und Monero für Privatpersonen und Unternehmen.
+  content_origin: ai_assisted
 
 - identifier: grocery
   title: Freiheits-Lebensmittel
   overview: Produkte mit Monero als Zahlungsmittel kaufen.
+  content_origin: ai_assisted
 
 - identifier: cheque
   title: Schecks
   overview: Druckbare Schecks für Zahlungen mit Bitcoin oder Monero erstellen.
+  content_origin: ai_assisted
 
 - identifier: sticker
   title: Sticker
   overview: Banner mit einer Bitcoin- oder Monero-Zahlungs- oder Spendenadresse erstellen.
+  content_origin: ai_assisted
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
   overview: Einen Indikator für die Verbreitung von Kryptowährungen auf Grundlage ihrer Akzeptanz durch Händler anzeigen.
+  content_origin: ai_assisted
 
 - identifier: voxpopuli
   title: VoxPopuli
   overview: Eine Plattform für direkte Demokratie entdecken, die allen offensteht.
+  content_origin: ai_assisted

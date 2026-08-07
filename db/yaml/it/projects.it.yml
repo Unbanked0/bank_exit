@@ -2,27 +2,34 @@
 - identifier: map
   title: Mappa
   overview: Consulta una mappa delle attività commerciali che accettano Bitcoin e Monero.
+  content_origin: ai_assisted
 
 - identifier: flyer
   title: Volantino
   overview: Scopri una presentazione di Bitcoin e Monero per privati e aziende.
+  content_origin: ai_assisted
 
 - identifier: grocery
   title: Alimentari Libero
   overview: Acquista prodotti utilizzando Monero come metodo di pagamento.
+  content_origin: ai_assisted
 
 - identifier: cheque
   title: Assegni
   overview: Genera assegni stampabili per effettuare pagamenti in Bitcoin o Monero.
+  content_origin: ai_assisted
 
 - identifier: sticker
   title: Adesivi
   overview: Genera banner per mostrare un indirizzo di pagamento o di donazione in Bitcoin e Monero.
+  content_origin: ai_assisted
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
   overview: Consulta un indicatore dell'adozione delle criptovalute basato sulla loro accettazione da parte degli esercenti.
+  content_origin: ai_assisted
 
 - identifier: voxpopuli
   title: VoxPopuli
   overview: Scopri una piattaforma di democrazia diretta aperta a tutti.
+  content_origin: ai_assisted

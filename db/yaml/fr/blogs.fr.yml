@@ -4,6 +4,7 @@
   created_at: "2026-07-25"
   level: 0
   overview: "Retour sur l'atelier #KipInTouche consacré aux outils de communication libres et résistants à la censure."
+  content_origin: transcript
 
 - title: "Découvrir Nostr : un nouveau protocole pour partager de l’information sur Internet"
   identifier: nostr-protocol
@@ -11,6 +12,7 @@
   level: 1
   banner: banner-social-network
   overview: Découvrez Nostr, un protocole ouvert et décentralisé pour publier et partager de l'information sans plateforme centrale.
+  content_origin: ai_generated
 
 - title: La dette de la France en 2026
   identifier: france-debt
@@ -21,6 +23,7 @@
   created_at: "2025-08-21"
   banner: banner-hacker
   overview: Qubic mène une possible attaque contre Monero via un minage hybride IA. Analyse des risques, incohérences du projet et conseils pour protéger vos transactions XMR.
+  content_origin: transcript
 
 - title: Assemblée Sortie de Banque 2025
   identifier: bank-exit-assembly-2025

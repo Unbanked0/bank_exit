@@ -16,6 +16,7 @@
   banner: banner-library
   overview: Découvrez comment installer, configurer et utiliser Cake Wallet avec Monero.
   coins: ["monero"]
+  content_origin: transcript
 
 - title: Formation Sortie de Banque complète
   identifier: crash-course
@@ -25,6 +26,7 @@
   banner: banner-library
   overview: Retrouvez l'intégralité de la formation Bitcoin et Monero du collectif Sortie de Banque.
   coins: ["bitcoin", "monero"]
+  content_origin: transcript
 
 - title: Réseau social Nostr
   identifier: nostr-social-network
@@ -33,6 +35,7 @@
   created_at: "2024-08-17"
   banner: banner-social-network
   overview: Découvrez Nostr, un réseau social décentralisé, libre et résistant à la censure.
+  content_origin: ai_assisted
 
 - title: Acheter du Bitcoin non KYC
   identifier: bitcoin-nokyc
@@ -42,6 +45,7 @@
   banner: banner-library
   overview: Apprenez à acheter du Bitcoin sans KYC tout en préservant votre vie privée.
   coins: ["bitcoin"]
+  content_origin: transcript
 
 - title: Acheter du Monero non KYC
   identifier: monero-nokyc
@@ -52,6 +56,7 @@
   banner: banner-library
   overview: Découvrez les meilleures méthodes pour acheter du Monero sans KYC.
   coins: ["monero"]
+  content_origin: transcript
 
 - title: Messagerie privée Session
   identifier: session-messaging
@@ -61,6 +66,7 @@
   highlight: true
   banner: banner-messaging
   overview: Installez et utilisez Session pour communiquer sans numéro de téléphone.
+  content_origin: transcript
 
 - title: Créer une cagnotte en Monero
   identifier: funding-monero
@@ -70,6 +76,7 @@
   banner: banner-library
   coins: ["monero"]
   overview: Créez une cagnotte en Monero et recevez des dons de manière simple et privée.
+  content_origin: transcript
 
 - title: Faire tourner un noeud EasyMonerod
   identifier: monero-node-easymonerod

@@ -1,5 +1,6 @@
 class Article < StaticContent
   LEVELS = %i[beginner intermediate expert].freeze
+  CONTENT_ORIGINS = %i[human transcript ai_assisted ai_generated].freeze
 
   attribute :identifier, :string
   attribute :title, :string
@@ -10,7 +11,28 @@ class Article < StaticContent
   attribute :created_at, :date
   attribute :highlight, :boolean, default: false
   attribute :time, :integer
+  attribute :content_origin, :string, default: 'human'
   attr_writer :level
+
+  validates :content_origin, inclusion: {
+    in: CONTENT_ORIGINS.map(&:to_s)
+  }
+
+  def human?
+    content_origin == 'human'
+  end
+
+  def transcript?
+    content_origin == 'transcript'
+  end
+
+  def ai_assisted?
+    content_origin == 'ai_assisted'
+  end
+
+  def ai_generated?
+    content_origin == 'ai_generated'
+  end
 
   def level
     return nil unless model[:level]

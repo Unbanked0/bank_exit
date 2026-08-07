@@ -2,27 +2,34 @@
 - identifier: map
   title: La carte
   overview: Consulter une carte des commerces acceptant Bitcoin et Monero.
+  content_origin: ai_assisted
 
 - identifier: flyer
   title: Le prospectus
   overview: Découvrir une présentation de Bitcoin et Monero à destination des particuliers et des professionnels.
+  content_origin: ai_assisted
 
 - identifier: grocery
   title: L'Epicerie Libre
   overview: Acheter des produits en utilisant Monero comme moyen de paiement.
+  content_origin: ai_assisted
 
 - identifier: cheque
   title: Les chèques
   overview: Générer des chèques imprimables pour effectuer un paiement en Bitcoin ou en Monero.
+  content_origin: ai_assisted
 
 - identifier: sticker
   title: Les stickers
   overview: Générer des bannières pour afficher une adresse de paiement ou de don en Bitcoin et Monero.
+  content_origin: ai_assisted
 
 - identifier: coinadoptionscore
   title: CoinAdoptionScore®
   overview: Consulter un indicateur de l'adoption des cryptomonnaies fondé sur leur acceptation par les commerçants.
+  content_origin: ai_assisted
 
 - identifier: voxpopuli
   title: VoxPopuli
   overview: Découvrir une plateforme de démocratie directe ouverte à tous.
+  content_origin: ai_assisted

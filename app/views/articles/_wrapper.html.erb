@@ -93,6 +93,13 @@
     <%= yield :coins %>
 
     <%= highlight(article.render_template, params[:q], sanitize: false) %>
+
+    <p class="text-xs italic text-right">
+      <% icon = article.human? ? "bot-off" : "bot" %>
+      <%= lucide_icon icon, class: 'inline w-3.5' %>
+
+      <%= t(".#{article.content_origin}") %>
+    </p>
   </section>
 
   <%= yield :footer_actions %>
