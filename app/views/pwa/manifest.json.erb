@@ -4,20 +4,38 @@
   "start_url": "/<%= params[:locale] %>/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "theme_color": "#000",
+  "theme_color": "#f7931a",
   "background_color": "#FFF",
   "icons": [
     {
-      "purpose": "any",
-      "sizes": "512x512",
-      "src": "/pwa/app-icon-512.png",
-      "type": "image/png"
+      "src": "/pwa/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "purpose": "maskable",
+      "src": "/pwa/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa/icon-512x512.png",
       "sizes": "512x512",
-      "src": "/pwa/app-icon-512-maskable.png",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [

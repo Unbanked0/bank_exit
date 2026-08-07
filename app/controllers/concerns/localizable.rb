@@ -24,7 +24,7 @@ module Localizable
     !controller_path.in?(
       ['licenses', 'maps', 'maps/referers', 'addresses/searches']
     ) &&
-      !action_name.in?(['toggle_atms'])
+      !action_name.in?(%w[toggle_atms offline])
   end
 
   def switch_locale(&)
