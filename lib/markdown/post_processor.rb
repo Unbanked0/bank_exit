@@ -21,6 +21,7 @@ module Markdown
       external_links
       admonitions
       mermaid
+      tables
       headings
 
       @fragment
@@ -86,6 +87,21 @@ module Markdown
         wrapper.add_child(diagram)
 
         pre.replace(wrapper)
+      end
+    end
+
+    def tables
+      fragment.css('table').each do |table|
+        wrapper = Nokogiri::XML::Node.new('div', fragment)
+        wrapper['class'] = 'overflow-x-auto'
+
+        table['class'] = [
+          table['class'],
+          'w-full'
+        ].compact.join(' ')
+
+        table.replace(wrapper)
+        wrapper.add_child(table)
       end
     end
 
