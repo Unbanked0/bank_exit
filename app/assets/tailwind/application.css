@@ -4,6 +4,7 @@
 
 @plugin "@tailwindcss/typography";
 
+@import "./components/megamenu.css";
 @import "./components/markdown.css";
 @import "./components/mermaid.css";
 
@@ -161,12 +162,6 @@
 
 @utility alert-vertical {
     @apply text-left justify-start place-items-start;
-}
-
-@utility megamenu {
-    &:popover-open {
-        max-block-size: 50svh;
-    }
 }
 
 @layer components {

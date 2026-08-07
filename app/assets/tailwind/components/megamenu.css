@@ -1,0 +1,16 @@
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    @apply bg-base-300/50;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 40;
+    pointer-events: none;
+}
+
+body:has(#main_menu:popover-open) .page-overlay,
+body:has(.megamenu-popover-item:popover-open) .page-overlay {
+    opacity: 1;
+    visibility: visible;
+}

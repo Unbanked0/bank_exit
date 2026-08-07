@@ -47,20 +47,22 @@
     data-theme-light-value="<%= @themes[:light] %>"
     data-theme-dark-value="<%= @themes[:dark] %>"
   >
-    <main>
-      <%= render 'header',
+    <div class="page-overlay"></div>
+
+    <%= render 'header',
                  projects: @projects,
                  tutorials: @tutorials,
                  highlighted_tutorials: @highlighted_tutorials,
                  bitcoin_tutorial: @bitcoin_tutorial,
                  monero_tutorial: @monero_tutorial %>
 
-      <%= render "search" %>
+    <%= render "search" %>
 
+    <main>
       <%= yield %>
-
-      <%= render 'footer', projects: @projects, contacts: @contacts, themes_finder: @themes_finder %>
     </main>
+
+    <%= render 'footer', projects: @projects, contacts: @contacts, themes_finder: @themes_finder %>
 
     <%= turbo_frame_tag :announcements, src: announcements_path %>
 
