@@ -313,7 +313,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                   </li>
 
                   <li>
-                    <%= link_to '#contact', data: { turbo: false }, onclick: "main_menu.hidePopover();" do %>
+                    <%= link_to '#contact', data: { turbo: false }, onclick: "main_menu.hidePopover(); this.closest('[popover]').hidePopover();" do %>
                       <%= t('.contact') %>
                       <%= lucide_icon "anchor", class: "w-4" %>
                     <% end %>
