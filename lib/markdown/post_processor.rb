@@ -95,11 +95,6 @@ module Markdown
         wrapper = Nokogiri::XML::Node.new('div', fragment)
         wrapper['class'] = 'overflow-x-auto'
 
-        table['class'] = [
-          table['class'],
-          'w-full'
-        ].compact.join(' ')
-
         table.replace(wrapper)
         wrapper.add_child(table)
       end
