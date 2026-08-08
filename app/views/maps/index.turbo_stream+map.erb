@@ -1,5 +1,5 @@
 <%= turbo_stream.update :map_results do %>
-  <%= render 'maps/merchants', merchants: @merchants, pagy: @pagy %>
+  <%= render 'maps/merchants', merchants: @merchants, pagy: @pagy, query: @query %>
 <% end %>
 
 <% unless from_pagination? %>

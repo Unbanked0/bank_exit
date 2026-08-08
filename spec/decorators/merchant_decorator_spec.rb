@@ -23,7 +23,7 @@ RSpec.describe MerchantDecorator do
       context 'when expanded is true' do
         let(:expanded) { true }
 
-        it { is_expected.to eq '3 Square Street<br />ABC123 MyCity<br />🇫🇷 France' }
+        it { is_expected.to eq ['3 Square Street', 'ABC123 MyCity', '🇫🇷 France'] }
 
         context 'when only country is present' do
           before do
@@ -33,14 +33,14 @@ RSpec.describe MerchantDecorator do
             merchant.city = ''
           end
 
-          it { is_expected.to eq '🇫🇷 France' }
+          it { is_expected.to eq ['🇫🇷 France'] }
         end
       end
 
       context 'when expanded is false' do
         let(:expanded) { false }
 
-        it { is_expected.to eq '3 Square Street ABC123 MyCity<br />🇫🇷 France' }
+        it { is_expected.to eq ['3 Square Street ABC123 MyCity', '🇫🇷 France'] }
 
         context 'when only country is present' do
           before do
@@ -50,7 +50,7 @@ RSpec.describe MerchantDecorator do
             merchant.city = ''
           end
 
-          it { is_expected.to eq '🇫🇷 France' }
+          it { is_expected.to eq ['🇫🇷 France'] }
         end
       end
     end
@@ -61,7 +61,7 @@ RSpec.describe MerchantDecorator do
       context 'when expanded is true' do
         let(:expanded) { true }
 
-        it { is_expected.to eq '3 Square Street<br />ABC123 MyCity<br />France' }
+        it { is_expected.to eq ['3 Square Street', 'ABC123 MyCity', 'France'] }
 
         context 'when only country is present' do
           let(:expanded) { false }
@@ -73,14 +73,14 @@ RSpec.describe MerchantDecorator do
             merchant.city = ''
           end
 
-          it { is_expected.to eq 'France' }
+          it { is_expected.to eq ['France'] }
         end
       end
 
       context 'when expanded is false' do
         let(:expanded) { false }
 
-        it { is_expected.to eq '3 Square Street ABC123 MyCity<br />France' }
+        it { is_expected.to eq ['3 Square Street ABC123 MyCity', 'France'] }
 
         context 'when only country is present' do
           let(:expanded) { false }
@@ -92,7 +92,7 @@ RSpec.describe MerchantDecorator do
             merchant.city = ''
           end
 
-          it { is_expected.to eq 'France' }
+          it { is_expected.to eq ['France'] }
         end
       end
     end

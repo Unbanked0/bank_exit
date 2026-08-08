@@ -3,7 +3,7 @@ module Merchants
   # helps to identify if a removal is legit or a dirty one by opening
   # an issue at Github with removed merchant references.
   class CheckAndReportRemovedOnOSM < ApplicationService
-    include ApplicationHelper
+    include AddressesHelper
     include Rails.application.routes.url_helpers
 
     attr_reader :geojson_merchant_ids

@@ -33,7 +33,7 @@
             <%= lucide_icon "home", class: "w-4" %>
           </div>
 
-          <%== @merchant.full_address_with_country %>
+          <%= formatted_address(@merchant.full_address_with_country) %>
         </div>
       <% end %>
 
@@ -65,9 +65,7 @@
           <%= t(".home_delivery") %>
 
           <% if @merchant.delivery_zone %>
-            (
-            <%= @merchant.delivery_zone %>
-            )
+            ( <%= @merchant.delivery_zone %> )
           <% end %>
         </div>
       <% end %>

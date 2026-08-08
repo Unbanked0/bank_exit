@@ -5,7 +5,7 @@
     <%= render "maps/directory_friends", directory_friends: @directory_friends %>
   <% end %>
 
-  <%= render 'maps/merchants_table_or_grid', merchants: @merchants, pagy: @pagy %>
+  <%= render 'maps/merchants_table_or_grid', merchants: @merchants, pagy: @pagy, query: @query %>
 </div>
 
 <% if @faqs.any? %>

@@ -92,7 +92,7 @@
     <%= render "breadcrumb" %>
     <%= yield :coins %>
 
-    <%= highlight(article.render_template, params[:q], sanitize: false) %>
+    <%= highlight(article.render_template, sanitize(params[:q]), sanitize: false) %>
 
     <p class="text-xs italic text-right">
       <% icon = article.human? ? "bot-off" : "bot" %>

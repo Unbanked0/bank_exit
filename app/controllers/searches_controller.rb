@@ -29,6 +29,6 @@ class SearchesController < PublicController
   private
 
   def query
-    params[:query]
+    @query ||= params[:query]
   end
 end

@@ -1,4 +1,4 @@
-<%# locals: (merchants:, pagy:) %>
+<%# locals: (merchants:, pagy:, query:) %>
 
 <div
   id="merchants_results"
@@ -25,7 +25,7 @@
 
           <tbody>
             <% merchants.each do |merchant| %>
-              <%= render "merchants_table_row", merchant: merchant %>
+              <%= render "merchants_table_row", merchant: merchant, query: query %>
             <% end %>
           </tbody>
         </table>

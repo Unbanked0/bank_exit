@@ -1,5 +1,5 @@
 class MerchantDecorator < ProfesionalDecorator
-  include ApplicationHelper
+  include AddressesHelper
   include Rails.application.routes.url_helpers
 
   TICKERS = {
@@ -19,27 +19,21 @@ class MerchantDecorator < ProfesionalDecorator
     full_address.present? || country.present?
   end
 
-  def full_address_with_country(show_flag: true, expanded: true, inline: false)
-    @full_address_with_country ||= begin
-      lines = if expanded
-                line_1 = [house_number, street].compact_blank.join(' ')
-                line_2 = [postcode, city].compact_blank.join(' ')
+  def full_address_with_country(show_flag: true, expanded: true)
+    lines = if expanded
+              [
+                [house_number, street].compact_blank.join(' '),
+                [postcode, city].compact_blank.join(' ')
+              ]
+            else
+              [
+                [house_number, street, postcode, city].compact_blank.join(' ')
+              ]
+            end
 
-                [line_1, line_2]
-              else
-                line = [house_number, street, postcode, city]
+    lines << pretty_country(show_flag: show_flag)
 
-                [line.compact_blank.join(' ')]
-              end
-
-      lines << pretty_country(show_flag: show_flag)
-
-      if inline
-        lines.compact_blank.join(' ')
-      else
-        lines.compact_blank.join('<br />')
-      end
-    end
+    lines.compact_blank
   end
 
   def contact?

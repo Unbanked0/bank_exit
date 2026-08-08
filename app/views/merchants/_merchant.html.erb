@@ -1,11 +1,11 @@
-<%# locals: (merchant:, open: false) %>
+<%# locals: (merchant:, open: false, search: nil) %>
 
 <details
   class="
     collapse collapse-arrow bg-base-200 relative hover:border-primary
     transition-colors
   "
-  <% if params[:search].present? || open %>
+  <% if search.present? || open %>
     open
   <% end %>
 >
@@ -17,9 +17,7 @@
         </span>
       <% end %>
 
-      <span class="font-bold">
-        <%= highlight(merchant.name, params[:search]) %>
-      </span>
+      <span class="font-bold"><%= highlight(merchant.name, search) %></span>
     </div>
 
     <div class="flex items-center gap-3 @max-sm:flex-col">
@@ -72,9 +70,10 @@
 
       <% if merchant.description.present? %>
         <blockquote class="italic">
-          <%= highlight(
+          <%== highlight(
             merchant.description.truncate(150),
-            params[:search]
+            search,
+            sanitize: true
           ) %>
         </blockquote>
       <% end %>
@@ -86,8 +85,9 @@
 
             <div>
               <%== highlight(
-                merchant.full_address_with_country,
-                params[:search]
+                formatted_address(merchant.full_address_with_country),
+                search,
+                sanitize: true
               ) %>
             </div>
           </div>
@@ -100,9 +100,7 @@
             <%= t('.home_delivery') %>
 
             <% if merchant.delivery_zone %>
-              (
-              <%= merchant.delivery_zone %>
-              )
+              ( <%= merchant.delivery_zone %> )
             <% end %>
           </div>
         <% end %>

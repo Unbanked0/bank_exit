@@ -1,0 +1,37 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 4,
+      "fingerprint": "54d2ccac15ed9b3b809f503b4c8f4ecf148f36b749a9780c7be594bbc6589211",
+      "check_name": "LinkToHref",
+      "message": "Potentially unsafe model attribute in `link_to` href",
+      "file": "app/views/local_groups/index.html.erb",
+      "line": 66,
+      "link": "https://brakemanscanner.org/docs/warning_types/link_to_href",
+      "code": "link_to(LocalGroup.new.link, LocalGroup.new.link, :class => \"justify-self-end\", :target => :_blank, :rel => \"noopener\")",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "LocalGroupsController",
+          "method": "index",
+          "line": 10,
+          "file": "app/controllers/local_groups_controller.rb",
+          "rendered": {
+            "name": "local_groups/index",
+            "file": "app/views/local_groups/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "local_groups/index"
+      },
+      "user_input": "LocalGroup.new.link",
+      "confidence": "Weak",
+      "cwe_id": [79],
+      "note": "LocalGroup links are hardcoded in static YAML and cannot be modified by users."
+    }
+  ],
+  "brakeman_version": "8.0.5"
+}

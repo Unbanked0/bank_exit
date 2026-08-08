@@ -1,4 +1,4 @@
-<%# locals: (merchant:) %>
+<%# locals: (merchant:, query:) %>
 
 <tr>
   <td>
@@ -7,7 +7,7 @@
 
   <th>
     <%= link_to merchant_path(merchant) do %>
-      <%= highlight(merchant.name, params[:search]) %>
+      <%= highlight(merchant.name, query) %>
     <% end %>
   </th>
 

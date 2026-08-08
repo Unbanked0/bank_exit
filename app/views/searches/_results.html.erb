@@ -1,21 +1,21 @@
-<%# locals: (merchants:, directories:, projects:, tutorials:, blogs:, pagy:) %>
+<%# locals: (merchants:, directories:, projects:, tutorials:, blogs:, pagy:, query: nil) %>
 
 <% list_item_class = "list-row hover:bg-base-200! hover:text-base-content!" %>
 
 <nav class="list bg-base-100 max-h-[62svh] overflow-y-auto p-2">
   <% if projects.present? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
-      <%== Project.human_count(projects.count, pretty_count: number_with_delimiter(projects.count)) %>
+      <%== human_count(Project, projects.count) %>
     </div>
     <% projects.each do |project| %>
-      <%= link_to project_path(project, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
+      <%= link_to project_path(project, q: query), class: list_item_class, data: { turbo_frame: :_top } do %>
         <% if project.cover? %>
           <%= image_tag project.cover, alt: project.title, class: "object-cover w-10 h-10" %>
         <% end %>
 
         <div>
           <div class="font-semibold text-md">
-            <%== highlight(project.title, params[:query]) %>
+            <%== highlight(project.title, query) %>
           </div>
 
           <% if project.overview.present? %>
@@ -23,7 +23,7 @@
               <%== sanitize(
                   highlight(
                     project.overview,
-                    params[:query]
+                    query
                   ),
                   tags: %w[mark]
                 ).delete_prefix("\nImportant\n") %>
@@ -36,17 +36,17 @@
 
   <% if tutorials.present? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
-      <%== Tutorial.human_count(tutorials.count, pretty_count: number_with_delimiter(tutorials.count)) %>
+      <%== human_count(Tutorial, tutorials.count) %>
     </div>
     <% tutorials.each do |tutorial| %>
-      <%= link_to tutorial_path(tutorial, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
+      <%= link_to tutorial_path(tutorial, q: query), class: list_item_class, data: { turbo_frame: :_top } do %>
         <% if tutorial.logo? %>
           <%= image_tag tutorial.logo, alt: tutorial.title, class: "object-cover w-10 h-10" %>
         <% end %>
 
         <div>
           <div class="font-semibold text-md">
-            <%== highlight(tutorial.title, params[:query]) %>
+            <%== highlight(tutorial.title, query) %>
           </div>
 
           <% if tutorial.level? %>
@@ -60,7 +60,7 @@
               <%== sanitize(
                 highlight(
                   tutorial.overview,
-                  params[:query]
+                  query
                 ),
                 tags: %w[mark]
               ).delete_prefix("\nImportant\n") %>
@@ -73,17 +73,17 @@
 
   <% if blogs.present? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
-      <%== Blog.human_count(blogs.count, pretty_count: number_with_delimiter(blogs.count)) %>
+      <%== human_count(Blog, blogs.count) %>
     </div>
     <% blogs.each do |blog| %>
-      <%= link_to blog_path(blog, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
+      <%= link_to blog_path(blog, q: query), class: list_item_class, data: { turbo_frame: :_top } do %>
         <% if blog.logo? %>
           <%= image_tag blog.logo, alt: blog.title, class: "object-cover w-10 h-10" %>
         <% end %>
 
         <div>
           <div class="font-semibold text-md">
-            <%== highlight(blog.title, params[:query]) %>
+            <%== highlight(blog.title, query) %>
           </div>
 
           <% if blog.overview.present? %>
@@ -91,7 +91,7 @@
               <%== sanitize(
                 highlight(
                   blog.overview,
-                  params[:query]
+                  query
                 ),
                 tags: %w[mark]
               ).delete_prefix("\nImportant\n") %>
@@ -104,15 +104,15 @@
 
   <% if directories.present? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
-      <%== Directory.human_count(directories.count, pretty_count: number_with_delimiter(directories.count)) %>
+      <%== human_count(Directory, directories.count) %>
     </div>
     <% directories.each do |directory| %>
-      <%= link_to directory_path(directory, q: params[:query]), class: list_item_class, data: { turbo_frame: :_top } do %>
+      <%= link_to directory_path(directory, q: query), class: list_item_class, data: { turbo_frame: :_top } do %>
         <%= render 'logo_or_initials', model: directory, mode: :medium %>
 
         <div>
           <div class="font-semibold text-md">
-            <%== highlight(directory.name, params[:query]) %>
+            <%== highlight(directory.name, query, sanitize: true) %>
           </div>
 
           <% if directory.category.present? %>
@@ -124,7 +124,7 @@
           <% if directory.description.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
               <%== highlight(directory.description,
-              params[:query]).truncate(100) %>
+              query, sanitize: true).truncate(100) %>
             </p>
           <% end %>
         </div>
@@ -136,7 +136,7 @@
 
   <% if merchants.any? %>
     <div class="p-2 text-xs opacity-60 tracking-wide">
-      <%== Merchant.human_count(pagy.count, pretty_count: number_with_delimiter(pagy.count)) %>
+      <%== human_count(Merchant, pagy.count) %>
     </div>
     <% merchants.each do |merchant| %>
       <%= link_to merchant_path(merchant), class: list_item_class, data: { turbo_frame: :_top } do %>
@@ -144,7 +144,7 @@
 
         <div>
           <div class="font-semibold text-md">
-            <%== highlight(merchant.name, params[:query]) %>
+            <%== highlight(merchant.name, query, sanitize: true) %>
           </div>
 
           <% if merchant.category.present? %>
@@ -157,7 +157,7 @@
         <% if merchant.description.present? %>
           <p class="list-col-wrap text-xs opacity-70 mt-2">
             <%== highlight(merchant.description,
-            params[:query]).truncate(100) %>
+            query, sanitize: true).truncate(100) %>
           </p>
         <% end %>
 
@@ -166,7 +166,7 @@
         <div class="flex items-center">
           <div class="tooltip tooltip-left">
             <div class="tooltip-content">
-              <%== merchant.full_address_with_country %>
+              <%= formatted_address(merchant.full_address_with_country) %>
             </div>
 
             <%= pretty_country_html(merchant.country, show_label: false, show_flag: true) %>

@@ -1,5 +1,5 @@
 class StatisticsPresenter < ApplicationPresenter
-  include ApplicationHelper
+  include AddressesHelper
 
   WEST_EUROPEAN_COUNTRIES = %w[FR GB ES PT DE IT CH BE NL CZ].freeze
   NORTH_AMERICA_COUNTRIES = %w[CA US MX CU SV AU NZ].freeze

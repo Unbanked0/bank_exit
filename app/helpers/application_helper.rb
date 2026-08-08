@@ -16,21 +16,8 @@ module ApplicationHelper
     enum.keys.map { |k| [klass.human_enum_name(enum_name, k), k] }
   end
 
-  def pretty_country_html(country, show_label: true, show_flag: true)
-    country = 'gb' if country == 'en'
-    c = ISO3166::Country[country]
-
-    name = c.translations[I18n.locale.to_s] ||
-           c.common_name || c.iso_short_name
-
-    return name unless show_flag
-
-    flag = c.emoji_flag
-    return "#{flag} #{name}" if show_label && show_flag
-
-    flag
-  rescue StandardError
-    country
+  def human_count(record_class, count)
+    "#{content_tag(:strong, number_with_delimiter(count))} #{record_class.model_name.human(count: count)}"
   end
 
   def map_referer_path

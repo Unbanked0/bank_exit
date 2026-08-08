@@ -1,7 +1,7 @@
 <div class="flex max-md:flex-col-reverse items-start">
   <%= render 'sidebar', merchant_sync: @merchant_sync, pagy: @pagy do %>
     <div id="map_results">
-      <%= render 'maps/merchants', merchants: @merchants, pagy: @pagy %>
+      <%= render 'maps/merchants', merchants: @merchants, pagy: @pagy, query: @query %>
     </div>
   <% end %>
 
