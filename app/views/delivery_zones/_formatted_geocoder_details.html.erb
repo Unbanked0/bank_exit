@@ -11,7 +11,7 @@
     region = t("FR-#{region}", scope: 'regions')
   end
 
-  country = pretty_country_html(country_code)
+  country = formatted_country(country_code)
   continent = t(continent_code, scope: 'continents')
 
   sentence = [city, region, country, continent].compact_blank

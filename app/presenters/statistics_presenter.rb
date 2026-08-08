@@ -1,6 +1,4 @@
 class StatisticsPresenter < ApplicationPresenter
-  include AddressesHelper
-
   WEST_EUROPEAN_COUNTRIES = %w[FR GB ES PT DE IT CH BE NL CZ].freeze
   NORTH_AMERICA_COUNTRIES = %w[CA US MX CU SV AU NZ].freeze
   SOUTH_AMERICA_COUNTRIES = %w[BR AR BO PY UY CL].freeze
@@ -100,13 +98,13 @@ class StatisticsPresenter < ApplicationPresenter
     base_merchants.monero.group(:country).count.map do |k, v|
       next unless v >= 3
 
-      [pretty_country_html(k), v]
+      [CountryPresenter.new(k).label_with_flag, v]
     end.compact_blank
   end
 
   def merchants_june_by_country
     base_merchants.june.group(:country).count.map do |k, v|
-      [pretty_country_html(k), v]
+      [CountryPresenter.new(k).label_with_flag, v]
     end
   end
 
@@ -114,7 +112,7 @@ class StatisticsPresenter < ApplicationPresenter
     base_merchants
       .where(country: WEST_EUROPEAN_COUNTRIES)
       .group(:country).count.map do |k, v|
-      [pretty_country_html(k), v]
+      [CountryPresenter.new(k).label_with_flag, v]
     end
   end
 
@@ -142,7 +140,7 @@ class StatisticsPresenter < ApplicationPresenter
     range = range_start..range_end
 
     area.each_with_object({}) do |country, hash|
-      label = pretty_country_html(country)
+      label = CountryPresenter.new(country).label_with_flag
       base_merchants
         .where(country: country)
         .where(created_at: range)

@@ -66,7 +66,7 @@ set_meta_tags og: { image: image },
 
         <% if @merchant.address? %>
           <div class="alert alert-vertical text-center">
-            <%= formatted_address(@merchant.full_address_with_country) %>
+            <%= formatted_address(@merchant.address_lines) %>
           </div>
         <% end %>
       </header>

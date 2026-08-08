@@ -33,7 +33,7 @@
             <%= lucide_icon "home", class: "w-4" %>
           </div>
 
-          <%= formatted_address(@merchant.full_address_with_country) %>
+          <%= formatted_address(@merchant.address_lines) %>
         </div>
       <% end %>
 

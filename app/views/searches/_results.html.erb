@@ -166,10 +166,10 @@
         <div class="flex items-center">
           <div class="tooltip tooltip-left">
             <div class="tooltip-content">
-              <%= formatted_address(merchant.full_address_with_country) %>
+              <%= formatted_address(merchant.address_lines) %>
             </div>
 
-            <%= pretty_country_html(merchant.country, show_label: false, show_flag: true) %>
+            <%= merchant.formatted_country(show_label: false, show_flag: true) %>
           </div>
         </div>
 

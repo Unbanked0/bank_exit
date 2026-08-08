@@ -1,5 +1,4 @@
 class MerchantDecorator < ProfesionalDecorator
-  include AddressesHelper
   include Rails.application.routes.url_helpers
 
   TICKERS = {
@@ -19,21 +18,28 @@ class MerchantDecorator < ProfesionalDecorator
     full_address.present? || country.present?
   end
 
-  def full_address_with_country(show_flag: true, expanded: true)
-    lines = if expanded
-              [
-                [house_number, street].compact_blank.join(' '),
-                [postcode, city].compact_blank.join(' ')
-              ]
-            else
-              [
-                [house_number, street, postcode, city].compact_blank.join(' ')
-              ]
-            end
+  def address_lines(multiline: true, show_country: true, show_flag: true)
+    lines =
+      if multiline
+        [
+          [house_number, street].compact_blank.join(' '),
+          [postcode, city].compact_blank.join(' ')
+        ]
+      else
+        [
+          [house_number, street, postcode, city].compact_blank.join(' ')
+        ]
+      end
 
-    lines << pretty_country(show_flag: show_flag)
+    lines << formatted_country(show_flag:) if show_country
 
     lines.compact_blank
+  end
+
+  def formatted_country(show_flag: true, show_label: true)
+    CountryPresenter
+      .new(country)
+      .display(show_flag:, show_label:)
   end
 
   def contact?
@@ -81,10 +87,6 @@ class MerchantDecorator < ProfesionalDecorator
       contact_tripadvisor,
       osm_link
     ].compact_blank
-  end
-
-  def pretty_country(show_flag: true)
-    pretty_country_html(country, show_flag: show_flag)
   end
 
   def to_osm_map

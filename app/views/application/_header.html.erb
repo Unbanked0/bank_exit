@@ -89,7 +89,7 @@ root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
                       <% locale = :gb if locale == :en %>
 
                       <%= link_to maps_path(country: locale.upcase) do %>
-                        <%= pretty_country_html(locale) %>
+                        <%= formatted_country(locale) %>
                       <% end %>
                     </li>
                   <% end %>

@@ -28,7 +28,7 @@ class MerchantProposalIssue < ApplicationService
       ```
 
       > [!NOTE]
-      > - Country: `#{merchant_proposal.pretty_country}`
+      > - Country: `#{merchant_proposal.formatted_country}`
       > - Latitude: `#{merchant_proposal.latitude.presence || '--'}`
       > - Longitude: `#{merchant_proposal.longitude.presence || '--'}`
 

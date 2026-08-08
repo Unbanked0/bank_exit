@@ -15,7 +15,7 @@ Discover **<%= merchants_count %>** newly listed <%= list.join(', ') %> <%= 'mer
 
 <% merchants_by_country.each do |country, merchants| %>
 
-### <%= pretty_country_html(country) %>
+### <%= formatted_country(country) %>
 
 <% merchants.each do |merchant| %>
 <%

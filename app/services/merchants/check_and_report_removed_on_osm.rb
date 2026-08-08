@@ -3,7 +3,6 @@ module Merchants
   # helps to identify if a removal is legit or a dirty one by opening
   # an issue at Github with removed merchant references.
   class CheckAndReportRemovedOnOSM < ApplicationService
-    include AddressesHelper
     include Rails.application.routes.url_helpers
 
     attr_reader :geojson_merchant_ids
@@ -70,7 +69,7 @@ module Merchants
     def merchants_list
       @merchants_list ||= monero_june_merchants.map do |merchant|
         <<~MARKDOWN
-          - [ ] **#{merchant.name}** [##{merchant.identifier}] #{pretty_country_html(merchant.country)}
+          - [ ] **#{merchant.name}** [##{merchant.identifier}] #{merchant.formatted_country}
             - Date: #{I18n.l(merchant.deleted_at)}
             - Coins: #{merchant.coins.map(&:capitalize).join(', ')}
             - [On Bank-Exit](#{merchant_url(merchant, debug: 'true')})

@@ -39,7 +39,7 @@
       </div>
 
       <div class="truncate max-w-72">
-        <%= highlight(merchant.full_address_with_country, params[:query]) %>
+        <%= highlight(formatted_address(merchant.address_lines), params[:query]) %>
       </div>
     </div>
   </th>

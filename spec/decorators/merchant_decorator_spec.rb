@@ -3,98 +3,108 @@ require 'rails_helper'
 RSpec.describe MerchantDecorator do
   let(:decorator) { merchant.decorate }
 
-  describe '#full_address_with_country' do
-    subject do
-      decorator.full_address_with_country(
-        show_flag: show_flag, expanded: expanded
+  describe '#address_lines' do
+    subject { decorator.address_lines(**options) }
+
+    let(:options) { {} }
+
+    let(:merchant) do
+      build(
+        :merchant,
+        house_number: '12',
+        street: 'Rue Exemple',
+        postcode: '75000',
+        city: 'Paris',
+        country: 'fr'
       )
     end
 
+    context 'with default options' do
+      it { is_expected.to eq(['12 Rue Exemple', '75000 Paris', '🇫🇷 France']) }
+    end
+
+    context 'with multiline disabled' do
+      let(:options) { { multiline: false } }
+
+      it { is_expected.to eq(['12 Rue Exemple 75000 Paris', '🇫🇷 France']) }
+    end
+
+    context 'without country' do
+      let(:options) { { show_country: false } }
+
+      it { is_expected.to eq(['12 Rue Exemple', '75000 Paris']) }
+    end
+
+    context 'with multiline disabled and without country' do
+      let(:options) do
+        {
+          multiline: false,
+          show_country: false
+        }
+      end
+
+      it { is_expected.to eq(['12 Rue Exemple 75000 Paris']) }
+    end
+
+    context 'with incomplete address data' do
+      let(:merchant) do
+        build(
+          :merchant,
+          house_number: nil,
+          street: 'Rue Exemple',
+          postcode: nil,
+          city: 'Paris',
+          country: 'fr'
+        )
+      end
+
+      it { is_expected.to eq(['Rue Exemple', 'Paris', '🇫🇷 France']) }
+    end
+
+    context 'with only country data' do
+      let(:merchant) do
+        build(
+          :merchant,
+          house_number: nil,
+          street: nil,
+          postcode: nil,
+          city: nil,
+          country: 'fr'
+        )
+      end
+
+      it { is_expected.to eq(['🇫🇷 France']) }
+    end
+  end
+
+  describe '#formatted_country' do
     let(:merchant) do
-      create :merchant,
-             house_number: 3, street: 'Square Street',
-             postcode: 'ABC123', city: 'MyCity',
-             country: 'FR'
+      build(
+        :merchant,
+        house_number: '12',
+        street: 'Rue Exemple',
+        postcode: '75000',
+        city: 'Paris',
+        country: 'fr'
+      )
     end
 
-    context 'when show_flag is true' do
-      let(:show_flag) { true }
+    context 'with default options' do
+      subject { decorator.formatted_country }
 
-      context 'when expanded is true' do
-        let(:expanded) { true }
-
-        it { is_expected.to eq ['3 Square Street', 'ABC123 MyCity', '🇫🇷 France'] }
-
-        context 'when only country is present' do
-          before do
-            merchant.house_number = ''
-            merchant.street = ''
-            merchant.postcode = ''
-            merchant.city = ''
-          end
-
-          it { is_expected.to eq ['🇫🇷 France'] }
-        end
-      end
-
-      context 'when expanded is false' do
-        let(:expanded) { false }
-
-        it { is_expected.to eq ['3 Square Street ABC123 MyCity', '🇫🇷 France'] }
-
-        context 'when only country is present' do
-          before do
-            merchant.house_number = ''
-            merchant.street = ''
-            merchant.postcode = ''
-            merchant.city = ''
-          end
-
-          it { is_expected.to eq ['🇫🇷 France'] }
-        end
-      end
+      it { is_expected.to eq('🇫🇷 France') }
     end
 
-    context 'when show_flag is false' do
-      let(:show_flag) { false }
+    context 'when label is disabled' do
+      subject { decorator.formatted_country(show_label: false) }
 
-      context 'when expanded is true' do
-        let(:expanded) { true }
+      it { is_expected.to eq('🇫🇷') }
+    end
 
-        it { is_expected.to eq ['3 Square Street', 'ABC123 MyCity', 'France'] }
+    context 'when flag is disabled' do
+      subject { decorator.formatted_country(show_flag: false) }
 
-        context 'when only country is present' do
-          let(:expanded) { false }
-
-          before do
-            merchant.house_number = ''
-            merchant.street = ''
-            merchant.postcode = ''
-            merchant.city = ''
-          end
-
-          it { is_expected.to eq ['France'] }
-        end
-      end
-
-      context 'when expanded is false' do
-        let(:expanded) { false }
-
-        it { is_expected.to eq ['3 Square Street ABC123 MyCity', 'France'] }
-
-        context 'when only country is present' do
-          let(:expanded) { false }
-
-          before do
-            merchant.house_number = ''
-            merchant.street = ''
-            merchant.postcode = ''
-            merchant.city = ''
-          end
-
-          it { is_expected.to eq ['France'] }
-        end
-      end
+      it { is_expected.to eq('France') }
     end
   end
 

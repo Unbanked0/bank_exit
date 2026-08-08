@@ -48,7 +48,7 @@
     <% if address&.geocoded? %>
       <% if address.country_code %>
         <span title="<%= address.label %>">
-          <%= pretty_country_html(address.country_code) %>
+          <%= formatted_country(address.country_code) %>
         </span>
       <% else %>
         <span><%= address.label %></span>

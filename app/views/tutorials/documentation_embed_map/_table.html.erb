@@ -110,7 +110,7 @@
           <% Merchant.available.pluck(:country).uniq.compact_blank.sort.each do |country| %>
             <div
               class="tooltip tooltip-bottom"
-              data-tip="<%= pretty_country_html(country.to_sym) %>"
+              data-tip="<%= formatted_country(country.to_sym) %>"
             >
               <span class="badge badge-info badge-sm"><%= country %></span>
             </div>

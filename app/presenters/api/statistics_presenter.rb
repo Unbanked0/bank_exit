@@ -12,7 +12,7 @@ module API
             iso: iso,
             continent: COUNTRY_TO_CONTINENT[iso.to_s.upcase],
             flag: ISO3166::Country[iso].emoji_flag,
-            name: pretty_country_html(iso, show_flag: false),
+            name: CountryPresenter.new(iso).name,
             count: count
           }
         end.compact_blank
@@ -28,7 +28,7 @@ module API
             iso: iso,
             continent: COUNTRY_TO_CONTINENT[iso.to_s.upcase],
             flag: ISO3166::Country[iso].emoji_flag,
-            name: pretty_country_html(iso, show_flag: false),
+            name: CountryPresenter.new(iso).name,
             count: count
           }
         end.compact_blank

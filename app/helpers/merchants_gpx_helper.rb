@@ -17,7 +17,7 @@ module MerchantsGPXHelper
       coins.map(&:capitalize).join(', '),
       (I18n.t(category, scope: :categories) if category),
       (I18n.t(continent, scope: :continents) if continent),
-      (pretty_country_html(country) if country),
+      (CountryPresenter.new(country).label_with_flag if country),
       query.presence || nil,
       "#{I18n.l(Date.current)} 🚀"
     ].compact_blank.join(' - ')
