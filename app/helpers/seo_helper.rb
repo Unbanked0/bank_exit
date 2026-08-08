@@ -8,7 +8,7 @@ module SEOHelper
       charset: 'utf-8',
       lang: I18n.locale,
       alternate: alternates,
-      canonical: request.url,
+      canonical: canonical_url,
       prev: pagy&.page_url(:previous, absolute: true),
       next: pagy&.page_url(:next, absolute: true),
       manifest: pwa_manifest_path(format: :json),
@@ -16,19 +16,19 @@ module SEOHelper
         title: :title,
         site_name: :site,
         description: :description,
-        image: asset_url(logo_by_locale),
-        url: request.url
+        image: default_image_url,
+        url: canonical_url
       },
       twitter: {
         card: 'summary',
         site: '@SortieDeBanque',
         title: :title,
         description: :description,
-        image: asset_url(logo_by_locale),
-        url: request.url
+        image: default_image_url,
+        url: canonical_url
       },
       icon: [
-        { href: image_path(logo_by_locale), type: 'image/png' }
+        { href: default_image_url, type: 'image/png' }
       ],
       viewport: 'width=device-width,initial-scale=1',
       'turbo-cache-control': 'no-preview',
@@ -43,7 +43,7 @@ module SEOHelper
 
   def schema_dot_org_organization
     {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Collectif Sortie de Banque',
       url: root_url,
@@ -57,7 +57,7 @@ module SEOHelper
         'https://x.com/SortieDeBanque',
         'https://x.com/Bank_Exit',
         'https://www.youtube.com/@sortiedebanque',
-        'http://t.me/SortieDeBanque',
+        'https://t.me/SortieDeBanque',
         'https://odysee.com/@SortieDeBanque:c',
         'https://www.instagram.com/sortiedebanque/',
         'https://www.tiktok.com/@sortiedebanque',
@@ -134,7 +134,7 @@ module SEOHelper
 
   def schema_dot_org_blog(blog)
     json = {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       name: blog.title,
       datePublished: blog.created_at,
@@ -158,7 +158,7 @@ module SEOHelper
 
   def schema_dot_org_tutorial(tutorial)
     json = {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': 'TechArticle',
       name: tutorial.title,
       license: license_url,
@@ -180,7 +180,7 @@ module SEOHelper
 
   def schema_dot_org_project(project)
     json = {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': 'TechArticle',
       name: project.title,
       license: license_url
@@ -201,7 +201,7 @@ module SEOHelper
 
   def schema_dot_org_merchant(merchant)
     json = {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': FindSchemaOrgType.call(merchant.category),
       name: merchant.name,
       paymentAccepted: 'Cryptocurrency',
@@ -220,8 +220,11 @@ module SEOHelper
 
     json[:openingHours] = merchant.opening_hours if merchant.opening_hours.present?
 
-    json[:latitude] = merchant.latitude
-    json[:longitude] = merchant.longitude
+    json[:geo] = {
+      '@type': 'GeoCoordinates',
+      latitude: merchant.latitude,
+      longitude: merchant.longitude
+    }
 
     if merchant.address?
       json[:address] = { '@type': 'PostalAddress' }
@@ -245,7 +248,7 @@ module SEOHelper
           '@type': 'Review',
           author: {
             '@type': 'Person',
-            name: comment.pseudonym || 'John Doe'
+            name: comment.pseudonym.presence || 'John Doe'
           },
           discussionUrl: polymorphic_url(comment.commentable),
           datePublished: comment.created_at.to_date,
@@ -265,7 +268,7 @@ module SEOHelper
 
   def schema_dot_org_directory(directory)
     json = {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': FindSchemaOrgType.call(directory.category),
       name: directory.name
     }
@@ -287,7 +290,7 @@ module SEOHelper
 
   def schema_dot_org_faq(faqs)
     json = {
-      '@context': 'http://schema.org/',
+      '@context': 'https://schema.org',
       '@type': 'FAQPage',
       name: I18n.t('faqs.show.title'),
       mainEntity: []
@@ -353,6 +356,10 @@ module SEOHelper
     t('seo.default.description')
   end
 
+  def default_image_url
+    image_url(logo_by_locale)
+  end
+
   def alternates
     hash = {}
 
@@ -361,6 +368,14 @@ module SEOHelper
     end
 
     hash
+  end
+
+  def canonical_url
+    url_for(
+      only_path: false,
+      protocol: request.protocol,
+      host: request.host
+    )
   end
 
   def seo_scope

@@ -1,3 +1,8 @@
+<% image = @directory.banner.attached? ? rails_blob_url(@directory.banner) : image_url(logo_by_locale)
+
+set_meta_tags og: { image: image },
+              twitter: { image: image } %>
+
 <% coin_wallets = @directory.coin_wallets.enabled %>
 <% contact_ways = ContactWayDecorator.wrap(@directory.contact_ways.enabled) %>
 <% delivery_zones = @directory.delivery_zones.enabled %>
