@@ -2,14 +2,7 @@
   <header class="hero bg-fixed bg-banner-statistics bg-bottom">
     <div class="hero-overlay"></div>
 
-    <div
-      class="
-        <%= class_names(
-        'hero-content w-full lg:w-auto',
-        'hero-content-main': params[:controller] == 'statistics'
-        ) %>
-      "
-    >
+    <div class="<%= class_names('hero-content w-full lg:w-auto') %>">
       <div class="w-full max-w-5xl">
         <div class="text-center space-y-5">
           <h1 class="text-3xl font-bold">

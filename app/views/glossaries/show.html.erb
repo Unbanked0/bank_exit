@@ -2,7 +2,7 @@
   <header class="hero bg-fixed bg-banner-library">
     <div class="hero-overlay"></div>
 
-    <div class="hero-content hero-content-main">
+    <div class="hero-content">
       <div class="max-w-5xl">
         <div class="text-center space-y-6">
           <h1 class="text-3xl font-bold"><%= t(".title") %></h1>
@@ -38,8 +38,7 @@
                     <%= glossary.acronym %>
 
                     <% if glossary.original_full_title %>
-                      -
-                      <%= glossary.original_full_title %>
+                      - <%= glossary.original_full_title %>
                     <% end %>
                   <% end %>
                 </h3>

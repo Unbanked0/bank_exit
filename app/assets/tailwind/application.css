@@ -112,11 +112,7 @@
 }
 
 @utility hero-content {
-    @apply py-20;
-}
-
-@utility hero-content-main {
-    @apply py-20 print:py-3!;
+    @apply py-12 text-center print:py-0;
 }
 
 @utility table-wrapper {

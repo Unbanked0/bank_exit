@@ -12,15 +12,21 @@ active_about = controller_name.in?(%w[local_groups collectives media])
 active_projects = controller_name == "projects" || (controller_name == "blogs" && params[:id] == "flyer")
 
 megamenu_popover_class = "flex max-lg:flex-col lg:items-center gap-6 lg:py-3"
-root_menu_active_class = "lg:bg-base-300 lg:rounded-md" %>
+root_menu_active_class = "lg:bg-base-300 lg:rounded-md"
+
+background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
 
 <header
   class="
-    sticky top-0 bg-base-100/90 z-50 border-b border-base-content/10
-    backdrop-blur print:hidden
+    <%= class_names(
+    "fixed inset-x-0 z-50 print:hidden transition-colors duration-300",
+    background_header => !current_page?(root_path)
+    ) %>
   "
+  data-controller="<%= 'header' if current_page?(root_path) %>"
+  data-header-background-class="<%= background_header %>"
 >
-  <div class="navbar shadow-sm">
+  <div class="navbar">
     <div class="navbar-start max-sm:w-full">
       <%= link_to root_path,
             class: "flex items-center gap-3",

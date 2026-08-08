@@ -58,7 +58,7 @@
 
     <%= render "search" %>
 
-    <main>
+    <main class="<%= class_names("pt-16": !current_page?(root_path)) %>">
       <%= yield %>
     </main>
 
