@@ -86,6 +86,12 @@
             <%== highlight(blog.title, query) %>
           </div>
 
+          <% if blog.level? %>
+            <span class="badge badge-xs inline-block <%= tutorial_class_by_level(blog.level) %>">
+              <%= t("articles.wrapper.#{blog.level}") %>
+            </span>
+          <% end %>
+
           <% if blog.overview.present? %>
             <p class="list-col-wrap text-xs opacity-70 mt-2">
               <%== sanitize(

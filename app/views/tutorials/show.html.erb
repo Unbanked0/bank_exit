@@ -1,6 +1,6 @@
 <% image = @tutorial.logo? ? image_url(@tutorial.logo) : default_image_url
 
-set_meta_tags og: { image: image },
+set_meta_tags og: { type: 'article', image: image },
               twitter: { image: image } %>
 
 <% content_for :header_actions do %>

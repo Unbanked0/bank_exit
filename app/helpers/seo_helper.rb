@@ -13,6 +13,7 @@ module SEOHelper
       next: pagy&.page_url(:next, absolute: true),
       manifest: pwa_manifest_path(format: :json),
       og: {
+        type: 'website',
         title: :title,
         site_name: :site,
         description: :description,
@@ -36,7 +37,6 @@ module SEOHelper
       'turbo-refresh-method': 'morph',
       'turbo-refresh-scroll': 'scroll',
       'turbo-prefetch': 'false',
-      'apple-mobile-web-app-capable': 'yes',
       'mobile-web-app-capable': 'yes'
     )
   end
