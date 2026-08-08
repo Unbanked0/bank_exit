@@ -6,6 +6,10 @@ RSpec.describe 'Admin::Users' do
   describe 'GET /admin/users' do
     subject { get '/admin/users' }
 
+    before do
+      create :user, :disabled
+    end
+
     %i[super_admin].each do |role|
       context "when role is #{role}" do
         include_context 'with user role', role

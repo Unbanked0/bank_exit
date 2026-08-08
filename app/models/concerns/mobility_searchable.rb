@@ -29,9 +29,5 @@ module MobilitySearchable
         searchable_mobility_attributes[attr.to_sym] = type
       end
     end
-
-    def mobility_search(query, attributes: nil)
-      MobilitySearch.call(all, query, attributes:)
-    end
   end
 end

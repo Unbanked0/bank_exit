@@ -12,7 +12,12 @@ RSpec.describe 'Announcements' do
       subject(:action) { get "/#{locale}/announcements" }
 
       before do
-        create :announcement, locale: locale
+        create :announcement, :default, locale: locale
+        create :announcement, :info, locale: locale
+        create :announcement, :success, locale: locale
+        create :announcement, :warning, locale: locale
+        create :announcement, :error, locale: locale
+
         action
       end
 

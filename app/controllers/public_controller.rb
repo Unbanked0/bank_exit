@@ -32,14 +32,4 @@ class PublicController < ApplicationController
     uri.query = query.to_query.presence
     uri.to_s
   end
-
-  def country_for_locale
-    return 'GB' if I18n.locale == :en
-
-    I18n.locale.upcase
-  end
-
-  def query
-    params[:query]
-  end
 end
