@@ -31,10 +31,14 @@
 
         <div class="space-y-3">
           <% glossaries.each do |glossary| %>
-            <article id="<%= glossary.acronym %>" class="alert alert-vertical">
+            <article
+              id="<%= glossary.acronym %>"
+              class="alert alert-vertical scroll-mt-20"
+            >
               <header class="border-b border-dotted pb-2">
                 <h3 class="text-lg font-bold">
-                  <%= link_to "##{glossary.acronym}" do %>
+                  <%= link_to "##{glossary.acronym}",
+                              data: { turbo: false } do %>
                     <%= glossary.acronym %>
 
                     <% if glossary.original_full_title %>
