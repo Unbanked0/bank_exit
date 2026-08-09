@@ -39,13 +39,39 @@ es:
       developed_by_html: Desarrollado con %{heart} por el Colectivo Bank-Exit
 
     modal_help:
-      shortcut: Atajo
+      global_shortcut: Atajo global
+      local_shortcut: Atajo local
       description: Descripción
-      open_help_modal: Abrir la ventana de ayuda
-      open_about_modal: Mostrar modal "Acerca de"
+      open_help_modal: Abrir el modal de ayuda
+      open_global_search: Abrir la búsqueda global
+      open_global_search_subtitle: (comerciantes, directorio, blogs, tutoriales, proyectos)
+      open_language_dropdown: Abrir el selector de idiomas
+      switch_theme: Cambiar el tema
+      switch_theme_subtitle: (claro, oscuro o sistema)
+      open_about_modal: Mostrar el modal "Acerca de"
       access_prev_page: Ir a la página anterior
       access_next_page: Ir a la página siguiente
       access_page_subtitle: (cuando hay paginación)
+
+      go_to_home: Ir al inicio
+      go_to_map: Ir al mapa
+      go_to_directory: Ir al directorio
+      go_to_projects: Ir a los proyectos
+      go_to_blogs: Ir a las publicaciones del blog
+      go_to_tutorials: Ir a los tutoriales
+      go_to_suggest_a_merchant: Ir a la página de sugerencia de comerciantes
+      go_to_suggest_a_merchant_subtitle: (desde el mapa)
+      go_to_suggest_a_directory: Ir a la página de sugerencia de directorios
+      go_to_suggest_a_directory_subtitle: (desde la página del directorio)
+      go_to_directory_local: Ir al directorio
+      go_to_directory_local_subtitle: (desde el mapa)
+
+      map_view: Mostrar los datos como mapa
+      map_view_subtitle: (en la página del mapa)
+      table_view: Mostrar los datos como tabla
+      table_view_subtitle: (en las páginas del mapa y del directorio)
+      grid_view: Mostrar los datos como cuadrícula
+      grid_view_subtitle: (en las páginas del mapa y del directorio)
 
     snowflakes:
       enable_snowflakes: Activar la nieve

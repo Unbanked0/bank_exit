@@ -39,13 +39,39 @@ it:
       developed_by_html: Sviluppato con %{heart} dal Collettivo Bank-Exit
 
     modal_help:
-      shortcut: Scorciatoia
+      global_shortcut: Scorciatoia globale
+      local_shortcut: Scorciatoia locale
       description: Descrizione
-      open_help_modal: Apri la finestra di aiuto
-      open_about_modal: Mostrare modale "Informazioni"
+      open_help_modal: Apri la modale di aiuto
+      open_global_search: Apri la ricerca globale
+      open_global_search_subtitle: (commercianti, elenco, blog, tutorial, progetti)
+      open_language_dropdown: Apri il selettore della lingua
+      switch_theme: Cambia tema
+      switch_theme_subtitle: (chiaro, scuro o sistema)
+      open_about_modal: Mostra la modale "Informazioni"
       access_prev_page: Vai alla pagina precedente
       access_next_page: Vai alla pagina successiva
       access_page_subtitle: (quando è presente la paginazione)
+
+      go_to_home: Vai alla home
+      go_to_map: Vai alla mappa
+      go_to_directory: Vai all'elenco
+      go_to_projects: Vai ai progetti
+      go_to_blogs: Vai agli articoli del blog
+      go_to_tutorials: Vai ai tutorial
+      go_to_suggest_a_merchant: Vai alla pagina per suggerire un commerciante
+      go_to_suggest_a_merchant_subtitle: (dalla mappa)
+      go_to_suggest_a_directory: Vai alla pagina per suggerire un elenco
+      go_to_suggest_a_directory_subtitle: (dalla pagina dell'elenco)
+      go_to_directory_local: Vai all'elenco
+      go_to_directory_local_subtitle: (dalla mappa)
+
+      map_view: Visualizza i dati come mappa
+      map_view_subtitle: (nella pagina della mappa)
+      table_view: Visualizza i dati come tabella
+      table_view_subtitle: (nelle pagine della mappa e dell'elenco)
+      grid_view: Visualizza i dati come griglia
+      grid_view_subtitle: (nelle pagine della mappa e dell'elenco)
 
     snowflakes:
       enable_snowflakes: Attivare la neve

@@ -42,13 +42,39 @@ en:
       developed_by_html: Developed with %{heart} by the Bank-Exit Collective
 
     modal_help:
-      shortcut: Shortcut
+      global_shortcut: Global shortcut
+      local_shortcut: Local shortcut
       description: Description
       open_help_modal: Open help modal
+      open_global_search: Open global search
+      open_global_search_subtitle: (merchants, directory, blogs, tutorials, projects)
+      open_language_dropdown: Open language selector
+      switch_theme: Switch theme
+      switch_theme_subtitle: (light, dark or system)
       open_about_modal: Show "About" modal
       access_prev_page: Go to previous page
       access_next_page: Go to next page
-      access_page_subtitle: (when pagination is present)
+      access_page_subtitle: (when pagination is available)
+
+      go_to_home: Go to home
+      go_to_map: Go to map
+      go_to_directory: Go to directory
+      go_to_projects: Go to projects
+      go_to_blogs: Go to blog posts
+      go_to_tutorials: Go to tutorials
+      go_to_suggest_a_merchant: Go to merchant suggestion page
+      go_to_suggest_a_merchant_subtitle: (from the map)
+      go_to_suggest_a_directory: Go to directory suggestion page
+      go_to_suggest_a_directory_subtitle: (from the directory page)
+      go_to_directory_local: Go to directory
+      go_to_directory_local_subtitle: (from the map)
+
+      map_view: Display data as a map
+      map_view_subtitle: (on the map page)
+      table_view: Display data as a table
+      table_view_subtitle: (on the map and directory pages)
+      grid_view: Display data as a grid
+      grid_view_subtitle: (on the map and directory pages)
 
     snowflakes:
       enable_snowflakes: Enable snow

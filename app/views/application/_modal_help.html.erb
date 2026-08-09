@@ -1,62 +1,261 @@
 <%= render_modal id: 'modal_help',
                  modal_title: t('help'),
-                 data: { controller: :help } do %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="whitespace-nowrap"><%= t('.shortcut') %></th>
-        <td><%= t('.description') %></td>
-      </tr>
-    </thead>
+                 modal_size: "max-w-4xl" do %>
+  <div class="flex max-lg:flex-col items-start gap-3">
+    <table class="table">
+      <thead class="bg-base-200">
+        <tr>
+          <th class="whitespace-nowrap"><%= t('.global_shortcut') %></th>
+          <td><%= t('.description') %></td>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td class="whitespace-nowrap">
-          <%= hotkey_label(['shift', '?']) %>
-        </td>
+      <tbody>
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '0']) %>
+          </td>
 
-        <td>
-          <%= t('.open_help_modal') %>
-        </td>
-      </tr>
+          <td>
+            <%= t('.go_to_home') %>
+          </td>
+        </tr>
 
-      <tr>
-        <td class="whitespace-nowrap">
-          <%= hotkey_label(['ctrl', 'i']) %>
-        </td>
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '1']) %>
+          </td>
 
-        <td>
-          <%= t('.open_about_modal') %>
-        </td>
-      </tr>
+          <td>
+            <%= t('.go_to_map') %>
+          </td>
+        </tr>
 
-      <tr>
-        <td class="whitespace-nowrap">
-          <%= hotkey_label(['ctrl', '◀︎']) %>
-        </td>
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '2']) %>
+          </td>
 
-        <td>
-          <span><%= t('.access_prev_page') %></span>
+          <td>
+            <%= t('.go_to_directory') %>
+          </td>
+        </tr>
 
-          <span class="block italic text-sm text-base-content/50">
-            <%= t('.access_page_subtitle') %>
-          </span>
-        </td>
-      </tr>
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '3']) %>
+          </td>
 
-      <tr>
-        <td class="whitespace-nowrap">
-          <%= hotkey_label(['ctrl', '▶︎']) %>
-        </td>
+          <td>
+            <%= t('.go_to_projects') %>
+          </td>
+        </tr>
 
-        <td>
-          <span><%= t('.access_next_page') %></span>
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '4']) %>
+          </td>
 
-          <span class="block italic text-sm text-base-content/50">
-            <%= t('.access_page_subtitle') %>
-          </span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <td>
+            <%= t('.go_to_blogs') %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '5']) %>
+          </td>
+
+          <td>
+            <%= t('.go_to_tutorials') %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['ctrl', 'k']) %>
+          </td>
+
+          <td>
+            <span><%= t('.open_global_search') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.open_global_search_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label('l') %>
+          </td>
+
+          <td>
+            <span><%= t('.open_language_dropdown') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              (<%= Rails.configuration.i18n_human_languages.values.join(', ') %>)
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label('t') %>
+          </td>
+
+          <td>
+            <span><%= t('.switch_theme') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.switch_theme_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', '?']) %>
+          </td>
+
+          <td>
+            <%= t('.open_help_modal') %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['ctrl', 'i']) %>
+          </td>
+
+          <td>
+            <%= t('.open_about_modal') %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table">
+      <thead class="bg-base-200">
+        <tr>
+          <th class="whitespace-nowrap"><%= t('.local_shortcut') %></th>
+          <td><%= t('.description') %></td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['ctrl', '◀︎']) %>
+          </td>
+
+          <td>
+            <span><%= t('.access_prev_page') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.access_page_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['ctrl', '▶︎']) %>
+          </td>
+
+          <td>
+            <span><%= t('.access_next_page') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.access_page_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label('A') %>
+          </td>
+
+          <td>
+            <span><%= t('.go_to_suggest_a_merchant') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.go_to_suggest_a_merchant_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label('A') %>
+          </td>
+
+          <td>
+            <span><%= t('.go_to_suggest_a_directory') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.go_to_suggest_a_directory_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label('D') %>
+          </td>
+
+          <td>
+            <span><%= t('.go_to_directory_local') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.go_to_directory_local_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', 'm']) %>
+          </td>
+
+          <td>
+            <span><%= t('.map_view') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.map_view_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', 't']) %>
+          </td>
+
+          <td>
+            <span><%= t('.table_view') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.map_view_subtitle') %>
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="whitespace-nowrap">
+            <%= hotkey_label(['shift', 'g']) %>
+          </td>
+
+          <td>
+            <span><%= t('.grid_view') %></span>
+
+            <span class="block italic text-sm text-base-content/50">
+              <%= t('.grid_view_subtitle') %>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 <% end %>

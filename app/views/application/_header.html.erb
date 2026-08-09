@@ -4,12 +4,14 @@
 business_guide_tutorial = tutorials.find(&:cryptopayment_for_business?)
 accounting_tutorial = tutorials.find(&:accounting?)
 
+active_projects = controller_name == "projects"
+active_blogs = controller_name == "blogs"
+active_tutorials = controller_name == "tutorials"
 active_map = controller_path.in?(%w[maps merchants merchants/itineraries])
 active_directories = controller_name == "directories"
 active_merchants = active_map || active_directories
 active_guides = controller_name.in?(%w[blogs tutorials ecosystems]) && params[:id] != 'flyer'
 active_about = controller_name.in?(%w[local_groups collectives media])
-active_projects = controller_name == "projects" || (controller_name == "blogs" && params[:id] == "flyer")
 
 megamenu_popover_class = "flex max-lg:flex-col lg:items-center gap-6 lg:py-3"
 root_menu_active_class = "lg:bg-base-300 lg:rounded-md"
@@ -69,7 +71,8 @@ background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
               <li>
                 <%= raw_link_to maps_path,
                       class: class_names("menu-active": active_map),
-                      hotkey: 'shift+1' do %>
+                      hotkey: 'shift+1',
+                      size: 'xs' do %>
                   <%= t('.map') %>
                 <% end %>
 
@@ -113,7 +116,8 @@ background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
               <li>
                 <%= raw_link_to directories_path,
                         class: class_names("menu-active": active_directories),
-                        hotkey: 'shift+2' do %>
+                        hotkey: 'shift+2',
+                        size: 'xs' do %>
                   <%= t('.directories') %>
                 <% end %>
 
@@ -153,7 +157,12 @@ background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
           <div class="<%= megamenu_popover_class %>">
             <ul class="menu">
               <li>
-                <%= link_to t('.projects'), projects_path %>
+                <%= raw_link_to projects_path,
+                                class: class_names("menu-active": active_projects),
+                                hotkey: 'shift+3',
+                                size: 'xs' do %>
+                  <%= t('.projects') %>
+                <% end %>
 
                 <ul>
                   <% projects.each do |project| %>
@@ -191,15 +200,19 @@ background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
 
                 <ul>
                   <li>
-                    <%= link_to blogs_path,
-                        class: ('menu-active' if params[:controller] == 'blogs' && params[:id] != 'flyer') do %>
+                    <%= raw_link_to blogs_path,
+                                    class: class_names("menu-active": active_blogs),
+                                    hotkey: 'shift+4',
+                                    size: 'xs' do %>
                       <%= t('.blogs') %>
                     <% end %>
                   </li>
 
                   <li>
-                    <%= link_to tutorials_path,
-                          class: ('menu-active' if current_page?(tutorials_path)) do %>
+                    <%= raw_link_to tutorials_path,
+                                    class: class_names("menu-active": active_tutorials),
+                                    hotkey: 'shift+5',
+                                    size: 'xs' do %>
                       <%= t('.tutorials') %>
                     <% end %>
 

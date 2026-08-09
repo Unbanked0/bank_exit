@@ -43,13 +43,39 @@ fr:
       developed_by_html: Développé avec %{heart} par le Collectif Sortie de Banque
 
     modal_help:
-      shortcut: Raccourci
+      global_shortcut: Raccourci global
+      local_shortcut: Raccourci local
       description: Description
       open_help_modal: Ouvrir la modale d'aide
+      open_global_search: Ouvrir la recherche globale
+      open_global_search_subtitle: (commerçants, annuaire, blogs, tutoriels, projets)
+      open_language_dropdown: Ouvrir le sélecteur de langues
+      switch_theme: Changer de thème
+      switch_theme_subtitle: (clair, sombre ou système)
       open_about_modal: Afficher modale "A propos"
       access_prev_page: Accéder à la page précédente
       access_next_page: Accéder à la page suivante
       access_page_subtitle: (lorsqu'une pagination est présente)
+
+      go_to_home: Accéder à l'accueil
+      go_to_map: Accéder à la carte
+      go_to_directory: Accéder à l'annuaire
+      go_to_projects: Accéder aux projets
+      go_to_blogs: Accéder au articles de blog
+      go_to_tutorials: Accéder aux tutoriels
+      go_to_suggest_a_merchant: Accéder à la page de proposition de commerçant
+      go_to_suggest_a_merchant_subtitle: (depuis la carte)
+      go_to_suggest_a_directory: Accéder à la page de proposition d'annuaire
+      go_to_suggest_a_directory_subtitle: (depuis la page annuaire)
+      go_to_directory_local: Accéder à l'annuaire
+      go_to_directory_local_subtitle: (depuis la carte)
+
+      map_view: Afficher les données sous forme de carte
+      map_view_subtitle: (sur la page carte)
+      table_view: Afficher les données sous forme de tableau
+      table_view_subtitle: (sur la page carte et annuaire)
+      grid_view: Afficher les données sous forme de grille
+      grid_view_subtitle: (sur la page carte et annuaire)
 
     snowflakes:
       enable_snowflakes: Activer la neige

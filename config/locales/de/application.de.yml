@@ -39,13 +39,39 @@ de:
       developed_by_html: Entwickelt mit %{heart} vom Kollektiv Bank-Exit
 
     modal_help:
-      shortcut: Tastenkürzel
+      global_shortcut: Globales Tastenkürzel
+      local_shortcut: Lokales Tastenkürzel
       description: Beschreibung
-      open_help_modal: Hilfe-Modal öffnen
-      open_about_modal: Modales Fenster „Über“ anzeigen
-      access_prev_page: Zur vorherigen Seite gehen
-      access_next_page: Zur nächsten Seite gehen
-      access_page_subtitle: (wenn eine Seitennummerierung vorhanden ist)
+      open_help_modal: Hilfemodal öffnen
+      open_global_search: Globale Suche öffnen
+      open_global_search_subtitle: (Händler, Verzeichnis, Blogs, Tutorials, Projekte)
+      open_language_dropdown: Sprachauswahl öffnen
+      switch_theme: Design wechseln
+      switch_theme_subtitle: (hell, dunkel oder System)
+      open_about_modal: „Über“-Modal anzeigen
+      access_prev_page: Zur vorherigen Seite
+      access_next_page: Zur nächsten Seite
+      access_page_subtitle: (wenn eine Seitennavigation vorhanden ist)
+
+      go_to_home: Zur Startseite
+      go_to_map: Zur Karte
+      go_to_directory: Zum Verzeichnis
+      go_to_projects: Zu den Projekten
+      go_to_blogs: Zu den Blogbeiträgen
+      go_to_tutorials: Zu den Tutorials
+      go_to_suggest_a_merchant: Zur Seite zum Vorschlagen eines Händlers
+      go_to_suggest_a_merchant_subtitle: (von der Karte aus)
+      go_to_suggest_a_directory: Zur Seite zum Vorschlagen eines Verzeichnisses
+      go_to_suggest_a_directory_subtitle: (von der Verzeichnisseite aus)
+      go_to_directory_local: Zum Verzeichnis
+      go_to_directory_local_subtitle: (von der Karte aus)
+
+      map_view: Daten als Karte anzeigen
+      map_view_subtitle: (auf der Kartenseite)
+      table_view: Daten als Tabelle anzeigen
+      table_view_subtitle: (auf der Karten- und Verzeichnisseite)
+      grid_view: Daten als Raster anzeigen
+      grid_view_subtitle: (auf der Karten- und Verzeichnisseite)
 
     snowflakes:
       enable_snowflakes: Schnee aktivieren
