@@ -1,6 +1,14 @@
-import { Application } from "@hotwired/stimulus";
+import { Application, defaultSchema } from "@hotwired/stimulus";
 
-const application = Application.start();
+const customSchema = {
+  ...defaultSchema,
+  keyMappings: {
+    ...defaultSchema.keyMappings,
+    question: "?",
+  },
+};
+
+const application = Application.start(document.documentElement, customSchema);
 
 // Configure Stimulus development experience
 application.debug = false;

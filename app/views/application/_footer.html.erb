@@ -23,6 +23,8 @@
           "
           commandfor="modal_help"
           command="show-modal"
+          data-controller="hotkey"
+          data-action="keydown.shift+question@document->hotkey#click"
         >
           <%= lucide_icon 'circle-question-mark', class: 'w-4 inline-flex' %>
           <%= t('help') %>
@@ -40,6 +42,8 @@
           "
           commandfor="modal_about"
           command="show-modal"
+          data-controller="hotkey"
+          data-action="keydown.ctrl+i@document->hotkey#click"
         >
           <%= lucide_icon 'info', class: 'w-4 inline-flex' %>
           <%= t('about') %>
