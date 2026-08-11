@@ -23,4 +23,7 @@ set_meta_tags og: { type: 'article', image: image },
   </script>
 <% end %>
 
-<%= render 'articles/wrapper', article: @blog %>
+<%= render 'articles/wrapper',
+           article: @blog,
+           previous_article: @previous_blog,
+           next_article: @next_blog %>

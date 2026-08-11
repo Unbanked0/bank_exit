@@ -25,6 +25,8 @@ class BlogsController < PublicController
 
     set_meta_tags title: @blog.title,
                   description: @blog.overview
+
+    @previous_blog, @next_blog = Blog.neighbors(@blog)
   end
 
   private

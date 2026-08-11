@@ -69,5 +69,17 @@ module Findable
           helpers.sanitize(article.render_template, tags: []).match?(regex)
       end
     end
+
+    def self.neighbors(record, decorate: false)
+      records = all(decorate: decorate)
+      index = records.index { it.identifier == record.identifier }
+
+      return [nil, nil] unless index
+
+      [
+        index.positive? ? records[index - 1] : nil,
+        index < records.length - 1 ? records[index + 1] : nil
+      ]
+    end
   end
 end

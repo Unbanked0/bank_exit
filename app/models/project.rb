@@ -15,6 +15,14 @@ class Project < Article
     "projects/#{identifier}/cover.jpg"
   end
 
+  def logo?
+    cover?
+  end
+
+  def logo
+    cover
+  end
+
   private
 
   def crypto_box?

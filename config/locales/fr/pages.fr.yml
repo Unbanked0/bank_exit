@@ -86,6 +86,9 @@ fr:
       ai_assisted: "Cet article a été généré avec l'aide d'une IA à partir d'un plan ou d'un script établi par le Collectif, puis relu avant publication."
       ai_generated: "Cet article a été généré en grande partie par une IA, puis relu avant publication."
 
+      prev_article: Article précédent
+      next_article: Article suivant
+
   blogs:
     index:
       title: Le blog

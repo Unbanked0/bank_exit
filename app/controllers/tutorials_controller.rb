@@ -29,6 +29,8 @@ class TutorialsController < PublicController
 
     set_meta_tags title: @tutorial.title,
                   description: @tutorial.overview
+
+    @previous_tutorial, @next_tutorial = Tutorial.neighbors(@tutorial)
   end
 
   private

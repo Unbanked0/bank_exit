@@ -85,6 +85,9 @@ en:
       ai_assisted: "This article was generated with AI assistance from the Collective created plan or script, then reviewed before publication."
       ai_generated: "This article was generated entirely or largely by AI, then reviewed before publication."
 
+      prev_article: Previous article
+      next_article: Next article
+
   blogs:
     index:
       title: Blog

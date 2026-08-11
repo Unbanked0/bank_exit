@@ -85,6 +85,9 @@ it:
       ai_assisted: "Questo articolo è stato generato con l'aiuto di un'IA a partire da una scaletta o da uno script elaborato dal Collettivo, quindi revisionato prima della pubblicazione."
       ai_generated: "Questo articolo è stato generato in gran parte da un'IA, quindi revisionato prima della pubblicazione."
 
+      prev_article: Articolo precedente
+      next_article: Articolo successivo
+
   blogs:
     index:
       title: Blog

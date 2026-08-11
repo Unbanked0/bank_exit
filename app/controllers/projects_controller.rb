@@ -25,6 +25,8 @@ class ProjectsController < PublicController
 
     set_meta_tags title: @project.title,
                   description: @project.overview
+
+    @previous_project, @next_project = Project.neighbors(@project)
   end
 
   private

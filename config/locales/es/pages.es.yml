@@ -85,6 +85,9 @@ es:
       ai_assisted: "Este artículo ha sido generado con la ayuda de una IA a partir de un esquema o un guion elaborado por el Colectivo, y posteriormente revisado antes de su publicación."
       ai_generated: "Este artículo ha sido generado parcialmente por una IA, y posteriormente revisado antes de su publicación."
 
+      prev_article: Artículo anterior
+      next_article: Artículo siguiente
+
   blogs:
     index:
       title: El blog

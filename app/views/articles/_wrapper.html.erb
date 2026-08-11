@@ -1,4 +1,4 @@
-<%# locals: (article:) %>
+<%# locals: (article:, previous_article:, next_article:) %>
 
 <article>
   <header
@@ -100,6 +100,83 @@
 
       <%= t(".#{article.content_origin}") %>
     </p>
+
+    <% navigation_justify =
+      if previous_article && next_article
+        "justify-between"
+      elsif previous_article
+        "justify-start"
+      else
+        "justify-end"
+      end %>
+
+    <div class="flex max-md:flex-col <%= navigation_justify %> gap-3">
+      <% if previous_article %>
+        <%= link_to polymorphic_path(previous_article),
+                    class: "card card-side items-start md:w-1/2 lg:w-2/5 min-w-0 gap-0 border border-base-content/10 hover:bg-base-200",
+                    title: previous_article.title,
+                    data: {
+                      controller: 'hotkey',
+                      action: "keydown.ctrl+left@document->hotkey#click"
+                    } do %>
+          <% if previous_article.logo? %>
+            <figure class="shrink-0">
+              <%= image_tag previous_article.logo,
+                alt: previous_article.title,
+                class: "size-20" %>
+            </figure>
+          <% end %>
+
+          <div class="card-body py-2 px-3 min-w-0 gap-0">
+            <p class="text-xs uppercase text-base-content/50 mb-1">
+              <%= lucide_icon "arrow-left", class: "inline-flex w-4" %> <%= t('.prev_article') %>
+              <%= hotkey_label(['Ctrl', '◀︎'], size: 'xs') %>
+            </p>
+
+            <p class="font-semibold truncate">
+              <%= previous_article.title %>
+            </p>
+
+            <% if previous_article.created_at %>
+              <time class="text-xs opacity-40"><%= l(previous_article.created_at) %></time>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% if next_article %>
+        <%= link_to polymorphic_path(next_article),
+                    class: "card card-side items-start md:w-1/2 lg:w-2/5 min-w-0 gap-0 border border-base-content/10 hover:bg-base-200 text-right",
+                    title: next_article.title,
+                      data: {
+                        controller: 'hotkey',
+                        action: "keydown.ctrl+right@document->hotkey#click"
+                      } do %>
+          <div class="card-body py-2 px-3 min-w-0 gap-0">
+            <p class="text-xs uppercase text-base-content/50 mb-1">
+              <%= hotkey_label(['Ctrl', '▶︎'], size: 'xs') %> <%= t('.next_article') %>
+              <%= lucide_icon "arrow-right", class: "inline-flex w-4" %>
+            </p>
+
+            <p class="font-semibold truncate">
+              <%= next_article.title %>
+            </p>
+
+            <% if next_article.created_at %>
+              <time class="text-xs opacity-40"><%= l(next_article.created_at) %></time>
+            <% end %>
+          </div>
+
+          <% if next_article.logo? %>
+            <figure class="shrink-0">
+              <%= image_tag next_article.logo,
+                alt: next_article.title,
+                class: "size-20" %>
+            </figure>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </section>
 
   <%= yield :footer_actions %>

@@ -19,4 +19,7 @@ set_meta_tags og: { type: 'article', image: image },
   </script>
 <% end %>
 
-<%= render 'articles/wrapper', article: @project %>
+<%= render 'articles/wrapper',
+           article: @project,
+           previous_article: @previous_project,
+           next_article: @next_project %>
