@@ -1,3 +1,8 @@
+<% image = @merchant.banner.attached? ? rails_blob_url(@merchant.banner) : image_url(logo_by_locale)
+
+set_meta_tags og: { image: image },
+              twitter: { image: image } %>
+
 <article>
   <div
     class="
