@@ -158,7 +158,6 @@ background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
             <ul class="menu">
               <li>
                 <%= raw_link_to projects_path,
-                                class: class_names("menu-active": active_projects),
                                 hotkey: 'shift+3',
                                 size: 'xs' do %>
                   <%= t('.projects') %>
@@ -210,7 +209,6 @@ background_header = "bg-base-100/90 shadow-sm backdrop-blur" %>
 
                   <li>
                     <%= raw_link_to tutorials_path,
-                                    class: class_names("menu-active": active_tutorials),
                                     hotkey: 'shift+5',
                                     size: 'xs' do %>
                       <%= t('.tutorials') %>
