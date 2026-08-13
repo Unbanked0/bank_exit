@@ -6,9 +6,9 @@
 >
 > This concept is not an original invention. It is directly inspired by the excellent work of the June Ğ1 community and their paper G-checks featuring QR codes. This project is simply an adaptation of that concept for the Monero ecosystem.
 
-How can you introduce cryptocurrencies to someone who does not use them yet?
+{{toc}}
 
-How can you send a small amount of Bitcoin, Monero or June in the same simple way you would give cash or a gift voucher?
+How can you introduce cryptocurrencies to someone who does not use them yet? How can you send a small amount of Bitcoin, Monero or June in the same simple way you would give cash or a gift voucher?
 
 The [digital cheque](https://monero-map.org/cheque) project provides a practical answer to these questions by using a format everyone understands: a paper document containing a digital value that can be claimed by its recipient.
 

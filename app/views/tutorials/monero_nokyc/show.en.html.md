@@ -6,6 +6,8 @@
 > [!WARNING]
 > The collective does not receive any payment for selecting these projects or featuring them in its strategy or on this website. All of these recommendations are made on a voluntary basis.
 
+{{toc}}
+
 ## Available solutions to buy Monero
 
 There are several ways to acquire Monero:

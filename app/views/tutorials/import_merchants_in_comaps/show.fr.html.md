@@ -1,6 +1,9 @@
-Il est possible d'exporter les commerçants affichés sur la carte et de les importer dans une application de cartographie comme [CoMaps](https://www.comaps.app/fr), qui fonctionne même sans connexion Internet.
+> [!IMPORTANT]
+> Il est possible d'exporter les commerçants affichés sur la carte et de les importer dans une application de cartographie comme [CoMaps](https://www.comaps.app/fr), qui fonctionne même sans connexion Internet.
 
 Ce tutoriel vous guide étape par étape afin que vous puissiez accéder aux données des commerçants à tout moment, que vous soyez en voyage, dans un train ou hors ligne.
+
+{{toc}}
 
 ## Exporter les commerçants depuis la carte
 

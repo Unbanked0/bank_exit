@@ -5,6 +5,8 @@ Aceptar criptomonedas en un comercio es hoy en día técnicamente sencillo. Sin 
 
 El **Colectivo Salida del Banco** ofrece una guía práctica para responder a esta cuestión y ayudar a los comerciantes a gestionar sus ventas en Bitcoin y Monero mediante herramientas accesibles.
 
+{{toc}}
+
 <%= render partial: "tutorials/accounting/accounting_download" %>
 
 ![Configuración y explicaciones](<%= image_path("tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg") %>)

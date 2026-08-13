@@ -5,6 +5,8 @@ Would you like to start using cryptocurrencies without spending hours searching 
 
 The **Bank-Exit** flyer was designed as a practical quick-start guide. In just a few pages, it introduces the main tools, best practices, and resources for getting started—whether you are an **individual**, **merchant**, **freelancer**, **business owner**, or simply curious about decentralized payments.
 
+{{toc}}
+
 <figure class="print:hidden">
   <iframe
     src="/pdfs/Flyers_SDB_2025_V4_8_ENG.pdf"

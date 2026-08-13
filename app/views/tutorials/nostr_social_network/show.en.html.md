@@ -3,6 +3,8 @@
 
 In this tutorial, we will use the **Snort** client, but the process is similar on most Nostr websites and applications.
 
+{{toc}}
+
 Once your account has been created with Snort, you can switch to another application or website at any time by importing your account using the private key generated during setup.
 
 <%= video_embed(

@@ -1,4 +1,5 @@
-L'objectif de ce tutoriel est de vous permettre de reprendre le contrôle de vos paiements numériques en utilisant un portefeuille non custodial.
+> [!IMPORTANT]
+> L'objectif de ce tutoriel est de vous permettre de reprendre le contrôle de vos paiements numériques en utilisant un portefeuille non custodial.
 
 Vous allez apprendre à :
 
@@ -8,6 +9,8 @@ Vous allez apprendre à :
 - recevoir et envoyer des Monero ;
 - acheter du XMR avec des euros ;
 - utiliser vos cryptomonnaies chez des commerçants.
+
+{{toc}}
 
 <%= video_embed(
 url: "https://youtube.com/embed/e7dywiZIpWg",

@@ -1,6 +1,9 @@
-Ce tutoriel explique comment créer une cagnotte en Monero grâce à **Kuno**, une plateforme open source permettant de collecter des dons sans dépendre d'un intermédiaire centralisé.
+> [!IMPORTANT]
+> Ce tutoriel explique comment créer une cagnotte en Monero grâce à **Kuno**, une plateforme open source permettant de collecter des dons sans dépendre d'un intermédiaire centralisé.
 
 Monero est une cryptomonnaie conçue pour offrir une forte confidentialité des transactions. Contrairement à de nombreuses plateformes de financement participatif classiques, une cagnotte Monero permet de recevoir des fonds sans risque de blocage arbitraire par une entreprise ou une autorité.
+
+{{toc}}
 
 <%= video_embed(
 url: "https://youtube.com/embed/76vxvYrFar4",

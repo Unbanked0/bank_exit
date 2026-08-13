@@ -5,6 +5,8 @@ Aujourd'hui, de nombreuses cryptomonnaies existent et sont souvent comparées pr
 
 Le projet [CoinAdoptionScore](https://coinadoptionscore.com) propose un indicateur permettant d'observer l'adoption commerciale des différentes monnaies numériques et de comparer leur usage réel avec leur valorisation financière.
 
+{{toc}}
+
 [![Illustration CoinAdoptionScore](<%= image_path(@record.cover) %>)](https://coinadoptionscore.com)
 
 ## Pourquoi mesurer l'adoption réelle ?

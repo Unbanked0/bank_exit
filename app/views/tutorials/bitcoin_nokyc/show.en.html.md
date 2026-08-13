@@ -1,9 +1,10 @@
-## Different ways to buy bitcoin
-
-There are several ways to buy bitcoin. The best option depends on your priorities: privacy, simplicity, liquidity, and the level of autonomy you are looking for.
+> [!IMPORTANT]
+> There are several ways to buy bitcoin. The best option depends on your priorities: privacy, simplicity, liquidity, and the level of autonomy you are looking for.
 
 > [!WARNING]
 > **Services requiring identity verification (KYC)** permanently associate your identity with your bitcoin purchases. This information may be retained by the service and shared with authorities upon legal request. If privacy is important to you, consider using peer-to-peer (P2P) alternatives instead.
+
+{{toc}}
 
 ## Peer-to-peer (P2P) solutions
 

@@ -1,9 +1,10 @@
-## Les différentes façons d'acheter du bitcoin
-
-Il existe plusieurs façons d'acheter du bitcoin. Le meilleur choix dépend de vos priorités : confidentialité, simplicité, liquidité ou encore niveau d'autonomie recherché.
+> [!IMPORTANT]
+> Il existe plusieurs façons d'acheter du bitcoin. Le meilleur choix dépend de vos priorités : confidentialité, simplicité, liquidité ou encore niveau d'autonomie recherché.
 
 > [!WARNING]
 > **Les services exigeant une vérification d'identité (KYC)** associent durablement votre identité à vos achats de bitcoins. Ces informations peuvent être conservées par le prestataire et communiquées aux autorités sur demande. Si la confidentialité est importante pour vous, privilégiez autant que possible les solutions en pair à pair (P2P).
+
+{{toc}}
 
 ## Solutions P2P (pair à pair)
 

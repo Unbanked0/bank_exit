@@ -5,6 +5,8 @@
 
 El [mapa](<%= maps_path %>) del Colectivo ha sido creado para conectar a los usuarios de criptomonedas con los comercios que las aceptan. Su objetivo es sencillo: hacer que los pagos con Bitcoin y Monero sean más accesibles en la vida cotidiana.
 
+{{toc}}
+
 [![Mapa imagen](<%= image_path(@record.cover) %>)](<%= maps_path %>)
 
 ## ¿Qué ofrece el mapa?

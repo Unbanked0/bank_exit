@@ -1,6 +1,9 @@
-On August 20, 2025, a voice discussion took place on X/Twitter about a topic currently stirring the crypto community: the Qubic project and its mining approach combining Monero and artificial intelligence (AI) computations.
+> [!IMPORTANT]
+> On August 20, 2025, a voice discussion took place on X/Twitter about a topic currently stirring the crypto community: the Qubic project and its mining approach combining Monero and artificial intelligence (AI) computations.
 
 Here is a clear and factual summary to better understand the issues at stake.
+
+{{toc}}
 
 ## Qubic: How Does It Work?
 

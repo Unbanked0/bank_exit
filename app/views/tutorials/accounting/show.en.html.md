@@ -5,6 +5,8 @@ Accepting cryptocurrency in a business is technically simple today. However, one
 
 The **Bank-Exit collective** provides practical guidance to answer this question and help merchants manage their Bitcoin and Monero sales using accessible tools.
 
+{{toc}}
+
 <%= render partial: "tutorials/accounting/accounting_download" %>
 
 ![Settings and explanations](<%= image_path("tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg") %>)

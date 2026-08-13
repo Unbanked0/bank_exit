@@ -1,6 +1,9 @@
-It is possible to export the merchants displayed on the map and import them into a mapping application such as [CoMaps](https://www.comaps.app), which works even without an internet connection.
+> [!IMPORTANT]
+> It is possible to export the merchants displayed on the map and import them into a mapping application such as [CoMaps](https://www.comaps.app), which works even without an internet connection.
 
 This tutorial walks you through the steps required to access merchant data at any time, whether you are traveling, on a train, or without network access.
+
+{{toc}}
 
 ## Export Merchants from the Map
 

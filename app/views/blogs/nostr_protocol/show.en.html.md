@@ -1,6 +1,8 @@
 > [!IMPORTANT]
 > Today's Internet relies heavily on large platforms that centralize much of our online communication: social networks, messaging services, publishing platforms, and online communities. Nostr takes a different approach by offering an open protocol for publishing and exchanging information without depending on a single server or company. Designed as a simple, decentralized infrastructure, Nostr gives users greater control over their digital identity and content.
 
+{{toc}}
+
 ## What is Nostr?
 
 Nostr stands for **Notes and Other Stuff Transmitted by Relays**. It is not a social network itself, but rather a **protocol**: a set of rules that allows different applications to communicate with one another.

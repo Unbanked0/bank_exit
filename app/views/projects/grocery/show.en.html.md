@@ -5,6 +5,8 @@ Would you like to buy local products, support independent producers, or use your
 
 [Freedom Grocers](https://libre-market.com/m/epicerie) is an online marketplace that allows you to order directly from sellers located throughout France. You can find food products, handmade creations, digital goods, and many other items offered by individuals and professionals.
 
+{{toc}}
+
 [![Freedom Grocers illustration](<%= image_path(@record.cover) %>)](https://libre-market.com/m/epicerie)
 
 ## What can you buy?

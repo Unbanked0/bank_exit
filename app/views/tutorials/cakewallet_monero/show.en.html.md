@@ -1,4 +1,5 @@
-The goal of this tutorial is to help you take back control of your digital payments by using a non-custodial wallet.
+> [!IMPORTANT]
+> The goal of this tutorial is to help you take back control of your digital payments by using a non-custodial wallet.
 
 You will learn how to:
 
@@ -8,6 +9,8 @@ You will learn how to:
 - receive and send Monero;
 - buy XMR with euros;
 - use your cryptocurrencies with merchants.
+
+{{toc}}
 
 <%= video_embed(
 url: "https://youtube.com/embed/e7dywiZIpWg",

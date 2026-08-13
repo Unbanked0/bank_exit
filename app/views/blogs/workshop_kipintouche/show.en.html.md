@@ -10,6 +10,8 @@ Anti-censorship Workshop #KipInTouche - Session Matrix Nostr Mastodon 07-2026",
 created_at: "2026-07-25"
 ) %>
 
+{{toc}}
+
 ## Understanding the Two Architectures: Decentralized vs Federated
 
 Before choosing a tool, it's essential to distinguish between two network organization models.

@@ -1,6 +1,9 @@
-This tutorial explains how to create a Monero fundraiser using **Kuno**, an open source platform that allows you to collect donations without relying on a centralized intermediary.
+> [!IMPORTANT]
+> This tutorial explains how to create a Monero fundraiser using **Kuno**, an open source platform that allows you to collect donations without relying on a centralized intermediary.
 
 Monero is a cryptocurrency designed to provide strong transaction privacy. Unlike many traditional crowdfunding platforms, a Monero fundraiser allows you to receive funds without the risk of arbitrary blocking by a company or authority.
+
+{{toc}}
 
 <%= video_embed(
 url: "https://youtube.com/embed/76vxvYrFar4",

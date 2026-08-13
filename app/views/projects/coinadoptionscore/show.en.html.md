@@ -5,6 +5,8 @@ Today, thousands of cryptocurrencies exist and are often compared mainly by thei
 
 The [CoinAdoptionScore](https://coinadoptionscore.com) project provides an indicator that helps observe the commercial adoption of different digital currencies and compare their real-world usage with their financial valuation.
 
+{{toc}}
+
 [![CoinAdoptionScore illustration](<%= image_path(@record.cover) %>)](https://coinadoptionscore.com)
 
 ## Why measure real adoption?

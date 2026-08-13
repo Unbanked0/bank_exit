@@ -3,6 +3,8 @@
 
 Dans ce tutoriel, nous allons utiliser le client **Snort**, mais le processus reste similaire sur la plupart des sites et applications Nostr.
 
+{{toc}}
+
 Une fois votre compte créé avec Snort, vous pourrez changer d'application ou de site à tout moment en important votre compte à l'aide de la clé privée générée lors de la création.
 
 <%= video_embed(

@@ -1,9 +1,9 @@
 > [!IMPORTANT]
-> Le Collectif recommande **Session** comme logiciel de messagerie au quotidien.
+> Session est une messagerie chiffrée conçue pour protéger votre vie privée et constitue une alternative à WhatsApp ou Telegram.
 
-Vous pouvez trouver un comparatif des différentes applications de messagerie sur [PrivacySpreadsheet](https://privacyspreadsheet.com/messaging-apps).
+Le Collectif recommande **Session** comme logiciel de messagerie au quotidien. Vous pouvez trouver un comparatif des différentes applications de messagerie sur [PrivacySpreadsheet](https://privacyspreadsheet.com/messaging-apps).
 
-Session est une messagerie chiffrée conçue pour protéger votre vie privée et constitue une alternative à WhatsApp ou Telegram.
+{{toc}}
 
 <%= video_embed(
 url: "https://youtube.com/embed/OHnuD3m45SY",

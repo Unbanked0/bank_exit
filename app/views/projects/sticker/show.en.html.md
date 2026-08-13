@@ -7,6 +7,8 @@ For many projects, associations, creators, or independent workers, accepting don
 
 The goal is to enable direct exchanges between contributors and recipients, without relying on a centralized payment platform.
 
+{{toc}}
+
 [![CryptoBox illustration](<%= image_path(@record.cover) %>)](https://monero-map.org/crypto_box)
 
 ## What is CryptoBox?

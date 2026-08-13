@@ -6,6 +6,8 @@
 > [!WARNING]
 > Le collectif ne perçoit aucune rémunération pour avoir sélectionné ce projet ou le mettre en avant dans sa stratégie et sur ce site. Toutes ces recommandations sont faites de manière bénévole.
 
+{{toc}}
+
 ## Les solutions disponibles pour acheter du Monero
 
 Plusieurs méthodes permettent d'obtenir du Monero :

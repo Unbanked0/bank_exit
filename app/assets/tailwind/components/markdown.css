@@ -1,31 +1,44 @@
 @layer components {
-    .prose a {
-        @apply font-semibold;
+    .table-of-contents {
+        @apply inline-block bg-base-200 rounded-box;
+
+        .toc-title {
+            @apply mb-3 font-bold uppercase tracking-wide;
+        }
+
+        .menu li a {
+            @apply block!;
+        }
     }
 
     .prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-        font-weight: inherit !important;
+        @apply font-semibold;
     }
 
     .prose :where(h2, h3, h4, h5, h6) {
-        @apply scroll-mt-20;
+        @apply scroll-mt-20 relative;
     }
 
-    .prose :where(h2, h3, h4, h5, h6) .anchor {
-        @apply items-center rounded no-underline! outline-none;
+    .prose :where(h2, h3, h4, h5, h6) > .anchor {
+        @apply absolute text-primary! no-underline!;
+        @apply opacity-0 transition-opacity duration-150;
+        @apply text-center;
+
+        left: -1.5rem;
+        width: 1.5rem;
+
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .prose .anchor .anchor-icon {
-        @apply inline-flex ml-2 opacity-0 transition-opacity;
+    .prose :where(h2, h3, h4, h5, h6):hover > .anchor,
+    .prose :where(h2, h3, h4, h5, h6) > .anchor:focus-visible {
+        @apply opacity-60;
     }
 
-    .prose :where(h2, h3, h4, h5, h6):hover .anchor-icon,
-    .prose .anchor:focus-visible .anchor-icon {
+    .prose :where(h2, h3, h4, h5, h6):target > .anchor,
+    .prose :where(h2, h3, h4, h5, h6) > .anchor:hover {
         @apply opacity-100;
-    }
-
-    .prose .anchor:focus-visible {
-        @apply ring-2 ring-primary ring-offset-2 ring-offset-base-100;
     }
 
     .prose aside.admonition {

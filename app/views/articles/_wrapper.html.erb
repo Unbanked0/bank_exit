@@ -150,7 +150,8 @@
                     title: next_article.title,
                       data: {
                         controller: 'hotkey',
-                        action: "keydown.ctrl+right@document->hotkey#click"
+                        action: "keydown.ctrl+right@document->hotkey#click",
+                        hotkey_prevent_focus_scroll_value: "true"
                       } do %>
           <div class="card-body py-2 px-3 min-w-0 gap-0">
             <p class="text-xs uppercase text-base-content/50 mb-1">

@@ -4,6 +4,8 @@
 > [!CAUTION]
 > Ce contenu ne constitue pas un conseil financier ou un conseil d’investissement.
 
+{{toc}}
+
 <%= video_embed(
 url: "https://www.youtube.com/embed/hESmJ9Amq7w",
 title: "Atelier formation Bitcoin Monero - Collectif Sortie De Banque",
@@ -137,7 +139,7 @@ Relai Bitcoin Walletrelai.app
 3. Choisir un code PIN différent du téléphone
 4. Sauvegarder les mots de récupération
 
-## ⚠️ Sécurité essentielle
+### ⚠️ Sécurité essentielle
 
 Les mots de récupération :
 
@@ -225,7 +227,7 @@ Demander simplement :
 
 > « Est-ce que vous acceptez Bitcoin ? »
 
-### Réactions possibles :
+### Réactions possibles
 
 - ❌ Refus total → inutile d’insister
 - 🤔 Curiosité → expliquer simplement

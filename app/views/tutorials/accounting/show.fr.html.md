@@ -5,6 +5,8 @@ Accepter une cryptomonnaie dans son commerce est aujourd'hui techniquement simpl
 
 Le Collectif Sortie de Banque propose un accompagnement pratique pour répondre à cette question et permettre aux commerçants de gérer leurs ventes en Bitcoin et Monero avec des outils accessibles.
 
+{{toc}}
+
 <%= render partial: "tutorials/accounting/accounting_download" %>
 
 ![Paramètres et explications](<%= image_path("tutorials/accountings/Compta_fisca_crypto_libre_V1.2_2025.jpg") %>)

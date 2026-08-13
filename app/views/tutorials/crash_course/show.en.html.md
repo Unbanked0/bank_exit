@@ -4,6 +4,8 @@
 > [!CAUTION]
 > This content does not constitute financial advice or investment advice.
 
+{{toc}}
+
 <%= video_embed(
 url: "https://www.youtube.com/embed/hESmJ9Amq7w",
 title: "Bitcoin Monero training workshop - Bank-Exit Collectif",
@@ -137,7 +139,7 @@ Steps:
 3. Choose a PIN different from the phone PIN
 4. Back up the recovery words
 
-## ⚠️ Essential security
+### ⚠️ Essential security
 
 Recovery words:
 
@@ -225,7 +227,7 @@ Simply ask:
 
 > “Do you accept Bitcoin?”
 
-### Possible reactions:
+### Possible reactions
 
 - ❌ Complete refusal → no need to insist
 - 🤔 Curiosity → explain simply

@@ -1,6 +1,9 @@
-Le 20 août 2025, un débat vocal s’est tenu sur X/Twitter autour d’un sujet qui agite actuellement la communauté crypto : le projet Qubic et son approche de minage mêlant Monero et calculs d’intelligence artificielle (IA).
+> [!IMPORTANT]
+> Le 20 août 2025, un débat vocal s’est tenu sur X/Twitter autour d’un sujet qui agite actuellement la communauté crypto : le projet Qubic et son approche de minage mêlant Monero et calculs d’intelligence artificielle (IA).
 
 Voici une synthèse claire et factuelle pour comprendre les enjeux.
+
+{{toc}}
 
 ## Qubic : comment ça fonctionne ?
 

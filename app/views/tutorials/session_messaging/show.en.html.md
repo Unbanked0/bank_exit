@@ -1,9 +1,9 @@
 > [!IMPORTANT]
-> The Collective recommends **Session** as a daily messaging application.
+> Session is an encrypted messaging application designed to protect your privacy and serves as an alternative to WhatsApp or Telegram.
 
-You can find a comparison of different messaging applications on [PrivacySpreadsheet](https://privacyspreadsheet.com/messaging-apps).
+The Collective recommends **Session** as a daily messaging application. You can find a comparison of different messaging applications on [PrivacySpreadsheet](https://privacyspreadsheet.com/messaging-apps).
 
-Session is an encrypted messaging application designed to protect your privacy and serves as an alternative to WhatsApp or Telegram.
+{{toc}}
 
 <%= video_embed(
 url: "https://youtube.com/embed/OHnuD3m45SY",

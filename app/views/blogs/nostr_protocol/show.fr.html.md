@@ -3,6 +3,8 @@
 >
 > Nostr propose une approche différente : un protocole ouvert permettant de publier et d’échanger des informations sans dépendre d’un serveur ou d’une entreprise unique. Pensé comme une infrastructure simple et décentralisée, Nostr donne aux utilisateurs davantage de contrôle sur leur identité numérique et leurs contenus.
 
+{{toc}}
+
 ## Qu’est-ce que Nostr ?
 
 Nostr signifie **Notes and Other Stuff Transmitted by Relays**. Il ne s’agit pas d’un réseau social particulier, mais d’un **protocole** : un ensemble de règles permettant à différentes applications de communiquer entre elles.
