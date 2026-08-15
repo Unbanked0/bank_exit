@@ -113,17 +113,17 @@
     <div class="flex max-md:flex-col <%= navigation_justify %> gap-3">
       <% if previous_article %>
         <%= link_to polymorphic_path(previous_article),
-                    class: "card card-side items-start md:w-1/2 lg:w-2/5 min-w-0 gap-0 border border-base-content/10 hover:bg-base-200",
-                    title: previous_article.title,
+                    class: "group card card-side items-start md:w-1/2 lg:w-2/5 min-w-0 gap-0 bg-base-200 hover:text-primary",
                     data: {
                       controller: 'hotkey',
-                      action: "keydown.ctrl+left@document->hotkey#click"
+                      action: "keydown.ctrl+left@document->hotkey#click",
+                      hotkey_prevent_focus_scroll_value: "true"
                     } do %>
           <% if previous_article.logo? %>
-            <figure class="shrink-0">
+            <figure class="shrink-0 overflow-hidden">
               <%= image_tag previous_article.logo,
                 alt: previous_article.title,
-                class: "size-20" %>
+                class: "size-20 object-cover motion-safe:transition-transform motion-safe:group-hover:scale-115 motion-safe:group-focus-visible:scale-115" %>
             </figure>
           <% end %>
 
@@ -146,13 +146,12 @@
 
       <% if next_article %>
         <%= link_to polymorphic_path(next_article),
-                    class: "card card-side items-start md:w-1/2 lg:w-2/5 min-w-0 gap-0 border border-base-content/10 hover:bg-base-200 text-right",
-                    title: next_article.title,
-                      data: {
-                        controller: 'hotkey',
-                        action: "keydown.ctrl+right@document->hotkey#click",
-                        hotkey_prevent_focus_scroll_value: "true"
-                      } do %>
+                    class: "group card card-side items-start md:w-1/2 lg:w-2/5 min-w-0 gap-0 text-right bg-base-200 hover:text-primary",
+                    data: {
+                      controller: 'hotkey',
+                      action: "keydown.ctrl+right@document->hotkey#click",
+                      hotkey_prevent_focus_scroll_value: "true"
+                    } do %>
           <div class="card-body py-2 px-3 min-w-0 gap-0">
             <p class="text-xs uppercase text-base-content/50 mb-1">
               <%= hotkey_label(['Ctrl', '▶︎'], size: 'xs') %> <%= t('.next_article') %>
@@ -172,7 +171,7 @@
             <figure class="shrink-0">
               <%= image_tag next_article.logo,
                 alt: next_article.title,
-                class: "size-20" %>
+                class: "size-20 object-cover motion-safe:transition-transform motion-safe:group-hover:scale-115 motion-safe:group-focus-visible:scale-115" %>
             </figure>
           <% end %>
         <% end %>
